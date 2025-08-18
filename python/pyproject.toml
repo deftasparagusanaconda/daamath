@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75.8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swissmath"
+version = "0.1.0"
+#dynamic = ["version"]
+description = "a collection of functions i use pretty often"
+readme = "README.md"
+requires-python = ">=3.11.0"
+license = "GPL-3.0-or-later"
+#package-dir = {"" = "."}
+#dependencies = ["numpy", "matplotlib"]
+authors = [
+	{ name="deftasparagusanaconda", email="deftasparagusanaconda@gmail.com" }
+#	{ name="Jeffrin Santon", email="jeffrinsanton0909@gmail.com"}
+]
+#keywords = ["graph", "model", "curve", "line", "parabola", "expression", "approximation", "symbolic", "regression", "regress", "optimization", "optimize", "iterative", "plot"]
+#classifiers = ["Programming Language :: Python :: 3.13"]
+
+#[project.scripts]
+#ga = "gapprox.__main__:main"
+
+#[project.optional-dependencies]
+#fft = ["scipy"]
+
+[project.urls]
+Homepage = "https://github.com/deftasparagusanaconda/swissmath"
+#Issues = "https://github.com/deftasparagusanaconda/gapprox/issues"
+#Documentation = "https://github.com/deftasparagusanaconda/gapprox/documentation"
+#Repository = "https://github.com/deftasparagusanaconda/gapprox"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["swissmath"]
+
+#[tool.setuptools.dynamic]
+#version = {attr = "src.__version__"}
