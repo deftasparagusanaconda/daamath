@@ -1,6 +1,268 @@
-from typing import Literal as _Literal
+// arithmetic primitives are: byte, short, int, long, float, double
+// six types. so thats 6^1 for unary operators, 6^2 for binary, 6^3 for ternary, etc
+// preserves int, long, float, double, byte to int, short to int, and always promotes to wider type
+// type casting is explicitly mentioned even if java implicitly promotes them; only unless the input type already matches the output type
 
-from operator import add, sub, mul, truediv as div, pos, neg, mod, floordiv, truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
+// types are promoted before operation for operand fairness. for example: 
+// static float mul(int a, float b)
+
+package swissmath;
+
+public final class SwissMath
+{	private SwissMath() {}
+		
+	// by convention, byte and short are promoted to int, because they hardly support normal arithmetic
+	static int    add(byte   a, byte   b) { return (int   )a+(int   )b; }
+	static int    add(byte   a, short  b) { return (int   )a+(int   )b; }
+	static int    add(byte   a, int    b) { return (int   )a+        b; }
+	static long   add(byte   a, long   b) { return (long  )a+        b; }
+	static float  add(byte   a, float  b) { return (float )a+        b; }
+	static double add(byte   a, double b) { return (double)a+        b; }
+	static int    add(short  a, byte   b) { return (int   )a+(int   )b; }
+	static int    add(short  a, short  b) { return (int   )a+(int   )b; }
+	static int    add(short  a, int    b) { return (int   )a+        b; }
+	static long   add(short  a, long   b) { return (long  )a+        b; }
+	static float  add(short  a, float  b) { return (float )a+        b; }
+	static double add(short  a, double b) { return (double)a+        b; }
+	static int    add(int    a, byte   b) { return         a+(int   )b; }
+	static int    add(int    a, short  b) { return         a+(int   )b; }
+	static int    add(int    a, int    b) { return         a+        b; }
+	static long   add(int    a, long   b) { return (long  )a+        b; }
+	static float  add(int    a, float  b) { return (float )a+        b; }
+	static double add(int    a, double b) { return (double)a+        b; }
+	static long   add(long   a, byte   b) { return         a+(long  )b; }
+	static long   add(long   a, short  b) { return         a+(long  )b; }
+	static long   add(long   a, int    b) { return         a+(long  )b; }
+	static long   add(long   a, long   b) { return         a+        b; }
+	static float  add(long   a, float  b) { return (float )a+        b; }
+	static double add(long   a, double b) { return (double)a+        b; }
+	static float  add(float  a, byte   b) { return         a+(float) b; }
+	static float  add(float  a, short  b) { return a+b; }
+	static float  add(float  a, int    b) { return a+b; }
+	static float  add(float  a, long   b) { return a+b; }
+	static float  add(float  a, float  b) { return a+b; }
+	static double add(float  a, double b) { return a+b; }
+	static double add(double a, byte   b) { return a+b; }
+	static double add(double a, short  b) { return a+b; }
+	static double add(double a, int    b) { return a+b; }
+	static double add(double a, long   b) { return a+b; }
+	static double add(double a, float  b) { return a+b; }
+	static double add(double a, double b) { return a+b; }
+	
+	static int    sub(int    a, int    b) { return a-b; }
+	static long   sub(int    a, long   b) { return a-b; }
+	static float  sub(int    a, float  b) { return a-b; }
+	static double sub(int    a, double b) { return a-b; }
+	static long   sub(long   a, int    b) { return a-b; }
+	static long   sub(long   a, long   b) { return a-b; }
+	static float  sub(long   a, float  b) { return a-b; }
+	static double sub(long   a, double b) { return a-b; }
+	static float  sub(float  a, int    b) { return a-b; }
+	static float  sub(float  a, long   b) { return a-b; }
+	static float  sub(float  a, float  b) { return a-b; }
+	static double sub(float  a, double b) { return a-b; }
+	static double sub(double a, int    b) { return a-b; }
+	static double sub(double a, long   b) { return a-b; }
+	static double sub(double a, float  b) { return a-b; }
+	static double sub(double a, double b) { return a-b; }
+	
+	static int    mul(int    a, int    b) { return a*b; }
+	static long   mul(int    a, long   b) { return a*b; }
+	static float  mul(int    a, float  b) { return a*b; }
+	static double mul(int    a, double b) { return a*b; }
+	static long   mul(long   a, int    b) { return a*b; }
+	static long   mul(long   a, long   b) { return a*b; }
+	static float  mul(long   a, float  b) { return a*b; }
+	static double mul(long   a, double b) { return a*b; }
+	static float  mul(float  a, int    b) { return a*b; }
+	static float  mul(float  a, long   b) { return a*b; }
+	static float  mul(float  a, float  b) { return a*b; }
+	static double mul(float  a, double b) { return a*b; }
+	static double mul(double a, int    b) { return a*b; }
+	static double mul(double a, long   b) { return a*b; }
+	static double mul(double a, float  b) { return a*b; }
+	static double mul(double a, double b) { return a*b; }
+
+	static float  div(int    a, int    b) { return (float )a/(float )b; }
+	static float  div(int    a, long   b) { return (float )a/(float )b; }
+	static float  div(int    a, float  b) { return (float )a/        b; }
+	static double div(int    a, double b) { return (double)a/        b; }
+	static float  div(long   a, int    b) { return (float )a/(float )b; }
+	static float  div(long   a, long   b) { return (float )a/(float )b; }
+	static float  div(long   a, float  b) { return (float )a/        b; }
+	static double div(long   a, double b) { return (double)a/        b; }
+	static float  div(float  a, int    b) { return         a/(float )b; }
+	static float  div(float  a, long   b) { return         a/(float )b; }
+	static float  div(float  a, float  b) { return         a/        b; }
+	static double div(float  a, double b) { return (double)a/        b; }
+	static double div(double a, int    b) { return         a/(double)b; }
+	static double div(double a, long   b) { return         a/(double)b; }
+	static double div(double a, float  b) { return         a/(double)b; }
+	static double div(double a, double b) { return         a/        b; }
+
+	static 
+}	
+	
+/*	
+
+# numeric
+	'pos'     : _operator.pos,	  # unary plus, positive
+	'neg'     : _operator.neg,    # unary minus, negative, additive inverse
+	'mod'     : _operator.mod,
+	'floordiv': _operator.floordiv,
+	'abs'     : _operator.abs,
+	'inv'     : _reciprocal,      # multiplicative inverse
+	'square'  : _square,
+	'cube'    : _cube,
+	'pow'     : _builtins.pow,
+	'floor'   : _math.floor,
+	'round'   : _builtins.round,
+	'ceil'    : _math.ceil,
+	'ipart'   : _math.trunc,
+	'fpart'   : _fractional_part,
+	'exp'     : _math.exp,
+	'exp2'    : _math.exp2,
+	'log10'   : _math.log10,
+	'log2'    : _math.log2,
+	'log'     : _math.log,
+	'sqrt'    : _math.sqrt,
+	'cbrt'    : _math.cbrt,
+	'root'    : _root,
+
+# trigonometric
+	'sin'     : _math.sin,
+	'cos'     : _math.cos,
+	'tan'     : _math.tan,
+	'cot'     : _cot,
+	'sec'     : _sec,
+	'csc'     : _csc,
+	'asin'    : _math.asin,
+	'acos'    : _math.acos,
+	'atan'    : _math.atan,
+	'acot'    : _acot,
+	'asec'    : _asec,
+	'acsc'    : _acsc,
+
+# hyperbolic
+	'sinh'    : _math.sinh,
+	'cosh'    : _math.cosh,
+	'tanh'    : _math.tanh,
+	'coth'    : _coth,
+	'sech'    : _sech,
+	'csch'    : _csch,
+	'asinh'   : _math.asinh,
+	'acosh'   : _math.acosh,
+	'atanh'   : _math.atanh,
+	'acoth'   : _acoth,
+	'asech'   : _asech,
+	'acsch'   : _acsch,
+
+# left out due to obscurity. also probably mostly wrong :P
+#'versin'    : lambda a: 1 - math.cos(a)
+#'coversin'  : lambda a: 1 - math.sin(a)
+#'haversin'  : lambda a: 0.5 - math.cos(a)/2
+#'hacoversin': lambda a: 0.5 - math.sin(a)/2
+#'exsec'     : lambda a: 1/math.cos(a) - 1
+#'excsc'     : lambda a: 1/math.sin(a) - 1
+#'chord'     : lambda a: 2 * math.sin(a/2)
+#'vercos'    : lambda a: 1 + math.cos(a)
+#'covercos'  : lambda a: 1 + math.sin(a)
+#'havercos'  : lambda a: 0.5 + math.cos(a)/2
+#'hacovercos': lambda a: 0.5 + math.sin(a)/2
+
+# complex
+	'real'    : _get_real, # get real lmao
+	'imag'    : _get_imag,
+	'phase'   : _cmath.phase,
+	'conj'    : _call_conjugate,
+
+# boolean
+	'truth'   : _operator.truth,       # 01
+	'not'     : _operator.not_,        # 10
+	'and'     : _operator.and_,        # 0001
+	'nimp'    : _nimp,                 # 0010
+	'ncon'    : _ncon,                 # 0100
+	'xor'     : _operator.xor,         # 0110
+	'or'      : _operator.or_,         # 0111
+	'nor'     : _nor,                  # 1000
+	'xnor'    : _operator.eq,          # 1001
+	'con'     : _converse_implication, # 1011
+	'imp'     : _implication,          # 1101
+	'nand'    : _nand,                 # 1110
+
+# comparative
+	'lt'      : _operator.lt,
+	'le'      : _operator.le,
+	'eq'      : _operator.eq,
+	'ne'      : _operator.ne,
+	'ge'      : _operator.ge,
+	'gt'      : _operator.gt,
+
+# statistical
+	'mean'    : _mean,
+	'median'  : _median,
+	'mode'    : _mode,
+	'pmean'   : _generalized_mean,
+
+# combinatorial
+	'comb'    : _math.comb,
+	'perm'    : _math.perm,
+
+# hello there! lol
+
+# bitwise
+	'bittruth': lambda a: a,
+	'bitnot'  : _operator.invert,      # 10
+	'bitand'  : _operator.and_,        # 0001
+	'bitor'   : _operator.or_,         # 0111
+	'bitnand' : _nand,                 # 1110
+	'bitnor'  : _nor,                  # 1000
+	'bitxor'  : _operator.xor,         # 0110
+	'bitxnor' : _operator.eq,          # 1001
+	'bitimp'  : _implication,          # 1101
+	'bitcon'  : _converse_implication, # 1011
+	'bitnimp' : _nimp,                 # 0010
+	'bitncon' : _ncon,                 # 0100
+	'lshift'  : _operator.lshift,
+	'rshift'  : _operator.rshift,
+
+# miscellaneous
+	'dist'    : _dist,
+	'any'     : _builtins.any,
+	'all'     : _builtins.all,
+	'len'     : _builtins.len,
+	'range'   : _builtins.range,
+	'reversed': _builtins.reversed,
+	'sorted'  : _builtins.sorted,
+	'divmod'  : _builtins.divmod,
+	'call'    : _operator.call,
+	'matmul'  : _operator.matmul,
+	'concat'  : _operator.concat,
+	'sign'    : _signum,
+	'ifelse'  : _ifelse,
+	'fact'    : _math.factorial,
+	'gamma'   : _math.gamma,
+	'sumt'    : _sumtorial,
+	'gcd'     : _math.gcd,
+	'lcm'     : _math.lcm,
+	'clamp'   : _clamp,
+	'lerp'    : _lerp,
+	'unlerp'  : _unlerp,
+	'min'     : _builtins.min,
+	'max'     : _builtins.max,
+	'is'      : _operator.is_,
+	'isnot'   : _operator.is_not,
+	'erf'     : _math.erf
+	'erfc'    : _math.erfc
+	'in'      : 
+	'notin'   : 
+}
+
+
+
+	//from typing import Literal as _Literal
+	/*
+	from operator import add, sub, mul, truediv as div, pos, neg, mod, floordiv, truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
 from builtins import pow, round, any, all, len, range, reversed, sorted, divmod, min, max
 from math import floor, ceil, trunc as ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, factorial as fact, gamma, gcd, lcm
 from cmath import phase
@@ -250,6 +512,8 @@ def rms(data):
 'bitnimp' : _nimp,                 # 0010
 'bitncon' : _ncon,                 # 0100
 """
+*/
+
 # "why is there a '_' everywhere?!?"
 # because this file is directly exposed in the module's namespace, and we want only the operator_dicts to be visible; not anything else
 
@@ -517,196 +781,4 @@ def _dist(*args):
 	return sqrt(sum(arg**2 for arg in args))
 
 #default = _DotDict()
-
-default = {
-# arithmetic
-'add'     : _operator.add,
-'sub'     : _operator.sub,
-'mul'     : _operator.mul,
-'div'     : _operator.truediv,
-
-# numeric
-'pos'     : _operator.pos,	  # unary plus, positive
-'neg'     : _operator.neg,    # unary minus, negative, additive inverse
-'mod'     : _operator.mod,
-'floordiv': _operator.floordiv,
-'abs'     : _operator.abs,
-'inv'     : _reciprocal,      # multiplicative inverse
-'square'  : _square,
-'cube'    : _cube,
-'pow'     : _builtins.pow,
-'floor'   : _math.floor,
-'round'   : _builtins.round,
-'ceil'    : _math.ceil,
-'ipart'   : _math.trunc,
-'fpart'   : _fractional_part,
-'exp'     : _math.exp,
-'exp2'    : _math.exp2,
-'log10'   : _math.log10,
-'log2'    : _math.log2,
-'log'     : _math.log,
-'sqrt'    : _math.sqrt,
-'cbrt'    : _math.cbrt,
-'root'    : _root,
-
-# trigonometric
-'sin'     : _math.sin,
-'cos'     : _math.cos,
-'tan'     : _math.tan,
-'cot'     : _cot,
-'sec'     : _sec,
-'csc'     : _csc,
-'asin'    : _math.asin,
-'acos'    : _math.acos,
-'atan'    : _math.atan,
-'acot'    : _acot,
-'asec'    : _asec,
-'acsc'    : _acsc,
-
-# hyperbolic
-'sinh'    : _math.sinh,
-'cosh'    : _math.cosh,
-'tanh'    : _math.tanh,
-'coth'    : _coth,
-'sech'    : _sech,
-'csch'    : _csch,
-'asinh'   : _math.asinh,
-'acosh'   : _math.acosh,
-'atanh'   : _math.atanh,
-'acoth'   : _acoth,
-'asech'   : _asech,
-'acsch'   : _acsch,
-
-# left out due to obscurity. also probably mostly wrong :P
-#'versin'    : lambda a: 1 - math.cos(a)
-#'coversin'  : lambda a: 1 - math.sin(a)
-#'haversin'  : lambda a: 0.5 - math.cos(a)/2
-#'hacoversin': lambda a: 0.5 - math.sin(a)/2
-#'exsec'     : lambda a: 1/math.cos(a) - 1
-#'excsc'     : lambda a: 1/math.sin(a) - 1
-#'chord'     : lambda a: 2 * math.sin(a/2)
-#'vercos'    : lambda a: 1 + math.cos(a)
-#'covercos'  : lambda a: 1 + math.sin(a)
-#'havercos'  : lambda a: 0.5 + math.cos(a)/2
-#'hacovercos': lambda a: 0.5 + math.sin(a)/2
-
-# complex
-'real'    : _get_real, # get real lmao
-'imag'    : _get_imag,
-'phase'   : _cmath.phase,
-'conj'    : _call_conjugate,
-
-# boolean
-'truth'   : _operator.truth,       # 01
-'not'     : _operator.not_,        # 10
-'and'     : _operator.and_,        # 0001
-'nimp'    : _nimp,                 # 0010
-'ncon'    : _ncon,                 # 0100
-'xor'     : _operator.xor,         # 0110
-'or'      : _operator.or_,         # 0111
-'nor'     : _nor,                  # 1000
-'xnor'    : _operator.eq,          # 1001
-'con'     : _converse_implication, # 1011
-'imp'     : _implication,          # 1101
-'nand'    : _nand,                 # 1110
-
-# comparative
-'lt'      : _operator.lt,
-'le'      : _operator.le,
-'eq'      : _operator.eq,
-'ne'      : _operator.ne,
-'ge'      : _operator.ge,
-'gt'      : _operator.gt,
-
-# statistical
-'mean'    : _mean,
-'median'  : _median,
-'mode'    : _mode,
-'pmean'   : _generalized_mean,
-
-# combinatorial
-'comb'    : _math.comb,
-'perm'    : _math.perm,
-
-# hello there! lol
-
-# bitwise
-'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,      # 10
-'bitand'  : _operator.and_,        # 0001
-'bitor'   : _operator.or_,         # 0111
-'bitnand' : _nand,                 # 1110
-'bitnor'  : _nor,                  # 1000
-'bitxor'  : _operator.xor,         # 0110
-'bitxnor' : _operator.eq,          # 1001
-'bitimp'  : _implication,          # 1101
-'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,                 # 0010
-'bitncon' : _ncon,                 # 0100
-'lshift'  : _operator.lshift,
-'rshift'  : _operator.rshift,
-
-# miscellaneous
-'dist'    : _dist,
-'any'     : _builtins.any,
-'all'     : _builtins.all,
-'len'     : _builtins.len,
-'range'   : _builtins.range,
-'reversed': _builtins.reversed,
-'sorted'  : _builtins.sorted,
-'divmod'  : _builtins.divmod,
-'call'    : _operator.call,
-'matmul'  : _operator.matmul,
-'concat'  : _operator.concat,
-'sign'    : _signum,
-'ifelse'  : _ifelse,
-'fact'    : _math.factorial,
-'gamma'   : _math.gamma,
-'sumt'    : _sumtorial,
-'gcd'     : _math.gcd,
-'lcm'     : _math.lcm,
-'clamp'   : _clamp,
-'lerp'    : _lerp,
-'unlerp'  : _unlerp,
-'min'     : _builtins.min,
-'max'     : _builtins.max,
-'is'      : _operator.is_,
-'isnot'   : _operator.is_not,
-#'erf'     : _math.erf
-#'erfc'    : _math.erfc
-#'in'      : 
-#'notin'   : 
-}
-
-
-complex = default.copy()
-
-complex.update({
-# trigonometric
-'sin'   : _cmath.sin,
-'cos'   : _cmath.cos,
-'tan'   : _cmath.tan,
-'cot'   : _cot_cmath,
-'sec'   : _sec_cmath,
-'csc'   : _csc_cmath,
-'asin'  : _cmath.asin,
-'acos'  : _cmath.acos,
-'atan'  : _cmath.atan,
-'acot'  : _acot_cmath,
-'asec'  : _asec_cmath,
-'acsc'  : _acsc_cmath,
-
-# hyperbolic
-'sinh'  : _cmath.sinh,
-'cosh'  : _cmath.cosh,
-'tanh'  : _cmath.tanh,
-'coth'  : _coth_cmath,
-'sech'  : _sech_cmath,
-'csch'  : _csch_cmath,
-'asinh' : _cmath.asinh,
-'acosh' : _cmath.acosh,
-'atanh' : _cmath.atanh,
-'acoth' : _acoth_cmath,
-'asech' : _asech_cmath,
-'acsch' : _acsch_cmath
-})
+*/
