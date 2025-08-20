@@ -1,62 +1,192 @@
-a collection of convenient functions i use a lot. to be ported to other languages soon
+im tired of having unpredictable math ops in my programs. so i made this cross-language swiss army knife of math stuff. 
 
-this project is convenience-first, feature-second, performance-last. it implements the following functions:
+# HOW IHNSTALL???!?!?
 
-arithmetic:
-	neg      : negative                    - 2 = -2
-	inv      : reciprocal                  / 2 =  0.5
-	add      : binary addition          -5 + 2 = -3
-	sub      : binary subtraction       -5 - 2 = -7
-	mul      : binary multiplication    -5 * 2 = -10
-	div      : binary division          -5 / 2 = -2.5
-	floordiv : division rounded down    -5 / 2 = -3
-	modulus  : remaining of floordiv    -5 % 2 =  1
-	quotient : division rounded to zero -5 / 2 = -2
-	remainder: remaining of quotient    -5 % 2 = -1
+choose your language:
+<details><summary>
 
-boolean:
-	false: contradiction            0
-	true : tautology                1
-	truth: truthiness              01
-	not  : negation                10
-	and  : conjunction           0001
-	nimp : not(imp)              0010
-	fst  : first                 0011
-	ncon : not(con)              0100
-	snd  : second                0101
-	xor  : exclusive disjunction 0110
-	or   : disjunction           0111
-	nor  : not(or)               1000
-	xnor : not(xor)              1001
-	nsnd : not(snd)              1010
-	con  : converse implication  1011
-	nfst : not(fst)              1100
-	imp  : implication           1101
-	nand : not(and)              1110
+## python </summary>
 
-comparative:
-	lt : less than                2 <  3 is true 
-	le : less than or equal to    2 <= 3 is true
-	eq : equal to                 2 == 3 is false
-	ne : not equal to             2 != 3 is true
-	ge : greater than or equal to 2 >= 3 is false
-	gt : greater than             2  > 3 is false
+```
+pip install swissmath
+```
+or
+```
+python -m pip install swissmath
+```
 
-truncative ???:
+</details>
+
+
+# operators
+
+<details open><summary>arithmetic</summary>
+
+```
+name      | explanation              | example
+----------+--------------------------+--------------------------------
+neg       | negative                 |             - 2 = -2
+inv       | reciprocal               |             / 2 = 0.5
+add       | binary addition          |          -5 + 2 = -3
+sub       | binary subtraction       |          -5 - 2 = -7
+mul       | binary multiplication    |          -5 * 2 = -10
+div       | binary division          |          -5 / 2 = -2.5
+pow       | binary exponentiation    |          -5 ^ 2 = 25
+log       | binary logarithm         |       log(-5,2) = 2.322 + 4.532i
+exp       | exponentiation base e    | 
+exp2      | exponentiation base 2    | 
+ln        | logarithm base e         | 
+log2      | logarithm base 2         | 
+log10     | logarithm base 10        | 
+floordiv  | division rounded down    |  floordiv(-5,2) = -3
+modulus   | remaining of floordiv    |   modulus(-5,2) = 1
+quotient  | division rounded to zero |  quotient(-5,2) = -2
+remainder | remaining of quotient    | remainder(-5,2) = -1
+
+root
+sqrt
+cbrt
+abs
+floor
+round
+ceil
+gcd
+lcm
+```
+</details><details open><summary>comparative </summary>
+
+```
+name | explanation              | example  
+-----+--------------------------+----------------
+lt   | less than                | 2 <  3 is true 
+le   | less than or equal to    | 2 <= 3 is true
+eq   | equal to                 | 2 == 3 is false
+ne   | not equal to             | 2 != 3 is true
+ge   | greater than or equal to | 2 >= 3 is false
+gt   | greater than             | 2  > 3 is false
+``` 
+</details><details open><summary>trigonometric </summary>
+
+```
+name | explanation           | example
+-----+-----------------------+----------
+sin  | circular sine         |  sin(1) = 0.8414709848
+cos  | circular cosine       |  cos(1) = 0.54030230586
+tan  | circular tangent      |  tan(1) = 1.55740772465
+cot  | circular cotangent    |  cot(1) = 0.642093
+sec  | circular secant       |  sec(1) = 1.85081571768
+csc  | circular cosecant     |  csc(1) = 1.18839510578
+asin | circular arcsine      | asin(1) = 1.57079633
+acos | circular arccosine    | acos(1) = 0
+atan | circular arctangent   | atan(1) = 0.785398163 
+acot | circular arccotangent | acot(1) = 0.785398163
+asec | circular arcsecant    | asec(1) = 0
+acsc | circular arccosecant  | acsc(1) = 1.57079633
+```
+</details><details open><summary>hyperbolic </summary>
+
+```
+name  | explanation             | example
+------+-------------------------+----------
+sinh  | hyperbolic sine         | 1.1752012
+cosh  | hyperbolic cosine       | 1.5430806
+tanh  | hyperbolic tangent      | 0.7615942
+coth  | hyperbolic cotangent    | 1.3130353
+sech  | hyperbolic secant       | 0.6480543
+csch  | hyperbolic cosecant     | 0.8509181
+asinh | hyperbolic arcsine      | 0.88137359
+acosh | hyperbolic arccosine    | 0
+atanh | hyperbolic arctangent   | infinity
+acoth | hyperbolic arccotangent | infinity
+asech | hyperbolic arcsecant    | 0
+acsch | hyperbolic arccosecant  | 0.88137359
+```
+</details><details open><summary>boolean </summary>
+
+```
+name  | explanation           | truth | example            
+------+-----------------------+-------+-----------------
+truth | truthiness            |    FT |           A =  A 
+not   | negation              |    TF |          ¬F =  T  
+and   | conjunction           |  FFFT |       F ∧ T =  F  
+nimp  | not(imp)              |  FFTF |    ¬(F → T) =  F  
+fst   | first                 |  FFTT |    fst(A,B) =  A  
+ncon  | not(con)              |  FTFF |    ¬(F ← T) =  T  
+snd   | second                |  FTFT |    snd(A,B) =  B  
+xor   | exclusive disjunction |  FTTF |      F ⊕ T =  T 
+or    | disjunction           |  FTTT |       F ∨ T =  T  
+nor   | not(or)               |  TFFF |    ¬(F ∨ T) =  F  
+xnor  | equivalence           |  TFFT |      F ⊙ T =  F 
+nsnd  | not(snd)              |  TFTF | ¬(snd(A,B)) = ¬B  
+con   | converse implication  |  TFTT |       F ← T =  F  
+nfst  | not(fst)              |  TTFF | ¬(fst(F,T)) = ¬A
+imp   | implication           |  TTFT |       F → T =  T  
+nand  | not(and)              |  TTTF |    ¬(F ∧ T) =  T
+```
+</details><details open><summary>bitwise </summary>
+
+```
+name     | explanation           | truth | example
+---------+-----------------------+-------+-----------------
+bittruth | truthiness            |    01 |             A =  A 
+bitnot   | negation              |    10 |            ~5 =  
+bitand   | conjunction           |  0001 |         3 ∧ 5 =    
+bitnimp  | not(imp)              |  0010 |      ¬(3 → 5) =    
+bitfst   | first                 |  0011 |   bitfst(A,B) =  A  
+bitncon  | not(con)              |  0100 |      ¬(3 ← 5) =    
+bitsnd   | second                |  0101 |   bitsnd(A,B) =  B  
+bitxor   | exclusive disjunction |  0110 |        3 ⊕ 5 =  
+bitor    | disjunction           |  0111 |         3 ∨ 5 = 
+bitnor   | not(or)               |  1000 |      ¬(3 ∨ 5) = 
+bitxnor  | equivalence           |  1001 |        3 ⊙ 5 =  
+bitnsnd  | not(snd)              |  1010 |  bitnsnd(A,B) = ¬B  
+bitcon   | converse implication  |  1011 |         3 ← 5 =   
+bitnfst  | not(fst)              |  1100 |  bitnfst(A,B) = ¬A
+bitimp   | implication           |  1101 |         3 → 5 = 
+bitnand  | not(and)              |  1110 |      ¬(3 ∧ 5) = 
+bitleft  | left shift            |       |  bitleft(3,5) = 96
+bitright | right shift           |       | bitright(3,5) = 0
+```
+</details><details open><summary>complex </summary>
+
+```
+name  | explanation    | example
+------+----------------+---------------------------
+real  | real part      | 
+imag  | imaginary part | 
+phase | argument       | 
+conj  | conjugate      | 
+```
+</details><details open><summary>miscellaneous </summary>
+
+```
+name   | explanation                        | example
+-------+------------------------------------+---------------------------
+ipart  | integer part
+fpart  | fractional part
+fact   | factorial                          | 
+sumt   | sumtorial (sum of all Z up to n)   | 
+comb   | combinations                       | 
+perm   | permutations                       | 
+clamp  | restrict within [a,b]              |   clamp(1.2, 0, 0.8) = 0.8
+lerp   | linear interpolation               |      lerp(0.5, 2, 3) = 2.5
+unlerp | inverse of linear interpolation    |    unlerp(2.5, 2, 3) = 0.5
+map    | map x in [a,b] to [c,d]            | map(2.5, 2, 3, 4, 5) = 4.5
+sgn    | signum. -1 if <0, +1 if >0, else 0 | 
+```
+
+<!--
+truncative ???
 	floor: round down to nearest integer    floor(2.5) = 2
 	round: to nearest integer, half to even round(2.5) = 2
 	ceil : round up to nearest integer       ceil(2.5) = 3
 	ipart: integer part      ipart(-2.5) = -2
 	fpart: fractional part   fpart(-2.5) = 0.5
 
-lshift, rshift, call, matmul, concat, is, is_not, pow, round, any, all, len, range, reversed, sorted, divmod, min, max, floor, ceil, ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, fact, gamma, gcd, lcm, phase, mean, median, mode, var, stdev, inv
-def fpart(x):
-def root(x, base):
+
+call, matmul, concat, is, is_not, any, all, len, range, reversed, sorted, divmod, min, max, floor, ceil, ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, fact, gamma, gcd, lcm, phase, mean, median, mode, var, stdev, inv
 def ifelse(a,b,c):
 def abs(*args):
-def real(x):
-def imag(x):
-def conj(x):
 def piecewise(*args):
 def summation(*args):
 def product(*args):
@@ -71,42 +201,12 @@ def definite_integral():
 def indefinite_integral():
 def derivative():
 def partial_derivative():
-def clamp(x, low=0, high=1):
-def lerp(x, low, high):
-def unlerp(x, low, high):
-def map(x, a, b, c, d):
 def sumt(x):
-def sgn(a):
-def nand(a,b):
-def nor(a, b):
-def imp(a, b):
-def con(a, b):
-def nimp(a, b):
-def ncon(a, b):
-def cot(x):
-def sec(x):
-def csc(x):
-def acot(x):
-def asec(x):
-def acsc(x):
-def coth(x):
-def sech(x):
-def csch(x):
-def acoth(x):
-def asech(x):
-def acsch(x):
+
 def pmean(data, p):
 def rms(data):
 #def aad(data, centre=_Literal['mean','median','mode'], measure=_):
 #def pdev(data, p):
-
-#from .miscellaneous.dot_dict import DotDict as _DotDict
-import math as _math
-import cmath as _cmath
-import operator as _operator
-import numbers as _numbers
-import builtins as _builtins
-import statistics as _statistics
 
 def _generalized_mean(p, *args):
 	'returns the power mean for given p (first argument) (p=1: arithmetic, 0: geometric, -1: harmonic)'
@@ -124,77 +224,10 @@ def _median(*args):
 def _mode(*args):
 	return _statistics.mode(args)
 
-def _reciprocal(x):
-	'y such that x*y = 1, where 1 is the multiplicative identity'
-	return 1/x
-
-def _root(x, base):
-	'root of a number in an arbitrary base'
-	return x**(1/base)
-
-def _square(x):
-	'x**2, x*x, x^2, x²'
-	return x**2
-
-def _cube(x):
-	'x**3, x*x*x, x^2, x³'
-	return x**3
-
-def _fractional_part(x):
-	'the non-integer part of a number'
-	return _math.modf(x)[0]
 
 def _ifelse(a,b,c):
 	'return b if a is true, otherwise return c'
 	return b if a else c
-
-def _cot(x):
-	'trigonometric cotangent'
-	return 1/_math.tan(x)
-
-def _sec(x):
-	'trigonometric secant'
-	return 1/_math.cos(x)
-
-def _csc(x):
-	'trigonometric cosecant'
-	return 1/_math.sin(x)
-
-def _acot(x):
-	'inverse trigonometric cotangent'
-	return _math.atan(1/x)
-
-def _asec(x):
-	'inverse trigonometric secant'
-	return _math.acos(1/x)
-
-def _acsc(x):
-	'inverse trigonometric cosecant'
-	return _math.asin(1/x)
-
-def _coth(x):
-	'hyperbolic cotangent'
-	return 1/_math.tanh(x)
-
-def _sech(x):
-	'hyperbolic secant'
-	return 1/_math.cosh(x)
-
-def _csch(x):
-	'hyperbolic cosecant'
-	return 1/_math.sinh(x)
-
-def _acoth(x):
-	'inverse hyperbolic cotangent'
-	return _math.atanh(1/x)
-
-def _asech(x):
-	'inverse hyperbolic secant'
-	return _math.acosh(1/x)
-
-def _acsch(x):
-	'inverse hyperbolic cosecant'
-	return _math.asinh(1/x)
 
 def _get_real(x):
 	'get real lmao https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -266,98 +299,6 @@ def _partial_derivative():
 	'variadic(func, var1, var2, ..., varN)'
 	raise NotImplementedError
 
-def _clamp(x, low, high):
-	'return x but constrained within [low, high]'
-	return min(max(x,low),high)
-
-def _lerp(x, low, high):
-	'linear interpolation. allows 1<x<0'
-	return low + x*(high-low)
-
-def _unlerp(x, low, high):
-	'inverse of linear interpolation. allows high<x<low'
-	return (x-low)/(high-low)
-
-def _sumtorial(x):
-	'return sum of all numbers from 1 to x. like factorial but with addition'
-	return sum(range(1, a+1))
-
-def _signum(a):
-	'return -1 if negative, 0 if zero, 1 if positive'
-	return (a>0) - (a<0)
-
-def _nand(a,b):
-	'return not(a and b) AKA ¬(a∧b) AKA negation(conjunction(a,b))'
-	return not(a and b)
-
-def _nor(a, b):
-	'return not(a or b) AKA ¬(a∨b) AKA negation(disjunction(a,b))'
-	return not(a or b)
-
-def _implication(a, b):
-	'return not a or b AKA a->b AKA ¬a∨b AKA disjunction(negation(a),b)'
-	return not a or b
-
-def _converse_implication(a, b):
-	'return a or not b AKA b->a AKA a∨¬b AKA disjunction(a,negation,b)'
-	return a or not b
-
-def _nimp(a, b):
-	'return a and not b AKA ¬(a->b) AKA a∧¬b AKA negation(implication(a,b))'
-	return a and not b
-
-def _ncon(a, b):
-	'return not a and b AKA ¬(a->b) AKA ¬a∧b AKA negation(converse_implication(a,b))'
-	return not a and b
-
-def _cot_cmath(x):
-	'trigonometric cotangent (using cmath)'
-	return 1/_cmath.tan(x)
-
-def _sec_cmath(x):
-	'trigonometric secant (using cmath)'
-	return 1/_cmath.cos(x)
-
-def _csc_cmath(x):
-	'trigonometric cosecant (using cmath)'
-	return 1/_cmath.sin(x)
-
-def _acot_cmath(x):
-	'inverse trigonometric cotangent (using cmath)'
-	return _cmath.atan(1/x)
-
-def _asec_cmath(x):
-	'inverse trigonometric secant (using cmath)'
-	return _cmath.acos(1/x)
-
-def _acsc_cmath(x):
-	'inverse trigonometric cosecant (using cmath)'
-	return _cmath.asin(1/x)
-
-def _coth_cmath(x):
-	'hyperbolic cotangent (using cmath)'
-	return 1/_cmath.tanh(x)
-
-def _sech_cmath(x):
-	'hyperbolic secant (using cmath)'
-	return 1/_cmath.cosh(x)
-
-def _csch_cmath(x):
-	'hyperbolic cosecant (using cmath)'
-	return 1/_cmath.sinh(x)
-
-def _acoth_cmath(x):
-	'inverse hyperbolic cotangent (using cmath)'
-	return _cmath.atanh(1/x)
-
-def _asech_cmath(x):
-	'inverse hyperbolic secant (using cmath)'
-	return _cmath.acosh(1/x)
-
-def _acsch_cmath(x):
-	'inverse hyperbolic cosecant (using cmath)'
-	return _cmath.asinh(1/x)
-
 def _dist(*args):
 	'euclidean distance in n dimensions'
 	from math import sqrt
@@ -365,64 +306,7 @@ def _dist(*args):
 
 #default = _DotDict()
 
-default = {
-# arithmetic
-'add'     : _operator.add,
-'sub'     : _operator.sub,
-'mul'     : _operator.mul,
-'div'     : _operator.truediv,
 
-# numeric
-'pos'     : _operator.pos,	  # unary plus, positive
-'neg'     : _operator.neg,    # unary minus, negative, additive inverse
-'mod'     : _operator.mod,
-'floordiv': _operator.floordiv,
-'abs'     : _operator.abs,
-'inv'     : _reciprocal,      # multiplicative inverse
-'square'  : _square,
-'cube'    : _cube,
-'pow'     : _builtins.pow,
-'floor'   : _math.floor,
-'round'   : _builtins.round,
-'ceil'    : _math.ceil,
-'ipart'   : _math.trunc,
-'fpart'   : _fractional_part,
-'exp'     : _math.exp,
-'exp2'    : _math.exp2,
-'log10'   : _math.log10,
-'log2'    : _math.log2,
-'log'     : _math.log,
-'sqrt'    : _math.sqrt,
-'cbrt'    : _math.cbrt,
-'root'    : _root,
-
-# trigonometric
-'sin'     : _math.sin,
-'cos'     : _math.cos,
-'tan'     : _math.tan,
-'cot'     : _cot,
-'sec'     : _sec,
-'csc'     : _csc,
-'asin'    : _math.asin,
-'acos'    : _math.acos,
-'atan'    : _math.atan,
-'acot'    : _acot,
-'asec'    : _asec,
-'acsc'    : _acsc,
-
-# hyperbolic
-'sinh'    : _math.sinh,
-'cosh'    : _math.cosh,
-'tanh'    : _math.tanh,
-'coth'    : _coth,
-'sech'    : _sech,
-'csch'    : _csch,
-'asinh'   : _math.asinh,
-'acosh'   : _math.acosh,
-'atanh'   : _math.atanh,
-'acoth'   : _acoth,
-'asech'   : _asech,
-'acsch'   : _acsch,
 
 # left out due to obscurity. also probably mostly wrong :P
 #'versin'    : lambda a: 1 - math.cos(a)
@@ -471,27 +355,7 @@ default = {
 'mode'    : _mode,
 'pmean'   : _generalized_mean,
 
-# combinatorial
-'comb'    : _math.comb,
-'perm'    : _math.perm,
-
 # hello there! lol
-
-# bitwise
-'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,      # 10
-'bitand'  : _operator.and_,        # 0001
-'bitor'   : _operator.or_,         # 0111
-'bitnand' : _nand,                 # 1110
-'bitnor'  : _nor,                  # 1000
-'bitxor'  : _operator.xor,         # 0110
-'bitxnor' : _operator.eq,          # 1001
-'bitimp'  : _implication,          # 1101
-'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,                 # 0010
-'bitncon' : _ncon,                 # 0100
-'lshift'  : _operator.lshift,
-'rshift'  : _operator.rshift,
 
 # miscellaneous
 'dist'    : _dist,
@@ -523,37 +387,59 @@ default = {
 #'erfc'    : _math.erfc
 #'in'      : 
 #'notin'   : 
-}
+-->
 
 
-complex = default.copy()
+</details>
 
-complex.update({
-# trigonometric
-'sin'   : _cmath.sin,
-'cos'   : _cmath.cos,
-'tan'   : _cmath.tan,
-'cot'   : _cot_cmath,
-'sec'   : _sec_cmath,
-'csc'   : _csc_cmath,
-'asin'  : _cmath.asin,
-'acos'  : _cmath.acos,
-'atan'  : _cmath.atan,
-'acot'  : _acot_cmath,
-'asec'  : _asec_cmath,
-'acsc'  : _acsc_cmath,
+# constants
+```
+name | value
+-----+-------------------------------
+E    | 2.71828182845904523536...
+PI   | 3.14159265358979323846...
+TAU  | 6.28318530717958647692...
+INF  | IEEE 754 inf
+NAN  | IEEE 754 nan
+```
+and also the following SI constants because why tf not
+```
+name    | value (exact)
+--------+----------------------------
+SI_DVCS | 9192631770
+SI_C    |  299792458
+SI_H    |          6.62607015  *10^−34
+SI_E    |          1.602176634 *10^−19
+SI_K    |          1.380649    *10^−23
+SI_NA   |          6.02214076  *10^+23
+SI_KCD  |        683
+```
 
-# hyperbolic
-'sinh'  : _cmath.sinh,
-'cosh'  : _cmath.cosh,
-'tanh'  : _cmath.tanh,
-'coth'  : _coth_cmath,
-'sech'  : _sech_cmath,
-'csch'  : _csch_cmath,
-'asinh' : _cmath.asinh,
-'acosh' : _cmath.acosh,
-'atanh' : _cmath.atanh,
-'acoth' : _acoth_cmath,
-'asech' : _asech_cmath,
-'acsch' : _acsch_cmath
-})
+
+# conversions
+
+because i forget sometimes
+```
+mps_to_kmph
+kmph_to_mps
+celsius_to_fahrenheit
+celsius_to_kelvin
+celsius_to_rankine
+fahrenheit_to_celsius
+fahrenheit_to_kelvin
+fahrenheit_to_rankine
+kelvin_to_celsius
+kelvin_to_fahrenheit
+kelvin_to_rankine
+rankine_to_celsius
+rankine_to_fahrenheit
+rankine_to_kelvin
+```
+
+
+ya thats pretty much it  
+
+this project is convenience > predictability > features > performance so i dont really care how slow it does it, as long as it *does* it
+
+motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
+
