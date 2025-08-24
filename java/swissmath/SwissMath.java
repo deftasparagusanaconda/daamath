@@ -36,35 +36,49 @@ public final class SwissMath
 	static long   add(long   a, long   b) { return         a+        b; }
 	static float  add(long   a, float  b) { return (float )a+        b; }
 	static double add(long   a, double b) { return (double)a+        b; }
-	static float  add(float  a, byte   b) { return         a+(float) b; }
-	static float  add(float  a, short  b) { return a+b; }
-	static float  add(float  a, int    b) { return a+b; }
-	static float  add(float  a, long   b) { return a+b; }
-	static float  add(float  a, float  b) { return a+b; }
-	static double add(float  a, double b) { return a+b; }
-	static double add(double a, byte   b) { return a+b; }
-	static double add(double a, short  b) { return a+b; }
-	static double add(double a, int    b) { return a+b; }
-	static double add(double a, long   b) { return a+b; }
-	static double add(double a, float  b) { return a+b; }
-	static double add(double a, double b) { return a+b; }
+	static float  add(float  a, byte   b) { return         a+(float )b; }
+	static float  add(float  a, short  b) { return         a+(float )b; }
+	static float  add(float  a, int    b) { return         a+(float )b; }
+	static float  add(float  a, long   b) { return         a+(float )b; }
+	static float  add(float  a, float  b) { return         a+        b; }
+	static double add(float  a, double b) { return (double)a+        b; }
+	static double add(double a, byte   b) { return         a+(double)b; }
+	static double add(double a, short  b) { return         a+(double)b; }
+	static double add(double a, int    b) { return         a+(double)b; }
+	static double add(double a, long   b) { return         a+(double)b; }
+	static double add(double a, float  b) { return         a+(double)b; }
+	static double add(double a, double b) { return         a+        b; }
 	
-	static int    sub(int    a, int    b) { return a-b; }
-	static long   sub(int    a, long   b) { return a-b; }
-	static float  sub(int    a, float  b) { return a-b; }
-	static double sub(int    a, double b) { return a-b; }
-	static long   sub(long   a, int    b) { return a-b; }
-	static long   sub(long   a, long   b) { return a-b; }
-	static float  sub(long   a, float  b) { return a-b; }
-	static double sub(long   a, double b) { return a-b; }
-	static float  sub(float  a, int    b) { return a-b; }
-	static float  sub(float  a, long   b) { return a-b; }
-	static float  sub(float  a, float  b) { return a-b; }
-	static double sub(float  a, double b) { return a-b; }
-	static double sub(double a, int    b) { return a-b; }
-	static double sub(double a, long   b) { return a-b; }
-	static double sub(double a, float  b) { return a-b; }
-	static double sub(double a, double b) { return a-b; }
+	static int    sub(byte   a, byte   b) { return (int   )a-(int   )b; }
+	static int    sub(byte   a, short  b) { return (int   )a-(int   )b; }
+	static int    sub(byte   a, int    b) { return (int   )a-        b; }
+	static long   sub(byte   a, long   b) { return (long  )a-        b; }
+	static float  sub(byte   a, float  b) { return (float )a-        b; }
+	static double sub(byte   a, double b) { return (double)a-        b; }
+	static int    sub(short  a, byte   b) { return (int   )a-(int   )b; }
+	static int    sub(short  a, short  b) { return (int   )a-(int   )b; }
+	static int    sub(short  a, int    b) { return (int   )a-        b; }
+	static long   sub(short  a, long   b) { return (long  )a-        b; }
+	static float  sub(short  a, float  b) { return (int   )a         b; }
+	static double sub(short  a, double b) { return (int   )a-b; }
+	static long   sub(long   a, byte   b) { return         a-(int   )b; }
+	static long   sub(long   a, short  b) { return         a-(int   )b; }
+	static long   sub(long   a, int    b) { return         a-b; }
+	static long   sub(long   a, long   b) { return         a-b; }
+	static float  sub(long   a, float  b) { return         a-b; }
+	static double sub(long   a, double b) { return         a-b; }
+	static float  sub(float  a, byte   b) { return         a-(int   )b; }
+	static float  sub(float  a, short  b) { return         a-(int   )b; }
+	static float  sub(float  a, int    b) { return         a-b; }
+	static float  sub(float  a, long   b) { return         a-b; }
+	static float  sub(float  a, float  b) { return         a-b; }
+	static double sub(float  a, double b) { return         a-b; }
+	static double sub(double a, byte   b) { return         a-(int   )b; }
+	static double sub(double a, short  b) { return         a-(int   )b; }
+	static double sub(double a, int    b) { return         a-b; }
+	static double sub(double a, long   b) { return         a-b; }
+	static double sub(double a, float  b) { return         a-b; }
+	static double sub(double a, double b) { return         a-b; }
 	
 	static int    mul(int    a, int    b) { return a*b; }
 	static long   mul(int    a, long   b) { return a*b; }
