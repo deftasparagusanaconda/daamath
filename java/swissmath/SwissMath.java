@@ -59,73 +59,129 @@ public final class SwissMath
 	static int    sub(short  a, short  b) { return (int   )a-(int   )b; }
 	static int    sub(short  a, int    b) { return (int   )a-        b; }
 	static long   sub(short  a, long   b) { return (long  )a-        b; }
-	static float  sub(short  a, float  b) { return (int   )a         b; }
-	static double sub(short  a, double b) { return (int   )a-b; }
-	static long   sub(long   a, byte   b) { return         a-(int   )b; }
-	static long   sub(long   a, short  b) { return         a-(int   )b; }
-	static long   sub(long   a, int    b) { return         a-b; }
-	static long   sub(long   a, long   b) { return         a-b; }
-	static float  sub(long   a, float  b) { return         a-b; }
-	static double sub(long   a, double b) { return         a-b; }
-	static float  sub(float  a, byte   b) { return         a-(int   )b; }
-	static float  sub(float  a, short  b) { return         a-(int   )b; }
-	static float  sub(float  a, int    b) { return         a-b; }
-	static float  sub(float  a, long   b) { return         a-b; }
-	static float  sub(float  a, float  b) { return         a-b; }
-	static double sub(float  a, double b) { return         a-b; }
-	static double sub(double a, byte   b) { return         a-(int   )b; }
-	static double sub(double a, short  b) { return         a-(int   )b; }
-	static double sub(double a, int    b) { return         a-b; }
-	static double sub(double a, long   b) { return         a-b; }
-	static double sub(double a, float  b) { return         a-b; }
-	static double sub(double a, double b) { return         a-b; }
+	static float  sub(short  a, float  b) { return (float )a-        b; }
+	static double sub(short  a, double b) { return (double)a-        b; }
+	static int    sub(int    a, byte   b) { return         a-(int   )b; }
+	static int    sub(int    a, short  b) { return         a-(int   )b; }
+	static int    sub(int    a, int    b) { return         a-        b; }
+	static long   sub(int    a, long   b) { return (long  )a-        b; }
+	static float  sub(int    a, float  b) { return (float )a-        b; }
+	static double sub(int    a, double b) { return (double)a-        b; }
+	static long   sub(long   a, byte   b) { return         a-(long  )b; }
+	static long   sub(long   a, short  b) { return         a-(long  )b; }
+	static long   sub(long   a, int    b) { return         a-(long  )b; }
+	static long   sub(long   a, long   b) { return         a-        b; }
+	static float  sub(long   a, float  b) { return (float )a-        b; }
+	static double sub(long   a, double b) { return (double)a-        b; }
+	static float  sub(float  a, byte   b) { return         a-(float )b; }
+	static float  sub(float  a, short  b) { return         a-(float )b; }
+	static float  sub(float  a, int    b) { return         a-(float )b; }
+	static float  sub(float  a, long   b) { return         a-(float )b; }
+	static float  sub(float  a, float  b) { return         a-        b; }
+	static double sub(float  a, double b) { return (double)a-        b; }
+	static double sub(double a, byte   b) { return         a-(double)b; }
+	static double sub(double a, short  b) { return         a-(double)b; }
+	static double sub(double a, int    b) { return         a-(double)b; }
+	static double sub(double a, long   b) { return         a-(double)b; }
+	static double sub(double a, float  b) { return         a-(double)b; }
+	static double sub(double a, double b) { return         a-        b; }
 	
-	static int    mul(int    a, int    b) { return a*b; }
-	static long   mul(int    a, long   b) { return a*b; }
-	static float  mul(int    a, float  b) { return a*b; }
-	static double mul(int    a, double b) { return a*b; }
-	static long   mul(long   a, int    b) { return a*b; }
-	static long   mul(long   a, long   b) { return a*b; }
-	static float  mul(long   a, float  b) { return a*b; }
-	static double mul(long   a, double b) { return a*b; }
-	static float  mul(float  a, int    b) { return a*b; }
-	static float  mul(float  a, long   b) { return a*b; }
-	static float  mul(float  a, float  b) { return a*b; }
-	static double mul(float  a, double b) { return a*b; }
-	static double mul(double a, int    b) { return a*b; }
-	static double mul(double a, long   b) { return a*b; }
-	static double mul(double a, float  b) { return a*b; }
-	static double mul(double a, double b) { return a*b; }
+	static int    mul(byte   a, byte   b) { return (int   )a*(int   )b; }
+	static int    mul(byte   a, short  b) { return (int   )a*(int   )b; }
+	static int    mul(byte   a, int    b) { return (int   )a*        b; }
+	static long   mul(byte   a, long   b) { return (long  )a*        b; }
+	static float  mul(byte   a, float  b) { return (float )a*        b; }
+	static double mul(byte   a, double b) { return (double)a*        b; }
+	static int    mul(short  a, byte   b) { return (int   )a*(int   )b; }
+	static int    mul(short  a, short  b) { return (int   )a*(int   )b; }
+	static int    mul(short  a, int    b) { return (int   )a*        b; }
+	static long   mul(short  a, long   b) { return (long  )a*        b; }
+	static float  mul(short  a, float  b) { return (float )a*        b; }
+	static double mul(short  a, double b) { return (double)a*        b; }
+	static int    mul(int    a, byte   b) { return         a*(int   )b; }
+	static int    mul(int    a, short  b) { return         a*(int   )b; }
+	static int    mul(int    a, int    b) { return         a*        b; }
+	static long   mul(int    a, long   b) { return (long  )a*        b; }
+	static float  mul(int    a, float  b) { return (float )a*        b; }
+	static double mul(int    a, double b) { return (double)a*        b; }
+	static long   mul(long   a, byte   b) { return         a*(long  )b; }
+	static long   mul(long   a, short  b) { return         a*(long  )b; }
+	static long   mul(long   a, int    b) { return         a*(long  )b; }
+	static long   mul(long   a, long   b) { return         a*        b; }
+	static float  mul(long   a, float  b) { return (float )a*        b; }
+	static double mul(long   a, double b) { return (double)a*        b; }
+	static float  mul(float  a, byte   b) { return         a*(float )b; }
+	static float  mul(float  a, short  b) { return         a*(float )b; }
+	static float  mul(float  a, int    b) { return         a*(float )b; }
+	static float  mul(float  a, long   b) { return         a*(float )b; }
+	static float  mul(float  a, float  b) { return         a*        b; }
+	static double mul(float  a, double b) { return (double)a*        b; }
+	static double mul(double a, byte   b) { return         a*(double)b; }
+	static double mul(double a, short  b) { return         a*(double)b; }
+	static double mul(double a, int    b) { return         a*(double)b; }
+	static double mul(double a, long   b) { return         a*(double)b; }
+	static double mul(double a, float  b) { return         a*(double)b; }
+	static double mul(double a, double b) { return         a*        b; }
 
+	// a true division always returns at least a float
+	static float  div(byte   a, byte   b) { return (float )a/(float )b; }
+	static float  div(byte   a, short  b) { return (float )a/(float )b; }
+	static float  div(byte   a, int    b) { return (float )a/(float )b; }
+	static float  div(byte   a, long   b) { return (float )a/(float )b; }
+	static float  div(byte   a, float  b) { return (float )a/        b; }
+	static double div(byte   a, double b) { return (double)a/        b; }
+	static float  div(short  a, byte   b) { return (float )a/(float )b; }
+	static float  div(short  a, short  b) { return (float )a/(float )b; }
+	static float  div(short  a, int    b) { return (float )a/(float )b; }
+	static float  div(short  a, long   b) { return (float )a/(float )b; }
+	static float  div(short  a, float  b) { return (float )a/        b; }
+	static double div(short  a, double b) { return (double)a/        b; }
+	static float  div(int    a, byte   b) { return (float )a/(float )b; }
+	static float  div(int    a, short  b) { return (float )a/(float )b; }
 	static float  div(int    a, int    b) { return (float )a/(float )b; }
 	static float  div(int    a, long   b) { return (float )a/(float )b; }
 	static float  div(int    a, float  b) { return (float )a/        b; }
 	static double div(int    a, double b) { return (double)a/        b; }
+	static float  div(long   a, byte   b) { return (float )a/(float )b; }
+	static float  div(long   a, short  b) { return (float )a/(float )b; }
 	static float  div(long   a, int    b) { return (float )a/(float )b; }
 	static float  div(long   a, long   b) { return (float )a/(float )b; }
 	static float  div(long   a, float  b) { return (float )a/        b; }
 	static double div(long   a, double b) { return (double)a/        b; }
+	static float  div(float  a, byte   b) { return         a/(float )b; }
+	static float  div(float  a, short  b) { return         a/(float )b; }
 	static float  div(float  a, int    b) { return         a/(float )b; }
 	static float  div(float  a, long   b) { return         a/(float )b; }
 	static float  div(float  a, float  b) { return         a/        b; }
 	static double div(float  a, double b) { return (double)a/        b; }
+	static double div(double a, byte   b) { return         a/(double)b; }
+	static double div(double a, short  b) { return         a/(double)b; }
 	static double div(double a, int    b) { return         a/(double)b; }
 	static double div(double a, long   b) { return         a/(double)b; }
 	static double div(double a, float  b) { return         a/(double)b; }
 	static double div(double a, double b) { return         a/        b; }
 
-	static 
+	static float  neg(byte   a) { return 1/(float)a; }
+	static float  neg(short  a) { return 1/(float)a; }
+	static float  neg(int    a) { return 1/(float)a; }
+	static float  neg(long   a) { return 1/(float)a; }
+	static float  neg(float  a) { return 1/       a; }
+	static double neg(double a) { return 1/       a; }
+
+	static int    inv(byte   a) { return -(int)a; }
+	static int    inv(short  a) { return -(int)a; }
+	static int    inv(int    a) { return -     a; }
+	static long   inv(long   a) { return -     a; }
+	static float  inv(float  a) { return -     a; }
+	static double inv(double a) { return -     a; }
 }	
 	
 /*	
 
 # numeric
-	'pos'     : _operator.pos,	  # unary plus, positive
-	'neg'     : _operator.neg,    # unary minus, negative, additive inverse
 	'mod'     : _operator.mod,
 	'floordiv': _operator.floordiv,
 	'abs'     : _operator.abs,
-	'inv'     : _reciprocal,      # multiplicative inverse
 	'square'  : _square,
 	'cube'    : _cube,
 	'pow'     : _builtins.pow,

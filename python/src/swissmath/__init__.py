@@ -6,6 +6,27 @@ from math import floor, ceil, trunc as ipart, exp, exp2, log10, log2, log, sqrt,
 from cmath import phase
 from statistics import mean, median, mode, variance as var, stdev
 
+from math import isnan as _isnan
+from math import sin, cos, tan, asin, acos, atan2 as atan, sinh, cosh, tanh, asinh, acosh, atanh
+
+def scaler_tan(x:int|float) -> float:
+	if x < 0 or x > 1:
+		raise ValueError("out of range [0,1]")
+	elif x == 0:
+		return float('-inf')
+	elif x == 0.25:
+		return -1.0
+	elif x == 0.75:
+		return 1.0
+	elif x == 1:
+		return float('inf')
+	else:
+		from math import tan, pi
+		return tan((x-0.5)*pi)
+
+def scaler_sigmoid(x:int|float):
+	raise NotImplementedError
+
 def inv(x):
 	'y such that x*y = 1, where 1 is the multiplicative identity'
 	return 1/x
@@ -44,9 +65,19 @@ def imag(x):
 	'any good complex type should have .real and .imag, right??'
 	return x.imag
 
+#import cmath
+#phase = cmath.phase
+
 def conj(x):
-	'return the conjugate of a number'
+	'return the conjugate of a complex'
 	return x.conjugate()
+
+#def to_polar(x):
+#	'a complex number from cartesian to polar form'
+#	return 
+
+#def to_cartesian(x):
+#	'a complex number from polar to cartesian form'
 
 # ---------------------------------------------
 
@@ -131,7 +162,7 @@ def sumt(x):
 
 def sgn(a):
 	'return -1 if negative, 0 if zero, 1 if positive. also known as signum'
-	return (a>0) - (a<0)
+	return a if _isnan(a) else (a>0) - (a<0)
 
 # boolean      ---------------------------
 
@@ -249,6 +280,7 @@ def rms(data):
 'bitcon'  : _converse_implication, # 1011
 'bitnimp' : _nimp,                 # 0010
 'bitncon' : _ncon,                 # 0100
+"""
 """
 # "why is there a '_' everywhere?!?"
 # because this file is directly exposed in the module's namespace, and we want only the operator_dicts to be visible; not anything else
@@ -710,3 +742,4 @@ complex.update({
 'asech' : _asech_cmath,
 'acsch' : _acsch_cmath
 })
+"""
