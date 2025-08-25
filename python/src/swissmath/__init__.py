@@ -194,53 +194,53 @@ def ncon(a, b):
 
 def cot(x):
 	'trigonometric cotangent (using cmath)'
-	return 1/_cmath.tan(x)
+	return 1/tan(x)
 
 def sec(x):
 	'trigonometric secant (using cmath)'
-	return 1/_cmath.cos(x)
+	return 1/cos(x)
 
 def csc(x):
 	'trigonometric cosecant (using cmath)'
-	return 1/_cmath.sin(x)
+	return 1/sin(x)
 
 def acot(x):
 	'inverse trigonometric cotangent (using cmath)'
-	return _cmath.atan(1/x)
+	return atan(1/x)
 
 def asec(x):
 	'inverse trigonometric secant (using cmath)'
-	return _cmath.acos(1/x)
+	return acos(1/x)
 
 def acsc(x):
 	'inverse trigonometric cosecant (using cmath)'
-	return _cmath.asin(1/x)
+	return asin(1/x)
 
 # hyperbolic -----------------------
 
 def coth(x):
 	'hyperbolic cotangent (using cmath)'
-	return 1/_cmath.tanh(x)
+	return 1/tanh(x)
 
 def sech(x):
 	'hyperbolic secant (using cmath)'
-	return 1/_cmath.cosh(x)
+	return 1/cosh(x)
 
 def csch(x):
 	'hyperbolic cosecant (using cmath)'
-	return 1/_cmath.sinh(x)
+	return 1/sinh(x)
 
 def acoth(x):
 	'inverse hyperbolic cotangent (using cmath)'
-	return _cmath.atanh(1/x)
+	return atanh(1/x)
 
 def asech(x):
 	'inverse hyperbolic secant (using cmath)'
-	return _cmath.acosh(1/x)
+	return acosh(1/x)
 
 def acsch(x):
 	'inverse hyperbolic cosecant (using cmath)'
-	return _cmath.asinh(1/x)
+	return asinh(1/x)
 
 # statistical --------------
 
@@ -743,3 +743,19 @@ complex.update({
 'acsch' : _acsch_cmath
 })
 """
+
+def in_open_interval(x:int|float, a:int|float, b:int|float):
+	'x ∈ (a,b) | a < x < b'
+	return a < x < b
+
+def in_closed_interval(x:int|float, a:int|float, b:int|float):
+	'x ∈ [a,b] | a <= x <= b'
+	return a <= x <= b
+
+def in_left_open_interval(x:int|float, a:int|float, b:int|float):
+	'x ∈ (a,b] | a < x <= b'
+	return a < x <= b
+
+def in_right_open_interval(x:int|float, a:int|float, b:int|float):
+	'x ∈ [a,b) | a <= x < b'
+	return a <= x < b
