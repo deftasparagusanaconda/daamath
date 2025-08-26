@@ -34,13 +34,13 @@ swissmath will be available as a java package. but im not sure where to host it 
 
 <details open><summary>arithmetic</summary>
 
-complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(-10) will appropriately promote to a complex, as 10𝑖
+complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(-4) will appropriately promote to a complex 2𝑖
 
 ```
 name      │ explanation              │ example
 ──────────┼──────────────────────────┼────────────────────────────────
 neg       │ negative                 │             - 2 = -2
-inv       │ reciprocal               │             / 2 = 0.5
+recip     │ reciprocal               │             / 2 = 0.5
 add       │ binary addition          │          -5 + 2 = -3
 sub       │ binary subtraction       │          -5 - 2 = -7
 mul       │ binary multiplication    │          -5 × 2 = -10
@@ -68,7 +68,7 @@ root      │ root to arbitrary base   │      root(-5,2) ≈ -2.23606797
 sqrt      │ square root (²√x)        │         sqrt(2) ≈ 1.4142135623730951
 cbrt      │ cube root (³√x)          │         cbrt(2) ≈ 1.2599210498948732
 rsqrt     │ reciprocal of sqrt(x)    │        rsqrt(2) ≈ 0.7071067811865475
-rsqrt     │ reciprocal of cbrt(x)    │        rcbrt(2) ≈ 0.7937005259840997
+rcbrt     │ reciprocal of cbrt(x)    │        rcbrt(2) ≈ 0.7937005259840997
 abs       │ absolute value           │       abs(2+3i) ≈ 3.6055512754
 gcd       │ greatest common divisor  │        gcd(2,3) = 1
 lcm       │ lowest common multiple   │        lcm(2,3) = 6
@@ -128,11 +128,11 @@ name            │ explanation               │ formula
 versin          │ versed sine               │          versin(x) = 1 - cos(x)
 vercos          │ versed cosine             │          vercos(x) = 1 + cos(x)
 coversin        │ co versed sine            │        coversin(x) = 1 - sin(x)
-covercos        │ co versed cosine          │        covercos(x) = 1 + sin(x)     (made up??)
+covercos        │ co versed cosine          │        covercos(x) = 1 + sin(x)
 haversin        │ half versed sine          │        haversin(x) = (1 - cos(x))/2
-havercos        │ half versed cosine        │        havercos(x) = (1 + cos(x))/2 (made up??)
-hacoversin      │ half co versed sine       │      hacoversin(x) = (1 - sin(x))/2 (made up??)
-hacovercos      │ half co versed cosine     │      hacovercos(x) = (1 + sin(x))/2 (made up??)
+havercos        │ half versed cosine        │        havercos(x) = (1 + cos(x))/2
+hacoversin      │ half co versed sine       │      hacoversin(x) = (1 - sin(x))/2
+hacovercos      │ half co versed cosine     │      hacovercos(x) = (1 + sin(x))/2
 exsec           │ external secant           │           exsec(x) = sec(x) - 1
 excsc           │ external cosecant         │           excsc(x) = csc(x) - 1
 chord           │ chord length              │           chord(x) = 2 * sin(x/2)
@@ -148,11 +148,11 @@ archacovercos   │ arc half co versed cosine │   archacovercos(y) = arcsin(2y
 versinpi        │ versin(𝜋x)                │        versinpi(x) = 1 - cos(𝜋x)
 vercospi        │ vercos(𝜋x)                │        vercospi(x) = 1 + cos(𝜋x)
 coversinpi      │ coversin(𝜋x)              │      coversinpi(x) = 1 - sin(𝜋x)
-covercospi      │ covercos(𝜋x)              │      covercospi(x) = 1 + sin(𝜋x)     (made up??)
+covercospi      │ covercos(𝜋x)              │      covercospi(x) = 1 + sin(𝜋x)
 haversinpi      │ haversin(𝜋x)              │      haversinpi(x) = (1 - cos(𝜋x))/2
-havercospi      │ havercos(𝜋x)              │      havercospi(x) = (1 + cos(𝜋x))/2 (made up??)
-hacoversinpi    │ hacoversin(𝜋x)            │    hacoversinpi(x) = (1 - sin(𝜋x))/2 (made up??)
-hacovercospi    │ hacovercos(𝜋x)            │    hacovercospi(x) = (1 + sin(𝜋x))/2 (made up??)
+havercospi      │ havercos(𝜋x)              │      havercospi(x) = (1 + cos(𝜋x))/2
+hacoversinpi    │ hacoversin(𝜋x)            │    hacoversinpi(x) = (1 - sin(𝜋x))/2
+hacovercospi    │ hacovercos(𝜋x)            │    hacovercospi(x) = (1 + sin(𝜋x))/2
 exsecpi         │ exsec(𝜋x)                 │         exsecpi(x) = sec(𝜋x) - 1
 excscpi         │ excsc(𝜋x)                 │         excscpi(x) = csc(𝜋x) - 1
 chordpi         │ chord(𝜋x)                 │         chordpi(x) = 2 * sin(𝜋x/2)
@@ -185,18 +185,6 @@ atanh │ hyperbolic arctangent   │ infinity
 acoth │ hyperbolic arccotangent │ infinity
 asech │ hyperbolic arcsecant    │ 0
 acsch │ hyperbolic arccosecant  │ 0.88137359
-sinh  │ hyperbolic sine         │ 1.1752012
-cosh  │ hyperbolic cosine       │ 1.5430806
-tanh  │ hyperbolic tangent      │ 0.7615942
-coth  │ hyperbolic cotangent    │ 1.3130353
-sech  │ hyperbolic secant       │ 0.6480543
-csch  │ hyperbolic cosecant     │ 0.8509181
-asinh │ hyperbolic arcsine      │ 0.88137359
-acosh │ hyperbolic arccosine    │ 0
-atanh │ hyperbolic arctangent   │ infinity
-acoth │ hyperbolic arccotangent │ infinity
-asech │ hyperbolic arcsecant    │ 0
-acsch │ hyperbolic arccosecant  │ 0.88137359
 ```
 </details><details open><summary>rounding </summary>
 
@@ -204,18 +192,14 @@ an unified `round` function is intentionally not provided because a programmer o
 ```
 name                 │ explanation      │ example            
 ─────────────────────┼──────────────────┼──────────────────────────────────────
-ceil
-floor
-away
-trunc
 round_ceil           │ towards +∞       │           round_ceil(-2.5) = -2
 round_floor          │ towards -∞       │          round_floor(-2.5) = -3
-round_away           │ away from 0      │             round_up(-2.5) = -3
-round_trunc          │ towards 0        │           round_down(-2.5) = -2
+round_away           │ away from 0      │           round_away(-2.5) = -3
+round_trunc          │ towards 0        │          round_trunc(-2.5) = -2
 round_half_ceil      │ tie towards +∞   │      round_half_ceil(-2.5) = -2
 round_half_floor     │ tie towards -∞   │     round_half_floor(-2.5) = -3
-round_half_up        │ tie away from 0  │        round_half_up(-2.5) = -3
-round_half_down      │ tie towards 0    │      round_half_down(-2.5) = -2
+round_half_away      │ tie away from 0  │      round_half_away(-2.5) = -3
+round_half_trunc     │ tie towards 0    │     round_half_trunc(-2.5) = -2
 round_half_even      │ tie towards even │      round_half_even(-2.5) = -2
 round_half_odd       │ tie towards odd  │       round_half_odd(-2.5) = -3
 round_half_alternate │ tie alternated   │ round_half_alternate(-2.5) = -2 or -3
@@ -328,7 +312,7 @@ isnan    │ true if IEEE nan                       │ isnan(float('nan')) = Fa
 erf      │ error function                         │              erf(1) ≈ 0.8427007929497149
 erfc     │ 1-erf(x)                               │             erfc(1) ≈ 0.15729920705028513
 gamma    │ gamma function                         │          gamma(1.5) ≈ 0.886226925452758
-lgamma   │ natural logarithm of gamma(x)          │ lgamma(999) ≈ 5898.313668430534
+lgamma   │ natural logarithm of gamma(x)          │         lgamma(999) ≈ 5898.313668430534
 ```
 
 </details><details open><summary>statistics </summary>
@@ -373,32 +357,50 @@ fds  │ fused div sub │         │ (a/b)-c
 fdm  │ fused div mul │         │ (a/b)*c
 fdd  │ fused div div │         │ (a/b)/c
 ```
+</details><details open><summary>vector </summary>
+
+`neg` `inv` `add` `sub` are overloaded to support vectors
+`mul` `div` are overloaded to perform scalar-and-vector operations
+
+```
+name              │ explanation              │ example 
+──────────────────┼──────────────────────────┼─────────────────────
+dot               │ dot product              │ (1,2,3)⋅(2,3,4) = 20
+cross             │ cross product            │ (1,2,3)×(2,3,4) = (-1, 2,-1)
+```
 
 </details><details open><summary>matrix </summary>
 
-`neg` `inv` `add` `sub` are overloaded to support matrices  
+`neg` `inv` `add` `sub` are overloaded to support matrices.
 `mul` `div` are overloaded to perform scalar-and-matrix operations
 
 ```
 name              │ explanation              │ example 
 ──────────────────┼──────────────────────────┼─────────
+pinv              │ pseudoinverse            │ 
 det               │ determinant              │ 
 transpose         │ rows and columns swapped │ 
-span              │                          │ 
 trace             │ sum of diagonal elements │ 
-is_ragged         │                          │ 
-is_square         │                          │ 
-is_symmetric      │                          │ 
-is_skew_symmetric │                          │ 
+eigvals           │ eigenvalues              │
+eigvecs           │ eigenvectors             │
+eig               │ (eigvals(a), eigvecs(a)) │
 matmul            │ matrix multiplication    │ 
 matdiv            │ matrix division          │ 
 hadmul            │ hadamard multiplication  │ 
 haddiv            │ hadamard division        │ 
+is_ragged         │                          │ 
+is_square         │                          │ 
+is_symmetric      │                          │ 
+is_skew_symmetric │                          │ 
+is_hermitian      │                          │
 
 `hadpow` will not be provided until there is `matpow`
 ```
 
 </details><details open><summary>tensor </summary>
+
+`neg` `inv` `add` `sub` are overloaded to support tensors
+`mul` `div` are overloaded to perform scalar-and-tensor operations
 
 ```
 name      │ explanation   │ example 
@@ -406,10 +408,9 @@ name      │ explanation   │ example
 dimension │ dimensionality
 ```
 
-
-
 <!--
-call, matmul, concat, is, is_not, any, all, len, range, reversed, sorted, divmod, min, max, floor, ceil, ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, fact, gamma, gcd, lcm, phase, mean, median, mode, var, stdev, inv
+call, matmul, concat, is, is_not, len, range, reversed, sorted, divmod,
+
 def ifelse(a,b,c):
 def piecewise(*args):
 def summation(*args):
@@ -432,17 +433,6 @@ def _generalized_mean(p, *args):
 	if p == 0:
 		return _math.exp(sum(_math.log(x) for x in args)/len(args))
 	return (sum(x**p for x in args)/len(args)) ** (1/p)
-
-def _mean(*args):
-	'arithmetic mean'
-	return _statistics.mean(args)
-
-def _median(*args):
-	return _statistics.median(args)
-
-def _mode(*args):
-	return _statistics.mode(args)
-
 
 def _ifelse(a,b,c):
 	'return b if a is true, otherwise return c'
@@ -491,7 +481,6 @@ def _partial_derivative():
 'matmul'  : _operator.matmul,
 'concat'  : _operator.concat,
 'ifelse'  : _ifelse,
-'gamma'   : _math.gamma,
 'is'      : _operator.is_,
 'isnot'   : _operator.is_not,
 #'in'      : 
@@ -501,16 +490,29 @@ def _partial_derivative():
 </details>
 
 # constants
+
+
 ```
-name    │ value
-────────┼──────────────────────────
-E       │ 2.71828182845904523536...
-PI      │ 3.14159265358979323846...
-TAU     │ 6.28318530717958647692...
-POS_INF │ IEEE 754 positive inf
-NEG_INF │ IEEE 754 negative inf
-QNAN    │ IEEE 754 quiet nan
-SNAN    │ IEEE 754 signalling nan
+name        │ explanation               │ value
+────────────┼───────────────────────────┼───────────
+E           │ euler's number            │ 2.71828182845904523536…
+PI          │ archimedes' constant      │ 3.14159265358979323846…
+TAU         │ PI*2                      │ 6.28318530717958647692…
+EULER_GAMMA │ euler-mascheroni constant │ 0.57721566490153286060…
+PHI         │ golden ratio              │ 1.61803398874989484820…
+ZETA_3      │ apéry's constant          │ 1.20205690315959428539…
+CATALAN     │ catalan's constant        │ 0.9159655941772190150…
+OMEGA       │ omega constant            │ 0.56714329040978387299…
+SQRT_2      │ pythagoras constant       │ 1.4142135623730951…
+SQRT_3      │ square root of 3          │ 1.7320508075688772…
+LN_2        │ natural logarithm of 2    │ 0.6931471805599453…
+LN_10       │ natural logarithn of 10   │ 2.302585092994046…
+POS_INF     │ IEEE 754 positive inf     │ +∞
+NEG_INF     │ IEEE 754 negative inf     │ -∞
+POS_ZERO    │ IEEE 754 positive zero    │ +0
+NEG_ZERO    │ IEEE 754 negative zero    │ -0
+QNAN        │ IEEE 754 quiet nan        │ qnan
+SNAN        │ IEEE 754 signalling nan   │ snan
 ```
 and also the following SI constants because why tf not
 ```
@@ -574,10 +576,12 @@ because i forget sometimes
 ```
 name                  │ formula
 ──────────────────────┼────────────────────────────────────────────────────────────
-mps_to_kmph           │ 
-kmph_to_mps           │ 
-degree_to_radian      │ 
-radian_to_degree      │ 
+degree_to_radian      │ radian = degree * 𝜋 / 180
+degree_to_turn        │   turn = degree / 360
+radian_to_degree      │ degree = radian * 180 / 𝜋
+radian_to_turn        │   turn = radian / 𝜏
+turn_to_degree        │ degree = turn * 360
+turn_to_radian        │ radian = turn * 𝜏
 celsius_to_fahrenheit │ 
 celsius_to_kelvin     │ 
 celsius_to_rankine    │ 
@@ -590,6 +594,7 @@ kelvin_to_rankine     │
 rankine_to_celsius    │ 
 rankine_to_fahrenheit │ 
 rankine_to_kelvin     │ 
+hour_to_time          │
 ```
 ya :v thats pretty much it
 
@@ -597,3 +602,4 @@ this project is convenience > accuracy > predictability > features > performance
 
 motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
 
+this project will take inspiration from [glm](https://github.com/icaven/glm) soon
