@@ -10,6 +10,8 @@ choose your language:
 
 (NOT IMPLEMENTED YET)
 
+install the python package through PyPI:
+
 ```
 pip install swissmath
 ```
@@ -18,8 +20,15 @@ or
 python -m pip install swissmath
 ```
 
-</details>
+</details><details><summary>
 
+## java </summary>
+
+(NOT IMPLEMENTED YET)
+
+swissmath will be available as a java package. but im not sure where to host it yet
+
+</details>
 
 # operators
 
@@ -38,7 +47,6 @@ mul       │ binary multiplication    │          -5 × 2 = -10
 div       │ binary division          │          -5 ÷ 2 = -2.5
 pow       │ binary exponentiation    │             -5² = 25
 log       │ binary logarithm         │       log(-5,2) ≈ 2.322 + 4.532𝑖
-fma       │ fused multiply add       │      fma(3,5,2) = 17
 floordiv  │ division rounded to -∞   │  floordiv(-5,2) = -3
 mod       │ modulus                  │       mod(-5,2) =  1
 quotient  │ division rounded to zero │  quotient(-5,2) = -2
@@ -196,10 +204,14 @@ an unified `round` function is intentionally not provided because a programmer o
 ```
 name                 │ explanation      │ example            
 ─────────────────────┼──────────────────┼──────────────────────────────────────
+ceil
+floor
+away
+trunc
 round_ceil           │ towards +∞       │           round_ceil(-2.5) = -2
 round_floor          │ towards -∞       │          round_floor(-2.5) = -3
-round_up             │ away from 0      │             round_up(-2.5) = -3
-round_down           │ towards 0        │           round_down(-2.5) = -2
+round_away           │ away from 0      │             round_up(-2.5) = -3
+round_trunc          │ towards 0        │           round_down(-2.5) = -2
 round_half_ceil      │ tie towards +∞   │      round_half_ceil(-2.5) = -2
 round_half_floor     │ tie towards -∞   │     round_half_floor(-2.5) = -3
 round_half_up        │ tie away from 0  │        round_half_up(-2.5) = -3
@@ -296,36 +308,44 @@ map                    │ map x in [a,b] to [c,d]            │          map(2
 `parity` should operate on the direct bits of the datatype
 
 ```
-name                │ explanation                            │ example
-────────────────────┼────────────────────────────────────────┼──────────────────────────
-any                 │ n-ary OR gate                          │        any(F, T, F) = T
-all                 │ n-ary AND gate                         │        all(F, T, F) = F
-min                 │ minimum                                │        min(1, 2, 3) = 1
-max                 │ maximum                                │        max(1, 2, 3) = 3
-fst                 │ first element                          │        fst(1, 2, 3) = 1
-snd                 │ second element                         │        snd(1, 2, 3) = 2
-sgn                 │ signum. -1 if <0, +1 if >0, else 0     │            sgn(0.5) = 1
-swap                │ swap variables in memory               │          swap(a, b) = (b, a)
-parity              │ sum of 1 bits                          │           parity(5) = 2
-frange              │ iterable of numbers in an interval     │  frange(0, 10, 2.5) = [0, 2.5, 5, 7.5]
-linspace            │ fixed number of numbers in an interval │ 
-isinf               │ true if IEEE inf                       │ isinf(float('inf')) = True
-isnan               │ true if IEEE nan                       │ isnan(float('nan')) = False
+name     │ explanation                            │ example
+─────────┼────────────────────────────────────────┼──────────────────────────────────────────
+signbit  │ false if +ve else true                 │          signbit(3) = T
+copysign │ magnitude of a with sign of b          │      copysign(2, 3) = 2
+any      │ n-ary OR gate                          │        any(F, T, F) = T
+all      │ n-ary AND gate                         │        all(F, T, F) = F
+min      │ minimum                                │        min(1, 2, 3) = 1
+max      │ maximum                                │        max(1, 2, 3) = 3
+fst      │ first element                          │        fst(1, 2, 3) = 1
+snd      │ second element                         │        snd(1, 2, 3) = 2
+sgn      │ signum. -1 if <0, +1 if >0, else 0     │            sgn(0.5) = 1
+swap     │ swap variables in memory               │          swap(a, b) = (b, a)
+parity   │ sum of 1 bits                          │           parity(5) = 2
+frange   │ iterable of numbers in an interval     │  frange(0, 10, 2.5) = [0, 2.5, 5, 7.5]
+linspace │ fixed number of numbers in an interval │ 
+isinf    │ true if IEEE inf                       │ isinf(float('inf')) = True
+isnan    │ true if IEEE nan                       │ isnan(float('nan')) = False
+erf      │ error function                         │              erf(1) ≈ 0.8427007929497149
+erfc     │ 1-erf(x)                               │             erfc(1) ≈ 0.15729920705028513
+gamma    │ gamma function                         │          gamma(1.5) ≈ 0.886226925452758
+lgamma   │ natural logarithm of gamma(x)          │ lgamma(999) ≈ 5898.313668430534
 ```
 
 </details><details open><summary>statistics </summary>
 
 ```
-name             │ explanation                          │ example
-─────────────────┼──────────────────────────────────────┼──────────────────────────
-mean             │ arithmetic mean                      │ 
-gmean            │ geometric mean                       │ 
-hmean            │ harmonic mean                        │ 
-pmean            │ power mean                           │ 
-rms              │ root mean squared                    │ 
-var              │ variance                             │ 
-stdev            │ standard deviation                   │ 
-erf              │ error function                       │ 
+name   │ explanation           │ example
+───────┼───────────────────────┼──────────────────────────
+mean   │ arithmetic mean       │ 
+median │ middlemost element    │ 
+mode   │ most frequent element │ 
+gmean  │ geometric mean        │ 
+hmean  │ harmonic mean         │ 
+pmean  │ power mean            │ 
+rms    │ root mean squared     │ 
+var    │ variance              │ 
+stdev  │ standard deviation    │ 
+erf    │ error function        │ 
 ```
 
 </details><details open><summary>fused operations </summary>
@@ -353,6 +373,41 @@ fds  │ fused div sub │         │ (a/b)-c
 fdm  │ fused div mul │         │ (a/b)*c
 fdd  │ fused div div │         │ (a/b)/c
 ```
+
+</details><details open><summary>matrix </summary>
+
+`neg` `inv` `add` `sub` are overloaded to support matrices  
+`mul` `div` are overloaded to perform scalar-and-matrix operations
+
+```
+name              │ explanation              │ example 
+──────────────────┼──────────────────────────┼─────────
+det               │ determinant              │ 
+transpose         │ rows and columns swapped │ 
+span              │                          │ 
+trace             │ sum of diagonal elements │ 
+is_ragged         │                          │ 
+is_square         │                          │ 
+is_symmetric      │                          │ 
+is_skew_symmetric │                          │ 
+matmul            │ matrix multiplication    │ 
+matdiv            │ matrix division          │ 
+hadmul            │ hadamard multiplication  │ 
+haddiv            │ hadamard division        │ 
+
+`hadpow` will not be provided until there is `matpow`
+```
+
+</details><details open><summary>tensor </summary>
+
+```
+name      │ explanation   │ example 
+──────────┼───────────────┼─────────
+dimension │ dimensionality
+```
+
+
+
 <!--
 call, matmul, concat, is, is_not, any, all, len, range, reversed, sorted, divmod, min, max, floor, ceil, ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, fact, gamma, gcd, lcm, phase, mean, median, mode, var, stdev, inv
 def ifelse(a,b,c):
@@ -405,15 +460,6 @@ def _pi_product(expr, var, lower, upper):
 	'quadric ∏(expr, var, lower, upper)'
 	return _math.prod(expr(var=value) for value in range(lower, upper))
 
-# matrix
-def _determinant(a):
-	'unary │mat│'
-	raise NotImplementedError
-
-def _transpose(a):
-	'unary mat\''
-	raise NotImplementedError
-
 # infinitesimal
 def _limit():
 	'quadric (func var, val, direction)'
@@ -435,57 +481,7 @@ def _partial_derivative():
 	'variadic(func, var1, var2, ..., varN)'
 	raise NotImplementedError
 
-#default = _DotDict()
-
-
-
-# left out due to obscurity. also probably mostly wrong :P
-#arcexsec(y) = https://en.wikipedia.org/wiki/Exsecant
-#'hacoversin': lambda a: 0.5 - math.sin(a)/2
-#'excsc'     : lambda a: 1/math.sin(a) - 1
-#'chord'     : lambda a: 2 * math.sin(a/2)
-
-
-# complex
-'real'    : _get_real, # get real lmao
-'imag'    : _get_imag,
-'phase'   : _cmath.phase,
-'conj'    : _call_conjugate,
-
-# boolean
-'truth'   : _operator.truth,       # 01
-'not'     : _operator.not_,        # 10
-'and'     : _operator.and_,        # 0001
-'nimp'    : _nimp,                 # 0010
-'ncon'    : _ncon,                 # 0100
-'xor'     : _operator.xor,         # 0110
-'or'      : _operator.or_,         # 0111
-'nor'     : _nor,                  # 1000
-'xnor'    : _operator.eq,          # 1001
-'con'     : _converse_implication, # 1011
-'imp'     : _implication,          # 1101
-'nand'    : _nand,                 # 1110
-
-# comparative
-'lt'      : _operator.lt,
-'le'      : _operator.le,
-'eq'      : _operator.eq,
-'ne'      : _operator.ne,
-'ge'      : _operator.ge,
-'gt'      : _operator.gt,
-
-# statistical
-'mean'    : _mean,
-'median'  : _median,
-'mode'    : _mode,
-'pmean'   : _generalized_mean,
-
-# hello there! lol
-
 # miscellaneous
-'dist'    : _dist,
-'any'     : _builtins.any,
-'all'     : _builtins.all,
 'len'     : _builtins.len,
 'range'   : _builtins.range,
 'reversed': _builtins.reversed,
@@ -494,22 +490,10 @@ def _partial_derivative():
 'call'    : _operator.call,
 'matmul'  : _operator.matmul,
 'concat'  : _operator.concat,
-'sign'    : _signum,
 'ifelse'  : _ifelse,
-'fact'    : _math.factorial,
 'gamma'   : _math.gamma,
-'sumt'    : _sumtorial,
-'gcd'     : _math.gcd,
-'lcm'     : _math.lcm,
-'clamp'   : _clamp,
-'lerp'    : _lerp,
-'unlerp'  : _unlerp,
-'min'     : _builtins.min,
-'max'     : _builtins.max,
 'is'      : _operator.is_,
 'isnot'   : _operator.is_not,
-#'erf'     : _math.erf
-#'erfc'    : _math.erfc
 #'in'      : 
 #'notin'   : 
 -->
@@ -552,8 +536,8 @@ greek                      │ ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ�
 italic_latin               │ 𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍𝑎𝑏𝑐𝑑𝑒𝑓𝑔 𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧𝚤𝚥
 italic_greek               │ 𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜍𝜎𝜏𝜐𝜑𝜒𝜓𝜔𝛳𝛻𝜕𝜖𝜗𝜘𝜙𝜚𝜛
 double_struck_latin        │ 𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫
-double_struck_greek        │   ℾ            ℿ ⅀        ℽ            ℼ   
-double_struck_italic_latin │  	ⅅ                         ⅆⅇ   ⅈⅉ
+double_struck_greek        │   ℾ            ℿ ⅀        ℽ            ℼ
+double_struck_italic_latin │    ⅅ                         ⅆⅇ   ⅈⅉ
 celsius                    │ ℃ (not same as °C)
 fahrenheit                 │ ℉ (not same as °F)
 kelvin                     │ K (not same as K) (do NOT use degree symbol °)
@@ -562,8 +546,8 @@ dot_product                │ ⋅ (not same as ·)
 cross_product              │ × (not same as x)
 division                   │ ÷                 (unconventional. use /)
 truth                      │ ⊤ (not same as T)
-falsity                    │ ⊥ 
-negation                   │ ¬ 
+falsity                    │ ⊥
+negation                   │ ¬
 conjunction                │ ∧ (not same as ^)
 disjunction                │ ∨ (not same as v)
 implication                │ → (not same as ->)
@@ -582,26 +566,30 @@ mho                        │ ℧
 ```
 
 use italic_latin and italic_greek when your software doesnt support italicizing. otherwise, use latin and greek and let it do the slanting thing for you  
-the special symbols for constants and numbers like `eulers_number` are rarely used. if theres an italicized latin or greek version available, we generally use those instead. 
+the special symbols for constants and numbers like ℯ for euler's number are rarely used. if theres an italicized latin or greek version available, we (mathematicians) generally use those instead 
 
 # conversions
 
 because i forget sometimes
 ```
-mps_to_kmph
-kmph_to_mps
-celsius_to_fahrenheit
-celsius_to_kelvin
-celsius_to_rankine
-fahrenheit_to_celsius
-fahrenheit_to_kelvin
-fahrenheit_to_rankine
-kelvin_to_celsius
-kelvin_to_fahrenheit
-kelvin_to_rankine
-rankine_to_celsius
-rankine_to_fahrenheit
-rankine_to_kelvin
+name                  │ formula
+──────────────────────┼────────────────────────────────────────────────────────────
+mps_to_kmph           │ 
+kmph_to_mps           │ 
+degree_to_radian      │ 
+radian_to_degree      │ 
+celsius_to_fahrenheit │ 
+celsius_to_kelvin     │ 
+celsius_to_rankine    │ 
+fahrenheit_to_celsius │ 
+fahrenheit_to_kelvin  │ 
+fahrenheit_to_rankine │ 
+kelvin_to_celsius     │ 
+kelvin_to_fahrenheit  │ 
+kelvin_to_rankine     │ 
+rankine_to_celsius    │ 
+rankine_to_fahrenheit │ 
+rankine_to_kelvin     │ 
 ```
 ya :v thats pretty much it
 
