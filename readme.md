@@ -39,9 +39,9 @@ complex numbers are fully supported but type will not always be promoted to comp
 ```
 name      │ explanation              │ example
 ──────────┼──────────────────────────┼────────────────────────────────
-neg       │ negative                 │             - 2 = -2
-recip     │ reciprocal               │             / 2 = 0.5
-add       │ binary addition          │          -5 + 2 = -3
+neg       │ additive inverse         │             - 2 = -2
+inv       │ multiplicative inverse   │             / 2 = 0.5
+add       │ binary addition          │          −5 + 2 = -3
 sub       │ binary subtraction       │          -5 - 2 = -7
 mul       │ binary multiplication    │          -5 × 2 = -10
 div       │ binary division          │          -5 ÷ 2 = -2.5
@@ -65,8 +65,8 @@ lnp       │ ln(x+1)                  │          lnp(2) ≈ 1.098612288668109
 log2p     │ log2(x+1)                │        log2p(2) ≈ 1.584962500721156
 log10p    │ log10(x+1)               │       log10p(2) ≈ 0.47712125471966244
 root      │ root to arbitrary base   │      root(-5,2) ≈ -2.23606797
-sqrt      │ square root (²√x)        │         sqrt(2) ≈ 1.4142135623730951
-cbrt      │ cube root (³√x)          │         cbrt(2) ≈ 1.2599210498948732
+sqrt      │ square root (√x)         │         sqrt(2) ≈ 1.4142135623730951
+cbrt      │ cube root (∛x)           │         cbrt(2) ≈ 1.2599210498948732
 rsqrt     │ reciprocal of sqrt(x)    │        rsqrt(2) ≈ 0.7071067811865475
 rcbrt     │ reciprocal of cbrt(x)    │        rcbrt(2) ≈ 0.7937005259840997
 abs       │ absolute value           │       abs(2+3i) ≈ 3.6055512754
@@ -208,12 +208,9 @@ round_stochastic     │ probabilistic    │     round_stochastic(-2.5) = -2 or
 ```
 </details><details open><summary>boolean </summary>
 
-`truth` is for casting something to a boolean. thus the other operators shall not allow non-boolean input
-
 ```
 name  │ explanation   │ truth │ example
 ──────┼───────────────┼───────┼──────────
-truth │ proposition   │    01 │     P = P
 not   │ negation      │    10 │   ¬¬P = P
 and   │ conjunction   │  0001 │ F ∧ T = F
 nand  │ not(and)      │  1110 │ F ↑ T = T
@@ -226,16 +223,14 @@ nimp  │ not(imp)      │  0010 │ F ↛ T = F
 con   │ converse      │  1011 │ F ← T = F
 ncon  │ not(con)      │  0100 │ F ↚ T = T
 ```
+
 </details><details open><summary>bitwise </summary>
 
 bitwise operators must support direct binary bit manipulation of the datatype. even if it is an IEEE float, operate directly on the physical bits, not the logical value. if the data is not stored in binary, raise an error (since boolean algebra is only a binary algebra). thus whether `bitnot` is according to two's complement or not is up to the implementation
 
-`bittruth` is for casting some datatype to an iterable of booleans which represent its bits. the array will store most significant digit first
-
 ```
 name     │ explanation  │ truth │ example
 ─────────┼──────────────┼───────┼──────────
-bittruth │ proposition  │    01 │     5 = [⊤, ⊥, ⊤]
 bitnot   │ negation     │    10 │   ~-5 = (probably 2)
 bitand   │ conjunction  │  0001 │ 3 ∧ 5 = 
 bitnand  │ not(and)     │  1110 │ 3 ↑ 5 = 
@@ -267,8 +262,8 @@ name     │ explanation                        │ example
 ─────────┼────────────────────────────────────┼──────────────────────────
 fact     │ factorial                          │                   5! = 120
 sumt     │ sumtorial (sum of all ℤ⁺ up to n)  │              sumt(5) = 15
-comb     │ combinations                       │            comb(3,4) = 
-perm     │ permutations                       │            perm(3,4) = 
+comb     │ combinations                       │            comb(6,5) = 6
+perm     │ permutations                       │            perm(6,5) = 720
 ```
 </details><details open><summary>intervals </summary>
 
@@ -277,6 +272,9 @@ the `in_*_interval` functions are simply for readability, for when sometimes `in
 ```
 name                   │ explanation                        │ example
 ───────────────────────┼────────────────────────────────────┼──────────────────────────────────────
+floor                  │ directed rounding towards -∞       │                         ⌊2.5⌋ = 2
+round_even             │ tie rounding towards nearest even  │                    round(2.5) = 2
+ceil                   │ directed rounding towards +∞       │                         ⌈2.5⌉ = 3
 clamp                  │ restrict within [a,b]              │            clamp(1.2, 0, 0.8) = 0.8
 in_open_interval       │ a < x < b                          │       in_open_interval(3,1,3) = False
 in_closed_interval     │ a ≤ x ≤ b                          │     in_closed_interval(3,1,3) = True
@@ -543,9 +541,11 @@ double_struck_italic_latin │    ⅅ                         ⅆⅇ   ⅈⅉ
 celsius                    │ ℃ (not same as °C)
 fahrenheit                 │ ℉ (not same as °F)
 kelvin                     │ K (not same as K) (do NOT use degree symbol °)
-fahrenheit                 │ °R
+rankine                    │ °R
+minus                      │ − (not same as -)
 dot_product                │ ⋅ (not same as ·)
-cross_product              │ × (not same as x)
+multiplication             │ × (not same as x)
+cross_product              │ ⨯ (not same as ×)
 division                   │ ÷                 (unconventional. use /)
 truth                      │ ⊤ (not same as T)
 falsity                    │ ⊥
@@ -556,6 +556,9 @@ implication                │ → (not same as ->)
 equivalence                │ ↔ (not same as <->)
 n_ary_conjunction          │ ⋀ (not same as ∧)
 n_ary_disjunction          │ ⋁ (not same as ∨)
+n_ary_intersection         │ ⋂ (not same as ∩)
+n_ary_union                │ ⋃ (not same as 
+diameter                   │ ⌀ (not same as θ)
 angstrom                   │ Å (not same as Å) (unconventional. use Å)
 information                │ ℹ (not same as i)
 numero                     │ № 
@@ -603,3 +606,38 @@ this project is convenience > accuracy > predictability > features > performance
 motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
 
 this project will take inspiration from [glm](https://github.com/icaven/glm) soon
+
+ ⌠ 
+ ⎮ 
+ ⌡ 
+
+⎛ 	
+⎜ 	
+⎝ 	
+
+⎞ 	
+⎟ 	
+⎠ 	
+
+⎡ 	
+⎢ 	
+⎣ 	
+
+⎤ 	
+⎥ 	
+⎦ 	
+
+⎧ 
+⎪
+⎨ 	
+⎪
+⎩ 	 	
+
+⎫ 	
+⎪
+⎬ 	
+⎪
+⎭ 	
+
+⎰
+⎱
