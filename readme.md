@@ -69,27 +69,36 @@ sqrt      │ square root (√x)         │         sqrt(2) ≈ 1.4142135623730
 cbrt      │ cube root (∛x)           │         cbrt(2) ≈ 1.2599210498948732
 rsqrt     │ reciprocal of sqrt(x)    │        rsqrt(2) ≈ 0.7071067811865475
 rcbrt     │ reciprocal of cbrt(x)    │        rcbrt(2) ≈ 0.7937005259840997
-abs       │ absolute value           │       abs(2+3i) ≈ 3.6055512754
+abs       │ absolute value           │       abs(2+3𝑖) ≈ 3.6055512754
 gcd       │ greatest common divisor  │        gcd(2,3) = 1
 lcm       │ lowest common multiple   │        lcm(2,3) = 6
 hyper     │ hyperoperation           │  hyper(1, 2, 3) = 5
 ieee_div  │ IEEE-754-style division  │   ieee_div(0,0) = QNAN
 ```
+
 </details><details open><summary>comparative </summary>
 
 ```
-name │ explanation              │ example  
-─────┼──────────────────────────┼────────────────
-lt   │ less than                │ 2 < 3 is true 
-le   │ less than or equal to    │ 2 ≤ 3 is true
-eq   │ equal to                 │ 2 = 3 is false
-ne   │ not equal to             │ 2 ≠ 3 is true
-ge   │ greater than or equal to │ 2 ≥ 3 is false
-gt   │ greater than             │ 2 > 3 is false
+name  │ explanation                             │ example  
+──────┼─────────────────────────────────────────┼────────────────────
+lt    │ less than                               │ 2 < 3 is true 
+le    │ less than or equal to                   │ 2 ≤ 3 is true
+eq    │ equal to                                │ 2 = 3 is false
+ne    │ not equal to                            │ 2 ≠ 3 is true
+ge    │ greater than or equal to                │ 2 ≥ 3 is false
+gt    │ greater than                            │ 2 > 3 is false
+hadlt │ component-wise less than                │ 2+3𝑖 < 4+3𝑖 is (T,F)
+hadle │ component-wise less than or equal to    │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
+hadeq │ component-wise equal to                 │ 2+3𝑖 = 4+3𝑖 is (F,T)
+hadne │ component-wise not equal to             │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
+hadge │ component-wise greater than or equal to │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
+hadgt │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
 ```
+
 </details><details open><summary>trigonometric </summary>
 
 basic set:
+
 ```
 name    │ explanation           │ example
 ────────┼───────────────────────┼─────────────────────────
@@ -122,6 +131,7 @@ acscpi  │ acsc(y)/𝜋             │    acscpi(1) = 0.5
 ```
 
 extra set:
+
 ```
 name            │ explanation               │ formula
 ────────────────┼───────────────────────────┼──────────────────────────────────────────────────────────
