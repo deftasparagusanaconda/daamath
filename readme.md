@@ -501,38 +501,39 @@ def _partial_derivative():
 
 
 ```
-name        │ explanation               │ value
-────────────┼───────────────────────────┼───────────
-E           │ euler's number            │ 2.71828182845904523536…
-PI          │ archimedes' constant      │ 3.14159265358979323846…
-TAU         │ PI*2                      │ 6.28318530717958647692…
-EULER_GAMMA │ euler-mascheroni constant │ 0.57721566490153286060…
-PHI         │ golden ratio              │ 1.61803398874989484820…
-ZETA_3      │ apéry's constant          │ 1.20205690315959428539…
-CATALAN     │ catalan's constant        │ 0.9159655941772190150…
-OMEGA       │ omega constant            │ 0.56714329040978387299…
-SQRT_2      │ pythagoras constant       │ 1.4142135623730951…
-SQRT_3      │ square root of 3          │ 1.7320508075688772…
-LN_2        │ natural logarithm of 2    │ 0.6931471805599453…
-LN_10       │ natural logarithn of 10   │ 2.302585092994046…
-POS_INF     │ IEEE 754 positive inf     │ +∞
-NEG_INF     │ IEEE 754 negative inf     │ -∞
-POS_ZERO    │ IEEE 754 positive zero    │ +0
-NEG_ZERO    │ IEEE 754 negative zero    │ -0
-QNAN        │ IEEE 754 quiet nan        │ qnan
-SNAN        │ IEEE 754 signalling nan   │ snan
-```
-and also the following SI constants because why tf not
-```
-name    │ value (exact)
-────────┼─────────────────────────────
-SI_DVCS │ 9192631770
-SI_C    │  299792458
-SI_H    │          6.62607015  *10⁻³⁴
-SI_E    │          1.602176634 *10⁻¹⁹
-SI_K    │          1.380649    *10⁻²³
-SI_NA   │          6.02214076  *10⁺²³
-SI_KCD  │        683
+name         │ explanation                │ value
+─────────────┼────────────────────────────┼───────────
+E            │ euler's number             │ ≈ 2.71828182845904523536…
+PI           │ archimedes' constant       │ ≈ 3.14159265358979323846…
+TAU          │ PI*2                       │ ≈ 6.28318530717958647692…
+GAMMA        │ euler-mascheroni constant  │ ≈ 0.57721566490153286060…
+PHI          │ golden ratio               │ ≈ 1.61803398874989484820…
+ZETA_3       │ apéry's constant           │ ≈ 1.20205690315959428539…
+CATALAN      │ catalan's constant         │ ≈ 0.9159655941772190150…
+OMEGA        │ omega constant             │ ≈ 0.56714329040978387299…
+SQRT_2       │ pythagoras constant        │ ≈ 1.4142135623730951…
+SQRT_3       │ square root of 3           │ ≈ 1.7320508075688772…
+LN_2         │ natural logarithm of 2     │ ≈ 0.6931471805599453…
+LN_10        │ natural logarithn of 10    │ ≈ 2.302585092994046…
+POS_INF      │ IEEE 754 positive inf      │ +∞
+NEG_INF      │ IEEE 754 negative inf      │ -∞
+POS_ZERO     │ IEEE 754 positive zero     │ +0
+NEG_ZERO     │ IEEE 754 negative zero     │ -0
+QNAN         │ IEEE 754 quiet nan         │ qnan
+SNAN         │ IEEE 754 signalling nan    │ snan
+FLT_MAX      │ largest normal float       │ (2 - 2⁻²³) × 2⁺¹²⁷
+FLT_MIN      │ smallest normal float      │ 2⁻¹²⁶
+FLT_TRUE_MIN │ smallest subnormal float   │ 2⁻¹⁴⁹
+DBL_MAX      │ largest normal double      │ (2 - 2⁻⁵²) × 2⁺¹⁰²³
+DBL_MIN      │ smallest normal double     │ 2⁻¹⁰²²
+DBL_TRUE_MIN │ smallest subnormal double  │ 2⁻¹⁰⁷⁴
+SI_DVCS      │                            │ 9192631770
+SI_C         │                            │ 299792458
+SI_H         │                            │ 6.62607015  × 10⁻³⁴
+SI_E         │                            │ 1.602176634 × 10⁻¹⁹
+SI_K         │                            │ 1.380649    × 10⁻²³
+SI_NA        │                            │ 6.02214076  × 10⁺²³
+SI_KCD       │                            │ 683
 ```
 
 # characters
@@ -617,6 +618,7 @@ motivation: sometimes i need the quotient of a division, but programs only give 
 
 this project will take inspiration from [glm](https://github.com/icaven/glm) soon
 
+<!--
  ⌠ 
  ⎮ 
  ⌡ 
@@ -651,3 +653,4 @@ this project will take inspiration from [glm](https://github.com/icaven/glm) soo
 
 ⎰
 ⎱
+-->
