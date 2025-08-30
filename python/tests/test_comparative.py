@@ -1,14 +1,14 @@
-#from swissmath import lt, le, eq, ne, ge, gt, hadlt, hadle, hadeq, hadne, hadge, hadgt
+from swissmath import lt, le, eq, ne, ge, gt
 
 import pytest
-
+"""
 lt = lambda a,b: a<b
 le = lambda a,b: a<=b
 eq = lambda a,b: a==b
 ne = lambda a,b: a!=b
 ge = lambda a,b: a>=b
 gt = lambda a,b: a>b
-
+"""
 pos_inf = float('inf')
 neg_inf = float('-inf')
 pos_zero = 0.0

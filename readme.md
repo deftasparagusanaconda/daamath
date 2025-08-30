@@ -57,7 +57,6 @@ exp10     │ exponentiation base 10   │        exp10(2) = 100
 expm1     │ exp(x)-1                 │        expm1(2) ≈ 6.38905609893065
 exp2m1    │ exp2(x)-1                │       exp2m1(2) = 3
 exp10m1   │ exp10(x)-1               │      exp10m1(2) = 99
-hypot     │ euclidean norm           │  hypot(1, 2, 3) ≈ 3.7416573867739413
 ln        │ logarithm base e         │           ln(2) ≈ 0.693147180559
 log2      │ logarithm base 2         │         log2(2) = 1
 log10     │ logarithm base 10        │        log10(2) ≈ 0.30103
@@ -73,26 +72,30 @@ abs       │ absolute value           │       abs(2+3𝑖) ≈ 3.6055512754
 gcd       │ greatest common divisor  │        gcd(2,3) = 1
 lcm       │ lowest common multiple   │        lcm(2,3) = 6
 hyper     │ hyperoperation           │  hyper(1, 2, 3) = 5
+hypot     │ euclidean norm           │  hypot(1, 2, 3) ≈ 3.7416573867739413
 ieee_div  │ IEEE-754-style division  │   ieee_div(0,0) = QNAN
+floor     │ directed rounding to +∞  │      floor(2.5) = 2
+round     │ to nearest, tie to even  │      round(2.5) = 2
+ceil      │ directed rounding to -∞  │       ceil(2.5) = 3
 ```
 
 </details><details open><summary>comparative </summary>
 
 ```
-name  │ explanation                             │ example  
-──────┼─────────────────────────────────────────┼────────────────────
-lt    │ less than                               │ 2 < 3 is true 
-le    │ less than or equal to                   │ 2 ≤ 3 is true
-eq    │ equal to                                │ 2 = 3 is false
-ne    │ not equal to                            │ 2 ≠ 3 is true
-ge    │ greater than or equal to                │ 2 ≥ 3 is false
-gt    │ greater than                            │ 2 > 3 is false
-hadlt │ component-wise less than                │ 2+3𝑖 < 4+3𝑖 is (T,F)
-hadle │ component-wise less than or equal to    │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
-hadeq │ component-wise equal to                 │ 2+3𝑖 = 4+3𝑖 is (F,T)
-hadne │ component-wise not equal to             │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
-hadge │ component-wise greater than or equal to │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
-hadgt │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
+name │ explanation                             │ example  
+─────┼─────────────────────────────────────────┼────────────────────
+lt   │ less than                               │ 2 < 3 is true 
+le   │ less than or equal to                   │ 2 ≤ 3 is true
+eq   │ equal to                                │ 2 = 3 is false
+ne   │ not equal to                            │ 2 ≠ 3 is true
+ge   │ greater than or equal to                │ 2 ≥ 3 is false
+gt   │ greater than                            │ 2 > 3 is false
+clt  │ component-wise less than                │ 2+3𝑖 < 4+3𝑖 is (T,F)
+cle  │ component-wise less than or equal to    │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
+ceq  │ component-wise equal to                 │ 2+3𝑖 = 4+3𝑖 is (F,T)
+cne  │ component-wise not equal to             │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
+cge  │ component-wise greater than or equal to │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
+cgt  │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
 ```
 
 </details><details open><summary>trigonometric </summary>
@@ -196,26 +199,7 @@ acoth │ hyperbolic arccotangent │ infinity
 asech │ hyperbolic arcsecant    │ 0
 acsch │ hyperbolic arccosecant  │ 0.88137359
 ```
-</details><details open><summary>rounding </summary>
 
-an unified `round` function is intentionally not provided because a programmer often has to assume what kind of rounding is being used. this is not good
-```
-name                 │ explanation      │ example            
-─────────────────────┼──────────────────┼──────────────────────────────────────
-round_ceil           │ towards +∞       │           round_ceil(-2.5) = -2
-round_floor          │ towards -∞       │          round_floor(-2.5) = -3
-round_away           │ away from 0      │           round_away(-2.5) = -3
-round_trunc          │ towards 0        │          round_trunc(-2.5) = -2
-round_half_ceil      │ tie towards +∞   │      round_half_ceil(-2.5) = -2
-round_half_floor     │ tie towards -∞   │     round_half_floor(-2.5) = -3
-round_half_away      │ tie away from 0  │      round_half_away(-2.5) = -3
-round_half_trunc     │ tie towards 0    │     round_half_trunc(-2.5) = -2
-round_half_even      │ tie towards even │      round_half_even(-2.5) = -2
-round_half_odd       │ tie towards odd  │       round_half_odd(-2.5) = -3
-round_half_alternate │ tie alternated   │ round_half_alternate(-2.5) = -2 or -3
-round_half_random    │ tie randomized   │    round_half_random(-2.5) = -2 or -3
-round_stochastic     │ probabilistic    │     round_stochastic(-2.5) = -2 or -3
-```
 </details><details open><summary>boolean </summary>
 
 ```
