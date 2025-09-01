@@ -7,7 +7,8 @@ from cmath import phase
 from statistics import mean, median, mode, variance as var, stdev
 
 from math import isnan as _isnan
-from math import sin, cos, tan, asin, acos, atan2 as atan, sinh, cosh, tanh, asinh, acosh, atanh
+from math import sin, cos, tan, asin, acos, atan, atan2, sinh, cosh, tanh, asinh, acosh, atanh
+from math import copysign
 
 def scaler_tan(x:int|float) -> float:
 	if x < 0 or x > 1:
@@ -23,7 +24,20 @@ def scaler_tan(x:int|float) -> float:
 	else:
 		from math import tan, pi
 		return tan((x-0.5)*pi)
+"""
+def ieee_div(a,b):
+	if _isnan(a) or _isnan(b):
+		return float('nan')
 
+	elif b == 0:
+		if copysign(1, b) == 1:
+			return float('inf')
+		else:
+			return float('-inf')
+	
+	else:
+		return a/b
+"""
 def scaler_sigmoid(x:int|float):
 	raise NotImplementedError
 
@@ -759,3 +773,9 @@ def in_left_open_interval(x:int|float, a:int|float, b:int|float):
 def in_right_open_interval(x:int|float, a:int|float, b:int|float):
 	'x ∈ [a,b) | a <= x < b'
 	return a <= x < b
+
+# boolean
+
+from operator import xor, not_, and_, or_, eq as xnor
+
+

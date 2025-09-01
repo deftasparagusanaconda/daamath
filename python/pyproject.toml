@@ -3,7 +3,7 @@ requires = ["setuptools>=75.8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "swissmath"
+name = "daamath"
 version = "0.1.0"
 #dynamic = ["version"]
 description = "a collection of functions i use pretty often"
@@ -26,14 +26,14 @@ authors = [
 #fft = ["scipy"]
 
 [project.urls]
-Homepage = "https://github.com/deftasparagusanaconda/swissmath"
+Homepage = "https://github.com/deftasparagusanaconda/daamath"
 #Issues = "https://github.com/deftasparagusanaconda/gapprox/issues"
 #Documentation = "https://github.com/deftasparagusanaconda/gapprox/documentation"
 #Repository = "https://github.com/deftasparagusanaconda/gapprox"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["swissmath"]
+include = ["daamath"]
 
 #[tool.setuptools.dynamic]
 #version = {attr = "src.__version__"}

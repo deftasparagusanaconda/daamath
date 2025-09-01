@@ -8,12 +8,12 @@
 
 // make these methods into public
 
-package swissmath;
+package daamath;
 
 import java.lang.Math;
 
-public final class SwissMath
-{	private SwissMath() {}
+public final class DaaMath
+{	private DaaMath() {}
 		
 	// by convention, byte and short are promoted to int, because they hardly support normal arithmetic
 	static int    add(byte   a, byte   b) { return (int   )a+(int   )b; }
