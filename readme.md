@@ -41,12 +41,12 @@ name      │ explanation              │ example
 ──────────┼──────────────────────────┼────────────────────────────────
 inc       │ increment                │             ++2 = 3
 dec       │ decrement                │             −−2 = 1
-neg       │ additive inverse         │             − 2 = −2
-inv       │ multiplicative inverse   │             ∕ 2 = 0.5
+neg       │ additive inverse         │              −2 = −2
+inv       │ multiplicative inverse   │              ⅟2 = 0.5
 add       │ addition                 │          −5 + 2 = −3
 sub       │ subtraction              │          −5 − 2 = −7
 mul       │ multiplication           │          −5 × 2 = −10
-div       │ division                 │          −5 ÷ 2 = −2.5
+div       │ division                 │          −5 ∕ 2 = −2.5
 pow       │ exponentiation           │             −5² = 25
 log       │ logarithm                │       log(−5,2) ≈ 2.322 + 4.532𝑖
 root      │ nᵗʰ root                 │      root(−5,2) ≈ −2.23606797
@@ -137,18 +137,18 @@ atanpi  │ atan(y)∕𝜋             │    atanpi(1) = 0.25
 acotpi  │ acot(y)∕𝜋             │    acotpi(1) = 0.25
 asecpi  │ asec(y)∕𝜋             │    asecpi(1) = 0
 acscpi  │ acsc(y)∕𝜋             │    acscpi(1) = 0.5
-sind    │ sin(𝜋x∕180)           │     sind(1) = 
-cosd    │ cos(𝜋x∕180)           │     cosd(1) = 
-tand    │ tan(𝜋x∕180)           │     tand(1) = 
-cotd    │ cot(𝜋x∕180)           │     cotd(1) = 
-secd    │ sec(𝜋x∕180)           │     secd(1) = 
-cscd    │ csc(𝜋x∕180)           │     cscd(1) = 
-asind   │ asin(y)×180∕𝜋         │    asind(1) = 
-acosd   │ acos(y)×180∕𝜋         │    acosd(1) = 
-atand   │ atan(y)×180∕𝜋         │    atand(1) = 
-acotd   │ acot(y)×180∕𝜋         │    acotd(1) = 
-asecd   │ asec(y)×180∕𝜋         │    asecd(1) = 
-acscd   │ acsc(y)×180∕𝜋         │    acscd(1) = 
+sind    │ sin(𝜋x∕180)           │      sind(1) = 
+cosd    │ cos(𝜋x∕180)           │      cosd(1) = 
+tand    │ tan(𝜋x∕180)           │      tand(1) = 
+cotd    │ cot(𝜋x∕180)           │      cotd(1) = 
+secd    │ sec(𝜋x∕180)           │      secd(1) = 
+cscd    │ csc(𝜋x∕180)           │      cscd(1) = 
+asind   │ asin(y)×180∕𝜋         │     asind(1) = 
+acosd   │ acos(y)×180∕𝜋         │     acosd(1) = 
+atand   │ atan(y)×180∕𝜋         │     atand(1) = 
+acotd   │ acot(y)×180∕𝜋         │     acotd(1) = 
+asecd   │ asec(y)×180∕𝜋         │     asecd(1) = 
+acscd   │ acsc(y)×180∕𝜋         │     acscd(1) = 
 atan2   │ IEEE atan2            │   atan2(1,1) ≈ 0.785398163
 atan2pi │ IEEE atan2∕𝜋          │ atan2pi(1,1) = 0.25
 atan2d  │ IEEE atan2×180∕𝜋      │  atan2d(1,1) ≈ 
@@ -253,15 +253,15 @@ name  │ explanation   │ truth │ example
 ──────┼───────────────┼───────┼──────────
 not   │ negation      │    10 │   ¬¬P = P
 and   │ conjunction   │  0001 │ F ∧ T = F
-nand  │ not(and)      │  1110 │ F ↑ T = T
+nand  │ not(and)      │  1110 │ F ⊼ T = T
 or    │ disjunction   │  0111 │ F ∨ T = T
-nor   │ not(or)       │  1000 │ F ↓ T = F
-xor   │ exclusive or  │  0110 │ F ↮ T = T 	
-xnor  │ not(xor)      │  1001 │ F ↔ T = F
-imp   │ implication   │  1101 │ F → T = T
-nimp  │ not(imp)      │  0010 │ F ↛ T = F
-con   │ converse      │  1011 │ F ← T = F
-ncon  │ not(con)      │  0100 │ F ↚ T = T
+nor   │ not(or)       │  1000 │ F ⊽ T = F
+xor   │ exclusive or  │  0110 │ F ⊻ T = T
+xnor  │ not(xor)      │  1001 │ F ⊙ T = F
+imp   │ implication   │  1101 │ F ⇒ T = T
+nimp  │ not(imp)      │  0010 │ F ⇏ T = F
+con   │ converse      │  1011 │ F ⇐ T = F
+ncon  │ not(con)      │  0100 │ F ⇍ T = T
 ```
 
 </details><details open><summary>bitwise </summary>
@@ -271,17 +271,17 @@ bitwise operators must support direct binary bit manipulation of the datatype. e
 ```
 name     │ explanation  │ truth │ example
 ─────────┼──────────────┼───────┼──────────
-bitnot   │ negation     │    10 │   ~−5 = (probably 2)
+bitnot   │ negation     │    10 │    ~5 = (probably 2)
 bitand   │ conjunction  │  0001 │ 3 ∧ 5 = 
-bitnand  │ not(and)     │  1110 │ 3 ↑ 5 = 
+bitnand  │ not(and)     │  1110 │ 3 ⊼ 5 = 
 bitor    │ disjunction  │  0111 │ 3 ∨ 5 = 
-bitnor   │ not(or)      │  1000 │ 3 ↓ 5 = 
-bitxor   │ exclusive or │  0110 │ 3 ↮ 5 = 
-bitxnor  │ not(xor)     │  1001 │ 3 ↔ 5 = 
-bitimp   │ implication  │  1101 │ 3 → 5 = 
-bitnimp  │ not(imp)     │  0010 │ 3 ↛ 5 = 
-bitcon   │ converse     │  1011 │ 3 ← 5 = 
-bitncon  │ not(con)     │  0100 │ 3 ↚ 5 = 
+bitnor   │ not(or)      │  1000 │ 3 ⊽ 5 = 
+bitxor   │ exclusive or │  0110 │ 3 ⊻ 5 = 
+bitxnor  │ not(xor)     │  1001 │ 3 ⊙ 5 = 
+bitimp   │ implication  │  1101 │ 3 ⇒ 5 = 
+bitnimp  │ not(imp)     │  0010 │ 3 ⇏ 5 = 
+bitcon   │ converse     │  1011 │ 3 ⇐ 5 = 
+bitncon  │ not(con)     │  0100 │ 3 ⇍ 5 = 
 lshift   │ left shift   │       │ lshift(3,5) = 96
 rshift   │ right shift  │       │ rshift(3,5) = 0
 ```
@@ -309,7 +309,7 @@ perm     │ permutations                       │            perm(6,5) = 720
 
 </details><details open><summary>intervals </summary>
 
-the `in_*_interval` functions are simply for readability, for when sometimes `in_open_range(x, a, b)` is easier to understand than `a < x < b`
+the `in_*_interval` functions are simply for readability, for when sometimes, for example, `in_open_interval(x, a, b)` is easier to understand than `a < x < b`
 
 ```
 name                   │ explanation                        │ example
@@ -403,7 +403,7 @@ fdd  │ fused div div │         │ (a∕b)∕c
 
 ```
 name              │ explanation              │ example 
-──────────────────┼──────────────────────────┼─────────────────────
+──────────────────┼──────────────────────────┼─────────────────────────────
 dot               │ dot product              │ (1,2,3)⋅(2,3,4) = 20
 cross             │ cross product            │ (1,2,3)×(2,3,4) = (−1, 2,−1)
 ```
@@ -531,23 +531,23 @@ def _partial_derivative():
 
 ```
 name         │ explanation                │ value
-─────────────┼────────────────────────────┼───────────
+─────────────┼────────────────────────────┼──────────────────────────
+OMEGA        │ omega constant             │ ≈ 0.56714329040978387299…
+GAMMA        │ euler-mascheroni constant  │ ≈ 0.57721566490153286060…
+LN_2         │ natural logarithm of 2     │ ≈ 0.6931471805599453…
+CATALAN      │ catalan's constant         │ ≈ 0.9159655941772190150…
+ZETA_3       │ apéry's constant           │ ≈ 1.20205690315959428539…
+SQRT_2       │ pythagoras constant        │ ≈ 1.4142135623730951…
+PHI          │ golden ratio               │ ≈ 1.61803398874989484820…
+SQRT_3       │ square root of 3           │ ≈ 1.7320508075688772…
+LN_10        │ natural logarithn of 10    │ ≈ 2.302585092994046…
 E            │ euler's number             │ ≈ 2.71828182845904523536…
 PI           │ archimedes' constant       │ ≈ 3.14159265358979323846…
 TAU          │ PI*2                       │ ≈ 6.28318530717958647692…
-GAMMA        │ euler-mascheroni constant  │ ≈ 0.57721566490153286060…
-PHI          │ golden ratio               │ ≈ 1.61803398874989484820…
-ZETA_3       │ apéry's constant           │ ≈ 1.20205690315959428539…
-CATALAN      │ catalan's constant         │ ≈ 0.9159655941772190150…
-OMEGA        │ omega constant             │ ≈ 0.56714329040978387299…
-SQRT_2       │ pythagoras constant        │ ≈ 1.4142135623730951…
-SQRT_3       │ square root of 3           │ ≈ 1.7320508075688772…
-LN_2         │ natural logarithm of 2     │ ≈ 0.6931471805599453…
-LN_10        │ natural logarithn of 10    │ ≈ 2.302585092994046…
 POS_INF      │ IEEE 754 positive inf      │ +∞
 NEG_INF      │ IEEE 754 negative inf      │ −∞
-POS_ZERO     │ IEEE 754 positive zero     │ +0
-NEG_ZERO     │ IEEE 754 negative zero     │ −0
+POS_ZERO     │ IEEE 754 positive zero     │ +0.0
+NEG_ZERO     │ IEEE 754 negative zero     │ −0.0
 QNAN         │ IEEE 754 quiet nan         │ qnan
 SNAN         │ IEEE 754 signalling nan    │ snan
 FLT_MAX      │ largest normal float       │ (2 − 2⁻²³) × 2⁺¹²⁷
@@ -568,168 +568,331 @@ SI_KCD       │ luminous efficacy          │ 683
 -->
 
 # characters
+
 ```
 name                                       │ value
 ───────────────────────────────────────────┼────────────────────────────────────────────────────────────
-latin_upper                                │ ABCDEFGHIJKLMNOPQRSTUVWXYZ
-latin_upper_superscript                    │ ᴬᴮꟲᴰᴱꟳᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾꟴᴿ ᵀᵁⱽᵂ
-latin_upper_superscript_small              │  𐞄    𐞒𐞖ᶦ 𞀹ᶫ𞀻ᶰ   𐞪 𞁀ᶸ   𐞲
-latin_lower_superscript                    │ ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ𐞥ʳˢᵗᵘᵛʷˣʸᶻ
-latin_lower_subscript                      │ ₐ 𞁞 ₑ  ₕᵢⱼₖₗₘₙₒₚ ᵣₛₜᵤᵥ ₓ
-latin_lower                                │ abcdefghijklmnopqrstuvwxyz
-latin_bold_upper                           │ 𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙
-latin_bold_lower                           │ 𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳
-latin_italic_upper                         │ 𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍
-latin_italic_lower                         │ 𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧𝚤𝚥
-latin_bold_italic_upper                    │ 𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁
-latin_bold_italic_lower                    │ 𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛
-latin_script_upper                         │ 𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵
-latin_script_lower                         │ 𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏
-latin_bold_script_upper                    │ 𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩
-latin_bold_script_lower                    │ 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃
-latin_fraktur_upper                        │ 𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ
-latin_fraktur_lower                        │ 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷
-latin_fraktur_bold_upper                   │ 𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅
-latin_fraktur_bold_lower                   │ 𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟
-latin_sans_serif_upper                     │ 𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹
-latin_sans_serif_lower                     │ 𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓
-latin_sans_serif_bold_upper                │ 𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭
-latin_sans_serif_bold_lower                │ 𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇
-latin_sans_serif_italic_upper              │ 𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡
-latin_sans_serif_italic_lower              │ 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻
-latin_sans_serif_bold_italic_upper         │ 𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕
-latin_sans_serif_bold_italic_lower         │ 𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯
-latin_monospace_upper                      │ 𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉
-latin_monospace_lower                      │ 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣
-latin_double_struck_upper                  │ 𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ
-latin_double_struck_lower                  │ 𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫
-latin_double_struck_italic_upper           │    ⅅ                      
-latin_double_struck_italic_lower           │    ⅆⅇ   ⅈⅉ                
-greek_names                                │ {alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'digamma', 'san', 'tsan', 'sho', 'heta', 'koppa', 'sampi', 'yot', 'stigma'}
-greek_upper                                │ ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ
-greek_upper_variant                        │        ϴ                     ϞϠ
-greek_lower                                │ αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ
-greek_lower_variant                        │  ϐ  ϵ  ϑ ϰ     ϖϱς  ϕ        ϟϡ
-greek_lower_superscript                    │  ᵝᵞᵟᵋ  ᶿᶥ           ᵠᵡ
-greek_lower_subscript                      │  ᵦᵧ             ᵨ   ᵩᵪ
-greek_bold_upper                           │ 𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀𝟊
-greek_bold_upper_variant                   │        𝚹
-greek_bold_lower                           │ 𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛔𝛕𝛖𝛗𝛘𝛙𝛚𝟋
-greek_bold_lower_variant                   │     𝛜  𝛝 𝛞     𝛡𝛠𝛓  𝛟
-greek_italic_upper                         │ 𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺
-greek_italic_upper_variant                 │        𝛳
-greek_italic_lower                         │ 𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜎𝜏𝜐𝜑𝜒𝜓𝜔
-greek_italic_lower_variant                 │     𝜖  𝜗 𝜘     𝜛𝜚𝜍  𝜙
-greek_bold_italic_upper                    │ 𝜜𝜝𝜞𝜟𝜠𝜡𝜢𝜣𝜤𝜥𝜦𝜧𝜨𝜩𝜪𝜫𝜬𝜮𝜯𝜰𝜱𝜲𝜳𝜴
-greek_bold_italic_upper_variant            │        𝜭
-greek_bold_italic_lower                    │ 𝜶𝜷𝜸𝜹𝜺𝜻𝜼𝜽𝜾𝜿𝝀𝝁𝝂𝝃𝝄𝝅𝝆𝝈𝝉𝝊𝝋𝝌𝝍𝝎
-greek_bold_italic_lower_variant            │     𝝐  𝝑 𝝒     𝝕𝝔𝝇  𝝓
-greek_sans_serif_bold_upper                │ 𝝖𝝗𝝘𝝙𝝚𝝛𝝜𝝝𝝞𝝟𝝠𝝡𝝢𝝣𝝤𝝥𝝦𝝨𝝩𝝪𝝫𝝬𝝭𝝮
-greek_sans_serif_bold_upper_variant        │        𝝧
-greek_sans_serif_bold_lower                │ 𝝰𝝱𝝲𝝳𝝴𝝵𝝶𝝷𝝸𝝹𝝺𝝻𝝼𝝽𝝾𝝿𝞀𝞂𝞃𝞄𝞅𝞆𝞇𝞈
-greek_sans_serif_bold_lower_variant        │     𝞊  𝞋 𝞌     𝞏𝞎𝞁  𝞍
-greek_sans_serif_bold_italic_upper         │ 𝞐𝞑𝞒𝞓𝞔𝞕𝞖𝞗𝞘𝞙𝞚𝞛𝞜𝞝𝞞𝞟𝞠𝞢𝞣𝞤𝞥𝞦𝞧𝞨
-greek_sans_serif_bold_italic_upper_variant │        𝞡
-greek_sans_serif_bold_italic_lower         │ 𝞪𝞫𝞬𝞭𝞮𝞯𝞰𝞱𝞲𝞳𝞴𝞵𝞶𝞷𝞸𝞹𝞺𝞼𝞽𝞾𝞿𝟀𝟁𝟂
-greek_sans_serif_bold_italic_lower_variant │     𝟄  𝟅 𝟆     𝟉𝟈𝞻  𝟇
-greek_double_struck_upper                  │   ℾ            ℿ ⅀
-greek_double_struck_lower                  │   ℽ            ℼ
-hebrew                                     │ ℵℶℷℸ
-digits                                     │ 0123456789↊↋
-digits_superscript                         │ ⁰¹²³⁴⁵⁶⁷⁸⁹
-digits_subscript                           │ ₀₁₂₃₄₅₆₇₈₉
-digits_bold                                │ 𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗
-digits_double_struck                       │ 𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡
-digits_sans_serif                          │ 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫
-digits_sans_serif_bold                     │ 𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵
-digits_monospace                           │ 𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿
-increment                                  │ ∆
-nabla                                      │ ∇
-nabla_bold                                 │ 𝛁
-nabla_italic                               │ 𝛻
-nabla_bold_italic                          │ 𝜵
-nabla_sans_serif_bold                      │ 𝝯
-nabla_sans_serif_bold_italic               │ 𝞩
-partial                                    │ ∂
-partial_bold                               │ 𝛛
-partial_italic                             │ 𝜕
-partial_bold_italic                        │ 𝝏
-partial_sans_serif_bold                    │ 𝞉
-partial_sans_serif_bold_italic             │ 𝟃
-plus_superscript                           │ ⁺
-plus_subscript                             │ ₊
-minus_superscript                          │ ⁻
-minus_subscript                            │ ₋
-equals_superscript                         │ ⁼
-equals_subscript                           │ ₌
-parenthesis_superscript                    │ ⁽⁾
-parenthesis_left_subscript                 │ ₍₎
-ceil                                       │ ⌈⌉
-floor                                      │ ⌊⌋
-parenthesis                                │ ()⏜⏝
-square_bracket                             │ []⎴⎵⎶
-curly_bracket                              │ {}⏞⏟
-angle_bracket                              │ ⟨⟩
-double_angle_bracket                       │ ⟪⟫
-curved_angle_bracket                       │ ⧼⧽
-guillemet                                  │ ‹›
-double_guillemet                           │ «»
-big_parenthesis                            │ ⎛⎜⎝⎞⎟⎠
-big_square_bracket                         │ ⎡⎢⎣⎤⎥⎦
-big_curly_bracket                          │ ⎧⎨⎩⎪⎫⎬⎭⎰⎱
-big_integral                               │ ⌠⎮⌡
-big_sigma                                  │ ⎲⎳
-minus                                      │ − (not same as -)
-plus_minus                                 │ ±
-almost_equals                              │ ≈
-proportional                               │ ∝
-infinity                                   │ ∞
-square_root                                │ √
-cube_root                                  │ ∛
-fourth_root                                │ ∜
-therefore                                  │ ∴
-because                                    │ ∵
-integral                                   │ ∫∬∭⨌
-angle                                      │ ∠
-ratio                                      │ ∶ (not same as :)
-proportion                                 │ ∷ (not same as ::)
-minus_plus                                 │ ∓
-dot_product                                │ ⋅ (not same as ·)
-multiplication                             │ × (not same as x)
-cross_product                              │ ⨯ (not same as ×)
-division                                   │ ∕ (not same as /) (÷ is deprecated)
-intersection                               │ ∩ (not same as n)
-union                                      │ ∪ (not same as u)
-subset                                     │ ⊂ (not same as c)
-superset                                   │ ⊃
-down_tack                                  │ ⊤ (not same as T)
-up_tack                                    │ ⊥ 
-left_tack                                  │ ⊣ 
-right_tack                                 │ ⊢
-big_down_tack                              │ ⟙ (not same as ⊤)
-big_up_tack                                │ ⟘ (not same as ⊥)
-perpendicular                              │ ⟂ (not same as ⊥)
-negation                                   │ ¬
-conjunction                                │ ∧ (not same as ^)
-disjunction                                │ ∨ (not same as v)
-implication                                │ → (not same as ->)
-equivalence                                │ ↔ (not same as <->)
-n_ary_conjunction                          │ ⋀ (not same as ∧)
-n_ary_disjunction                          │ ⋁ (not same as ∨)
-n_ary_union                                │ ⋃ (not same as ∪)
-empty_set                                  │ ∅ (not same as θ)
-less_than_or_equal_to                      │ ≤
-greater_than_or_equal_to                   │ ≥
-much_less_than                             │ ≪
-much_greater_than                          │ ≫
-sine                                       │ ∿
-diameter                                   │ ⌀ (not same as ∅)
-information                                │ ℹ (not same as i)
-numero                                     │ № 
-euler_constant                             │ ℇ                 (unconventional. use γ or 𝛾)
+LATIN_UPPER                                │ ABCDEFGHIJKLMNOPQRSTUVWXYZ
+LATIN_UPPER_SUPERSCRIPT                    │ ᴬᴮꟲᴰᴱꟳᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾꟴᴿ ᵀᵁⱽᵂ   
+LATIN_UPPER_SUPERSCRIPT_SMALL              │  𐞄    𐞒𐞖ᶦ 𞀹ᶫ𞀻ᶰ   𐞪 𞁀ᶸ   𐞲 
+LATIN_LOWER_SUPERSCRIPT                    │ ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ𐞥ʳˢᵗᵘᵛʷˣʸᶻ
+LATIN_LOWER_SUBSCRIPT                      │ ₐ 𞁞 ₑ  ₕᵢⱼₖₗₘₙₒₚ ᵣₛₜᵤᵥ ₓ  
+LATIN_LOWER                                │ abcdefghijklmnopqrstuvwxyz
+LATIN_BOLD_UPPER                           │ 𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙
+LATIN_BOLD_LOWER                           │ 𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳
+LATIN_ITALIC_UPPER                         │ 𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍
+LATIN_ITALIC_LOWER                         │ 𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧
+LATIN_BOLD_ITALIC_UPPER                    │ 𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁
+LATIN_BOLD_ITALIC_LOWER                    │ 𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛
+LATIN_SCRIPT_UPPER                         │ 𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵
+LATIN_SCRIPT_LOWER                         │ 𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏
+LATIN_BOLD_SCRIPT_UPPER                    │ 𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩
+LATIN_BOLD_SCRIPT_LOWER                    │ 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃
+LATIN_FRAKTUR_UPPER                        │ 𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ
+LATIN_FRAKTUR_LOWER                        │ 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷
+LATIN_FRAKTUR_BOLD_UPPER                   │ 𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅
+LATIN_FRAKTUR_BOLD_LOWER                   │ 𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟
+LATIN_SANS_SERIF_UPPER                     │ 𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹
+LATIN_SANS_SERIF_LOWER                     │ 𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓
+LATIN_SANS_SERIF_BOLD_UPPER                │ 𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭
+LATIN_SANS_SERIF_BOLD_LOWER                │ 𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇
+LATIN_SANS_SERIF_ITALIC_UPPER              │ 𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡
+LATIN_SANS_SERIF_ITALIC_LOWER              │ 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻
+LATIN_SANS_SERIF_BOLD_ITALIC_UPPER         │ 𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕
+LATIN_SANS_SERIF_BOLD_ITALIC_LOWER         │ 𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯
+LATIN_MONOSPACE_UPPER                      │ 𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉
+LATIN_MONOSPACE_LOWER                      │ 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣
+LATIN_DOUBLE_STRUCK_UPPER                  │ 𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ
+LATIN_DOUBLE_STRUCK_LOWER                  │ 𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫
+LATIN_DOUBLE_STRUCK_ITALIC_UPPER           │    ⅅ                      
+LATIN_DOUBLE_STRUCK_ITALIC_LOWER           │    ⅆⅇ   ⅈⅉ                
+GREEK_UPPER                                │ ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ
+GREEK_UPPER_VARIANT                        │        ϴ                     ϞϠ  
+GREEK_LOWER                                │ αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ
+GREEK_LOWER_VARIANT                        │  ϐ  ϵ  ϑ ϰ     ϖϱς  ϕ        ϟϡ  
+GREEK_LOWER_SUPERSCRIPT                    │  ᵝᵞᵟᵋ  ᶿᶥ           ᵠᵡ           
+GREEK_LOWER_SUBSCRIPT                      │  ᵦᵧ             ᵨ   ᵩᵪ           
+GREEK_BOLD_UPPER                           │ 𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀𝟊        
+GREEK_BOLD_UPPER_VARIANT                   │        𝚹                         
+GREEK_BOLD_LOWER                           │ 𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛔𝛕𝛖𝛗𝛘𝛙𝛚𝟋        
+GREEK_BOLD_LOWER_VARIANT                   │     𝛜  𝛝 𝛞     𝛡𝛠𝛓  𝛟            
+GREEK_ITALIC_UPPER                         │ 𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺         
+GREEK_ITALIC_UPPER_VARIANT                 │        𝛳                         
+GREEK_ITALIC_LOWER                         │ 𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜎𝜏𝜐𝜑𝜒𝜓𝜔         
+GREEK_ITALIC_LOWER_VARIANT                 │     𝜖  𝜗 𝜘     𝜛𝜚𝜍  𝜙            
+GREEK_BOLD_ITALIC_UPPER                    │ 𝜜𝜝𝜞𝜟𝜠𝜡𝜢𝜣𝜤𝜥𝜦𝜧𝜨𝜩𝜪𝜫𝜬𝜮𝜯𝜰𝜱𝜲𝜳𝜴         
+GREEK_BOLD_ITALIC_UPPER_VARIANT            │        𝜭                         
+GREEK_BOLD_ITALIC_LOWER                    │ 𝜶𝜷𝜸𝜹𝜺𝜻𝜼𝜽𝜾𝜿𝝀𝝁𝝂𝝃𝝄𝝅𝝆𝝈𝝉𝝊𝝋𝝌𝝍𝝎         
+GREEK_BOLD_ITALIC_LOWER_VARIANT            │     𝝐  𝝑 𝝒     𝝕𝝔𝝇  𝝓            
+GREEK_SANS_SERIF_BOLD_UPPER                │ 𝝖𝝗𝝘𝝙𝝚𝝛𝝜𝝝𝝞𝝟𝝠𝝡𝝢𝝣𝝤𝝥𝝦𝝨𝝩𝝪𝝫𝝬𝝭𝝮         
+GREEK_SANS_SERIF_BOLD_UPPER_VARIANT        │        𝝧                         
+GREEK_SANS_SERIF_BOLD_LOWER                │ 𝝰𝝱𝝲𝝳𝝴𝝵𝝶𝝷𝝸𝝹𝝺𝝻𝝼𝝽𝝾𝝿𝞀𝞂𝞃𝞄𝞅𝞆𝞇𝞈         
+GREEK_SANS_SERIF_BOLD_LOWER_VARIANT        │     𝞊  𝞋 𝞌     𝞏𝞎𝞁  𝞍            
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER         │ 𝞐𝞑𝞒𝞓𝞔𝞕𝞖𝞗𝞘𝞙𝞚𝞛𝞜𝞝𝞞𝞟𝞠𝞢𝞣𝞤𝞥𝞦𝞧𝞨         
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER_VARIANT │        𝞡                         
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER         │ 𝞪𝞫𝞬𝞭𝞮𝞯𝞰𝞱𝞲𝞳𝞴𝞵𝞶𝞷𝞸𝞹𝞺𝞼𝞽𝞾𝞿𝟀𝟁𝟂         
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER_VARIANT │     𝟄  𝟅 𝟆     𝟉𝟈𝞻  𝟇            
+GREEK_DOUBLE_STRUCK_UPPER                  │   ℾ            ℿ ⅀               
+GREEK_DOUBLE_STRUCK_LOWER                  │   ℽ            ℼ                 
+HEBREW                                     │ ℵℶℷℸ
+DIGIT                                      │ 0123456789↊↋
+DIGIT_SUPERSCRIPT                          │ ⁰¹²³⁴⁵⁶⁷⁸⁹  
+DIGIT_SUBSCRIPT                            │ ₀₁₂₃₄₅₆₇₈₉  
+DIGIT_BOLD                                 │ 𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗  
+DIGIT_DOUBLE_STRUCK                        │ 𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡  
+DIGIT_SANS_SERIF                           │ 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  
+DIGIT_SANS_SERIF_BOLD                      │ 𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵  
+DIGIT_MONOSPACE                            │ 𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿  
+ROMAN_NUMERAL_UPPER                        │  ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ
+ROMAN_NUMERAL_LOWER                        │  ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ
+COUNTING_ROD_VERTICAL                      │ 〇𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱
+COUNTING_ROD_HORIZONTAL                    │ 〇𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨
+COUNTING_ROD_NEGATIVE                      │ (U+20E5)
+TALLY_MARK                                 │  𝍷   𝍸
+TALLY_MARK_IDEOGRAPHIC                     │  𝍲𝍳𝍴𝍵𝍶
+RECIPROCAL                                 │ ⅟
+FRACTION_0_BY                              │    ↉       
+FRACTION_1_BY                              │   ½⅓¼⅕⅙⅐⅛⅑⅒
+FRACTION_2_BY                              │    ⅔ ⅖     
+FRACTION_3_BY                              │     ¾⅗  ⅜  
+FRACTION_4_BY                              │      ⅘     
+FRACTION_5_BY                              │       ⅚ ⅝  
+FRACTION_7_BY                              │         ⅞  
+INCREMENT                                  │ ∆
+NABLA                                      │ ∇
+NABLA_BOLD                                 │ 𝛁
+NABLA_ITALIC                               │ 𝛻
+NABLA_BOLD_ITALIC                          │ 𝜵
+NABLA_SANS_SERIF_BOLD                      │ 𝝯
+NABLA_SANS_SERIF_BOLD_ITALIC               │ 𝞩
+PARTIAL                                    │ ∂
+PARTIAL_BOLD                               │ 𝛛
+PARTIAL_ITALIC                             │ 𝜕
+PARTIAL_BOLD_ITALIC                        │ 𝝏
+PARTIAL_SANS_SERIF_BOLD                    │ 𝞉
+PARTIAL_SANS_SERIF_BOLD_ITALIC             │ 𝟃
+PLUS_SUPERSCRIPT                           │ ⁺
+PLUS_SUBSCRIPT                             │ ₊
+MINUS_SUPERSCRIPT                          │ ⁻
+MINUS_SUBSCRIPT                            │ ₋
+EQUAL_SUPERSCRIPT                          │ ⁼
+EQUAL_SUBSCRIPT                            │ ₌
+PARENTHESIS_SUPERSCRIPT                    │ ⁽⁾
+PARENTHESIS_SUBSCRIPT                      │ ₍₎
+CEIL                                       │ ⌈⌉
+FLOOR                                      │ ⌊⌋
+PARENTHESIS                                │ ()⏜⏝
+SQUARE_BRACKET                             │ []⎴⎵⎶
+CURLY_BRACKET                              │ {}⏞⏟
+ANGLE_BRACKET                              │ ⟨⟩
+DOUBLE_ANGLE_BRACKET                       │ ⟪⟫
+CURVED_ANGLE_BRACKET                       │ ⧼⧽
+GUILLEMET                                  │ ‹›
+DOUBLE_GUILLEMET                           │ «»
+LESS_THAN                                  │ <
+NOT_LESS_THAN                              │ ≮
+GREATER_THAN                               │ >
+NOT_GREATER_THAN                           │ ≯
+LESS_THAN_OR_EQUAL                         │ ≤
+NOT_LESS_THAN_NOR_EQUAL                    │ ≰
+GREATER_THAN_OR_EQUAL                      │ ≥
+NOT_GREATER_THAN_NOR_EQUAL                 │ ≱
+MUCH_LESS_THAN                             │ ≪
+MUCH_GREATER_THAN                          │ ≫
+EQUAL                                      │ =
+NOT_EQUAL                                  │ ≠
+ALMOST_EQUAL                               │ ≈
+NOT_ALMOST_EQUAL                           │ ≉
+IDENTICAL                                  │ ≡
+NOT_IDENTICAL                              │ ≢
+PROPORTIONAL                               │ ∝
+INFINITY                                   │ ∞
+SQUARE_ROOT                                │ √
+CUBE_ROOT                                  │ ∛
+FOURTH_ROOT                                │ ∜
+THEREFORE                                  │ ∴
+BECAUSE                                    │ ∵
+INTEGRAL                                   │ ∫
+DOUBLE_INTEGRAL                            │ ∬
+TRIPLE_INTEGRAL                            │ ∭
+QUADRUPLE_INTEGRAL                         │ ⨌
+ANGLE                                      │ ∠
+RATIO                                      │ ∶ (not same as :)
+PROPORTION                                 │ ∷ (not same as ::)
+PLUS                                       │ +
+MINUS                                      │ − (not same as -)
+PLUS_MINUS                                 │ ±
+MINUS_PLUS                                 │ ∓
+CIRCLED_PLUS                               │ ⊕
+CIRCLED_MINUS                              │ ⊖
+CIRCLED_TIMES                              │ ⊗
+CIRCLED_DIVISION_SLASH                     │ ⊘
+CIRCLED_DIVISION_SIGN                      │ ⨸ (unconventional. use ⊘)
+CIRCLED_DOT_OPERATOR                       │ ⊙
+CIRCLED_EQUAL                              │ ⊜
+SQUARED_PLUS                               │ ⊠
+SQUARED_MINUS                              │ ⊟
+SQUARED_TIMES                              │ ⊞
+SQUARED_DOT_OPERATOR                       │ ⊡
+TIMES                                      │ × (not same as x)
+DIVISION_SLASH                             │ ∕ (not same as /)
+DIVISION_SIGN                              │ ÷ (unconventional. use ∕)
+FRACTION                                   │ ⁄ (not same as ∕)
+TILDE_OPERATOR                             │ ∼ (not same as ~)
+DOT_OPERATOR                               │ ⋅ (not same as ·)
+CROSS_PRODUCT                              │ ⨯ (not same as ×)
+INTERSECTION                               │ ∩ (not same as n)
+UNION                                      │ ∪ (not same as u)
+SUBSET                                     │ ⊂ (not same as c)
+SUPERSET                                   │ ⊃
+PROPER_SUBSET                              │ ⊆
+PROPER_SUPERSET                            │ ⊇
+NOT_SUBSET                                 │ ⊄
+NOT_SUPERSET                               │ ⊅
+DOWN_TACK                                  │ ⊤ (not same as T)
+UP_TACK                                    │ ⊥
+LEFT_TACK                                  │ ⊣
+RIGHT_TACK                                 │ ⊢
+DIVIDES                                    │ ∣ (not same as |)
+NOT_DIVIDES                                │ ∤
+PARALLEL                                   │ ∥ (not same as ||)
+PERPENDICULAR                              │ ⟂ (not same as ⊥)
+NOT                                        │ ¬
+AND                                        │ ∧ (not same as ^)
+OR                                         │ ∨ (not same as v)
+NAND                                       │ ⊼
+NOR                                        │ ⊽
+XOR                                        │ ⊻
+BIG_PARENTHESIS                            │ ⎛⎜⎝⎞⎟⎠
+BIG_SQUARE_BRACKET                         │ ⎡⎢⎣⎤⎥⎦
+BIG_CURLY_BRACKET                          │ ⎧⎨⎩⎪⎫⎬⎭⎰⎱
+BIG_INTEGRAL                               │ ⌠⎮⌡
+BIG_BIG_SIGMA                              │ ⎲⎳
+BIG_DOWN_TACK                              │ ⟙ (not same as ⊤)
+BIG_UP_TACK                                │ ⟘ (not same as ⊥)
+BIG_CONJUNCTION                            │ ⋀ (not same as ∧)
+BIG_DISJUNCTION                            │ ⋁ (not same as ∨)
+BIG_INTERSECTION                           │ ⋂ (not same as ∩)
+BIG_UNION                                  │ ⋃ (not same as ∪)
+BIG_CIRCLED_PLUS                           │ ⨁ (not same as ⊕)
+BIG_CIRCLED_TIMES                          │ ⨂ (not same as ⊗)
+BIG_CIRCLED_DOT_OPERATOR                   │ ⨀ (not same as ⊙)
+BIG_PI                                     │ ∏ (not same as Π)
+BIG_SIGMA                                  │ ∑ (not same as Σ)
+BIG_TIMES                                  │ ⨉ (not same as ×)
+EMPTY_SET                                  │ ∅ (not same as θ)
+ARROW                                      │ ←↑→↓↔↕↖↗↘↙
+ARROW_STROKE                               │ ↚ ↛ ↮
+ARROW_DOUBLE                               │ ⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙
+ARROW_DOUBLE_STROKE                        │ ⇍ ⇏ ⇎
+ARROW_TRIPLE                               │ ⇚ ⇛
+ARROW_HARPOON                              │ ⇋⇌
+ARROW_PAIRED                               │ ⇇⇈⇉⇊
+ARROW_PAIRED_OPPOSITES                     │ ⇄⇅⇆⇵
+ARROW_PAIRED_TRIPLE                        │ ⬱ ⇶
+ARROW_DASHED                               │ ⇠⇡⇢⇣
+ARROW_WHITE                                │ ⇦⇧⇨⇩
+ELLIPSIS_VERTICAL                          │ ⋮
+ELLIPSIS_HORIZONTAL                        │ ⋯
+ELLIPSIS_DIAGONAL_UP_RIGHT                 │ ⋰
+ELLIPSIS_DIAGONAL_DOWN_RIGHT               │ ⋱
+DIAMETER                                   │ ⌀ (not same as ∅)
+NUMERO                                     │ №
+EULER_CONSTANT                             │ ℇ (unconventional. use γ or 𝛾)
+DOTLESS_ITALIC_I                           │ 𝚤
+DOTLESS_ITALIC_J                           │ 𝚥
+CIRCLE_BLACK                               │ ●
+CIRCLE_WHITE                               │ ○
+CIRCLE_HEAVY                               │ ⭘
+CIRCLE_LARGE_BLACK                         │ ⬤
+CIRCLE_LARGE_WHITE                         │ ◯
+CIRCLE_LARGE_HEAVY                         │ ⭕
+ELLIPSE_HORIZONTAL_BLACK                   │ ⬬
+ELLIPSE_HORIZONTAL_WHITE                   │ ⬭
+ELLIPSE_VERTICAL_BLACK                     │ ⬮
+ELLIPSE_VERTICAL_WHITE                     │ ⬯
+TRIANGLE_UP_BLACK                          │ ▲
+TRIANGLE_UP_WHITE                          │ △
+TRIANGLE_RIGHT_BLACK                       │ ▶
+TRIANGLE_RIGHT_WHITE                       │ ▷
+TRIANGLE_DOWN_BLACK                        │ ▼
+TRIANGLE_DOWN_WHITE                        │ ▽
+TRIANGLE_LEFT_BLACK                        │ ◀
+TRIANGLE_LEFT_WHITE                        │ ◁
+TRIANGLE_SMALL_UP_BLACK                    │ ▴
+TRIANGLE_SMALL_UP_WHITE                    │ ▵
+TRIANGLE_SMALL_RIGHT_BLACK                 │ ▸
+TRIANGLE_SMALL_RIGHT_WHITE                 │ ▹
+TRIANGLE_SMALL_DOWN_BLACK                  │ ▾
+TRIANGLE_SMALL_DOWN_WHITE                  │ ▿
+TRIANGLE_SMALL_LEFT_BLACK                  │ ◂
+TRIANGLE_SMALL_LEFT_WHITE                  │ ◃
+TRIANGLE_CENTRED_MEDIUM_UP_BLACK           │ ⯅
+TRIANGLE_CENTRED_MEDIUM_DOWN_BLACK         │ ⯆
+TRIANGLE_CENTRED_MEDIUM_LEFT_BLACK         │ ⯇
+TRIANGLE_CENTRED_MEDIUM_RIGHT_BLACK        │ ⯈
+TRIANGLE_UPPER_LEFT_BLACK                  │ ◤
+TRIANGLE_UPPER_LEFT_WHITE                  │ ◸
+TRIANGLE_LOWER_LEFT_BLACK                  │ ◣
+TRIANGLE_LOWER_LEFT_WHITE                  │ ◺
+TRIANGLE_UPPER_RIGHT_BLACK                 │ ◥
+TRIANGLE_UPPER_RIGHT_WHITE                 │ ◹
+TRIANGLE_LOWER_RIGHT_BLACK                 │ ◢
+TRIANGLE_LOWER_RIGHT_WHITE                 │ ◿
+POINTER_RIGHT_BLACK                        │ ►
+POINTER_RIGHT_WHITE                        │ ▻
+POINTER_LEFT_BLACK                         │ ◄
+POINTER_LEFT_WHITE                         │ ◅
+SQUARE_BLACK                               │ ■
+SQUARE_WHITE                               │ □
+SQUARE_MEDIUM_BLACK                        │ ◼
+SQUARE_MEDIUM_WHITE                        │ ◻
+SQUARE_SMALL_BLACK                         │ ▪
+SQUARE_SMALL_WHITE                         │ ▫
+SQUARE_VERY_SMALL_BLACK                    │ ⬝
+SQUARE_VERY_SMALL_WHITE                    │ ⬞
+SQUARE_CENTRED_BLACK                       │ ⯀
+RECTANGLE_HORIZONTAL_BLACK                 │ ▬
+RECTANGLE_HORIZONTAL_WHITE                 │ ▭
+RECTANGLE_VERTICAL_BLACK                   │ ▮
+RECTANGLE_VERTICAL_WHITE                   │ ▯
+PARALLELOGRAM_BLACK                        │ ▰
+PARALLELOGRAM_WHITE                        │ ▱
+DIAMOND_BLACK                              │ ◆
+DIAMOND_WHITE                              │ ◇
+DIAMOND_MEDIUM_BLACK                       │ ⬥
+DIAMOND_MEDIUM_WHITE                       │ ⬦
+DIAMOND_SMALL_BLACK                        │ ⬩
+DIAMOND_CENTRED_BLACK                      │ ⯁
+LOZENGE_BLACK                              │ ⧫
+LOZENGE_WHITE                              │ ◊
+LOZENGE_MEDIUM_BLACK                       │ ⬧
+LOZENGE_MEDIUM_WHITE                       │ ⬨
+LOZENGE_SMALL_BLACK                        │ ⬪ (colour reversed)
+LOZENGE_SMALL_WHITE                        │ ⬫ (colour reversed)
+CUSP_BLACK                                 │ ⯌
+CUSP_WHITE                                 │ ⯎
+CUSP_ROTATED_BLACK                         │ ⯍
+CUSP_ROTATED_WHITE 	                       │ ⯏
+PENTAGON_BLACK                             │ ⬟
+PENTAGON_WHITE                             │ ⬠
+PENTAGON_RIGHT_BLACK                       │ ⭓
+PENTAGON_RIGHT_WHITE                       │ ⭔
+PENTAGON_DOWN_BLACK                        │ ⯂ 
+STAR_SMALL_BLACK                           │ ⭑
+STAR_SMALL_WHITE                           │ ⭒
+HEXAGON_VERTICAL_WHITE                     │ ⬡
+HEXAGON_VERTICAL_BLACK                     │ ⬢
+HEXAGON_HORIZONTAL_BLACK                   │ ⬣
+OCTAGON_VERTICAL_BLACK                     │ ⯄
+OCTAGON_HORIZONTAL_BLACK                   │ ⯃
 ```
 <!--
+GREEK_NAME                                 │ {'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'digamma', 'san', 'tsan', 'sho', 'heta', 'koppa', 'sampi', 'yot', 'stigma'}
 angstrom                   │ Å (not same as Å) (unconventional. use Å)
+-->
+
+<!--
 ohm                        │ Ω 
 mho                        │ ℧ 
 celsius                    │ ℃ (not same as °C)
@@ -766,34 +929,3 @@ this project is convenience > accuracy > predictability > features > performance
 motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
 
 this project will take inspiration from [glm](https://github.com/icaven/glm) soon
-
-<!--
- ⌠ 
- ⎮ 
- ⌡ 
-
-⎛⎜⎝⎞⎟⎠ 	
-
-⎡ 	
-⎢ 	
-⎣ 	
-
-⎤ 	
-⎥ 	
-⎦ 	
-
-⎧ 
-⎪
-⎨ 	
-⎪
-⎩ 	 	
-
-⎫ 	
-⎪
-⎬ 	
-⎪
-⎭ 	
-
-⎰
-⎱
--->
