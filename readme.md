@@ -1,3 +1,6 @@
+<!-- implement something that can compare IEEE-754 values directly, instead of -0.0 == +0.0 being True-->
+<!-- implement something that can expose the direct bits of a datatype, like an int, float, char, str, etc-->
+
 im tired of having unpredictable math ops in my programs. so i made this cross-language swiss army knife of math stuff.
 unlike other math libraries, this one isnt specialized to a domain so its the widest-reaching one as far as i know.
 
@@ -37,55 +40,76 @@ daamath will be available as a java package. but im not sure where to host it ye
 complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(-4) will appropriately promote to a complex 2𝑖
 
 ```
-name      │ explanation              │ example
-──────────┼──────────────────────────┼────────────────────────────────
-inc       │ increment                │             ++2 = 3
-dec       │ decrement                │             −−2 = 1
-neg       │ additive inverse         │              −2 = −2
-inv       │ multiplicative inverse   │              ⅟2 = 0.5
-add       │ addition                 │          −5 + 2 = −3
-sub       │ subtraction              │          −5 − 2 = −7
-mul       │ multiplication           │          −5 × 2 = −10
-div       │ division                 │          −5 ∕ 2 = −2.5
-pow       │ exponentiation           │             −5² = 25
-log       │ logarithm                │       log(−5,2) ≈ 2.322 + 4.532𝑖
-root      │ nᵗʰ root                 │      root(−5,2) ≈ −2.23606797
-floordiv  │ division rounded to −∞   │  floordiv(−5,2) = −3
-mod       │ modulus                  │       mod(−5,2) =  1
-quotient  │ division rounded to ±0   │  quotient(−5,2) = −2
-remainder │ remaining of quotient    │ remainder(−5,2) = −1
-parallel  │ parallel operator        │  parallel(−5,2) = 3.(3)
-exp       │ exponentiation base e    │          exp(2) ≈ 7.389056098930
-exp2      │ exponentiation base 2    │         exp2(2) = 4
-exp10     │ exponentiation base 10   │        exp10(2) = 100
-ln        │ logarithm base e         │           ln(2) ≈ 0.693147180559
-log2      │ logarithm base 2         │         log2(2) = 1
-log10     │ logarithm base 10        │        log10(2) ≈ 0.30103
-expm1     │ exp(x) − 1               │        expm1(2) ≈ 6.38905609893065
-exp2m1    │ exp2(x) − 1              │       exp2m1(2) = 3
-exp10m1   │ exp10(x) − 1             │      exp10m1(2) = 99
-lnp       │ ln(x + 1)                │          lnp(2) ≈ 1.0986122886681096
-log2p     │ log2(x + 1)              │        log2p(2) ≈ 1.584962500721156
-log10p    │ log10(x + 1)             │       log10p(2) ≈ 0.47712125471966244
-sqrt      │ square root (√x)         │         sqrt(2) ≈ 1.4142135623730951
-cbrt      │ cube root (∛x)           │         cbrt(2) ≈ 1.2599210498948732
-rsqrt     │ reciprocal of sqrt(x)    │        rsqrt(2) ≈ 0.7071067811865475
-rcbrt     │ reciprocal of cbrt(x)    │        rcbrt(2) ≈ 0.7937005259840997
-abs       │ absolute value           │       abs(2+3𝑖) ≈ 3.6055512754
-gcd       │ greatest common divisor  │        gcd(2,3) = 1
-lcm       │ lowest common multiple   │        lcm(2,3) = 6
-hyper     │ hyperoperation           │  hyper(1, 2, 3) = 5
-ieee_div  │ IEEE-754-style division  │   ieee_div(0,0) = QNAN
-hypot     │ euclidean norm           │  hypot(1, 2, 3) ≈ 3.7416573867739413
-ceil      │ directed rounding to +∞  │   ceil(1.23, 1) = 1.3
-trunc     │ directed rounding to ±0  │  trunc(1.23, 1) = 1.2
-floor     │ directed rounding to −∞  │  floor(1.23, 1) = 1.2
-round     │ to nearest, tie to even  │  round(1.23, 1) = 1.1
+name        │ explanation              │ example
+────────────┼──────────────────────────┼────────────────────────────────
+inc         │ increment                │            ++2 = 3
+dec         │ decrement                │            −−2 = 1
+neg         │ additive inverse         │             −2 = −2
+inv         │ multiplicative inverse   │             ⅟2 = 0.5
+mod         │ modulus                  │         −5 % 2 =  1
+add         │ addition                 │         −5 + 2 = −3
+sub         │ subtraction              │         −5 − 2 = −7
+mul         │ multiplication           │         −5 × 2 = −10
+div         │ division                 │         −5 ∕ 2 = −2.5
+pow         │ exponentiation           │            −5² = 25
+root        │ nᵗʰ root                 │     root(−5,2) ≈ 2.23606797𝑖
+log         │ logarithm                │      log(−5,2) ≈ 2.322 + 4.532𝑖
+sexp        │ tetration                │     sexp(-5,2) = 
+sroot       │ super-root               │    sroot(-5,2) = 
+slog        │ super-logarith           │     slog(-5,2) = 
+parallel    │ parallel operator        │ parallel(−5,2) = 3.(3)
+exp         │ exponentiation base e    │         exp(2) ≈ 7.389056098930
+exp2        │ exponentiation base 2    │        exp2(2) = 4
+exp10       │ exponentiation base 10   │       exp10(2) = 100
+ln          │ logarithm base e         │          ln(2) ≈ 0.693147180559
+log2        │ logarithm base 2         │        log2(2) = 1
+log10       │ logarithm base 10        │       log10(2) ≈ 0.30103
+expm1       │ exp(x) − 1               │       expm1(2) ≈ 6.38905609893065
+exp2m1      │ exp2(x) − 1              │      exp2m1(2) = 3
+exp10m1     │ exp10(x) − 1             │     exp10m1(2) = 99
+lnp         │ ln(x + 1)                │         lnp(2) ≈ 1.0986122886681096
+log2p       │ log2(x + 1)              │       log2p(2) ≈ 1.584962500721156
+log10p      │ log10(x + 1)             │      log10p(2) ≈ 0.47712125471966244
+sqrt        │ square root (√x)         │        sqrt(2) ≈ 1.4142135623730951
+cbrt        │ cube root (∛x)           │        cbrt(2) ≈ 1.2599210498948732
+rsqrt       │ reciprocal of sqrt(x)    │       rsqrt(2) ≈ 0.7071067811865475
+rcbrt       │ reciprocal of cbrt(x)    │       rcbrt(2) ≈ 0.7937005259840997
+abs         │ absolute value           │      abs(2+3𝑖) ≈ 3.6055512754
+gcd         │ greatest common divisor  │       gcd(2,3) = 1
+lcm         │ lowest common multiple   │       lcm(2,3) = 6
+hyper       │ hyperoperation           │ hyper(1, 2, 3) = 5
+ieee_div    │ IEEE-754-style division  │  ieee_div(0,0) = QNAN
+floor       │ directed round to −∞     │ floor(1.23, 1) = 1.2
+ceil        │ directed round to +∞     │  ceil(1.23, 1) = 1.3
+trunc       │ directed round to ±0     │ trunc(1.23, 1) = 1.2
+away        │ directed round away ±0   │  away(1.23, 1) = 1.3
+round       │ to nearest, tie to even  │ round(1.23, 1) = 1.1
+floordiv    │ division rounded to −∞   │ floordiv(−5,2) = −3
+ceildiv     │ division rounded to +∞   │  ceildiv(-5,2) = -2
+truncdiv    │ division rounded to ±0   │ truncdiv(−5,2) = −2
+awaydiv     │ division rounded away ±0 │  awaydiv(-5,2) = -3
+rounddiv    │ round(div(a,b))          │ rounddiv(-5,2) = -2
+floorrem    │ remainder of floordiv    │ floorrem(-5,2) = 
+ceilrem     │ remainder of ceildiv     │  ceilrem(-5,2) = 
+truncrem    │ remainder of truncdiv    │ truncrem(−5,2) = −1
+awayrem     │ remainder of awaydiv     │  awayrem(-5,2) = 
+roundrem    │ remainder of rounddiv    │ roundrem(-5,2) = 
+floordivrem │ remainder of floordiv    │ floorrem(-5,2) = 
+ceildivrem  │ remainder of ceildiv     │  ceilrem(-5,2) = 
+truncdivrem │ remainder of truncdiv    │ truncrem(−5,2) = −1
+awaydivrem  │ remainder of awaydiv     │  awayrem(-5,2) = 
+rounddivrem │ remainder of rounddiv    │ roundrem(-5,2) = 
 ```
 
-tetration is yet a new operation, and there is no standard convention on which tetration is the most agreed upon. thus `tet`, `sexp`, `sroot`, `slog` are not yet implemented
+if you need more exotic rounding or quantization, my [pyquantize](https://github.com/deftasparagusanaconda/pyquantize) tool does exactly that
 
-i have not yet decided on a name for the variadic version of `parallel`
+i have not yet decided on a name for the variadic version of `parallel`, so it is not implemented yet
+
+`sexp`, `sroot`, `slog` ~~are~~ will be based on kneser's extension  
+a separate `pent` (pentation) will not be provided. but you are free to ask if you want it  
+`hyper` will not support non-integer inputs for n ≥ 4 (tetration and beyond). not until im smart enough to implement kneser's extension for these
+commutative hyperoperations will be added once i have understood them enough to implement them. i like them much more anyway :P
+
 
 </details><details open><summary>comparative </summary>
 
@@ -111,54 +135,47 @@ cgt  │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
 basic set:
 
 ```
-name    │ explanation           │ example
-────────┼───────────────────────┼─────────────────────────
-sin     │ circular sine         │       sin(1) ≈ 0.8414709848
-cos     │ circular cosine       │       cos(1) ≈ 0.54030230586
-tan     │ circular tangent      │       tan(1) ≈ 1.55740772465
-cot     │ circular cotangent    │       cot(1) ≈ 0.642093
-sec     │ circular secant       │       sec(1) ≈ 1.85081571768
-csc     │ circular cosecant     │       csc(1) ≈ 1.18839510578
-asin    │ circular arcsine      │      asin(1) ≈ 1.57079633
-acos    │ circular arccosine    │      acos(1) = 0
-atan    │ circular arctangent   │      atan(1) ≈ 0.785398163
-acot    │ circular arccotangent │      acot(1) ≈ 0.785398163
-asec    │ circular arcsecant    │      asec(1) = 0
-acsc    │ circular arccosecant  │      acsc(1) ≈ 1.57079633
-sinpi   │ sin(𝜋x)               │     sinpi(1) = 0
-cospi   │ cos(𝜋x)               │     cospi(1) = −1
-tanpi   │ tan(𝜋x)               │     tanpi(1) = 0
-cotpi   │ cot(𝜋x)               │     cotpi(1) = ?
-secpi   │ sec(𝜋x)               │     secpi(1) = −1
-cscpi   │ csc(𝜋x)               │     cscpi(1) = ?
-asinpi  │ asin(y)∕𝜋             │    asinpi(1) = 0.5
-acospi  │ acos(y)∕𝜋             │    acospi(1) = 0
-atanpi  │ atan(y)∕𝜋             │    atanpi(1) = 0.25
-acotpi  │ acot(y)∕𝜋             │    acotpi(1) = 0.25
-asecpi  │ asec(y)∕𝜋             │    asecpi(1) = 0
-acscpi  │ acsc(y)∕𝜋             │    acscpi(1) = 0.5
-sind    │ sin(𝜋x∕180)           │      sind(1) = 
-cosd    │ cos(𝜋x∕180)           │      cosd(1) = 
-tand    │ tan(𝜋x∕180)           │      tand(1) = 
-cotd    │ cot(𝜋x∕180)           │      cotd(1) = 
-secd    │ sec(𝜋x∕180)           │      secd(1) = 
-cscd    │ csc(𝜋x∕180)           │      cscd(1) = 
-asind   │ asin(y)×180∕𝜋         │     asind(1) = 
-acosd   │ acos(y)×180∕𝜋         │     acosd(1) = 
-atand   │ atan(y)×180∕𝜋         │     atand(1) = 
-acotd   │ acot(y)×180∕𝜋         │     acotd(1) = 
-asecd   │ asec(y)×180∕𝜋         │     asecd(1) = 
-acscd   │ acsc(y)×180∕𝜋         │     acscd(1) = 
-atan2   │ IEEE atan2            │   atan2(1,1) ≈ 0.785398163
-atan2pi │ IEEE atan2∕𝜋          │ atan2pi(1,1) = 0.25
-atan2d  │ IEEE atan2×180∕𝜋      │  atan2d(1,1) ≈ 
-```
-
-extra set:
-
-```
-name            │ explanation               │ formula
-────────────────┼───────────────────────────┼──────────────────────────────────────────────────────────
+name            │ explanation               │ example
+────────────────┼───────────────────────────┼───────────────────────────────────
+sin             │ circular sine             │             sin(1) ≈ 0.8414709848
+cos             │ circular cosine           │             cos(1) ≈ 0.54030230586
+tan             │ circular tangent          │             tan(1) ≈ 1.55740772465
+cot             │ circular cotangent        │             cot(1) ≈ 0.642093
+sec             │ circular secant           │             sec(1) ≈ 1.85081571768
+csc             │ circular cosecant         │             csc(1) ≈ 1.18839510578
+asin            │ circular arcsine          │            asin(1) ≈ 1.57079633
+acos            │ circular arccosine        │            acos(1) = 0
+atan            │ circular arctangent       │            atan(1) ≈ 0.785398163
+acot            │ circular arccotangent     │            acot(1) ≈ 0.785398163
+asec            │ circular arcsecant        │            asec(1) = 0
+acsc            │ circular arccosecant      │            acsc(1) ≈ 1.57079633
+sinpi           │ sin(𝜋x)                   │           sinpi(1) = 0
+cospi           │ cos(𝜋x)                   │           cospi(1) = −1
+tanpi           │ tan(𝜋x)                   │           tanpi(1) = 0
+cotpi           │ cot(𝜋x)                   │           cotpi(1) = ?
+secpi           │ sec(𝜋x)                   │           secpi(1) = −1
+cscpi           │ csc(𝜋x)                   │           cscpi(1) = ?
+asinpi          │ asin(y)∕𝜋                 │          asinpi(1) = 0.5
+acospi          │ acos(y)∕𝜋                 │          acospi(1) = 0
+atanpi          │ atan(y)∕𝜋                 │          atanpi(1) = 0.25
+acotpi          │ acot(y)∕𝜋                 │          acotpi(1) = 0.25
+asecpi          │ asec(y)∕𝜋                 │          asecpi(1) = 0
+acscpi          │ acsc(y)∕𝜋                 │          acscpi(1) = 0.5
+sind            │ sin(𝜋x∕180)               │            sind(1) = 
+cosd            │ cos(𝜋x∕180)               │            cosd(1) = 
+tand            │ tan(𝜋x∕180)               │            tand(1) = 
+cotd            │ cot(𝜋x∕180)               │            cotd(1) = 
+secd            │ sec(𝜋x∕180)               │            secd(1) = 
+cscd            │ csc(𝜋x∕180)               │            cscd(1) = 
+asind           │ asin(y)×180∕𝜋             │           asind(1) = 
+acosd           │ acos(y)×180∕𝜋             │           acosd(1) = 
+atand           │ atan(y)×180∕𝜋             │           atand(1) = 
+acotd           │ acot(y)×180∕𝜋             │           acotd(1) = 
+asecd           │ asec(y)×180∕𝜋             │           asecd(1) = 
+acscd           │ acsc(y)×180∕𝜋             │           acscd(1) = 
+atan2           │ IEEE atan2                │         atan2(1,1) ≈ 0.785398163
+atan2pi         │ IEEE atan2∕𝜋              │       atan2pi(1,1) = 0.25
+atan2d          │ IEEE atan2×180∕𝜋          │        atan2d(1,1) ≈ 
 versin          │ versed sine               │          versin(x) = 1 − cos(x)
 vercos          │ versed cosine             │          vercos(x) = 1 + cos(x)
 coversin        │ co versed sine            │        coversin(x) = 1 − sin(x)
@@ -226,6 +243,8 @@ archavercosd    │ archavercos(y)×180∕𝜋      │    archavercosd(y) = arc
 archacoversind  │ archacoversin(y)×180∕𝜋    │  archacoversind(y) = arcsin(1−2y)×180∕𝜋
 archacovercosd  │ archacovercos(y)×180∕𝜋    │  archacovercosd(y) = arcsin(2y−1)×180∕𝜋
 ```
+
+galilean trigonometric functions are not included because they are trivial, in that `sing(x) = x` and `cosg(x) = 1`
 
 </details><details open><summary>hyperbolic </summary>
 
@@ -326,31 +345,35 @@ map                    │ map x in [a,b] to [c,d]            │          map(2
 
 </details><details open><summary>miscellaneous </summary>
 
-`frange` is like numpy's `arange`
+`frange` is like numpy's `arange`  
+`linrange` is like numpy's `linrange`
 `parity` should operate on the direct bits of the datatype
 
 ```
-name     │ explanation                            │ example
-─────────┼────────────────────────────────────────┼──────────────────────────────────────────
-signbit  │ false if +ve else true                 │          signbit(3) = T
-copysign │ magnitude of a with sign of b          │      copysign(2, 3) = 2
-any      │ n-ary OR gate                          │        any(F, T, F) = T
-all      │ n-ary AND gate                         │        all(F, T, F) = F
-min      │ minimum                                │        min(1, 2, 3) = 1
-max      │ maximum                                │        max(1, 2, 3) = 3
-fst      │ first element                          │        fst(1, 2, 3) = 1
-snd      │ second element                         │        snd(1, 2, 3) = 2
-sgn      │ signum. −1 if <0, +1 if >0, else 0     │            sgn(0.5) = 1
-swap     │ swap variables in memory               │          swap(a, b) = (b, a)
-parity   │ sum of 1 bits                          │           parity(5) = 2
-frange   │ iterable of numbers in an interval     │  frange(0, 10, 2.5) = [0, 2.5, 5, 7.5]
-linspace │ fixed number of numbers in an interval │ 
-isinf    │ true if IEEE inf                       │ isinf(float('inf')) = True
-isnan    │ true if IEEE nan                       │ isnan(float('nan')) = False
-erf      │ error function                         │              erf(1) ≈ 0.8427007929497149
-erfc     │ 1−erf(x)                               │             erfc(1) ≈ 0.15729920705028513
-gamma    │ gamma function                         │          gamma(1.5) ≈ 0.886226925452758
-lgamma   │ natural logarithm of gamma(x)          │         lgamma(999) ≈ 5898.313668430534
+name      │ explanation                            │ example
+──────────┼────────────────────────────────────────┼──────────────────────────────────────────
+to_bitstring│
+normalize │ normalize a vector                     │ 
+norm      │ euclidean norm                         │  norm(1, 2, 3) ≈ 3.7416573867739413
+signbit   │ false if +ve else true                 │          signbit(3) = T
+copysign  │ magnitude of a with sign of b          │      copysign(2, 3) = 2
+any       │ n-ary OR gate                          │        any(F, T, F) = T
+all       │ n-ary AND gate                         │        all(F, T, F) = F
+min       │ minimum                                │        min(1, 2, 3) = 1
+max       │ maximum                                │        max(1, 2, 3) = 3
+fst       │ first element                          │        fst(1, 2, 3) = 1
+snd       │ second element                         │        snd(1, 2, 3) = 2
+sgn       │ signum. −1 if <0, +1 if >0, else 0     │            sgn(0.5) = 1
+swap      │ swap variables in memory               │          swap(a, b) = (b, a)
+parity    │ sum of 1 bits                          │           parity(5) = 2
+frange    │ iterable of numbers in an interval     │  frange(0, 10, 2.5) = [0, 2.5, 5, 7.5]
+linspace  │ fixed number of numbers in an interval │ 
+isinf     │ true if IEEE inf                       │ isinf(float('inf')) = True
+isnan     │ true if IEEE nan                       │ isnan(float('nan')) = False
+erf       │ error function                         │              erf(1) ≈ 0.8427007929497149
+erfc      │ 1−erf(x)                               │             erfc(1) ≈ 0.15729920705028513
+gamma     │ gamma function                         │          gamma(1.5) ≈ 0.886226925452758
+lgamma    │ natural logarithm of gamma(x)          │         lgamma(999) ≈ 5898.313668430534
 ```
 
 </details><details open><summary>statistics </summary>
@@ -530,32 +553,34 @@ def _partial_derivative():
 # constants
 
 ```
-name         │ explanation                │ value
-─────────────┼────────────────────────────┼──────────────────────────
-OMEGA        │ omega constant             │ ≈ 0.56714329040978387299…
-GAMMA        │ euler-mascheroni constant  │ ≈ 0.57721566490153286060…
-LN_2         │ natural logarithm of 2     │ ≈ 0.6931471805599453…
-CATALAN      │ catalan's constant         │ ≈ 0.9159655941772190150…
-ZETA_3       │ apéry's constant           │ ≈ 1.20205690315959428539…
-SQRT_2       │ pythagoras constant        │ ≈ 1.4142135623730951…
-PHI          │ golden ratio               │ ≈ 1.61803398874989484820…
-SQRT_3       │ square root of 3           │ ≈ 1.7320508075688772…
-LN_10        │ natural logarithn of 10    │ ≈ 2.302585092994046…
-E            │ euler's number             │ ≈ 2.71828182845904523536…
-PI           │ archimedes' constant       │ ≈ 3.14159265358979323846…
-TAU          │ PI*2                       │ ≈ 6.28318530717958647692…
-POS_INF      │ IEEE 754 positive inf      │ +∞
-NEG_INF      │ IEEE 754 negative inf      │ −∞
-POS_ZERO     │ IEEE 754 positive zero     │ +0.0
-NEG_ZERO     │ IEEE 754 negative zero     │ −0.0
-QNAN         │ IEEE 754 quiet nan         │ qnan
-SNAN         │ IEEE 754 signalling nan    │ snan
-FLT_MAX      │ largest normal float       │ (2 − 2⁻²³) × 2⁺¹²⁷
-FLT_MIN      │ smallest normal float      │ 2⁻¹²⁶
-FLT_TRUE_MIN │ smallest subnormal float   │ 2⁻¹⁴⁹
-DBL_MAX      │ largest normal double      │ (2 − 2⁻⁵²) × 2⁺¹⁰²³
-DBL_MIN      │ smallest normal double     │ 2⁻¹⁰²²
-DBL_TRUE_MIN │ smallest subnormal double  │ 2⁻¹⁰⁷⁴
+name         │ explanation                      │ value
+─────────────┼──────────────────────────────────┼──────────────────────────
+OMEGA        │ omega constant                   │ ≈ 0.56714329040978387299…
+GAMMA        │ euler-mascheroni constant        │ ≈ 0.57721566490153286060…
+LN_2         │ natural logarithm of 2           │ ≈ 0.6931471805599453…
+CATALAN      │ catalan's constant               │ ≈ 0.9159655941772190150…
+ZETA_3       │ apéry's constant                 │ ≈ 1.20205690315959428539…
+SQRT_2       │ pythagoras constant              │ ≈ 1.4142135623730951…
+PHI          │ golden ratio                     │ ≈ 1.61803398874989484820…
+SQRT_3       │ square root of 3                 │ ≈ 1.7320508075688772…
+LN_10        │ natural logarithn of 10          │ ≈ 2.302585092994046…
+E            │ euler's number                   │ ≈ 2.71828182845904523536…
+PI           │ archimedes' constant             │ ≈ 3.14159265358979323846…
+TAU          │ PI*2                             │ ≈ 6.28318530717958647692…
+POS_INF      │ IEEE 754 positive inf            │ +∞
+NEG_INF      │ IEEE 754 negative inf            │ −∞
+POS_ZERO     │ IEEE 754 positive zero           │ +0.0
+NEG_ZERO     │ IEEE 754 negative zero           │ −0.0
+POS_QNAN     │ IEEE 754 positive quiet nan      │ +qnan
+NEG_QNAN     │ IEEE 754 negative quiet nan      │ -qnan
+POS_SNAN     │ IEEE 754 positive signalling nan │ +snan
+NEG_SNAN     │ IEEE 754 negative signalling nan │ +snan
+FLT_MAX      │ largest normal float             │ (2 − 2⁻²³) × 2⁺¹²⁷
+FLT_MIN      │ smallest normal float            │ 2⁻¹²⁶
+FLT_TRUE_MIN │ smallest subnormal float         │ 2⁻¹⁴⁹
+DBL_MAX      │ largest normal double            │ (2 − 2⁻⁵²) × 2⁺¹⁰²³
+DBL_MIN      │ smallest normal double           │ 2⁻¹⁰²²
+DBL_TRUE_MIN │ smallest subnormal double        │ 2⁻¹⁰⁷⁴
 ```
 <!--
 SI_DVCS      │ hyperfine transition freq  │ 9192631770
@@ -743,6 +768,12 @@ DOT_OPERATOR                               │ ⋅ (not same as ·)
 CROSS_PRODUCT                              │ ⨯ (not same as ×)
 INTERSECTION                               │ ∩ (not same as n)
 UNION                                      │ ∪ (not same as u)
+ELEMENT_OF                                 │ ∈
+ELEMENT_OF_SMALL                           │ ∊ (not same as ∈)
+NOT_ELEMENT_OF                             │ ∉
+CONTAINS                                   │ ∋
+CONTAINS_SMALL                             │ ∍ (not same as ∋)
+NOT_CONTAINS                               │ ∌
 SUBSET                                     │ ⊂ (not same as c)
 SUPERSET                                   │ ⊃
 PROPER_SUBSET                              │ ⊆
@@ -914,9 +945,9 @@ because i forget sometimes
 ```
 name                  │ formula
 ──────────────────────┼────────────────────────────────────────────────────────────
-degree_to_radian      │ radian = degree * 𝜋 ∕ 180
+degree_to_radian      │ radian = degree * 𝜏 ∕ 360
 degree_to_turn        │   turn = degree ∕ 360
-radian_to_degree      │ degree = radian * 180 ∕ 𝜋
+radian_to_degree      │ degree = radian * 360 ∕ 𝜏
 radian_to_turn        │   turn = radian ∕ 𝜏
 turn_to_degree        │ degree = turn * 360
 turn_to_radian        │ radian = turn * 𝜏
@@ -924,7 +955,9 @@ turn_to_radian        │ radian = turn * 𝜏
 
 ya :v thats pretty much it
 
-this project is convenience > accuracy > predictability > features > performance so i dont really care how slow it does it, as long as it *does* it
+this project is convenience > accuracy > predictability > features > performance so i dont really care how slow it does it, as long as it *does* it.
+
+special cases like 0/0 are handled according to how *you* like it, using a global variable. 
 
 motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
 

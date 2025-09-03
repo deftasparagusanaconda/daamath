@@ -1,3 +1,5 @@
+# none of these functions should depend on each other
+
 from typing import Literal as _Literal
 
 from operator import add, sub, mul, truediv as div, pos, neg, mod, floordiv, truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
@@ -9,6 +11,83 @@ from statistics import mean, median, mode, variance as var, stdev
 from math import isnan as _isnan
 from math import sin, cos, tan, asin, acos, atan, atan2, sinh, cosh, tanh, asinh, acosh, atanh
 from math import copysign
+
+def inc(x):
+	if isinstance(x, complex):
+		raise TypeError("i have not yet decided if complex input should be supported or not")
+	'++x also known as x + 1'
+	return x + 1
+
+def dec(x):
+	if isinstance(x, complex):
+		raise TypeError("i have not yet decided if complex input should be supported or not")
+	'−−x also known as x − 1'
+	return x - 1
+
+def neg(x):
+	'−x also known as unary subtraction also known as additive inverse'
+	return -x
+
+def inv(x):
+	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
+	return 1/x
+
+def add(a, b):
+	'a + b also known as addition'
+	return a + b
+
+def sub(a, b):
+	'a − b also known as subtraction also known as difference'
+	return a - b
+
+def mul(a, b):
+	'a × b also known as multiplication also known as product also known as times'
+	return a * b
+
+def div(a, b):
+	'a ∕ b also known as division'
+	return a / b
+
+def pow(a, b):
+	'aᵇ also known as exponentiation'
+	return a ** b
+
+def root(a, b):
+	'nᵗʰ root also known as ᵇ√a also known as a ^ (⅟b) also known as inverse of exponentiation'
+	return a ** (1/b)
+
+def log(a, b):
+	'logarithm also known as inverse of exponentiation'
+	try:
+		from math import log
+		return log(a, b)
+	except (ValueError, TypeError):
+		from cmath import log
+		return log(a, b)
+
+def sexp(a, b):
+	'superexponentiation also known as tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def sroot(a, b):
+	'superroot also known as inverse of tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def slog(a, b):
+	'superlogarithm also known as inverse of tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def floordiv(a, b):
+	'division rounded to integers towards -∞'
+	return a // b
+
+def mod(a, b):
+	'modulus'
+	return a % b
+
+def truncdiv(a, b):
+	'division rounded to integers towards ±0'
+	raise NotImplementedError('i havent made this yet')
 
 def scaler_tan(x:int|float) -> float:
 	if x < 0 or x > 1:
@@ -976,6 +1055,12 @@ DOT_OPERATOR                               = '⋅'
 CROSS_PRODUCT                              = '⨯'
 INTERSECTION                               = '∩'
 UNION                                      = '∪'
+ELEMENT_OF                                 = '∈'
+ELEMENT_OF_SMALL                           = '∊'
+NOT_ELEMENT_OF                             = '∉'
+CONTAINS                                   = '∋'
+CONTAINS_SMALL                             = '∍'
+NOT_CONTAINS                               = '∌'
 SUBSET                                     = '⊂'
 SUPERSET                                   = '⊃'
 PROPER_SUBSET                              = '⊆'
