@@ -1,7 +1,9 @@
-<!-- implement something that can compare IEEE-754 values directly, instead of -0.0 == +0.0 being True-->
-<!-- implement something that can expose the direct bits of a datatype, like an int, float, char, str, etc-->
+<!-- implement something that can compare IEEE-754 values directly, instead of -0.0 == +0.0 being True, or nan(2) == nan(3) being False -->
+<!-- implement something that can expose the direct bits of a datatype, like an int, float, char, str, etc -->
+<!-- implement something that can generate a nan from a given integer payload-->
+<!-- implement something that can take number prefixes like 0b 0d 0x 0t 0q 0o -->
 
-im tired of having unpredictable math ops in my programs. so i made this cross-language swiss army knife of math stuff.
+im tired of having unpredictable math ops in my programs. so i made this cross-language swiss army knife of math stuff.  
 unlike other math libraries, this one isnt specialized to a domain so its the widest-reaching one as far as i know.
 
 # HOW IHNSTALL???!?!?
@@ -37,7 +39,7 @@ daamath will be available as a java package. but im not sure where to host it ye
 
 <details open><summary>arithmetic</summary>
 
-complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(-4) will appropriately promote to a complex 2𝑖
+complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(−4) will appropriately promote to a complex 2𝑖
 
 ```
 name        │ explanation              │ example
@@ -51,25 +53,27 @@ add         │ addition                 │         −5 + 2 = −3
 sub         │ subtraction              │         −5 − 2 = −7
 mul         │ multiplication           │         −5 × 2 = −10
 div         │ division                 │         −5 ∕ 2 = −2.5
-pow         │ exponentiation           │            −5² = 25
 root        │ nᵗʰ root                 │     root(−5,2) ≈ 2.23606797𝑖
-log         │ logarithm                │      log(−5,2) ≈ 2.322 + 4.532𝑖
-sexp        │ tetration                │     sexp(-5,2) = 
-sroot       │ super-root               │    sroot(-5,2) = 
-slog        │ super-logarith           │     slog(-5,2) = 
+pow         │ exponentiation           │            −5² = 25
+exp         │ exponentiation base 𝑒    │        expₑ(2) ≈ 7.389056098930
+exp2        │ exponentiation base 2    │        exp₂(2) = 4
+exp10       │ exponentiation base 10   │        exp⏨(2) = 100
+log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
+loge        │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
+log2        │ logarithm base 2         │        log₂(2) = 1
+log10       │ logarithm base 10        │        log⏨(2) ≈ 0.30103
+powm1       │ pow(a, b) − 1            │   powm1(−5, 2) = 
+expm1       │ exp(a) − 1               │       expm1(2) ≈ 6.38905609893065
+exp2m1      │ exp2(a) − 1              │      exp₂m1(2) = 3
+exp10m1     │ exp10(a) − 1             │      exp⏨m1(2) = 99
+logp1       │ log(a + 1, b)            │       logp1(2) = 
+logep1      │ loge(a + 1)              │      logₑp1(2) ≈ 
+log2p1      │ log2(a + 1)              │      log₂p1(2) ≈ 
+log10p1     │ log10(a + 1)             │      log⏨p1(2) ≈ 
+sexp        │ tetration                │     sexp(−5,2) = 
+sroot       │ super-root               │    sroot(−5,2) = 
+slog        │ super-logarith           │     slog(−5,2) = 
 parallel    │ parallel operator        │ parallel(−5,2) = 3.(3)
-exp         │ exponentiation base e    │         exp(2) ≈ 7.389056098930
-exp2        │ exponentiation base 2    │        exp2(2) = 4
-exp10       │ exponentiation base 10   │       exp10(2) = 100
-ln          │ logarithm base e         │          ln(2) ≈ 0.693147180559
-log2        │ logarithm base 2         │        log2(2) = 1
-log10       │ logarithm base 10        │       log10(2) ≈ 0.30103
-expm1       │ exp(x) − 1               │       expm1(2) ≈ 6.38905609893065
-exp2m1      │ exp2(x) − 1              │      exp2m1(2) = 3
-exp10m1     │ exp10(x) − 1             │     exp10m1(2) = 99
-lnp         │ ln(x + 1)                │         lnp(2) ≈ 1.0986122886681096
-log2p       │ log2(x + 1)              │       log2p(2) ≈ 1.584962500721156
-log10p      │ log10(x + 1)             │      log10p(2) ≈ 0.47712125471966244
 sqrt        │ square root (√x)         │        sqrt(2) ≈ 1.4142135623730951
 cbrt        │ cube root (∛x)           │        cbrt(2) ≈ 1.2599210498948732
 rsqrt       │ reciprocal of sqrt(x)    │       rsqrt(2) ≈ 0.7071067811865475
@@ -78,28 +82,31 @@ abs         │ absolute value           │      abs(2+3𝑖) ≈ 3.6055512754
 gcd         │ greatest common divisor  │       gcd(2,3) = 1
 lcm         │ lowest common multiple   │       lcm(2,3) = 6
 hyper       │ hyperoperation           │ hyper(1, 2, 3) = 5
-ieee_div    │ IEEE-754-style division  │  ieee_div(0,0) = QNAN
 floor       │ directed round to −∞     │ floor(1.23, 1) = 1.2
 ceil        │ directed round to +∞     │  ceil(1.23, 1) = 1.3
 trunc       │ directed round to ±0     │ trunc(1.23, 1) = 1.2
 away        │ directed round away ±0   │  away(1.23, 1) = 1.3
 round       │ to nearest, tie to even  │ round(1.23, 1) = 1.1
 floordiv    │ division rounded to −∞   │ floordiv(−5,2) = −3
-ceildiv     │ division rounded to +∞   │  ceildiv(-5,2) = -2
+ceildiv     │ division rounded to +∞   │  ceildiv(−5,2) = −2
 truncdiv    │ division rounded to ±0   │ truncdiv(−5,2) = −2
-awaydiv     │ division rounded away ±0 │  awaydiv(-5,2) = -3
-rounddiv    │ round(div(a,b))          │ rounddiv(-5,2) = -2
-floorrem    │ remainder of floordiv    │ floorrem(-5,2) = 
-ceilrem     │ remainder of ceildiv     │  ceilrem(-5,2) = 
-truncrem    │ remainder of truncdiv    │ truncrem(−5,2) = −1
-awayrem     │ remainder of awaydiv     │  awayrem(-5,2) = 
-roundrem    │ remainder of rounddiv    │ roundrem(-5,2) = 
-floordivrem │ remainder of floordiv    │ floorrem(-5,2) = 
-ceildivrem  │ remainder of ceildiv     │  ceilrem(-5,2) = 
-truncdivrem │ remainder of truncdiv    │ truncrem(−5,2) = −1
-awaydivrem  │ remainder of awaydiv     │  awayrem(-5,2) = 
-rounddivrem │ remainder of rounddiv    │ roundrem(-5,2) = 
+awaydiv     │ division rounded away ±0 │  awaydiv(−5,2) = −3
+rounddiv    │ round(div(a,b))          │ rounddiv(−5,2) = −2
+floorrem    │ remainder of floordiv    │ floorrem(−5,2) = 
+ceilrem     │ remainder of  ceildiv    │  ceilrem(−5,2) = 
+truncrem    │ remainder of truncdiv    │ truncrem(−5,2) = 
+awayrem     │ remainder of  awaydiv    │  awayrem(−5,2) = 
+roundrem    │ remainder of rounddiv    │ roundrem(−5,2) = 
+floordivrem │ (floordiv, floorrem)     │ floorrem(−5,2) = 
+ceildivrem  │ ( ceildiv,  ceilrem)     │  ceilrem(−5,2) = 
+truncdivrem │ (truncdiv, truncrem)     │ truncrem(−5,2) = 
+awaydivrem  │ ( awaydiv,  awayrem)     │  awayrem(−5,2) = 
+rounddivrem │ (rounddiv, roundrem)     │ roundrem(−5,2) = 
 ```
+
+`log` always takes number and base, because mathematicians assume it is logₑ(x) while engineers assume it is log⏨(x). this causes problems. this problem does not occur for exponentiation as, following convention, we have `pow` and `exp` separately for xʸ and eˣ respectively.
+
+`modulus` will not allow non-integer input. it is based on modular arithmetic, which only concerns integers. `floorrem` gives the same results but works for fractional input
 
 if you need more exotic rounding or quantization, my [pyquantize](https://github.com/deftasparagusanaconda/pyquantize) tool does exactly that
 
@@ -109,7 +116,6 @@ i have not yet decided on a name for the variadic version of `parallel`, so it i
 a separate `pent` (pentation) will not be provided. but you are free to ask if you want it  
 `hyper` will not support non-integer inputs for n ≥ 4 (tetration and beyond). not until im smart enough to implement kneser's extension for these
 commutative hyperoperations will be added once i have understood them enough to implement them. i like them much more anyway :P
-
 
 </details><details open><summary>comparative </summary>
 
@@ -132,116 +138,149 @@ cgt  │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
 
 </details><details open><summary>trigonometric </summary>
 
-basic set:
-
 ```
-name            │ explanation               │ example
-────────────────┼───────────────────────────┼───────────────────────────────────
-sin             │ circular sine             │             sin(1) ≈ 0.8414709848
-cos             │ circular cosine           │             cos(1) ≈ 0.54030230586
-tan             │ circular tangent          │             tan(1) ≈ 1.55740772465
-cot             │ circular cotangent        │             cot(1) ≈ 0.642093
-sec             │ circular secant           │             sec(1) ≈ 1.85081571768
-csc             │ circular cosecant         │             csc(1) ≈ 1.18839510578
-asin            │ circular arcsine          │            asin(1) ≈ 1.57079633
-acos            │ circular arccosine        │            acos(1) = 0
-atan            │ circular arctangent       │            atan(1) ≈ 0.785398163
-acot            │ circular arccotangent     │            acot(1) ≈ 0.785398163
-asec            │ circular arcsecant        │            asec(1) = 0
-acsc            │ circular arccosecant      │            acsc(1) ≈ 1.57079633
-sinpi           │ sin(𝜋x)                   │           sinpi(1) = 0
-cospi           │ cos(𝜋x)                   │           cospi(1) = −1
-tanpi           │ tan(𝜋x)                   │           tanpi(1) = 0
-cotpi           │ cot(𝜋x)                   │           cotpi(1) = ?
-secpi           │ sec(𝜋x)                   │           secpi(1) = −1
-cscpi           │ csc(𝜋x)                   │           cscpi(1) = ?
-asinpi          │ asin(y)∕𝜋                 │          asinpi(1) = 0.5
-acospi          │ acos(y)∕𝜋                 │          acospi(1) = 0
-atanpi          │ atan(y)∕𝜋                 │          atanpi(1) = 0.25
-acotpi          │ acot(y)∕𝜋                 │          acotpi(1) = 0.25
-asecpi          │ asec(y)∕𝜋                 │          asecpi(1) = 0
-acscpi          │ acsc(y)∕𝜋                 │          acscpi(1) = 0.5
-sind            │ sin(𝜋x∕180)               │            sind(1) = 
-cosd            │ cos(𝜋x∕180)               │            cosd(1) = 
-tand            │ tan(𝜋x∕180)               │            tand(1) = 
-cotd            │ cot(𝜋x∕180)               │            cotd(1) = 
-secd            │ sec(𝜋x∕180)               │            secd(1) = 
-cscd            │ csc(𝜋x∕180)               │            cscd(1) = 
-asind           │ asin(y)×180∕𝜋             │           asind(1) = 
-acosd           │ acos(y)×180∕𝜋             │           acosd(1) = 
-atand           │ atan(y)×180∕𝜋             │           atand(1) = 
-acotd           │ acot(y)×180∕𝜋             │           acotd(1) = 
-asecd           │ asec(y)×180∕𝜋             │           asecd(1) = 
-acscd           │ acsc(y)×180∕𝜋             │           acscd(1) = 
-atan2           │ IEEE atan2                │         atan2(1,1) ≈ 0.785398163
-atan2pi         │ IEEE atan2∕𝜋              │       atan2pi(1,1) = 0.25
-atan2d          │ IEEE atan2×180∕𝜋          │        atan2d(1,1) ≈ 
-versin          │ versed sine               │          versin(x) = 1 − cos(x)
-vercos          │ versed cosine             │          vercos(x) = 1 + cos(x)
-coversin        │ co versed sine            │        coversin(x) = 1 − sin(x)
-covercos        │ co versed cosine          │        covercos(x) = 1 + sin(x)
-haversin        │ half versed sine          │        haversin(x) = (1 − cos(x))∕2
-havercos        │ half versed cosine        │        havercos(x) = (1 + cos(x))∕2
-hacoversin      │ half co versed sine       │      hacoversin(x) = (1 − sin(x))∕2
-hacovercos      │ half co versed cosine     │      hacovercos(x) = (1 + sin(x))∕2
-exsec           │ external secant           │           exsec(x) = sec(x) − 1
-excsc           │ external cosecant         │           excsc(x) = csc(x) − 1
-chord           │ chord length              │           chord(x) = 2 × sin(x∕2)
-arcchord        │ arc chord length          │        arcchord(y) = 2 × arcsin(y∕2)
-arcexsec        │ arc external secant       │        arcexsec(y) = arcsec(y+1)
-arcexcsc        │ arc external cosecant     │        arcexcsc(y) = arccsc(y+1)
-arcversin       │ arc versed sine           │       arcversin(y) = arccos(1−y)
-arcvercos       │ arc versed cosine         │       arcvercos(y) = arccos(y−1)
-arccoversin     │ arc co versed sine        │     arccoversin(y) = arcsin(1−y)
-arccovercos     │ arc co versed cosine      │     arccovercos(y) = arcsin(y−1)
-archaversin     │ arc half versed sine      │     archaversin(y) = arccos(1−2y)
-archavercos     │ arc half versed cosine    │     archavercos(y) = arccos(2y−1)
-archacoversin   │ arc half co versed sine   │   archacoversin(y) = arcsin(1−2y)
-archacovercos   │ arc half co versed cosine │   archacovercos(y) = arcsin(2y−1)
-versinpi        │ versin(𝜋x)                │        versinpi(x) = 1 − cos(𝜋x)
-vercospi        │ vercos(𝜋x)                │        vercospi(x) = 1 + cos(𝜋x)
-coversinpi      │ coversin(𝜋x)              │      coversinpi(x) = 1 − sin(𝜋x)
-covercospi      │ covercos(𝜋x)              │      covercospi(x) = 1 + sin(𝜋x)
-haversinpi      │ haversin(𝜋x)              │      haversinpi(x) = (1 − cos(𝜋x))∕2
-havercospi      │ havercos(𝜋x)              │      havercospi(x) = (1 + cos(𝜋x))∕2
-hacoversinpi    │ hacoversin(𝜋x)            │    hacoversinpi(x) = (1 − sin(𝜋x))∕2
-hacovercospi    │ hacovercos(𝜋x)            │    hacovercospi(x) = (1 + sin(𝜋x))∕2
-exsecpi         │ exsec(𝜋x)                 │         exsecpi(x) = sec(𝜋x) − 1
-excscpi         │ excsc(𝜋x)                 │         excscpi(x) = csc(𝜋x) − 1
-chordpi         │ chord(𝜋x)                 │         chordpi(x) = 2 × sin(𝜋x∕2)
-arcchordpi      │ arcchord(y)∕𝜋             │      arcchordpi(y) = 2 × arcsin(y∕2)∕𝜋
-arcexsecpi      │ arcexsecpi(x)∕𝜋           │      arcexsecpi(y) = arcsec(y+1)∕𝜋
-arcexcscpi      │ arcexcscpi(x)∕𝜋           │      arcexcscpi(y) = arccsc(y+1)∕𝜋
-arcversinpi     │ arcversin(y)∕𝜋            │     arcversinpi(y) = arccos(1−y)∕𝜋
-arcvercospi     │ arcvercos(y)∕𝜋            │     arcvercospi(y) = arccos(y−1)∕𝜋
-arccoversinpi   │ arccoversin(y)∕𝜋          │   arccoversinpi(y) = arcsin(1−y)∕𝜋
-arccovercospi   │ arccovercos(y)∕𝜋          │   arccovercospi(y) = arcsin(y−1)∕𝜋
-archaversinpi   │ archaversin(y)∕𝜋          │   archaversinpi(y) = arccos(1−2y)∕𝜋
-archavercospi   │ archavercos(y)∕𝜋          │   archavercospi(y) = arccos(2y−1)∕𝜋
-archacoversinpi │ archacoversin(y)∕𝜋        │ archacoversinpi(y) = arcsin(1−2y)∕𝜋
-archacovercospi │ archacovercos(y)∕𝜋        │ archacovercospi(y) = arcsin(2y−1)∕𝜋
-versind         │ versin(𝜋x∕180)            │         versind(x) = 1 − cos(𝜋x∕180)
-vercosd         │ vercos(𝜋x∕180)            │         vercosd(x) = 1 + cos(𝜋x∕180)
-coversind       │ coversin(𝜋x∕180)          │       coversind(x) = 1 − sin(𝜋x∕180)
-covercosd       │ covercos(𝜋x∕180)          │       covercosd(x) = 1 + sin(𝜋x∕180)
-haversind       │ haversin(𝜋x∕180)          │       haversind(x) = (1 − cos(𝜋x∕180))∕2
-havercosd       │ havercos(𝜋x∕180)          │       havercosd(x) = (1 + cos(𝜋x∕180))∕2
-hacoversind     │ hacoversin(𝜋x∕180)        │     hacoversind(x) = (1 − sin(𝜋x∕180))∕2
-hacovercosd     │ hacovercos(𝜋x∕180)        │     hacovercosd(x) = (1 + sin(𝜋x∕180))∕2
-exsecd          │ exsec(𝜋x∕180)             │          exsecd(x) = sec(𝜋x∕180) − 1
-excscd          │ excsc(𝜋x∕180)             │          excscd(x) = csc(𝜋x∕180) − 1
-chordd          │ chord(𝜋x∕180)             │          chordd(x) = 2 × sin(𝜋x∕180∕2)
-arcchordd       │ arcchord(y)×180∕𝜋         │       arcchordd(y) = 2 × arcsin(y∕2)×180∕𝜋
-arcexsecd       │ arcexsec(x)×180∕𝜋         │       arcexsecd(y) = arcsec(y+1)×180∕𝜋
-arcexcscd       │ arcexcsc(x)×180∕𝜋         │       arcexcscd(y) = arccsc(y+1)×180∕𝜋
-arcversind      │ arcversin(y)×180∕𝜋        │      arcversind(y) = arccos(1−y)×180∕𝜋
-arcvercosd      │ arcvercos(y)×180∕𝜋        │      arcvercosd(y) = arccos(y−1)×180∕𝜋
-arccoversind    │ arccoversin(y)×180∕𝜋      │    arccoversind(y) = arcsin(1−y)×180∕𝜋
-arccovercosd    │ arccovercos(y)×180∕𝜋      │    arccovercosd(y) = arcsin(y−1)×180∕𝜋
-archaversind    │ archaversin(y)×180∕𝜋      │    archaversind(y) = arccos(1−2y)×180∕𝜋
-archavercosd    │ archavercos(y)×180∕𝜋      │    archavercosd(y) = arccos(2y−1)×180∕𝜋
-archacoversind  │ archacoversin(y)×180∕𝜋    │  archacoversind(y) = arcsin(1−2y)×180∕𝜋
-archacovercosd  │ archacovercos(y)×180∕𝜋    │  archacovercosd(y) = arcsin(2y−1)×180∕𝜋
+name             │ explanation               │ example
+─────────────────┼───────────────────────────┼────────────────────────────────────
+sin              │ circular sine             │              sin(1) ≈ 0.8414709848
+cos              │ circular cosine           │              cos(1) ≈ 0.54030230586
+tan              │ circular tangent          │              tan(1) ≈ 1.55740772465
+cot              │ circular cotangent        │              cot(1) ≈ 0.642093
+sec              │ circular secant           │              sec(1) ≈ 1.85081571768
+csc              │ circular cosecant         │              csc(1) ≈ 1.18839510578
+asin             │ circular arcsine          │             asin(1) ≈ 1.57079633
+acos             │ circular arccosine        │             acos(1) = 0
+atan             │ circular arctangent       │             atan(1) ≈ 0.785398163
+acot             │ circular arccotangent     │             acot(1) ≈ 0.785398163
+asec             │ circular arcsecant        │             asec(1) = 0
+acsc             │ circular arccosecant      │             acsc(1) ≈ 1.57079633
+sinpi            │ sin(𝜋x)                   │            sinpi(1) = 0
+cospi            │ cos(𝜋x)                   │            cospi(1) = −1
+tanpi            │ tan(𝜋x)                   │            tanpi(1) = 0
+cotpi            │ cot(𝜋x)                   │            cotpi(1) = ?
+secpi            │ sec(𝜋x)                   │            secpi(1) = −1
+cscpi            │ csc(𝜋x)                   │            cscpi(1) = ?
+asinpi           │ asin(y)∕𝜋                 │           asinpi(1) = 0.5
+acospi           │ acos(y)∕𝜋                 │           acospi(1) = 0
+atanpi           │ atan(y)∕𝜋                 │           atanpi(1) = 0.25
+acotpi           │ acot(y)∕𝜋                 │           acotpi(1) = 0.25
+asecpi           │ asec(y)∕𝜋                 │           asecpi(1) = 0
+acscpi           │ acsc(y)∕𝜋                 │           acscpi(1) = 0.5
+sintau           │ sin(𝜏x)                   │           sintau(1) = 
+costau           │ cos(𝜏x)                   │           costau(1) = 
+tantau           │ tan(𝜏x)                   │           tantau(1) = 
+cottau           │ cot(𝜏x)                   │           cottau(1) = 
+sectau           │ sec(𝜏x)                   │           sectau(1) = 
+csctau           │ csc(𝜏x)                   │           csctau(1) = 
+asintau          │ asin(y)∕𝜏                 │          asintau(1) = 
+acostau          │ acos(y)∕𝜏                 │          acostau(1) = 
+atantau          │ atan(y)∕𝜏                 │          atantau(1) = 
+acottau          │ acot(y)∕𝜏                 │          acottau(1) = 
+asectau          │ asec(y)∕𝜏                 │          asectau(1) = 
+acsctau          │ acsc(y)∕𝜏                 │          acsctau(1) = 
+sind             │ sin(𝜏x∕360)               │             sind(1) = 
+cosd             │ cos(𝜏x∕360)               │             cosd(1) = 
+tand             │ tan(𝜏x∕360)               │             tand(1) = 
+cotd             │ cot(𝜏x∕360)               │             cotd(1) = 
+secd             │ sec(𝜏x∕360)               │             secd(1) = 
+cscd             │ csc(𝜏x∕360)               │             cscd(1) = 
+asind            │ asin(y)×360∕𝜏             │            asind(1) = 
+acosd            │ acos(y)×360∕𝜏             │            acosd(1) = 
+atand            │ atan(y)×360∕𝜏             │            atand(1) = 
+acotd            │ acot(y)×360∕𝜏             │            acotd(1) = 
+asecd            │ asec(y)×360∕𝜏             │            asecd(1) = 
+acscd            │ acsc(y)×360∕𝜏             │            acscd(1) = 
+atan2            │ IEEE atan2                │          atan2(1,1) ≈ 0.785398163
+atan2pi          │ atan2∕𝜋                   │        atan2pi(1,1) = 
+atan2tau         │ atan2∕𝜏                   │       atan2tau(1,1) = 
+atan2d           │ atan2×360∕𝜏               │         atan2d(1,1) ≈ 
+versin           │ versed sine               │           versin(x) = 1 − cos(x)
+vercos           │ versed cosine             │           vercos(x) = 1 + cos(x)
+coversin         │ co versed sine            │         coversin(x) = 1 − sin(x)
+covercos         │ co versed cosine          │         covercos(x) = 1 + sin(x)
+haversin         │ half versed sine          │         haversin(x) = (1 − cos(x))∕2
+havercos         │ half versed cosine        │         havercos(x) = (1 + cos(x))∕2
+hacoversin       │ half co versed sine       │       hacoversin(x) = (1 − sin(x))∕2
+hacovercos       │ half co versed cosine     │       hacovercos(x) = (1 + sin(x))∕2
+exsec            │ external secant           │            exsec(x) = sec(x) − 1
+excsc            │ external cosecant         │            excsc(x) = csc(x) − 1
+chord            │ chord length              │            chord(x) = 2 × sin(x∕2)
+arcchord         │ arc chord length          │         arcchord(y) = 2 × arcsin(y∕2)
+arcexsec         │ arc external secant       │         arcexsec(y) = arcsec(y+1)
+arcexcsc         │ arc external cosecant     │         arcexcsc(y) = arccsc(y+1)
+arcversin        │ arc versed sine           │        arcversin(y) = arccos(1−y)
+arcvercos        │ arc versed cosine         │        arcvercos(y) = arccos(y−1)
+arccoversin      │ arc co versed sine        │      arccoversin(y) = arcsin(1−y)
+arccovercos      │ arc co versed cosine      │      arccovercos(y) = arcsin(y−1)
+archaversin      │ arc half versed sine      │      archaversin(y) = arccos(1−2y)
+archavercos      │ arc half versed cosine    │      archavercos(y) = arccos(2y−1)
+archacoversin    │ arc half co versed sine   │    archacoversin(y) = arcsin(1−2y)
+archacovercos    │ arc half co versed cosine │    archacovercos(y) = arcsin(2y−1)
+versinpi         │ versin(𝜋x)                │         versinpi(x) = 1 − cos(𝜋x)
+vercospi         │ vercos(𝜋x)                │         vercospi(x) = 1 + cos(𝜋x)
+coversinpi       │ coversin(𝜋x)              │       coversinpi(x) = 1 − sin(𝜋x)
+covercospi       │ covercos(𝜋x)              │       covercospi(x) = 1 + sin(𝜋x)
+haversinpi       │ haversin(𝜋x)              │       haversinpi(x) = (1 − cos(𝜋x))∕2
+havercospi       │ havercos(𝜋x)              │       havercospi(x) = (1 + cos(𝜋x))∕2
+hacoversinpi     │ hacoversin(𝜋x)            │     hacoversinpi(x) = (1 − sin(𝜋x))∕2
+hacovercospi     │ hacovercos(𝜋x)            │     hacovercospi(x) = (1 + sin(𝜋x))∕2
+exsecpi          │ exsec(𝜋x)                 │          exsecpi(x) = sec(𝜋x) − 1
+excscpi          │ excsc(𝜋x)                 │          excscpi(x) = csc(𝜋x) − 1
+chordpi          │ chord(𝜋x)                 │          chordpi(x) = 2 × sin(𝜋x∕2)
+arcchordpi       │ arcchord(y)∕𝜋             │       arcchordpi(y) = 2 × arcsin(y∕2)∕𝜋
+arcexsecpi       │ arcexsecpi(x)∕𝜋           │       arcexsecpi(y) = arcsec(y+1)∕𝜋
+arcexcscpi       │ arcexcscpi(x)∕𝜋           │       arcexcscpi(y) = arccsc(y+1)∕𝜋
+arcversinpi      │ arcversin(y)∕𝜋            │      arcversinpi(y) = arccos(1−y)∕𝜋
+arcvercospi      │ arcvercos(y)∕𝜋            │      arcvercospi(y) = arccos(y−1)∕𝜋
+arccoversinpi    │ arccoversin(y)∕𝜋          │    arccoversinpi(y) = arcsin(1−y)∕𝜋
+arccovercospi    │ arccovercos(y)∕𝜋          │    arccovercospi(y) = arcsin(y−1)∕𝜋
+archaversinpi    │ archaversin(y)∕𝜋          │    archaversinpi(y) = arccos(1−2y)∕𝜋
+archavercospi    │ archavercos(y)∕𝜋          │    archavercospi(y) = arccos(2y−1)∕𝜋
+archacoversinpi  │ archacoversin(y)∕𝜋        │  archacoversinpi(y) = arcsin(1−2y)∕𝜋
+archacovercospi  │ archacovercos(y)∕𝜋        │  archacovercospi(y) = arcsin(2y−1)∕𝜋
+versintau        │ versin(𝜏x)                │        versintau(x) = 1 − cos(𝜏x)
+vercostau        │ vercos(𝜏x)                │        vercostau(x) = 1 + cos(𝜏x)
+coversintau      │ coversin(𝜏x)              │      coversintau(x) = 1 − sin(𝜏x)
+covercostau      │ covercos(𝜏x)              │      covercostau(x) = 1 + sin(𝜏x)
+haversintau      │ haversin(𝜏x)              │      haversintau(x) = (1 − cos(𝜏x))∕2
+havercostau      │ havercos(𝜏x)              │      havercostau(x) = (1 + cos(𝜏x))∕2
+hacoversintau    │ hacoversin(𝜏x)            │    hacoversintau(x) = (1 − sin(𝜏x))∕2
+hacovercostau    │ hacovercos(𝜏x)            │    hacovercostau(x) = (1 + sin(𝜏x))∕2
+exsectau         │ exsec(𝜏x)                 │         exsectau(x) = sec(𝜏x) − 1
+excsctau         │ excsc(𝜏x)                 │         excsctau(x) = csc(𝜏x) − 1
+chordtau         │ chord(𝜏x)                 │         chordtau(x) = 2 × sin(𝜏x∕2)
+arcchordtau      │ arcchord(y)∕𝜏             │      arcchordtau(y) = 2 × arcsin(y∕2)∕𝜏
+arcexsectau      │ arcexsectau(x)∕𝜏          │      arcexsectau(y) = arcsec(y+1)∕𝜏
+arcexcsctau      │ arcexcsctau(x)∕𝜏          │      arcexcsctau(y) = arccsc(y+1)∕𝜏
+arcversintau     │ arcversin(y)∕𝜏            │     arcversintau(y) = arccos(1−y)∕𝜏
+arcvercostau     │ arcvercos(y)∕𝜏            │     arcvercostau(y) = arccos(y−1)∕𝜏
+arccoversintau   │ arccoversin(y)∕𝜏          │   arccoversintau(y) = arcsin(1−y)∕𝜏
+arccovercostau   │ arccovercos(y)∕𝜏          │   arccovercostau(y) = arcsin(y−1)∕𝜏
+archaversintau   │ archaversin(y)∕𝜏          │   archaversintau(y) = arccos(1−2y)∕𝜏
+archavercostau   │ archavercos(y)∕𝜏          │   archavercostau(y) = arccos(2y−1)∕𝜏
+archacoversintau │ archacoversin(y)∕𝜏        │ archacoversintau(y) = arcsin(1−2y)∕𝜏
+archacovercostau │ archacovercos(y)∕𝜏        │ archacovercostau(y) = arcsin(2y−1)∕𝜏
+versind          │ versin(𝜏x∕360)            │          versind(x) = 1 − cos(𝜏x∕360)
+vercosd          │ vercos(𝜏x∕360)            │          vercosd(x) = 1 + cos(𝜏x∕360)
+coversind        │ coversin(𝜏x∕360)          │        coversind(x) = 1 − sin(𝜏x∕360)
+covercosd        │ covercos(𝜏x∕360)          │        covercosd(x) = 1 + sin(𝜏x∕360)
+haversind        │ haversin(𝜏x∕360)          │        haversind(x) = (1 − cos(𝜏x∕360))∕2
+havercosd        │ havercos(𝜏x∕360)          │        havercosd(x) = (1 + cos(𝜏x∕360))∕2
+hacoversind      │ hacoversin(𝜏x∕360)        │      hacoversind(x) = (1 − sin(𝜏x∕360))∕2
+hacovercosd      │ hacovercos(𝜏x∕360)        │      hacovercosd(x) = (1 + sin(𝜏x∕360))∕2
+exsecd           │ exsec(𝜏x∕360)             │           exsecd(x) = sec(𝜏x∕360) − 1
+excscd           │ excsc(𝜏x∕360)             │           excscd(x) = csc(𝜏x∕360) − 1
+chordd           │ chord(𝜏x∕360)             │           chordd(x) = 2 × sin(𝜏x∕360∕2)
+arcchordd        │ arcchord(y)×360∕𝜏         │        arcchordd(y) = 2 × arcsin(y∕2)×360∕𝜏
+arcexsecd        │ arcexsec(x)×360∕𝜏         │        arcexsecd(y) = arcsec(y+1)×360∕𝜏
+arcexcscd        │ arcexcsc(x)×360∕𝜏         │        arcexcscd(y) = arccsc(y+1)×360∕𝜏
+arcversind       │ arcversin(y)×360∕𝜏        │       arcversind(y) = arccos(1−y)×360∕𝜏
+arcvercosd       │ arcvercos(y)×360∕𝜏        │       arcvercosd(y) = arccos(y−1)×360∕𝜏
+arccoversind     │ arccoversin(y)×360∕𝜏      │     arccoversind(y) = arcsin(1−y)×360∕𝜏
+arccovercosd     │ arccovercos(y)×360∕𝜏      │     arccovercosd(y) = arcsin(y−1)×360∕𝜏
+archaversind     │ archaversin(y)×360∕𝜏      │     archaversind(y) = arccos(1−2y)×360∕𝜏
+archavercosd     │ archavercos(y)×360∕𝜏      │     archavercosd(y) = arccos(2y−1)×360∕𝜏
+archacoversind   │ archacoversin(y)×360∕𝜏    │   archacoversind(y) = arcsin(1−2y)×360∕𝜏
+archacovercosd   │ archacovercos(y)×360∕𝜏    │   archacovercosd(y) = arcsin(2y−1)×360∕𝜏
 ```
 
 galilean trigonometric functions are not included because they are trivial, in that `sing(x) = x` and `cosg(x) = 1`
@@ -320,11 +359,13 @@ conj  │ conjugate      │  conj(2+3𝑖) = 2−3𝑖
 ```
 name     │ explanation                        │ example
 ─────────┼────────────────────────────────────┼──────────────────────────
-fact     │ factorial                          │                   5! = 120
-sumt     │ sumtorial (sum of all ℤ⁺ up to n)  │              sumt(5) = 15
-comb     │ combinations                       │            comb(6,5) = 6
-perm     │ permutations                       │            perm(6,5) = 720
+fact     │ factorial                          │           5! = 120
+sumt     │ sumtorial (sum of all ℤ⁺ up to n)  │      sumt(5) = 15
+comb     │ combinations                       │    comb(6,5) = 6
+perm     │ permutations                       │    perm(6,5) = 720
 ```
+
+`fact(x)` is not intended to take fractional input. use `gamma(x+1)` for that.
 
 </details><details open><summary>intervals </summary>
 
@@ -333,7 +374,7 @@ the `in_*_interval` functions are simply for readability, for when sometimes, fo
 ```
 name                   │ explanation                        │ example
 ───────────────────────┼────────────────────────────────────┼──────────────────────────────────────
-clamp                  │ restrict within [a,b]              │            clamp(1.2, 0, 0.8) = 0.8
+clamp                  │ restrict to [a,b]                  │            clamp(1.2, 0, 0.8) = 0.8
 in_open_interval       │ a < x < b                          │       in_open_interval(3,1,3) = False
 in_closed_interval     │ a ≤ x ≤ b                          │     in_closed_interval(3,1,3) = True
 in_left_open_interval  │ a < x ≤ b                          │  in_left_open_interval(3,1,3) = True
@@ -352,9 +393,10 @@ map                    │ map x in [a,b] to [c,d]            │          map(2
 ```
 name      │ explanation                            │ example
 ──────────┼────────────────────────────────────────┼──────────────────────────────────────────
-to_bitstring│
-normalize │ normalize a vector                     │ 
-norm      │ euclidean norm                         │  norm(1, 2, 3) ≈ 3.7416573867739413
+to_bitstring │ convert a datatype to bits
+nan       │ create an IEEE 754 nan with payload    │              nan(3) = 0x
+normalize │ normalize a vector                     │  normalize(1, 2, 3) ≈ (0.26726, 0.53452, 0.80178)
+norm      │ euclidean norm                         │       norm(1, 2, 3) ≈ 3.7416573867739413
 signbit   │ false if +ve else true                 │          signbit(3) = T
 copysign  │ magnitude of a with sign of b          │      copysign(2, 3) = 2
 any       │ n-ary OR gate                          │        any(F, T, F) = T
@@ -421,7 +463,7 @@ fdd  │ fused div div │         │ (a∕b)∕c
 
 </details><details open><summary>vector </summary>
 
-`neg` `inv` `add` `sub` are overloaded to support vectors
+`neg` `inv` `add` `sub` are overloaded to support vectors  
 `mul` `div` are overloaded to perform scalar-and-vector operations
 
 ```
@@ -433,7 +475,7 @@ cross             │ cross product            │ (1,2,3)×(2,3,4) = (−1, 2,�
 
 </details><details open><summary>matrix </summary>
 
-`neg` `inv` `add` `sub` are overloaded to support matrices.
+`neg` `inv` `add` `sub` are overloaded to support matrices  
 `mul` `div` are overloaded to perform scalar-and-matrix operations
 
 ```
@@ -460,7 +502,7 @@ is_hermitian      │                          │
 
 </details><details open><summary>tensor </summary>
 
-`neg` `inv` `add` `sub` are overloaded to support tensors
+`neg` `inv` `add` `sub` are overloaded to support tensors  
 `mul` `div` are overloaded to perform scalar-and-tensor operations
 
 ```
@@ -553,7 +595,7 @@ def _partial_derivative():
 # constants
 
 ```
-name         │ explanation                      │ value
+name         │ explanation                      │ value                    
 ─────────────┼──────────────────────────────────┼──────────────────────────
 OMEGA        │ omega constant                   │ ≈ 0.56714329040978387299…
 GAMMA        │ euler-mascheroni constant        │ ≈ 0.57721566490153286060…
@@ -571,10 +613,7 @@ POS_INF      │ IEEE 754 positive inf            │ +∞
 NEG_INF      │ IEEE 754 negative inf            │ −∞
 POS_ZERO     │ IEEE 754 positive zero           │ +0.0
 NEG_ZERO     │ IEEE 754 negative zero           │ −0.0
-POS_QNAN     │ IEEE 754 positive quiet nan      │ +qnan
-NEG_QNAN     │ IEEE 754 negative quiet nan      │ -qnan
-POS_SNAN     │ IEEE 754 positive signalling nan │ +snan
-NEG_SNAN     │ IEEE 754 negative signalling nan │ +snan
+NAN          │ IEEE 754 +ve qnan, payload = 0   │ nan
 FLT_MAX      │ largest normal float             │ (2 − 2⁻²³) × 2⁺¹²⁷
 FLT_MIN      │ smallest normal float            │ 2⁻¹²⁶
 FLT_TRUE_MIN │ smallest subnormal float         │ 2⁻¹⁴⁹
@@ -582,6 +621,8 @@ DBL_MAX      │ largest normal double            │ (2 − 2⁻⁵²) × 2⁺�
 DBL_MIN      │ smallest normal double           │ 2⁻¹⁰²²
 DBL_TRUE_MIN │ smallest subnormal double        │ 2⁻¹⁰⁷⁴
 ```
+
+more exotic 'nan' values are available by using `nan` in the miscellaneous functions section
 <!--
 SI_DVCS      │ hyperfine transition freq  │ 9192631770
 SI_C         │ speed of light             │ 299792458
@@ -662,7 +703,7 @@ GREEK_DOUBLE_STRUCK_LOWER                  │   ℽ            ℼ
 HEBREW                                     │ ℵℶℷℸ
 DIGIT                                      │ 0123456789↊↋
 DIGIT_SUPERSCRIPT                          │ ⁰¹²³⁴⁵⁶⁷⁸⁹  
-DIGIT_SUBSCRIPT                            │ ₀₁₂₃₄₅₆₇₈₉  
+DIGIT_SUBSCRIPT                            │ ₀₁₂₃₄₅₆₇₈₉⏨ 
 DIGIT_BOLD                                 │ 𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗  
 DIGIT_DOUBLE_STRUCK                        │ 𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡  
 DIGIT_SANS_SERIF                           │ 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  

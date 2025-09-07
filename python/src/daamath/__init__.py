@@ -12,83 +12,6 @@ from math import isnan as _isnan
 from math import sin, cos, tan, asin, acos, atan, atan2, sinh, cosh, tanh, asinh, acosh, atanh
 from math import copysign
 
-def inc(x):
-	if isinstance(x, complex):
-		raise TypeError("i have not yet decided if complex input should be supported or not")
-	'++x also known as x + 1'
-	return x + 1
-
-def dec(x):
-	if isinstance(x, complex):
-		raise TypeError("i have not yet decided if complex input should be supported or not")
-	'−−x also known as x − 1'
-	return x - 1
-
-def neg(x):
-	'−x also known as unary subtraction also known as additive inverse'
-	return -x
-
-def inv(x):
-	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
-	return 1/x
-
-def add(a, b):
-	'a + b also known as addition'
-	return a + b
-
-def sub(a, b):
-	'a − b also known as subtraction also known as difference'
-	return a - b
-
-def mul(a, b):
-	'a × b also known as multiplication also known as product also known as times'
-	return a * b
-
-def div(a, b):
-	'a ∕ b also known as division'
-	return a / b
-
-def pow(a, b):
-	'aᵇ also known as exponentiation'
-	return a ** b
-
-def root(a, b):
-	'nᵗʰ root also known as ᵇ√a also known as a ^ (⅟b) also known as inverse of exponentiation'
-	return a ** (1/b)
-
-def log(a, b):
-	'logarithm also known as inverse of exponentiation'
-	try:
-		from math import log
-		return log(a, b)
-	except (ValueError, TypeError):
-		from cmath import log
-		return log(a, b)
-
-def sexp(a, b):
-	'superexponentiation also known as tetration'
-	raise NotImplementedError('i havent made this yet')
-
-def sroot(a, b):
-	'superroot also known as inverse of tetration'
-	raise NotImplementedError('i havent made this yet')
-
-def slog(a, b):
-	'superlogarithm also known as inverse of tetration'
-	raise NotImplementedError('i havent made this yet')
-
-def floordiv(a, b):
-	'division rounded to integers towards -∞'
-	return a // b
-
-def mod(a, b):
-	'modulus'
-	return a % b
-
-def truncdiv(a, b):
-	'division rounded to integers towards ±0'
-	raise NotImplementedError('i havent made this yet')
-
 def scaler_tan(x:int|float) -> float:
 	if x < 0 or x > 1:
 		raise ValueError("out of range [0,1]")
@@ -117,6 +40,15 @@ def ieee_div(a,b):
 	else:
 		return a/b
 """
+
+def floordiv(a, b):
+	'division rounded to integers towards -∞'
+	return a // b
+
+def truncdiv(a, b):
+	'division rounded to integers towards ±0'
+	raise NotImplementedError('i havent made this yet')
+
 def scaler_sigmoid(x:int|float):
 	raise NotImplementedError
 
@@ -251,7 +183,9 @@ def map(x, a, b, c, d):
 
 def sumt(x):
 	'return sum of all numbers from 1 to x. like factorial but with addition'
-	return sum(range(1, a+1))
+	if isinstance(x, int): 
+		return (x*(x+1))//2
+	return (x*(x+1))/2
 
 def sgn(a):
 	'return -1 if negative, 0 if zero, 1 if positive. also known as signum'
@@ -873,8 +807,10 @@ POS_INF        = float('inf')
 NEG_INF        = float('-inf')
 POS_ZERO       = 0.0
 NEG_ZERO       = -0.0
-QNAN           = float('nan')
-#SNAN           = 
+POS_QNAN       = float('nan')
+NEG_QNAN       = float('-nan')
+#POS_SNAN       = 
+#NEG_SNAN       = 
 FLT_MAX        = (2 - 2**-23) * 2**127
 FLT_MIN        = 2**-126
 FLT_TRUE_MIN   = 2**-149
@@ -949,7 +885,7 @@ GREEK_DOUBLE_STRUCK_LOWER                  = '  ℽ            ℼ              
 HEBREW                                     = 'ℵℶℷℸ'
 DIGIT                                      = '0123456789↊↋'
 DIGIT_SUPERSCRIPT                          = '⁰¹²³⁴⁵⁶⁷⁸⁹  '
-DIGIT_SUBSCRIPT                            = '₀₁₂₃₄₅₆₇₈₉  '
+DIGIT_SUBSCRIPT                            = '₀₁₂₃₄₅₆₇₈₉⏨ '
 DIGIT_BOLD                                 = '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗  '
 DIGIT_DOUBLE_STRUCK                        = '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡  '
 DIGIT_SANS_SERIF                           = '𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  '
@@ -1205,3 +1141,273 @@ HEXAGON_HORIZONTAL_BLACK                   = '⬣'
 OCTAGON_VERTICAL_BLACK                     = '⯄'
 OCTAGON_HORIZONTAL_BLACK                   = '⯃'
 #GREEK_NAME                                 │ {'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'digamma', 'san', 'tsan', 'sho', 'heta', 'koppa', 'sampi', 'yot', 'stigma'}
+
+# starting from this is official -----------------------------------------------
+
+import math as _math
+import cmath as _cmath
+
+def inc(x):
+	if isinstance(x, complex):
+		raise TypeError("i have not yet decided if complex input should be supported or not")
+	'++x also known as x + 1'
+	return x + 1
+
+def dec(x):
+	if isinstance(x, complex):
+		raise TypeError("i have not yet decided if complex input should be supported or not")
+	'−−x also known as x − 1'
+	return x - 1
+
+def neg(x):
+	'−x also known as unary subtraction also known as additive inverse'
+	return -x
+
+def inv(x):
+	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
+	return 1/x
+
+def mod(a, b):
+	'modulus'
+	if not (isinstance(a, int) and isinstance(b, int)):
+		raise TypeError("modulus only deals with integers. perhaps you meant floorrem?")
+	return a % b
+
+def add(a, b):
+	'a + b also known as addition'
+	return a + b
+
+def sub(a, b):
+	'a − b also known as subtraction also known as difference'
+	return a - b
+
+def mul(a, b):
+	'a × b also known as multiplication also known as product also known as times'
+	return a * b
+
+def div(a, b):
+	'a ∕ b also known as division'
+	return a / b
+
+def root(a, b):
+	'nᵗʰ root also known as ᵇ√a also known as a ^ (⅟b) also known as inverse of exponentiation'
+	return a ** (1/b)
+
+def pow(a, b):
+	'aᵇ also known as exponentiation'
+	return a ** b
+
+from math import exp
+from math import exp2
+
+def exp10(x):
+	'exponentiation, base 10'
+	return 10 ** x
+
+def log(a, b):
+	'logarithm also known as inverse of exponentiation'
+	try:
+		from math import log
+		return log(a, b)
+	except (ValueError, TypeError):
+		from cmath import log
+		return log(a, b)
+
+def loge(x):
+	'logarithm, base e'
+	return _math.log(x)
+
+from math import log2
+from math import log10
+
+def powm1(a, b):
+	'a ** b - 1'
+	return a ** b - 1
+
+from math import expm1
+
+def exp2m1(x):
+	'2 ** x - 1'
+	return 2 ** x - 1
+
+def exp10m1(x):
+	'10 ** x - 1'
+	return 10 ** x - 1
+
+def logp1(a, b):
+	'log(a+1, b)'
+	return _math.log(a+1, b)
+
+from math import log1p as logep1
+
+def log2p1(x):
+	'log2(x+1)'
+	return _math.log(x+1, 2)
+
+def log10p1(x):
+	'log10(x+1)'
+	return _math.log(x+1, 10)
+
+def sexp(a, b):
+	'superexponentiation also known as tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def sroot(a, b):
+	'superroot also known as inverse of tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def slog(a, b):
+	'superlogarithm also known as inverse of tetration'
+	raise NotImplementedError('i havent made this yet')
+
+def parallel(a, b):
+	'parallel operation also known as parallel addition'
+	return a*b/(a+b)
+
+from math import sqrt
+from math import cbrt
+
+def rsqrt(x):
+	'1/sqrt(x)'
+	return 1/_math.sqrt(x)
+
+def rcbrt(x):
+	'1/cbrt(x)'
+	return 1/_math.cbrt(x)
+
+from builtins import abs
+from math import gcd
+from math import lcm
+
+def hyper(n, a, b):
+	'return n-th hyperoperation of a, b'
+	raise NotImplementedError('not made yet')
+
+from math import floor
+from math import ceil
+from math import trunc
+
+def away(x):
+	'directed rounding to integer, away from ±0'
+	raise NotImplementedError('not made yet')
+
+from builtins import round
+from operator import floordiv
+
+def ceildiv(x):
+	'division rounded to +∞'
+	raise NotImplementedError('not made yet')
+
+def truncdiv(x):
+	'division rounded to ±0'
+	raise NotImplementedError('not made yet')
+
+def awaydiv(x):
+	'division rounded away from ±0'
+	raise NotImplementedError('not made yet')
+
+def rounddiv(x):
+	'round(div(a,b))'
+	raise NotImplementedError('not made yet')
+
+def floorrem(x):
+	'remainder of floordiv'
+	raise NotImplementedError('not made yet')
+
+def ceilrem(x):
+	'remainder of ceildiv'
+	raise NotImplementedError('not made yet')
+
+def truncrem(x):
+	'remainder of truncdiv'
+	raise NotImplementedError('not made yet')
+
+def awayrem(x):
+	'remainder of awaydiv'
+	raise NotImplementedError('not made yet')
+
+def roundrem(x):
+	'remainder of rounddiv'
+	raise NotImplementedError('not made yet')
+
+def floordivrem(x):
+	'return (floordiv, floorrem)'
+	raise NotImplementedError('not made yet')
+
+def ceildivrem(x):
+	'return ( ceildiv,  ceilrem)'
+	raise NotImplementedError('not made yet')
+	
+def truncdivrem(x):
+	'return (truncdiv, truncrem)'
+	raise NotImplementedError('not made yet')
+
+def awaydivrem(x):
+	'return ( awaydiv,  awayrem)'
+	raise NotImplementedError('not made yet')
+
+def rounddivrem(x):
+	'return (rounddiv, roundrem)'
+	raise NotImplementedError('not made yet')
+
+# comparative
+
+def lt(a, b):
+	'a < b'
+	return a < b
+
+def le(a, b):
+	'a ≤ b'
+	return a <= b
+
+def eq(a, b):
+	'a = b'
+	return a == b
+
+def ne(a, b):
+	'a ≠ b'
+	return a != b
+
+def ge(a, b):
+	'a ≥ b'
+	return a >= b
+
+def gt(a, b):
+	'a > b'
+	return a > b
+
+def clt(a, b):
+	'component-wise less-than'
+	return (a.real < b.real, a.imag < b.imag)
+
+def cle(a, b):
+	'component-wise less-than-or-equal-to'
+	return (a.real <= b.real, a.imag <= b.imag)
+
+def ceq(a, b):
+	'component-wise equals'
+	return (a.real == b.real, a.imag == b.imag)
+
+def cne(a, b):
+	'component-wise not-equals'
+	return (a.real != b.real, a.imag != b.imag)
+
+def cge(a, b):
+	'component-wise greater-than-or-equals'
+	return (a.real >= b.real, a.imag >= b.imag)
+
+def cgt(a, b):
+	'component-wise greater-than'
+	return (a.real > b.real, a.imag > b.imag)
+
+def sin(a):
+	'circular sine'
+	if isinstance(a, complex):
+		return _cmath.sin(a)
+	else:
+		return _math.sin(a)
+
+
+
+# finished up to this ----------------------------------------------------------
+
