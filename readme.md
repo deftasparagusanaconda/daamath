@@ -44,15 +44,15 @@ complex numbers are fully supported but type will not always be promoted to comp
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
+add         │ addition                 │         −5 + 2 = −3
+sub         │ subtraction              │         −5 − 2 = −7
+mul         │ multiplication           │         −5 × 2 = −10
+div         │ division                 │         −5 ∕ 2 = −2.5
 inc         │ increment                │            ++2 = 3
 dec         │ decrement                │            −−2 = 1
 neg         │ additive inverse         │             −2 = −2
 inv         │ multiplicative inverse   │             ⅟2 = 0.5
 mod         │ modulus                  │         −5 % 2 =  1
-add         │ addition                 │         −5 + 2 = −3
-sub         │ subtraction              │         −5 − 2 = −7
-mul         │ multiplication           │         −5 × 2 = −10
-div         │ division                 │         −5 ∕ 2 = −2.5
 root        │ nᵗʰ root                 │     root(−5,2) ≈ 2.23606797𝑖
 pow         │ exponentiation           │            −5² = 25
 exp         │ exponentiation base 𝑒    │        expₑ(2) ≈ 7.389056098930
@@ -134,6 +134,15 @@ ceq  │ component-wise equal to                 │ 2+3𝑖 = 4+3𝑖 is (F,T)
 cne  │ component-wise not equal to             │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
 cge  │ component-wise greater than or equal to │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
 cgt  │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
+mlt  │ magnitudinal less than                  │ 2 < 3 is true 
+mle  │ magnitudinal less than or equal to      │ 2 ≤ 3 is true
+meq  │ magnitudinal equal to                   │ 2 = 3 is false
+mne  │ magnitudinal not equal to               │ 2 ≠ 3 is true
+mge  │ magnitudinal greater than or equal to   │ 2 ≥ 3 is false
+mgt  │ magnitudinal greater than               │ 2 > 3 is false
+cmp  │ comparison (returns -1, 0, or 1)        │ 2 <=> 3 is -1
+ccmp │ component-wise comparison               │ 2 <=> 3 is (-1)
+mcmp │ magnitudinal comparison                 │ 2 <=> 3 is -1
 ```
 
 </details><details open><summary>trigonometric </summary>
@@ -672,6 +681,7 @@ LATIN_DOUBLE_STRUCK_UPPER                  │ 𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ�
 LATIN_DOUBLE_STRUCK_LOWER                  │ 𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫
 LATIN_DOUBLE_STRUCK_ITALIC_UPPER           │    ⅅ                      
 LATIN_DOUBLE_STRUCK_ITALIC_LOWER           │    ⅆⅇ   ⅈⅉ                
+LATIN_UPPER_OUTLINED                       │ 𜳖𜳗𜳘𜳙𜳚𜳛𜳜𜳝𜳞𜳟𜳠𜳡𜳢𜳣𜳤𜳥𜳦𜳧𜳨𜳩𜳪𜳫𜳬𜳭𜳮𜳯
 GREEK_UPPER                                │ ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ
 GREEK_UPPER_VARIANT                        │        ϴ                     ϞϠ  
 GREEK_LOWER                                │ αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ
@@ -709,6 +719,8 @@ DIGIT_DOUBLE_STRUCK                        │ 𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟�
 DIGIT_SANS_SERIF                           │ 𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  
 DIGIT_SANS_SERIF_BOLD                      │ 𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵  
 DIGIT_MONOSPACE                            │ 𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿  
+DIGIT_SEGMENTED                            │ 🯰🯱🯲🯳🯴🯵🯶🯷🯸🯹  
+DIGIT_OUTLINED                             │ 𜳰𜳱𜳲𜳳𜳴𜳵𜳶𜳷𜳸𜳹
 ROMAN_NUMERAL_UPPER                        │  ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ
 ROMAN_NUMERAL_LOWER                        │  ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ
 COUNTING_ROD_VERTICAL                      │ 〇𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱

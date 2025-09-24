@@ -1400,6 +1400,45 @@ def cgt(a, b):
 	'component-wise greater-than'
 	return (a.real > b.real, a.imag > b.imag)
 
+def mlt(a, b):
+	'magnitudinal less-than. AKA |a| < |b|'
+	return abs(a) < abs(b)
+
+def mle(a, b):
+	'magnitudinal less-than-or-equal-to. AKA |a| ≤ |b|'
+	return abs(a) <= abs(b)
+
+def meq(a, b):
+	'magnitudinal equal-to. AKA |a| == |b|'
+	return abs(a) == abs(b)
+
+def mne(a, b):
+	'magnitudinal not-equal-to. AKA |a| ≠ |b|'
+	return abs(a) != abs(b)
+
+def mlt(a, b):
+	'magnitudinal greater-than-or-equal-to. AKA |a| ≥ |b|'
+	return abs(a) >= abs(b)
+
+def mlt(a, b):
+	'magnitudinal greater-than. AKA |a| > |b|'
+	return abs(a) > abs(b)
+
+def cmp(a, b):
+	'comparison. -1 if a < b, 0 if a == b, 1 if a > b'
+    return (a > b) - (a < b)
+
+def ccmp(a, b):
+	'component-wise cmp'
+    return ((a.real > b.real) - (a.real < b.real), (a.imag > b.imag) - (a.imag < b.imag))
+
+def mcmp(a, b):
+	'magnitudinal cmp'
+	abs_a = abs(a)
+	abs_b = abs(b)
+    return (abs_a > abs_b) - (abs_a < abs_b)
+
+
 def sin(a):
 	'circular sine'
 	if isinstance(a, complex):
