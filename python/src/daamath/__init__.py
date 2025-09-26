@@ -2,7 +2,16 @@
 
 from typing import Literal as _Literal
 
-from operator import add, sub, mul, truediv as div, pos, neg, mod, floordiv, truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
+from operator import add
+from operator import sub
+from operator import mul
+from operator import truediv as div
+from operator import pos
+from operator import neg
+from operator import mod
+from operator import floordiv
+from operator import mod
+from operator import truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
 from builtins import pow, round, any, all, len, range, reversed, sorted, divmod, min, max
 from math import floor, ceil, trunc as ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, factorial as fact, gamma, gcd, lcm
 from cmath import phase
@@ -191,7 +200,7 @@ def sgn(a):
 	'return -1 if negative, 0 if zero, 1 if positive. also known as signum'
 	return a if _isnan(a) else (a>0) - (a<0)
 
-# boolean      ---------------------------
+# boolean	  ---------------------------
 
 def nand(a,b):
 	'return not(a and b) AKA ¬(a∧b) AKA negation(conjunction(a,b))'
@@ -296,17 +305,17 @@ def rms(data):
 # bitwise -----------------------
 """
 'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,      # 10
-'bitand'  : _operator.and_,        # 0001
-'bitor'   : _operator.or_,         # 0111
-'bitnand' : _nand,                 # 1110
-'bitnor'  : _nor,                  # 1000
-'bitxor'  : _operator.xor,         # 0110
-'bitxnor' : _operator.eq,          # 1001
-'bitimp'  : _implication,          # 1101
+'bitnot'  : _operator.invert,	  # 10
+'bitand'  : _operator.and_,		# 0001
+'bitor'   : _operator.or_,		 # 0111
+'bitnand' : _nand,				 # 1110
+'bitnor'  : _nor,				  # 1000
+'bitxor'  : _operator.xor,		 # 0110
+'bitxnor' : _operator.eq,		  # 1001
+'bitimp'  : _implication,		  # 1101
 'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,                 # 0010
-'bitncon' : _ncon,                 # 0100
+'bitnimp' : _nimp,				 # 0010
+'bitncon' : _ncon,				 # 0100
 """
 """
 # "why is there a '_' everywhere?!?"
@@ -579,56 +588,56 @@ def _dist(*args):
 
 default = {
 # arithmetic
-'add'     : _operator.add,
-'sub'     : _operator.sub,
-'mul'     : _operator.mul,
-'div'     : _operator.truediv,
+'add'	 : _operator.add,
+'sub'	 : _operator.sub,
+'mul'	 : _operator.mul,
+'div'	 : _operator.truediv,
 
 # numeric
-'pos'     : _operator.pos,	  # unary plus, positive
-'neg'     : _operator.neg,    # unary minus, negative, additive inverse
-'mod'     : _operator.mod,
+'pos'	 : _operator.pos,	  # unary plus, positive
+'neg'	 : _operator.neg,	# unary minus, negative, additive inverse
+'mod'	 : _operator.mod,
 'floordiv': _operator.floordiv,
-'abs'     : _operator.abs,
-'inv'     : _reciprocal,      # multiplicative inverse
+'abs'	 : _operator.abs,
+'inv'	 : _reciprocal,	  # multiplicative inverse
 'square'  : _square,
-'cube'    : _cube,
-'pow'     : _builtins.pow,
+'cube'	: _cube,
+'pow'	 : _builtins.pow,
 'floor'   : _math.floor,
 'round'   : _builtins.round,
-'ceil'    : _math.ceil,
+'ceil'	: _math.ceil,
 'ipart'   : _math.trunc,
 'fpart'   : _fractional_part,
-'exp'     : _math.exp,
-'exp2'    : _math.exp2,
+'exp'	 : _math.exp,
+'exp2'	: _math.exp2,
 'log10'   : _math.log10,
-'log2'    : _math.log2,
-'log'     : _math.log,
-'sqrt'    : _math.sqrt,
-'cbrt'    : _math.cbrt,
-'root'    : _root,
+'log2'	: _math.log2,
+'log'	 : _math.log,
+'sqrt'	: _math.sqrt,
+'cbrt'	: _math.cbrt,
+'root'	: _root,
 
 # trigonometric
-'sin'     : _math.sin,
-'cos'     : _math.cos,
-'tan'     : _math.tan,
-'cot'     : _cot,
-'sec'     : _sec,
-'csc'     : _csc,
-'asin'    : _math.asin,
-'acos'    : _math.acos,
-'atan'    : _math.atan,
-'acot'    : _acot,
-'asec'    : _asec,
-'acsc'    : _acsc,
+'sin'	 : _math.sin,
+'cos'	 : _math.cos,
+'tan'	 : _math.tan,
+'cot'	 : _cot,
+'sec'	 : _sec,
+'csc'	 : _csc,
+'asin'	: _math.asin,
+'acos'	: _math.acos,
+'atan'	: _math.atan,
+'acot'	: _acot,
+'asec'	: _asec,
+'acsc'	: _acsc,
 
 # hyperbolic
-'sinh'    : _math.sinh,
-'cosh'    : _math.cosh,
-'tanh'    : _math.tanh,
-'coth'    : _coth,
-'sech'    : _sech,
-'csch'    : _csch,
+'sinh'	: _math.sinh,
+'cosh'	: _math.cosh,
+'tanh'	: _math.tanh,
+'coth'	: _coth,
+'sech'	: _sech,
+'csch'	: _csch,
 'asinh'   : _math.asinh,
 'acosh'   : _math.acosh,
 'atanh'   : _math.atanh,
@@ -637,103 +646,103 @@ default = {
 'acsch'   : _acsch,
 
 # left out due to obscurity. also probably mostly wrong :P
-#'versin'    : lambda a: 1 - math.cos(a)
+#'versin'	: lambda a: 1 - math.cos(a)
 #'coversin'  : lambda a: 1 - math.sin(a)
 #'haversin'  : lambda a: 0.5 - math.cos(a)/2
 #'hacoversin': lambda a: 0.5 - math.sin(a)/2
-#'exsec'     : lambda a: 1/math.cos(a) - 1
-#'excsc'     : lambda a: 1/math.sin(a) - 1
-#'chord'     : lambda a: 2 * math.sin(a/2)
-#'vercos'    : lambda a: 1 + math.cos(a)
+#'exsec'	 : lambda a: 1/math.cos(a) - 1
+#'excsc'	 : lambda a: 1/math.sin(a) - 1
+#'chord'	 : lambda a: 2 * math.sin(a/2)
+#'vercos'	: lambda a: 1 + math.cos(a)
 #'covercos'  : lambda a: 1 + math.sin(a)
 #'havercos'  : lambda a: 0.5 + math.cos(a)/2
 #'hacovercos': lambda a: 0.5 + math.sin(a)/2
 
 # complex
-'real'    : _get_real, # get real lmao
-'imag'    : _get_imag,
+'real'	: _get_real, # get real lmao
+'imag'	: _get_imag,
 'phase'   : _cmath.phase,
-'conj'    : _call_conjugate,
+'conj'	: _call_conjugate,
 
 # boolean
-'truth'   : _operator.truth,       # 01
-'not'     : _operator.not_,        # 10
-'and'     : _operator.and_,        # 0001
-'nimp'    : _nimp,                 # 0010
-'ncon'    : _ncon,                 # 0100
-'xor'     : _operator.xor,         # 0110
-'or'      : _operator.or_,         # 0111
-'nor'     : _nor,                  # 1000
-'xnor'    : _operator.eq,          # 1001
-'con'     : _converse_implication, # 1011
-'imp'     : _implication,          # 1101
-'nand'    : _nand,                 # 1110
+'truth'   : _operator.truth,	   # 01
+'not'	 : _operator.not_,		# 10
+'and'	 : _operator.and_,		# 0001
+'nimp'	: _nimp,				 # 0010
+'ncon'	: _ncon,				 # 0100
+'xor'	 : _operator.xor,		 # 0110
+'or'	  : _operator.or_,		 # 0111
+'nor'	 : _nor,				  # 1000
+'xnor'	: _operator.eq,		  # 1001
+'con'	 : _converse_implication, # 1011
+'imp'	 : _implication,		  # 1101
+'nand'	: _nand,				 # 1110
 
 # comparative
-'lt'      : _operator.lt,
-'le'      : _operator.le,
-'eq'      : _operator.eq,
-'ne'      : _operator.ne,
-'ge'      : _operator.ge,
-'gt'      : _operator.gt,
+'lt'	  : _operator.lt,
+'le'	  : _operator.le,
+'eq'	  : _operator.eq,
+'ne'	  : _operator.ne,
+'ge'	  : _operator.ge,
+'gt'	  : _operator.gt,
 
 # statistical
-'mean'    : _mean,
+'mean'	: _mean,
 'median'  : _median,
-'mode'    : _mode,
+'mode'	: _mode,
 'pmean'   : _generalized_mean,
 
 # combinatorial
-'comb'    : _math.comb,
-'perm'    : _math.perm,
+'comb'	: _math.comb,
+'perm'	: _math.perm,
 
 # hello there! lol
 
 # bitwise
 'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,      # 10
-'bitand'  : _operator.and_,        # 0001
-'bitor'   : _operator.or_,         # 0111
-'bitnand' : _nand,                 # 1110
-'bitnor'  : _nor,                  # 1000
-'bitxor'  : _operator.xor,         # 0110
-'bitxnor' : _operator.eq,          # 1001
-'bitimp'  : _implication,          # 1101
+'bitnot'  : _operator.invert,	  # 10
+'bitand'  : _operator.and_,		# 0001
+'bitor'   : _operator.or_,		 # 0111
+'bitnand' : _nand,				 # 1110
+'bitnor'  : _nor,				  # 1000
+'bitxor'  : _operator.xor,		 # 0110
+'bitxnor' : _operator.eq,		  # 1001
+'bitimp'  : _implication,		  # 1101
 'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,                 # 0010
-'bitncon' : _ncon,                 # 0100
+'bitnimp' : _nimp,				 # 0010
+'bitncon' : _ncon,				 # 0100
 'lshift'  : _operator.lshift,
 'rshift'  : _operator.rshift,
 
 # miscellaneous
-'dist'    : _dist,
-'any'     : _builtins.any,
-'all'     : _builtins.all,
-'len'     : _builtins.len,
+'dist'	: _dist,
+'any'	 : _builtins.any,
+'all'	 : _builtins.all,
+'len'	 : _builtins.len,
 'range'   : _builtins.range,
 'reversed': _builtins.reversed,
 'sorted'  : _builtins.sorted,
 'divmod'  : _builtins.divmod,
-'call'    : _operator.call,
+'call'	: _operator.call,
 'matmul'  : _operator.matmul,
 'concat'  : _operator.concat,
-'sign'    : _signum,
+'sign'	: _signum,
 'ifelse'  : _ifelse,
-'fact'    : _math.factorial,
+'fact'	: _math.factorial,
 'gamma'   : _math.gamma,
-'sumt'    : _sumtorial,
-'gcd'     : _math.gcd,
-'lcm'     : _math.lcm,
+'sumt'	: _sumtorial,
+'gcd'	 : _math.gcd,
+'lcm'	 : _math.lcm,
 'clamp'   : _clamp,
-'lerp'    : _lerp,
+'lerp'	: _lerp,
 'unlerp'  : _unlerp,
-'min'     : _builtins.min,
-'max'     : _builtins.max,
-'is'      : _operator.is_,
+'min'	 : _builtins.min,
+'max'	 : _builtins.max,
+'is'	  : _operator.is_,
 'isnot'   : _operator.is_not,
-#'erf'     : _math.erf
-#'erfc'    : _math.erfc
-#'in'      : 
+#'erf'	 : _math.erf
+#'erfc'	: _math.erfc
+#'in'	  : 
 #'notin'   : 
 }
 
@@ -791,387 +800,363 @@ from operator import xor, not_, and_, or_, eq as xnor
 
 # constants --------------------------------------------------------------------
 
-OMEGA          = 0.56714329040978387299
-GAMMA          = 0.57721566490153286060
-LN_2           = 0.6931471805599453
-CATALAN        = 0.9159655941772190150
-ZETA_3         = 1.20205690315959428539
-SQRT_2         = 1.4142135623730951
-PHI            = 1.61803398874989484820
-SQRT_3         = 1.7320508075688772
-LN_10          = 2.302585092994046
-E              = 2.71828182845904523536
-PI             = 3.14159265358979323846
-TAU            = 6.28318530717958647692
-POS_INF        = float('inf')
-NEG_INF        = float('-inf')
-POS_ZERO       = 0.0
-NEG_ZERO       = -0.0
-POS_QNAN       = float('nan')
-NEG_QNAN       = float('-nan')
-#POS_SNAN       = 
-#NEG_SNAN       = 
-FLT_MAX        = (2 - 2**-23) * 2**127
-FLT_MIN        = 2**-126
+OMEGA		  = 0.56714329040978387299
+GAMMA		  = 0.57721566490153286060
+LN_2		   = 0.6931471805599453
+CATALAN		= 0.9159655941772190150
+ZETA_3		 = 1.20205690315959428539
+SQRT_2		 = 1.4142135623730951
+PHI			= 1.61803398874989484820
+SQRT_3		 = 1.7320508075688772
+LN_10		  = 2.302585092994046
+E			  = 2.71828182845904523536
+PI			 = 3.14159265358979323846
+TAU			= 6.28318530717958647692
+POS_INF		= float('inf')
+NEG_INF		= float('-inf')
+POS_ZERO	   = 0.0
+NEG_ZERO	   = -0.0
+POS_QNAN	   = float('nan')
+NEG_QNAN	   = float('-nan')
+#POS_SNAN	   = 
+#NEG_SNAN	   = 
+FLT_MAX		= (2 - 2**-23) * 2**127
+FLT_MIN		= 2**-126
 FLT_TRUE_MIN   = 2**-149
-DBL_MAX        = (2 - 2**-52) * 2**1023
-DBL_MIN        = 2**-1022
+DBL_MAX		= (2 - 2**-52) * 2**1023
+DBL_MIN		= 2**-1022
 DBL_TRUE_MIN   = 2**-1074
 
 # characters -------------------------------------------------------------------
 
-LATIN_UPPER                                = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-LATIN_UPPER_SUPERSCRIPT                    = 'ᴬᴮꟲᴰᴱꟳᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾꟴᴿ ᵀᵁⱽᵂ   '
-LATIN_UPPER_SUPERSCRIPT_SMALL              = ' 𐞄    𐞒𐞖ᶦ 𞀹ᶫ𞀻ᶰ   𐞪 𞁀ᶸ   𐞲 '
-LATIN_LOWER_SUPERSCRIPT                    = 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ𐞥ʳˢᵗᵘᵛʷˣʸᶻ'
-LATIN_LOWER_SUBSCRIPT                      = 'ₐ 𞁞 ₑ  ₕᵢⱼₖₗₘₙₒₚ ᵣₛₜᵤᵥ ₓ  '
-LATIN_LOWER                                = 'abcdefghijklmnopqrstuvwxyz'
-LATIN_BOLD_UPPER                           = '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙'
-LATIN_BOLD_LOWER                           = '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳'
-LATIN_ITALIC_UPPER                         = '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍'
-LATIN_ITALIC_LOWER                         = '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧'
-LATIN_BOLD_ITALIC_UPPER                    = '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁'
-LATIN_BOLD_ITALIC_LOWER                    = '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛'
-LATIN_SCRIPT_UPPER                         = '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵'
-LATIN_SCRIPT_LOWER                         = '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏'
-LATIN_BOLD_SCRIPT_UPPER                    = '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩'
-LATIN_BOLD_SCRIPT_LOWER                    = '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃'
-LATIN_FRAKTUR_UPPER                        = '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ'
-LATIN_FRAKTUR_LOWER                        = '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷'
-LATIN_FRAKTUR_BOLD_UPPER                   = '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅'
-LATIN_FRAKTUR_BOLD_LOWER                   = '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟'
-LATIN_SANS_SERIF_UPPER                     = '𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹'
-LATIN_SANS_SERIF_LOWER                     = '𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓'
-LATIN_SANS_SERIF_BOLD_UPPER                = '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭'
-LATIN_SANS_SERIF_BOLD_LOWER                = '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇'
-LATIN_SANS_SERIF_ITALIC_UPPER              = '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡'
-LATIN_SANS_SERIF_ITALIC_LOWER              = '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻'
-LATIN_SANS_SERIF_BOLD_ITALIC_UPPER         = '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕'
-LATIN_SANS_SERIF_BOLD_ITALIC_LOWER         = '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯'
-LATIN_MONOSPACE_UPPER                      = '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉'
-LATIN_MONOSPACE_LOWER                      = '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣'
-LATIN_DOUBLE_STRUCK_UPPER                  = '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ'
-LATIN_DOUBLE_STRUCK_LOWER                  = '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫'
-LATIN_DOUBLE_STRUCK_ITALIC_UPPER           = '   ⅅ                      '
-LATIN_DOUBLE_STRUCK_ITALIC_LOWER           = '   ⅆⅇ   ⅈⅉ                '
-GREEK_UPPER                                = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ'
-GREEK_UPPER_VARIANT                        = '       ϴ                     ϞϠ  '
-GREEK_LOWER                                = 'αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ'
-GREEK_LOWER_VARIANT                        = ' ϐ  ϵ  ϑ ϰ     ϖϱς  ϕ        ϟϡ  '
-GREEK_LOWER_SUPERSCRIPT                    = ' ᵝᵞᵟᵋ  ᶿᶥ           ᵠᵡ           '
-GREEK_LOWER_SUBSCRIPT                      = ' ᵦᵧ             ᵨ   ᵩᵪ           '
-GREEK_BOLD_UPPER                           = '𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀𝟊        '
-GREEK_BOLD_UPPER_VARIANT                   = '       𝚹                         '
-GREEK_BOLD_LOWER                           = '𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛔𝛕𝛖𝛗𝛘𝛙𝛚𝟋        '
-GREEK_BOLD_LOWER_VARIANT                   = '    𝛜  𝛝 𝛞     𝛡𝛠𝛓  𝛟            '
-GREEK_ITALIC_UPPER                         = '𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺         '
-GREEK_ITALIC_UPPER_VARIANT                 = '       𝛳                         '
-GREEK_ITALIC_LOWER                         = '𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜎𝜏𝜐𝜑𝜒𝜓𝜔         '
-GREEK_ITALIC_LOWER_VARIANT                 = '    𝜖  𝜗 𝜘     𝜛𝜚𝜍  𝜙            '
-GREEK_BOLD_ITALIC_UPPER                    = '𝜜𝜝𝜞𝜟𝜠𝜡𝜢𝜣𝜤𝜥𝜦𝜧𝜨𝜩𝜪𝜫𝜬𝜮𝜯𝜰𝜱𝜲𝜳𝜴         '
-GREEK_BOLD_ITALIC_UPPER_VARIANT            = '       𝜭                         '
-GREEK_BOLD_ITALIC_LOWER                    = '𝜶𝜷𝜸𝜹𝜺𝜻𝜼𝜽𝜾𝜿𝝀𝝁𝝂𝝃𝝄𝝅𝝆𝝈𝝉𝝊𝝋𝝌𝝍𝝎         '
-GREEK_BOLD_ITALIC_LOWER_VARIANT            = '    𝝐  𝝑 𝝒     𝝕𝝔𝝇  𝝓            '
-GREEK_SANS_SERIF_BOLD_UPPER                = '𝝖𝝗𝝘𝝙𝝚𝝛𝝜𝝝𝝞𝝟𝝠𝝡𝝢𝝣𝝤𝝥𝝦𝝨𝝩𝝪𝝫𝝬𝝭𝝮         '
-GREEK_SANS_SERIF_BOLD_UPPER_VARIANT        = '       𝝧                         '
-GREEK_SANS_SERIF_BOLD_LOWER                = '𝝰𝝱𝝲𝝳𝝴𝝵𝝶𝝷𝝸𝝹𝝺𝝻𝝼𝝽𝝾𝝿𝞀𝞂𝞃𝞄𝞅𝞆𝞇𝞈         '
-GREEK_SANS_SERIF_BOLD_LOWER_VARIANT        = '    𝞊  𝞋 𝞌     𝞏𝞎𝞁  𝞍            '
-GREEK_SANS_SERIF_BOLD_ITALIC_UPPER         = '𝞐𝞑𝞒𝞓𝞔𝞕𝞖𝞗𝞘𝞙𝞚𝞛𝞜𝞝𝞞𝞟𝞠𝞢𝞣𝞤𝞥𝞦𝞧𝞨         '
-GREEK_SANS_SERIF_BOLD_ITALIC_UPPER_VARIANT = '       𝞡                         '
-GREEK_SANS_SERIF_BOLD_ITALIC_LOWER         = '𝞪𝞫𝞬𝞭𝞮𝞯𝞰𝞱𝞲𝞳𝞴𝞵𝞶𝞷𝞸𝞹𝞺𝞼𝞽𝞾𝞿𝟀𝟁𝟂         '
-GREEK_SANS_SERIF_BOLD_ITALIC_LOWER_VARIANT = '    𝟄  𝟅 𝟆     𝟉𝟈𝞻  𝟇            '
-GREEK_DOUBLE_STRUCK_UPPER                  = '  ℾ            ℿ ⅀               '
-GREEK_DOUBLE_STRUCK_LOWER                  = '  ℽ            ℼ                 '
-HEBREW                                     = 'ℵℶℷℸ'
-DIGIT                                      = '0123456789↊↋'
-DIGIT_SUPERSCRIPT                          = '⁰¹²³⁴⁵⁶⁷⁸⁹  '
-DIGIT_SUBSCRIPT                            = '₀₁₂₃₄₅₆₇₈₉⏨ '
-DIGIT_BOLD                                 = '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗  '
-DIGIT_DOUBLE_STRUCK                        = '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡  '
-DIGIT_SANS_SERIF                           = '𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  '
-DIGIT_SANS_SERIF_BOLD                      = '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵  '
-DIGIT_MONOSPACE                            = '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿  '
-ROMAN_NUMERAL_UPPER                        = ' ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ'
-ROMAN_NUMERAL_LOWER                        = ' ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ'
-COUNTING_ROD_VERTICAL                      = '〇𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱'
-COUNTING_ROD_HORIZONTAL                    = '〇𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨'
-COUNTING_ROD_NEGATIVE                      = '\u20E5'
-TALLY_MARK                                 = ' 𝍷   𝍸'
-TALLY_MARK_IDEOGRAPHIC                     = ' 𝍲𝍳𝍴𝍵𝍶'
-RECIPROCAL                                 = '⅟'
-FRACTION_0_BY                              = '   ↉       '
-FRACTION_1_BY                              = '  ½⅓¼⅕⅙⅐⅛⅑⅒'
-FRACTION_2_BY                              = '   ⅔ ⅖     '
-FRACTION_3_BY                              = '    ¾⅗  ⅜  '
-FRACTION_4_BY                              = '     ⅘     '
-FRACTION_5_BY                              = '      ⅚ ⅝  '
-FRACTION_7_BY                              = '        ⅞  '
-INCREMENT                                  = '∆'
-NABLA                                      = '∇'
-NABLA_BOLD                                 = '𝛁'
-NABLA_ITALIC                               = '𝛻'
-NABLA_BOLD_ITALIC                          = '𝜵'
-NABLA_SANS_SERIF_BOLD                      = '𝝯'
-NABLA_SANS_SERIF_BOLD_ITALIC               = '𝞩'
-PARTIAL                                    = '∂'
-PARTIAL_BOLD                               = '𝛛'
-PARTIAL_ITALIC                             = '𝜕'
-PARTIAL_BOLD_ITALIC                        = '𝝏'
-PARTIAL_SANS_SERIF_BOLD                    = '𝞉'
-PARTIAL_SANS_SERIF_BOLD_ITALIC             = '𝟃'
-PLUS_SUPERSCRIPT                           = '⁺'
-PLUS_SUBSCRIPT                             = '₊'
-MINUS_SUPERSCRIPT                          = '⁻'
-MINUS_SUBSCRIPT                            = '₋'
-EQUAL_SUPERSCRIPT                          = '⁼'
-EQUAL_SUBSCRIPT                            = '₌'
-PARENTHESIS_SUPERSCRIPT                    = '⁽⁾'
-PARENTHESIS_SUBSCRIPT                      = '₍₎'
-CEIL                                       = '⌈⌉'
-FLOOR                                      = '⌊⌋'
-PARENTHESIS                                = '()⏜⏝'
-SQUARE_BRACKET                             = '[]⎴⎵⎶'
-CURLY_BRACKET                              = '{}⏞⏟'
-ANGLE_BRACKET                              = '⟨⟩'
-DOUBLE_ANGLE_BRACKET                       = '⟪⟫'
-CURVED_ANGLE_BRACKET                       = '⧼⧽'
-GUILLEMET                                  = '‹›'
-DOUBLE_GUILLEMET                           = '«»'
-LESS_THAN                                  = '<'
-NOT_LESS_THAN                              = '≮'
-GREATER_THAN                               = '>'
-NOT_GREATER_THAN                           = '≯'
-LESS_THAN_OR_EQUAL                         = '≤'
-NOT_LESS_THAN_NOR_EQUAL                    = '≰'
-GREATER_THAN_OR_EQUAL                      = '≥'
-NOT_GREATER_THAN_NOR_EQUAL                 = '≱'
-MUCH_LESS_THAN                             = '≪'
-MUCH_GREATER_THAN                          = '≫'
-EQUAL                                      = '='
-NOT_EQUAL                                  = '≠'
-ALMOST_EQUAL                               = '≈'
-NOT_ALMOST_EQUAL                           = '≉'
-IDENTICAL                                  = '≡'
-NOT_IDENTICAL                              = '≢'
-PROPORTIONAL                               = '∝'
-INFINITY                                   = '∞'
-SQUARE_ROOT                                = '√'
-CUBE_ROOT                                  = '∛'
-FOURTH_ROOT                                = '∜'
-THEREFORE                                  = '∴'
-BECAUSE                                    = '∵'
-INTEGRAL                                   = '∫'
-DOUBLE_INTEGRAL                            = '∬'
-TRIPLE_INTEGRAL                            = '∭'
-QUADRUPLE_INTEGRAL                         = '⨌'
-ANGLE                                      = '∠'
-RATIO                                      = '∶'
-PROPORTION                                 = '∷'
-PLUS                                       = '+'
-MINUS                                      = '−'
-PLUS_MINUS                                 = '±'
-MINUS_PLUS                                 = '∓'
-CIRCLED_PLUS                               = '⊕'
-CIRCLED_MINUS                              = '⊖'
-CIRCLED_TIMES                              = '⊗'
-CIRCLED_DIVISION_SLASH                     = '⊘'
-CIRCLED_DIVISION_SIGN                      = '⨸'
-CIRCLED_DOT_OPERATOR                       = '⊙'
-CIRCLED_EQUAL                              = '⊜'
-SQUARED_PLUS                               = '⊠'
-SQUARED_MINUS                              = '⊟'
-SQUARED_TIMES                              = '⊞'
-SQUARED_DOT_OPERATOR                       = '⊡'
-TIMES                                      = '×'
-DIVISION_SLASH                             = '∕'
-DIVISION_SIGN                              = '÷'
-FRACTION                                   = '⁄'
-TILDE_OPERATOR                             = '∼'
-DOT_OPERATOR                               = '⋅'
-CROSS_PRODUCT                              = '⨯'
-INTERSECTION                               = '∩'
-UNION                                      = '∪'
-ELEMENT_OF                                 = '∈'
-ELEMENT_OF_SMALL                           = '∊'
-NOT_ELEMENT_OF                             = '∉'
-CONTAINS                                   = '∋'
-CONTAINS_SMALL                             = '∍'
-NOT_CONTAINS                               = '∌'
-SUBSET                                     = '⊂'
-SUPERSET                                   = '⊃'
-PROPER_SUBSET                              = '⊆'
-PROPER_SUPERSET                            = '⊇'
-NOT_SUBSET                                 = '⊄'
-NOT_SUPERSET                               = '⊅'
-DOWN_TACK                                  = '⊤'
-UP_TACK                                    = '⊥'
-LEFT_TACK                                  = '⊣'
-RIGHT_TACK                                 = '⊢'
-DIVIDES                                    = '∣'
-NOT_DIVIDES                                = '∤'
-PARALLEL                                   = '∥'
-PERPENDICULAR                              = '⟂'
-NOT                                        = '¬'
-AND                                        = '∧'
-OR                                         = '∨'
-NAND                                       = '⊼'
-NOR                                        = '⊽'
-XOR                                        = '⊻'
-BIG_PARENTHESIS                            = '⎛⎜⎝⎞⎟⎠'
-BIG_SQUARE_BRACKET                         = '⎡⎢⎣⎤⎥⎦'
-BIG_CURLY_BRACKET                          = '⎧⎨⎩⎪⎫⎬⎭⎰⎱'
-BIG_INTEGRAL                               = '⌠⎮⌡'
-BIG_BIG_SIGMA                              = '⎲⎳'
-BIG_DOWN_TACK                              = '⟙'
-BIG_UP_TACK                                = '⟘'
-BIG_CONJUNCTION                            = '⋀'
-BIG_DISJUNCTION                            = '⋁'
-BIG_INTERSECTION                           = '⋂'
-BIG_UNION                                  = '⋃'
-BIG_CIRCLED_PLUS                           = '⨁'
-BIG_CIRCLED_TIMES                          = '⨂'
-BIG_CIRCLED_DOT_OPERATOR                   = '⨀'
-BIG_PI                                     = '∏'
-BIG_SIGMA                                  = '∑'
-BIG_TIMES                                  = '⨉'
-EMPTY_SET                                  = '∅'
-ARROW                                      = '←↑→↓↔↕↖↗↘↙'
-ARROW_STROKE                               = '↚ ↛ ↮     '
-ARROW_DOUBLE                               = '⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙'
-ARROW_DOUBLE_STROKE                        = '⇍ ⇏ ⇎     '
-ARROW_TRIPLE                               = '⇚ ⇛       '
-ARROW_HARPOON                              = '⇋⇌        '
-ARROW_PAIRED                               = '⇇⇈⇉⇊      '
-ARROW_PAIRED_OPPOSITES                     = '⇄⇅⇆⇵      '
-ARROW_PAIRED_TRIPLE                        = '⬱ ⇶       '
-ARROW_DASHED                               = '⇠⇡⇢⇣      '
-ARROW_WHITE                                = '⇦⇧⇨⇩      '
-ELLIPSIS_VERTICAL                          = '⋮'
-ELLIPSIS_HORIZONTAL                        = '⋯'
-ELLIPSIS_DIAGONAL_UP_RIGHT                 = '⋰'
-ELLIPSIS_DIAGONAL_DOWN_RIGHT               = '⋱'
-DIAMETER                                   = '⌀'
-NUMERO                                     = '№'
-EULER_CONSTANT                             = 'ℇ'
-DOTLESS_ITALIC_I                           = '𝚤'
-DOTLESS_ITALIC_J                           = '𝚥'
-CIRCLE_BLACK                               = '●'
-CIRCLE_WHITE                               = '○'
-CIRCLE_HEAVY                               = '⭘'
-CIRCLE_LARGE_BLACK                         = '⬤'
-CIRCLE_LARGE_WHITE                         = '◯'
-CIRCLE_LARGE_HEAVY                         = '⭕'
-ELLIPSE_HORIZONTAL_BLACK                   = '⬬'
-ELLIPSE_HORIZONTAL_WHITE                   = '⬭'
-ELLIPSE_VERTICAL_BLACK                     = '⬮'
-ELLIPSE_VERTICAL_WHITE                     = '⬯'
-TRIANGLE_UP_BLACK                          = '▲'
-TRIANGLE_UP_WHITE                          = '△'
-TRIANGLE_RIGHT_BLACK                       = '▶'
-TRIANGLE_RIGHT_WHITE                       = '▷'
-TRIANGLE_DOWN_BLACK                        = '▼'
-TRIANGLE_DOWN_WHITE                        = '▽'
-TRIANGLE_LEFT_BLACK                        = '◀'
-TRIANGLE_LEFT_WHITE                        = '◁'
-TRIANGLE_SMALL_UP_BLACK                    = '▴'
-TRIANGLE_SMALL_UP_WHITE                    = '▵'
-TRIANGLE_SMALL_RIGHT_BLACK                 = '▸'
-TRIANGLE_SMALL_RIGHT_WHITE                 = '▹'
-TRIANGLE_SMALL_DOWN_BLACK                  = '▾'
-TRIANGLE_SMALL_DOWN_WHITE                  = '▿'
-TRIANGLE_SMALL_LEFT_BLACK                  = '◂'
-TRIANGLE_SMALL_LEFT_WHITE                  = '◃'
-TRIANGLE_CENTRED_MEDIUM_UP_BLACK           = '⯅'
-TRIANGLE_CENTRED_MEDIUM_DOWN_BLACK         = '⯆'
-TRIANGLE_CENTRED_MEDIUM_LEFT_BLACK         = '⯇'
-TRIANGLE_CENTRED_MEDIUM_RIGHT_BLACK        = '⯈'
-TRIANGLE_UPPER_LEFT_BLACK                  = '◤'
-TRIANGLE_UPPER_LEFT_WHITE                  = '◸'
-TRIANGLE_LOWER_LEFT_BLACK                  = '◣'
-TRIANGLE_LOWER_LEFT_WHITE                  = '◺'
-TRIANGLE_UPPER_RIGHT_BLACK                 = '◥'
-TRIANGLE_UPPER_RIGHT_WHITE                 = '◹'
-TRIANGLE_LOWER_RIGHT_BLACK                 = '◢'
-TRIANGLE_LOWER_RIGHT_WHITE                 = '◿'
-POINTER_RIGHT_BLACK                        = '►'
-POINTER_RIGHT_WHITE                        = '▻'
-POINTER_LEFT_BLACK                         = '◄'
-POINTER_LEFT_WHITE                         = '◅'
-SQUARE_BLACK                               = '■'
-SQUARE_WHITE                               = '□'
-SQUARE_MEDIUM_BLACK                        = '◼'
-SQUARE_MEDIUM_WHITE                        = '◻'
-SQUARE_SMALL_BLACK                         = '▪'
-SQUARE_SMALL_WHITE                         = '▫'
-SQUARE_VERY_SMALL_BLACK                    = '⬝'
-SQUARE_VERY_SMALL_WHITE                    = '⬞'
-SQUARE_CENTRED_BLACK                       = '⯀'
-RECTANGLE_HORIZONTAL_BLACK                 = '▬'
-RECTANGLE_HORIZONTAL_WHITE                 = '▭'
-RECTANGLE_VERTICAL_BLACK                   = '▮'
-RECTANGLE_VERTICAL_WHITE                   = '▯'
-PARALLELOGRAM_BLACK                        = '▰'
-PARALLELOGRAM_WHITE                        = '▱'
-DIAMOND_BLACK                              = '◆'
-DIAMOND_WHITE                              = '◇'
-DIAMOND_MEDIUM_BLACK                       = '⬥'
-DIAMOND_MEDIUM_WHITE                       = '⬦'
-DIAMOND_SMALL_BLACK                        = '⬩'
-DIAMOND_CENTRED_BLACK                      = '⯁'
-LOZENGE_BLACK                              = '⧫'
-LOZENGE_WHITE                              = '◊'
-LOZENGE_MEDIUM_BLACK                       = '⬧'
-LOZENGE_MEDIUM_WHITE                       = '⬨'
-LOZENGE_SMALL_BLACK                        = '⬪'
-LOZENGE_SMALL_WHITE                        = '⬫'
-CUSP_BLACK                                 = '⯌'
-CUSP_WHITE                                 = '⯎'
-CUSP_ROTATED_BLACK                         = '⯍'
-CUSP_ROTATED_WHITE 	                       = '⯏'
-PENTAGON_BLACK                             = '⬟'
-PENTAGON_WHITE                             = '⬠'
-PENTAGON_RIGHT_BLACK                       = '⭓'
-PENTAGON_RIGHT_WHITE                       = '⭔'
-PENTAGON_DOWN_BLACK                        = '⯂'
-STAR_SMALL_BLACK                           = '⭑'
-STAR_SMALL_WHITE                           = '⭒'
-HEXAGON_VERTICAL_WHITE                     = '⬡'
-HEXAGON_VERTICAL_BLACK                     = '⬢'
-HEXAGON_HORIZONTAL_BLACK                   = '⬣'
-OCTAGON_VERTICAL_BLACK                     = '⯄'
-OCTAGON_HORIZONTAL_BLACK                   = '⯃'
-#GREEK_NAME                                 │ {'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'digamma', 'san', 'tsan', 'sho', 'heta', 'koppa', 'sampi', 'yot', 'stigma'}
+LATIN_UPPER								= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LATIN_UPPER_SUPERSCRIPT					= 'ᴬᴮꟲᴰᴱꟳᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾꟴᴿ ᵀᵁⱽᵂ   '
+LATIN_UPPER_SUPERSCRIPT_SMALL			  = ' 𐞄	𐞒𐞖ᶦ 𞀹ᶫ𞀻ᶰ   𐞪 𞁀ᶸ   𐞲 '
+LATIN_LOWER_SUPERSCRIPT					= 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ𐞥ʳˢᵗᵘᵛʷˣʸᶻ'
+LATIN_LOWER_SUBSCRIPT					  = 'ₐ 𞁞 ₑ  ₕᵢⱼₖₗₘₙₒₚ ᵣₛₜᵤᵥ ₓ  '
+LATIN_LOWER								= 'abcdefghijklmnopqrstuvwxyz'
+LATIN_BOLD_UPPER						   = '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙'
+LATIN_BOLD_LOWER						   = '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳'
+LATIN_ITALIC_UPPER						 = '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍'
+LATIN_ITALIC_LOWER						 = '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧'
+LATIN_BOLD_ITALIC_UPPER					= '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁'
+LATIN_BOLD_ITALIC_LOWER					= '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛'
+LATIN_SCRIPT_UPPER						 = '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵'
+LATIN_SCRIPT_LOWER						 = '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏'
+LATIN_BOLD_SCRIPT_UPPER					= '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩'
+LATIN_BOLD_SCRIPT_LOWER					= '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃'
+LATIN_FRAKTUR_UPPER						= '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ'
+LATIN_FRAKTUR_LOWER						= '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷'
+LATIN_FRAKTUR_BOLD_UPPER				   = '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅'
+LATIN_FRAKTUR_BOLD_LOWER				   = '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟'
+LATIN_SANS_SERIF_UPPER					 = '𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹'
+LATIN_SANS_SERIF_LOWER					 = '𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓'
+LATIN_SANS_SERIF_BOLD_UPPER				= '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭'
+LATIN_SANS_SERIF_BOLD_LOWER				= '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇'
+LATIN_SANS_SERIF_ITALIC_UPPER			  = '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡'
+LATIN_SANS_SERIF_ITALIC_LOWER			  = '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻'
+LATIN_SANS_SERIF_BOLD_ITALIC_UPPER		 = '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕'
+LATIN_SANS_SERIF_BOLD_ITALIC_LOWER		 = '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯'
+LATIN_MONOSPACE_UPPER					  = '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉'
+LATIN_MONOSPACE_LOWER					  = '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣'
+LATIN_DOUBLE_STRUCK_UPPER				  = '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ'
+LATIN_DOUBLE_STRUCK_LOWER				  = '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫'
+LATIN_DOUBLE_STRUCK_ITALIC_UPPER		   = '   ⅅ					  '
+LATIN_DOUBLE_STRUCK_ITALIC_LOWER		   = '   ⅆⅇ   ⅈⅉ				'
+GREEK_UPPER								= 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ'
+GREEK_UPPER_VARIANT						= '	   ϴ					 ϞϠ  '
+GREEK_LOWER								= 'αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ'
+GREEK_LOWER_VARIANT						= ' ϐ  ϵ  ϑ ϰ	 ϖϱς  ϕ		ϟϡ  '
+GREEK_LOWER_SUPERSCRIPT					= ' ᵝᵞᵟᵋ  ᶿᶥ		   ᵠᵡ		   '
+GREEK_LOWER_SUBSCRIPT					  = ' ᵦᵧ			 ᵨ   ᵩᵪ		   '
+GREEK_BOLD_UPPER						   = '𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀𝟊		'
+GREEK_BOLD_UPPER_VARIANT				   = '	   𝚹						 '
+GREEK_BOLD_LOWER						   = '𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛔𝛕𝛖𝛗𝛘𝛙𝛚𝟋		'
+GREEK_BOLD_LOWER_VARIANT				   = '	𝛜  𝛝 𝛞	 𝛡𝛠𝛓  𝛟			'
+GREEK_ITALIC_UPPER						 = '𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺		 '
+GREEK_ITALIC_UPPER_VARIANT				 = '	   𝛳						 '
+GREEK_ITALIC_LOWER						 = '𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜎𝜏𝜐𝜑𝜒𝜓𝜔		 '
+GREEK_ITALIC_LOWER_VARIANT				 = '	𝜖  𝜗 𝜘	 𝜛𝜚𝜍  𝜙			'
+GREEK_BOLD_ITALIC_UPPER					= '𝜜𝜝𝜞𝜟𝜠𝜡𝜢𝜣𝜤𝜥𝜦𝜧𝜨𝜩𝜪𝜫𝜬𝜮𝜯𝜰𝜱𝜲𝜳𝜴		 '
+GREEK_BOLD_ITALIC_UPPER_VARIANT			= '	   𝜭						 '
+GREEK_BOLD_ITALIC_LOWER					= '𝜶𝜷𝜸𝜹𝜺𝜻𝜼𝜽𝜾𝜿𝝀𝝁𝝂𝝃𝝄𝝅𝝆𝝈𝝉𝝊𝝋𝝌𝝍𝝎		 '
+GREEK_BOLD_ITALIC_LOWER_VARIANT			= '	𝝐  𝝑 𝝒	 𝝕𝝔𝝇  𝝓			'
+GREEK_SANS_SERIF_BOLD_UPPER				= '𝝖𝝗𝝘𝝙𝝚𝝛𝝜𝝝𝝞𝝟𝝠𝝡𝝢𝝣𝝤𝝥𝝦𝝨𝝩𝝪𝝫𝝬𝝭𝝮		 '
+GREEK_SANS_SERIF_BOLD_UPPER_VARIANT		= '	   𝝧						 '
+GREEK_SANS_SERIF_BOLD_LOWER				= '𝝰𝝱𝝲𝝳𝝴𝝵𝝶𝝷𝝸𝝹𝝺𝝻𝝼𝝽𝝾𝝿𝞀𝞂𝞃𝞄𝞅𝞆𝞇𝞈		 '
+GREEK_SANS_SERIF_BOLD_LOWER_VARIANT		= '	𝞊  𝞋 𝞌	 𝞏𝞎𝞁  𝞍			'
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER		 = '𝞐𝞑𝞒𝞓𝞔𝞕𝞖𝞗𝞘𝞙𝞚𝞛𝞜𝞝𝞞𝞟𝞠𝞢𝞣𝞤𝞥𝞦𝞧𝞨		 '
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER_VARIANT = '	   𝞡						 '
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER		 = '𝞪𝞫𝞬𝞭𝞮𝞯𝞰𝞱𝞲𝞳𝞴𝞵𝞶𝞷𝞸𝞹𝞺𝞼𝞽𝞾𝞿𝟀𝟁𝟂		 '
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER_VARIANT = '	𝟄  𝟅 𝟆	 𝟉𝟈𝞻  𝟇			'
+GREEK_DOUBLE_STRUCK_UPPER				  = '  ℾ			ℿ ⅀			   '
+GREEK_DOUBLE_STRUCK_LOWER				  = '  ℽ			ℼ				 '
+HEBREW									 = 'ℵℶℷℸ'
+DIGIT									  = '0123456789↊↋'
+DIGIT_SUPERSCRIPT						  = '⁰¹²³⁴⁵⁶⁷⁸⁹  '
+DIGIT_SUBSCRIPT							= '₀₁₂₃₄₅₆₇₈₉⏨ '
+DIGIT_BOLD								 = '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗  '
+DIGIT_DOUBLE_STRUCK						= '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡  '
+DIGIT_SANS_SERIF						   = '𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫  '
+DIGIT_SANS_SERIF_BOLD					  = '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵  '
+DIGIT_MONOSPACE							= '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿  '
+ROMAN_NUMERAL_UPPER						= ' ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ'
+ROMAN_NUMERAL_LOWER						= ' ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ'
+COUNTING_ROD_VERTICAL					  = '〇𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱'
+COUNTING_ROD_HORIZONTAL					= '〇𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨'
+COUNTING_ROD_NEGATIVE					  = '\u20E5'
+TALLY_MARK								 = ' 𝍷   𝍸'
+TALLY_MARK_IDEOGRAPHIC					 = ' 𝍲𝍳𝍴𝍵𝍶'
+RECIPROCAL								 = '⅟'
+FRACTION_0_BY							  = '   ↉	   '
+FRACTION_1_BY							  = '  ½⅓¼⅕⅙⅐⅛⅑⅒'
+FRACTION_2_BY							  = '   ⅔ ⅖	 '
+FRACTION_3_BY							  = '	¾⅗  ⅜  '
+FRACTION_4_BY							  = '	 ⅘	 '
+FRACTION_5_BY							  = '	  ⅚ ⅝  '
+FRACTION_7_BY							  = '		⅞  '
+INCREMENT								  = '∆'
+NABLA									  = '∇'
+NABLA_BOLD								 = '𝛁'
+NABLA_ITALIC							   = '𝛻'
+NABLA_BOLD_ITALIC						  = '𝜵'
+NABLA_SANS_SERIF_BOLD					  = '𝝯'
+NABLA_SANS_SERIF_BOLD_ITALIC			   = '𝞩'
+PARTIAL									= '∂'
+PARTIAL_BOLD							   = '𝛛'
+PARTIAL_ITALIC							 = '𝜕'
+PARTIAL_BOLD_ITALIC						= '𝝏'
+PARTIAL_SANS_SERIF_BOLD					= '𝞉'
+PARTIAL_SANS_SERIF_BOLD_ITALIC			 = '𝟃'
+PLUS_SUPERSCRIPT						   = '⁺'
+PLUS_SUBSCRIPT							 = '₊'
+MINUS_SUPERSCRIPT						  = '⁻'
+MINUS_SUBSCRIPT							= '₋'
+EQUAL_SUPERSCRIPT						  = '⁼'
+EQUAL_SUBSCRIPT							= '₌'
+PARENTHESIS_SUPERSCRIPT					= '⁽⁾'
+PARENTHESIS_SUBSCRIPT					  = '₍₎'
+CEIL									   = '⌈⌉'
+FLOOR									  = '⌊⌋'
+PARENTHESIS								= '()⏜⏝'
+SQUARE_BRACKET							 = '[]⎴⎵⎶'
+CURLY_BRACKET							  = '{}⏞⏟'
+ANGLE_BRACKET							  = '⟨⟩'
+DOUBLE_ANGLE_BRACKET					   = '⟪⟫'
+CURVED_ANGLE_BRACKET					   = '⧼⧽'
+GUILLEMET								  = '‹›'
+DOUBLE_GUILLEMET						   = '«»'
+LESS_THAN								  = '<'
+NOT_LESS_THAN							  = '≮'
+GREATER_THAN							   = '>'
+NOT_GREATER_THAN						   = '≯'
+LESS_THAN_OR_EQUAL						 = '≤'
+NOT_LESS_THAN_NOR_EQUAL					= '≰'
+GREATER_THAN_OR_EQUAL					  = '≥'
+NOT_GREATER_THAN_NOR_EQUAL				 = '≱'
+MUCH_LESS_THAN							 = '≪'
+MUCH_GREATER_THAN						  = '≫'
+EQUAL									  = '='
+NOT_EQUAL								  = '≠'
+ALMOST_EQUAL							   = '≈'
+NOT_ALMOST_EQUAL						   = '≉'
+IDENTICAL								  = '≡'
+NOT_IDENTICAL							  = '≢'
+PROPORTIONAL							   = '∝'
+INFINITY								   = '∞'
+SQUARE_ROOT								= '√'
+CUBE_ROOT								  = '∛'
+FOURTH_ROOT								= '∜'
+THEREFORE								  = '∴'
+BECAUSE									= '∵'
+INTEGRAL								   = '∫'
+DOUBLE_INTEGRAL							= '∬'
+TRIPLE_INTEGRAL							= '∭'
+QUADRUPLE_INTEGRAL						 = '⨌'
+ANGLE									  = '∠'
+RATIO									  = '∶'
+PROPORTION								 = '∷'
+PLUS									   = '+'
+MINUS									  = '−'
+PLUS_MINUS								 = '±'
+MINUS_PLUS								 = '∓'
+CIRCLED_PLUS							   = '⊕'
+CIRCLED_MINUS							  = '⊖'
+CIRCLED_TIMES							  = '⊗'
+CIRCLED_DIVISION_SLASH					 = '⊘'
+CIRCLED_DIVISION_SIGN					  = '⨸'
+CIRCLED_DOT_OPERATOR					   = '⊙'
+CIRCLED_EQUAL							  = '⊜'
+SQUARED_PLUS							   = '⊠'
+SQUARED_MINUS							  = '⊟'
+SQUARED_TIMES							  = '⊞'
+SQUARED_DOT_OPERATOR					   = '⊡'
+TIMES									  = '×'
+DIVISION_SLASH							 = '∕'
+DIVISION_SIGN							  = '÷'
+FRACTION								   = '⁄'
+TILDE_OPERATOR							 = '∼'
+DOT_OPERATOR							   = '⋅'
+CROSS_PRODUCT							  = '⨯'
+INTERSECTION							   = '∩'
+UNION									  = '∪'
+ELEMENT_OF								 = '∈'
+ELEMENT_OF_SMALL						   = '∊'
+NOT_ELEMENT_OF							 = '∉'
+CONTAINS								   = '∋'
+CONTAINS_SMALL							 = '∍'
+NOT_CONTAINS							   = '∌'
+SUBSET									 = '⊂'
+SUPERSET								   = '⊃'
+PROPER_SUBSET							  = '⊆'
+PROPER_SUPERSET							= '⊇'
+NOT_SUBSET								 = '⊄'
+NOT_SUPERSET							   = '⊅'
+DOWN_TACK								  = '⊤'
+UP_TACK									= '⊥'
+LEFT_TACK								  = '⊣'
+RIGHT_TACK								 = '⊢'
+DIVIDES									= '∣'
+NOT_DIVIDES								= '∤'
+PARALLEL								   = '∥'
+PERPENDICULAR							  = '⟂'
+NOT										= '¬'
+AND										= '∧'
+OR										 = '∨'
+NAND									   = '⊼'
+NOR										= '⊽'
+XOR										= '⊻'
+BIG_PARENTHESIS							= '⎛⎜⎝⎞⎟⎠'
+BIG_SQUARE_BRACKET						 = '⎡⎢⎣⎤⎥⎦'
+BIG_CURLY_BRACKET						  = '⎧⎨⎩⎪⎫⎬⎭⎰⎱'
+BIG_INTEGRAL							   = '⌠⎮⌡'
+BIG_BIG_SIGMA							  = '⎲⎳'
+BIG_DOWN_TACK							  = '⟙'
+BIG_UP_TACK								= '⟘'
+BIG_CONJUNCTION							= '⋀'
+BIG_DISJUNCTION							= '⋁'
+BIG_INTERSECTION						   = '⋂'
+BIG_UNION								  = '⋃'
+BIG_CIRCLED_PLUS						   = '⨁'
+BIG_CIRCLED_TIMES						  = '⨂'
+BIG_CIRCLED_DOT_OPERATOR				   = '⨀'
+BIG_PI									 = '∏'
+BIG_SIGMA								  = '∑'
+BIG_TIMES								  = '⨉'
+EMPTY_SET								  = '∅'
+ARROW									  = '←↑→↓↔↕↖↗↘↙'
+ARROW_STROKE							   = '↚ ↛ ↮	 '
+ARROW_DOUBLE							   = '⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙'
+ARROW_DOUBLE_STROKE						= '⇍ ⇏ ⇎	 '
+ARROW_TRIPLE							   = '⇚ ⇛	   '
+ARROW_HARPOON							  = '⇋⇌		'
+ARROW_PAIRED							   = '⇇⇈⇉⇊	  '
+ARROW_PAIRED_OPPOSITES					 = '⇄⇅⇆⇵	  '
+ARROW_PAIRED_TRIPLE						= '⬱ ⇶	   '
+ARROW_DASHED							   = '⇠⇡⇢⇣	  '
+ARROW_WHITE								= '⇦⇧⇨⇩	  '
+ELLIPSIS_VERTICAL						  = '⋮'
+ELLIPSIS_HORIZONTAL						= '⋯'
+ELLIPSIS_DIAGONAL_UP_RIGHT				 = '⋰'
+ELLIPSIS_DIAGONAL_DOWN_RIGHT			   = '⋱'
+DIAMETER								   = '⌀'
+NUMERO									 = '№'
+EULER_CONSTANT							 = 'ℇ'
+DOTLESS_ITALIC_I						   = '𝚤'
+DOTLESS_ITALIC_J						   = '𝚥'
+CIRCLE_BLACK							   = '●'
+CIRCLE_WHITE							   = '○'
+CIRCLE_HEAVY							   = '⭘'
+CIRCLE_LARGE_BLACK						 = '⬤'
+CIRCLE_LARGE_WHITE						 = '◯'
+CIRCLE_LARGE_HEAVY						 = '⭕'
+ELLIPSE_HORIZONTAL_BLACK				   = '⬬'
+ELLIPSE_HORIZONTAL_WHITE				   = '⬭'
+ELLIPSE_VERTICAL_BLACK					 = '⬮'
+ELLIPSE_VERTICAL_WHITE					 = '⬯'
+TRIANGLE_UP_BLACK						  = '▲'
+TRIANGLE_UP_WHITE						  = '△'
+TRIANGLE_RIGHT_BLACK					   = '▶'
+TRIANGLE_RIGHT_WHITE					   = '▷'
+TRIANGLE_DOWN_BLACK						= '▼'
+TRIANGLE_DOWN_WHITE						= '▽'
+TRIANGLE_LEFT_BLACK						= '◀'
+TRIANGLE_LEFT_WHITE						= '◁'
+TRIANGLE_SMALL_UP_BLACK					= '▴'
+TRIANGLE_SMALL_UP_WHITE					= '▵'
+TRIANGLE_SMALL_RIGHT_BLACK				 = '▸'
+TRIANGLE_SMALL_RIGHT_WHITE				 = '▹'
+TRIANGLE_SMALL_DOWN_BLACK				  = '▾'
+TRIANGLE_SMALL_DOWN_WHITE				  = '▿'
+TRIANGLE_SMALL_LEFT_BLACK				  = '◂'
+TRIANGLE_SMALL_LEFT_WHITE				  = '◃'
+TRIANGLE_CENTRED_MEDIUM_UP_BLACK		   = '⯅'
+TRIANGLE_CENTRED_MEDIUM_DOWN_BLACK		 = '⯆'
+TRIANGLE_CENTRED_MEDIUM_LEFT_BLACK		 = '⯇'
+TRIANGLE_CENTRED_MEDIUM_RIGHT_BLACK		= '⯈'
+TRIANGLE_UPPER_LEFT_BLACK				  = '◤'
+TRIANGLE_UPPER_LEFT_WHITE				  = '◸'
+TRIANGLE_LOWER_LEFT_BLACK				  = '◣'
+TRIANGLE_LOWER_LEFT_WHITE				  = '◺'
+TRIANGLE_UPPER_RIGHT_BLACK				 = '◥'
+TRIANGLE_UPPER_RIGHT_WHITE				 = '◹'
+TRIANGLE_LOWER_RIGHT_BLACK				 = '◢'
+TRIANGLE_LOWER_RIGHT_WHITE				 = '◿'
+POINTER_RIGHT_BLACK						= '►'
+POINTER_RIGHT_WHITE						= '▻'
+POINTER_LEFT_BLACK						 = '◄'
+POINTER_LEFT_WHITE						 = '◅'
+SQUARE_BLACK							   = '■'
+SQUARE_WHITE							   = '□'
+SQUARE_MEDIUM_BLACK						= '◼'
+SQUARE_MEDIUM_WHITE						= '◻'
+SQUARE_SMALL_BLACK						 = '▪'
+SQUARE_SMALL_WHITE						 = '▫'
+SQUARE_VERY_SMALL_BLACK					= '⬝'
+SQUARE_VERY_SMALL_WHITE					= '⬞'
+SQUARE_CENTRED_BLACK					   = '⯀'
+RECTANGLE_HORIZONTAL_BLACK				 = '▬'
+RECTANGLE_HORIZONTAL_WHITE				 = '▭'
+RECTANGLE_VERTICAL_BLACK				   = '▮'
+RECTANGLE_VERTICAL_WHITE				   = '▯'
+PARALLELOGRAM_BLACK						= '▰'
+PARALLELOGRAM_WHITE						= '▱'
+DIAMOND_BLACK							  = '◆'
+DIAMOND_WHITE							  = '◇'
+DIAMOND_MEDIUM_BLACK					   = '⬥'
+DIAMOND_MEDIUM_WHITE					   = '⬦'
+DIAMOND_SMALL_BLACK						= '⬩'
+DIAMOND_CENTRED_BLACK					  = '⯁'
+LOZENGE_BLACK							  = '⧫'
+LOZENGE_WHITE							  = '◊'
+LOZENGE_MEDIUM_BLACK					   = '⬧'
+LOZENGE_MEDIUM_WHITE					   = '⬨'
+LOZENGE_SMALL_BLACK						= '⬪'
+LOZENGE_SMALL_WHITE						= '⬫'
+CUSP_BLACK								 = '⯌'
+CUSP_WHITE								 = '⯎'
+CUSP_ROTATED_BLACK						 = '⯍'
+CUSP_ROTATED_WHITE 						   = '⯏'
+PENTAGON_BLACK							 = '⬟'
+PENTAGON_WHITE							 = '⬠'
+PENTAGON_RIGHT_BLACK					   = '⭓'
+PENTAGON_RIGHT_WHITE					   = '⭔'
+PENTAGON_DOWN_BLACK						= '⯂'
+STAR_SMALL_BLACK						   = '⭑'
+STAR_SMALL_WHITE						   = '⭒'
+HEXAGON_VERTICAL_WHITE					 = '⬡'
+HEXAGON_VERTICAL_BLACK					 = '⬢'
+HEXAGON_HORIZONTAL_BLACK				   = '⬣'
+OCTAGON_VERTICAL_BLACK					 = '⯄'
+OCTAGON_HORIZONTAL_BLACK				   = '⯃'
+#GREEK_NAME								 │ {'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'digamma', 'san', 'tsan', 'sho', 'heta', 'koppa', 'sampi', 'yot', 'stigma'}
 
 # starting from this is official -----------------------------------------------
 
+# none of these functions should depend on each other
+
 import math as _math
 import cmath as _cmath
-
-def inc(x):
-	if isinstance(x, complex):
-		raise TypeError("i have not yet decided if complex input should be supported or not")
-	'++x also known as x + 1'
-	return x + 1
-
-def dec(x):
-	if isinstance(x, complex):
-		raise TypeError("i have not yet decided if complex input should be supported or not")
-	'−−x also known as x − 1'
-	return x - 1
-
-def neg(x):
-	'−x also known as unary subtraction also known as additive inverse'
-	return -x
-
-def inv(x):
-	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
-	return 1/x
-
-def mod(a, b):
-	'modulus'
-	if not (isinstance(a, int) and isinstance(b, int)):
-		raise TypeError("modulus only deals with integers. perhaps you meant floorrem?")
-	return a % b
 
 def add(a, b):
 	'a + b also known as addition'
@@ -1188,6 +1173,34 @@ def mul(a, b):
 def div(a, b):
 	'a ∕ b also known as division'
 	return a / b
+
+def inc(x):
+	'incrementation'
+	if isinstance(x, complex):
+		raise TypeError("complex numbers do not have an ordering")
+	'++x also known as x + 1'
+	return x + 1
+
+def dec(x):
+	'decrementation'
+	if isinstance(x, complex):
+		raise TypeError("complex numbers do not have an ordering")
+	'−−x also known as x − 1'
+	return x - 1
+
+def neg(x):
+	'−x also known as unary subtraction also known as additive inverse'
+	return -x
+
+def recip(x):
+	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
+	return 1/x
+
+def mod(a, b):
+	'modulus'
+	if not (isinstance(a, int) and isinstance(b, int)):
+		raise TypeError("modulus only deals with integers. perhaps you meant floorrem?")
+	return a % b
 
 def root(a, b):
 	'nᵗʰ root also known as ᵇ√a also known as a ^ (⅟b) also known as inverse of exponentiation'
@@ -1426,17 +1439,17 @@ def mlt(a, b):
 
 def cmp(a, b):
 	'comparison. -1 if a < b, 0 if a == b, 1 if a > b'
-    return (a > b) - (a < b)
+	return (a > b) - (a < b)
 
 def ccmp(a, b):
 	'component-wise cmp'
-    return ((a.real > b.real) - (a.real < b.real), (a.imag > b.imag) - (a.imag < b.imag))
+	return ((a.real > b.real) - (a.real < b.real), (a.imag > b.imag) - (a.imag < b.imag))
 
 def mcmp(a, b):
 	'magnitudinal cmp'
 	abs_a = abs(a)
 	abs_b = abs(b)
-    return (abs_a > abs_b) - (abs_a < abs_b)
+	return (abs_a > abs_b) - (abs_a < abs_b)
 
 
 def sin(a):
@@ -1446,7 +1459,136 @@ def sin(a):
 	else:
 		return _math.sin(a)
 
+# boolean ----------------------
 
+from operator import not_
+from operator import and_
+
+def nand(a, b):
+	'not(and(a, b))'
+	return not(a and b)
+
+from operator import or_
+
+def nor(a, b):
+	'not(or(a, b))'
+	return not(a or b)
+
+from operator import xor
+
+def xnor(a, b):
+	'not(xor(a, b))'
+	return not(xor(a, b))
+
+def imp(a, b):
+	"material implication. aka 'not a or b'"
+	return not a or b
+
+def nimp(a, b):
+	'not(imp(a, b))'
+	return a and not b
+
+def con(a, b):
+	"converse implication"
+	return not b or a
+
+def ncon(a, b):
+	'not(con(a, b))'
+	return b and not a
+
+# combinatorial ---------------
+
+from math import factorial as fact
+
+def sumt(x):
+	'return sum of all numbers from 1 to x. like factorial but with addition'
+	if isinstance(x, int): 
+		return (x*(x+1))//2
+	return (x*(x+1))/2
+
+from math import comb
+from math import perm
+
+# interval -------------------
+
+def clamp(x, a, b):
+	'restrict x to [a ,b]. returns min(max(a, b), c)'
+	return min(max(a, b), c)
+
+def in_open_interval(x, a, b) -> bool:
+	return a < x < b
+
+def in_closed_interval(x, a, b) -> bool:
+	return a <= x <= b
+
+def in_left_open_interval(x, a, b) -> bool:
+	return a < x <= b
+
+def in_right_open_interval(x, a, b) -> bool:
+	return a <= x < b
+
+def lerp(x, a, b):
+	'linear interpolation. maps [0, 1] to [a, b]'
+	return a + x*(b-a)
+
+def unlerp(y, a, b):
+	'inverse of linear interpolation. maps [a, b] to [0, 1]'
+	return (y - a)/(b-a)
+
+def map(x, a, b, c, d):
+	'map x from [a, b] to [c, d]. same as lerp(unlerp(x, a, b), c, d)'
+	return c + (x-a)/(b-a)*(d-c)
+
+# miscellaneous ------------------------
+
+def any(*args):
+	'variadic OR gate'
+	return any(args)
+
+def all(*args):
+	'variadic AND gate'
+	return all(args)
+
+def sum(*args):
+	'variadic addition'
+	return sum(args)
+
+def prod(*args):
+	'variadic multiplication'
+	return _math.prod(args)
+
+# iterables --------------------------
+
+from builtins import len as length
+
+def concat(*iterables):
+	'variadic concatenation'
+	result = iterables[0]
+	for iterable in iterables[1:]:
+		result += iterable
+	return result
+
+from operator import contains
+
+# sequences --------------------------
+
+def head(stuff):
+	return stuff[0]
+
+def last(stuff):
+	return stuff[-1]
+
+def tail(stuff):
+	return stuff[1:]
+
+def init(stuff):
+	return stuff[:-1]
+
+def nth(stuff):
+	return stuff[n]
+
+def slice(stuff, a, b):
+	raise NotImplementedError("not sure if to include or exclude a-th and b-th elements")
+	return stuff[a, b]
 
 # finished up to this ----------------------------------------------------------
-

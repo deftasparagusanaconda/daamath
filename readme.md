@@ -66,7 +66,7 @@ powm1       │ pow(a, b) − 1            │   powm1(−5, 2) =
 expm1       │ exp(a) − 1               │       expm1(2) ≈ 6.38905609893065
 exp2m1      │ exp2(a) − 1              │      exp₂m1(2) = 3
 exp10m1     │ exp10(a) − 1             │      exp⏨m1(2) = 99
-logp1       │ log(a + 1, b)            │       logp1(2) = 
+logp1       │ log(abs + 1, b)            │       logp1(2) = 
 logep1      │ loge(a + 1)              │      logₑp1(2) ≈ 
 log2p1      │ log2(a + 1)              │      log₂p1(2) ≈ 
 log10p1     │ log10(a + 1)             │      log⏨p1(2) ≈ 
@@ -120,29 +120,29 @@ commutative hyperoperations will be added once i have understood them enough to 
 </details><details open><summary>comparative </summary>
 
 ```
-name │ explanation                             │ example  
-─────┼─────────────────────────────────────────┼────────────────────
-lt   │ less than                               │ 2 < 3 is true 
-le   │ less than or equal to                   │ 2 ≤ 3 is true
-eq   │ equal to                                │ 2 = 3 is false
-ne   │ not equal to                            │ 2 ≠ 3 is true
-ge   │ greater than or equal to                │ 2 ≥ 3 is false
-gt   │ greater than                            │ 2 > 3 is false
-clt  │ component-wise less than                │ 2+3𝑖 < 4+3𝑖 is (T,F)
-cle  │ component-wise less than or equal to    │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
-ceq  │ component-wise equal to                 │ 2+3𝑖 = 4+3𝑖 is (F,T)
-cne  │ component-wise not equal to             │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
-cge  │ component-wise greater than or equal to │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
-cgt  │ component-wise greater than             │ 2+3𝑖 > 4+3𝑖 is (F,F)
-mlt  │ magnitudinal less than                  │ 2 < 3 is true 
-mle  │ magnitudinal less than or equal to      │ 2 ≤ 3 is true
-meq  │ magnitudinal equal to                   │ 2 = 3 is false
-mne  │ magnitudinal not equal to               │ 2 ≠ 3 is true
-mge  │ magnitudinal greater than or equal to   │ 2 ≥ 3 is false
-mgt  │ magnitudinal greater than               │ 2 > 3 is false
-cmp  │ comparison (returns -1, 0, or 1)        │ 2 <=> 3 is -1
-ccmp │ component-wise comparison               │ 2 <=> 3 is (-1)
-mcmp │ magnitudinal comparison                 │ 2 <=> 3 is -1
+name │ explanation        │ example  
+─────┼────────────────────┼────────────────────
+lt   │ less than          │ 2 < 3 is true 
+le   │ at most            │ 2 ≤ 3 is true
+eq   │ equal to           │ 2 = 3 is false
+ne   │ not equal to       │ 2 ≠ 3 is true
+ge   │ at least           │ 2 ≥ 3 is false
+gt   │ greater than       │ 2 > 3 is false
+clt  │ component-wise lt  │ 2+3𝑖 < 4+3𝑖 is (T,F)
+cle  │ component-wise le  │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
+ceq  │ component-wise eq  │ 2+3𝑖 = 4+3𝑖 is (F,T)
+cne  │ component-wise ne  │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
+cge  │ component-wise ge  │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
+cgt  │ component-wise gt  │ 2+3𝑖 > 4+3𝑖 is (F,F)
+mlt  │ magnitudinal lt    │ 2 < 3 is true 
+mle  │ magnitudinal le    │ 2 ≤ 3 is true
+meq  │ magnitudinal eq    │ 2 = 3 is false
+mne  │ magnitudinal ne    │ 2 ≠ 3 is true
+mge  │ magnitudinal ge    │ 2 ≥ 3 is false
+mgt  │ magnitudinal gt    │ 2 > 3 is false
+cmp  │ comparison         │ 2 <=> 3 is -1
+ccmp │ component-wise cmp │ 2 <=> 3 is (-1)
+mcmp │ magnitudinal cmp   │ 2 <=> 3 is -1
 ```
 
 </details><details open><summary>trigonometric </summary>
@@ -315,6 +315,8 @@ acsch │ hyperbolic arccosecant  │ 0.88137359
 
 </details><details open><summary>boolean </summary>
 
+these boolean functions are overloaded to perform bit-wise operations if int or float are given, and to perform set operations if set is given
+
 ```
 name  │ explanation   │ truth │ example
 ──────┼───────────────┼───────┼──────────
@@ -331,27 +333,6 @@ con   │ converse      │  1011 │ F ⇐ T = F
 ncon  │ not(con)      │  0100 │ F ⇍ T = T
 ```
 
-</details><details open><summary>bitwise </summary>
-
-bitwise operators must support direct binary bit manipulation of the datatype. even if it is an IEEE float, operate directly on the physical bits, not the logical value. if the data is not stored in binary, raise an error (since boolean algebra is only a binary algebra). thus whether `bitnot` is according to two's complement or not is up to the implementation
-
-```
-name     │ explanation  │ truth │ example
-─────────┼──────────────┼───────┼──────────
-bitnot   │ negation     │    10 │    ~5 = (probably 2)
-bitand   │ conjunction  │  0001 │ 3 ∧ 5 = 
-bitnand  │ not(and)     │  1110 │ 3 ⊼ 5 = 
-bitor    │ disjunction  │  0111 │ 3 ∨ 5 = 
-bitnor   │ not(or)      │  1000 │ 3 ⊽ 5 = 
-bitxor   │ exclusive or │  0110 │ 3 ⊻ 5 = 
-bitxnor  │ not(xor)     │  1001 │ 3 ⊙ 5 = 
-bitimp   │ implication  │  1101 │ 3 ⇒ 5 = 
-bitnimp  │ not(imp)     │  0010 │ 3 ⇏ 5 = 
-bitcon   │ converse     │  1011 │ 3 ⇐ 5 = 
-bitncon  │ not(con)     │  0100 │ 3 ⇍ 5 = 
-lshift   │ left shift   │       │ lshift(3,5) = 96
-rshift   │ right shift  │       │ rshift(3,5) = 0
-```
 </details><details open><summary>complex </summary>
 
 ```
@@ -402,18 +383,14 @@ map                    │ map x in [a,b] to [c,d]            │          map(2
 ```
 name      │ explanation                            │ example
 ──────────┼────────────────────────────────────────┼──────────────────────────────────────────
+lshift   │ left shift   │       │ lshift(3,5) = 96
+rshift   │ right shift  │       │ rshift(3,5) = 0
 to_bitstring │ convert a datatype to bits
 nan       │ create an IEEE 754 nan with payload    │              nan(3) = 0x
 normalize │ normalize a vector                     │  normalize(1, 2, 3) ≈ (0.26726, 0.53452, 0.80178)
 norm      │ euclidean norm                         │       norm(1, 2, 3) ≈ 3.7416573867739413
 signbit   │ false if +ve else true                 │          signbit(3) = T
 copysign  │ magnitude of a with sign of b          │      copysign(2, 3) = 2
-any       │ n-ary OR gate                          │        any(F, T, F) = T
-all       │ n-ary AND gate                         │        all(F, T, F) = F
-min       │ minimum                                │        min(1, 2, 3) = 1
-max       │ maximum                                │        max(1, 2, 3) = 3
-fst       │ first element                          │        fst(1, 2, 3) = 1
-snd       │ second element                         │        snd(1, 2, 3) = 2
 sgn       │ signum. −1 if <0, +1 if >0, else 0     │            sgn(0.5) = 1
 swap      │ swap variables in memory               │          swap(a, b) = (b, a)
 parity    │ sum of 1 bits                          │           parity(5) = 2
@@ -425,13 +402,17 @@ erf       │ error function                         │              erf(1) ≈
 erfc      │ 1−erf(x)                               │             erfc(1) ≈ 0.15729920705028513
 gamma     │ gamma function                         │          gamma(1.5) ≈ 0.886226925452758
 lgamma    │ natural logarithm of gamma(x)          │         lgamma(999) ≈ 5898.313668430534
+erf    │ error function        │ 
 ```
+</details><details open><summary>aggregations </summary>
 
-</details><details open><summary>statistics </summary>
+these collapes an iterable into a single value
 
 ```
-name   │ explanation           │ example
-───────┼───────────────────────┼──────────────────────────
+any       │ n-ary OR gate                          │        any(F, T, F) = T
+all       │ n-ary AND gate                         │        all(F, T, F) = F
+min       │ minimum                                │        min(1, 2, 3) = 1
+max       │ maximum                                │        max(1, 2, 3) = 3
 mean   │ arithmetic mean       │ 
 median │ middlemost element    │ 
 mode   │ most frequent element │ 
@@ -441,7 +422,54 @@ pmean  │ power mean            │
 rms    │ root mean squared     │ 
 var    │ variance              │ 
 stdev  │ standard deviation    │ 
-erf    │ error function        │ 
+```
+
+</details><details open><summary>collections </summary>
+
+these are all pure functions and never mutate the original collection
+
+```
+length    │ how many elements
+count     │ how many elements passing a predicate
+concat    │ join iterables (join sequences in order)
+contains  │ whether b is in a
+isEmpty   │ whether collection is empty
+isUnique  │ whether all elements are distinct
+isLength  │ whether it has exactly n length
+isCount   │ whether it has exactly n count
+hasLength │ whether it has at least n length
+hasCount  │ whether it has at least n count
+```
+
+concat is variadic
+
+<details open><summary>sequences </summary>
+
+```
+head         │ first element
+last         │ last element
+tail         │ all except head
+init         │ all except last
+nth          │ element at n-th index
+take         │ first n elements
+drop         │ all except first n elements
+slice        │ all elements from m to n
+split_at     │ split by index
+split_by     │ split by a predicate function
+prepend      │ add an element to the start
+append       │ add an element to the end
+reversed     │ return a reversed version
+sorted       │ return a sorted version
+isSorted     │ if elements are sorted by an ordering predicate
+isAscending  │ if sorted in ascending
+isDescending │ if sorted in descending
+```
+
+</details><details open><summary>sets </summary>
+
+operations like taking union, intersection, etc are already overloaded in the boolean functions
+
+```
 ```
 
 </details><details open><summary>fused operations </summary>
