@@ -1,809 +1,22 @@
 # none of these functions should depend on each other
+# complex arithmetic shall be supported as much as possible
 
+from .classes import Tern, ComplexTruth	# for cmp and complex comparisons
+from .mappers import *
+from .sigmoids import *
+from . import numbers as _numbers	# POS_INF, NEG_INF in incf, decf
+
+from .strings import ASCII, ASCII_SUPERSCRIPT, ASCII_SUBSCRIPT
 from typing import Literal as _Literal
-
-from operator import add
-from operator import sub
-from operator import mul
-from operator import truediv as div
-from operator import pos
-from operator import neg
-from operator import mod
-from operator import floordiv
-from operator import mod
-from operator import truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
-from builtins import pow, round, any, all, len, range, reversed, sorted, divmod, min, max
-from math import floor, ceil, trunc as ipart, exp, exp2, log10, log2, log, sqrt, cbrt, comb, perm, factorial as fact, gamma, gcd, lcm
-from cmath import phase
-from statistics import mean, median, mode, variance as var, stdev
-
-from math import isnan as _isnan
-from math import sin, cos, tan, asin, acos, atan, atan2, sinh, cosh, tanh, asinh, acosh, atanh
-from math import copysign
-
-def scaler_tan(x:int|float) -> float:
-	if x < 0 or x > 1:
-		raise ValueError("out of range [0,1]")
-	elif x == 0:
-		return float('-inf')
-	elif x == 0.25:
-		return -1.0
-	elif x == 0.75:
-		return 1.0
-	elif x == 1:
-		return float('inf')
-	else:
-		from math import tan, pi
-		return tan((x-0.5)*pi)
-"""
-def ieee_div(a,b):
-	if _isnan(a) or _isnan(b):
-		return float('nan')
-
-	elif b == 0:
-		if copysign(1, b) == 1:
-			return float('inf')
-		else:
-			return float('-inf')
-	
-	else:
-		return a/b
-"""
-
-def floordiv(a, b):
-	'division rounded to integers towards -∞'
-	return a // b
-
-def truncdiv(a, b):
-	'division rounded to integers towards ±0'
-	raise NotImplementedError('i havent made this yet')
-
-def scaler_sigmoid(x:int|float):
-	raise NotImplementedError
-
-def inv(x):
-	'y such that x*y = 1, where 1 is the multiplicative identity'
-	return 1/x
-
-def square(x):
-	'x**2, x*x, x^2, x²'
-	return x**2
-
-def cube(x):
-	'x**3, x*x*x, x^2, x³'
-	return x**3
-
-def fpart(x):
-	'the non-integer part of a number'
-	return _math.modf(x)[0]
-
-def root(x, base):
-	'root of a number in an arbitrary base'
-	return x**(1/base)
-
-def ifelse(a,b,c):
-	'return b if a else c. in other words, if a then b else c'
-	return b if a else c
-
-def abs(*args):
-	'return the absolute value of whatever value/abomination you passed'
-	return sqrt(sum(arg**2 for arg in args))
-
-# complex -------------------------------
-
-def real(x):
-	'get real lmao https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-	return x.real
-
-def imag(x):
-	'any good complex type should have .real and .imag, right??'
-	return x.imag
-
-#import cmath
-#phase = cmath.phase
-
-def conj(x):
-	'return the conjugate of a complex'
-	return x.conjugate()
-
-#def to_polar(x):
-#	'a complex number from cartesian to polar form'
-#	return 
-
-#def to_cartesian(x):
-#	'a complex number from polar to cartesian form'
-
-# ---------------------------------------------
-
-def piecewise(*args):
-	'variadic([cond1, val1], [cond2, val2], ....)'
-	raise NotImplementedError
-
-def summation(*args):
-	'variadic summation'
-	return sum(args)
-
-def product(*args):
-	'variadic multiplication'
-	return math.prod(args)
-
-def sigma_summation(expr, var, lower, upper):
-	'quadric Σ(expr, var, lower, upper)'
-	return sum(expr(var=val) for value in range(lower, upper))
-
-def pi_product(expr, var, lower, upper):
-	'quadric ∏(expr, var, lower, upper)'
-	return _math.prod(expr(var=value) for value in range(lower, upper))
-
-# matrix
-def det(a):
-	'unary |mat|'
-	raise NotImplementedError
-
-def transpose(a):
-	'unary mat\''
-	raise NotImplementedError
-
-def dot_product(a, b):
-	'binary vector A • vector B'
-	raise NotImplementedError
-
-def cross_product(a, b):
-	'binary vector A × vector B'
-	raise NotImplementedError
-
-# infinitesimal --------------------------------
-
-def limit():
-	'quadric (func var, val, direction)'
-	raise NotImplementedError
-
-def definite_integral():
-	'quadric integral a to b, f(x)dx(func(var, lower, upper))'
-	raise NotImplementedError
-
-def indefinite_integral():
-	'binary ∫f(x)dx(func, var)'
-	raise NotImplementedError
-
-def derivative():
-	'binary (func, var)'
-	raise NotImplementedError
-
-def partial_derivative():
-	'variadic(func, var1, var2, ..., varN)'
-	raise NotImplementedError
-
-def clamp(x, low=0, high=1):
-	'return x but constrained within [low, high]'
-	return min(max(x,low),high)
-
-def lerp(x, low, high):
-	'linear interpolation. maps [0,1] to [low,high]. allows 1<x<0'
-	return low + x*(high-low)
-
-def unlerp(x, low, high):
-	'inverse of linear interpolation. maps [low,high] to [0,1] allows high<x<low'
-	return (x-low)/(high-low)
-
-def map(x, a, b, c, d):
-	'maps [a,b] to [c,d]'
-	return lerp(unlerp(x,a,b),c,d)
-
-def sumt(x):
-	'return sum of all numbers from 1 to x. like factorial but with addition'
-	if isinstance(x, int): 
-		return (x*(x+1))//2
-	return (x*(x+1))/2
-
-def sgn(a):
-	'return -1 if negative, 0 if zero, 1 if positive. also known as signum'
-	return a if _isnan(a) else (a>0) - (a<0)
-
-# boolean	  ---------------------------
-
-def nand(a,b):
-	'return not(a and b) AKA ¬(a∧b) AKA negation(conjunction(a,b))'
-	return not(a and b)
-
-def nor(a, b):
-	'return not(a or b) AKA ¬(a∨b) AKA negation(disjunction(a,b))'
-	return not(a or b)
-
-def imp(a, b):
-	'return not a or b AKA a->b AKA ¬a∨b AKA disjunction(negation(a),b)'
-	return not a or b
-
-def con(a, b):
-	'return a or not b AKA b->a AKA a∨¬b AKA disjunction(a,negation,b)'
-	return a or not b
-
-def nimp(a, b):
-	'return a and not b AKA ¬(a->b) AKA a∧¬b AKA negation(implication(a,b))'
-	return a and not b
-
-def ncon(a, b):
-	'return not a and b AKA ¬(a->b) AKA ¬a∧b AKA negation(converse_implication(a,b))'
-	return not a and b
-
-# trigonometric -----------------------------------------------
-
-def cot(x):
-	'trigonometric cotangent (using cmath)'
-	return 1/tan(x)
-
-def sec(x):
-	'trigonometric secant (using cmath)'
-	return 1/cos(x)
-
-def csc(x):
-	'trigonometric cosecant (using cmath)'
-	return 1/sin(x)
-
-def acot(x):
-	'inverse trigonometric cotangent (using cmath)'
-	return atan(1/x)
-
-def asec(x):
-	'inverse trigonometric secant (using cmath)'
-	return acos(1/x)
-
-def acsc(x):
-	'inverse trigonometric cosecant (using cmath)'
-	return asin(1/x)
-
-# hyperbolic -----------------------
-
-def coth(x):
-	'hyperbolic cotangent (using cmath)'
-	return 1/tanh(x)
-
-def sech(x):
-	'hyperbolic secant (using cmath)'
-	return 1/cosh(x)
-
-def csch(x):
-	'hyperbolic cosecant (using cmath)'
-	return 1/sinh(x)
-
-def acoth(x):
-	'inverse hyperbolic cotangent (using cmath)'
-	return atanh(1/x)
-
-def asech(x):
-	'inverse hyperbolic secant (using cmath)'
-	return acosh(1/x)
-
-def acsch(x):
-	'inverse hyperbolic cosecant (using cmath)'
-	return asinh(1/x)
-
-# statistical --------------
-
-def pmean(data, p):
-	'power mean AKA generalized mean (p=1: arithmetic, 0: geometric, -1: harmonic)'
-	if p == 1:
-		return mean(data)
-	if p == 0:
-		return exp(sum(log(x) for x in data)/len(data))
-	return (sum(x**p for x in data)/len(data)) ** (1/p)
-
-def rms(data):
-	'root mean square'
-	return sqrt(sum(datum**2 for datum in data)/len(data))
-
-#def aad(data, centre=_Literal['mean','median','mode'], measure=_):
-#	'average absolute deviation. '
-#	match centre
-#	return sum(abs(datum-mean_value) for datum in data)/len(data)
-
-#def pdev(data, p):
-#	'power mean of absolute deviation'
-#	mean_value = mean(data)
-
-
-# bitwise -----------------------
-"""
-'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,	  # 10
-'bitand'  : _operator.and_,		# 0001
-'bitor'   : _operator.or_,		 # 0111
-'bitnand' : _nand,				 # 1110
-'bitnor'  : _nor,				  # 1000
-'bitxor'  : _operator.xor,		 # 0110
-'bitxnor' : _operator.eq,		  # 1001
-'bitimp'  : _implication,		  # 1101
-'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,				 # 0010
-'bitncon' : _ncon,				 # 0100
-"""
-"""
-# "why is there a '_' everywhere?!?"
-# because this file is directly exposed in the module's namespace, and we want only the operator_dicts to be visible; not anything else
-
-#from .miscellaneous.dot_dict import DotDict as _DotDict
+from typing import Callable as _Callable
+from typing import Generator as _Generator
+from collections.abc import Iterable as _Iterable
+from collections.abc import Sequence as _Sequence
+from collections import deque as _deque
 import math as _math
 import cmath as _cmath
-import operator as _operator
-import numbers as _numbers
-import builtins as _builtins
-import statistics as _statistics
-
-def _generalized_mean(p, *args):
-	'returns the power mean for given p (first argument) (p=1: arithmetic, 0: geometric, -1: harmonic)'
-	if p == 0:
-		return _math.exp(sum(_math.log(x) for x in args)/len(args))
-	return (sum(x**p for x in args)/len(args)) ** (1/p)
-
-def _mean(*args):
-	'arithmetic mean'
-	return _statistics.mean(args)
-
-def _median(*args):
-	return _statistics.median(args)
-
-def _mode(*args):
-	return _statistics.mode(args)
-
-def _reciprocal(x):
-	'y such that x*y = 1, where 1 is the multiplicative identity'
-	return 1/x
-
-def _root(x, base):
-	'root of a number in an arbitrary base'
-	return x**(1/base)
-
-def _square(x):
-	'x**2, x*x, x^2, x²'
-	return x**2
-
-def _cube(x):
-	'x**3, x*x*x, x^2, x³'
-	return x**3
-
-def _fractional_part(x):
-	'the non-integer part of a number'
-	return _math.modf(x)[0]
-
-def _ifelse(a,b,c):
-	'return b if a is true, otherwise return c'
-	return b if a else c
-
-def _cot(x):
-	'trigonometric cotangent'
-	return 1/_math.tan(x)
-
-def _sec(x):
-	'trigonometric secant'
-	return 1/_math.cos(x)
-
-def _csc(x):
-	'trigonometric cosecant'
-	return 1/_math.sin(x)
-
-def _acot(x):
-	'inverse trigonometric cotangent'
-	return _math.atan(1/x)
-
-def _asec(x):
-	'inverse trigonometric secant'
-	return _math.acos(1/x)
-
-def _acsc(x):
-	'inverse trigonometric cosecant'
-	return _math.asin(1/x)
-
-def _coth(x):
-	'hyperbolic cotangent'
-	return 1/_math.tanh(x)
-
-def _sech(x):
-	'hyperbolic secant'
-	return 1/_math.cosh(x)
-
-def _csch(x):
-	'hyperbolic cosecant'
-	return 1/_math.sinh(x)
-
-def _acoth(x):
-	'inverse hyperbolic cotangent'
-	return _math.atanh(1/x)
-
-def _asech(x):
-	'inverse hyperbolic secant'
-	return _math.acosh(1/x)
-
-def _acsch(x):
-	'inverse hyperbolic cosecant'
-	return _math.asinh(1/x)
-
-def _get_real(x):
-	'get real lmao https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-	return x.real
-
-def _get_imag(x):
-	'any good complex type should have .real and .imag, right??'
-	return x.imag
-
-def _call_conjugate(x):
-	'returns x.conjugate()'
-	return x.conjugate()
-
-def _piecewise(*args):
-	'variadic([cond1, val1], [cond2, val2], ....)'
-	raise NotImplementedError
-
-def _summation(*args):
-	'variadic summation'
-	return sum(args)
-
-def _product(*args):
-	'variadic multiplication'
-	return math.prod(args)
-
-def _sigma_summation(expr, var, lower, upper):
-	'quadric Σ(expr, var, lower, upper)'
-	return sum(expr(var=val) for value in range(lower, upper))
-
-def _pi_product(expr, var, lower, upper):
-	'quadric ∏(expr, var, lower, upper)'
-	return _math.prod(expr(var=value) for value in range(lower, upper))
-
-# matrix
-def _determinant(a):
-	'unary |mat|'
-	raise NotImplementedError
-
-def _transpose(a):
-	'unary mat\''
-	raise NotImplementedError
-
-def _dot_product(a, b):
-	'binary vector A • vector B'
-	raise NotImplementedError
-
-def _cross_product(a, b):
-	'binary vector A × vector B'
-	raise NotImplementedError
-
-# infinitesimal
-def _limit():
-	'quadric (func var, val, direction)'
-	raise NotImplementedError
-
-def _definite_integral():
-	'quadric integral a to b, f(x)dx(func(var, lower, upper))'
-	raise NotImplementedError
-
-def _indefinite_integral():
-	'binary ∫f(x)dx(func, var)'
-	raise NotImplementedError
-
-def _derivative():
-	'binary (func, var)'
-	raise NotImplementedError
-
-def _partial_derivative():
-	'variadic(func, var1, var2, ..., varN)'
-	raise NotImplementedError
-
-def _clamp(x, low, high):
-	'return x but constrained within [low, high]'
-	return min(max(x,low),high)
-
-def _lerp(x, low, high):
-	'linear interpolation. allows 1<x<0'
-	return low + x*(high-low)
-
-def _unlerp(x, low, high):
-	'inverse of linear interpolation. allows high<x<low'
-	return (x-low)/(high-low)
-
-def _sumtorial(x):
-	'return sum of all numbers from 1 to x. like factorial but with addition'
-	return sum(range(1, a+1))
-
-def _signum(a):
-	'return -1 if negative, 0 if zero, 1 if positive'
-	return (a>0) - (a<0)
-
-def _nand(a,b):
-	'return not(a and b) AKA ¬(a∧b) AKA negation(conjunction(a,b))'
-	return not(a and b)
-
-def _nor(a, b):
-	'return not(a or b) AKA ¬(a∨b) AKA negation(disjunction(a,b))'
-	return not(a or b)
-
-def _implication(a, b):
-	'return not a or b AKA a->b AKA ¬a∨b AKA disjunction(negation(a),b)'
-	return not a or b
-
-def _converse_implication(a, b):
-	'return a or not b AKA b->a AKA a∨¬b AKA disjunction(a,negation,b)'
-	return a or not b
-
-def _nimp(a, b):
-	'return a and not b AKA ¬(a->b) AKA a∧¬b AKA negation(implication(a,b))'
-	return a and not b
-
-def _ncon(a, b):
-	'return not a and b AKA ¬(a->b) AKA ¬a∧b AKA negation(converse_implication(a,b))'
-	return not a and b
-
-def _cot_cmath(x):
-	'trigonometric cotangent (using cmath)'
-	return 1/_cmath.tan(x)
-
-def _sec_cmath(x):
-	'trigonometric secant (using cmath)'
-	return 1/_cmath.cos(x)
-
-def _csc_cmath(x):
-	'trigonometric cosecant (using cmath)'
-	return 1/_cmath.sin(x)
-
-def _acot_cmath(x):
-	'inverse trigonometric cotangent (using cmath)'
-	return _cmath.atan(1/x)
-
-def _asec_cmath(x):
-	'inverse trigonometric secant (using cmath)'
-	return _cmath.acos(1/x)
-
-def _acsc_cmath(x):
-	'inverse trigonometric cosecant (using cmath)'
-	return _cmath.asin(1/x)
-
-def _coth_cmath(x):
-	'hyperbolic cotangent (using cmath)'
-	return 1/_cmath.tanh(x)
-
-def _sech_cmath(x):
-	'hyperbolic secant (using cmath)'
-	return 1/_cmath.cosh(x)
-
-def _csch_cmath(x):
-	'hyperbolic cosecant (using cmath)'
-	return 1/_cmath.sinh(x)
-
-def _acoth_cmath(x):
-	'inverse hyperbolic cotangent (using cmath)'
-	return _cmath.atanh(1/x)
-
-def _asech_cmath(x):
-	'inverse hyperbolic secant (using cmath)'
-	return _cmath.acosh(1/x)
-
-def _acsch_cmath(x):
-	'inverse hyperbolic cosecant (using cmath)'
-	return _cmath.asinh(1/x)
-
-def _dist(*args):
-	'euclidean distance in n dimensions'
-	from math import sqrt
-	return sqrt(sum(arg**2 for arg in args))
-
-#default = _DotDict()
-
-default = {
-# arithmetic
-'add'	 : _operator.add,
-'sub'	 : _operator.sub,
-'mul'	 : _operator.mul,
-'div'	 : _operator.truediv,
-
-# numeric
-'pos'	 : _operator.pos,	  # unary plus, positive
-'neg'	 : _operator.neg,	# unary minus, negative, additive inverse
-'mod'	 : _operator.mod,
-'floordiv': _operator.floordiv,
-'abs'	 : _operator.abs,
-'inv'	 : _reciprocal,	  # multiplicative inverse
-'square'  : _square,
-'cube'	: _cube,
-'pow'	 : _builtins.pow,
-'floor'   : _math.floor,
-'round'   : _builtins.round,
-'ceil'	: _math.ceil,
-'ipart'   : _math.trunc,
-'fpart'   : _fractional_part,
-'exp'	 : _math.exp,
-'exp2'	: _math.exp2,
-'log10'   : _math.log10,
-'log2'	: _math.log2,
-'log'	 : _math.log,
-'sqrt'	: _math.sqrt,
-'cbrt'	: _math.cbrt,
-'root'	: _root,
-
-# trigonometric
-'sin'	 : _math.sin,
-'cos'	 : _math.cos,
-'tan'	 : _math.tan,
-'cot'	 : _cot,
-'sec'	 : _sec,
-'csc'	 : _csc,
-'asin'	: _math.asin,
-'acos'	: _math.acos,
-'atan'	: _math.atan,
-'acot'	: _acot,
-'asec'	: _asec,
-'acsc'	: _acsc,
-
-# hyperbolic
-'sinh'	: _math.sinh,
-'cosh'	: _math.cosh,
-'tanh'	: _math.tanh,
-'coth'	: _coth,
-'sech'	: _sech,
-'csch'	: _csch,
-'asinh'   : _math.asinh,
-'acosh'   : _math.acosh,
-'atanh'   : _math.atanh,
-'acoth'   : _acoth,
-'asech'   : _asech,
-'acsch'   : _acsch,
-
-# left out due to obscurity. also probably mostly wrong :P
-#'versin'	: lambda a: 1 - math.cos(a)
-#'coversin'  : lambda a: 1 - math.sin(a)
-#'haversin'  : lambda a: 0.5 - math.cos(a)/2
-#'hacoversin': lambda a: 0.5 - math.sin(a)/2
-#'exsec'	 : lambda a: 1/math.cos(a) - 1
-#'excsc'	 : lambda a: 1/math.sin(a) - 1
-#'chord'	 : lambda a: 2 * math.sin(a/2)
-#'vercos'	: lambda a: 1 + math.cos(a)
-#'covercos'  : lambda a: 1 + math.sin(a)
-#'havercos'  : lambda a: 0.5 + math.cos(a)/2
-#'hacovercos': lambda a: 0.5 + math.sin(a)/2
-
-# complex
-'real'	: _get_real, # get real lmao
-'imag'	: _get_imag,
-'phase'   : _cmath.phase,
-'conj'	: _call_conjugate,
-
-# boolean
-'truth'   : _operator.truth,	   # 01
-'not'	 : _operator.not_,		# 10
-'and'	 : _operator.and_,		# 0001
-'nimp'	: _nimp,				 # 0010
-'ncon'	: _ncon,				 # 0100
-'xor'	 : _operator.xor,		 # 0110
-'or'	  : _operator.or_,		 # 0111
-'nor'	 : _nor,				  # 1000
-'xnor'	: _operator.eq,		  # 1001
-'con'	 : _converse_implication, # 1011
-'imp'	 : _implication,		  # 1101
-'nand'	: _nand,				 # 1110
-
-# comparative
-'lt'	  : _operator.lt,
-'le'	  : _operator.le,
-'eq'	  : _operator.eq,
-'ne'	  : _operator.ne,
-'ge'	  : _operator.ge,
-'gt'	  : _operator.gt,
-
-# statistical
-'mean'	: _mean,
-'median'  : _median,
-'mode'	: _mode,
-'pmean'   : _generalized_mean,
-
-# combinatorial
-'comb'	: _math.comb,
-'perm'	: _math.perm,
-
-# hello there! lol
-
-# bitwise
-'bittruth': lambda a: a,
-'bitnot'  : _operator.invert,	  # 10
-'bitand'  : _operator.and_,		# 0001
-'bitor'   : _operator.or_,		 # 0111
-'bitnand' : _nand,				 # 1110
-'bitnor'  : _nor,				  # 1000
-'bitxor'  : _operator.xor,		 # 0110
-'bitxnor' : _operator.eq,		  # 1001
-'bitimp'  : _implication,		  # 1101
-'bitcon'  : _converse_implication, # 1011
-'bitnimp' : _nimp,				 # 0010
-'bitncon' : _ncon,				 # 0100
-'lshift'  : _operator.lshift,
-'rshift'  : _operator.rshift,
-
-# miscellaneous
-'dist'	: _dist,
-'any'	 : _builtins.any,
-'all'	 : _builtins.all,
-'len'	 : _builtins.len,
-'range'   : _builtins.range,
-'reversed': _builtins.reversed,
-'sorted'  : _builtins.sorted,
-'divmod'  : _builtins.divmod,
-'call'	: _operator.call,
-'matmul'  : _operator.matmul,
-'concat'  : _operator.concat,
-'sign'	: _signum,
-'ifelse'  : _ifelse,
-'fact'	: _math.factorial,
-'gamma'   : _math.gamma,
-'sumt'	: _sumtorial,
-'gcd'	 : _math.gcd,
-'lcm'	 : _math.lcm,
-'clamp'   : _clamp,
-'lerp'	: _lerp,
-'unlerp'  : _unlerp,
-'min'	 : _builtins.min,
-'max'	 : _builtins.max,
-'is'	  : _operator.is_,
-'isnot'   : _operator.is_not,
-#'erf'	 : _math.erf
-#'erfc'	: _math.erfc
-#'in'	  : 
-#'notin'   : 
-}
-
-
-complex = default.copy()
-
-complex.update({
-# trigonometric
-'sin'   : _cmath.sin,
-'cos'   : _cmath.cos,
-'tan'   : _cmath.tan,
-'cot'   : _cot_cmath,
-'sec'   : _sec_cmath,
-'csc'   : _csc_cmath,
-'asin'  : _cmath.asin,
-'acos'  : _cmath.acos,
-'atan'  : _cmath.atan,
-'acot'  : _acot_cmath,
-'asec'  : _asec_cmath,
-'acsc'  : _acsc_cmath,
-
-# hyperbolic
-'sinh'  : _cmath.sinh,
-'cosh'  : _cmath.cosh,
-'tanh'  : _cmath.tanh,
-'coth'  : _coth_cmath,
-'sech'  : _sech_cmath,
-'csch'  : _csch_cmath,
-'asinh' : _cmath.asinh,
-'acosh' : _cmath.acosh,
-'atanh' : _cmath.atanh,
-'acoth' : _acoth_cmath,
-'asech' : _asech_cmath,
-'acsch' : _acsch_cmath
-})
-"""
-
-def in_open_interval(x:int|float, a:int|float, b:int|float):
-	'x ∈ (a,b) | a < x < b'
-	return a < x < b
-
-def in_closed_interval(x:int|float, a:int|float, b:int|float):
-	'x ∈ [a,b] | a <= x <= b'
-	return a <= x <= b
-
-def in_left_open_interval(x:int|float, a:int|float, b:int|float):
-	'x ∈ (a,b] | a < x <= b'
-	return a < x <= b
-
-def in_right_open_interval(x:int|float, a:int|float, b:int|float):
-	'x ∈ [a,b) | a <= x < b'
-	return a <= x < b
-
-from operator import xor, not_, and_, or_, eq as xnor
-
-# starting from this is official -----------------------------------------------
-
-# none of these functions should depend on each other
-
-import math as _math
-import cmath as _cmath
+import struct as _struct	# for direct bit manipulation
+from itertools import combinations as _combinations	# for vparallel
 
 def add(a, b):
 	'a + b also known as addition'
@@ -821,27 +34,50 @@ def div(a, b):
 	'a ∕ b also known as division'
 	return a / b
 
-def inc(x):
-	'incrementation'
-	if isinstance(x, complex):
-		raise TypeError("complex numbers do not have an ordering")
-	'++x also known as x + 1'
-	return x + 1
+def nexttowards(x: int | float, target: int | float, steps: int = 1) -> int | float:
+	if type(x) != type(target):
+		raise TypeError('x and target must be same type')
+	
+	if isinstance(x, int):
+		if abs(x - target) <= steps:
+			return target
+		return x + steps if x < target else x - steps
+	elif isinstance(x, float):
+		for _ in range(steps):
+			x = _math.nextafter(x, target)
+		return x
+	else:
+		raise TypeError('x must be either int or float')
 
-def dec(x):
-	'decrementation'
-	if isinstance(x, complex):
-		raise TypeError("complex numbers do not have an ordering")
-	'−−x also known as x − 1'
-	return x - 1
+def inc(x: int | float, steps: int = 1) -> int | float:
+	'incrementation. like nexttowards but with target = ∞'
+	if isinstance(x, int):
+		return x + steps
+	elif isinstance(x, float):
+		for _ in range(steps):
+			x = _math.nextafter(x, _numbers.POS_INF)
+		return x
+	else:
+		raise TypeError('x must be int or float')
 
-def neg(x):
-	'−x also known as unary subtraction also known as additive inverse'
-	return -x
+def dec(x: int | float, steps: int = 1) -> int | float:
+	'decrementation. like nexttowards but with target = -∞'
+	if isinstance(x, int):
+		return x - steps
+	elif isinstance(x, float):
+		for _ in range(steps):
+			x = _math.nextafter(x, _numbers.NEG_INF)
+		return x
+	else:
+		raise TypeError('x must be int or float')
 
-def recip(x):
-	'⅟x also known as reciprocal also known as unary division also known as multiplicative inverse'
-	return 1/x
+def neg(x, *, add_identity = 0.0):
+	'−x, unary subtraction, additive inverse'
+	return add_identity - x
+
+def inv(x, *, mul_identity = 1.0):
+	'1 / x, reciprocal, unary division, multiplicative inverse, y such that x * y = 1 where 1 is the multiplicative identity'
+	return mul_identity / x
 
 def mod(a, b):
 	'modulus'
@@ -850,7 +86,7 @@ def mod(a, b):
 	return a % b
 
 def root(a, b):
-	'nᵗʰ root also known as ᵇ√a also known as a ^ (⅟b) also known as inverse of exponentiation'
+	'nᵗʰ root, n-th root, ᵇ√a, a ^ (1 / b), inverse of exponentiation'
 	return a ** (1/b)
 
 def pow(a, b):
@@ -861,16 +97,33 @@ def exp10(x):
 	'exponentiation, base 10'
 	return 10 ** x
 
-def log(a, b):
+def log(a, base) -> float | complex:
 	'logarithm also known as inverse of exponentiation'
-	try:
-		from math import log
-		return log(a, b)
-	except (ValueError, TypeError):
-		from cmath import log
-		return log(a, b)
+	if base == 2:
+		try:	return _math.log2(a, base)
+		except (ValueError, TypeError):	return _cmath.log(a, base)
+	elif base == 10:
+		try:	return _math.log10(a, base)
+		except (ValueError, TypeError):	return _cmath.log10(a, base)
+	else:
+		try:	return _math.log(a, base)
+		except (ValueError, TypeError):	return _cmath.log(a, base)
 
-def loge(x):
+def log2(a) -> float | complex:
+	'logarithm, base 2'
+	try:
+		return _math.log2(a, base)
+	except (ValueError, TypeError):	
+		return _cmath.log(a, base)
+
+def log10(a) -> float | complex:
+	'logarithm, base 10'
+	try:
+		return _math.log10(a, base)
+	except (ValueError, TypeError):	
+		return _cmath.log10(a, base)
+
+def loge(x) -> float | complex:
 	'logarithm, base e'
 	return _math.log(x)
 
@@ -911,16 +164,43 @@ def slog(a, b):
 	raise NotImplementedError('i havent made this yet')
 
 def parallel(a, b):
-	'parallel operation also known as parallel addition'
-	return a*b/(a+b)
+	'1 / {(1 / a) + (1 / b)}, (a * b) / (a + b), parallel operation, parallel addition'
+	return (a * b) / (a + b)
+#  1
+# ---------------
+# 1/a + 1/b + 1/c
+#
+#
 
-def rsqrt(x):
-	'1/sqrt(x)'
-	return 1/_math.sqrt(x)
+from math import sqrt
+from math import cbrt
 
-def rcbrt(x):
-	'1/cbrt(x)'
-	return 1/_math.cbrt(x)
+def qdrt(x):
+	'x⁴, x ^ 4, x ** 4, zenzizenzic'
+	return x ** 4
+
+def isqrt(x):
+	'1 / √x. hardware sometimes has fast implementations for this'
+	return 1 / _math.sqrt(x)
+
+def icbrt(x):
+	'1 / ∛x'
+	return 1 / _math.cbrt(x)
+
+def iqdrt(x):
+	'1 / ∜x'
+	return x ** -0.25
+
+from math import floor
+from math import ceil
+
+def floor1p(x):
+	'⌊x⌋ + 1. like ⌈x⌉ but x + 1 when x ∈ ℤ'
+	return _math.floor(x) + 1
+
+def ceil1m(x):
+	'⌈x⌉ - 1. like ⌊x⌋ but x - 1 when x ∈ ℤ'
+	return _math.ceil(x) - 1
 
 def hyper(n, a, b):
 	'return n-th hyperoperation of a, b'
@@ -986,94 +266,77 @@ def rounddivrem(x):
 	'return (rounddiv, roundrem)'
 	raise NotImplementedError('not made yet')
 
-# comparative
+# comparative ------------------------------------------------------------------
 
-def lt(a, b):
+def lt(a: int | float, b: int | float) -> bool:
 	'a < b'
 	return a < b
 
-def le(a, b):
+def le(a: int | float, b: int | float) -> bool:
 	'a ≤ b'
 	return a <= b
 
-def eq(a, b):
+def eq(a: int | float, b: int | float) -> bool:
 	'a = b'
 	return a == b
 
-def ne(a, b):
+def ne(a: int | float, b: int | float) -> bool:
 	'a ≠ b'
 	return a != b
 
-def ge(a, b):
+def ge(a: int | float, b: int | float) -> bool:
 	'a ≥ b'
 	return a >= b
 
-def gt(a, b):
+def gt(a: int | float, b: int | float) -> bool:
 	'a > b'
 	return a > b
 
-def clt(a, b):
-	'component-wise less-than'
-	return (a.real < b.real, a.imag < b.imag)
+def lt(a: int | float | complex | tuple[float, float], b: int | float | complex | tuple[float, float]) -> bool | complex | tuple[bool, bool]:
+	'a less than b'
+	if isinstance(a, bool) or isinstance(b, bool):
+		raise TypeError('bool is a truth, not a number')
+	elif isinstance(a, (int, float)) and isinstance(b, (int, float)):
+		return a < b
+	elif isinstance(a, complex) and isinstance(b, complex):
+		return complex(a.real < b.real, a.imag < b.imag)
+	elif isinstance(a, tuple) and isintance(b, tuple):
+		return (a[0] < b[0], a[1] < b[1])
+	else:
+		raise ValueError('allowed types are: int|float & int|float, complex & complex, tuple[float, float], tuple[float, float]')
 
-def cle(a, b):
-	'component-wise less-than-or-equal-to'
+def cle(a: complex, b: complex) -> tuple[bool]:
+	'complex less-than-or-equal-to'
 	return (a.real <= b.real, a.imag <= b.imag)
 
-def ceq(a, b):
-	'component-wise equals'
+def ceq(a: complex, b: complex) -> tuple[bool]:
+	'complex equals'
 	return (a.real == b.real, a.imag == b.imag)
 
-def cne(a, b):
-	'component-wise not-equals'
+def cne(a: complex, b: complex) -> tuple[bool]:
+	'complex not-equals'
 	return (a.real != b.real, a.imag != b.imag)
 
-def cge(a, b):
-	'component-wise greater-than-or-equals'
+def cge(a: complex, b: complex) -> tuple[bool]:
+	'complex greater-than-or-equals'
 	return (a.real >= b.real, a.imag >= b.imag)
 
-def cgt(a, b):
-	'component-wise greater-than'
+def cgt(a: complex, b: complex) -> tuple[bool]:
+	'complex greater-than'
 	return (a.real > b.real, a.imag > b.imag)
 
-def mlt(a, b):
-	'magnitudinal less-than. AKA |a| < |b|'
-	return abs(a) < abs(b)
-
-def mle(a, b):
-	'magnitudinal less-than-or-equal-to. AKA |a| ≤ |b|'
-	return abs(a) <= abs(b)
-
-def meq(a, b):
-	'magnitudinal equal-to. AKA |a| == |b|'
-	return abs(a) == abs(b)
-
-def mne(a, b):
-	'magnitudinal not-equal-to. AKA |a| ≠ |b|'
-	return abs(a) != abs(b)
-
-def mlt(a, b):
-	'magnitudinal greater-than-or-equal-to. AKA |a| ≥ |b|'
-	return abs(a) >= abs(b)
-
-def mlt(a, b):
-	'magnitudinal greater-than. AKA |a| > |b|'
-	return abs(a) > abs(b)
-
-def cmp(a, b):
+def cmp(a, b) -> Tern | ComplexTruth[Tern, Tern] | tuple[Tern, Tern]:
 	'comparison. -1 if a < b, 0 if a == b, 1 if a > b'
-	return (a > b) - (a < b)
-
-def ccmp(a, b):
-	'component-wise cmp'
-	return ((a.real > b.real) - (a.real < b.real), (a.imag > b.imag) - (a.imag < b.imag))
-
-def mcmp(a, b):
-	'magnitudinal cmp'
-	abs_a = abs(a)
-	abs_b = abs(b)
-	return (abs_a > abs_b) - (abs_a < abs_b)
-
+	if isinstance(a, bool) or isinstance(b, bool):
+		raise TypeError('bool is a truth, not a number')
+	elif isinstance(a, (int, float)) and isinstance(b, (int, float)):
+		return Tern(a, b)
+	elif isinstance(a, complex) and isinstance(b, complex):
+		return ComplexTruth(Tern(a.real, b.real), Tern(a.imag, b.imag))
+	elif isinstance(a, tuple) and isintance(b, tuple):
+		return (Tern(a[0], b[0]), Tern(a[1], b[1]))
+	else:
+		raise ValueError('unrecognized input')
 
 def sin(a):
 	'circular sine'
@@ -1084,33 +347,33 @@ def sin(a):
 
 # boolean ----------------------
 
-def nand(a, b):
+def nand(a: bool, b: bool) -> bool:
 	'not(and(a, b))'
 	return not(a and b)
 
-def nor(a, b):
+def nor(a: bool, b: bool) -> bool:
 	'not(or(a, b))'
 	return not(a or b)
 
-def xnor(a, b):
+def xnor(a: bool, b: bool) -> bool:
 	'not(xor(a, b))'
 	return not(xor(a, b))
 
-def imp(a, b):
-	"material implication. aka 'not a or b'"
+def imp(a: bool, b: bool) -> bool:
+	'a → b, ¬a ∨ b, material implication'
 	return not a or b
 
-def nimp(a, b):
-	'not(imp(a, b))'
+def nimp(a: bool, b: bool) -> bool:
+	'¬(a → b), a ∧ ¬b, only a'
 	return a and not b
 
-def con(a, b):
-	"converse implication"
-	return not b or a
+def con(a: bool, b: bool) -> bool:
+	'a ← b, a ∨ ¬b, converse implication'
+	return a or not b
 
-def ncon(a, b):
-	'not(con(a, b))'
-	return b and not a
+def ncon(a: bool, b: bool) -> bool:
+	'¬(a ← b), ¬a ∧ b, only b'
+	return not a and b
 
 # combinatorial ---------------
 
@@ -1122,55 +385,172 @@ def sumt(x):
 
 # interval -------------------
 
-def clamp(x, a, b):
-	'restrict x to [a ,b]. returns min(max(a, b), c)'
-	return min(max(a, b), c)
-
-def in_open_interval(x, a, b) -> bool:
+def in_open(a, x, b) -> bool:
 	return a < x < b
 
-def in_closed_interval(x, a, b) -> bool:
+def in_closed(a, x, b) -> bool:
 	return a <= x <= b
 
-def in_left_open_interval(x, a, b) -> bool:
+def in_left_open(a, x, b) -> bool:
 	return a < x <= b
 
-def in_right_open_interval(x, a, b) -> bool:
+def in_right_open(a, x, b) -> bool:
 	return a <= x < b
 
-def lerp(x, a, b):
-	'linear interpolation. maps [0, 1] to [a, b]'
-	return a + x*(b-a)
+def clamp(value, low = 0, high = 1) -> float:
+	'restrict value to [low, high]. returns min(max(low, value), high)'
+	return min(max(low, value), high)
 
-def unlerp(y, a, b):
-	'inverse of linear interpolation. maps [a, b] to [0, 1]'
-	return (y - a)/(b-a)
+def lerp(value, low, high) -> float:
+	'linear interpolation. maps value in [0, 1] to [low, high]'
+	return (1 - value) * low + value * high
 
-def map(x, a, b, c, d):
-	'map x from [a, b] to [c, d]. same as lerp(unlerp(x, a, b), c, d)'
-	return c + (x-a)/(b-a)*(d-c)
+def unlerp(value, low, high) -> float:
+	'inverse of linear interpolation. maps value in [low, high] to [0, 1]'
+	return (value - low) / (high - low)
 
-# miscellaneous ------------------------
+def plerp(value, low, high, power = 1) -> float:
+	if power == 0:
+		return low * (high / low) ** value
+	else:
+		return ((1 - value) * low ** power + value * high ** power) ** (1 / power)
 
-def any(*args):
+def unplerp(value, low, high, power = 1) -> float:
+	if power == 0:
+		return _math.log(value / low, high / low)
+	else:
+		return (value ** power - low ** power) / (high ** power - low ** power)
+
+def map(value, a, b, c, d) -> float:
+	'value from [a, b] to [c, d]. same as lerp(unlerp(a, b, value), c, d)'
+	return (1 - (value - a) / (b - a)) * c + ((value - a) / (b - a)) * d
+
+def pmap(value, a, b, c, d, power = 1) -> float:
+	'value from [a, b] to [c, d]. same as plerp(unplerp(a, b, value), c, d)'
+	if power == 0:
+		return c * (d / c) ** (_math.log(value / a, b / a))
+	else:
+		value = (value ** power - a ** power) / (b ** power - a** power)
+		return ((1 - value) * c ** power + value * d ** power) ** (1 / power)
+
+# variadic ---------------------------------------------------------------------
+
+def vor(iterable: _Iterable[bool]) -> bool:
 	'variadic OR gate'
-	return any(args)
+	return any(iterable)
 
-def all(*args):
+def vand(iterable: _Iterable[bool]) -> bool:
 	'variadic AND gate'
-	return all(args)
+	return all(iterable)
 
-def sum(*args):
+def vadd(iterable: _Iterable[int | float | complex]) -> int | float | complex:
 	'variadic addition'
-	return sum(args)
+	return sum(iterable)
 
-def prod(*args):
+def vmul(iterable: _Iterable[int | float | complex]) -> int | float | complex:
 	'variadic multiplication'
-	return _math.prod(args)
+	return _math.prod(iterable)
 
+def vparallel(iterable: _Iterable[int | float | complex]) -> int | float | complex: 
+	'variadic parallel'
+
+	n = len(iterable)
+
+	if n == 0:
+		return 0
+	if n == 1:
+		return iterable[0]
+
+	numerator = _math.prod(iterable)
+
+	# sum of products of n-1 elements
+	#denominator = sum(prod(xs[j] for j in range(n) if j != i) for i in range(n))
+	denominator = sum(_math.prod(i) for i in _combinations(iterable, n - 1))
+
+	return numerator / denominator
+
+# floating point numbers -------------------------------------------------------
+
+def bytes_to_float(b: bytes, format: str = '>f'):
+	return _struct.unpack(format, b)[0]
+
+# miscellaneous ----------------------------------------------------------------
+
+def fixed_log(value: int | float, A_x = 1, A_y = 0, B_x = _math.e, B_y = 1) -> float:
+	"""inverse of fixed_exp. its logarithm, but instead of specifying base, you specify two fixed points. 
+	
+	formula: (1 - temp) * A_y + temp * B_y
+		where temp = log(x / A_x, base = B_x / A_x)
+	
+	the defualts correspond to ln(x)
+	"""
+	temp = _math.log(value / A_x, B_x / A_x)
+	return (1 - temp) * A_y + temp * B_y
+
+def fixed_exp(value: int | float, A_x = 0, A_y = 1, B_x = 1, B_y = _math.e) -> float:
+	"""inverse of fixed_log. its exponent, but instead of specifying exponent, you specify two fixed points. 
+	
+	formula: A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
+	
+	the defualts correspond to exp(x)
+	"""
+	return A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
+
+def soft_log(value: int | float, softness = 1, low_x = 0, low_y = 0, high_x = _math.expm1(1), high_y = 1) -> float:
+	"""inverse of soft_exp. softness values closer to low_x are similar to using y = log(x). softness values closer to ∞ are similar to using y = x
+
+	formula: (1 - temp) * low_y + temp * high_y
+		where temp = math.log1p((value - low_x) / softness) / math.log1p((high_x - low_x) / softness) 
+
+	the defaults correspond to math.log1p(x) so that changing softness will still allow a one-one mapping for all +ve x
+	if you want it to mirror math.log(x), use low_x = 1, high_x = math.e but know that soft_log(x) is undefined for x ≤ low_x - softness)
+	"""
+	temp = _math.log1p((value - low_x) / softness) / _math.log1p((high_x - low_x) / softness) 
+	return (1 - temp) * low_y + temp * high_y
+
+def soft_exp(value: int | float, softness = 1, low_x = 0, low_y = 0, high_x = 1, high_y = _math.expm1(1)) -> float:
+	"""inverse of soft_log. softness values closer to low_x are similar to using y = exp(x). softness values closer to ∞ are similar to using y = x
+
+	formula: low_x + softness * math.expm1(temp * math.log1p((high_x - low_x) / softness))
+		where temp = (value - low_y) / (high_y - low_y)
+
+	the defaults correspond to math.expm1(x) so that changing softness will still allow a one-one mapping for all +ve x
+	if you want it to mirror math.exp(x), use low_x = 1, high_x = math.e
+	"""
+	return low_y + softness * _math.expm1(((value - low_x) / (high_x - low_x)) * _math.log1p((high_y - low_y) / softness))
+	# here is an algebraically equivalent but numerically unstable form:
+	# temp = low_y + softness * ((1 + (high_y - low_y) / softness) ** value - 1)
+	# return (temp - low_x) / (high_x - low_x)
+
+def logit(x):
+	return _math.log(x/(1-x))
+
+def boolmap(a: bool, b: any, c: any):
+	'if a then b else c'
+	return b if a else c
+
+def ternmap(a: Tern | int | float, p: any, q: any, r: any):
+	'p if a = -1, q if a = 0, r if a = 1'
+
+	match Tern(a) if not isinstance(a, Tern) else a:
+		case -1: return p
+		case  0: return q
+		case  1: return r
+
+def cmpmap(a: int | float, b: int | float, p: any, q: any, r: any):
+	'p if a < b, q if a == b, r if a > b. like ifelse but with ternary'
+	match (a > b) - (a < b):
+		case -1: return p
+		case  0: return q
+		case  1: return r
+		case  _: raise ValueError('Tern(a, b) is out of bounds {-1, 0, 1}')
+
+def binet(n: int | float) -> float:
+	return (_numbers.PHI ** n - _numbers.PSI ** n) * _numbers.ISQRT_5
+	
 # iterables --------------------------
 
-def concat(*iterables):
+def concat(iterables: _Iterable[_Iterable[any]]) -> _Iterable[any]:
 	'variadic concatenation'
 	result = iterables[0]
 	for iterable in iterables[1:]:
@@ -1179,23 +559,115 @@ def concat(*iterables):
 
 # sequences --------------------------
 
-def head(stuff):
-	return stuff[0]
-
-def last(stuff):
-	return stuff[-1]
-
-def tail(stuff):
-	return stuff[1:]
-
-def init(stuff):
-	return stuff[:-1]
-
-def nth(stuff):
+def nth(stuff) -> any:
 	return stuff[n]
 
-def slice(stuff, a, b):
+def head(stuff) -> _Sequence:
+	return stuff[0]
+
+def last(stuff) -> _Sequence:
+	return stuff[-1]
+
+def tail(stuff) -> _Sequence:
+	return stuff[1:]
+
+def init(stuff) -> _Sequence:
+	return stuff[:-1]
+
+def slice(stuff, a, b) -> _Sequence:
 	raise NotImplementedError("not sure if to include or exclude a-th and b-th elements")
 	return stuff[a, b]
 
-# finished up to this ----------------------------------------------------------
+# angle conversions -------------------------
+
+def deg_to_rad(deg):
+	'deg * τ / 360'
+	return deg * 0.017453292519943295769236907684886127134388888888888888888888888888888888888888889
+
+def deg_to_turn(deg):
+	'degree / 360'
+	return deg * 0.002777777777777777777777777777777777777777777777777777777777777777777777777777777
+
+def rad_to_deg(rad):
+	'radian * 360 / τ'
+	return rad * 57.295779513082320876798154814105170332536226632088586087901802477036600940354404
+
+def rad_to_turn(rad):
+	'radian * 4 / τ'
+	return rad * 0.15915494309189533576888376337251436203482285175580162802194945132510166927876223
+
+def turn_to_deg(turn):
+	'turn * 360'
+	return turn * 360
+
+def turn_to_rad(turn):
+	'turn * τ'
+	return turn * 6.28318530717958647692528676655900576838
+
+# string helpers ---------------------------------------------------------------
+
+# factories --------------------------------------------------------------------
+"""
+def multilerp(value: float, x_values: _Iterable[float], y_values: _Iterable[float], is_sorted: bool = False) -> float:
+	'a slow inefficient ass function that linearly interpolates a bunch of points and lets you sample on them'
+	
+	if x_value
+	
+	#x_values, y_values = (x_values, y_values) if is_sorted else zip(*sorted(zip(x_values, y_values)))
+
+	index_low: int = 0
+	index_high: int = 0
+
+	if is_sorted:
+		for index, x_value in enumerate(x_values):
+			if x_value > value:
+				break
+			index_low = 
+	else:
+		for index, x_value in enumerate(x_values):
+			if x_value == value:
+				return y_values[index]
+			index_low = index if x_value < value and index_low < index else index_low
+			index_high = index if x_value > value and index_high > index else index_high
+	
+	value_intermediate = (value - x_values[index_low]) / (x_values[index_high] - x_values[index_low])
+	return y_values[index_low] * (1 - value_intermediate) + y_values[index_high] * value_intermediate
+"""	
+def factory_ascii_converter(from_str: str, to_str: str) -> _Callable[[str], str]:
+	# create a dictionary mapping for all non-space characters
+    mapping = {a: b for a, b in zip(from_str, to_str) if b.strip()}
+    def converter(s: str) -> str:
+        return ''.join(mapping.get(ch, ch) for ch in s)
+    return converter
+
+def factory_interpolation(x_values: _Sequence[int|float], y_values: _Sequence[int|float]) -> _Callable[[int|float], int|float]:
+	'a factory that turns a bunch of points into a sample-able ℝ ⟼ ℝ function by a polynomial interpolation'
+	raise NotImplementedError
+
+
+
+# specific converters
+to_superscript = factory_ascii_converter(ASCII, ASCII_SUPERSCRIPT)
+to_subscript = factory_ascii_converter(ASCII, ASCII_SUBSCRIPT)
+
+# add slerp and unslerp
+
+def coeffs_from_roots(roots: _Sequence[float]) -> _Sequence[float]:
+    """
+    given an iterable of roots r1, r2, ..., rn
+    returns coefficients [c0, c1, ..., cn] such that
+	
+    (x - r1)(x - r2)...(x - rn)
+    = c0*x^n + c1*x^(n-1) + ... + cn
+    """
+    coeffs = [1]
+	
+    for r in roots:
+        new = [0] * (len(coeffs) + 1)
+        for i, c in enumerate(coeffs):
+            new[i]     += c        # multiply by x
+            new[i + 1] -= r * c    # multiply by -r
+        coeffs = new
+	
+    return coeffs
+
