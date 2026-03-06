@@ -46,21 +46,23 @@ complex numbers are fully supported but type will not always be promoted to comp
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
+neg         │ additive inverse         │             −2 = −2
+inv         │ multiplicative inverse   │             ⅟2 = 0.5
 add         │ addition                 │         −5 + 2 = −3
 sub         │ subtraction              │         −5 − 2 = −7
 mul         │ multiplication           │         −5 × 2 = −10
 div         │ division                 │         −5 ∕ 2 = −2.5
+pow         │ exponentiation           │            −5² = 25
+root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
+log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
+```
+
 inc         │ increment                │            ++2 = 3
 dec         │ decrement                │            −−2 = 1
-neg         │ additive inverse         │             −2 = −2
-inv         │ multiplicative inverse   │             ⅟2 = 0.5
 mod         │ modulus                  │         −5 % 2 =  1
-root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
-pow         │ exponentiation           │            −5² = 25
 exp         │ exponentiation base 𝑒    │         exp(2) ≈ 7.389056098930
 exp2        │ exponentiation base 2    │        exp2(2) = 4
 exp10       │ exponentiation base 10   │       exp10(2) = 100
-log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
 loge        │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
 log2        │ logarithm base 2         │        log₂(2) = 1
 log10       │ logarithm base 10        │        log⏨(2) ≈ 0.30103
