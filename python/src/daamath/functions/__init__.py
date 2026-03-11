@@ -1,19 +1,44 @@
-from . import arithmetic, arithmetic_numeric, trigonometric, trigonometric_numeric, logical, comparative, hyperbolic, variadic, rounding, hyperoperation, sigmoids, mappers
+# hey! you! yeah, you! daa!
+#
+# implement a generalization of signum and normalize, because these are just the same radial projection operation. also allow adjusting the radius, and the norm of this.
+# also implement a generalized clamp function that supports clamping a vector. the clamp function takes [a, b] as of now, but we have to somehow 
+#
+#
+# also, theres stuff to be learned from putting abs and norm under the same umbrella. abs takes the distance from the centre, does it not? norm does the same thing
+#
+# also, implement vector products like dot product, cross product (just a compositon of wedge product and hodge star. also, in 3D and 7D only! because they tie with quaternions and octonions, but none higher. no more normed algebrae after that), wedge product, 
 
-from .arithmetic import pos, neg, inc, dec, add, sub, mul, div, pow, root, exp, log
-from .arithmetic_numeric import fma, powm1, root1p, expm1, log1p
-from .arithmetic_numeric import powe, pow2, pow3, pow10, roote, root2, root3, root10, expe, exp2, exp3, exp10, loge, log2, log3, log10
-from .arithmetic_numeric import powem1, pow2m1, pow3m1, pow10m1, roote1p, root21p, root31p, root101p, expem1, exp2m1, exp3m1, exp10m1, loge1p, log21p, log31p, log101p
+from . import arithmetic, arithmetic_numeric, complex, complex_numeric, trigonometric, trigonometric_numeric, hyperbolic, logical, bitwise, set, interval, combinatorial, variadic, rounding, sigmoids, mappers, tensor, floating
+
+from .arithmetic import inc, dec, add, sub, mul, div, pow, root, log, spow, sroot, slog, ainv, minv
+from .arithmetic import h0c, h0b, h1c, h1b, h1a, h2c, h2b, h2a, h3c, h3b, h3a, h4c, h4b, h4a, hyper, h1b_c0, h1a_c0, h2b_c1, h2a_c1
+from .arithmetic_numeric import fma, pow_m1, root_1p, exp_m1, log_1p
+from .arithmetic_numeric import pow_e, pow_2, pow_3, pow_10, root_e, root_2, root_3, root_10, exp_e, exp_2, exp_3, exp_10, log_e, log_2, log_3, log_10
+from .arithmetic_numeric import pow_e_m1, pow_2_m1, pow_3_m1, pow_10_m1, root_e_1p, root_2_1p, root_3_1p, root_10_1p, exp_e_m1, exp_2_m1, exp_3_m1, exp_10_m1, log_e_1p, log_2_1p, log_3_1p, log_10_1p
+
+from .complex import real, imag, arg, rect, polar, conj
+from .complex_numeric import cis
+
 from .trigonometric import sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec, acsc
-from .trigonometric_numeric import sinpi, cospi, tanpi, cotpi, secpi, cscpi, asinpi, acospi, atanpi, acotpi, asecpi, acscpi
-from .logical import and_, nand, or_, nor, xor, xnor, imp, nimp, con, ncon
-from .comparative import lt, le, eq, ne, ge, gt
+from .trigonometric_numeric import atan2, sinpi, cospi, tanpi, cotpi, secpi, cscpi, asinpi, acospi, atanpi, acotpi, asecpi, acscpi
 from .hyperbolic import sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsch
+
+from .logical import bool_not, bool_and, bool_nand, bool_or, bool_nor, bool_xor, bool_nxor, bool_imp, bool_nimp, bool_con, bool_ncon
+from .bitwise import bit_not, bit_and, bit_nand, bit_or, bit_nor, bit_xor, bit_nxor, bit_imp, bit_nimp, bit_con, bit_ncon
+from .set import set_not, set_and, set_nand, set_or, set_nor, set_xor, set_nxor, set_imp, set_nimp, set_con, set_ncon
+
+from .interval import lt, le, eq, ne, ge, gt, oo, oc, co, cc
+
+from .statistics import min, max, mean, median, mode, var, stdev
+from .statistics import mean_ninf, mean_n1, mean_0, mean_p1, mean_pinf
+from .combinatorial import fact, sumt
 from .variadic import vand, vor, vadd, vmul, vparallel
-from .rounding import round, quot, rem, quotrem
-from .hyperoperation import spow, sroot, sexp, slog
+from .rounding import round, floor, ceil, trunc, away, round_floor, round_ceil, round_trunc, round_away, round_even, round_odd, quot, rem, quotrem, quot_1, rem_1, quotrem_1
+#from .hyperoperation import
 from .sigmoids import *
 from .mappers import *
+from .tensor import norm, normalize, norm_2, normalize_2
+from .floating import copysign
 
 # sinc (sin(x) / x), cosc, … perhaps?
 
@@ -22,7 +47,6 @@ from .mappers import *
 # none of these functions should depend on each other
 # complex arithmetic shall be supported as much as possible
 
-from ..classes import Tern as _Tern, ComplexBool as _ComplexBool, ComplexTern as _ComplexTern	# for cmp and complex comparisons
 from .. import numbers as _numbers	# POS_INF, NEG_INF in incf, decf
 
 from typing import Literal as _Literal
@@ -43,74 +67,48 @@ def isqrt(x):
 	'1 / √x. hardware sometimes has fast implementations for this'
 	return 1 / _math.sqrt(x)
 
-#def divrem(x, round: _Literal['toward', 'away', 'floor', 'ceil', 'round']):
-	
-# complex ----------------------------------------------------------------------
+def signum(a, b = 0):
+	return (a > b) - (a < b)
 
-# these should support the following representations:
-#rect: complex, polar: tuple[float, float], mat: tuple
+def clamp(value: Complex | Sequence[Complex], centre: Complex | Sequence[Complex], radius: Real, *, p: Real = 2) -> Complex | Sequence[Complex]:
+	'project to a hyperball. generalizes scalar signum() and vectorial normalize()'
+	if isinstance(value, Sequence):
+		return value / norm(value)
+	else:
+		return radius * ((a > b) - (a < b))
 
-#def conj
+def clamp(value: Complex | Sequence[Complex], centre: Complex | Sequence[Complex], radius: Real) -> Complex | Sequence[Complex]:
+	'project to a hypersphere. generalizes scalar clamp() and vectorial clamp (graphics libraries implement component-wise clamping, which clamps the vector to a cube (a hypersphere in p = ∞))'
 
-#def to_polar
-
-#def to_rect
-
-# combinatorial ---------------
-
-def sumt(x):
-	'return sum of all numbers from 1 to x. like factorial but with addition'
-	return (x * (x + 1)) // 2 if isinstance(x, int) else (x * (x + 1)) / 2
-
-# interval -------------------
-
-"""
-# useless not-worth-it functions
-def in_open(x, a, b) -> bool:
-	return a < x < b
-
-def in_closed(x, a, b) -> bool:
-	return a <= x <= b
-
-def in_left_open(x, a, b) -> bool:
-	return a < x <= b
-
-def in_right_open(x, a, b) -> bool:
-	return a <= x < b
-"""
 def clamp(value, low = 0, high = 1) -> float:
 	'restrict value to [low, high]. returns min(max(low, value), high)'
 	return min(max(low, value), high)
 
-def lerp(value, low, high) -> float:
-	'linear interpolation. maps value in [0, 1] to [low, high]'
-	return (1 - value) * low + value * high
-
-def unlerp(value, low, high) -> float:
-	'inverse of linear interpolation. maps value in [low, high] to [0, 1]'
-	return (value - low) / (high - low)
-
-def plerp(value, low, high, power = 1) -> float:
+def lerp(parameter, low, high, *, power = 1) -> float:
+	'linear interpolation. maps parameter in [0, 1] to [low, high]. formula is low * (1 - parameter) + high * parameter instead of low + parameter * (high - low) because the former is symmetric and stable at parameter = 0 and parameter = 1, and the latter is asymmetric'
 	if power == 0:
-		return low * (high / low) ** value
+		return low * (high / low) ** parameter
+	elif power == 1:
+		return low * (1 - parameter) + high * parameter
 	else:
-		return ((1 - value) * low ** power + value * high ** power) ** (1 / power)
+		return ((1 - parameter) * low ** power + parameter * high ** power) ** (1 / power)
 
-def unplerp(value, low, high, power = 1) -> float:
+def unlerp(parameter, low, high, *, power = 1) -> float:
+	'inverse of linear interpolation. maps parameter in [low, high] to [0, 1]. returns (parameter - low) / (high - low)'
 	if power == 0:
-		return _math.log(value / low, high / low)
+		return _math.log(parameter / low, high / low)
+	elif power == 1:
+		return (parameter - low) / (high - low)
 	else:
-		return (value ** power - low ** power) / (high ** power - low ** power)
+		return (parameter ** power - low ** power) / (high ** power - low ** power)
 
-def map(value, a, b, c, d) -> float:
-	'value from [a, b] to [c, d]. same as lerp(unlerp(a, b, value), c, d)'
-	temp = (value - a) / (b - a)
-	return (1 - temp) * c + (temp) * d
-
-def pmap(value, a, b, c, d, power = 1) -> float:
-	'value from [a, b] to [c, d]. same as plerp(unplerp(a, b, value), c, d)'
+def map(value, a, b, c, d, *, power = 1) -> float:
+	'value from [a, b] to [c, d]. same as lerp(unlerp(value, a, b), c, d)'
 	if power == 0:
 		return c * (d / c) ** (_math.log(value / a, b / a))
+	elif power == 1:
+		temp = (value - a) / (b - a)
+		return (1 - temp) * c + (temp) * d
 	else:
 		value = (value ** power - a ** power) / (b ** power - a** power)
 		return ((1 - value) * c ** power + value * d ** power) ** (1 / power)
@@ -137,12 +135,6 @@ def bytes_to_float(b: bytes, format: str = '>f'):
 
 # miscellaneous ----------------------------------------------------------------
 
-def mod(a: int, b: int) -> int:
-	'modulus'
-	if not (isinstance(a, int) and isinstance(b, int)):
-		raise TypeError(f'only int allowed. perhaps you want floorrem({a}, {b})?')
-	return a % b
-
 def hyper(n, a, b):
 	'return n-th hyperoperation of a, b'
 	raise NotImplementedError('not made yet')
@@ -168,11 +160,6 @@ def eval_prec(expr: str, prec: int) -> str:
 		result = eval(expr_decimal, safe_dict)
 		return str(result)
 
-def fma(a, b, c) -> float:
-	'fused multiply-add. this has special hardware implementations, and is significant enough to include.'
-	# return math.fma()	# only available in python ≥3.13
-	return a * b + c
-
 def fixed_log(value: int | float, A_x = 1, A_y = 0, B_x = _math.e, B_y = 1) -> float:
 	"""inverse of fixed_exp. its logarithm, but instead of specifying base, you specify two fixed points. 
 	
@@ -184,45 +171,10 @@ def fixed_log(value: int | float, A_x = 1, A_y = 0, B_x = _math.e, B_y = 1) -> f
 	temp = _math.log(value / A_x, B_x / A_x)
 	return (1 - temp) * A_y + temp * B_y
 
-def fixed_exp(value: int | float, A_x = 0, A_y = 1, B_x = 1, B_y = _math.e) -> float:
-	"""inverse of fixed_log. its exponent, but instead of specifying exponent, you specify two fixed points. 
-	
-	formula: A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
-	
-	the defualts correspond to exp(x)
-	"""
-	return A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
-
-def soft_log(value: int | float, softness = 1, low_x = 0, low_y = 0, high_x = _math.expm1(1), high_y = 1) -> float:
-	"""inverse of soft_exp. softness values closer to low_x are similar to using y = log(x). softness values closer to ∞ are similar to using y = x
-
-	formula: (1 - temp) * low_y + temp * high_y
-		where temp = math.log1p((value - low_x) / softness) / math.log1p((high_x - low_x) / softness) 
-
-	the defaults correspond to math.log1p(x) so that changing softness will still allow a one-one mapping for all +ve x
-	if you want it to mirror math.log(x), use low_x = 1, high_x = math.e but know that soft_log(x) is undefined for x ≤ low_x - softness)
-	"""
-	temp = _math.log1p((value - low_x) / softness) / _math.log1p((high_x - low_x) / softness) 
-	return (1 - temp) * low_y + temp * high_y
-
-def soft_exp(value: int | float, softness = 1, low_x = 0, low_y = 0, high_x = 1, high_y = _math.expm1(1)) -> float:
-	"""inverse of soft_log. softness values closer to low_x are similar to using y = exp(x). softness values closer to ∞ are similar to using y = x
-
-	formula: low_x + softness * math.expm1(temp * math.log1p((high_x - low_x) / softness))
-		where temp = (value - low_y) / (high_y - low_y)
-
-	the defaults correspond to math.expm1(x) so that changing softness will still allow a one-one mapping for all +ve x
-	if you want it to mirror math.exp(x), use low_x = 1, high_x = math.e
-	"""
-	return low_y + softness * _math.expm1(((value - low_x) / (high_x - low_x)) * _math.log1p((high_y - low_y) / softness))
-	# here is an algebraically equivalent but numerically unstable form:
-	# temp = low_y + softness * ((1 + (high_y - low_y) / softness) ** value - 1)
-	# return (temp - low_x) / (high_x - low_x)
-
 def logit(x):
 	return _math.log(x/(1-x))
 
-def ifelse(a: bool | _Tern, b: any, c: any, d: any = None) -> any:
+def ifelse(a: bool, b: any, c: any) -> any:
 	'return b if a is True, c if a is False, d if a is -True'
 
 	match a:
@@ -331,4 +283,8 @@ def coeffs_from_roots(roots: _Sequence[float]) -> _Sequence[float]:
         coeffs = new
 	
     return coeffs
+
+def torsor(a, b, c):
+	'a + (c - b). think of c - b as vector. we displace a by the vector c - b'
+	return a - b + c
 

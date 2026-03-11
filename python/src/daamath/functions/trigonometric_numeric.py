@@ -1,5 +1,7 @@
 import math
 
+from math import atan2
+
 def sinpi(x):
 	return math.sin(x * math.pi) 
 

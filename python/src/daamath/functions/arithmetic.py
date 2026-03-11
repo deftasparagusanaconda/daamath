@@ -1,92 +1,157 @@
-# NOTE: these functions shall not support modular arithmetic. there are a few reasons:
+# these operators dont treat nested lists as tensors. do you know why?
+# because the tensor object should know itself how to do basic math ops. an operator is an operator.. an object should know what to do with an operator.
+# its also because this tensor mechanism is hard to scale across languages
+
+import math, cmath, functools
+from numbers import Number, Real
+from typing import Literal
+
+'''
+instead of:
+                    root   sroot
+                     |      |
+                    pow -- spow -- …
+                  /
+inc -- add -- mul   
+ |      |      |  \
+dec    sub    div   exp -- sexp -- …
+                     |      |
+                    log    slog 
+
+we should have:
+X       h0X     h1X     h2X     h3X     h4X     h5X     …
+c       ++b     a + b   a * b   a ^ b   a ↑ b   a ⇑ b   …
+b       --c     c - a   c / a   c L b   …       …       …
+a       N/A     c - b   c / b   c √ b   …       …       …
+
+where we X is the variable we solve for in the equation a  b = c
+'''
+
+# NOTE: i expect these function signatures: 
+# hXc(a, b)
+# hXb(c, a)
+# hXa(c, b)
 #
-# 1) adding a (mod=None) parameter to them changes them to a completely different algebra
-# 2) it is a very hacky change
-# 3) operands will have to be integers, causing a parameter to restrict type dynamically. this is inelegant
-# 4) the very meaning of an operation changes when the mod parameter is given
+# i could make it a cycle of variables like so:
+# hXc(a, b)
+# hXb(c, a)
+# hXa(b, c)
+#
+# but this would imply that the three variables are involved in a cyclic relation a → b → c → a when, really, they are involved in a 2 → 1 relation a, b → c. thats why when solving for b and a, we make it intentionally asymmetric. and the only way to do that is to have the first signature set i proposed
 
-# NOTE: except inc and dec (which are defined only on integers), all these shall support tensorial operands, because tensors support element-wise operators on their scalars.
-# as such, all the operators shall be element-wise. that means mul(matrix1, matrix2) shall be the hadamard product, for example
+#h0c = functools.partial(h1c, a = 1)
+def h0c(b):
+	'++b, incrementation'
+	return b + 1
+inc = h0c
+	
+#h0b = functools.partial(h1b, x = 1)
+def h0b(c):
+	'--c, decrementation'
+	return c - 1
+dec = h0b
 
-import math, cmath
-from typing import Literal, Callable, Generator
-from collections.abc import Iterable, Sequence
-from numbers import Number
-from typing import Any	# for pos
-
-def pos(a: Any) -> Any:
-	'+x'
-	return a
-
-def neg(a: Number | Sequence) -> Number | Sequence:
-	'−x, unary subtraction, additive inverse'
-	if isinstance(a, Sequence):
-		return type(a)(neg(p) for p in a)
-	else:
-		return -a
-
-def inc(a: int, *, step: int = 1) -> int:
-	'incrementation'
-	return a + step
-
-def dec(a: int, *, step: int = 1) -> int:
-	'decrementation'
-	return a - step
-
-def add(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
+def h1c(a, b):
 	'a + b, addition'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(add(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a + b
+	return a + b
+add = h1c
 
-def sub(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'a − b, subtraction, difference, inverse of add'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(sub(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a - b
+# because addition is commutative, it has only one inverse
+# so we shall make one callable, and give two aliases
+def sub(x, y):
+	'x - y, subtraction'
+	return x - y
+h1b = h1a = sub
 
-def mul(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'a × b, a * b, multiplication, product, times'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(mul(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a * b
+def h2c(a, b):
+	'a * b, multiplication'
+	return a * b
+mul = h2c
 
-def div(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'a ∕ b, a / b, division, inverse of mul'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(div(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a / b
+# because multiplication is commutative, it has only one inverse
+# so we shall make one callable, and give two aliases
+def div(x, y):
+	'x / y, division'
+	return x / y
+h2b = h2a = div
 
-def pow(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'aᵇ, a ^ b, a ** b, power, exponentiation to a base, inverse of root'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(pow(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a ** b
+def h3c(a, b):
+	'a ^ b, exponentiation'
+	return a ** b
+pow = h3c
 
-def root(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'nᵗʰ root, n-th root, ᵇ√a, a ^ (1 / b), inverse of pow'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(root(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return a ** (1 / b)
+def h3b(c, a):
+	'log_a(c), logarithm'
+	# c = a ^ b
+	try:    return math.log(c, a)
+	except: return cmath.log(c, a)
+log = h3b
 
-def exp(a: Number | Sequence, b: Number | Sequence) -> Number | Sequence:
-	'exponentiation, b ^ a, inverse of log'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(exp(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		return b ** a
+def h3a(c, b):
+	'c ^ (1 / b), n-th root'
+	# c = a ^ b
+	return c ** (1 / b)
+root = h3a
 
-def log(a: int | float | complex, b: int | float | complex) -> int | float | complex:
-	'logarithm, inverse of exp'
-	if isinstance(a, Sequence) and isinstance(b, Sequence):
-		return type(a)(log(p, q) for p, q in zip(a, b, strict = True))
-	else:
-		try   :	return math.log(a, b)
-		except:	return cmath.log(a, b)
+def h4c(a, b):
+	'tetration, superexponentiation'
+	raise NotImplementedError
+spow = h4c
 
+def h4b(c, a):
+	'superlogarithm'
+	raise NotImplementedError
+slog = h4b
+
+def h4a(c, b):
+	'superroot'
+	raise NotImplementedError
+sroot = h4a
+
+def hyper(
+		fst: Number, 
+		snd: Number, 
+		n: int, 
+		solve: Literal['a', 'b', 'c'] = 'c', 
+		) -> Number:
+	match solve:
+		case 'a':
+			match n:
+				case 0: raise Exception('this operation simply does not exist in mathematics')
+				case 1: return h1a(fst, snd)
+				case 2: return h2a(fst, snd)
+				case 3: return h3a(fst, snd)
+				case 4: return h4a(fst, snd)
+				case _: raise NotImplementedError
+		case 'b':
+			match n:
+				case 0: return h0b(snd)
+				case 1: return h1b(fst, snd)
+				case 2: return h2b(fst, snd)
+				case 3: return h3b(fst, snd)
+				case 4: return h4b(fst, snd)
+				case _: raise NotImplementedError
+		case 'c':
+			match n:
+				case 0: return h0c(snd)
+				case 1: return h1c(fst, snd)
+				case 2: return h2c(fst, snd)
+				case 3: return h3c(fst, snd)
+				case 4: return h4c(fst, snd)
+				case _: raise NotImplementedError
+		case _:
+			raise ValueError("invalid solve parameter. must be one of {'a', 'b', 'c'}")
+
+# prebound functions ----------------------------------------------------------
+
+# additive inverse, since addition has both left and right identities
+#h1b_c0 = h1a_c0 = functools.partial(_sub, x = 0)
+def ainv(y):
+	return -y
+h1b_c0 = h1a_c0 = ainv
+
+# multiplicative inverse, since multiplication has both left and right identities
+#h2b_c1 = h2a_c1 = functools.partial(_div, x = 1)
+def minv(y):
+	return 1 / y
+h2b_c1 = h2a_c1 = minv

@@ -1,13 +1,3 @@
-"""
-from operator import add
-from operator import sub
-from operator import mul
-from operator import truediv as div
-from operator import pos
-from operator import neg
-from operator import mod
-from operator import floordiv
-from operator import mod
 from operator import truth, xor, not_, and_, or_, eq as xnor, lt, le, eq, ne, ge, gt, lshift, rshift, call, matmul, concat, is_, is_not
 """
 #from builtins import pow, round, any, all, len, range, reversed, sorted, divmod, min, max

@@ -1,4 +1,4 @@
-# these functions satisfy:
+# mapper_* functions satisfy:
 # active domain of f is x ∈ [0, 1], a ∈ [0, 1]
 # active codomain of f is [0, 1]
 # ∀a, f(0, a) = 0
@@ -6,9 +6,11 @@
 # f is bijective
 # ∫f(x, a) dx in x ∈ [0, 1] = a
 
-import math as _math
+from numbers import Number, Complex, Real
+from collections.abc import Sequence
+import math
 
-_fma = _math.fma if hasattr(_math, 'fma') else lambda a, b, c: a * b + c
+fma = math.fma if hasattr(math, 'fma') else lambda a, b, c: a * b + c
 
 def mapper1(a):
 	"""map [0, 1] → [0, 1] using shifted and scaled versions of 1/x where a controls total area under curve
@@ -58,10 +60,10 @@ for i in range(11):
 		# A = A - f(A) / f'(A)
 		# 
 		# 
-		L = _math.log1p(A)
-		A = sum((_math.prod((a, A, A)), A ** 2, _math.prod((2, L, A)), -3 * A, 3 * L)) / sum((L, -2, 2 * L / A))
+		L = math.log1p(A)
+		A = sum((math.prod((a, A, A)), A ** 2, math.prod((2, L, A)), -3 * A, 3 * L)) / sum((L, -2, 2 * L / A))
 	
-	return lambda x: _fma(x, A, x) / _fma(x, A, 1)
+	return lambda x: fma(x, A, x) / fma(x, A, 1)
 
 def mapper2(a):
 	"""map [0, 1] → [0, 1] using scaled versions of b^x where a controls total area under curve
@@ -86,9 +88,9 @@ def mapper2(a):
 	if p == 1:
 		return lambda x: int(x > 0)
 	
-	A = _math.tan(_math.pi / 2 * (1 - a)) ** 4
+	A = math.tan(math.pi / 2 * (1 - a)) ** 4
 	
-	return lambda x: _math.expm1(_math.log(A) * x) / (A - 1)
+	return lambda x: math.expm1(math.log(A) * x) / (A - 1)
 
 def mapper3(a):
 	"""map [0, 1] → [0, 1] using scaled versions of x^p where a controls total area under curve
@@ -99,3 +101,114 @@ def mapper3(a):
 	A = (1 / a - 1)
 
 	return lambda x: x ** A
+
+# ------------------------------------------------------------------------------
+
+def clamp(value: Real, low: Real = 0, high: Real = 1) -> Real:
+	'restrict value to [low, high]. returns min(max(value, low), high)'
+	return min(max(value, low), high)
+
+def lerp(value: Real, low: Complex | Sequence[Complex], high: Complex | Sequence[Complex]) -> Complex | Sequence[Complex]:
+	"""linear interpolation. maps value in [0, 1] to [low, high]. complex numbers are interpolated as a line in the rectangular (cartesian) argand plane. vectors are interpolated as a straight line in their respective space.
+
+	values
+	----------
+	low
+
+	returns
+	-------
+	low * (1 - value) + high * value
+
+	formula
+	-------
+	notes
+	-----
+	a * (1 - t) + b * t is better than a + t * (b - a) because the former is symmetric and stable at t = 0 and t = 1, while the latter is asymmetric
+
+	"""
+	if isinstance(low, Sequence) and isinstance(high, Sequence):
+		return type(low)(lerp(value, l, h) for l, h in zip(low, high, strict = True))
+	else:
+		return low * (1 - value) + high * value
+
+def unlerp(value: Real, low: Complex, high: Complex) -> Complex:
+	'inverse of linear interpolation. maps value in [low, high] to [0, 1]. returns (value - low) / (high - low)'
+	if isinstance(low, Sequence) and isinstance(high, Sequence):
+		return type(low)(unlerp(value, l, h) for l, h in zip(low, high, strict = True))
+	else:
+		return (value - low) / (high - low)
+
+def plerp(value: Real, low: Complex, high: Complex, power: Real = 1) -> Complex:
+	if power == 0:
+		return low * (high / low) ** value
+	else:
+		return ((1 - value) * low ** power + value * high ** power) ** (1 / power)
+
+def unplerp(value: Real, low: Complex, high: Complex, power: Real = 1) -> Complex:
+	if power == 0:
+		return math.log(value / low, high / low)
+	else:
+		return (value ** power - low ** power) / (high ** power - low ** power)
+
+def map(value: Real, a: Complex, b: Complex, c: Complex, d: Complex) -> Complex:
+	'value from [a, b] to [c, d]. same as lerp(unlerp(a, b, value), c, d)'
+	temp = (value - a) / (b - a)
+	return (1 - temp) * c + (temp) * d
+
+def pmap(value: Real, a: Complex, b: Complex, c: Complex, d: Complex, power: Real = 1) -> Complex:
+	'value from [a, b] to [c, d]. same as plerp(unplerp(a, b, value), c, d)'
+	if power == 0:
+		return c * (d / c) ** (math.log(value / a, b / a))
+	else:
+		value = (value ** power - a ** power) / (b ** power - a** power)
+		return ((1 - value) * c ** power + value * d ** power) ** (1 / power)
+
+def fixed_log(value: Real, A_x = 1, A_y = 0, B_x = math.e, B_y = 1) -> Real:
+	"""inverse of fixed_exp. its logarithm, but instead of specifying base, you specify two fixed points. 
+	
+	formula: (1 - temp) * A_y + temp * B_y
+		where temp = log(x / A_x, base = B_x / A_x)
+	
+	the defualts correspond to ln(x)
+	"""
+	temp = math.log(value / A_x, B_x / A_x)
+	return (1 - temp) * A_y + temp * B_y
+
+def fixed_exp(value: Real, A_x = 0, A_y = 1, B_x = 1, B_y = math.e) -> Real:
+	"""inverse of fixed_log. its exponent, but instead of specifying exponent, you specify two fixed points. 
+	
+	formula: A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
+	
+	the defualts correspond to exp(x)
+	"""
+	return A_y * (B_y / A_y) ** ((value - A_x) / (B_x - A_x))
+
+def soft_log(value: Real, softness = 1, low_x = 0, low_y = 0, high_x = math.expm1(1), high_y = 1) -> Real:
+	"""inverse of soft_exp. softness values closer to low_x are similar to using y = log(x). softness values closer to ∞ are similar to using y = x
+
+	formula
+	-------
+	(1 - temp) * low_y + temp * high_y
+	where temp = math.log1p((value - low_x) / softness) / math.log1p((high_x - low_x) / softness) 
+
+	notes
+	-----
+	the defaults correspond to math.log1p(x) so that changing softness will still allow a one-one mapping for all +ve x
+	if you want it to mirror math.log(x), use low_x = 1, high_x = math.e but know that soft_log(x) is undefined for x ≤ low_x - softness)
+	"""
+	temp = math.log1p((value - low_x) / softness) / math.log1p((high_x - low_x) / softness) 
+	return (1 - temp) * low_y + temp * high_y
+
+def soft_exp(value: Real, softness = 1, low_x = 0, low_y = 0, high_x = 1, high_y = math.expm1(1)) -> Real:
+	"""inverse of soft_log. softness values closer to low_x are similar to using y = exp(x). softness values closer to ∞ are similar to using y = x
+
+	formula: low_x + softness * math.expm1(temp * math.log1p((high_x - low_x) / softness))
+		where temp = (value - low_y) / (high_y - low_y)
+
+	the defaults correspond to math.expm1(x) so that changing softness will still allow a one-one mapping for all +ve x
+	if you want it to mirror math.exp(x), use low_x = 1, high_x = math.e
+	"""
+	return low_y + softness * math.expm1(((value - low_x) / (high_x - low_x)) * math.log1p((high_y - low_y) / softness))
+	# here is an algebraically equivalent but numerically unstable form:
+	# temp = low_y + softness * ((1 + (high_y - low_y) / softness) ** value - 1)
+	# return (temp - low_x) / (high_x - low_x)

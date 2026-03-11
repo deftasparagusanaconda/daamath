@@ -4,38 +4,20 @@
 <!-- implement something that can take number prefixes like 0b 0d 0x 0t 0q 0o -->
 <!-- bitwise ops should support: grouping (differentiates bitrev and byteswap), repr (2's complement by default) and floats should be treated as direct bits-->
 
-daamath is my personal counterpart
-im tired of having unpredictable math ops in my programs. so i made this cross-language swiss army knife of math stuff.  
-unlike other math libraries, this one isnt specialized to a domain so its the widest-reaching one as far as i know.
+daamath is many things:
+- a math library i can use across languages
+- a place where i put math functions that i use often
+- a way to think of maths differently
+- a convenience-first math library
+- 
 
-# HOW IHNSTALL???!?!?
+# install
 
-choose your language:
-<details><summary>
-
-## python </summary>
-
-(NOT IMPLEMENTED YET)
-
-install the python package through PyPI:
+python:
 
 ```
 pip install daamath
 ```
-or
-```
-python -m pip install daamath
-```
-
-</details><details><summary>
-
-## java </summary>
-
-(NOT IMPLEMENTED YET)
-
-daamath will be available as a java package. but im not sure where to host it yet
-
-</details>
 
 # operators
 
@@ -46,84 +28,66 @@ complex numbers are fully supported but type will not always be promoted to comp
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
-neg         │ additive inverse         │             −2 = −2
-inv         │ multiplicative inverse   │             ⅟2 = 0.5
 add         │ addition                 │         −5 + 2 = −3
 sub         │ subtraction              │         −5 − 2 = −7
 mul         │ multiplication           │         −5 × 2 = −10
 div         │ division                 │         −5 ∕ 2 = −2.5
-pow         │ exponentiation           │            −5² = 25
+pow         │ nᵗʰ power                │     pow(−5, 2) = 25
 root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
+exp         │ exponentiation           │     exp(-5, 2) = 0.03125
 log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
 ```
-
-inc         │ increment                │            ++2 = 3
-dec         │ decrement                │            −−2 = 1
-mod         │ modulus                  │         −5 % 2 =  1
-exp         │ exponentiation base 𝑒    │         exp(2) ≈ 7.389056098930
-exp2        │ exponentiation base 2    │        exp2(2) = 4
-exp10       │ exponentiation base 10   │       exp10(2) = 100
-loge        │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
-log2        │ logarithm base 2         │        log₂(2) = 1
-log10       │ logarithm base 10        │        log⏨(2) ≈ 0.30103
+extra:
+```
+ainv        │ additive inverse         │             −2 = −2
+minv        │ multiplicative inverse   │             ⅟2 = 0.5
+add_1       │ increment                │            ++2 = 3
+sub_1       │ decrement                │            −−2 = 1
+exp_e       │ exponentiation base 𝑒    │          e ^ 2 ≈ 7.389056098930
+exp_2       │ exponentiation base 2    │        exp2(2) = 4
+exp_10      │ exponentiation base 10   │       exp10(2) = 100
+log_e       │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
+log_2       │ logarithm base 2         │        log₂(2) = 1
+log_10      │ logarithm base 10        │        log⏨(2) ≈ 0.30103
 powm1       │ pow(a, b) − 1            │   powm1(−5, 2) = 
 expm1       │ exp(a) − 1               │       expm1(2) ≈ 6.38905609893065
-exp2m1      │ exp2(a) − 1              │      exp₂m1(2) = 3
-exp10m1     │ exp10(a) − 1             │      exp⏨m1(2) = 99
+expm1_2     │ exp2(a) − 1              │      exp₂m1(2) = 3
+expm1_10    │ exp10(a) − 1             │      exp⏨m1(2) = 99
 logp1       │ log(abs + 1, b)          │       logp1(2) = 
-logep1      │ loge(a + 1)              │      logₑp1(2) ≈ 
-log2p1      │ log2(a + 1)              │      log₂p1(2) ≈ 
-log10p1     │ log10(a + 1)             │      log⏨p1(2) ≈ 
-sexp        │ tetration                │     sexp(−5,2) = 
-sroot       │ super-root               │    sroot(−5,2) = 
-slog        │ super-logarith           │     slog(−5,2) = 
+logp1_e     │ loge(a + 1)              │      logₑp1(2) ≈ 
+logp1_2     │ log2(a + 1)              │      log₂p1(2) ≈ 
+logp1_10    │ log10(a + 1)             │      log⏨p1(2) ≈ 
+spow        │ nᵗʰ super-power          │     spow(-5,2) = 
+sroot       │ nᵗʰ super-root           │    sroot(−5,2) = 
+sexp        │ super-exponentiation     │     sexp(−5,2) = 
+slog        │ super-logarithm          │     slog(−5,2) = 
 parallel    │ parallel operator        │ parallel(−5,2) = 3.(3)
-sqrt        │ square root (√x)         │        sqrt(2) ≈ 1.4142135623730951
-cbrt        │ cube root (∛x)           │        cbrt(2) ≈ 1.2599210498948732
-rsqrt       │ reciprocal of sqrt(x)    │       rsqrt(2) ≈ 0.7071067811865475
-rcbrt       │ reciprocal of cbrt(x)    │       rcbrt(2) ≈ 0.7937005259840997
-abs         │ absolute value           │      abs(2+3𝑖) ≈ 3.6055512754
 gcd         │ greatest common divisor  │       gcd(2,3) = 1
 lcm         │ lowest common multiple   │       lcm(2,3) = 6
-hyper       │ hyperoperation           │  hyper(1, 2,3) = 5
-floor       │ directed round to −∞     │  floor(1.23,1) = 1.2
-floor1p     │ floor(x) + 1             │ floor1p(1.2,1) =
-ceil        │ directed round to +∞     │   ceil(1.23,1) = 1.3
-ceil1m      │ ceil(x) - 1              │  ceil1m(1.2,1) =
-trunc       │ directed round to ±0     │  trunc(1.23,1) = 1.2
-away        │ directed round away ±0   │   away(1.23,1) = 1.3
-round       │ to nearest, tie to even  │  round(1.23,1) = 1.1
-floordiv    │ division rounded to −∞   │ floordiv(−5,2) = −3
-ceildiv     │ division rounded to +∞   │  ceildiv(−5,2) = −2
-truncdiv    │ division rounded to ±0   │ truncdiv(−5,2) = −2
-awaydiv     │ division rounded away ±0 │  awaydiv(−5,2) = −3
-rounddiv    │ round(div(a,b))          │ rounddiv(−5,2) = −2
-floorrem    │ remainder of floordiv    │ floorrem(−5,2) = 
-ceilrem     │ remainder of  ceildiv    │  ceilrem(−5,2) = 
-truncrem    │ remainder of truncdiv    │ truncrem(−5,2) = 
-awayrem     │ remainder of  awaydiv    │  awayrem(−5,2) = 
-roundrem    │ remainder of rounddiv    │ roundrem(−5,2) = 
-floordivrem │ (floordiv, floorrem)     │ floorrem(−5,2) = 
-ceildivrem  │ ( ceildiv,  ceilrem)     │  ceilrem(−5,2) = 
-truncdivrem │ (truncdiv, truncrem)     │ truncrem(−5,2) = 
-awaydivrem  │ ( awaydiv,  awayrem)     │  awayrem(−5,2) = 
-rounddivrem │ (rounddiv, roundrem)     │ roundrem(−5,2) = 
+hyper       │ hyperoperation           │   hyper(1,2,3) = 5
+round       │ round to nearest integer │    round(1.23) = 1
+floor       │ round towards −∞         │    floor(1.23) = 1
+ceil        │ round towards +∞         │     ceil(1.23) = 1
+trunc       │ round towards 0          │    trunc(1.23) = 1
+away        │ round away from 0        │     away(1.23) = 1
 ```
 
-`log` always takes number and base, because mathematicians assume it is logₑ(x) while engineers assume it is log⏨(x). this causes problems. this problem does not occur for exponentiation as, following convention, we have `pow` and `exp` separately for xʸ and eˣ respectively.
+`mod(a, b)` is generalized by `rem(a, b, mode = floor)`
+`abs(a)` is generalized by `norm_2(a)`
+`sqrt(a)` is `root_2(a)`
+`cbrt(a)` is `root_3(a)`
 
-`modulus` will not allow non-integer input. it is based on modular arithmetic, which only concerns integers. `floorrem` gives the same results but works for fractional input
+im not including these yet:
+`floorp1`, `ceilm1`, `rsqrt`, `rcbrt`
 
 if you need more exotic rounding or quantization, my [pyquantize](https://github.com/deftasparagusanaconda/pyquantize) tool does exactly that
 
-i have not yet decided on a name for the variadic version of `parallel`, so it is not implemented yet
-
-`sexp`, `sroot`, `slog` ~~are~~ will be based on kneser's extension  
-a separate `pent` (pentation) will not be provided. but you are free to ask if you want it  
+`spow`, `sroot`, `sexp`, `slog` ~~are~~ will be based on kneser's extension  
 `hyper` will not support non-integer inputs for n ≥ 4 (tetration and beyond). not until im smart enough to implement kneser's extension for these
 commutative hyperoperations will be added once i have understood them enough to implement them. i like them much more anyway :P
 
-</details><details open><summary>comparative </summary>
+</details>
+<details open><summary>interval</summary>
 
 ```
 name │ explanation        │ example  
@@ -134,22 +98,13 @@ eq   │ equal to           │ 2 = 3 is false
 ne   │ not equal to       │ 2 ≠ 3 is true
 ge   │ at least           │ 2 ≥ 3 is false
 gt   │ greater than       │ 2 > 3 is false
-clt  │ component-wise lt  │ 2+3𝑖 < 4+3𝑖 is (T,F)
-cle  │ component-wise le  │ 2+3𝑖 ≤ 4+3𝑖 is (T,T)
-ceq  │ component-wise eq  │ 2+3𝑖 = 4+3𝑖 is (F,T)
-cne  │ component-wise ne  │ 2+3𝑖 ≠ 4+3𝑖 is (T,F)
-cge  │ component-wise ge  │ 2+3𝑖 ≥ 4+3𝑖 is (F,T)
-cgt  │ component-wise gt  │ 2+3𝑖 > 4+3𝑖 is (F,F)
-mlt  │ magnitudinal lt    │ 2 < 3 is true 
-mle  │ magnitudinal le    │ 2 ≤ 3 is true
-meq  │ magnitudinal eq    │ 2 = 3 is false
-mne  │ magnitudinal ne    │ 2 ≠ 3 is true
-mge  │ magnitudinal ge    │ 2 ≥ 3 is false
-mgt  │ magnitudinal gt    │ 2 > 3 is false
-cmp  │ comparison         │ 2 <=> 3 is -1
-ccmp │ component-wise cmp │ 2 <=> 3 is (-1)
-mcmp │ magnitudinal cmp   │ 2 <=> 3 is -1
+cc   │ in closed          │ 2 ∈ [2, 3] is true
+co   │ in right-open      │ 2 ∈ [2, 3) is true
+oc   │ in left-open       │ 2 ∈ (2, 3] is false
+oo   │ in open            │ 2 ∈ (2, 3) is false
 ```
+
+`cmp` is same generalized by `normalize`
 
 </details><details open><summary>trigonometric </summary>
 
@@ -168,7 +123,6 @@ atan             │ circular arctangent       │             atan(1) ≈ 0.785
 acot             │ circular arccotangent     │             acot(1) ≈ 0.785398163
 asec             │ circular arcsecant        │             asec(1) = 0
 acsc             │ circular arccosecant      │             acsc(1) ≈ 1.57079633
-<!--
 sinpi            │ sin(𝜋x)                   │            sinpi(1) = 0
 cospi            │ cos(𝜋x)                   │            cospi(1) = −1
 tanpi            │ tan(𝜋x)                   │            tanpi(1) = 0
@@ -334,14 +288,14 @@ name  │ explanation   │ truth │ example
 ──────┼───────────────┼───────┼──────────
 not   │ negation      │    10 │   ¬¬P = P
 and   │ conjunction   │  0001 │ F ∧ T = F
-nand  │ not(and)      │  1110 │ F ⊼ T = T
 or    │ disjunction   │  0111 │ F ∨ T = T
-nor   │ not(or)       │  1000 │ F ⊽ T = F
 xor   │ exclusive or  │  0110 │ F ⊻ T = T
-xnor  │ not(xor)      │  1001 │ F ⊙ T = F
 imp   │ implication   │  1101 │ F ⇒ T = T
-nimp  │ not(imp)      │  0010 │ F ⇏ T = F
 con   │ converse      │  1011 │ F ⇐ T = F
+nand  │ not(and)      │  1110 │ F ⊼ T = T
+nor   │ not(or)       │  1000 │ F ⊽ T = F
+nxor  │ not(xor)      │  1001 │ F ⊙ T = F
+nimp  │ not(imp)      │  0010 │ F ⇏ T = F
 ncon  │ not(con)      │  0100 │ F ⇍ T = T
 ```
 
@@ -352,8 +306,8 @@ name  │ explanation    │ example
 ──────┼────────────────┼─────────────────────────
 real  │ real part      │  real(2+3𝑖) = 2
 imag  │ imaginary part │  imag(2+3𝑖) = 3
-phase │ argument       │ phase(2+3𝑖) ≈ 0.98279372
-conj  │ conjugate      │  conj(2+3𝑖) = 2−3𝑖 
+arg   │ argument       │   arg(2+3𝑖) ≈ 0.98279372
+conj  │ conjugate      │  conj(2+3𝑖) = 2−3𝑖
 ```
 
 </details><details open><summary>combinatorial </summary>
