@@ -1,5 +1,7 @@
-from . import arrow, ascii, bracket, digit, greek, latin, square
+from . import utilities
+from .utilities import *
 
+from . import arrow, ascii, bracket, digit, greek, latin, square
 from .arrow import *
 from .ascii import *
 from .bracket import *
@@ -117,16 +119,16 @@ BAR_OVERDOT                                = '∸'
 BAR_SQUARED                                = '⊟'
 BAR_CIRCLED                                = '⊖'
 
-TIMES                                      = '× (not same as x)'
-TIMES_BIG                                  = '⨉ (not same as ×)'
+TIMES                                      = '×' # (not same as x)
+TIMES_BIG                                  = '⨉' # (not same as ×)
 TIMES_SQUARED                              = '⊞'
 TIMES_CIRCLED                              = '⊗'
-TIMES_BIG_CIRCLED                          = '⨂ (not same as ⊗)'
+TIMES_BIG_CIRCLED                          = '⨂' # (not same as ⊗)
 
-DIVISION_SLASH                             = '∕ (not same as /)'
-DIVISION_SIGN                              = '÷ (unconventional. use ∕)'
-FRACTION                                   = '⁄ (not same as ∕)'
-CROSS_PRODUCT                              = '⨯ (not same as ×)'
+DIVISION_SLASH                             = '∕' # (not same as /)
+DIVISION_SIGN                              = '÷' # (unconventional. use ∕)
+FRACTION                                   = '⁄' # (not same as ∕)
+CROSS_PRODUCT                              = '⨯' # (not same as ×)
 COPRODUCT                                  = '⨿'
 INTERIOR_PRODUCT                           = '⨼'
 INTERIOR_RIGHT                             = '⨽'
@@ -237,14 +239,14 @@ NOT_PARALLEL                               = '∦'
 VERTICAL_LINE                              = '|'
 VERTICAL_LINE_WHITE                        = '⫾'
 VERTICAL_LINE_BIG_WHITE                    = '⫿'
-VERTICAL_LINE_DOUBLE                       = '‖ (not same as ||)'
+VERTICAL_LINE_DOUBLE                       = '‖' # (not same as ||)
 
-INTERCALATE                                = '⊺ (not same as T)'
-PERPENDICULAR                              = '⟂ (not same as ⊥)'
-EMPTY_SET                                  = '∅ (not same as θ)'
-DIAMETER                                   = '⌀ (not same as ∅)'
+INTERCALATE                                = '⊺' # (not same as T)
+PERPENDICULAR                              = '⟂' # (not same as ⊥)
+EMPTY_SET                                  = '∅' # (not same as θ)
+DIAMETER                                   = '⌀' # (not same as ∅)
 NUMERO                                     = '№'
-EULER_CONSTANT                             = 'ℇ (unconventional. use γ or 𝛾)'
+EULER_CONSTANT                             = 'ℇ' # (unconventional. use γ or 𝛾)
 DOTLESS_ITALIC_I                           = '𝚤'
 DOTLESS_ITALIC_J                           = '𝚥'
 SHUFFLE_PRODUCT                            = '⧢'
@@ -259,7 +261,7 @@ NOT_TURNED                                 = '⌙'
 BIG_BIG_SIGMA                              = '⎲⎳'
 
 CIRCLED_DIVISION_SLASH                     = '⊘'
-CIRCLED_DIVISION_SIGN                      = '⨸ (unconventional. use ⊘)'
+CIRCLED_DIVISION_SIGN                      = '⨸' # (unconventional. use ⊘)
 CIRCLED_EQUAL                              = '⊜'
 CIRCLED_VERTICAL_BAR                       = '⦶'
 CIRCLED_PARALLEL                           = '⦷'

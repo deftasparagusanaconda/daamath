@@ -3,13 +3,9 @@
 <!-- implement something that can generate a nan from a given integer payload-->
 <!-- implement something that can take number prefixes like 0b 0d 0x 0t 0q 0o -->
 <!-- bitwise ops should support: grouping (differentiates bitrev and byteswap), repr (2's complement by default) and floats should be treated as direct bits-->
+<!-- daamath should have a strong no-aliases rule. that means no abs alias for norm, for example-->
 
-daamath is many things:
-- a math library i can use across languages
-- a place where i put math functions that i use often
-- a way to think of maths differently
-- a convenience-first math library
-- 
+a mathematician's spellbook. cross-language, highly predictable, highly mathematical
 
 # install
 
@@ -19,7 +15,7 @@ python:
 pip install daamath
 ```
 
-# operators
+# functions
 
 <details open><summary>arithmetic</summary>
 
@@ -28,21 +24,27 @@ complex numbers are fully supported but type will not always be promoted to comp
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
+inc         │ incrementation           │            ++2 = 3
+dec         │ decrementation           │            --2 = 1
 add         │ addition                 │         −5 + 2 = −3
 sub         │ subtraction              │         −5 − 2 = −7
 mul         │ multiplication           │         −5 × 2 = −10
 div         │ division                 │         −5 ∕ 2 = −2.5
-pow         │ nᵗʰ power                │     pow(−5, 2) = 25
-root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
-exp         │ exponentiation           │     exp(-5, 2) = 0.03125
+pow         │ exponentiation           │     pow(-5, 2) = 0.03125
 log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
+root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
 ```
+
 extra:
+
 ```
+name        │ explanation              │ example
+────────────┼──────────────────────────┼────────────────────────────────
 ainv        │ additive inverse         │             −2 = −2
 minv        │ multiplicative inverse   │             ⅟2 = 0.5
-add_1       │ increment                │            ++2 = 3
-sub_1       │ decrement                │            −−2 = 1
+spow        │ tetration                │     spow(-5,2) = 
+sroot       │ nᵗʰ super-root           │    sroot(−5,2) = 
+slog        │ super-logarithm          │     slog(−5,2) = 
 exp_e       │ exponentiation base 𝑒    │          e ^ 2 ≈ 7.389056098930
 exp_2       │ exponentiation base 2    │        exp2(2) = 4
 exp_10      │ exponentiation base 10   │       exp10(2) = 100
@@ -57,14 +59,18 @@ logp1       │ log(abs + 1, b)          │       logp1(2) =
 logp1_e     │ loge(a + 1)              │      logₑp1(2) ≈ 
 logp1_2     │ log2(a + 1)              │      log₂p1(2) ≈ 
 logp1_10    │ log10(a + 1)             │      log⏨p1(2) ≈ 
-spow        │ nᵗʰ super-power          │     spow(-5,2) = 
-sroot       │ nᵗʰ super-root           │    sroot(−5,2) = 
-sexp        │ super-exponentiation     │     sexp(−5,2) = 
-slog        │ super-logarithm          │     slog(−5,2) = 
 parallel    │ parallel operator        │ parallel(−5,2) = 3.(3)
 gcd         │ greatest common divisor  │       gcd(2,3) = 1
 lcm         │ lowest common multiple   │       lcm(2,3) = 6
 hyper       │ hyperoperation           │   hyper(1,2,3) = 5
+```
+
+</details>
+<details open><summary>arithmetic</summary>
+
+```
+name        │ explanation              │ example
+────────────┼──────────────────────────┼────────────────────────────────
 round       │ round to nearest integer │    round(1.23) = 1
 floor       │ round towards −∞         │    floor(1.23) = 1
 ceil        │ round towards +∞         │     ceil(1.23) = 1
@@ -90,82 +96,56 @@ commutative hyperoperations will be added once i have understood them enough to 
 <details open><summary>interval</summary>
 
 ```
-name │ explanation        │ example  
-─────┼────────────────────┼────────────────────
-lt   │ less than          │ 2 < 3 is true 
-le   │ at most            │ 2 ≤ 3 is true
-eq   │ equal to           │ 2 = 3 is false
-ne   │ not equal to       │ 2 ≠ 3 is true
-ge   │ at least           │ 2 ≥ 3 is false
-gt   │ greater than       │ 2 > 3 is false
-cc   │ in closed          │ 2 ∈ [2, 3] is true
-co   │ in right-open      │ 2 ∈ [2, 3) is true
-oc   │ in left-open       │ 2 ∈ (2, 3] is false
-oo   │ in open            │ 2 ∈ (2, 3) is false
+name │ explanation   │ example  
+─────┼───────────────┼────────────────────
+lt   │ less than     │ 2 < 3 is true 
+le   │ at most       │ 2 ≤ 3 is true
+eq   │ equal to      │ 2 = 3 is false
+ne   │ not equal to  │ 2 ≠ 3 is true
+ge   │ at least      │ 2 ≥ 3 is false
+gt   │ greater than  │ 2 > 3 is false
+cc   │ in closed     │ 2 ∈ [2, 3] is true
+co   │ in right-open │ 2 ∈ [2, 3) is true
+oc   │ in left-open  │ 2 ∈ (2, 3] is false
+oo   │ in open       │ 2 ∈ (2, 3) is false
 ```
 
-`cmp` is same generalized by `normalize`
+`cmp` is generalized by `normalize`
 
 </details><details open><summary>trigonometric </summary>
 
 ```
-name             │ explanation               │ example
-─────────────────┼───────────────────────────┼────────────────────────────────────
-sin              │ circular sine             │              sin(1) ≈ 0.8414709848
-cos              │ circular cosine           │              cos(1) ≈ 0.54030230586
-tan              │ circular tangent          │              tan(1) ≈ 1.55740772465
-cot              │ circular cotangent        │              cot(1) ≈ 0.642093
-sec              │ circular secant           │              sec(1) ≈ 1.85081571768
-csc              │ circular cosecant         │              csc(1) ≈ 1.18839510578
-asin             │ circular arcsine          │             asin(1) ≈ 1.57079633
-acos             │ circular arccosine        │             acos(1) = 0
-atan             │ circular arctangent       │             atan(1) ≈ 0.785398163
-acot             │ circular arccotangent     │             acot(1) ≈ 0.785398163
-asec             │ circular arcsecant        │             asec(1) = 0
-acsc             │ circular arccosecant      │             acsc(1) ≈ 1.57079633
-sinpi            │ sin(𝜋x)                   │            sinpi(1) = 0
-cospi            │ cos(𝜋x)                   │            cospi(1) = −1
-tanpi            │ tan(𝜋x)                   │            tanpi(1) = 0
-cotpi            │ cot(𝜋x)                   │            cotpi(1) = ?
-secpi            │ sec(𝜋x)                   │            secpi(1) = −1
-cscpi            │ csc(𝜋x)                   │            cscpi(1) = ?
-asinpi           │ asin(y)∕𝜋                 │           asinpi(1) = 0.5
-acospi           │ acos(y)∕𝜋                 │           acospi(1) = 0
-atanpi           │ atan(y)∕𝜋                 │           atanpi(1) = 0.25
-acotpi           │ acot(y)∕𝜋                 │           acotpi(1) = 0.25
-asecpi           │ asec(y)∕𝜋                 │           asecpi(1) = 0
-acscpi           │ acsc(y)∕𝜋                 │           acscpi(1) = 0.5
-sintau           │ sin(𝜏x)                   │           sintau(1) = 
-costau           │ cos(𝜏x)                   │           costau(1) = 
-tantau           │ tan(𝜏x)                   │           tantau(1) = 
-cottau           │ cot(𝜏x)                   │           cottau(1) = 
-sectau           │ sec(𝜏x)                   │           sectau(1) = 
-csctau           │ csc(𝜏x)                   │           csctau(1) = 
-asintau          │ asin(y)∕𝜏                 │          asintau(1) = 
-acostau          │ acos(y)∕𝜏                 │          acostau(1) = 
-atantau          │ atan(y)∕𝜏                 │          atantau(1) = 
-acottau          │ acot(y)∕𝜏                 │          acottau(1) = 
-asectau          │ asec(y)∕𝜏                 │          asectau(1) = 
-acsctau          │ acsc(y)∕𝜏                 │          acsctau(1) = 
-sind             │ sin(𝜏x∕360)               │             sind(1) = 
-cosd             │ cos(𝜏x∕360)               │             cosd(1) = 
-tand             │ tan(𝜏x∕360)               │             tand(1) = 
-cotd             │ cot(𝜏x∕360)               │             cotd(1) = 
-secd             │ sec(𝜏x∕360)               │             secd(1) = 
-cscd             │ csc(𝜏x∕360)               │             cscd(1) = 
-asind            │ asin(y)×360∕𝜏             │            asind(1) = 
-acosd            │ acos(y)×360∕𝜏             │            acosd(1) = 
-atand            │ atan(y)×360∕𝜏             │            atand(1) = 
-acotd            │ acot(y)×360∕𝜏             │            acotd(1) = 
-asecd            │ asec(y)×360∕𝜏             │            asecd(1) = 
-acscd            │ acsc(y)×360∕𝜏             │            acscd(1) = 
--->
-atan2            │ IEEE atan2                │          atan2(1,1) ≈ 0.785398163
-<!--
-atan2pi          │ atan2∕𝜋                   │        atan2pi(1,1) = 
-atan2tau         │ atan2∕𝜏                   │       atan2tau(1,1) = 
-atan2d           │ atan2×360∕𝜏               │         atan2d(1,1) ≈ 
--->
+name  │ explanation             │ example
+──────┼─────────────────────────┼────────────────────────────────────
+csin  │ circular sine           │  csin(1) ≈ 0.8414709848
+ccos  │ circular cosine         │  ccos(1) ≈ 0.54030230586
+ctan  │ circular tangent        │  ctan(1) ≈ 1.55740772465
+ccot  │ circular cotangent      │  ccot(1) ≈ 0.642093
+csec  │ circular secant         │  csec(1) ≈ 1.85081571768
+ccsc  │ circular cosecant       │  ccsc(1) ≈ 1.18839510578
+acsin │ inverse csin            │ acsin(1) ≈ 1.57079633
+accos │ inverse ccos            │ accos(1) = 0
+actan │ inverse ctan            │ actan(1) ≈ 0.785398163
+accot │ inverse ccot            │ accot(1) ≈ 0.785398163
+acsec │ inverse csec            │ acsec(1) = 0
+accsc │ inverse ccsc            │ accsc(1) ≈ 1.57079633
+hsin  │ hyperbolic sine         │  hsin(1) ≈ 1.1752012
+hcos  │ hyperbolic cosine       │  hcos(1) ≈ 1.5430806
+htan  │ hyperbolic tangent      │  htan(1) ≈ 0.7615942
+hcot  │ hyperbolic cotangent    │  hcot(1) ≈ 1.3130353
+hsec  │ hyperbolic secant       │  hsec(1) ≈ 0.6480543
+hcsc  │ hyperbolic cosecant     │  hcsc(1) ≈ 0.8509181
+ahsin │ inverse hsin            │ ahsin(1) ≈ 0.88137359
+ahcos │ inverse hcos            │ ahcos(1) = 0
+ahtan │ inverse htan            │ ahtan(1) ≈ infinity
+ahcot │ inverse hcot            │ ahcot(1) ≈ infinity
+ahsec │ inverse hsec            │ ahsec(1) = 0
+ahcsc │ inverse hcsc            │ ahcsc(1) ≈ 0.88137359
+```
+
+extra:
+
+```
 versin           │ versed sine               │           versin(x) = 1 − cos(x)
 vercos           │ versed cosine             │           vercos(x) = 1 + cos(x)
 coversin         │ co versed sine            │         coversin(x) = 1 − sin(x)
@@ -188,115 +168,34 @@ archaversin      │ arc half versed sine      │      archaversin(y) = arccos(
 archavercos      │ arc half versed cosine    │      archavercos(y) = arccos(2y−1)
 archacoversin    │ arc half co versed sine   │    archacoversin(y) = arcsin(1−2y)
 archacovercos    │ arc half co versed cosine │    archacovercos(y) = arcsin(2y−1)
-<!--
-versinpi         │ versin(𝜋x)                │         versinpi(x) = 1 − cos(𝜋x)
-vercospi         │ vercos(𝜋x)                │         vercospi(x) = 1 + cos(𝜋x)
-coversinpi       │ coversin(𝜋x)              │       coversinpi(x) = 1 − sin(𝜋x)
-covercospi       │ covercos(𝜋x)              │       covercospi(x) = 1 + sin(𝜋x)
-haversinpi       │ haversin(𝜋x)              │       haversinpi(x) = (1 − cos(𝜋x))∕2
-havercospi       │ havercos(𝜋x)              │       havercospi(x) = (1 + cos(𝜋x))∕2
-hacoversinpi     │ hacoversin(𝜋x)            │     hacoversinpi(x) = (1 − sin(𝜋x))∕2
-hacovercospi     │ hacovercos(𝜋x)            │     hacovercospi(x) = (1 + sin(𝜋x))∕2
-exsecpi          │ exsec(𝜋x)                 │          exsecpi(x) = sec(𝜋x) − 1
-excscpi          │ excsc(𝜋x)                 │          excscpi(x) = csc(𝜋x) − 1
-chordpi          │ chord(𝜋x)                 │          chordpi(x) = 2 × sin(𝜋x∕2)
-arcchordpi       │ arcchord(y)∕𝜋             │       arcchordpi(y) = 2 × arcsin(y∕2)∕𝜋
-arcexsecpi       │ arcexsecpi(x)∕𝜋           │       arcexsecpi(y) = arcsec(y+1)∕𝜋
-arcexcscpi       │ arcexcscpi(x)∕𝜋           │       arcexcscpi(y) = arccsc(y+1)∕𝜋
-arcversinpi      │ arcversin(y)∕𝜋            │      arcversinpi(y) = arccos(1−y)∕𝜋
-arcvercospi      │ arcvercos(y)∕𝜋            │      arcvercospi(y) = arccos(y−1)∕𝜋
-arccoversinpi    │ arccoversin(y)∕𝜋          │    arccoversinpi(y) = arcsin(1−y)∕𝜋
-arccovercospi    │ arccovercos(y)∕𝜋          │    arccovercospi(y) = arcsin(y−1)∕𝜋
-archaversinpi    │ archaversin(y)∕𝜋          │    archaversinpi(y) = arccos(1−2y)∕𝜋
-archavercospi    │ archavercos(y)∕𝜋          │    archavercospi(y) = arccos(2y−1)∕𝜋
-archacoversinpi  │ archacoversin(y)∕𝜋        │  archacoversinpi(y) = arcsin(1−2y)∕𝜋
-archacovercospi  │ archacovercos(y)∕𝜋        │  archacovercospi(y) = arcsin(2y−1)∕𝜋
-versintau        │ versin(𝜏x)                │        versintau(x) = 1 − cos(𝜏x)
-vercostau        │ vercos(𝜏x)                │        vercostau(x) = 1 + cos(𝜏x)
-coversintau      │ coversin(𝜏x)              │      coversintau(x) = 1 − sin(𝜏x)
-covercostau      │ covercos(𝜏x)              │      covercostau(x) = 1 + sin(𝜏x)
-haversintau      │ haversin(𝜏x)              │      haversintau(x) = (1 − cos(𝜏x))∕2
-havercostau      │ havercos(𝜏x)              │      havercostau(x) = (1 + cos(𝜏x))∕2
-hacoversintau    │ hacoversin(𝜏x)            │    hacoversintau(x) = (1 − sin(𝜏x))∕2
-hacovercostau    │ hacovercos(𝜏x)            │    hacovercostau(x) = (1 + sin(𝜏x))∕2
-exsectau         │ exsec(𝜏x)                 │         exsectau(x) = sec(𝜏x) − 1
-excsctau         │ excsc(𝜏x)                 │         excsctau(x) = csc(𝜏x) − 1
-chordtau         │ chord(𝜏x)                 │         chordtau(x) = 2 × sin(𝜏x∕2)
-arcchordtau      │ arcchord(y)∕𝜏             │      arcchordtau(y) = 2 × arcsin(y∕2)∕𝜏
-arcexsectau      │ arcexsectau(x)∕𝜏          │      arcexsectau(y) = arcsec(y+1)∕𝜏
-arcexcsctau      │ arcexcsctau(x)∕𝜏          │      arcexcsctau(y) = arccsc(y+1)∕𝜏
-arcversintau     │ arcversin(y)∕𝜏            │     arcversintau(y) = arccos(1−y)∕𝜏
-arcvercostau     │ arcvercos(y)∕𝜏            │     arcvercostau(y) = arccos(y−1)∕𝜏
-arccoversintau   │ arccoversin(y)∕𝜏          │   arccoversintau(y) = arcsin(1−y)∕𝜏
-arccovercostau   │ arccovercos(y)∕𝜏          │   arccovercostau(y) = arcsin(y−1)∕𝜏
-archaversintau   │ archaversin(y)∕𝜏          │   archaversintau(y) = arccos(1−2y)∕𝜏
-archavercostau   │ archavercos(y)∕𝜏          │   archavercostau(y) = arccos(2y−1)∕𝜏
-archacoversintau │ archacoversin(y)∕𝜏        │ archacoversintau(y) = arcsin(1−2y)∕𝜏
-archacovercostau │ archacovercos(y)∕𝜏        │ archacovercostau(y) = arcsin(2y−1)∕𝜏
-versind          │ versin(𝜏x∕360)            │          versind(x) = 1 − cos(𝜏x∕360)
-vercosd          │ vercos(𝜏x∕360)            │          vercosd(x) = 1 + cos(𝜏x∕360)
-coversind        │ coversin(𝜏x∕360)          │        coversind(x) = 1 − sin(𝜏x∕360)
-covercosd        │ covercos(𝜏x∕360)          │        covercosd(x) = 1 + sin(𝜏x∕360)
-haversind        │ haversin(𝜏x∕360)          │        haversind(x) = (1 − cos(𝜏x∕360))∕2
-havercosd        │ havercos(𝜏x∕360)          │        havercosd(x) = (1 + cos(𝜏x∕360))∕2
-hacoversind      │ hacoversin(𝜏x∕360)        │      hacoversind(x) = (1 − sin(𝜏x∕360))∕2
-hacovercosd      │ hacovercos(𝜏x∕360)        │      hacovercosd(x) = (1 + sin(𝜏x∕360))∕2
-exsecd           │ exsec(𝜏x∕360)             │           exsecd(x) = sec(𝜏x∕360) − 1
-excscd           │ excsc(𝜏x∕360)             │           excscd(x) = csc(𝜏x∕360) − 1
-chordd           │ chord(𝜏x∕360)             │           chordd(x) = 2 × sin(𝜏x∕360∕2)
-arcchordd        │ arcchord(y)×360∕𝜏         │        arcchordd(y) = 2 × arcsin(y∕2)×360∕𝜏
-arcexsecd        │ arcexsec(x)×360∕𝜏         │        arcexsecd(y) = arcsec(y+1)×360∕𝜏
-arcexcscd        │ arcexcsc(x)×360∕𝜏         │        arcexcscd(y) = arccsc(y+1)×360∕𝜏
-arcversind       │ arcversin(y)×360∕𝜏        │       arcversind(y) = arccos(1−y)×360∕𝜏
-arcvercosd       │ arcvercos(y)×360∕𝜏        │       arcvercosd(y) = arccos(y−1)×360∕𝜏
-arccoversind     │ arccoversin(y)×360∕𝜏      │     arccoversind(y) = arcsin(1−y)×360∕𝜏
-arccovercosd     │ arccovercos(y)×360∕𝜏      │     arccovercosd(y) = arcsin(y−1)×360∕𝜏
-archaversind     │ archaversin(y)×360∕𝜏      │     archaversind(y) = arccos(1−2y)×360∕𝜏
-archavercosd     │ archavercos(y)×360∕𝜏      │     archavercosd(y) = arccos(2y−1)×360∕𝜏
-archacoversind   │ archacoversin(y)×360∕𝜏    │   archacoversind(y) = arcsin(1−2y)×360∕𝜏
-archacovercosd   │ archacovercos(y)×360∕𝜏    │   archacovercosd(y) = arcsin(2y−1)×360∕𝜏
--->
+atan2            │ IEEE atan2                │          atan2(1,1) ≈ 0.785398163
+atan2pi          │ atan2∕𝜋                   │        atan2pi(1,1) = 
+atan2tau         │ atan2∕𝜏                   │       atan2tau(1,1) = 
+atan2d           │ atan2×360∕𝜏               │         atan2d(1,1) ≈ 
 ```
 
 galilean trigonometric functions are not included because they are trivial, in that `sing(x) = x` and `cosg(x) = 1`
 
-</details><details open><summary>hyperbolic </summary>
+sinpi, sintau, sind, and other variants encourage bad mathematical literacy with radians. the function space also explodes combinatorially so i dont condone this
 
-```
-name  │ explanation             │ example
-──────┼─────────────────────────┼───────────
-sinh  │ hyperbolic sine         │ 1.1752012
-cosh  │ hyperbolic cosine       │ 1.5430806
-tanh  │ hyperbolic tangent      │ 0.7615942
-coth  │ hyperbolic cotangent    │ 1.3130353
-sech  │ hyperbolic secant       │ 0.6480543
-csch  │ hyperbolic cosecant     │ 0.8509181
-asinh │ hyperbolic arcsine      │ 0.88137359
-acosh │ hyperbolic arccosine    │ 0
-atanh │ hyperbolic arctangent   │ infinity
-acoth │ hyperbolic arccotangent │ infinity
-asech │ hyperbolic arcsecant    │ 0
-acsch │ hyperbolic arccosecant  │ 0.88137359
-```
+</details><details open><summary>logical </summary>
 
-</details><details open><summary>boolean </summary>
-
-these boolean functions are overloaded to perform bit-wise operations if int or float are given, and to perform set operations if set is given
+these logic gates are overloaded to perform bit-wise operations if int or float are given, and to perform set operations if set is given
 
 ```
 name  │ explanation   │ truth │ example
 ──────┼───────────────┼───────┼──────────
-not   │ negation      │    10 │   ¬¬P = P
-and   │ conjunction   │  0001 │ F ∧ T = F
-or    │ disjunction   │  0111 │ F ∨ T = T
-xor   │ exclusive or  │  0110 │ F ⊻ T = T
-imp   │ implication   │  1101 │ F ⇒ T = T
-con   │ converse      │  1011 │ F ⇐ T = F
-nand  │ not(and)      │  1110 │ F ⊼ T = T
-nor   │ not(or)       │  1000 │ F ⊽ T = F
-nxor  │ not(xor)      │  1001 │ F ⊙ T = F
-nimp  │ not(imp)      │  0010 │ F ⇏ T = F
-ncon  │ not(con)      │  0100 │ F ⇍ T = T
+not   │ negation      │    10 │    ¬⊤ = ⊥
+and   │ conjunction   │  0001 │ ⊥ ∧ ⊤ = ⊥
+or    │ disjunction   │  0111 │ ⊥ ∨ ⊤ = ⊤
+xor   │ exclusive or  │  0110 │ ⊥ ⊻ ⊤ = ⊤
+imp   │ implication   │  1101 │ ⊥ ⇒ ⊤ = ⊤
+con   │ converse      │  1011 │ ⊥ ⇐ ⊤ = ⊥
+nand  │ not(and)      │  1110 │ ⊥ ⊼ ⊤ = ⊤
+nor   │ not(or)       │  1000 │ ⊥ ⊽ ⊤ = ⊥
+nxor  │ not(xor)      │  1001 │ ⊥ ⊙ ⊤ = ⊥
+nimp  │ not(imp)      │  0010 │ ⊥ ⇏ ⊤ = ⊥
+ncon  │ not(con)      │  0100 │ ⊥ ⇍ ⊤ = ⊤
 ```
 
 </details><details open><summary>complex </summary>
@@ -310,15 +209,17 @@ arg   │ argument       │   arg(2+3𝑖) ≈ 0.98279372
 conj  │ conjugate      │  conj(2+3𝑖) = 2−3𝑖
 ```
 
+`mag` is not implemented because `norm` already does that
+
 </details><details open><summary>combinatorial </summary>
 
 ```
-name     │ explanation                        │ example
-─────────┼────────────────────────────────────┼──────────────────────────
-fact     │ factorial                          │           5! = 120
-sumt     │ sumtorial (sum of all ℤ⁺ up to n)  │      sumt(5) = 15
-comb     │ combinations                       │    comb(6,5) = 6
-perm     │ permutations                       │    perm(6,5) = 720
+name     │ explanation  │ example
+─────────┼──────────────┼────────────────
+fact     │ factorial    │   5! = 120
+sumt     │ sumtorial    │   sumt(5) = 15
+comb     │ combinations │ comb(6,5) = 6
+perm     │ permutations │ perm(6,5) = 720
 ```
 
 `fact(x)` is not intended to take fractional input. use `gamma(x+1)` for that.
@@ -326,6 +227,8 @@ perm     │ permutations                       │    perm(6,5) = 720
 </details><details open><summary>bitwise </summary>
 
 ```
+name         │ explanation                │ example
+─────────────┼────────────────────────────┼────────────────
 bitshift     │ bit-wise shift             │ bitshift(3,5) = 96
 bitrev       │ bit-wise reverse           │   bitrev(3,5) = 
 to_bitstring │ convert a datatype to bits │ 
@@ -341,16 +244,10 @@ mask         │ bitmasking                 │
 
 </details><details open><summary>intervals </summary>
 
-the `in_*_interval` functions are simply for readability, for when sometimes, for example, `in_open_interval(x, a, b)` is easier to understand than `a < x < b`
-
 ```
 name                   │ explanation              │ example
 ───────────────────────┼──────────────────────────┼──────────────────────────────────────
 clamp                  │ restrict to [a,b]        │            clamp(1.2, 0, 0.8) = 0.8
-in_open_interval       │ a < x < b                │       in_open_interval(3,1,3) = False
-in_closed_interval     │ a ≤ x ≤ b                │     in_closed_interval(3,1,3) = True
-in_left_open_interval  │ a < x ≤ b                │  in_left_open_interval(3,1,3) = True
-in_right_open_interval │ a ≤ x < b                │ in_right_open_interval(3,1,3) = False
 lerp                   │ linear interpolation     │               lerp(2, 3, 0.5) = 2.5
 plerp                  │ power-parameterized lerp │              plerp(2, 3, 0.5) = 
 slerp                  │ spherical lerp           │              slerp(2, 3, 0.5) = 
@@ -455,32 +352,6 @@ isDescending │ if sorted in descending
 operations like taking union, intersection, etc are already overloaded in the boolean functions
 
 ```
-```
-
-</details><details open><summary>fused operations </summary>
-
-`fma` and `fms` are actual things but the rest are... well.. why not??
-these operations do not actually aim to be accurate, theyre just convenient
-
-```
-name │ explanation   │ example │ formula
-─────┼───────────────┼─────────┼──────────────────
-faa  │ fused add add │         │ (a+b)+c
-fas  │ fused add sub │         │ (a+b)−c
-fam  │ fused add mul │         │ (a+b)*c
-fad  │ fused add div │         │ (a+b)∕c
-fsa  │ fused sub add │         │ (a−b)+c
-fss  │ fused sub sub │         │ (a−b)−c
-fsm  │ fused sub mul │         │ (a−b)*c
-fsd  │ fused sub div │         │ (a−b)∕c
-fma  │ fused mul add │         │ (a*b)+c
-fms  │ fused mul sub │         │ (a*b)−c
-fmm  │ fused mul mul │         │ (a*b)*c
-fmd  │ fused mul div │         │ (a*b)∕c
-fda  │ fused div add │         │ (a∕b)+c
-fds  │ fused div sub │         │ (a∕b)−c
-fdm  │ fused div mul │         │ (a∕b)*c
-fdd  │ fused div div │         │ (a∕b)∕c
 ```
 
 </details><details open><summary>vector </summary>
@@ -631,6 +502,11 @@ LN_10        │ natural logarithn of 10          │ ≈ 2.302585092994046…
 E            │ euler's number                   │ ≈ 2.71828182845904523536…
 PI           │ archimedes' constant             │ ≈ 3.14159265358979323846…
 TAU          │ PI*2                             │ ≈ 6.28318530717958647692…
+```
+
+floating point:
+
+```
 POS_INF      │ IEEE 754 positive inf            │ +∞
 NEG_INF      │ IEEE 754 negative inf            │ −∞
 POS_ZERO     │ IEEE 754 positive zero           │ +0.0
@@ -1434,6 +1310,6 @@ this project is convenience > accuracy > predictability > features > performance
 
 special cases like 0/0 are handled according to how *you* like it, using a global variable, kinda like numpy. you tell the library how to behave and it obeys cause its a good library :)
 
-motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len
+motivation: sometimes i need the quotient of a division, but programs only give me truediv or floordiv. sometimes i juse need a neg function to use in a higher-order function, without resorting to a nameless lambda >:( sometimes i need floor and ceil. sometimes i need the min of a dataset. sometimes i want the mean of a database instead of writing sum/len. daamath solves all of that. it gives me everything that a language is missing, and makes maths feel more like a second language. i can speak maths within the programming language im working in. thats why i love daamath.
 
 this project will take inspiration from [glm](https://github.com/icaven/glm) soon

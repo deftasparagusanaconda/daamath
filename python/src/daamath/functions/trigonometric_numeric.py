@@ -1,43 +1,52 @@
-import math
+import math, cmath
 
 from math import atan2
 
-def sinpi(x):
-	return math.sin(x * math.pi) 
+def csintau(angle):
+    'csin(angle * τ)'
+    try:    return math.sin(angle * math.tau) 
+    except: return cmath.sin(angle * math.tau) 
 
-def cospi(x):
-	return math.cos(x * math.pi) 
+def ccostau(angle):
+    'ccos(angle * τ)'
+    return math.cos(angle * math.tau)
 
-def tanpi(x):
-	return math.tan(x * math.pi) 
+def ctantau(angle):
+    'ctan(angle * τ)'
+    return math.tan(angle * math.tau) 
 
-def cotpi(x):
-	return 1 / math.tan(x * math.pi) 
+def ccottau(angle):
+    'ccot(angle * τ)'
+    return 1 / math.tan(angle * math.tau) 
 
-def secpi(x):
-	return 1 / math.cos(x * math.pi) 
+def csectau(angle):
+    'csec(angle * τ)'
+    return 1 / math.cos(angle * math.tau) 
 
-def cscpi(x):
-	return 1 / math.sin(x * math.pi) 
+def ccsctau(angle):
+    'ccsc(angle * τ)'
+    return 1 / math.sin(angle * math.tau) 
 
-def asinpi(x):
-	return math.asin(x) / math.pi
+def acsintau(angle):
+    'csin(angle) / τ'
+    return math.asin(angle) / math.tau
 
-def acospi(x):
-	return math.acos(x) / math.pi 
+def accostau(angle):
+    'ccos(angle) / τ'
+    return math.acos(angle) / math.tau 
 
-def atanpi(x):
-	return math.atan(x) / math.pi 
+def actantau(angle):
+    'ctan(angle) / τ'
+    return math.atan(angle) / math.tau 
 
-def acotpi(x):
-	return math.atan(1 / x) / math.pi 
+def accottau(angle):
+    'ccot(angle) / τ'
+    return math.atan(1 / angle) / math.tau 
 
-def asecpi(x):
-	return math.acos(1 / x) / math.pi 
+def acsectau(angle):
+    'csec(angle) / τ'
+    return math.acos(1 / angle) / math.tau 
 
-def acscpi(x):
-	return math.asin(1 / x) / math.pi 
-
-# so asinpi(sinpi(x)) = x
-# asin(sin(x * π)) / π
-# does this work???
+def accsctau(angle):
+    'ccsc(angle) / τ'
+    return math.asin(1 / angle) / math.tau 

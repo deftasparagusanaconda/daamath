@@ -1,7 +1,12 @@
 import math, cmath, functools
 from numbers import Number, Real
-from .arithmetic import pow, root, log
+from .hyperoperations import sub, div, pow, log, root
 
+def ainv(b):
+    return -b
+
+def minv(b):
+    return 1 / b
 try:
 	from math import fma
 except ImportError:
@@ -19,33 +24,32 @@ def abs_sq(a: Number) -> Real:
 
 # we maintain basically a matrix of:
 # 
-#       | e     | 2     | 3     | 10     | 
-# ------+-------+-------+-------+--------+------------
-# powX  | powe  | pow2  | pow3  | pow10  | a ^ b
+#      | e    | 2    | 3    | 10    | 
+# -----+------+------+------+-------+------------
+# powX | powe | pow2 | pow3 | pow10 | a ^ b
 # rootX | roote | root2 | root3 | root10 | a ^ (1 / b)
-# expX  | expe  | exp2  | exp3  | exp10  | b ^ a
-# logX  | loge  | log2  | log3  | log10  | logb(a)
+# logX | loge | log2 | log3 | log10 | logb(a)
+#
+# we actually have a bunch of variants we can produce... pow can have a or b fixed, as seen with pow2 and exp2, for example. we also dont realize this, but log can have either c or a fixed, and root can have either c or b fixed. but usually we only have c fixed. our lattice exposes all possible structure elegantly.
 # 
-# we also maintain another matrix of:
+# we also maintain another matrix of: 
 # 
-#         | e       | 2       | 3       | 10       |   
-# --------+---------+---------+---------+----------+------------------
-# powXm1  | powem1  | pow2m1  | pow3m1  | pow10m1  | a ^ b - 1
+#        | e      | 2      | 3      | 10      |   
+# -------+--------+--------+--------+---------+------------------
+# powXm1 | powem1 | pow2m1 | pow3m1 | pow10m1 | a ^ b - 1
 # rootX1p | roote1p | root21p | root31p | root101p | (1 + a) ^ (1 / b)
-# expXm1  | expem1  | exp2m1  | exp3m1  | exp10m1  | b ^ a - 1
-# logX1p  | loge1p  | log21p  | log31p  | log101p  | logb(1 + a)
+# logX1p | loge1p | log21p | log31p | log101p | logb(1 + a)
 #
 # which are derived from:
-# powm1(a, b)  = a ^ b - 1         = expm1(log(a) * b)
-# root1p(a, b) = (1 + a) ^ (1 / b) = exp(log1p(a) / b)
-# expm1(a, b)  = b ^ a - 1         
-# log1p(a, b)  = logb(1 + a)       
+# powm1(a, b) = a ^ b - 1
+# root1p(a, b) = (1 + a) ^ (1 / b)
+# log1p(a, b) = logb(1 + a)
 
-pow_e   = functools.partial(pow, b = math.e)
-pow_2   = functools.partial(pow, b = 2)
-pow_3   = functools.partial(pow, b = 3)
-pow_10  = functools.partial(pow, b = 10)
-root_e  = functools.partial(root, b = math.e)
+pow_be   = functools.partial(pow, b = math.e)
+pow_b2   = functools.partial(pow, b = 2)
+pow_b3   = functools.partial(pow, b = 3)
+pow_b10  = functools.partial(pow, b = 10)
+root_e    = functools.partial(root, b = math.e)
 
 def root_2(a: Number) -> Number:
 	try:	return math.sqrt(a)

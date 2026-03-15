@@ -22,37 +22,108 @@ NBAT
 1101 imp   
 1110 nand  
 1111 ⊤     
+
+# 
+# UBAI (universe, B, A, intersection)
+# 0000 none  (empty set)
+# 0001 and   (intersection)
+# 0010 fst   (A - B)
+# 0011 A     (set A)
+# 0100 snd   (B - A)
+# 0101 B     (set B)
+# 0110 xor   (symmetric difference) 
+# 0111 or    (union)
+# 1000 nor   (complement of union)
+# 1001 nxor  (complement of symmetric difference)
+# 1010 not B (complement of set B)
+# 1011 nsnd  (complement of B - A)
+# 1100 not A (complement of set A)
+# 1101 nfst  (complement of A - B)
+# 1110 nand  (complement of intersection)
+# 1111 all
 '''
+def not_(a: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'not, negation, complement'
+    match a:
+        case bool(): return not a
+        case  int(): return ~a
+        case  set(): return universe.difference(a)
+        case      _: raise TypeError
 
-from operator import not_ as bool_not
-from operator import and_ as bool_and
-from operator import or_ as bool_or
-from operator import xor as bool_xor
+def and_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'conjunction, intersection'
+    match a:
+        case bool(): return a and b
+        case  int(): return a & b
+        case  set(): return a.intersection(b)
+        case      _: raise TypeError
 
-def bool_nimp(a: bool, b: bool) -> bool:
-	'¬(a → b), a ∧ ¬b, only a'
-	return a and not b
+def or_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'disjunction, union'
+    match a:
+        case bool(): return a or b
+        case  int(): return a | b
+        case  set(): return a.union(b)
+        case      _: raise TypeError
 
-def bool_ncon(a: bool, b: bool) -> bool:
-	'¬(a ← b), ¬a ∧ b, only b'
-	return not a and b
+def xor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'exclusive disjunction, symmetric difference'
+    match a:
+        case bool(): return a != b
+        case  int(): return a ^ b
+        case  set(): return a.symmetric_difference(b)
+        case      _: raise TypeError()
 
-def bool_nand(a: bool, b: bool) -> bool:
-	'not(and(a, b))'
-	return not (a and b)
+def imp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'implication'
+    match a:
+        case bool(): return a <= b
+        case  int(): return a | b
+        case  set(): raise NotImplementedError
+        case      _: raise TypeError()
 
-def bool_nor(a: bool, b: bool) -> bool:
-	'not(or(a, b))'
-	return not (a or b)
+def con(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'implication'
+    match a:
+        case bool(): return a >= b
+        case  int(): return a | b
+        case  set(): raise NotImplementedError
+        case      _: raise TypeError()
 
-def bool_nxor(a: bool, b: bool) -> bool:
-	'not(xor(a, b))'
-	return not bool_xor(a, b)
+def nand(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    match a:
+        case bool(): return not (a and b)
+        case  int(): return ~(a & b)
+        case  set(): raise NotImplementedError
+        case      _: raise TypeError()
+    
+def nor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    match a:
+        case bool(): return not(a or b)
+        case  int(): return ~(a | b)
+        case  set(): raise NotImplementedError
+        case      _: raise TypeError()
 
-def bool_imp(a: bool, b: bool) -> bool:
-	'a → b, ¬a ∨ b, material implication'
-	return not a or b
+def nxor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    match a:
+        case bool(): return a == b
+        case  int(): return ~(a ^ b)
+        case  set(): raise NotImplementedError
+        case      _: raise TypeError()
 
-def bool_con(a: bool, b: bool) -> bool:
-	'a ← b, a ∨ ¬b, converse implication'
-	return a or not b
+def nimp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'not(imp)'
+    match a:
+        case bool(): return a > b
+        case  int(): return a & ~b
+        case  set(): return a.difference(b)
+        case      _: raise TypeError()
+
+def ncon(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'not(con)'
+    match a:
+        case bool(): return a < b
+        case  int(): return ~a & b
+        case  set(): return b.difference(a)
+        case      _: raise TypeError()
+

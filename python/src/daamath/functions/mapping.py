@@ -104,10 +104,6 @@ def mapper3(a):
 
 # ------------------------------------------------------------------------------
 
-def clamp(value: Real, low: Real = 0, high: Real = 1) -> Real:
-	'restrict value to [low, high]. returns min(max(value, low), high)'
-	return min(max(value, low), high)
-
 def lerp(value: Real, low: Complex | Sequence[Complex], high: Complex | Sequence[Complex]) -> Complex | Sequence[Complex]:
 	"""linear interpolation. maps value in [0, 1] to [low, high]. complex numbers are interpolated as a line in the rectangular (cartesian) argand plane. vectors are interpolated as a straight line in their respective space.
 
@@ -212,3 +208,32 @@ def soft_exp(value: Real, softness = 1, low_x = 0, low_y = 0, high_x = 1, high_y
 	# here is an algebraically equivalent but numerically unstable form:
 	# temp = low_y + softness * ((1 + (high_y - low_y) / softness) ** value - 1)
 	# return (temp - low_x) / (high_x - low_x)
+
+def lerp(parameter, low, high, *, power = 1) -> float:
+	'linear interpolation. maps parameter in [0, 1] to [low, high]. formula is low * (1 - parameter) + high * parameter instead of low + parameter * (high - low) because the former is symmetric and stable at parameter = 0 and parameter = 1, and the latter is asymmetric'
+	if power == 0:
+		return low * (high / low) ** parameter
+	elif power == 1:
+		return low * (1 - parameter) + high * parameter
+	else:
+		return ((1 - parameter) * low ** power + parameter * high ** power) ** (1 / power)
+
+def unlerp(parameter, low, high, *, power = 1) -> float:
+	'inverse of linear interpolation. maps parameter in [low, high] to [0, 1]. returns (parameter - low) / (high - low)'
+	if power == 0:
+		return _math.log(parameter / low, high / low)
+	elif power == 1:
+		return (parameter - low) / (high - low)
+	else:
+		return (parameter ** power - low ** power) / (high ** power - low ** power)
+
+def map(value, a, b, c, d, *, power = 1) -> float:
+	'value from [a, b] to [c, d]. same as lerp(unlerp(value, a, b), c, d)'
+	if power == 0:
+		return c * (d / c) ** (_math.log(value / a, b / a))
+	elif power == 1:
+		temp = (value - a) / (b - a)
+		return (1 - temp) * c + (temp) * d
+	else:
+		value = (value ** power - a ** power) / (b ** power - a** power)
+		return ((1 - value) * c ** power + value * d ** power) ** (1 / power)
