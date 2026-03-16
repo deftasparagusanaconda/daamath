@@ -17,8 +17,7 @@ do NOT do this!!! you will want to expand later. just make the operators for int
 
 ----------------
 
-daamath shall only define operators on number types where they achieve closure
-
+operators are fully closed in these domains:
 inc : NZRC
 dec :  ZRC
 add : NZRC
@@ -31,59 +30,54 @@ log :    C
 
 unsigned int is N
 int          is Z
-float        is R
 double       is R
 complex      is C
+
+later, we shall support float, uint* types, int*, float*, complex* etc etc. but lets keep these four for now, just to get a feel for the domains first
 */
 
+#include <errno.h>	// for error codes like EDOM
+
 // incrementation. closed on N, Z, R, C
-unsigned int   h0c_unsigned_int  (                  unsigned int   b) {return ++b              ;}
-int            h0c_int           (                  int            b) {return ++b              ;}
-double         h0c_double        (                  double         b) {return b + 1            ;}
-double complex h0c_double_complex(                  double complex b) {return b + 1            ;}
+unsigned int   inc_unsigned_int  (                  unsigned int   b) {return ++b              ;}
+int            inc_int           (                  int            b) {return ++b              ;}
+double         inc_double        (                  double         b) {return b + 1            ;}
+double complex inc_double_complex(                  double complex b) {return b + 1            ;}
 
 // decrementation. closed on Z, R, C but not on N
-int            h0b_int           (int            c                  ) {return --c              ;}
-double         h0b_double        (double         c                  ) {return c - 1            ;}
-double complex h0b_double_complex(double complex c                  ) {return c - 1            ;}
-
-// h0a doesnt exist mathematically
+unsigned int dec_unsigned_int(unsigned int c) 
+{	
+	if (c == 0)
+		errno = EDOM;
+	return --c;
+}
+int            dec_int           (int            c                  ) {return --c              ;}
+double         dec_double        (double         c                  ) {return c - 1            ;}
+double complex dec_double_complex(double complex c                  ) {return c - 1            ;}
 
 // addition. closed on N, Z, R, C
-unsigned int   h1c_unsigned_int  (unsigned int   a, unsigned int   b) {return a + b            ;}
-int            h1c_int           (int            a, int            b) {return a + b            ;}
-double         h1c_double        (double         a, double         b) {return a + b            ;}
-double complex h1c_double_complex(double complex a, double complex b) {return a + b            ;}
+unsigned int   add_unsigned_int  (unsigned int   a, unsigned int   b) {return a + b            ;}
+int            add_int           (int            a, int            b) {return a + b            ;}
+double         add_double        (double         a, double         b) {return a + b            ;}
+double complex add_double_complex(double complex a, double complex b) {return a + b            ;}
 
 // subtraction. closed on Z, R, C but not on N
-int            h1b_int           (int            c, int            a) {return c - a            ;}
-double         h1b_double        (double         c, double         a) {return c - a            ;}
-double complex h1b_double_complex(double complex c, double complex a) {return c - a            ;}
-
-// subtraction. closed on Z, R, C but not on N
-int            h1a_int           (int            c, int            b) {return c - b            ;}
-double         h1a_double        (double         c, double         b) {return c - b            ;}
-double complex h1a_double_complex(double complex c, double complex b) {return c - b            ;}
+int            sub_int           (int            c, int            a) {return c - a            ;}
+double         sub_double        (double         c, double         a) {return c - a            ;}
+double complex sub_double_complex(double complex c, double complex a) {return c - a            ;}
 
 // multiplication. closed on N, Z, R, C
-unsigned int   h2c_unsigned_int  (unsigned int   a, unsigned int   b) {return a * b            ;}
-int            h2c_int           (int            a, int            b) {return a * b            ;}
-double         h2c_double        (double         a, double         b) {return a * b            ;}
-double complex h2c_double_complex(double complex a, double complex b) {return a * b            ;}
-#define mul h2c
+unsigned int   mul_unsigned_int  (unsigned int   a, unsigned int   b) {return a * b            ;}
+int            mul_int           (int            a, int            b) {return a * b            ;}
+double         mul_double        (double         a, double         b) {return a * b            ;}
+double complex mul_double_complex(double complex a, double complex b) {return a * b            ;}
 
 // division. closed on R, C only
-double         h2b_double        (double         c, double         a) {return c / a            ;}
-double complex h2b_double_complex(double complex c, double complex a) {return c / a            ;}
-#define div h2b
-
-// division. closed on R, C only
-double         h2a_double        (double         c, double         b) {return c / b            ;}
-double complex h2a_double_complex(double complex c, double complex b) {return c / b            ;}
-//#define div h2a
+double         div_double        (double         c, double         a) {return c / a            ;}
+double complex div_double_complex(double complex c, double complex a) {return c / a            ;}
 
 // exponentiation. closed on N, C only
-unsigned int   h3c_unsigned_int  (unsigned int   a, unsigned int   b)
+unsigned int   pow_unsigned_int  (unsigned int   a, unsigned int   b)
  {
 	unsigned int result = 1;
 
@@ -98,16 +92,13 @@ unsigned int   h3c_unsigned_int  (unsigned int   a, unsigned int   b)
 
 	return result;
 }
-double complex h3c_double_complex(double complex a, double complex b) {return cpow(a, b)       ;}
-#define pow h3c
+double complex pow_double_complex(double complex a, double complex b) {return cpow(a, b)       ;}
 
 // logarithm. closed on C only
-double complex h3b_double_complex(double complex c, double complex a) {return clog(c) / clog(a);}
-#define log h3b
+double complex log_double_complex(double complex c, double complex a) {return clog(c) / clog(a);}
 
 // root. closed on C only
-double complex h3a_double_complex(double complex c, double complex b) {return cpow(c, 1.0 / b) ;}
-#define root h3a
+double complex root_double_complex(double complex c, double complex b) {return cpow(c, 1.0 / b) ;}
 
 /*
 * daamath supports everything up to complex numbers because complex numbers are algebraically closed. that is very nice

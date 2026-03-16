@@ -12,3 +12,4 @@ def sumt(x):
 	return (x * (x + 1)) // 2 if isinstance(x, int) else (x * (x + 1)) / 2
 
 from math import comb, perm
+from math import gcd, lcm

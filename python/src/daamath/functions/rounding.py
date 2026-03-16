@@ -84,9 +84,9 @@ def quotrem(a: Real, b: Real, *, projection: Callable[[Real], Integral] = round)
 	quotient = projection(a / b)
 	return quotient, a - b * quotient
 
-quot_1 = functools.partial(quot, b = 1)
-rem_1 = functools.partial(rem, b = 1)
-quotrem_1 = functools.partial(quotrem, b = 1)
+#quot_1 = functools.partial(quot, b = 1)
+#rem_1 = functools.partial(rem, b = 1)
+#quotrem_1 = functools.partial(quotrem, b = 1)
 
 '''
 quot_1_floor = functools.partial(quot, b = 1, projection = floor)

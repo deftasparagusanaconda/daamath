@@ -69,14 +69,14 @@ def pow(a, b):
     'c = a ^ b, power, exponentiation. the 3rd hyperoperation'
     return a ** b
 
-def log(c, a):
+def log(a, c):
     'b = log_a(c), logarithm. the inverse of the 3rd hyperoperation that solves for b'
     # c = a ^ b
     try:    return math.log(c, a)
     except: return cmath.log(c, a)
 
-def root(c, b):
-    'a = c ^ (1 / b), n-th root. the inverse of the 3rd hyperoperation that solves for a'
+def root(b, c):
+    'a = b √ c, n-th root. the inverse of the 3rd hyperoperation that solves for a'
     # c = a ^ b
     return c ** (1 / b)
 

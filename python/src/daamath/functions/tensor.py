@@ -67,4 +67,4 @@ def clamp(value: Number | Sequence[Number], power: Real) -> Number | Sequence[Nu
 # euclidean norm
 abs = functools.partial(norm, power = 2)
 sgn = functools.partial(normalize, power = 2)
-clamp_2 = functools.partial(clamp, power = 2)
+#clamp_2 = functools.partial(clamp, power = 2)

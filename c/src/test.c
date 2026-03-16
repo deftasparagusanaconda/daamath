@@ -3,7 +3,6 @@
 
 int main(void)
 {
-	printf("%.99lf\n", DM_PI);
-	printf("%s\n", DM_BRACKET_SQUARE);
+	printf("%d", pow(2, 3));
 	return 0;
 }

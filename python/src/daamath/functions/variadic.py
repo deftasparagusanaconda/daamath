@@ -1,20 +1,18 @@
+from numbers import Number, Real
 from collections.abc import Iterable
+import math, builtins, statistics
 
-def vand(iterable: Iterable[bool]) -> bool:
-	'variadic AND gate'
-	return all(iterable)
+# variadic and. unicode : ⋀
+from builtins import all
 
-def vor(iterable: Iterable[bool]) -> bool:
-	'variadic OR gate'
-	return any(iterable)
+# variadic or. unicode: ⋁
+from builtins import any
 
-def vadd(iterable: Iterable[int | float | complex]) -> int | float | complex:
-	'variadic addition'
-	return sum(iterable)
+# variadic add. unicode: ∑
+from builtins import sum
 
-def vmul(iterable: Iterable[int | float | complex]) -> int | float | complex:
-	'variadic multiplication'
-	return _math.prod(iterable)
+# variadic mul. unicode: ∏
+from math import prod
 
 def vparallel(iterable: Iterable[int | float | complex]) -> int | float | complex: 
 	'variadic parallel'
@@ -34,3 +32,22 @@ def vparallel(iterable: Iterable[int | float | complex]) -> int | float | comple
 
 	return numerator / denominator
 
+from statistics import mean as amean, harmonic_mean as hmean, geometric_mean as gmean
+
+# pmean with power = −∞
+from builtins import min
+
+# pmean with power = +∞
+from builtins import max
+
+def pmean(data: Iterable[Number], *, power: Real = 1) -> Number:
+	'power mean AKA generalized mean (p=1: arithmetic, 0: geometric, -1: harmonic)'
+	if power == -math.inf:
+		return min(data)
+	elif power == math.inf:
+		return max(data)
+	else:
+		return (sum(x ** power for x in data) / len(data)) ** (1 / power)
+
+
+from statistics import median, mode, variance as var, stdev
