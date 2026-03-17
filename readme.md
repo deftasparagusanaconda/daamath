@@ -17,22 +17,23 @@ pip install daamath
 
 # functions
 
-<details open><summary>arithmetic</summary>
-
-complex numbers are fully supported but type will not always be promoted to complex. for example, log will promote to complex only when negative input is given. or sqrt(−4) will appropriately promote to a complex 2𝑖
+<details open><summary>hyperoperation</summary>
 
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
-inc         │ incrementation           │            ++2 = 3
-dec         │ decrementation           │            --2 = 1
-add         │ addition                 │         −5 + 2 = −3
-sub         │ subtraction              │         −5 − 2 = −7
-mul         │ multiplication           │         −5 × 2 = −10
-div         │ division                 │         −5 ∕ 2 = −2.5
-pow         │ exponentiation           │     pow(-5, 2) = 0.03125
-log         │ logarithm                │     log(−5, 2) ≈ 2.322 + 4.532𝑖
-root        │ nᵗʰ root                 │    root(−5, 2) ≈ 2.23606797𝑖
+inc         │ incrementation           │            ++3 =  4
+dec         │ decrementation           │            --3 =  2
+add         │ addition                 │          2 + 3 =  5
+sub         │ subtraction              │          2 − 3 = −1
+mul         │ multiplication           │          2 × 3 =  6
+div         │ division                 │          2 ∕ 3 =  0.(6)
+pow         │ exponentiation           │          2 ^ 3 =  8
+log         │ logarithm                │        log₂(3) ≈ 1.58496250072
+root        │ nᵗʰ root                 │            ²√3 ≈ 1.73205080757
+spow        │ tetration                │     
+slog        │ super-logarithm          │
+sroot       │ super-root               │      
 ```
 
 extra:
@@ -42,40 +43,37 @@ name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
 ainv        │ additive inverse         │             −2 = −2
 minv        │ multiplicative inverse   │             ⅟2 = 0.5
-spow        │ tetration                │     spow(-5,2) = 
-sroot       │ nᵗʰ super-root           │    sroot(−5,2) = 
-slog        │ super-logarithm          │     slog(−5,2) = 
-exp_e       │ exponentiation base 𝑒    │          e ^ 2 ≈ 7.389056098930
-exp_2       │ exponentiation base 2    │        exp2(2) = 4
-exp_10      │ exponentiation base 10   │       exp10(2) = 100
-log_e       │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
+exp         │ exponentiation base 𝑒    │          e ^ 2 ≈ 7.389056098930
+pow_2       │ exponentiation base 2    │          2 ^ 2 = 4
+pow_10      │ exponentiation base 10   │         10 ^ 2 = 100
+ln          │ logarithm base 𝑒         │        logₑ(2) ≈ 0.693147180559
 log_2       │ logarithm base 2         │        log₂(2) = 1
 log_10      │ logarithm base 10        │        log⏨(2) ≈ 0.30103
-powm1       │ pow(a, b) − 1            │   powm1(−5, 2) = 
-expm1       │ exp(a) − 1               │       expm1(2) ≈ 6.38905609893065
-expm1_2     │ exp2(a) − 1              │      exp₂m1(2) = 3
-expm1_10    │ exp10(a) − 1             │      exp⏨m1(2) = 99
-logp1       │ log(abs + 1, b)          │       logp1(2) = 
-logp1_e     │ loge(a + 1)              │      logₑp1(2) ≈ 
-logp1_2     │ log2(a + 1)              │      log₂p1(2) ≈ 
-logp1_10    │ log10(a + 1)             │      log⏨p1(2) ≈ 
-parallel    │ parallel operator        │ parallel(−5,2) = 3.(3)
+expm1       │ exp(a) − 1               │     exp(2) - 1 ≈ 6.38905609893065
+ln1p        │ ln(1 + a)                │        ln(1p2) = 
+parallel    │ parallel operator        │         −5 ∥ 2 = 3.(3)
 gcd         │ greatest common divisor  │       gcd(2,3) = 1
 lcm         │ lowest common multiple   │       lcm(2,3) = 6
 hyper       │ hyperoperation           │   hyper(1,2,3) = 5
 ```
 
 </details>
-<details open><summary>arithmetic</summary>
+<details open><summary>rounding</summary>
 
 ```
 name        │ explanation              │ example
 ────────────┼──────────────────────────┼────────────────────────────────
-round       │ round to nearest integer │    round(1.23) = 1
-floor       │ round towards −∞         │    floor(1.23) = 1
-ceil        │ round towards +∞         │     ceil(1.23) = 1
-trunc       │ round towards 0          │    trunc(1.23) = 1
-away        │ round away from 0        │     away(1.23) = 1
+floor       │ round towards −∞         │       floor(1.5) = 1
+ceil        │ round towards +∞         │        ceil(1.5) = 2
+trunc       │ round towards 0          │       trunc(1.5) = 1
+away        │ round away from 0        │        away(1.5) = 2
+round       │ round to nearest integer │       round(1.5) = 2
+round_floor │ tie break towards −∞     │ round_floor(1.5) = 1
+round_ceil  │ tie break towards +∞     │  round_ceil(1.5) = 1
+round_trunc │ tie break towards 0      │ round_trunc(1.5) = 1
+round_away  │ tie break away from 0    │  round_away(1.5) = 1
+round_even  │ tie break towards even   │  round_even(1.5) = 1
+round_odd   │ tie break towards odd    │   round_odd(1.5) = 1
 ```
 
 `mod(a, b)` is generalized by `rem(a, b, mode = floor)`
