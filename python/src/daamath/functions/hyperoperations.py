@@ -5,6 +5,7 @@
 import math, cmath, functools
 from numbers import Number, Real
 from typing import Literal
+from ..exceptions import DomainError
 
 '''
 instead of:
@@ -42,56 +43,152 @@ where we X is the variable we solve for in the equation a  b = c
 #h0c = functools.partial(h1c, a = 1)
 def inc(b):
     'c = ++b, incrementation. the 0th hyperoperation'
-    return b + 1
+    c = b + 1
+
+    if type(c) != type(b):
+        raise DomainError(inc, (b, ), c)
+
+    return c
     
 #h0b = functools.partial(h1b, x = 1)
 def dec(c):
     'b = --c, decrementation. the inverse of the 0th hyperoperation'
-    return c - 1
+    b = c - 1
+
+    if type(b) != type(c):
+        raise DomainError(dec, (c, ), b)
+
+    return c
     
 def add(a, b):
     'c = a + b, addition. the 1st hyperoperation'
-    return a + b
+    if type(a) != type(b):
+        raise TypeError(f'{a} and {b} must be same type')
+
+    c = a + b
+
+    if type(a) != type(c):
+        raise DomainError(add, (a, b), c)
+    
+    return c
 
 def sub(c, a):
     'b = c - a, left subtraction. the inverse of the 1st hyperoperation'
-    return c - a
+    if type(c) != type(a):
+        raise TypeError(f'{c} and {a} must be same type')
+    
+    b = c - a
+    
+    if type(b) != type(c):
+        raise DomainError(sub, (c, a), b)
+    
+    return b
 
 def mul(a, b):
     'c = a * b, multiplication. the 2nd hyperoperation'
-    return a * b
+    if type(a) != type(b):
+        raise TypeError(f'{a} and {b} must be same type')
+
+    c = a * b
+
+    if type(c) != type(a):
+        raise DomainError(mul, (a, b), c)
+    
+    return c
 
 def div(c, a):
     'b = c / a, left division. the inverse of the 2nd hyperoperation'
-    return c / a
+    if type(c) != type(a):
+        raise TypeError(f'{c} and {a} must be same type')
+
+    if isinstance(a, int) and a % b != 0:
+        raise DomainError
+    b = c / a
+    
+    if type(b) != type(c):
+        raise DomainError(div, (c, a), b)
+
+    return b
 
 def pow(a, b):
     'c = a ^ b, power, exponentiation. the 3rd hyperoperation'
-    return a ** b
+    if type(a) != type(b):
+        raise TypeError(f'{a} and {b} must be same type')
+
+    c = a ** b
+    
+    if type(c) != type(a):
+        raise DomainError(pow, (a, b), c)
+
+    return c
 
 def log(a, c):
     'b = log_a(c), logarithm. the inverse of the 3rd hyperoperation that solves for b'
     # c = a ^ b
-    try:    return math.log(c, a)
-    except: return cmath.log(c, a)
+    if type(a) != type(c):
+        raise TypeError(f'{a} and {c} must be same type')
 
+    try:
+        b = math.log(c, a)
+    except:
+        b = cmath.log(c, a)
+
+    if type(b) != type(a):
+        raise DomainError(log, (a, c), b)
+
+    return b
+    
 def root(b, c):
     'a = b √ c, n-th root. the inverse of the 3rd hyperoperation that solves for a'
+    if type(b) != type(c):
+        raise TypeError(f'{b} and {c} must be same type')
     # c = a ^ b
-    return c ** (1 / b)
+    a = c ** (1 / b)
+    
+    if type(a) != type(b):
+        raise DomainError(root, (b, c), a)
+
+    return a
 
 def spow(a, b):
     'c = a ↑ b, tetration, superexponentiation, the 4th hyperoperation'
-    raise NotImplementedError
+    if type(a) != type(b):
+        raise TypeError(f'{a} and {b} must be same type')
 
-def slog(c, a):
+    raise NotImplementedError
+    
+    if type(c) != type(a):
+        raise DomainError(spow, (a, b), c)
+    
+    return c
+
+def slog(a, c):
     'b = slog_a(c), superlogarithm, the inverse of the 4th hyperoperation'
-    raise NotImplementedError
+    if type(a) != type(c):
+        raise TypeError(f'{a} and {c} must be same type')
 
-def sroot(c, b):
+    raise NotImplementedError
+    
+    if type(b) != type(a):
+        raise DomainError(slog, (a, c), b)
+    
+    return b
+
+def sroot(b, c):
     'superroot. idfk what this is supposed to be in terms of code'
+    if type(b) != type(c):
+        raise TypeError(f'{b} and {c} must be same type')
+
     raise NotImplementedError
 
+    if type(b) != type(a):
+        raise DomainError(slog, (b, c), a)
+    
+    return a
+
+
+'''
+# this thing is just a novelty
 def hyper(
         left: Number, 
         right: Number, 
@@ -125,3 +222,4 @@ def hyper(
                 case _: raise NotImplementedError
         case _:
             raise ValueError("invalid solve parameter. must be one of {'a', 'b', 'c'}")
+'''

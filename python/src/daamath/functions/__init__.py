@@ -10,7 +10,7 @@ from .hyperoperations_extra import ainv, minv, square, cube, sqrt, cbrt, rsquare
 from .complex import real, imag, arg, rect, polar, conj
 from .complex_extra import cis
 
-from .trigonometric import sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec, acsc, sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsc
+from .trigonometric import sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec, acsc, sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsch
 from .trigonometric_extra import atan2, sinc
 
 from .logical import not_, and_, or_, xor, imp, con, nand, nor, nxor, nimp, ncon

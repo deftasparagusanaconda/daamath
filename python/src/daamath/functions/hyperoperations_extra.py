@@ -1,13 +1,26 @@
 import math, cmath
 from numbers import Number, Real
+from ..exceptions import DomainError
 
 def ainv(a: Number) -> Number:
     'sub(0, a), additive inverse'
-    return -a
+    
+    b = -a
+    
+    if type(a) != type(b):
+        raise DomainError(ainv, (a, ), b)
+    
+    return b
 
 def minv(a: Number) -> Number:
     'div(1, a), multiplicative inverse'
-    return 1 / a
+    b = 1 / a
+
+    if type(a) != type(b):
+        raise DomainError(minv, (a, ), b)
+
+    return b
+
 '''
 def abs_sq(a: Number) -> Real:
     if isinstance(x, Complex):

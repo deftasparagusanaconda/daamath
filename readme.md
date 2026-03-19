@@ -7,6 +7,13 @@
 
 a mathematician's spellbook. cross-language, highly predictable, highly mathematical
 
+features: 
+- cross-language consistency
+- no implicit type promotion
+- complete sets of functions
+- mathematical unicode characters
+- mathematical constants
+
 # install
 
 python:

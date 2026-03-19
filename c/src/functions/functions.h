@@ -1,3 +1,3 @@
-#include "arithmetic.h"
+#include "hyperoperations.h"
 #include "trigonometric.h"
-#include "hyperbolic.h"
+#include "logical.h"

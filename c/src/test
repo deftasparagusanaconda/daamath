@@ -1,0 +1,3 @@
+#!/bin/sh
+
+clear && gcc -lm test.c functions/hyperoperations.c functions/trigonometric.c functions/logical.c && ./a.out
