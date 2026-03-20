@@ -41,42 +41,42 @@ later, we shall support float, uint* types, int*, float*, complex* etc etc. but 
 #include <math.h>
 
 
-// incrementation. closed on N, Z, R, C
-unsigned int _dm_inc_unsigned_int(unsigned int b)
+// successor. closed on N, Z, R, C
+unsigned int _dm_succ_unsigned_int(unsigned int b)
 {
-	return ++b;
+	return b + 1;
 }
-int _dm_inc_int (int b) 
-{	
-	return ++b;
-}
-double _dm_inc_double(double b)
+int _dm_succ_int (int b) 
 {	
 	return b + 1;
 }
-double complex _dm_inc_double_complex(double complex b) 
+double _dm_succ_double(double b)
+{	
+	return b + 1;
+}
+double complex _dm_succ_double_complex(double complex b) 
 {	
 	return b + 1;
 }
 
-// decrementation. closed on ℤ, ℝ, ℂ but not on ℕ
-unsigned int _dm_dec_unsigned_int(unsigned int c) 
+// predecessor. closed on ℤ, ℝ, ℂ but not on ℕ
+unsigned int _dm_pred_unsigned_int(unsigned int c) 
 {	
 	// since -1 doesnt exist for natural numbers ℕ
 	if (c == 0)
 		errno = EDOM;
-
-	return --c;
+	
+	return c - 1;
 }
-int _dm_dec_int(int c)
+int _dm_pred_int(int c)
 {
-	return --c;
+	return c - 1;
 }
-double _dm_dec_double(double c)
+double _dm_pred_double(double c)
 {	
 	return c - 1;
 }
-double complex _dm_dec_double_complex(double complex c)
+double complex _dm_pred_double_complex(double complex c)
 {	
 	return c - 1;
 }
@@ -179,7 +179,7 @@ int _dm_pow_int(int a, int b)
 	
 	return pow(a, b);
 }
-int dm_dm_pow_i(int a, int b)
+int _dm_pow_i(int a, int b)
 {
     if (a == 0 && b == 0) { errno = EDOM; return 0; }
     if (a == 0)           { return 0; }

@@ -7,12 +7,12 @@
     double complex: _Generic((b), double complex: 1, default: 0), \
     default: 0 \
 )
-
+/*
 #define _dm_check_types(a, b, fname) _Static_assert( \
     _dm_same_type(a, b), \
     fname ": arguments must be of same type" \
 )
-
+*/
 /*
 #define _dm_check_types(a, b, fname) _Generic((a), \
     unsigned int:   _Static_assert(_Generic((b), unsigned int:   1, default: 0), \
@@ -45,17 +45,17 @@
   )
 */
 
-// incrementation ++b = c
-unsigned int   _dm_inc_unsigned_int    (                  unsigned int   b); 
-int            _dm_inc_int             (                  int            b);
-double         _dm_inc_double          (                  double         b);
-double complex _dm_inc_double_complex  (                  double complex b);
+// successor b + 1 = c
+unsigned int   _dm_succ_unsigned_int   (                  unsigned int   b); 
+int            _dm_succ_int            (                  int            b);
+double         _dm_succ_double         (                  double         b);
+double complex _dm_succ_double_complex (                  double complex b);
 
-// decrementation --c = b
-unsigned int   _dm_dec_unsigned_int    (unsigned int   c                  ); 
-int            _dm_dec_int             (int            c                  ); 
-double         _dm_dec_double          (double         c                  ); 
-double complex _dm_dec_double_complex  (double complex c                  ); 
+// predecessor c - 1 = b
+unsigned int   _dm_pred_unsigned_int   (unsigned int   c                  ); 
+int            _dm_pred_int            (int            c                  ); 
+double         _dm_pred_double         (double         c                  ); 
+double complex _dm_pred_double_complex (double complex c                  ); 
 
 // addition a + b = c
 unsigned int   _dm_add_unsigned_int    (unsigned int   a, unsigned int   b);
@@ -114,6 +114,9 @@ unsigned int   _dm_sroot_unsigned_int  (unsigned int   a, unsigned int   c);
 int            _dm_sroot_int           (int            a, int            c);
 double         _dm_sroot_double        (double         a, double         c);
 double complex _dm_sroot_double_complex(double complex a, double complex c);
+
+#define succ(b) 
+#define pred(c) 
 
 #define dm_add(a, b) ({ \
     _Static_assert( \

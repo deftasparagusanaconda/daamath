@@ -4,7 +4,7 @@
 
 from . import hyperoperations, hyperoperations_extra, complex, complex_extra, trigonometric, trigonometric_extra, logical, interval, combinatorial, variadic, rounding, sigmoids, mapping, tensor, floating, miscellaneous
 
-from .hyperoperations import inc, dec, add, sub, mul, div, pow, log, root, spow, slog, sroot#, hyper
+from .hyperoperations import succ, pred, add, sub, mul, div, pow, log, root, spow, slog, sroot#, hyper
 from .hyperoperations_extra import ainv, minv, square, cube, sqrt, cbrt, rsquare, rcube, rsqrt, rcbrt, pow_2, pow_10, log_2, log_10, exp, ln, expm1, ln1p
  
 from .complex import real, imag, arg, rect, polar, conj

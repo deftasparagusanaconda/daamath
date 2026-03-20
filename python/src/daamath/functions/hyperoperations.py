@@ -9,15 +9,15 @@ from ..exceptions import DomainError
 
 '''
 instead of:
-                    root   sroot
-                     |      |
-                    pow -- spow -- …
-                  /
-inc -- add -- mul   
- |      |      |  \
-dec    sub    div   exp -- sexp -- …
-                     |      |
-                    log    slog 
+                     root   sroot
+                      |      |
+                     pow -- spow -- …
+                   /
+succ -- add -- mul   
+ |       |      |  \
+pred    sub    div   exp -- sexp -- …
+                      |      |
+                     log    slog 
 
 we should have:
 X       h0X     h1X     h2X     h3X     h4X     h5X     …
@@ -41,22 +41,22 @@ where we X is the variable we solve for in the equation a  b = c
 # but this would imply that the three variables are involved in a cyclic relation a → b → c → a when, really, they are involved in a 2 → 1 relation a, b → c. thats why when solving for b and a, we make it intentionally asymmetric. and the only way to do that is to have the first signature set i proposed
 
 #h0c = functools.partial(h1c, a = 1)
-def inc(b):
-    'c = ++b, incrementation. the 0th hyperoperation'
+def succ(b):
+    'c = ++b, successor. the 0th hyperoperation'
     c = b + 1
 
     if type(c) != type(b):
-        raise DomainError(inc, (b, ), c)
+        raise DomainError(succ, (b, ), c)
 
     return c
     
 #h0b = functools.partial(h1b, x = 1)
-def dec(c):
-    'b = --c, decrementation. the inverse of the 0th hyperoperation'
+def pred(c):
+    'b = --c, predecessor. the inverse of the 0th hyperoperation'
     b = c - 1
 
     if type(b) != type(c):
-        raise DomainError(dec, (c, ), b)
+        raise DomainError(pred, (c, ), b)
 
     return c
     
