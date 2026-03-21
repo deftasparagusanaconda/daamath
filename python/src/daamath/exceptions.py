@@ -2,9 +2,13 @@ from collections.abc import Callable
 from typing import Any
 
 class DomainError(ArithmeticError):
-    def __init__(self, function: Callable, inputs: tuple[Any], output: Any):
-
-        function: str = function.__name__
+    def __init__(self, function_or_str: Callable | str, inputs: tuple[Any] = None, output: Any = None):
+        
+        if inputs is None and output is None:
+            super().__init__(function_or_str)
+            return
+        
+        function: str = function_or_str.__name__
         inputs: str = ', '.join(f'{type(input).__name__} {input}' for input in inputs)
         output: str = f'{type(output).__name__} {output}'
         

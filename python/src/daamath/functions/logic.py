@@ -42,7 +42,7 @@ NBAT
 # 1110 nand  (complement of intersection)
 # 1111 all
 '''
-def not_(a: bool | int | set, *, universe: set = None) -> bool | int | set:
+def tf(a: bool | int | set, *, universe: set = None) -> bool | int | set:
     'not, negation, complement'
     match a:
         case bool(): return not a
@@ -50,7 +50,7 @@ def not_(a: bool | int | set, *, universe: set = None) -> bool | int | set:
         case  set(): return universe.difference(a)
         case      _: raise TypeError
 
-def and_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def ffft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'conjunction, intersection'
     match a:
         case bool(): return a and b
@@ -58,7 +58,7 @@ def and_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case  set(): return a.intersection(b)
         case      _: raise TypeError
 
-def or_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def fttt(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'disjunction, union'
     match a:
         case bool(): return a or b
@@ -66,7 +66,7 @@ def or_(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bo
         case  set(): return a.union(b)
         case      _: raise TypeError
 
-def xor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def fttf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'exclusive disjunction, symmetric difference'
     match a:
         case bool(): return a != b
@@ -74,7 +74,7 @@ def xor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bo
         case  set(): return a.symmetric_difference(b)
         case      _: raise TypeError()
 
-def imp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def ttft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'implication'
     match a:
         case bool(): return a <= b
@@ -82,36 +82,36 @@ def imp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bo
         case  set(): raise NotImplementedError
         case      _: raise TypeError()
 
-def con(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
-    'implication'
+def tftt(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'converse implication'
     match a:
         case bool(): return a >= b
         case  int(): return a | b
         case  set(): raise NotImplementedError
         case      _: raise TypeError()
 
-def nand(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def tttf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     match a:
         case bool(): return not (a and b)
         case  int(): return ~(a & b)
         case  set(): raise NotImplementedError
         case      _: raise TypeError()
     
-def nor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def tfff(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     match a:
         case bool(): return not(a or b)
         case  int(): return ~(a | b)
         case  set(): raise NotImplementedError
         case      _: raise TypeError()
 
-def nxor(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def tfft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     match a:
         case bool(): return a == b
         case  int(): return ~(a ^ b)
         case  set(): raise NotImplementedError
         case      _: raise TypeError()
 
-def nimp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def fftf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'not(imp)'
     match a:
         case bool(): return a > b
@@ -119,7 +119,7 @@ def nimp(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case  set(): return a.difference(b)
         case      _: raise TypeError()
 
-def ncon(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+def ftff(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
     'not(con)'
     match a:
         case bool(): return a < b

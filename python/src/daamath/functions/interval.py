@@ -57,43 +57,43 @@
 
 from numbers import Real
 
-def lt(a: Real, b: Real) -> bool:
+def iee(a: Real, b: Real) -> bool:
 	'a < b'
 	return a < b
 
-def le(a: Real, b: Real) -> bool:
+def iie(a: Real, b: Real) -> bool:
 	'a ≤ b'
 	return a <= b
 
-def eq(a: Real, b: Real) -> bool:
+def iei(a: Real, b: Real) -> bool:
 	'a = b'
 	return a == b
 
-def ne(a: Real, b: Real) -> bool:
+def eie(a: Real, b: Real) -> bool:
 	'a ≠ b'
 	return a != b
 
-def ge(a: Real, b: Real) -> bool:
+def eii(a: Real, b: Real) -> bool:
 	'a ≥ b'
 	return a >= b
 
-def gt(a: Real, b: Real) -> bool:
+def eei(a: Real, b: Real) -> bool:
 	'a > b'
 	return a > b
 
-def oo(x: Real, a: Real, b: Real) -> bool:
+def eeiee(x: Real, a: Real, b: Real) -> bool:
 	'a < x < b, x ∈ (a, b)'
 	return a < x < b
 
-def oc(x: Real, a: Real, b: Real) -> bool:
+def eeiie(x: Real, a: Real, b: Real) -> bool:
 	'a < x ≤ b, x ∈ (a, b]'
 	return a < x <= b
 
-def co(x: Real, a: Real, b: Real) -> bool:
+def eiiee(x: Real, a: Real, b: Real) -> bool:
 	'a ≤ x < b, x ∈ [a, b)'
 	return a <= x < b
 
-def cc(x: Real, a: Real, b: Real) -> bool:
+def eiiie(x: Real, a: Real, b: Real) -> bool:
 	'a ≤ x ≤ b, x ∈ [a, b]'
 	return a <= x <= b
 

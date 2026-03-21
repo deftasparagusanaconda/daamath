@@ -2,11 +2,6 @@
 # because the tensor object should know itself how to do basic math ops. an operator is an operator.. an object should know what to do with an operator.
 # its also because this tensor mechanism is hard to scale across languages
 
-import math, cmath, functools
-from numbers import Number, Real
-from typing import Literal
-from ..exceptions import DomainError
-
 '''
 instead of:
                      root   sroot
@@ -38,11 +33,19 @@ where we X is the variable we solve for in the equation a  b = c
 # hXb(c, a)
 # hXa(b, c)
 #
-# but this would imply that the three variables are involved in a cyclic relation a → b → c → a when, really, they are involved in a 2 → 1 relation a, b → c. thats why when solving for b and a, we make it intentionally asymmetric. and the only way to do that is to have the first signature set i proposed
+# but this would imply that the three variables are involved in a cyclic relation a → b → c → a when, really, they are involved in a 2 → 1 relation a, b → c. thats why when solving for b and a, we make it intentionally asymmetric
+
+import math, cmath, functools
+from numbers import Number, Real, Integral
+from typing import Literal
+from ..exceptions import DomainError
+
 
 #h0c = functools.partial(h1c, a = 1)
-def succ(b):
+def h0c(b: Integral) -> Integral:
     'c = ++b, successor. the 0th hyperoperation'
+    if not isinstance(b, Integral):
+        raise DomainError('')
     c = b + 1
 
     if type(c) != type(b):
@@ -51,7 +54,7 @@ def succ(b):
     return c
     
 #h0b = functools.partial(h1b, x = 1)
-def pred(c):
+def h0b(c):
     'b = --c, predecessor. the inverse of the 0th hyperoperation'
     b = c - 1
 
@@ -60,7 +63,7 @@ def pred(c):
 
     return c
     
-def add(a, b):
+def h1c(a, b):
     'c = a + b, addition. the 1st hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -72,7 +75,7 @@ def add(a, b):
     
     return c
 
-def sub(c, a):
+def h1b(c, a):
     'b = c - a, left subtraction. the inverse of the 1st hyperoperation'
     if type(c) != type(a):
         raise TypeError(f'{c} and {a} must be same type')
@@ -84,7 +87,7 @@ def sub(c, a):
     
     return b
 
-def mul(a, b):
+def h2c(a, b):
     'c = a * b, multiplication. the 2nd hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -96,7 +99,7 @@ def mul(a, b):
     
     return c
 
-def div(c, a):
+def h2b(c, a):
     'b = c / a, left division. the inverse of the 2nd hyperoperation'
     if type(c) != type(a):
         raise TypeError(f'{c} and {a} must be same type')
@@ -110,7 +113,7 @@ def div(c, a):
 
     return b
 
-def pow(a, b):
+def h3c(a, b):
     'c = a ^ b, power, exponentiation. the 3rd hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -122,7 +125,7 @@ def pow(a, b):
 
     return c
 
-def log(a, c):
+def h3b(a, c):
     'b = log_a(c), logarithm. the inverse of the 3rd hyperoperation that solves for b'
     # c = a ^ b
     if type(a) != type(c):
@@ -138,7 +141,7 @@ def log(a, c):
 
     return b
     
-def root(b, c):
+def h3a(b, c):
     'a = b √ c, n-th root. the inverse of the 3rd hyperoperation that solves for a'
     if type(b) != type(c):
         raise TypeError(f'{b} and {c} must be same type')
@@ -150,7 +153,7 @@ def root(b, c):
 
     return a
 
-def spow(a, b):
+def h4c(a, b):
     'c = a ↑ b, tetration, superexponentiation, the 4th hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -162,7 +165,7 @@ def spow(a, b):
     
     return c
 
-def slog(a, c):
+def h4b(a, c):
     'b = slog_a(c), superlogarithm, the inverse of the 4th hyperoperation'
     if type(a) != type(c):
         raise TypeError(f'{a} and {c} must be same type')
@@ -174,7 +177,7 @@ def slog(a, c):
     
     return b
 
-def sroot(b, c):
+def h4a(b, c):
     'superroot. idfk what this is supposed to be in terms of code'
     if type(b) != type(c):
         raise TypeError(f'{b} and {c} must be same type')

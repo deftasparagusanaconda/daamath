@@ -1,18 +1,18 @@
 from numbers import Number, Real
 from collections.abc import Iterable
-import math, builtins, statistics
+import math, builtins, statistics, functools
 
 # variadic and. unicode : ⋀
-from builtins import all
+from builtins import all as vffft
 
 # variadic or. unicode: ⋁
-from builtins import any
+from builtins import any as vfttt
 
 # variadic add. unicode: ∑
-from builtins import sum
+from builtins import sum as vh1c
 
 # variadic mul. unicode: ∏
-from math import prod
+from math import prod as vh2c
 
 def vparallel(iterable: Iterable[int | float | complex]) -> int | float | complex: 
 	'variadic parallel'
@@ -32,15 +32,15 @@ def vparallel(iterable: Iterable[int | float | complex]) -> int | float | comple
 
 	return numerator / denominator
 
-from statistics import mean as amean, harmonic_mean as hmean, geometric_mean as gmean
+from statistics import mean as mean__p1, harmonic_mean as mean__n1, geometric_mean as mean__0
 
 # pmean with power = −∞
-from builtins import min
+from builtins import min as mean__ninf
 
 # pmean with power = +∞
-from builtins import max
+from builtins import max as mean__pinf
 
-def pmean(data: Iterable[Number], *, power: Real = 1) -> Number:
+def mean(data: Iterable[Number], *, power: Real = 1) -> Number:
 	'power mean AKA generalized mean (p=1: arithmetic, 0: geometric, -1: harmonic)'
 	if power == -math.inf:
 		return min(data)
@@ -49,5 +49,7 @@ def pmean(data: Iterable[Number], *, power: Real = 1) -> Number:
 	else:
 		return (sum(x ** power for x in data) / len(data)) ** (1 / power)
 
+mean__p2 = functools.partial(mean, power = 2)
+mean__p3 = functools.partial(mean, power = 3)
 
-from statistics import median, mode, variance as var, stdev
+#from statistics import median, mode, variance as var, stdev

@@ -65,6 +65,6 @@ def clamp(value: Number | Sequence[Number], power: Real) -> Number | Sequence[Nu
     return value / magnitude if magnitude > 1 else value
 
 # euclidean norm
-abs = functools.partial(norm, power = 2)
-sgn = functools.partial(normalize, power = 2)
+norm__2 = functools.partial(norm, power = 2)
+normalize__2 = functools.partial(normalize, power = 2)
 #clamp_2 = functools.partial(clamp, power = 2)
