@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>logic - daamath</title>
+        <title>trigonometry - daamath</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -43,11 +43,11 @@
 </li>
                                     
 <li>
-    <a href="../trigonometry/" class="dropdown-item">trigonometry</a>
+    <a href="./" class="dropdown-item active" aria-current="page">trigonometry</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">logic</a>
+    <a href="../logic/" class="dropdown-item">logic</a>
 </li>
                                     
 <li>
@@ -74,12 +74,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../trigonometry/" class="nav-link">
+                                <a rel="prev" href="../hyperoperation/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../interval/" class="nav-link">
+                                <a rel="next" href="../logic/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -101,7 +101,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#logic" class="nav-link">logic</a>
+            <li class="nav-item" data-bs-level="1"><a href="#trigonometry" class="nav-link">trigonometry</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#introduction" class="nav-link">introduction</a>
               <ul class="nav flex-column">
@@ -111,11 +111,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#type-support" class="nav-link">type support</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#notes" class="nav-link">notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#rant" class="nav-link">rant</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -126,91 +122,94 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="logic">logic</h1>
-<p>we deal with logic that takes on False or True, F or T, 0 or 1, (uptack and downtack symbols here, daa!), OFF or ON, etc. we can create functions that take in these logical values and return some logical value. </p>
+<h1 id="trigonometry">trigonometry</h1>
+<p>daamath maintains the full lattice of trigonometric functions. we also expose their relationship directly from [hypercomplex] algebra, believe it or not</p>
 <h2 id="introduction">introduction</h2>
-<p>there are many many logical gates. we can construct all the possible gates in a very neat way: </p>
-<p><img alt="gates" src="../diagrams/daamath-logic.drawio.svg" /></p>
-<p>with n inputs, we have 2^n possible permutations. for 2^n permutations, we have 2^2^n gates. </p>
-<p>with n = 0, we have 2 nullary gates<br />
-with n = 1, we have 4 unary gates<br />
-with n = 2, we have 16 binary gates<br />
-with n = 3, we suddenly have 256 ternary gates. since there are so many, and because they can be composed from binary gates anyway, daamath does not maintain gates of <a href="https://en.wikipedia.org/wiki/Arity?wprov=sfla1">arity</a> &gt; 2.  </p>
-<h3 id="nullary-gates">nullary gates</h3>
-<p>F false 
-T true </p>
-<p>there are technically boolean gates with zero inputs but they are better modelled as constants, in daamath.constants.</p>
-<h3 id="unary-gates">unary gates</h3>
-<p>0 1 
-F F false (nullary)
-F T id 
-T F not
-T T true (nullary)</p>
-<p>the <code>id</code> gate is useless because writing <code>id(value)</code> is the same as writing <code>value</code> directly</p>
-<p>thus we have one useful unary gate</p>
-<h3 id="binary-gates">binary gates</h3>
-<p>A B
-0 0 Neither
-0 1 Second
-1 0 First
-1 1 Both</p>
-<p>NSFB
-0000 false (nullary)
-0001 all
-0010 ncon
-0011 fst (unary)
-0100 nimp
-0101 snd (unary)
-0110 xor
-0111 or
-1000 nor
-1001 nxor
-1010 nsnd (unary)
-1011 con 
-1100 nfst (unary)
-1101 imp
-1110 nand
-1111 (nullary)</p>
-<p>fst, snd, nfst, nsnd are useless because writing <code>fst(first, second)</code> <code>snd(first, second)</code> <code>nfst(first, second)</code> <code>nsnd(first, second)</code> are the same as writing <code>first</code> <code>second</code> <code>not(first)</code> <code>not(second)</code> directly</p>
-<p>thus we have 10 useful binary gates</p>
+<p>the trigonometric functions are derived from the exponential series </p>
+<p>x⁰/0! + x¹/1! + x²/2! + x³/3! + …</p>
+<p>where x = ι such that ι² ∈ {−1, 0, +1} (<a href="##rant">see why</a>)<br />
+totally we have 2 ⋅ 3 ⋅ 3P2 = 36 functions. 
+2 from the normal trig function and its inverse
+3 from the three geometries
+3P2 from a triangle of three sides, from which we take two sides</p>
+<p><img alt="the lattice" src="../diagrams/daamath-trigonometry.drawio.svg" /></p>
+<p>unfortunately, parabolic trigonometry is trivial, because . thus daamath excludes parabolic trigonometry and maintains 24 instead.</p>
+<p>lastly, you may notice that the word 'angle' is never mentioned. that is because, while angles are convenient in circular geometry, in hyperbolic functions, we dont take the angle of anything anymore. we take the semiarea of the hyperbola with the x = y line. in fact, in circular geometry, what we are really describing when we say 'the angle' is the semiarea subtended by the section. this idea of semiarea extends to parabolic geometry as well.</p>
 <h2 id="api-implementation">API implementation</h2>
-<h5 id="notvalue"><a href="https://en.wikipedia.org/wiki/Negation?wprov=sfla1">not</a>(value):</h5>
-<pre><code>negation is [involutive](https://en.wikipedia.org/wiki/Involution_%28mathematics%29?wprov=sfla1). if you apply it twice, it gives you the original value.
+<h5 id="sinsemiarea">sin(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of opposite to hypotenuse in circular geometry
 </code></pre>
-<h5 id="andfirst-second"><a href="https://en.wikipedia.org/wiki/Logical_conjunction?wprov=sfla1">and</a>(first, second):</h5>
-<pre><code>being associative, conjunction has a variadic version `all`. can also be thought of as intersection of sets
+<h5 id="cossemiarea">cos(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of adjacent to hypotenuse in circular geometry
 </code></pre>
-<h5 id="orfirst-second"><a href="https://en.wikipedia.org/wiki/Logical_disjunction?wprov=sfla1">or</a>(first, second):</h5>
-<pre><code>being associative, disjunction has a variadic version `any`. can also be thought of as union of sets.
+<h5 id="tansemiarea">tan(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of opposite to adjacent in circular geometry
 </code></pre>
-<h5 id="xorfirst-second"><a href="https://en.wikipedia.org/wiki/Exclusive_or?wprov=sfla1">xor</a>(first, second):</h5>
-<pre><code>being associative, exclusive disjunction has a variadic version `parity_odd`. can also be thought of as symmonric difference of sets
+<h5 id="cotsemiarea">cot(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of adjacent to opposite in circular geometry
 </code></pre>
-<h5 id="impfirst-second"><a href="https://en.wikipedia.org/wiki/Material_conditional?wprov=sfla1">imp</a>(first, second):</h5>
-<pre><code>material implication is distinctly directional. can also be thought of as difference of sets
+<h5 id="secsemiarea">sec(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of hypotenuse to adjacent in circular geometry
 </code></pre>
-<h5 id="confirst-second"><a href="https://en.wikipedia.org/wiki/Converse_%28logic%29?wprov=sfla1">con</a>(first, second):</h5>
-<pre><code>same as `imp(second, first)`. can also be thought of as difference of sets
+<h5 id="cscsemiarea">csc(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of hypotenuse to opposite in circular geometry
 </code></pre>
-<h5 id="nandfirst-second"><a href="https://en.wikipedia.org/wiki/Sheffer_stroke?wprov=sfla1">nand</a>(first, second):</h5>
-<pre><code>not(and(first, second))
+<h5 id="asinratio">asin(ratio):</h5>
+<pre><code>given the ratio of opposite to hypotenuse, return the semiarea in circular geometry
 </code></pre>
-<h5 id="norfirst-second"><a href="https://en.wikipedia.org/wiki/Logical_NOR?wprov=sfla1">nor</a>(first, second):</h5>
-<pre><code>not(or(first, second))
+<h5 id="acosratio">acos(ratio):</h5>
+<pre><code>given the ratio of adjacent to hypotenuse, return the semiarea in circular geometry
 </code></pre>
-<h5 id="nxorfirst-second"><a href="https://en.wikipedia.org/wiki/Logical_biconditional?wprov=sfla1">nxor</a>(first, second):</h5>
-<pre><code>not(xor(first, second)). being associative, it has a variadic version `parity_even`
+<h5 id="atanratio">atan(ratio):</h5>
+<pre><code>given the ratio of opposite to adjacent, return the semiarea in circular geometry
 </code></pre>
-<h5 id="nimpfirst-second">nimp(first, second):</h5>
-<pre><code>not(imp(first, second))
+<h5 id="acotratio">acot(ratio):</h5>
+<pre><code>given the ratio of adjacent to opposite, return the semiarea in circular geometry
 </code></pre>
-<h5 id="nconfirst-second">ncon(first. second):</h5>
-<pre><code>not(con(first, second))
+<h5 id="asecratio">asec(ratio):</h5>
+<pre><code>given the ratio of hypotenuse to adjacent, return the semiarea in circular geometry
 </code></pre>
-<h2 id="type-support">type support</h2>
-<p>in fact, these logical gates can be applied to more than just logical values. we can apply them to integers in 2's complement bitwise, and also to sets. for example, in python, <code>daamath.and</code> supports bool, int, and set as input. in C, <code>dm_and</code> supports bool and int, applying them logically or bitwise respectively.</p>
-<h2 id="notes">notes</h2>
-<p><code>nxor</code> is used instead of <code>xnor</code> to preserve consistency.</p></div>
+<h5 id="acscratio">acsc(ratio):</h5>
+<pre><code>given the ratio of hypotenuse to opposite, return the semiarea in circular geometry
+</code></pre>
+<h5 id="sinhsemiarea">sinh(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of opposite to hypotenuse in hyperbolic geometry
+</code></pre>
+<h5 id="coshsemiarea">cosh(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of adjacent to hypotenuse in hyperbolic geometry
+</code></pre>
+<h5 id="tanhsemiarea">tanh(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of opposite to adjacent in hyperbolic geometry
+</code></pre>
+<h5 id="cothsemiarea">coth(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of adjacent to opposite in hyperbolic geometry
+</code></pre>
+<h5 id="sechsemiarea">sech(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of hypotenuse to adjacent in hyperbolic geometry
+</code></pre>
+<h5 id="cschsemiarea">csch(semiarea):</h5>
+<pre><code>given the semiarea, return the ratio of hypotenuse to opposite in hyperbolic geometry
+</code></pre>
+<h5 id="asinhratio">asinh(ratio):</h5>
+<pre><code>given the ratio of opposite to hypotenuse, return the semiarea in hyperbolic geometry
+</code></pre>
+<h5 id="acoshratio">acosh(ratio):</h5>
+<pre><code>given the ratio of adjacent to hypotenuse, return the semiarea in hyperbolic geometry
+</code></pre>
+<h5 id="atanhratio">atanh(ratio):</h5>
+<pre><code>given the ratio of opposite to adjacent, return the semiarea in hyperbolic geometry
+</code></pre>
+<h5 id="acothratio">acoth(ratio):</h5>
+<pre><code>given the ratio of adjacent to opposite, return the semiarea in hyperbolic geometry
+</code></pre>
+<h5 id="asechratio">asech(ratio):</h5>
+<pre><code>given the ratio of hypotenuse to adjacent, return the semiarea in hyperbolic geometry
+</code></pre>
+<h5 id="acschratio">acsch(ratio):</h5>
+<pre><code>given the ratio of hypotenuse to opposite, return the semiarea in hyperbolic geometry
+</code></pre>
+<h2 id="rant">rant</h2>
+<p>why do trigonometric functions have anything to do with hypercomplex numbers? because the hypercomplex numbers encode geometries, which are beautifully expressed through these trig functions we have. there are three 2-dimensional unital algebrae: complex numbers, split-complex numbers, dual numbers. they correspond to circular, hyperbolic, and parabolic geometry.</p></div>
             </div>
         </div>
 
