@@ -100,13 +100,13 @@ sum   = dm.vh1c
 prod  = dm.vh2c
 all   = dm.vffft
 any   = dm.vfttt
-min   = dm.mean__ninf
-hmean = dm.mean__n1
+min   = dm.mean__h1b_0_inf
+hmean = dm.mean__h1b_0_1
 gmean = dm.mean__0
-amean = dm.mean__p1
-rms   = dm.mean__p2
-cmean = dm.mean__p3
-max   = dm.mean__pinf
+amean = dm.mean__1
+rms   = dm.mean__2
+cmean = dm.mean__3
+max   = dm.mean__inf
 
 # idk bro
 abs = dm.norm__2

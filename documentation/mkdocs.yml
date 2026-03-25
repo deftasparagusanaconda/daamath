@@ -1,0 +1,11 @@
+site_name: daamath
+nav:
+  - functions:
+    - hyperoperation: functions/hyperoperation.md
+    - trigonometry: functions/trigonometry.md
+    - logic: functions/logic.md
+    - interval: functions/interval.md
+    - quantize: functions/quantize.md
+  - strings: strings.md
+  - numbers: numbers.md
+#theme: readthedocs

@@ -16,7 +16,7 @@ from .trigonometry_extra import csoh2, csah2, csoa2, csao2, csha2, csho2, h2b_cr
 from .logic import tf, ffft, fttt, fttf, ttft, tftt, tttf, tfff, tfft, fftf, ftff
 from .interval import iee, iie, eie, iei, eii, eei, eeiee, eeiie, eiiee, eiiie
 
-from .variadic import vffft, vfttt, vh1c, vh2c, mean, mean__ninf, mean__n1, mean__0, mean__p1, mean__p2, mean__p3, mean__pinf, vparallel
+from .variadic import vffft, vfttt, vh1c, vh2c, mean, mean__h1b_0_inf, mean__h1b_0_1, mean__0, mean__1, mean__2, mean__3, mean__inf, vparallel
 from .combinatoric import fact, sumt, comb, perm, gcd, lcm
 from .quantization import round, round__true_floor, round__true_ceil, round__true_trunc, round__true_away, round__false_floor, round__false_ceil, round__false_trunc, round__false_away, round__false_even, round__false_odd, quot, rem, quotrem
 from .sigmoids import sigmoid_tan, sigmoid_tanh

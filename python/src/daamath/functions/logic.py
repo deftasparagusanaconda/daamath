@@ -51,7 +51,7 @@ def tf(a: bool | int | set, *, universe: set = None) -> bool | int | set:
         case      _: raise TypeError
 
 def ffft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
-    'conjunction, intersection'
+    'and, conjunction, intersection'
     match a:
         case bool(): return a and b
         case  int(): return a & b
@@ -59,7 +59,7 @@ def ffft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case      _: raise TypeError
 
 def fttt(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
-    'disjunction, union'
+    'or, disjunction, union'
     match a:
         case bool(): return a or b
         case  int(): return a | b
@@ -67,7 +67,7 @@ def fttt(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case      _: raise TypeError
 
 def fttf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
-    'exclusive disjunction, symmetric difference'
+    'xor, exclusive disjunction, symmetric difference'
     match a:
         case bool(): return a != b
         case  int(): return a ^ b
@@ -91,6 +91,7 @@ def tftt(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case      _: raise TypeError()
 
 def tttf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'nand, not(and)'
     match a:
         case bool(): return not (a and b)
         case  int(): return ~(a & b)
@@ -98,6 +99,7 @@ def tttf(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case      _: raise TypeError()
     
 def tfff(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'nor, not(or)'
     match a:
         case bool(): return not(a or b)
         case  int(): return ~(a | b)
@@ -105,6 +107,7 @@ def tfff(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> b
         case      _: raise TypeError()
 
 def tfft(a: bool | int | set, b: bool | int | set, *, universe: set = None) -> bool | int | set:
+    'nxor, xnor, not(xor)'
     match a:
         case bool(): return a == b
         case  int(): return ~(a ^ b)
