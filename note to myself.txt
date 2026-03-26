@@ -1,7 +1,0 @@
-ugh.. yknow what? before i start the C implementation, i need to get the python implementation right. because i have to be very clear what i want to implement and what i dont 
-
-
-
-DAAAAAAAA
-DO THISS
-rename incrementation to successor and decrementation to predecessor. inc & dec → succ & pred. why? because inc and dec signal mutation, but they are not about mutation. succ and pred dont have that garbage attached. please please change this!! this is really bad semantics

@@ -1,10 +1,5 @@
-# idfk
+# introduction
 
-this is a test
+hello! daamath is a math library that gives you a lot of functions. 
 
-## Project layout
-    
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+theres no particular order in which to learn daamath. explore around using the top nav bar

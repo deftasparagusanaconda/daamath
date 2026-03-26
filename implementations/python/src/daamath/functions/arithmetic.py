@@ -20,7 +20,7 @@ c       ++b     a + b   a * b   a ^ b   a ↑ b   a ⇑ b   …
 b       --c     c - a   c / a   c L b   …       …       …
 a       N/A     c - b   c / b   c √ b   …       …       …
 
-where we X is the variable we solve for in the equation a  b = c
+where we X is the variable we solve for in the equation a ? b = c
 '''
 
 # NOTE: i expect these function signatures: 
@@ -61,7 +61,7 @@ def h0b(c):
     if type(b) != type(c):
         raise DomainError(pred, (c, ), b)
 
-    return c
+    return b
     
 def h1c(a, b):
     'c = a + b, addition. the 1st hyperoperation'

@@ -9,7 +9,7 @@ the trigonometric functions are derived from the exponential series
 
 x⁰/0! + x¹/1! + x²/2! + x³/3! + …
 
-where x = ι such that ι² ∈ {−1, 0, +1} ([see why](##rant))  
+where x = ι such that ι² ∈ {−1, 0, +1} ([see why](#rant))  
 totally we have 2 ⋅ 3 ⋅ 3P2 = 36 functions. 
 2 from the normal trig function and its inverse
 3 from the three geometries

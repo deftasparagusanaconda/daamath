@@ -2,10 +2,10 @@
 #
 # also, implement vector products like dot product, cross product (just a compositon of wedge product and hodge star. also, in 3D and 7D only! because they tie with quaternions and octonions, but none higher. no more normed algebrae after that), wedge product, 
 
-from . import hyperoperation, hyperoperation_extra, complex, complex_extra, trigonometry, trigonometry_extra, logic, interval, combinatoric, variadic, quantization, sigmoids, mapping, tensor, miscellaneous
+from . import arithmetic, hyperoperation_extra, complex, complex_extra, trigonometry, trigonometry_extra, logic, interval, combinatoric, variadic, quantization, sigmoids, mapping, tensor, miscellaneous
 
-from .hyperoperation import h0c, h0b, h1c, h1b, h2c, h2b, h3c, h3b, h3a, h4c, h4b, h4a
-from .hyperoperation_extra import h1b_0, h2b_1, h3c_e, h3c_2, h3c_10, h3b__e, h3b__2, h3b__10, h3c__2, h3c__3, h3a__2, h3a__3, h2b_1_h3c__2, h2b_1_h3c__3, h2b_1_h3a__2, h2b_1_h3a__3, h1c_h2c, h1b_h3c_e__1, h3b_h1c_1__e
+from .arithmetic import h0c, h0b, h1c, h1b, h2c, h2b, h3c, h3b, h3a, h4c, h4b, h4a
+from .arithmetic_extra import h1b_0, h2b_1, h3c_e, h3c_2, h3c_10, h3b__e, h3b__2, h3b__10, h3c__2, h3c__3, h3a__2, h3a__3, h2b_1_h3c__2, h2b_1_h3c__3, h2b_1_h3a__2, h2b_1_h3a__3, h1c_h2c, h1b_h3c_e__1, h3b_h1c_1__e
 
 from .complex import real, imag, arg, rect, polar, conj
 from .complex_extra import cis

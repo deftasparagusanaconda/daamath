@@ -1,4 +1,4 @@
-# hyperoperations
+# arithmetic
 
 daamath has a complete set of arithmetic operators: ++ −− + − × ÷ ^ log √
 

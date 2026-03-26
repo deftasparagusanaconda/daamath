@@ -1,11 +1,35 @@
 site_name: daamath
+
+extra_css:
+  - stylesheets/extra.css
+
 nav:
+  - install: 
+    - install/index.md
+    - python: install/python.md
+    - C: install/C.md
   - functions:
-    - hyperoperation: functions/hyperoperation.md
+    - functions/index.md
+    - arithmetic: functions/arithmetic.md
     - trigonometry: functions/trigonometry.md
     - logic: functions/logic.md
     - interval: functions/interval.md
     - quantize: functions/quantize.md
-  - strings: strings.md
-  - numbers: numbers.md
+#  - strings: 
+#    - strings/index.md
+#    - stuff: 
+#  - numbers:
+#    - numbers/index.md
+
+theme: 
+  name: material
+  features:
+    - navigation.indexes
+  palette:
+#    scheme: slate
+    primary: custom
+    accent: custom
+
+
 #theme: readthedocs
+
