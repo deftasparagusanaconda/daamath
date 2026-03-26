@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../interval/">
+        <link rel="prev" href="../">
       
+      
+        <link rel="next" href="../trigonometry/">
       
       
         
@@ -21,7 +23,7 @@
     
     
       
-        <title>quantize - daamath</title>
+        <title>arithmetic - daamath</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quantize" class="md-skip">
+        <a href="#arithmetic" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              quantize
+              arithmetic
             
           </span>
         </div>
@@ -404,10 +406,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../arithmetic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    arithmetic
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -423,6 +452,197 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#succdegree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        succ(degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pred(result):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addbase-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add(base, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subresult-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sub(result, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mulbase-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mul(base, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divresult-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        div(result, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powbase-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pow(base, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rootresult-degree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        root(result, degree):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logresult-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log(result, base):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argument-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        argument order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-homomorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type homomorphism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rant
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -516,37 +736,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    quantize
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../quantize/" class="md-nav__link">
         
   
   
@@ -562,208 +755,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        introduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#floornumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        floor(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ceilnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ceil(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#truncnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        trunc(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#awaynumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        away(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evennumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        even(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oddnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        odd(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundfloornumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundfloor(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundceilnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundceil(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundtruncnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundtrunc(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundawaynumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundaway(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundevennumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundeven(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundoddnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundodd(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#type-signature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        type signature
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -826,10 +817,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#floornumber" class="md-nav__link">
+  <a href="#succdegree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        floor(number):
+        succ(degree):
       
     </span>
   </a>
@@ -837,10 +828,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ceilnumber" class="md-nav__link">
+  <a href="#predresult" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ceil(number):
+        pred(result):
       
     </span>
   </a>
@@ -848,10 +839,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#truncnumber" class="md-nav__link">
+  <a href="#addbase-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        trunc(number):
+        add(base, degree):
       
     </span>
   </a>
@@ -859,10 +850,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#awaynumber" class="md-nav__link">
+  <a href="#subresult-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        away(number):
+        sub(result, degree):
       
     </span>
   </a>
@@ -870,10 +861,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#evennumber" class="md-nav__link">
+  <a href="#mulbase-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        even(number):
+        mul(base, degree):
       
     </span>
   </a>
@@ -881,10 +872,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#oddnumber" class="md-nav__link">
+  <a href="#divresult-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        odd(number):
+        div(result, degree):
       
     </span>
   </a>
@@ -892,10 +883,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roundfloornumber" class="md-nav__link">
+  <a href="#powbase-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        roundfloor(number):
+        pow(base, degree):
       
     </span>
   </a>
@@ -903,10 +894,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roundceilnumber" class="md-nav__link">
+  <a href="#rootresult-degree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        roundceil(number):
+        root(result, degree):
       
     </span>
   </a>
@@ -914,43 +905,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roundtruncnumber" class="md-nav__link">
+  <a href="#logresult-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        roundtrunc(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundawaynumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundaway(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundevennumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundeven(number):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roundoddnumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        roundodd(number):
+        log(result, base):
       
     </span>
   </a>
@@ -963,10 +921,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#type-signature" class="md-nav__link">
+  <a href="#argument-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        type signature
+        argument order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-homomorphism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        type homomorphism
       
     </span>
   </a>
@@ -978,6 +947,17 @@
     <span class="md-ellipsis">
       
         notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rant
       
     </span>
   </a>
@@ -1001,53 +981,81 @@
 
 
 
-<h1 id="quantize">quantize</h1>
-<p><a href="https://en.wikipedia.org/wiki/Quantization_%28signal_processing%29?wprov=sfla1">quantization</a> is such a wide topic.. but for daamath, i have implemented the few most important.</p>
+<h1 id="arithmetic">arithmetic</h1>
+<p>daamath has a complete set of arithmetic operators: ++ −− + − × ÷ ^ log √</p>
 <h2 id="introduction">introduction</h2>
-<p><img alt="neat thing i made!" src="../diagrams/daamath-quantize.drawio.svg" /></p>
+<p>"daa, repeated addition is multiplication. repeated multiplication is exponentiation. whats the next level? and what do we have to repeat to get addition?"</p>
+<p>the <a href="https://en.wikipedia.org/wiki/Hyperoperation">hyperoperation</a> tower tells us everything we need to know  </p>
+<p><img alt="diagram for little kids i guess lol" src="../diagrams/hyperoperations.svg" /></p>
+<p>1 + 1 + 1 + … D times is 0 + D<br />
+B + B + B + … D times is B × D<br />
+B × B × B × … D times is Bᴰ<br />
+B ^ B ^ B ^ … D times is ᴰB<br />
+⋮ </p>
+<p>this is the basic idea of hyperoperations. repeating the previous operation D times gives you the next operator. this gives us the tower: succ → add → mul → pow → spow → …</p>
+<p>each operator also has two inverses which solve for the left or the right operand. for example, in the equation <code>R = B ^ D</code>, the left inverse (root) solves for the left operand <code>B = ᴰ√R</code> while the right inverse solves for the right operand <code>D = logB(R)</code>. </p>
+<p>the left inverse and right inverse of addition are same (subtraction). the left inverse and right inverse of multiplication are same (divison). so we say they have only one inverse. </p>
 <h2 id="api-implementation">API implementation</h2>
-<h5 id="floornumber">floor(number):</h5>
-<pre><code>round towards −∞
+<p>daamath is implemented as a programming math library. this section covers the language-agnostic specification</p>
+<h5 id="succdegree"><a href="https://en.wikipedia.org/wiki/Successor_function">succ</a>(degree):</h5>
+<p>signature: 𝕎 → 𝕎 | ℤ → ℤ<br />
+exceptions: (none)<br />
+returns: 1 + degree  </p>
+<h5 id="predresult"><a href="https://en.wikipedia.org/wiki/Primitive_recursive_function#Predecessor">pred</a>(result):</h5>
+<p>signature: 𝕎 → 𝕎 | ℤ → ℤ<br />
+exceptions: if signature is 𝕎 → 𝕎 and result is 0, raise a DomainError<br />
+returns: result − 1  </p>
+<h5 id="addbase-degree"><a href="https://en.wikipedia.org/wiki/Addition">add</a>(base, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ  
+exceptions: (none)  
+returns: base + degree
 </code></pre>
-<h5 id="ceilnumber">ceil(number):</h5>
-<pre><code>round towards +∞
+<h5 id="subresult-degree"><a href="https://en.wikipedia.org/wiki/Subtraction">sub</a>(result, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ 
+returns: result − degree
 </code></pre>
-<h5 id="truncnumber">trunc(number):</h5>
-<pre><code>round towards 0
+<h5 id="mulbase-degree"><a href="https://en.wikipedia.org/wiki/Multiplication">mul</a>(base, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ
+returns: base · degree
 </code></pre>
-<h5 id="awaynumber">away(number):</h5>
-<pre><code>round away from 0
+<h5 id="divresult-degree"><a href="https://en.wikipedia.org/wiki/Division_(mathematics)">div</a>(result, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ
+returns: result ∕ degree
 </code></pre>
-<h5 id="evennumber">even(number):</h5>
-<pre><code>round towards the nearest even integer (if not already an integer)
+<h5 id="powbase-degree"><a href="https://en.wikipedia.org/wiki/Exponentiation">pow</a>(base, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ
+returns: base ^ degree
 </code></pre>
-<h5 id="oddnumber">odd(number):</h5>
-<pre><code>round towards the nearest odd integer (if not already an integer)
+<h5 id="rootresult-degree"><a href="https://en.wikipedia.org/wiki/Nth_root">root</a>(result, degree):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ
+returns: result ^ (1 / degree)
 </code></pre>
-<h5 id="roundfloornumber">roundfloor(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties towards −∞
+<h5 id="logresult-base"><a href="https://en.wikipedia.org/wiki/Logarithm">log</a>(result, base):</h5>
+<pre><code>signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ 
+returns: log_base(result)
 </code></pre>
-<h5 id="roundceilnumber">roundceil(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties towards +∞
-</code></pre>
-<h5 id="roundtruncnumber">roundtrunc(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties towards 0
-</code></pre>
-<h5 id="roundawaynumber">roundaway(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties away from 0
-</code></pre>
-<h5 id="roundevennumber">roundeven(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties towards the nearest even integer
-this is the recommended rounding method specified by IEEE. pretty cool.
-</code></pre>
-<h5 id="roundoddnumber">roundodd(number):</h5>
-<pre><code>round towards the nearest integer, breaking ties towards the nearest odd integer
-</code></pre>
-<h2 id="type-signature">type signature</h2>
-<p>these functions take in a real number, and return an integer. </p>
+<p><a href="https://en.wikipedia.org/wiki/Tetration">tetration</a>, <a href="https://en.wikipedia.org/wiki/Tetration#Super-root">super-root</a>, <a href="https://en.wikipedia.org/wiki/Tetration#Super-logarithm">super-logarithm</a> are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n ≥ 4</p>
+<h2 id="argument-order">argument order</h2>
+<p><img alt="diagram for the adults" src="../diagrams/daamath-hyperoperation.drawio.svg" /></p>
+<p>at any hyperoperation level n, there are three operators:<br />
+<code>Hₙ(base, degree) = result</code><br />
+<code>Hₙ⁻ᴸ(result, degree) = base</code><br />
+<code>Hₙ⁻ᴿ(result, base) = degree</code>  </p>
+<p>this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. <a href="https://en.wikipedia.org/wiki/Julia_(programming_language)">julia</a> follows the order of math notation and writes log(n, x). <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">python</a> and <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> follow the reverse order log(x, n). daamath follows the reverse order log(x, n) and root(x, n) because it is consistent with the order of arguments in sub and div, i.e. log(result, base) and root(result, degree)</p>
+<h2 id="type-homomorphism">type homomorphism</h2>
+<p>hyperoperations will return the same output type as its input type. if you pass in an integer, it will give an integer result. this is in contrast to dynamic type promotion in most languages, which eagerly promote integers to fractional numbers.</p>
+<p>for example, in C, <code>pow(2, 3)</code> gives <code>8.0</code>. in python, <code>2 ** -2</code> gives <code>0.25</code>. <br />
+with daamath, <code>dm.pow(2, 3)</code> will give <code>8</code>, and <code>dm.pow(2, -2)</code> will raise a DomainError because <code>0.25</code> cannot be represented as an integer.</p>
+<p>the biggest consequence to this is that integer arithmetic stays as integer arithmetic. unsigned integer arithmetic stays as unsigned integer arithmetic.</p>
+<p>daamath maintains four number types: <a href="https://en.wikipedia.org/wiki/Natural_number">ℕ₀</a>, <a href="https://en.wikipedia.org/wiki/Integer">ℤ</a>, <a href="https://en.wikipedia.org/wiki/Real_number">ℝ</a>, <a href="https://en.wikipedia.org/wiki/Complex_number">ℂ</a></p>
 <h2 id="notes">notes</h2>
-<p>if you need more advanced quantization, the <a href="https://www.github.com/deftasparagusanaconda/pyquantize">pyquantize</a> project may be useful for you</p>
-<p>python has a <code>round</code> function that i despise. it has an optional ndigits parameter that, instead of quantizing to any arbitrary scaled lattice, it scales to quantum sizes of 1, 0.1 ,0.01, ... and on top of that, it will return a float if you provide this ndigits parameter, knowing full well that floats do not round decimal digits cleanly.</p>
+<p>successor and predecessor are not the same as increment and decrement. the former two give a new answer, while the latter two imply mutating a variable. daamath implements the former two</p>
+<p>actually, addition and multiplication have two inverses too. but since the left and right inverses do the same thing, we think of it as having one canonical inverse. the real hyperoperation tower ought to look like this:</p>
+<p>the left and right inverse of multiplication are both division, but this isnt always true. for example, matrices may have two different division operators. one would multiply by the inverse of the left operand, another would multiply by the inverse of the right operand. but since daamath works with simple numbers, we do not make this distinction.</p>
+<p>i dont typically see addition having two inverses..</p>
+<h2 id="rant">rant</h2>
+<p>the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. </p>
+<p>i should really try to clarify the meaning of B D R as soon as possible</p>
 
 
 
