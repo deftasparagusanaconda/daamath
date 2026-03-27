@@ -1,5 +1,14 @@
-# introduction
+# start here!
 
-hello! daamath is a math library that gives you a lot of functions. 
+daamath is a mathematically accurate and principled math library specification for programming languages. it is only available for python for now:
 
-theres no particular order in which to learn daamath. explore around using the top nav bar
+```
+python -m pip install daamath
+```
+
+daamath is a language-agnostic [specification][specification] which is created into [implementations][implementations]. it is open-source, and hosted on [github][github]. you may contribute through pull requests, or contact [daa][contact] (me).
+
+[contact]: https://discordapp.com/users/608255432859058177
+[github]: https://github.com/deftasparagusanaconda/daamath
+[specification]: specification/index.md
+[implementations]: implementations/index.md

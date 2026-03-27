@@ -4,22 +4,31 @@ extra_css:
   - stylesheets/extra.css
 
 nav:
-  - install: 
-    - install/index.md
-    - python: install/python.md
-    - C: install/C.md
-  - functions:
-    - functions/index.md
-    - arithmetic: functions/arithmetic.md
-    - trigonometry: functions/trigonometry.md
-    - logic: functions/logic.md
-    - interval: functions/interval.md
-    - quantize: functions/quantize.md
-#  - strings: 
-#    - strings/index.md
-#    - stuff: 
-#  - numbers:
-#    - numbers/index.md
+  - index.md
+  - implementations: 
+    - implementations/index.md
+    - python: 
+      - implementations/python/index.md
+    - c:
+      - implementations/c/index.md
+  - specification:
+    - specification/index.md
+    - functions:
+      - specification/functions/index.md
+      - arithmetic: specification/functions/arithmetic.md
+      - trigonometry: specification/functions/trigonometry.md
+      - logic: specification/functions/logic.md
+      - interval: specification/functions/interval.md
+      - quantize: specification/functions/quantize.md
+    - strings: 
+      - specification/strings/index.md
+    - constants:
+      - specification/constants/index.md
+    - exceptions:
+      - specification/exceptions/index.md
+    - namespace: 
+      - specification/namespace/index.md
+      - aliases: specification/namespace/aliases.md
 
 theme: 
   name: material

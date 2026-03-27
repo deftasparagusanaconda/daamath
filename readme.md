@@ -36,10 +36,10 @@ see how to install [here][install] or choose your language:
 
 this is very ugly to me. so i made daamath.
 
-## what daamath does
+## what does daamath do?
 
 - **cross-language consistency:** daamath is a language-agnostic specification. it has consistent behaviour across languages, up to the limitations of the language.
-- **domain-aware arithmetic:** arithmetic operators respect the number domain. for example, an integer divided by an integer shall not return a rational number. instead, it raises a `DomainError`. [learn more][type homomorphism]
+- **domain-aware arithmetic:** arithmetic operators respect the number domain. for example, an integer divided by an integer shall not return a rational number. instead, it raises a `DomainError`/
 - **complete function sets:** hyperoperations, trigonometry, boolean gates, ordering operators, quantization, and more
 - **no implicit type promotion:** daamath will not cast an integer to a float. it will preserve the precision of your datatype.
 - **no aliases:** one name per function/constant/string
@@ -49,5 +49,4 @@ this is very ugly to me. so i made daamath.
 
 [docs]: https://deftasparagusanaconda.github.io/daamath/
 [install]: https://deftasparagusanaconda.github.io/daamath/install/
-[type homomorphism]: https://deftasparagusanaconda.github.io/daamath/functions/
 [contact]: https://discordapp.com/users/608255432859058177
