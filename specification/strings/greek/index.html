@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>aliases - daamath</title>
+    <title>Greek - daamath</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "aliases";
-        var mkdocs_page_input_path = "specification/namespace/aliases.md";
+        var mkdocs_page_name = "Greek";
+        var mkdocs_page_input_path = "specification/strings/greek.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -62,7 +62,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">specification</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../">specification</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >functions</a>
@@ -83,7 +83,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >strings</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../strings/">Index</a>
+                <li class="toctree-l2"><a class="reference internal" href="../">Index</a>
                 </li>
     </ul>
                   </li>
@@ -95,13 +95,11 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >namespace</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">introduction</a>
+                  <li class="toctree-l1"><a class="reference internal" >namespace</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../namespace/">introduction</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">aliases</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../namespace/aliases/">aliases</a>
                 </li>
     </ul>
                   </li>
@@ -122,9 +120,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">specification</li>
-          <li class="breadcrumb-item">namespace</li>
-      <li class="breadcrumb-item active">aliases</li>
+      <li class="breadcrumb-item active">Greek</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -133,128 +129,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="arithmetic">arithmetic</h1>
-<p>succ  = dm.h0c # hyperoperation of 0th order, solving for c in the equation a ? b = c<br />
-pred  = dm.h0b<br />
-add   = dm.h1c<br />
-sub   = dm.h1b<br />
-mul   = dm.h2c<br />
-div   = dm.h2b<br />
-pow   = dm.h3c<br />
-log   = dm.h3b<br />
-root  = dm.h3a<br />
-spow  = dm.h4c<br />
-slog  = dm.h4b<br />
-sroot = dm.h4a  </p>
-<h1 id="arithmetic-extra">arithmetic extra</h1>
-<p>ainv    = dm.h1b_0  # sub with first argument fixed to 0<br />
-minv    = dm.h2b_1<br />
-exp     = dm.h3c_e<br />
-exp2    = dm.h3c_2<br />
-exp10   = dm.h3c_10<br />
-ln      = dm.h3b__e # log with second argument fixed to e<br />
-log2    = dm.h3b__2<br />
-log10   = dm.h3b__10<br />
-square  = dm.h3c__2<br />
-cube    = dm.h3c__3<br />
-sqrt    = dm.h3a__2<br />
-cbrt    = dm.h3a__3<br />
-rsquare = dm.h2b_1_h3c__2 # minv of square of x<br />
-rcube   = dm.h2b_1_h3c__3<br />
-rsqrt   = dm.h2b_1_h3a__2<br />
-rcbrt   = dm.h2b_1_h3a__3<br />
-fma     = dm.h1c_h2c      # dm.add_mul<br />
-expm1   = dm.h1b_h3c_e__1 # dm.sub_pow_e__1<br />
-ln1p    = dm.h3b_h1c_1__e # dm.log_add_1__e  </p>
-<h1 id="trigonometry">trigonometry</h1>
-<p>sin   = dm.croh # circular ratio from opposite and hypotenuse<br />
-cos   = dm.crah<br />
-tan   = dm.croa<br />
-cot   = dm.crao<br />
-sec   = dm.crha<br />
-csc   = dm.crho<br />
-asin  = dm.csoh<br />
-acos  = dm.csah<br />
-atan  = dm.csoa<br />
-acot  = dm.csao<br />
-asec  = dm.csha<br />
-acsc  = dm.csho<br />
-sinh  = dm.hroh<br />
-cosh  = dm.hrah<br />
-tanh  = dm.hroa<br />
-coth  = dm.hrao<br />
-sech  = dm.hrha<br />
-csch  = dm.hrho<br />
-asinh = dm.hsoh<br />
-acosh = dm.hsah # hyperbolic semiarea from adjacent and hypotenuse<br />
-atanh = dm.hsoa<br />
-acoth = dm.hsao<br />
-asech = dm.hsha<br />
-acsch = dm.hsho  </p>
-<h1 id="trigonometry-extra">trigonometry extra</h1>
-<p>asin2  = dm.csoh2 # 2-argument version of dm.csoh<br />
-acos2  = dm.csah2<br />
-atan2  = dm.csoa2<br />
-acot2  = dm.csao2<br />
-asec2  = dm.csha2<br />
-acsc2  = dm.csho2<br />
-sinc   = dm.h2b_croh_S_S  # dm.div_sin_S_S  </p>
-<h1 id="boolean">boolean</h1>
-<p>not_ = dm.tf   # F, T → T, F<br />
-and_ = dm.ffft # FF, FT, TF, TT → F, F, F, T<br />
-or_  = dm.fttt<br />
-xor  = dm.fttf<br />
-imp  = dm.ttft<br />
-con  = dm.tftt<br />
-nand = dm.tttf<br />
-nor  = dm.tfff<br />
-nxor = dm.tfft # NOTE: nxor, not xnor<br />
-nimp = dm.fftf<br />
-ncon = dm.ftff  </p>
-<h1 id="interval">interval</h1>
-<p>lt = dm.iee   # A |B| C → include exclude exclude<br />
-le = dm.iie<br />
-eq = dm.eie<br />
-ne = dm.iei<br />
-ge = dm.eii<br />
-gt = dm.eei<br />
-oo = dm.eeiee # A |B| C |D| E → exclude exclude include exclude exclude<br />
-oc = dm.eeiie<br />
-co = dm.eiiee<br />
-cc = dm.eiiie  </p>
-<h1 id="variadic">variadic</h1>
-<p>sum   = dm.vh1c<br />
-prod  = dm.vh2c<br />
-all   = dm.vffft<br />
-any   = dm.vfttt<br />
-min   = dm.mean__h1b_0_inf<br />
-hmean = dm.mean__h1b_0_1<br />
-gmean = dm.mean__0<br />
-amean = dm.mean__1<br />
-rms   = dm.mean__2<br />
-cmean = dm.mean__3<br />
-max   = dm.mean__inf  </p>
-<h1 id="idk-bro">idk bro</h1>
-<p>abs = dm.norm__2<br />
-sgn = dm.normalize__2  </p>
-<h1 id="quantization">quantization</h1>
-<p>floor      = dm.round__true_floor<br />
-ceil       = dm.round__true_ceil<br />
-trunc      = dm.round__true_trunc<br />
-away       = dm.round__true_away<br />
-roundfloor = dm.round__false_floor<br />
-roundceil  = dm.round__false_ceil<br />
-roundtrunc = dm.round__false_trunc<br />
-roundaway  = dm.round__false_away<br />
-roundeven  = dm.round__false_even<br />
-roundodd   = dm.round__false_odd  </p>
+                <p>GREEK_UPPER                                │ ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩϜϺͶϷͰϘͲͿϚ
+GREEK_UPPER_VARIANT                        │        ϴ                     ϞϠ<br />
+GREEK_LOWER                                │ αβγδεζηθικλμνξοπρστυφχψωϝϻͷϸͱϙͳϳϛ
+GREEK_LOWER_VARIANT                        │  ϐ  ϵ  ϑ ϰ     ϖϱς  ϕ        ϟϡ<br />
+GREEK_LOWER_SUPERSCRIPT                    │  ᵝᵞᵟᵋ  ᶿᶥ           ᵠᵡ         <br />
+GREEK_LOWER_SUBSCRIPT                      │  ᵦᵧ             ᵨ   ᵩᵪ         <br />
+GREEK_BOLD_UPPER                           │ 𝚨𝚩𝚪𝚫𝚬𝚭𝚮𝚯𝚰𝚱𝚲𝚳𝚴𝚵𝚶𝚷𝚸𝚺𝚻𝚼𝚽𝚾𝚿𝛀𝟊      <br />
+GREEK_BOLD_UPPER_VARIANT                   │        𝚹                       <br />
+GREEK_BOLD_LOWER                           │ 𝛂𝛃𝛄𝛅𝛆𝛇𝛈𝛉𝛊𝛋𝛌𝛍𝛎𝛏𝛐𝛑𝛒𝛔𝛕𝛖𝛗𝛘𝛙𝛚𝟋      <br />
+GREEK_BOLD_LOWER_VARIANT                   │     𝛜  𝛝 𝛞     𝛡𝛠𝛓  𝛟          <br />
+GREEK_ITALIC_UPPER                         │ 𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛴𝛵𝛶𝛷𝛸𝛹𝛺       <br />
+GREEK_ITALIC_UPPER_VARIANT                 │        𝛳                       <br />
+GREEK_ITALIC_LOWER                         │ 𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜎𝜏𝜐𝜑𝜒𝜓𝜔       <br />
+GREEK_ITALIC_LOWER_VARIANT                 │     𝜖  𝜗 𝜘     𝜛𝜚𝜍  𝜙          <br />
+GREEK_BOLD_ITALIC_UPPER                    │ 𝜜𝜝𝜞𝜟𝜠𝜡𝜢𝜣𝜤𝜥𝜦𝜧𝜨𝜩𝜪𝜫𝜬𝜮𝜯𝜰𝜱𝜲𝜳𝜴       <br />
+GREEK_BOLD_ITALIC_UPPER_VARIANT            │        𝜭                       <br />
+GREEK_BOLD_ITALIC_LOWER                    │ 𝜶𝜷𝜸𝜹𝜺𝜻𝜼𝜽𝜾𝜿𝝀𝝁𝝂𝝃𝝄𝝅𝝆𝝈𝝉𝝊𝝋𝝌𝝍𝝎       <br />
+GREEK_BOLD_ITALIC_LOWER_VARIANT            │     𝝐  𝝑 𝝒     𝝕𝝔𝝇  𝝓          <br />
+GREEK_SANS_SERIF_BOLD_UPPER                │ 𝝖𝝗𝝘𝝙𝝚𝝛𝝜𝝝𝝞𝝟𝝠𝝡𝝢𝝣𝝤𝝥𝝦𝝨𝝩𝝪𝝫𝝬𝝭𝝮       <br />
+GREEK_SANS_SERIF_BOLD_UPPER_VARIANT        │        𝝧                       <br />
+GREEK_SANS_SERIF_BOLD_LOWER                │ 𝝰𝝱𝝲𝝳𝝴𝝵𝝶𝝷𝝸𝝹𝝺𝝻𝝼𝝽𝝾𝝿𝞀𝞂𝞃𝞄𝞅𝞆𝞇𝞈       <br />
+GREEK_SANS_SERIF_BOLD_LOWER_VARIANT        │     𝞊  𝞋 𝞌     𝞏𝞎𝞁  𝞍          <br />
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER         │ 𝞐𝞑𝞒𝞓𝞔𝞕𝞖𝞗𝞘𝞙𝞚𝞛𝞜𝞝𝞞𝞟𝞠𝞢𝞣𝞤𝞥𝞦𝞧𝞨       <br />
+GREEK_SANS_SERIF_BOLD_ITALIC_UPPER_VARIANT │        𝞡                       <br />
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER         │ 𝞪𝞫𝞬𝞭𝞮𝞯𝞰𝞱𝞲𝞳𝞴𝞵𝞶𝞷𝞸𝞹𝞺𝞼𝞽𝞾𝞿𝟀𝟁𝟂       <br />
+GREEK_SANS_SERIF_BOLD_ITALIC_LOWER_VARIANT │     𝟄  𝟅 𝟆     𝟉𝟈𝞻  𝟇          <br />
+GREEK_DOUBLE_STRUCK_UPPER                  │   ℾ            ℿ ⅀             <br />
+GREEK_DOUBLE_STRUCK_LOWER                  │   ℽ            ℼ                 </p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../" class="btn btn-neutral float-left" title="introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../context/" class="btn btn-neutral float-right" title="context">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -276,10 +181,6 @@ roundodd   = dm.round__false_odd  </p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../context/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
