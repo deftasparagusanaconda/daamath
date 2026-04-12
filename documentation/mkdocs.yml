@@ -5,6 +5,7 @@ extra_css:
 
 nav:
   - index.md
+  - install.md
   - implementations: 
     - implementations/index.md
     - python: 
@@ -22,22 +23,25 @@ nav:
       - quantize: specification/functions/quantize.md
     - strings: 
       - specification/strings/index.md
-    - constants:
-      - specification/constants/index.md
+    - constants: specification/constants.md
     - exceptions:
       - specification/exceptions/index.md
     - namespace: 
       - specification/namespace/index.md
       - aliases: specification/namespace/aliases.md
+    - context: specification/context.md
 
 theme: 
-  name: material
+  name: readthedocs
   features:
     - navigation.indexes
   palette:
 #    scheme: slate
     primary: custom
     accent: custom
+
+plugins:
+  - include-markdown
 
 
 #theme: readthedocs

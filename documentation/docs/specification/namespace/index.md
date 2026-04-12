@@ -1,5 +1,10 @@
 # introduction
 
+on the top level, daamath must always expose these four submodules:
+`functions`, `strings`, `constants`, `context`
+
+these are all individually explained in the specifications
+
 daamath maintains a cross-language-friendly namespace. here are the rules:
 
 lowercase for functions. uppercase for constants.
