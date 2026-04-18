@@ -89,11 +89,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../constants/">constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >exceptions</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../exceptions/">Index</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../exceptions/">exceptions</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >namespace</a>
     <ul>
@@ -105,11 +101,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">context</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#domain">domain</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#error_handling_behaviour">error_handling_behaviour</a>
-    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../domains/">domains</a>
                   </li>
               </ul>
       </div>
@@ -137,16 +131,96 @@
             <div class="section" itemprop="articleBody">
               
                 <p>in math, even when we write <code>2 / 3</code>, we assume many things. we assume we are working with the real numbers. we assume <code>/</code> is defined on real numbers. in CS, we assume we want <code>0 / 0</code> to raise an error. if the datatype is <code>int</code>, programmers assume <code>2 / 3</code> to be rounded division. daamath makes all of this explicit by storing a set of variables called the 'context'.</p>
-<p>functions look at the context to determine what to do. to change the context, you mutate variables in daamath's context. </p>
+<p>functions look at the context to determine what to do. you can change the context in 3 levels of ascending precedence:</p>
+<ol>
+<li>
+<p>global default context
+    the function refers daamath's default context (<code>dm.context</code>). if no other context is passed to a function, this is what is used.</p>
+</li>
+<li>
+<p>scoped/local/temporary redirection/mutation
+    daamath's default context is temporarily changed or replaced for a section of code, and then changed back after the section</p>
+</li>
+<li>
+<p>explicit optional function argument
+    a new context instance is passed as the last argument to a function</p>
+</li>
+</ol>
+<p>an example in python:</p>
+<pre><code class="language-python">import daamath as dm
+
+x = 1.0
+
+# level 1: global default context
+dm.sin(x)   
+# 0.8414709848078965
+
+# level 2: temporary mutation
+temp = dm.context.domain
+dm.context.domain = dm.INTEGER
+dm.sin(x)
+# ClosureError: result 0.8414709848078965 is not INTEGER
+dm.context.domain = temp
+
+# level 3: optional function argument
+my_context = dm.Context(domain = dm.COMPLEX)
+dm.sin(x, context = my_context)
+# 0.8414709848078965
+# note: the result is a float because daamath preserves datatype but the domain was promoted to COMPLEX. 0.8414709848078965 is indeed COMPLEX, just with zero imaginary part.
+</code></pre>
 <h1 id="daa-what-is-in-this-context-object">daa.. what is in this 'context' object??</h1>
-<p>the context stores these things:</p>
-<h2 id="domain">domain</h2>
-<p>perhaps the most important of them all. </p>
-<h2 id="error_handling_behaviour">error_handling_behaviour</h2>
-<p>can be one of </p>
+<p>dm
+    context
+        functions
+            ClosureError_policy
+            inputs
+                check_domain
+            output
+                check_domain
+            domain
+            add
+                definition
+                inputs
+                    check_domain
+                    augend
+                        check_domain
+                    addend
+                        check_domain
+                output
+                    check_domain
+                    codomain
+                ClosureError_policy
+                check_input_domain
+            sub
+                definition
+                inputs
+                    check_domain
+                    minuend
+                        check_domain
+                    subtrahend
+                        check_domain
+                output
+                    check_domain
+                ClosureError_policy
+            …
+        datatypes
+            FidelityError_policy
+            sentinel_value_policy
+            rounding
+            int
+                sentinel_value
+                FidelityError_policy
+                sentinel_value_policy
+                rounding
+            float
+                sentinel_value
+                FidelityError_policy
+                sentinel_value_policy
+                rounding
+            …</p>
+<p>the context is a tree. branch nodes do not store anything. only leaf nodes store values</p>
 <h1 id="implementation">implementation</h1>
 <p>the context shall be implemented as a thread-local instance of an instantiable collection of variables (like an <a href="https://en.wikipedia.org/wiki/Object_(computer_science)">object</a> in <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> languages, a <a href="https://en.wikipedia.org/wiki/Struct_(C_programming_language)">struct</a> in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>, ...). it cannot be a loose grouping of variables, because the user has to be able to make a copy of the entire set of variables, to store different contexts. to store a context, we may use any data structure that defines an outline, and each <a href="https://en.wikipedia.org/wiki/Instance_(computer_science)">instance</a> can store different contexts.</p>
-<p>functions should not take a context object as an optional argument. it is hard to debug functions that change behaviour depending on optional arguments. it also makes implementation significantly harder for languages like <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> that dont like function overloading.</p>
 <p>if a parameter in the context uses an enum, the values of the enum must be stored flatly on the top-level of daamath's <a href="https://">namespace</a>.</p>
 <h1 id="motivation">motivation</h1>
 <p><code>add</code> could have been overloaded to take an optional mod argument, essentially enabling it to work with modular arithmetic. <code>div</code> needed to be able to handle special cases like "what do i do when denominator is zero?" or "both operands are zero!".</p>
@@ -168,6 +242,7 @@ essentially, yes! this is apparent with the trigonometric functions. the geometr
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../namespace/aliases/" class="btn btn-neutral float-left" title="aliases"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../domains/" class="btn btn-neutral float-right" title="domains">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -192,6 +267,8 @@ essentially, yes! this is apparent with the trigonometric functions. the geometr
     
       <span><a href="../namespace/aliases/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../domains/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
