@@ -1,3 +1,5 @@
+from .context import Context, context
+
 from . import functions, numbers, strings
 from .functions import *
 from .numbers import *

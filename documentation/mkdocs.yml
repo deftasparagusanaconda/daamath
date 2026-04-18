@@ -24,12 +24,12 @@ nav:
     - strings: 
       - specification/strings/index.md
     - constants: specification/constants.md
-    - exceptions:
-      - specification/exceptions/index.md
+    - exceptions: specification/exceptions.md
     - namespace: 
       - specification/namespace/index.md
       - aliases: specification/namespace/aliases.md
     - context: specification/context.md
+    - domains: specification/domains.md
 
 theme: 
   name: readthedocs

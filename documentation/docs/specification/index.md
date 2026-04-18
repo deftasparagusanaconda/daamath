@@ -2,11 +2,13 @@
 
 daamath was originally born in python, where i started implementing the hyperoperations, the trig functions, the boolean gates, etc etc. i faced a bit of friction porting it to C, and i realized that maintaining a language-agnostic specification will be the healthiest direction. so here we are
 
-daamath tries to be simple, regarding separation of concerns. we have a few collections of [functions], [strings], [constants]. we also maintain a special [context] struct
+daamath tries to be simple, regarding separation of concerns. we have a few collections of [functions], [strings], [constants]. we also maintain a special [context] struct. it defines its own [exceptions], and under all this, it has a special underground idea of [domains], which are separate from [datatypes]
 
 # vision
 
-daamath is cross-language and will try to unify things as much as possible. `sum` is presented as variadic addition. `max` is treated as a special case of the generalized mean. stuff like that.
+daamath is a language-agnostic math library specification that attempts to be portable across multiple languages, and tries to introduce a programmer to as much mathematics as they want to get deep in. the documentation should teach them enough to get code done, while also teaching them new perspectives on math. 
+
+daamath should not be worried about performance, and should be worried about computational correctness first, always. if someone nudges me to improve the performance, i will. but it doesnt seem to be a necessity as of now.
 
 # domains and datatypes
 
@@ -39,18 +41,6 @@ this allows us to perform integer arithmetic with floats using `addZ(2.0, 3.0) â
 this architecture quickly blows up. say we have 9 arithmetic operators, 4 domains, and 4 datatypes. we would have 9 * 4 * 4 = 144 functions just for arithmetic. this is quite ludicrous. im not sure whats the next step to take for this yet.
 
 also, the architecture also allows us to cleanly implement modular arithmetic as a separate domain. the downside is that for each new domain we support, we have to create a new set of operators for that domain. im not sure how to implement all possible modular arithmetic domains of n = 1, 2, 3, 4, etc etc. it would be foolish to have `add_Z2`, `add_Z3`, `add_Z4`. parameterizing a domain is not trivial work. `add_Zn(a, b, mod)` parameterizes the mod but it breaks the 2-arity of the hyperoperations. im not sure whats the next step to take. how. do. we. parameterize. domains???
-
-# mutability
-
-i hate mutating behaviour. daamath will avoid mutation as much as possible. for example, `succ(a)` will be `return 1 + a` instead of `return ++a`. the former leaves the variable intact. the latter mutates the variable.
-
-# etc etc
-
-the specifiation is language-agnostic but still attempts to be as programming-language-friendly as possible. for example, we cant define constants like `2_BY_PI` because languages typically dont allow variable names to start with a digit.
-
-# performance
-
-daamath is not particularly worried about performance. at least not for now. 
 
 # scope
 

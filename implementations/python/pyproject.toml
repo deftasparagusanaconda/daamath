@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "daamath"
 version = "0.2.0"
 #dynamic = ["version"]
-description = "coherent math library"
+description = "a mathematician's spellbook: language-agnostic math library specification with implementations in various languages "
 readme = "README.md"
 requires-python = ">=3.11.0"
 license = "GPL-3.0-or-later"

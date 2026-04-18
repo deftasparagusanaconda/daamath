@@ -1,21 +1,97 @@
 in math, even when we write `2 / 3`, we assume many things. we assume we are working with the real numbers. we assume `/` is defined on real numbers. in CS, we assume we want `0 / 0` to raise an error. if the datatype is `int`, programmers assume `2 / 3` to be rounded division. daamath makes all of this explicit by storing a set of variables called the 'context'.
 
-functions look at the context to determine what to do. to change the context, you mutate variables in daamath's context. 
+functions look at the context to determine what to do. you can change the context in 3 levels of ascending precedence:
+
+1. global default context
+	the function refers daamath's default context (`dm.context`). if no other context is passed to a function, this is what is used.
+
+2. scoped/local/temporary redirection/mutation
+	daamath's default context is temporarily changed or replaced for a section of code, and then changed back after the section
+
+3. explicit optional function argument
+	a new context instance is passed as the last argument to a function
+
+an example in python:
+
+```python
+import daamath as dm
+
+x = 1.0
+
+# level 1: global default context
+dm.sin(x)	
+# 0.8414709848078965
+
+# level 2: temporary mutation
+temp = dm.context.domain
+dm.context.domain = dm.INTEGER
+dm.sin(x)
+# ClosureError: result 0.8414709848078965 is not INTEGER
+dm.context.domain = temp
+
+# level 3: optional function argument
+my_context = dm.Context(domain = dm.COMPLEX)
+dm.sin(x, context = my_context)
+# 0.8414709848078965
+# note: the result is a float because daamath preserves datatype but the domain was promoted to COMPLEX. 0.8414709848078965 is indeed COMPLEX, just with zero imaginary part.
+```
 
 # daa.. what is in this 'context' object??
 
-the context stores these things:
+dm
+	context
+		functions
+			ClosureError_policy
+			inputs
+				check_domain
+			output
+				check_domain
+			domain
+			add
+				definition
+				inputs
+					check_domain
+					augend
+						check_domain
+					addend
+						check_domain
+				output
+					check_domain
+					codomain
+				ClosureError_policy
+				check_input_domain
+			sub
+				definition
+				inputs
+					check_domain
+					minuend
+						check_domain
+					subtrahend
+						check_domain
+				output
+					check_domain
+				ClosureError_policy
+			…
+		datatypes
+			FidelityError_policy
+			sentinel_value_policy
+			rounding
+			int
+				sentinel_value
+				FidelityError_policy
+				sentinel_value_policy
+				rounding
+			float
+				sentinel_value
+				FidelityError_policy
+				sentinel_value_policy
+				rounding
+			…
 
-## domain
-perhaps the most important of them all. 
-
-## error_handling_behaviour
-can be one of 
+the context is a tree. branch nodes do not store anything. only leaf nodes store values
 
 # implementation
 the context shall be implemented as a thread-local instance of an instantiable collection of variables (like an [object] in [OOP] languages, a [struct] in [C], ...). it cannot be a loose grouping of variables, because the user has to be able to make a copy of the entire set of variables, to store different contexts. to store a context, we may use any data structure that defines an outline, and each [instance] can store different contexts.
-
-functions should not take a context object as an optional argument. it is hard to debug functions that change behaviour depending on optional arguments. it also makes implementation significantly harder for languages like [C] that dont like function overloading.
 
 if a parameter in the context uses an enum, the values of the enum must be stored flatly on the top-level of daamath's [namespace].
 

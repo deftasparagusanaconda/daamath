@@ -1,16 +1,18 @@
 # [daa]math
 
-a mathematician's spellbook. it is a cross-language math library [specification], with [implementations] in various programming languages. 
+a mathematician's spellbook: cross-language math library specification, with implementations in various programming languages
 
 # why does daamath exist?
 
-"does integer division do floor rounding? or trunc rounding?"
+"does integer division do floor rounding or trunc rounding?"
 
 "why is there no `log(num, base)` in C?"
 
 "why does `pow(2, 3)` return a float?"
 
-"why do i have to know `powf`, `pow` and `powl` in C? cant they just make one `pow`?"
+"why do i have to know `powf`, `pow` and`powl` in C? cant they just make one `pow`?"
+
+"i wish i could translate my math code from C to Python but they gives me different results"
 
 "but `log(-1)` is defined in the complex numbers. you mean i have to use `clog` for that? `log` should be able to do that if i pass a complex number"
 
@@ -31,21 +33,20 @@ this is very ugly to me. so i made daamath.
 # what does daamath do?
 
 - **cross-language consistency:** daamath is a language-agnostic specification. it has consistent behaviour across languages, up to the limitations of the language.
-- **domain-aware arithmetic:** arithmetic operators respect the number domain. for example, an integer divided by an integer shall not return a rational number. instead, it raises a `ClosureError`
-- **complete function sets:** hyperoperations, trigonometry, boolean gates, ordering operators, quantization, and more
-- **no implicit type promotion:** daamath will never cast an `int` to a `float`. it will _always_ preserve your datatype.
-- **aliased namespace:** everything in daamath has a precise internal name, and a user-friendly external name (like `ln` instead of `h3d__E`)
-- **unicode characters:**  to find math characters from unicode easily
-- **mathematical constants:** e, tau, phi, and so much more
-- **[documentation website][docs]:** everything in daamath has a dedicated documentation webpage 
+- **domain-aware mathematics:** operators respect the domain of discussion. for example, an integer divided by an integer can be set to return either an integer or rational number
+- **complete function sets:** hyperoperations
+to n=4, trigonometry in all 2 non-degenerate geometries, all non-trivial boolean gates, ordering operators, quantization/rounding, …
+- **type preservation:** daamath will never cast an `int` to a `float`. it will _always_ preserve your contract of precision aka your datatype.
+- **aliased namespace:** everything in daamath has one precise internal name, and may have one user-friendly external name (like `ln` instead of `h3d__E`)
+- **unicode characters:** find math characters from unicode easily
+- **mathematical constants:** e, tau, phi, …
+- **documentation website:** everything in daamath has a dedicated documentation webpage 
 
 # examples
 
 by default, integer division raises an error if the result isnt an integer
 
 ```python
-import daamath as dm
-
 dm.div(5, 2)
 # ClosureError: result 2.5 is not in INTEGERS
 ```
@@ -53,10 +54,7 @@ dm.div(5, 2)
 but if you enable rounding, no error is raised
 
 ```python
-import daamath as dm
-
-dm.rounding = dm.rounding.FLOOR
-
+dm.context.datatypes.rounding = dm.roundfloor
 dm.div(5, 2)
 # returns 2
 ```
@@ -64,13 +62,9 @@ dm.div(5, 2)
 by default, daamath enables nearest-even rounding for float operations. you can disable that to make sure all your operations are 100% accurate
 
 ```python
-import daamath as dm
-
-dm.rounding = dm.rounding.NONE
-
+dm.context.datatypes.rounding = None
 dm.add(1.0, 2.0)
 # 3.0
-
 dm.add(0.1, 0.2)
 # RepresentationError: result 0.3000000000000000166533453693773481063544750213623046875 cannot be accurately represented by the float datatype
 ```
@@ -78,15 +72,11 @@ dm.add(0.1, 0.2)
 you also have cool tidbits like this:
 
 ```python
-import daamath as dm
-
 print(dm.GREEK.LOWERCASE.TAU)
 # τ
-
 print(dm.INFINITY, dm.NOT.IN.RIGHT, dm.LATIN.DOUBLESTRUCK.UPPERCASE.R)
 # ∞ ∉ ℝ
 ```
-
 
 # install
 
@@ -108,7 +98,7 @@ dont even get me started on how left out the [unicode math characters](https://e
 ok rant done
 
 made by  
-[🌸 daa][daa]
+🌸 [daa]
 
 [specification]: https://deftasparagusanaconda.github.io/daamath/specification
 [implementations]: https://deftasparagusanaconda.github.io/daamath/implementations

@@ -91,11 +91,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../constants/">constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >exceptions</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../exceptions/">Index</a>
-                </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../exceptions/">exceptions</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >namespace</a>
     <ul>
@@ -106,6 +102,8 @@
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../context/">context</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../domains/">domains</a>
                   </li>
               </ul>
       </div>
@@ -138,6 +136,8 @@
 <p>have you tried debugging <code>log(y/8*(49-1)+1,49)</code> and wondered 'why is this scaled weirdly?', only to realize after painful eye strain that its not log with base e. there is a second argument giving base=49. the problem was that the function changed behaviour depending on arity, and it was hard to read the arity by eye. we should guarantee that log always takes two arguments, and that the one-argument version of log (like <code>ln</code>, <code>log2</code>, <code>log10</code>) should always make their base clear. that way, there is no confusion of 'is this <code>log</code> taking base or not?' because you can see from the function name directly.</p>
 <h1 id="context-and-function-behaviour">context and function behaviour</h1>
 <p>daamath maintains a .context</p>
+<h1 id="function-sets">function sets</h1>
+<p>daamath maintains mathematically defined functions, as well as some numerically inclined functions such as from <a href="https://en.wikipedia.org/wiki/IEEE_754#Recommended_operations">IEEE 754</a></p>
               
             </div>
           </div><footer>

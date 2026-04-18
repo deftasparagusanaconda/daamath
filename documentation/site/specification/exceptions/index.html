@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Index - daamath</title>
+    <title>exceptions - daamath</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Index";
-        var mkdocs_page_input_path = "specification/exceptions/index.md";
+        var mkdocs_page_name = "exceptions";
+        var mkdocs_page_input_path = "specification/exceptions.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -89,18 +89,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../constants/">constants</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >exceptions</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">exceptions</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Index</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#closureerror">ClosureError</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fidelityerror">FidelityError</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#typeerror">TypeError</a>
-    </li>
-    </ul>
-                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >namespace</a>
@@ -112,6 +102,8 @@
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../context/">context</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../domains/">domains</a>
                   </li>
               </ul>
       </div>
@@ -129,8 +121,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">specification</li>
-          <li class="breadcrumb-item">exceptions</li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">exceptions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -142,7 +133,7 @@
                 <details><summary>lingo</summary>  
 
 errors occur.  
-flags are set.  
+flags are set and unset.  
 exceptions are raised.  
 a representation in a programming language means a datatype (like `bool`, `uint`, `int`, `float`, …).  
 the fidelity of a representation in a programming language means the precision of a datatype (like `float32` vs `float64`).  
@@ -151,30 +142,34 @@ the fidelity of a representation in a programming language means the precision o
 
 <h1 id="introduction">introduction</h1>
 <p>when doing mathematics, we encounter strange things like <code>1/0</code>, <code>0/0</code>, <code>0^0</code>, <code>-1!</code>, etc. daamath recognizes all of these through errors. </p>
-<p>the two most important errors are <a href="#closureerror">ClosureError</a> and <a href="#fidelityerror">FidelityError</a></p>
-<h2 id="closureerror">ClosureError</h2>
-<p>occurs when a function tries to return a value that is undefined in its codomain. when working with real numbers, <code>0/0</code> is undefined because the domain doesnt represent that. so a <code>ClosureError</code> occurs. but in wheel algebra, <code>0/0</code> is defined so <code>ClosureError</code> doesnt occur.</p>
-<p>strangely, if the function was something like div: R, R → W, then <code>0/0</code> is indeed defined in wheel algebra, even though you divide two real numbers. so <code>ClosureError</code> doesnt occur. note that the output codomain wasnt determined by the input domains. the function defined that itself :) so <code>ClosureError</code> only occurs based on the function's codomain. </p>
-<h2 id="fidelityerror">FidelityError</h2>
-<p>occurs when a datatype/representation cannot accurately store a value. for example, <code>0.1</code> as a float will raise a <code>FidelityError</code> (given that rounding is disabled). <code>-1</code> as a <code>uint</code> (unsigned integer) will raise a <code>FidelityError</code>. </p>
-<h2 id="typeerror">TypeError</h2>
-<p>occurs when a function receives two arguments of different datatypes/representations. since daamath does not want to assume a precision/fidelity and thus a datatype, it wants to preserve the original datatype as much as possible. so though the domains may be different, daamath requires that the datatypes/representations are homogeneous. </p>
-<p>an example is <code>div(2, 3.0)</code>. here, <code>2</code> is an <code>int</code> but <code>3.0</code> is a <code>float</code> so <code>div</code> doesnt know which datatype to return. so it raises a <code>TypeError</code>.</p>
-<p>daamath shouldnt have to implement this. the language should handle this. if the language cant, then daamath should handle it itself</p>
+<h1 id="error">Error</h1>
+<p>the base class of all errors in daamath.</p>
+<h2 id="domainerror">DomainError</h2>
+<p>an <a href="#error">Error</a> that occurs when something related to a domain goes wrong</p>
+<h3 id="outofdomainerror">OutOfDomainError</h3>
+<p>a <a href="#domainerror">DomainError</a> that occurs when a function checks its inputs or output and they dont adhere to the function's desired domain for that input or output. </p>
+<p>when working with real numbers, <code>0/0</code> is undefined because the domain doesnt represent that. so a <code>ClosureError</code> occurs. but in wheel algebra, <code>0/0</code> is defined so <code>ClosureError</code> doesnt occur.</p>
+<p>strangely, if the function was something like div: R, R → W, then <code>0/0</code> is indeed defined in wheel algebra, even though you divide two real numbers. so <code>OutOfDomainError</code> doesnt occur. note that the output codomain wasnt determined by the input domains. the function defined the domain of the output :)</p>
+<h2 id="datatypeerror">DataTypeError</h2>
+<p>an <a href="#error">Error</a> that ocurs when something related to a datatype goes wrong.</p>
+<h3 id="fidelityerror">FidelityError</h3>
+<p>a <a href="#datatypeerror">DataTypeError</a> that occurs when a datatype cannot accurately store a value. for example, <code>0.1</code> as a float will raise a <code>FidelityError</code> (given that rounding is disabled). <code>-1</code> as a <code>uint</code> (unsigned integer) will raise a <code>FidelityError</code>. </p>
+<h3 id="typeinferenceerror">TypeInferenceError</h3>
+<p>a <a href="#datatypeerror">DataTypeError</a> that occurs when a function receives two arguments of different datatypes/representations. since daamath does not want to assume a precision/fidelity and thus a datatype, it tries to infer your precision contract from your inputs. when it cannot reliably do this, it will raise a <a href="#typeinferenceerror">TypeInferenceError</a></p>
+<p>an example is <code>div(2, 3.0)</code>. here, <code>2</code> is an <code>int</code> but <code>3.0</code> is a <code>float</code> so <code>div</code> doesnt know which datatype to return. so it raises a <code>TypeInferenceError</code>.</p>
+<p>this error will rarely occur, if even implemented at all: if your language only has definitions for certain types, it will never be defined for type combinations where the output type cannot be inferred. but in languages with duck typing like python, this error is indeed useful.</p>
 <h1 id="implementation">implementation</h1>
-<p>if the programming language supports exceptions, daamath uses them. otherwise, we take an approach similar to <a href="https://">IEEE 754</a>. when an error is encountered, its corresponding boolean flag is set to <code>true</code>, and a default value for that datatype is returned (e.g. 0 for int, Nan for float). it is up to the programmer to check these flags. the sentinel value allows computation to continue until the program checks the sticky flags and decides what to do with them. it is up to the programmer to reset these sticky flags. thus <code>[assumptions.condition_handling]</code> has four options: </p>
+<p>if the programming language supports exceptions, daamath uses them. otherwise, we take an approach similar to <a href="https://">IEEE 754</a>: when an error is encountered, its corresponding flag is set, and the sentinel value for that datatype is returned. it is up to the programmer to check these flags. it is up to the programmer to unset these sticky flags. thus <code>[assumptions.condition_handling]</code> has four options: </p>
 <p><code>SENTINEL</code>: return sentinel
 <code>FLAG_SENTINEL</code>: set flags, return sentinel
 <code>RAISE_HALT</code>: raise exception, halt execution
 <code>FLAG_RAISE_HALT</code>: set flags, raise exception, halt execution</p>
-<p>the default value is <code>FLAG_RAISE_HALT</code> if exceptions are supported else <code>FLAG_SENTINEL</code>. sentinel values are defined in the <a href="https://">assumptions</a>. sentinel values need not be restricted by the domain, and can be any value of the datatype (i havent decided fully yet. perhaps functions that receive values outside of their defined domain wont be very happy about this and wont allow errors to propagate. so im not sure)</p>
-<p>in the case that multiple errors occur, and only one exception can be raised at a time, this hierarchy of errors determines which exception is raised first:
-<code>ClosureError</code> &gt; <code>FidelityError</code> &gt; <code>TypeError</code>
-additionally, if flagging is enabled, the flags for both should be set before one exception is raised and execution is halted. that way, the programmer still has a full picture of all the errors that occurred. </p>
+<p>the default value <code>FLAG_RAISE_HALT</code> if exceptions are supported else <code>FLAG_SENTINEL</code>. sentinel values are defined in the <a href="https://">assumptions</a>. sentinel values need not be restricted by the domain, and can be any value of the datatype.</p>
+<p>in the case that multiple errors occur, and only one exception can be raised at a time, the precedence of exceptions should be the same as the order in which they appear in this document. and yes that does mean an <a href="#error">Error</a> should be raised before a DomainError because if an error doesnt even have a name, it is probably very very serious, as it cannot even be classified as a <a href="#domainerror">DomainError</a> or a <a href="#datatypeerror">DataTypeError</a>. a <a href="#domainerror">DomainError</a> is more serious than a <a href="#datatypeerror">DataTypeError</a> because it is a violation of mathematics, which is more serious than a violation of computation. additionally, if flagging is also enabled, the corresponding flag for each error should be set before the exception is raised and execution is halted. that way, the programmer still has a full picture of all the errors that occurred. </p>
 <h1 id="motivation">motivation</h1>
 <p>if daamath is to be rigorous, it has to be equally as rigorous in its error handling. handling edge cases and special cases. i dont particularly enjoy designing edge case handling behaviour but this has taught me a good amount.</p>
 <h1 id="rant">rant</h1>
-<p>it was pretty surprising to realize that <code>0/0</code> is actually a ~~<code>DomainE</code>~~ err.. a <code>ClosureError</code>. i thought it would want to be its own error like <code>ZeroDivisionError</code> or <code>ZeroPowerError</code> for <code>0^0</code> and i was afraid i was going to have to special case every special value. but im glad i figured it out. this is really nice</p>
+<p>it was pretty surprising to realize that <code>0/0</code> is actually a <code>OutOfDomainError</code>. i thought it would want to be its own error like <code>ZeroDivisionError</code> or <code>ZeroPowerError</code> for <code>0^0</code> and i was afraid i was going to have to special case every special value. but im glad i figured it out. this is really nice and very true to the mathematics</p>
               
             </div>
           </div><footer>

@@ -7,3 +7,7 @@ have you tried debugging `log(y/8*(49-1)+1,49)` and wondered 'why is this scaled
 # context and function behaviour
 
 daamath maintains a .context
+
+# function sets
+
+daamath maintains mathematically defined functions, as well as some numerically inclined functions such as from [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754#Recommended_operations)
