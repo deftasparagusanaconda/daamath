@@ -10,8 +10,6 @@ the fidelity of a representation in a programming language means the precision o
 
 </details>
 
-# introduction
-
 when doing mathematics, we encounter strange things like `1/0`, `0/0`, `0^0`, `-1!`, etc. daamath recognizes all of these through errors. 
 
 # Error

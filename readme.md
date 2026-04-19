@@ -10,7 +10,7 @@ a mathematician's spellbook: cross-language math library specification, with imp
 
 "why does `pow(2, 3)` return a float?"
 
-"why do i have to know `powf`, `pow` and`powl` in C? cant they just make one `pow`?"
+"why do i have to know `powf`, `pow` and `powl` in C? cant they just make one `pow`?"
 
 "i wish i could translate my math code from C to Python but they gives me different results"
 

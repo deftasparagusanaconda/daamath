@@ -1,7 +1,9 @@
 context:
   functions:
     _some function_:
-      definition: function pointer
+      definition: 
+        _some datatype_: function pointer
+        …: …
       inputs:
         _some input_:
           domain: domain

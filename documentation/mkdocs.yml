@@ -1,28 +1,91 @@
 site_name: daamath
-#site_url: https://deftasparagusanaconda.github.io/daamath
+site_url: https://deftasparagusanaconda.github.io/daamath
 repo_url: https://github.com/deftasparagusanaconda/daamath
 repo_name: github
 
-extra_css:
-  - stylesheets/extra.css
+#extra_css:
+#  - stylesheets/extra.css
 
 theme: 
   #name: readthedocs
   name: material
   #name: mkdocs
+  font: false # conform to system's fonts
+    #text: Roboto
+    #code: Jetbrains Mono
   features:
+#    - navigation.instant
+#    - navigation.instant.prefetch
+#    - navigation.instant.progress
     - navigation.indexes
+    - navigation.tracking
     #- navigation.expand
     #- navigation.sections
-    #- navigation.top
-    #- toc.follow
+    - navigation.top
+    - navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.path
+    #- navigation.prune 
+    - toc.follow  
+
   palette:
-#    scheme: slate
-    primary: custom
-    accent: custom
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: green  # these are ugly colours so that i can notice them if things go wrong
+      accent: yellow  # these are ugly colours so that i can notice them if things go wrong
+      toggle:
+        icon: material/brightness-auto
+        name: auto
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: white
+      accent: purple
+      scheme: default 
+      toggle:
+        icon: material/weather-sunny
+        name: light
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      accent: purple
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: dark
+    
+  favicon: assets/logo.svg
+  logo: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
 
 plugins:
   - search
   - include-markdown
   - awesome-nav
+  - social  # social cards
   #- toggle-sidebar
+  #- git-revision-date-localized:
+  #    enable_creation_date: true
+  - optimize
+  #- offline  # absolutely not
+
+# ask feedback
+extra:
+  analytics: 
+    provider: google
+    property: G-P26D3ZY20K
+    feedback:
+      title: was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: this page was helpful
+          data: 1
+          note: >-
+            thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: this page could be improved
+          data: 0
+          note: >- 
+            thanks for your feedback!
