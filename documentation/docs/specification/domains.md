@@ -1,3 +1,5 @@
+# domains
+
 arguably one of the most important concepts in daamath.
 
 a domain is a set of things. it is implemented as an [indicator function].

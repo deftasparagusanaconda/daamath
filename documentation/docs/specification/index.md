@@ -1,3 +1,5 @@
+# specification
+
 daamath was originally born in python, where i started implementing the hyperoperations, the trig functions, the boolean gates, etc etc. i faced a bit of friction porting it to C, and i realized that maintaining a language-agnostic specification will be the healthiest direction. so here we are
 
 daamath tries to be simple, regarding separation of concerns. we have a few collections of [functions], [strings], [constants]. we also maintain a special [context] struct. it defines its own [exceptions], and under all this, it has a special underground idea of [domains], which are separate from [datatypes]

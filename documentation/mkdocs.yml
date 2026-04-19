@@ -1,19 +1,21 @@
 site_name: daamath
+#site_url: https://deftasparagusanaconda.github.io/daamath
 repo_url: https://github.com/deftasparagusanaconda/daamath
+repo_name: github
 
 extra_css:
   - stylesheets/extra.css
 
 theme: 
-  name: readthedocs
-  #name: material
+  #name: readthedocs
+  name: material
   #name: mkdocs
-#  features:
-#    - navigation.indexes
-#    - navigation.expand
-#    - navigation.sections
-#    - navigation.top
-#    - toc.follow
+  features:
+    - navigation.indexes
+    #- navigation.expand
+    #- navigation.sections
+    #- navigation.top
+    #- toc.follow
   palette:
 #    scheme: slate
     primary: custom
@@ -22,6 +24,5 @@ theme:
 plugins:
   - search
   - include-markdown
-#  - toggle-sidebar
-
-
+  - awesome-nav
+  #- toggle-sidebar

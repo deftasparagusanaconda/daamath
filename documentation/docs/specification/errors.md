@@ -1,3 +1,5 @@
+# errors
+
 <details><summary>lingo</summary>  
 
 errors occur.  

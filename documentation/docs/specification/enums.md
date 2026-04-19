@@ -1,3 +1,5 @@
+# enums
+
 daamath requires a few enums for the context tree.
 
 # ErrorPolicy

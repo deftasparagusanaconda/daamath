@@ -1,3 +1,5 @@
+# daamath
+
 a mathematician's spellbook: cross-language math library specification, with implementations in various programming languages
 
 # why does daamath exist?
@@ -99,6 +101,10 @@ print(dm.infinity, dm.not.in.right, dm.latin.doublestruck.uppercase.r)
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
       <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
     </tr>
+	<tr>
+	  <td>…</td>
+	  <td><code>…</code></td>
+    </tr>
   </tbody>
 </table>
 
@@ -115,9 +121,8 @@ ok rant done
 made by  
 🌸 [daa]
 
-[gapprox]: https://github.com/deftasparagusanaconda/gapprox
 [specification]: https://deftasparagusanaconda.github.io/daamath/specification
 [implementations]: https://deftasparagusanaconda.github.io/daamath/implementations
-[docs]: https://deftasparagusanaconda.github.io/daamath/
+[gapprox]: https://github.com/deftasparagusanaconda/gapprox
 [install]: https://deftasparagusanaconda.github.io/daamath/install/
-[daa]: https://discordapp.com/users/608255432859058177
+[daa]: https://github.com/deftasparagusanaconda

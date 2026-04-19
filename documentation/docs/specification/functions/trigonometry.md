@@ -2,7 +2,6 @@
 
 daamath maintains the full lattice of trigonometric functions. we also expose their relationship directly from [hypercomplex] algebra, believe it or not
 
-
 ## introduction
 
 the trigonometric functions are derived from the exponential series 

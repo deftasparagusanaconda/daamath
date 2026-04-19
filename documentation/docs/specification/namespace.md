@@ -1,3 +1,5 @@
+# namespace
+
 daamath maintains a cross-language-friendly namespace. daamath's casing conventions do not change according to the implementation. here are the rules:
 
 # everything is lowercase

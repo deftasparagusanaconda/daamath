@@ -1,4 +1,4 @@
-# quantize
+# quantization
 
 [quantization](https://en.wikipedia.org/wiki/Quantization_%28signal_processing%29?wprov=sfla1) is such a wide topic.. but for daamath, i have implemented the few most important.
 

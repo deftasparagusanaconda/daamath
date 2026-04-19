@@ -1,3 +1,5 @@
+# context
+
 in math, even when we write `2 / 3`, we assume many things. we assume we are working with the real numbers. we assume `/` is defined on real numbers. in CS, we assume we want `0 / 0` to raise an error. if the datatype is `int`, programmers assume `2 / 3` to be rounded division. daamath makes all of this explicit by storing variables in a [tree][context.yaml] called the context.
 
 functions look at the context to determine what to do. you can change the context in 3 levels of ascending precedence:

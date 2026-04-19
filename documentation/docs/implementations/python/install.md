@@ -1,3 +1,5 @@
+# install
+
 daamath is hosted on [PyPI](https://pypi.org/project/daamath). simply run this in your terminal:
 
 ```
