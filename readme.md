@@ -77,14 +77,30 @@ print(dm.infinity, dm.not.in.right, dm.latin.doublestruck.uppercase.r)
 ```
 
 # install
-
-| language | install |
-| - | - |
-| [python](https://deftasparagusanaconda.github.io/daamath/implementations/python/install) | `python -m pip install daamath` |
-| [c](https://deftasparagusanaconda.github.io/daamath/implementations/c/install) | `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh` |
-| [c++](https://deftasparagusanaconda.github.io/daamath/implementations/c++/install) | `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh` |
-| [javascript](https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install) | `npm install daamath` |
-| [julia](https://deftasparagusanaconda.github.io/daamath/implementations/julia/install) | `julia -e 'using Pkg; Pkg.add("daamath")'` |
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/python/install">python</a></td>
+      <td><code>python -m pip install daamath</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
+      <td><code>npm install daamath</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
+      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
+    </tr>
+  </tbody>
+</table>
 
 click on your language for full instructions
 

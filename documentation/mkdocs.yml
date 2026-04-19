@@ -1,18 +1,27 @@
 site_name: daamath
+repo_url: https://github.com/deftasparagusanaconda/daamath
 
 extra_css:
   - stylesheets/extra.css
 
 theme: 
   name: readthedocs
-  features:
-    - navigation.indexes
+  #name: material
+  #name: mkdocs
+#  features:
+#    - navigation.indexes
+#    - navigation.expand
+#    - navigation.sections
+#    - navigation.top
+#    - toc.follow
   palette:
 #    scheme: slate
     primary: custom
     accent: custom
 
 plugins:
+  - search
   - include-markdown
+#  - toggle-sidebar
 
 
