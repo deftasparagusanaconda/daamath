@@ -1,6 +1,7 @@
 # a domain is a function with special UPPERCASE naming, because it is treated as both an object and also as a function
 
-from typing import Any
+from typing import Any, Callable
+import numbers
 
 # 1st order domains (indicator functions):
 def THING(fish: Any) -> bool:
@@ -44,7 +45,7 @@ def REAL(fish: Any) -> bool:
 
 def RATIONAL(fish: Any) -> bool:        
     'fish is REAL and fish can be represented as p / q where q ≠ 0'
-    return REAL(fish) and isinstance()
+    return REAL(fish) and isinstance(fish, numbers.Rational)
 
 def INTEGER(fish: Any) -> bool:         
     'fish is RATIONAL and fish is divisible by 1'
@@ -75,15 +76,15 @@ def NATURALFROM(start: int) -> Callable[[Any], bool]:
         return INTEGER(fish) and fish >= start
     return NATURALFROM
 
-NATURALFROM_0: Callable[[Any], bool] = NATURAL_START_N(0)
-NATURALFROM_1: Callable[[Any], bool] = NATURAL_START_N(1)
-NATURALFROM_2: Callable[[Any], bool] = NATURAL_START_N(2)
+NATURALFROM_0: Callable[[Any], bool] = NATURALFROM(0)
+NATURALFROM_1: Callable[[Any], bool] = NATURALFROM(1)
+NATURALFROM_2: Callable[[Any], bool] = NATURALFROM(2)
 
 def INTEGERMODULO(mod: int) -> Callable[[Any], bool]:
     'integers modulo N, like in modular arithmetic'
     if mod == 0:
         return INTEGER
-    if not INTEGER(mod, int) or mod < 0:
+    if not INTEGER(mod) or mod < 0:
         raise ValueError(f'sorry, but i want mod to be a non-negative integer. i dont know what integers modulo {mod} would mean')
     def INTEGERMODULO_N(fish: Any) -> bool:
         return INTEGER(fish) and fish // mod == 0

@@ -1,4 +1,4 @@
-in math, even when we write `2 / 3`, we assume many things. we assume we are working with the real numbers. we assume `/` is defined on real numbers. in CS, we assume we want `0 / 0` to raise an error. if the datatype is `int`, programmers assume `2 / 3` to be rounded division. daamath makes all of this explicit by storing a set of variables called the 'context'.
+in math, even when we write `2 / 3`, we assume many things. we assume we are working with the real numbers. we assume `/` is defined on real numbers. in CS, we assume we want `0 / 0` to raise an error. if the datatype is `int`, programmers assume `2 / 3` to be rounded division. daamath makes all of this explicit by storing variables in a [tree][context.yaml] called the context.
 
 functions look at the context to determine what to do. you can change the context in 3 levels of ascending precedence:
 
@@ -36,64 +36,17 @@ dm.sin(x, context = my_context)
 # note: the result is a float because daamath preserves datatype but the domain was promoted to COMPLEX. 0.8414709848078965 is indeed COMPLEX, just with zero imaginary part.
 ```
 
-# daa.. what is in this 'context' object??
+# the yaml
 
-dm
-	context
-		functions
-			ClosureError_policy
-			inputs
-				check_domain
-			output
-				check_domain
-			domain
-			add
-				definition
-				inputs
-					check_domain
-					augend
-						check_domain
-					addend
-						check_domain
-				output
-					check_domain
-					codomain
-				ClosureError_policy
-				check_input_domain
-			sub
-				definition
-				inputs
-					check_domain
-					minuend
-						check_domain
-					subtrahend
-						check_domain
-				output
-					check_domain
-				ClosureError_policy
-			…
-		datatypes
-			FidelityError_policy
-			sentinel_value_policy
-			rounding
-			int
-				sentinel_value
-				FidelityError_policy
-				sentinel_value_policy
-				rounding
-			float
-				sentinel_value
-				FidelityError_policy
-				sentinel_value_policy
-				rounding
-			…
-
-the context is a tree. branch nodes do not store anything. only leaf nodes store values
+[context.yaml](context.yaml): (click to download)
+~~~yaml
+{% include-markdown "./context.yaml" %}
+~~~
 
 # implementation
 the context shall be implemented as a thread-local instance of an instantiable collection of variables (like an [object] in [OOP] languages, a [struct] in [C], ...). it cannot be a loose grouping of variables, because the user has to be able to make a copy of the entire set of variables, to store different contexts. to store a context, we may use any data structure that defines an outline, and each [instance] can store different contexts.
 
-if a parameter in the context uses an enum, the values of the enum must be stored flatly on the top-level of daamath's [namespace].
+in case a user wants to change multiple related variables at once, we provide helper functions that, say, change the domain of all functions at once
 
 # motivation
 
@@ -121,6 +74,8 @@ strangely, since type is always preserved and daamath never assumes a different 
 
 ah.. i see i am able to parameterize the domains. this will be a problem. in an enum, some values require an additional parameter to be fully defined. NATURALS_FROM_X, INTEGERS_MODULO_X, ... so how shall i resolve this problem? for integers modulo X, a function will want to use the `mod` (alias for floor remainder) operator on the 
 
+im tired boss. awful tired
+
 [namespace]: https://
 [object]: https://en.wikipedia.org/wiki/Object_(computer_science)
 [C]: https://en.wikipedia.org/wiki/C_(programming_language)
@@ -129,5 +84,4 @@ ah.. i see i am able to parameterize the domains. this will be a problem. in an 
 [IEEE 754]: https://en.wikipedia.org/wiki/IEEE_754
 [struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [instance]: https://en.wikipedia.org/wiki/Instance_(computer_science)
-
-
+[context.yaml]: context.yaml

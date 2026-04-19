@@ -3,34 +3,6 @@ site_name: daamath
 extra_css:
   - stylesheets/extra.css
 
-nav:
-  - index.md
-  - install.md
-  - implementations: 
-    - implementations/index.md
-    - python: 
-      - implementations/python/index.md
-    - c:
-      - implementations/c/index.md
-  - specification:
-    - specification/index.md
-    - functions:
-      - specification/functions/index.md
-      - arithmetic: specification/functions/arithmetic.md
-      - trigonometry: specification/functions/trigonometry.md
-      - logic: specification/functions/logic.md
-      - interval: specification/functions/interval.md
-      - quantize: specification/functions/quantize.md
-    - strings: 
-      - specification/strings/index.md
-    - constants: specification/constants.md
-    - exceptions: specification/exceptions.md
-    - namespace: 
-      - specification/namespace/index.md
-      - aliases: specification/namespace/aliases.md
-    - context: specification/context.md
-    - domains: specification/domains.md
-
 theme: 
   name: readthedocs
   features:
@@ -43,6 +15,4 @@ theme:
 plugins:
   - include-markdown
 
-
-#theme: readthedocs
 

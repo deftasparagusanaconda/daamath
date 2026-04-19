@@ -1,0 +1,7 @@
+from enum import Enum
+
+
+SENTINEL = 0
+FLAG_SENTINEL = 1
+RAISE_HALT = 2
+FLAG_RAISE_HALT = 3
