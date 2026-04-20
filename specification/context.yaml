@@ -6,19 +6,20 @@ context:
         …: …
       inputs:
         _some input_:
-          domain: domain
-          check_domain: bool
-          OutOfDomainError_policy: enum
+          domain: domain indication function pointer
+          check_domain: boolean YES/NO value
+          OutOfDomainError_policy: value from ErrorPolicy enum
         …: …
       output:
-        domain: domain
-        check_domain: bool
-        OutOfDomainError_policy: enum
+        domain: domain indicator function pointer
+        check_domain: boolean YES/NO value
+        OutOfDomainError_policy: value from ErrorPolicy enum
     …: …
   datatypes:
     _some datatype_:
-      sentinel_value: any
-      FidelityError_policy: enum
-      sentinel_value_policy: enum
-      rounding: enum
+      assumed_domain: domain indicator function pointer
+      sentinel_value: a value from the corresponding datatype
+      FidelityError_policy: value from ErrorPolicy enum
+      sentinel_value_policy: value from SentinelPolicy enum
+      rounding: function pointer
     …: …
