@@ -24,9 +24,9 @@ theme:
     - navigation.top
     - navigation.tabs
     #- navigation.tabs.sticky
-    - navigation.path
+    #- navigation.path
     #- navigation.prune 
-    - toc.follow  
+    #- toc.follow  
 
   palette:
     # Palette toggle for automatic mode

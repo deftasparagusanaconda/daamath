@@ -15,6 +15,10 @@ daamath maintains the following constants:
 | LOG10_2 | 0.30102999566398119521373889472449302676818988146210854131042746112710818927442451… |
 | TRUE    | boolean top element |
 | FALSE   | boolean bottom element |
+| PLASTIC     | 1.324717957244746… |
+| SUPERGOLDEN | 1.465571231876768… |
+| GOLDEN      | 1.618033988749… |
+| SILVER      | 2.41421356237309504880… |
 
 # what can become a constant?
 

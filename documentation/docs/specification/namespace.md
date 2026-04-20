@@ -23,7 +23,7 @@ daamath has a rigorous argument pre-binding convention. it is clearest by exampl
 `div(p, q)` = `div_p(q)` = `div__q(p)` = `DIV_P_Q`  
 `fma(a, b, c)` = `fma_a(b, c)` = `fma__b(a, c)` = `fma___c(a, b)` = `fma_a_b(c)` = `fma_a__c(b)` = `fma__b_c(a)` = `FMA_A_B_C`  
 
-this allows us to use [prefix notation](https://simple.wikipedia.org/wiki/Prefix_notation) directly in the namespace. the disadvantage is that we cannot have underscores in function names. daamath only uses this in the internal namespace because names get ugly quickly. `h3d__10(a)` is very unsightly so instead we give the alias `log10(a)`.
+this allows us to use [prefix notation](https://simple.wikipedia.org/wiki/Prefix_notation) directly in the namespace. the disadvantage is that we cannot have underscores to separate words in names. for this reason, daamath only uses this in the internal namespace. for example, `h3d__10(a)` is very unsightly so instead we give the alias `log10(a)`. the external namespace shall still do its best to conform to this convention though.
 
 # rant
 

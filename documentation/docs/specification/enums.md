@@ -4,6 +4,8 @@ daamath requires a few enums for the context tree.
 
 # ErrorPolicy
 
+the [context] tree sets policies for how to handle [errors]
+
 | value | explanation|
 | - | - |
 | SENTINEL | return sentinel |
@@ -16,9 +18,12 @@ these policies apply to all errors in daamath
 
 # SentinelPolicy:
 
+the [context] tree sets policies for how to handle sentinel values
+
 | value | explanation|
 | - | - |
 | PROPAGATE | return sentinel as-is |
 | IGNORE | treat sentinel as normal value |
 
+[context:] context.md
 [errors]: errors.md

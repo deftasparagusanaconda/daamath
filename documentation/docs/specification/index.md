@@ -46,6 +46,8 @@ also, the architecture also allows us to cleanly implement modular arithmetic as
 
 # scope
 
+daamath is compliant only up to complex numbers because complex algebra is closed under the hyperoperations, and because promoting daamath to a geometric algebra engine (like ganja.js) is out of my ability (for now)
+
 concerning the threshold at which daamath starts pruning functions, daamath should keep a consistent vision: prune degenerate functions that are replaceable by a simple single atomic expression. like the boolean gate `fst(a, b)` can just be written as `a`. `always_true(a, b)` can just be `TRUE`. yknow?
 
 # contributing

@@ -1,1 +1,8 @@
 title: specification
+
+nav:
+  - domains: domains.md
+  - datatypes: datatypes.md
+  - context: context.md
+  - functions: functions/
+  - '*'
