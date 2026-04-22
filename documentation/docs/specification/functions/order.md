@@ -1,8 +1,8 @@
-# interval
+# order
 
-intervals... defined on a dense set of numbers. daamath provides a few important functions for interval
+once an ordering is defined on a domain, we can start to define some useful functions
 
-with one point A, we have three regions of the 1D real number line, and thus 2 ^ 3 = 8 possible functions:
+with respect to one element A, we have three partitions of the domain:
 
 | < A | A | A < | name |
 | - | - | - | - |
@@ -15,9 +15,9 @@ with one point A, we have three regions of the 1D real number line, and thus 2 ^
 | T | T | F | [le](#le) |
 | T | T | T | <del>false</del> |
 
-functions that involve more than one point can be composed of any of these, but for convenience, daamath provides the following:
+functions that involve more than one element can be composed of any of these, but for convenience, daamath provides the following:
 
-with two points A and B, we have five regions of the 1D real number line, and thus 2 ^ 5 = 32 possible functions:
+with respect to two elements A and B, we have five partitions of the domain:
 
 | < A | A | A < & < B | B | B < | name |
 | - | - | - | - | - | - | 
@@ -53,8 +53,6 @@ with two points A and B, we have five regions of the 1D real number line, and th
 | T | T | T | F | T | <del>ne_B</del> |
 | T | T | T | T | F | <del>le_B</del> |
 | T | T | T | T | T | <del>true</del> |
-
-daamath only defines these on 1D spaces for now, and does not define intervals or regions for 2D spaces such as complex numbers and such
 
 ## API implementation
 

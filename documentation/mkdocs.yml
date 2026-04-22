@@ -5,6 +5,7 @@ nav:
   - specification: 
     - specification/index.md
     - domains: specification/domains.md
+    - orderings: specification/orderings.md
     - datatypes: specification/datatypes.md
     - context: specification/context.md
     - functions:
@@ -12,8 +13,8 @@ nav:
       - arithmetic: specification/functions/arithmetic.md
       - trigonometry: specification/functions/trigonometry.md
       - logic: specification/functions/logic.md
+      - order: specification/functions/order.md
       - quantize: specification/functions/quantize.md
-      - interval: specification/functions/interval.md
     - constants: specification/constants.md
     - strings: specification/strings.md
     - namespace: specification/namespace.md

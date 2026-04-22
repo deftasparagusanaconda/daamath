@@ -1,8 +1,13 @@
 # variadic
 
+daamath defines a variadically extensible function as a function that is fully commutative (the output is the same regardless of which permutation of inputs is passed to it) and associative. these are a superset of the more specialized meet/join functions from order theory. daamath does not overload 
+
+
 these are functions that can take a structured arbitrary count of inputs. they usually but not necessarily collapse the inputs down into one output. they are composed of some primitive function that collapses one or more inputs into one output. the primitive function is applied recursively on an arbitrary count of inputs 
 
 in general, for the primitive operation `op`, its variadic version `OP` can take an unordered set of inputs iff `op` is fully commutative (the output is the same regardless of which permutation of inputs is passed to it) and associative. if it is not, then the primitive has many possible definitions (left-fold? right-fold? reversed? etc etc yknow)
+
+as a specialization of these, certain 
 
 #### sum
 variadic extension of add
