@@ -8,38 +8,47 @@ the trigonometric functions are derived from the exponential series
 
 ι⁰/0! + ι¹/1! + ι²/2! + ι³/3! + …
 
-where if you set ι = i or ε or j, the even and odd terms will give you the cos and sin for the elliptic, parabolic, hyperbolic geometries respectively
-
-ι² = -1 will give you cos(x) & sin(x)  
-ι² =  0 will give you cosp(x) & sinp(x)  
-ι² = +1 will give you cosh(x) & sinh(x)  
+where if you set ι = ix or εx or jx, the even and odd terms will give you cos and sin for the elliptic, parabolic, hyperbolic geometries respectively
 
 totally we have 2 ⋅ 3 ⋅ 3P2 = 36 functions. 
 2 from the normal trig function and its inverse
 3 from the three geometries
 3P2 from a triangle of three sides, from which we take two sides
 
-=== "input semiarea, output ratio"
+=== "elliptic"
+	
+	| numerator  | denominator | name        | inverse |
+	| - | - | - | - |
+	| opposite   | hypotenuse  | [sin](#sin) | [asin](#asin) |
+	| adjacent   | hypotenuse  | [cos](#cos) | [acos](#acos) |
+	| opposite   | adjacent    | [tan](#tan) | [atan](#atan) |
+	| adjacent   | opposite    | [cot](#cot) | [acot](#acot) |
+	| hypotenuse | adjacent    | [sec](#sec) | [asec](#asec) |
+	| hypotenuse | opposite    | [csc](#csc) | [acsc](#acsc) |
+	
+=== "parabolic"
 
-	| numerator  | denominator | elliptic | parabolic | hyperbolic |
-	| -          | -           | - | - | - |
-	| opposite   | hypotenuse  | [sin](#sin) | <del>sinp</del> | [sinh](#sinh) |
-	| adjacent   | hypotenuse  | [cos](#cos) | <del>cosp</del> | [cosh](#cosh) |
-	| opposite   | adjacent    | [tan](#tan) | <del>tanp</del> | [tanh](#tanh) |
-	| adjacent   | opposite    | [cot](#cot) | <del>cotp</del> | [coth](#coth) |
-	| hypotenuse | adjacent    | [sec](#sec) | <del>secp</del> | [sech](#sech) |
-	| hypotenuse | opposite    | [csc](#csc) | <del>cscp</del> | [csch](#csch) |
+	| numerator  | denominator | name        | inverse |
+	| - | - | - | - |
+	| opposite   | hypotenuse  | sinp | asinp |
+	| adjacent   | hypotenuse  | cosp | acosp |
+	| opposite   | adjacent    | tanp | atanp |
+	| adjacent   | opposite    | cotp | acotp |
+	| hypotenuse | adjacent    | secp | asecp |
+	| hypotenuse | opposite    | cscp | acscp |
 
-=== "input ratio, output semiarea"
+	note: parabolic trig functions are trivial and thus not implemented
 
-	| numerator  | denominator | elliptic | parabolic | hyperbolic |
-	| -          | -           | - | - | - |
-	| opposite   | hypotenuse  | [asin](#asin) | <del>asinp</del> | [asinh](#asinh) |
-	| adjacent   | hypotenuse  | [acos](#acos) | <del>acosp</del> | [acosh](#acosh) |
-	| opposite   | adjacent    | [atan](#atan) | <del>atanp</del> | [atanh](#atanh) |
-	| adjacent   | opposite    | [acot](#acot) | <del>acotp</del> | [acoth](#acoth) |
-	| hypotenuse | adjacent    | [asec](#asec) | <del>asecp</del> | [asech](#asech) |
-	| hypotenuse | opposite    | [acsc](#acsc) | <del>acscp</del> | [acsch](#acsch) |
+=== "hyperbolic"
+
+	| numerator  | denominator | name        | inverse |
+	| - | - | - | - |
+	| opposite   | hypotenuse  | [sinh](#sinh) | [asinh](#asinh) |
+	| adjacent   | hypotenuse  | [cosh](#cosh) | [acosh](#acosh) |
+	| opposite   | adjacent    | [tanh](#tanh) | [atanh](#atanh) |
+	| adjacent   | opposite    | [coth](#coth) | [acoth](#acoth) |
+	| hypotenuse | adjacent    | [sech](#sech) | [asech](#asech) |
+	| hypotenuse | opposite    | [csch](#csch) | [acsch](#acsch) |
 
 unfortunately, parabolic trigonometry is trivial, because . thus daamath excludes parabolic trigonometry and maintains 24 instead.
 

@@ -15,3 +15,6 @@ daamath maintains a .context object that determines idfk
 # function sets
 
 daamath maintains mathematically defined functions, as well as some numerically inclined functions such as from [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754#Recommended_operations)
+# rant
+
+note to self: the arithmetic, trigonometry, logic, and interval function sets are done. quantize and variadic are not done. i hate that they are hard to define or grasp. this is tough

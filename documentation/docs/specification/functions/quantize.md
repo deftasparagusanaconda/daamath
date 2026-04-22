@@ -1,8 +1,8 @@
 # quantization
 
-[quantization](https://en.wikipedia.org/wiki/Quantization_%28signal_processing%29?wprov=sfla1) is such a wide topic.. but for daamath, i have implemented the few most important.
+these are [idempotent](https://en.wikipedia.org/wiki/Idempotence#Idempotent_functions) functions that map a domain to a proper subset of that domain, optionally minimizing the metric distance from the input to the output. 
 
-## introduction
+i still dont know what generalizes these (im working on it!) so daamath will blindly ship these for now. they will not be frozen in the API.
 
 ![neat thing i made!](diagrams/daamath-quantize.drawio.svg)
 

@@ -75,6 +75,7 @@ theme:
     #- content.action.view  # View source of this page
     - content.code.select
     - content.code.copy
+#      - icon: material/weather-sunny
     - content.code.annotate
   palette:
     # Palette toggle for automatic mode
