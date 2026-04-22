@@ -7,7 +7,7 @@ name = "daamath"
 version = "0.2.0"
 #dynamic = ["version"]
 description = "a mathematician's spellbook: language-agnostic math library specification with implementations in various languages "
-readme = "README.md"
+readme = "readme.md"
 requires-python = ">=3.11.0"
 license = "GPL-3.0-or-later"
 #package-dir = {"" = "."}
@@ -17,10 +17,14 @@ authors = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/deftasparagusanaconda/daamath"
+Homepage = "https://deftasparagusanaconda.github.io/daamath"
+Documentation = "https://deftasparagusanaconda.github.io/daamath"
+Repository = "https://github.com/deftasparagusanaconda/daamath"
+Issues = "https://github.com/deftasparagusanaconda/daamath/issues"
+#Changelog = "https://github.com/me/spam/blob/master/changelog.md"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["implementations/python/src"]

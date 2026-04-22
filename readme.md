@@ -32,14 +32,14 @@ this is very ugly to me. so i made daamath.
 
 # what does daamath do?
 
-- **cross-language consistency:** daamath is a language-agnostic specification. it has consistent behaviour across languages, up to the limitations of the language.
+- **cross-language consistency:** daamath is a language-agnostic specification. it has consistent behaviour and interface across languages
 - **domain-aware mathematics:** operators respect the domain of discussion. for example, an integer divided by an integer can be set to return either an integer or rational number
 - **complete function sets:** hyperoperations
 to n=4, trigonometry in all 2 non-degenerate geometries, all non-trivial boolean gates, ordering operators, quantization/rounding, …
 - **type preservation:** daamath will never cast an `int` to a `float`. it will _always_ preserve your contract of precision aka your datatype.
-- **aliased namespace:** everything in daamath has one precise internal name, and may have one user-friendly external name (like `ln` instead of `h3d__E`)
+- **clean namespace:** everything in daamath has one name only, and no aliases
 - **unicode characters:** find math characters from unicode easily
-- **mathematical constants:** e, tau, phi, …
+- **mathematical constants:** e, τ, φ, …
 - **documentation website:** everything in daamath has a dedicated documentation webpage 
 
 # examples

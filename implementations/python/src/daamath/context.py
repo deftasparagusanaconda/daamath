@@ -1,14 +1,13 @@
 from typing import Any
 from dataclasses import dataclass
 
-
-
-
 @dataclass
 class Functions:
+    ...
 
 @dataclass
 class DataTypes:
+    ...
 
 @dataclass
 class Context:

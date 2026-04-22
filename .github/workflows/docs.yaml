@@ -1,0 +1,20 @@
+# .github/workflows/docs.yaml
+name: docs
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'documentation/**'
+      - '.github/workflows/docs.yaml'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.zensical.outputs.page_url }}
+    steps:
+      - uses: cssnr/zensical-action@v1

@@ -91,7 +91,7 @@ most languages define complex as rectangular (float, float) but daamath also def
 
 # notes
 
-see [here](https://deftasparagusanaconda/specification/#scope) why daamath only works with arithmetic up to complex numbers, and no other hypercomplex numbers
+see [here](https://deftasparagusanaconda.github.io/daamath/specification/#scope) why daamath only works with arithmetic up to complex numbers, and no other hypercomplex numbers
 
 # rant
 
@@ -104,5 +104,5 @@ when daamath might work with vector spaces larger than 2 dimensions, perhaps i s
 
 
 [FidelityError]: https://deftasparagusanaconda.github.io/daamath/specification/errors/#fidelityerror
-[context]: ../context.md
+[context]: context.md
 [underscore binding convention]: https://deftasparagusanaconda.github.io/daamath/specification/namespace/#underscore-binding

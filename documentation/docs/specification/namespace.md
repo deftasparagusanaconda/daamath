@@ -8,12 +8,7 @@ daamath maintains a cross-language-friendly namespace. daamath's casing conventi
 
 # aliases
 
-daamath maintains an internal namespace and a friendly external namespace using [aliases]. each internal name may have only one user-friendly alias. for example, addition is internally `h1r` but its friendly alias is `add`. natural logarithm is `h3d__e` (n3 hyperoperation solving for degree, with second argument bound to e) but its friendly alias is `ln`. 
-
-[aliases.yaml](aliases.yaml):
-```yaml
-{% include "./aliases.yaml" %}
-```
+daamath will not have an alias for anything. when something has a name, that name becomes the only way to access it. we never maintain any shortcuts in the namespace. 
 
 # underscore binding
 
@@ -23,7 +18,9 @@ daamath has a rigorous argument pre-binding convention. it is clearest by exampl
 `div(p, q)` = `div_p(q)` = `div__q(p)` = `DIV_P_Q`  
 `fma(a, b, c)` = `fma_a(b, c)` = `fma__b(a, c)` = `fma___c(a, b)` = `fma_a_b(c)` = `fma_a__c(b)` = `fma__b_c(a)` = `FMA_A_B_C`  
 
-this allows us to use [prefix notation](https://simple.wikipedia.org/wiki/Prefix_notation) directly in the namespace. the disadvantage is that we cannot have underscores to separate words in names. for this reason, daamath only uses this in the internal namespace. for example, `h3d__10(a)` is very unsightly so instead we give the alias `log10(a)`. the external namespace shall still do its best to conform to this convention though.
+this allows us to use [prefix notation](https://simple.wikipedia.org/wiki/Prefix_notation) directly in a name. it is most useful for constants like `DIV_2_PI` = `2 / π`. 
+
+the disadvantage is that we cannot have underscores to separate words in names. this is not always beautiful. for example, `log10(a)` should technically be `log__10(a)` but `log10` should instead be thought of as its own function 
 
 # rant
 

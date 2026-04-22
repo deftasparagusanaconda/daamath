@@ -1,18 +1,61 @@
+# cause theres no alternative to awesome-nav yet for zensical
+nav:
+  - home: index.md
+  - install: https://deftasparagusanaconda.github.io/daamath/#install
+  - specification: 
+    - specification/index.md
+    - domains: specification/domains.md
+    - datatypes: specification/datatypes.md
+    - context: specification/context.md
+    - functions:
+      - specification/functions/index.md
+      - arithmetic: specification/functions/arithmetic.md
+      - trigonometry: specification/functions/trigonometry.md
+      - logic: specification/functions/logic.md
+      - quantize: specification/functions/quantize.md
+      - interval: specification/functions/interval.md
+    - constants: specification/constants.md
+    - strings: specification/strings.md
+    - namespace: specification/namespace.md
+    - errors: specification/errors.md
+    - enums: specification/enums.md
+    - flags: specification/flags.md
+  - implementations: 
+    - implementations/index.md
+    - python:
+      - implementations/python/index.md
+      - implementations/python/install.md
+    - c:
+      - implementations/c/index.md
+      - implementations/c/install.md
+
 site_name: daamath
 site_url: https://deftasparagusanaconda.github.io/daamath
 repo_url: https://github.com/deftasparagusanaconda/daamath
 repo_name: github
 
-#extra_css:
-#  - stylesheets/extra.css
-
 theme: 
   #name: readthedocs
   name: material
   #name: mkdocs
-  font: false # conform to system's fonts
-    #text: Roboto
-    #code: Jetbrains Mono
+  language: en
+  font: #false # conform to system's fonts
+    text: Source Sans 3
+    # text: Source Serif 4
+    # text: Inter
+    # text: Liberata
+    # text: Spectral
+    # text: Lora
+    # text: Fraunces
+    # text: Newsreader
+    # text: Noto Serif
+    # text: Palatino
+    # text: GFS Didot
+    # text: Roboto
+    # text: Atkinson Hyperlegible
+    code: Source Code Pro
+    # code: Roboto Mono
+    # code: Jetbrains Mono
   features:
 #    - navigation.instant
 #    - navigation.instant.prefetch
@@ -23,16 +66,19 @@ theme:
     #- navigation.sections
     - navigation.top
     - navigation.tabs
+    - navigation.footer
     #- navigation.tabs.sticky
     #- navigation.path
     #- navigation.prune 
     #- toc.follow  
+    #- content.action.edit # Edit this page
+    #- content.action.view  # View source of this page
 
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: green  # these are ugly colours so that i can notice them if things go wrong
-      accent: yellow  # these are ugly colours so that i can notice them if things go wrong
+      primary: black  
+      accent: purple  
       toggle:
         icon: material/brightness-auto
         name: auto
@@ -62,6 +108,7 @@ theme:
 
 plugins:
   - search
+  #- marimo
   - include-markdown
   - awesome-nav
   - social  # social cards
@@ -70,22 +117,42 @@ plugins:
   #    enable_creation_date: true
   - optimize
   #- offline  # absolutely not
+  
+# for file inclusions. an alternative to the include-markdown plugin
+#markdown_extensions:
+#  - pymdownx.snippets:
+#    base_path:
+#      - '.'
+#      - '../..'
+
+extra:
+  generator: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/deftasparagusanaconda/daamath
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/daamath
+    - icon: fontawesome/brands/discord
+      link: https://discord.com/users/608255432859058177
 
 # ask feedback
-extra:
-  analytics: 
-    provider: google
-    property: G-P26D3ZY20K
-    feedback:
-      title: was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: this page was helpful
-          data: 1
-          note: >-
-            thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: this page could be improved
-          data: 0
-          note: >- 
-            thanks for your feedback!
+# extra:
+#   analytics: 
+#     provider: google
+#     property: G-P26D3ZY20K
+#     feedback:
+#       title: was this page helpful?
+#       ratings:
+#         - icon: material/emoticon-happy-outline
+#           name: this page was helpful
+#           data: 1
+#           note: >-
+#             thanks for your feedback!
+#         - icon: material/emoticon-sad-outline
+#           name: this page could be improved
+#           data: 0
+#           note: >- 
+#             thanks for your feedback!
+
+extra_css:
+  - stylesheets/idfk.css
