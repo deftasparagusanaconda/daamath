@@ -1,18 +1,48 @@
 # logic
 
-we deal with logic that takes on False or True, F or T, 0 or 1, (uptack and downtack symbols here, daa!), OFF or ON, etc. we can create functions that take in these logical values and return some logical value. 
+we deal with binary truths like: False or True, F or T, 0 or 1, ⊤ or ⊥, OFF or ON, etc. we can create functions on these truth values. 
 
 ## introduction
 
-there are many many logical gates. we can construct all the possible gates in a very neat way: 
+we can construct all the possible gates in a very neat way: with n inputs, we have 2^n possible permutations. for 2^n permutations, we have 2^2^n gates. 
 
-![gates](diagrams/daamath-logic.drawio.svg)
+with n = 0, we have 2 nullary gates:
 
-with n inputs, we have 2^n possible permutations. for 2^n permutations, we have 2^2^n gates. 
+| output | name |
+| - | - |
+| F | false |
+| T | true |
 
-with n = 0, we have 2 nullary gates  
-with n = 1, we have 4 unary gates  
-with n = 2, we have 16 binary gates  
+with n = 1, we have 4 unary gates:
+
+| F | T | name | 
+| - | - | - |
+| F | F | <del>false</del> |
+| F | T | <del>truth</del> |
+| T | F | [not](#not) |
+| T | T | <del>true</del> |
+
+with n = 2, we have 16 binary gates:
+
+| FF | FT | TF | TT | name |
+| - | - | - | - | - |
+| F | F | F | F | <del>false</del> |
+| F | F | F | T | [and](#and) |
+| F | F | T | F | [nimp](#nimp) |
+| F | F | T | T | <del>snd</del> |
+| F | T | F | F | [ncon](#ncon) |
+| F | T | F | T | <del>fst</del> |
+| F | T | T | F | [xor](#xor) |
+| F | T | T | T | [or](#or) |
+| T | F | F | F | [nor](#nor) |
+| T | F | F | T | [nxor](#nxor) |
+| T | F | T | F | <del>nfst</del> |
+| T | F | T | T | [con](#con) |
+| T | T | F | F | <del>nsnd</del> |
+| T | T | F | T | [imp](#imp) |
+| T | T | T | F | [nand](#nand) |
+| T | T | T | T | <del>true</del> |
+
 with n = 3, we suddenly have 256 ternary gates. since there are so many, and because they can be composed from binary gates anyway, daamath does not maintain gates of [arity](https://en.wikipedia.org/wiki/Arity?wprov=sfla1) > 2.  
 
 ### nullary gates

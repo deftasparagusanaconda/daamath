@@ -50,6 +50,16 @@ daamath is compliant only up to complex numbers because complex algebra is close
 
 concerning the threshold at which daamath starts pruning functions, daamath should keep a consistent vision: prune degenerate functions that are replaceable by a simple single atomic expression. like the boolean gate `fst(a, b)` can just be written as `a`. `always_true(a, b)` can just be `TRUE`. yknow?
 
+# opinions on π and decimal
+
+π has accumulated as the more popular but inelegant choice. daamath uses τ in the constants
+
+decimal (radix 10) has also similarly permeated mathematics simply because we have ten fingers. daamath explicitly rejects this and thus does not implement log10. log2 is commonly used for binary which is arguably canonical so it is implemented.
+
+similarly, daamath does not promote dozenal or radix 6 or 60 or such. 
+
+inputting and outputting numbers is handled by the implementation and is not the concern of daamath. 
+
 # contributing
 
 when writing the specification, .yaml files are very welcome and encouraged

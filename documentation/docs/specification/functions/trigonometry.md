@@ -10,16 +10,36 @@ the trigonometric functions are derived from the exponential series
 
 where if you set ι = i or ε or j, the even and odd terms will give you the cos and sin for the elliptic, parabolic, hyperbolic geometries respectively
 
-ι² = -1 will give you cos(x) & sin(x)
-ι² =  0 will give you cosp(x) & sinp(x)
-ι² = +1 will give you cosh(x) & sinh(x)
+ι² = -1 will give you cos(x) & sin(x)  
+ι² =  0 will give you cosp(x) & sinp(x)  
+ι² = +1 will give you cosh(x) & sinh(x)  
 
 totally we have 2 ⋅ 3 ⋅ 3P2 = 36 functions. 
 2 from the normal trig function and its inverse
 3 from the three geometries
 3P2 from a triangle of three sides, from which we take two sides
 
-![the lattice](diagrams/daamath-trigonometry.drawio.svg)
+=== "input semiarea, output ratio"
+
+	| numerator  | denominator | elliptic | parabolic | hyperbolic |
+	| -          | -           | - | - | - |
+	| opposite   | hypotenuse  | [sin](#sin) | <del>sinp</del> | [sinh](#sinh) |
+	| adjacent   | hypotenuse  | [cos](#cos) | <del>cosp</del> | [cosh](#cosh) |
+	| opposite   | adjacent    | [tan](#tan) | <del>tanp</del> | [tanh](#tanh) |
+	| adjacent   | opposite    | [cot](#cot) | <del>cotp</del> | [coth](#coth) |
+	| hypotenuse | adjacent    | [sec](#sec) | <del>secp</del> | [sech](#sech) |
+	| hypotenuse | opposite    | [csc](#csc) | <del>cscp</del> | [csch](#csch) |
+
+=== "input ratio, output semiarea"
+
+	| numerator  | denominator | elliptic | parabolic | hyperbolic |
+	| -          | -           | - | - | - |
+	| opposite   | hypotenuse  | [asin](#asin) | <del>asinp</del> | [asinh](#asinh) |
+	| adjacent   | hypotenuse  | [acos](#acos) | <del>acosp</del> | [acosh](#acosh) |
+	| opposite   | adjacent    | [atan](#atan) | <del>atanp</del> | [atanh](#atanh) |
+	| adjacent   | opposite    | [acot](#acot) | <del>acotp</del> | [acoth](#acoth) |
+	| hypotenuse | adjacent    | [asec](#asec) | <del>asecp</del> | [asech](#asech) |
+	| hypotenuse | opposite    | [acsc](#acsc) | <del>acscp</del> | [acsch](#acsch) |
 
 unfortunately, parabolic trigonometry is trivial, because . thus daamath excludes parabolic trigonometry and maintains 24 instead.
 
@@ -27,53 +47,53 @@ lastly, you may notice that the word 'angle' is never mentioned. that is because
 
 ## API implementation
 
-##### sin(semiarea):
+#### sin
 	given the semiarea, return the ratio of opposite to hypotenuse in circular geometry
-##### cos(semiarea):
+#### cos
 	given the semiarea, return the ratio of adjacent to hypotenuse in circular geometry
-##### tan(semiarea):
+#### tan
 	given the semiarea, return the ratio of opposite to adjacent in circular geometry
-##### cot(semiarea):
+#### cot
 	given the semiarea, return the ratio of adjacent to opposite in circular geometry
-##### sec(semiarea):
+#### sec
 	given the semiarea, return the ratio of hypotenuse to adjacent in circular geometry
-##### csc(semiarea):
+#### csc
 	given the semiarea, return the ratio of hypotenuse to opposite in circular geometry
-##### asin(ratio):
+#### asin
 	given the ratio of opposite to hypotenuse, return the semiarea in circular geometry
-##### acos(ratio):
+#### acos
 	given the ratio of adjacent to hypotenuse, return the semiarea in circular geometry
-##### atan(ratio):
+#### atan
 	given the ratio of opposite to adjacent, return the semiarea in circular geometry
-##### acot(ratio):
+#### acot
 	given the ratio of adjacent to opposite, return the semiarea in circular geometry
-##### asec(ratio):
+#### asec
 	given the ratio of hypotenuse to adjacent, return the semiarea in circular geometry
-##### acsc(ratio):
+#### acsc
 	given the ratio of hypotenuse to opposite, return the semiarea in circular geometry
-##### sinh(semiarea):
+#### sinh
 	given the semiarea, return the ratio of opposite to hypotenuse in hyperbolic geometry
-##### cosh(semiarea):
+#### cosh
 	given the semiarea, return the ratio of adjacent to hypotenuse in hyperbolic geometry
-##### tanh(semiarea):
+#### tanh
 	given the semiarea, return the ratio of opposite to adjacent in hyperbolic geometry
-##### coth(semiarea):
+#### coth
 	given the semiarea, return the ratio of adjacent to opposite in hyperbolic geometry
-##### sech(semiarea):
+#### sech
 	given the semiarea, return the ratio of hypotenuse to adjacent in hyperbolic geometry
-##### csch(semiarea):
+#### csch
 	given the semiarea, return the ratio of hypotenuse to opposite in hyperbolic geometry
-##### asinh(ratio):
+#### asinh
 	given the ratio of opposite to hypotenuse, return the semiarea in hyperbolic geometry
-##### acosh(ratio):
+#### acosh
 	given the ratio of adjacent to hypotenuse, return the semiarea in hyperbolic geometry
-##### atanh(ratio):
+#### atanh
 	given the ratio of opposite to adjacent, return the semiarea in hyperbolic geometry
-##### acoth(ratio):
+#### acoth
 	given the ratio of adjacent to opposite, return the semiarea in hyperbolic geometry
-##### asech(ratio):
+#### asech
 	given the ratio of hypotenuse to adjacent, return the semiarea in hyperbolic geometry
-##### acsch(ratio):
+#### acsch
 	given the ratio of hypotenuse to opposite, return the semiarea in hyperbolic geometry
 
 ## rant

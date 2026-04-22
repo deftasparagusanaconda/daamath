@@ -2,6 +2,38 @@
 
 a mathematician's spellbook: cross-language math library specification, with implementations in various programming languages
 
+# install
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/python/install">python</a></td>
+      <td><code>python -m pip install daamath</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
+      <td><code>npm install daamath</code></td>
+    </tr>
+    <tr>
+      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
+      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
+    </tr>
+	<tr>
+	  <td>…</td>
+	  <td><code>…</code></td>
+    </tr>
+  </tbody>
+</table>
+
+click on your language for full instructions
+
 # why does daamath exist?
 
 "does integer division do floor rounding or trunc rounding?"
@@ -77,38 +109,6 @@ print(dm.greek.lowercase.tau)
 print(dm.infinity, dm.not.in.right, dm.latin.doublestruck.uppercase.r)
 # ∞ ∉ ℝ
 ```
-
-# install
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/python/install">python</a></td>
-      <td><code>python -m pip install daamath</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
-      <td><code>npm install daamath</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
-      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
-    </tr>
-	<tr>
-	  <td>…</td>
-	  <td><code>…</code></td>
-    </tr>
-  </tbody>
-</table>
-
-click on your language for full instructions
 
 # rant
 

@@ -4,5 +4,7 @@ daamath maintains a tree of unicode characters that make it easy to type math wi
 
 [strings.yaml](strings.yaml): (click to download)
 ```
-{% include "./strings.yaml" %}
+--8<-- "strings.yaml"
 ```
+
+

@@ -22,6 +22,20 @@ each operator also has two inverses which solve for the left or the right operan
 
 the left inverse and right inverse of addition are same (subtraction). the left inverse and right inverse of multiplication are same (divison). so we say they have only one inverse. 
 
+at any hyperoperation level n, there are three operators:  
+`Hₙ(base, degree) = result`  
+`Hₙ⁻ᴸ(result, degree) = base`  
+`Hₙ⁻ᴿ(result, base) = degree`  
+
+| n | left inverse | hyperoperation | right inverse |
+| - | - | - | - |
+| 0 | ? | [succ](#succ)(degree) = result | [pred](#pred)(result) = degree |
+| 1 | <del>[sub](#sub)(result, degree) = result - degree = base</del> | [add](#add) | [sub](#sub)(result,base) = result |
+| 2 | <del>[div](#div)(result, degree) = result / degree = base</del> | [mul](#mul) | [div](#div)(result, base) = result / base = degree|
+| 3 | [root](#root)(result, degree) = base | [pow](#pow)(base, degree) = base ^ degree | [log](#log)(result, base) = degree |
+| 4 | sroot(reuslt, degree) = base | spow(base, degree) = result | slog(result, base) = degree |
+| … | … | … | … |
+
 ## API implementation
 daamath is implemented as a programming math library. this section covers the language-agnostic specification
 
@@ -62,12 +76,7 @@ returns: result − 1
 
 ## argument order
 
-![diagram for the adults](diagrams/daamath-hyperoperation.drawio.svg)
 
-at any hyperoperation level n, there are three operators:  
-`Hₙ(base, degree) = result`  
-`Hₙ⁻ᴸ(result, degree) = base`  
-`Hₙ⁻ᴿ(result, base) = degree`  
 
 this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. [julia](https://en.wikipedia.org/wiki/Julia_(programming_language)) follows the order of math notation and writes log(n, x). [python](https://en.wikipedia.org/wiki/Python_(programming_language)) and [C](https://en.wikipedia.org/wiki/C_(programming_language)) follow the reverse order log(x, n). daamath follows the reverse order log(x, n) and root(x, n) because it is consistent with the order of arguments in sub and div, i.e. log(result, base) and root(result, degree)
 

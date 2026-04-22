@@ -73,7 +73,9 @@ theme:
     #- toc.follow  
     #- content.action.edit # Edit this page
     #- content.action.view  # View source of this page
-
+    - content.code.select
+    - content.code.copy
+    - content.code.annotate
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -125,6 +127,14 @@ plugins:
 #      - '.'
 #      - '../..'
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
 extra:
   generator: true
   social:
