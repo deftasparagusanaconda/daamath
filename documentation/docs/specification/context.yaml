@@ -1,29 +1,36 @@
+# the blueprint is given below
+
+# context:
+#   functions:
+#     _some function_:
+#       definition: 
+#         _some datatype_: function pointer
+#         …: …
+#       inputs:
+#         _some input_:
+#           domain: domain indication function pointer
+#           check_domain: boolean YES/NO value
+#           OutOfDomainError_policy: value from ErrorPolicy enum
+#         …: …
+#       output:
+#         domain: domain indicator function pointer
+#         check_domain: boolean YES/NO value
+#         OutOfDomainError_policy: value from ErrorPolicy enum
+#     …: …
+#   domains:
+#     _some domain_:
+#       assumed_ordering: ordering less-than-or-equal-to indicator function pointer
+#   datatypes:
+#     _some datatype_:
+#       assumed_domain: domain indicator function pointer
+#       assumed_order: ordering less-than-or-equal-to indicator function pointer
+#       sentinel_value: a value from the corresponding datatype
+#       FidelityError_policy: value from ErrorPolicy enum
+#       sentinel_value_policy: value from SentinelPolicy enum
+#       rounding: function pointer
+#     …: …
+
 context:
   functions:
-    _some function_:
-      definition: 
-        _some datatype_: function pointer
-        …: …
-      inputs:
-        _some input_:
-          domain: domain indication function pointer
-          check_domain: boolean YES/NO value
-          OutOfDomainError_policy: value from ErrorPolicy enum
-        …: …
-      output:
-        domain: domain indicator function pointer
-        check_domain: boolean YES/NO value
-        OutOfDomainError_policy: value from ErrorPolicy enum
-    …: …
   domains:
-    _some domain_:
-      assumed_ordering: ordering less-than-or-equal-to indicator function pointer
   datatypes:
-    _some datatype_:
-      assumed_domain: domain indicator function pointer
-      assumed_ordering: ordering less-than-or-equal-to indicator function pointer
-      sentinel_value: a value from the corresponding datatype
-      FidelityError_policy: value from ErrorPolicy enum
-      sentinel_value_policy: value from SentinelPolicy enum
-      rounding: function pointer
-    …: …

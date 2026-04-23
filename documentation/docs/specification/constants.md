@@ -1,4 +1,6 @@
-# constants
+# what is a constant?
+
+a constant is something whose value doesnt depend on anything and doesnt change 
 
 daamath maintains the following constants:
 
