@@ -5,7 +5,7 @@ nav:
   - specification: 
     - specification/index.md
     - domains: specification/domains.md
-    - orderings: specification/orderings.md
+    - orders: specification/orders.md
     - datatypes: specification/datatypes.md
     - context: specification/context.md
     - functions:
