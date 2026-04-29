@@ -1,42 +1,87 @@
 # arithmetic
 
-daamath has a complete set of arithmetic operators: ++ −− + − × ÷ ^ log √
-
-## introduction
-
-"daa, repeated addition is multiplication. repeated multiplication is exponentiation. whats the next level? and what do we have to repeat to get addition?"
-
-the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower tells us everything we need to know  
+to give a pleasant structure to the arithmetic operators, daamath uses the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower extensively:
 
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)
 
-1 + 1 + 1 + … D times is 0 + D  
+1 + 1 + 1 + … D times is     D  
 B + B + B + … D times is B × D  
-B × B × B × … D times is Bᴰ  
-B ^ B ^ B ^ … D times is ᴰB  
-⋮ 
+B × B × B × … D times is B ^ D  
+B ^ B ^ B ^ … D times is B ⇈ D  
+and so on…
 
 this is the basic idea of hyperoperations. repeating the previous operation D times gives you the next operator. this gives us the tower: succ → add → mul → pow → spow → …
 
-each operator also has two inverses which solve for the left or the right operand. for example, in the equation `R = B ^ D`, the left inverse (root) solves for the left operand `B = ᴰ√R` while the right inverse solves for the right operand `D = logB(R)`. 
-
-the left inverse and right inverse of addition are same (subtraction). the left inverse and right inverse of multiplication are same (divison). so we say they have only one inverse. 
-
-at any hyperoperation level n, there are three operators:  
+each operator also has two inverses which solve for the left or the right operand. for example, in the equation `B ^ D = R`, the left inverse (root) solves for the left operand `ᴰ√R = B` while the right inverse solves for the right operand `logB(R) = D`. thus, at any hyperoperation level n > 0, there are three operators:  
 `Hₙ(base, degree) = result`  
 `Hₙ⁻ᴸ(result, degree) = base`  
 `Hₙ⁻ᴿ(result, base) = degree`  
 
+
+| n | hyperoperation | inverse |
+| - | - | - |
+| 0 | [succ](#succ)(degree) = result ≈ 1 + degree | [pred](#pred)(result) = degree ≈ result - 1 |
+
 | n | left inverse | hyperoperation | right inverse |
 | - | - | - | - |
-| 0 | ? | [succ](#succ)(degree) = result | [pred](#pred)(result) = degree |
-| 1 | <del>[sub](#sub)(result, degree) = result - degree = base</del> | [add](#add) | [sub](#sub)(result,base) = result |
-| 2 | <del>[div](#div)(result, degree) = result / degree = base</del> | [mul](#mul) | [div](#div)(result, base) = result / base = degree|
-| 3 | [root](#root)(result, degree) = base | [pow](#pow)(base, degree) = base ^ degree | [log](#log)(result, base) = degree |
-| 4 | sroot(reuslt, degree) = base | spow(base, degree) = result | slog(result, base) = degree |
+| 1 | [bus](#bus)(result, degree) = base ≈ lainv(degree) + result | [add](#add)(base, degree) = result ≈ base + degree | [sub](#sub)(result, base) = degree ≈ result + rainv(base) |
+| 2 | [vid](#vid)(result, degree) = base ≈ lminv(degree) * result | [mul](#mul)(base, degree) = result ≈ base * degree | [div](#div)(result, base) = degree ≈ result * rminv(base) |
+| 3 | [root](#root)(result, degree) = base ≈ result ^ minv(degree) | [pow](#pow)(base, degree) = result ≈ base ^ degree | [log](#log)(result, base) = degree ≈ log(result) / log(base) |
+| 4 | sroot(result, degree) = base | spow(base, degree) = result | slog(result, base) = degree |
 | … | … | … | … |
 
-## API implementation
+where lainv rainv lminv rminv are left/right additive/multiplicative inverse operators. a domain declares its identity elements and these four operators simply calculate the inverse based on that identity element. when add is commutative, lainv = rainv. likewise for mul.
+
+a few notes:
+
+- it is by construction that an operator in this tower is a repetition of the previous operator, but in domains other than the real numbers, mul is not a repetition of add because they are defined axiomatically with abstract algebra. the tower is simply a nice organizational mnemonic for operators.
+
+- succ(a) returns the cover of a. for succ to be a function, i.e., return only one answer, there should be only one possible answer. a poset can have multiple covers for an element but a toset will have one cover. thus, succ is defined only for tosets. furthermore, succ is degenerate for dense tosets like the rational numbers because elements there have no cover. you can always find another number between two numbers, so a number does not really have a successor. thus succ is only defined for discrete tosets. lastly, the definition of succ is restricted to the integers. otherwise, the higher hyperoperations start to lose meaning. as an example, say we talk about succ on even integers: we expect succ(4) = 6, but we also expect add(4, 2) = 6 but since we also expect add(4, 2) = succ(succ(4)) = succ(6) = 8, we have a contradiction. 
+
+- any binary operator that is commutative has its left and right inverses same. `add` and `mul` are commutative in many domains, which is why they seem to have only one inverse. but when multiplication is non-commutative like for matrices, it starts having two inverses. daamath anticipates this and thus maintains `vid` and `div` which solve for the left and right respectively. likewise for `bus` and `sub`.
+
+- [tetration](https://en.wikipedia.org/wiki/Tetration), [super-root](https://en.wikipedia.org/wiki/Tetration#Super-root), [super-logarithm](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n > 3
+
+# rounded division
+
+rounded division with quotient and remainder is special. we have the following family of operators:
+
+quot(dividend, divisor) = quantize(div(dividend, divisor)) = quotient  
+rem(dividend, divisor) = dividend - quot(dividend, divisor) = remainder  
+
+these two functions are involved in two equations, with a total of 4 variables. the 2 functions already solve for quotient and remainder. we can solve for dividend and divisor using fma and fsd:
+
+fma(divisor, quotient, remainder) = (divisor * quotient) + remainder = dividend  
+fsd(dividend, remainder, quotient) = (dividend - remainder) / quotient = divisor  
+
+thus the four functions `quot` `rem` `fma` `fsd` are all part of the same family. this result was quite surprising to me, because quot and rem came from number theory, and fma is found in the depths of numerical computation. somehow, fma now naturally finds its way into daamath's roster, and fsd emerges as a new operation to complete the family.
+
+# argument order
+
+this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. [julia](https://en.wikipedia.org/wiki/Julia_(programming_language)) follows the order of math notation and writes log(n, x). [python](https://en.wikipedia.org/wiki/Python_(programming_language)) and [C](https://en.wikipedia.org/wiki/C_(programming_language)) follow the reverse order log(x, n). daamath follows the reverse order log(x, n) and root(x, n) because it is consistent with the order of arguments in sub and div, i.e. log(result, base) and root(result, degree)
+
+# notes
+
+succession and predecession are not the same as incrementation and decrementation. the former two give a new answer, while the latter two imply mutating a variable. if daamath were to implement n=0 hyperoperations, it would use the former two.
+
+# type homomorphism
+
+hyperoperations will return the same output type as its input type. if you pass in an integer, it will give an integer result. this is in contrast to dynamic type promotion in most languages, which eagerly promote integers to fractional numbers.
+
+for example, in C, `pow(2, 3)` gives `8.0`. in python, `2 ** -2` gives `0.25`.   
+with daamath, `dm.pow(2, 3)` will give `8`, and `dm.pow(2, -2)` will raise a DomainError because `0.25` cannot be represented as an integer.
+
+the biggest consequence to this is that integer arithmetic stays as integer arithmetic. unsigned integer arithmetic stays as unsigned integer arithmetic.
+
+daamath maintains four number types: [ℕ₀](https://en.wikipedia.org/wiki/Natural_number), [ℤ](https://en.wikipedia.org/wiki/Integer), [ℝ](https://en.wikipedia.org/wiki/Real_number), [ℂ](https://en.wikipedia.org/wiki/Complex_number)
+
+# rant
+
+the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
+
+i should really try to clarify the meaning of B D R as soon as possible
+
+# API implementation
 daamath is implemented as a programming math library. this section covers the language-agnostic specification
 
 ##### [succ](https://en.wikipedia.org/wiki/Successor_function)(degree):
@@ -71,38 +116,3 @@ returns: result − 1
 ##### [log](https://en.wikipedia.org/wiki/Logarithm)(result, base):
     signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ 
     returns: log_base(result)
-
-[tetration](https://en.wikipedia.org/wiki/Tetration), [super-root](https://en.wikipedia.org/wiki/Tetration#Super-root), [super-logarithm](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n ≥ 4
-
-## argument order
-
-
-
-this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. [julia](https://en.wikipedia.org/wiki/Julia_(programming_language)) follows the order of math notation and writes log(n, x). [python](https://en.wikipedia.org/wiki/Python_(programming_language)) and [C](https://en.wikipedia.org/wiki/C_(programming_language)) follow the reverse order log(x, n). daamath follows the reverse order log(x, n) and root(x, n) because it is consistent with the order of arguments in sub and div, i.e. log(result, base) and root(result, degree)
-
-## type homomorphism
-
-hyperoperations will return the same output type as its input type. if you pass in an integer, it will give an integer result. this is in contrast to dynamic type promotion in most languages, which eagerly promote integers to fractional numbers.
-
-for example, in C, `pow(2, 3)` gives `8.0`. in python, `2 ** -2` gives `0.25`.   
-with daamath, `dm.pow(2, 3)` will give `8`, and `dm.pow(2, -2)` will raise a DomainError because `0.25` cannot be represented as an integer.
-
-the biggest consequence to this is that integer arithmetic stays as integer arithmetic. unsigned integer arithmetic stays as unsigned integer arithmetic.
-
-daamath maintains four number types: [ℕ₀](https://en.wikipedia.org/wiki/Natural_number), [ℤ](https://en.wikipedia.org/wiki/Integer), [ℝ](https://en.wikipedia.org/wiki/Real_number), [ℂ](https://en.wikipedia.org/wiki/Complex_number)
-
-## notes
-
-successor and predecessor are not the same as increment and decrement. the former two give a new answer, while the latter two imply mutating a variable. daamath implements the former two
-
-actually, addition and multiplication have two inverses too. but since the left and right inverses do the same thing, we think of it as having one canonical inverse. the real hyperoperation tower ought to look like this:
-
-the left and right inverse of multiplication are both division, but this isnt always true. for example, matrices may have two different division operators. one would multiply by the inverse of the left operand, another would multiply by the inverse of the right operand. but since daamath works with simple numbers, we do not make this distinction.
-
-i dont typically see addition having two inverses..
-
-## rant
-
-the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
-
-i should really try to clarify the meaning of B D R as soon as possible

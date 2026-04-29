@@ -1,0 +1,137 @@
+[project]
+site_name = "daamath"
+site_url = "https://deftasparagusanaconda.github.io/daamath"
+repo_url = "https://github.com/deftasparagusanaconda/daamath"
+repo_name = "github"
+site_description = "documentation for daamath"
+site_author = "deftasparagusanaconda"
+
+extra_css = ["stylesheets/idfk.css"]
+
+nav = [
+  {"home" = "index.md"},
+  {"specification" = [
+    "specification/index.md",
+    {"domains"   = "specification/domains.md"},
+    {"orders"    = "specification/orders.md"},
+    {"datatypes" = "specification/datatypes.md"},
+    {"context"   = "specification/context.md"},
+    {"functions" = [
+      "specification/functions/index.md",
+      {"arithmetic"   = "specification/functions/arithmetic.md"},
+      {"trigonometry" = "specification/functions/trigonometry.md"},
+      {"logic"        = "specification/functions/logic.md"},
+      {"order"        = "specification/functions/order.md"},
+      {"quantize"     = "specification/functions/quantize.md"},
+    ]},
+    {"constants"  = "specification/constants.md"},
+    {"strings"    = "specification/strings.md"},
+    {"namespace"  = "specification/namespace.md"},
+    {"errors"     = "specification/errors.md"},
+    {"enums"      = "specification/enums.md"},
+    {"flags"      = "specification/flags.md"},
+  ]},
+  {"implementations" = [
+    "implementations/index.md",
+    {"python" = [
+      "implementations/python/index.md",
+      "implementations/python/install.md",
+    ]},
+    {"c" = [
+      "implementations/c/index.md",
+      "implementations/c/install.md",
+    ]},
+  ]},
+]
+
+[project.theme]
+font.text = "Inter"
+font.code = "JetBrains Mono"
+favicon = "assets/logo.svg"
+logo    = "assets/logo.svg"
+#variant = "classic"
+
+features = [
+  "navigation.indexes",
+  "navigation.tracking",
+  "navigation.top",
+  "navigation.tabs",
+  "navigation.footer",
+  "content.code.select",
+  "content.code.copy",
+  "content.code.annotate",
+]
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
+
+# auto mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "material/brightness-auto"
+toggle.name = "auto"
+
+# light
+[[project.theme.palette]]
+media  = "(prefers-color-scheme: light)"
+scheme  = "default"
+primary = "white"
+accent  = "purple"
+toggle.icon = "material/weather-sunny"
+toggle.name = "light"
+
+# dark
+[[project.theme.palette]]
+media  = "(prefers-color-scheme: dark)"
+scheme  = "slate"
+primary = "black"
+accent  = "purple"
+toggle.icon = "material/weather-night"
+toggle.name = "dark"
+
+[project.extra]
+generator = true
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/deftasparagusanaconda/daamath"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/python"
+link = "https://pypi.org/project/daamath"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.com/users/608255432859058177"
+
+[project.plugins]
+search    = {}
+include-markdown = {}
+awesome-nav = {}
+social    = {}
+optimize  = {}
+
+# why would you enable this?
+#[project.plugins.offline]
+#enabled = true
+
+#[project.markdown_extensions."pymdownx.superfences"]
+#custom_fences = [
+#  {name = "mermaid", class = "mermaid", format = "!!python/name:pymdownx.superfences.fence_code_format"}
+#]
+
+#[project.markdown_extensions."pymdownx.tabbed"]
+#alternate_style = true
+
+#[project.markdown_extensions.attr_list]
+
+#[project.markdown_extensions.pymdownx.highlight]
+#pygments_lang_class = true
+
+#[project.markdown_extensions.pymdownx.emoji]
+#emoji_index = "zensical.extensions.emoji.twemoji" 
+#emoji_generator = "zensical.extensions.emoji.to_svg"
+
+#[project.markdown_extensions."pymdownx.emoji"]
+#emoji_index     = "!!python/name:material.extensions.emoji.twemoji"
+#emoji_generator = "!!python/name:material.extensions.emoji.to_svg"

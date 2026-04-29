@@ -1,7 +1,7 @@
 # cause theres no alternative to awesome-nav yet for zensical
 nav:
   - home: index.md
-  - install: https://deftasparagusanaconda.github.io/daamath/#install
+#  - install: https://deftasparagusanaconda.github.io/daamath/#install
   - specification: 
     - specification/index.md
     - domains: specification/domains.md
@@ -43,7 +43,7 @@ theme:
   font: #false # conform to system's fonts
     text: Source Sans 3
     # text: Source Serif 4
-    # text: Inter
+    text: Inter
     # text: Liberata
     # text: Spectral
     # text: Lora
@@ -54,9 +54,9 @@ theme:
     # text: GFS Didot
     # text: Roboto
     # text: Atkinson Hyperlegible
-    code: Source Code Pro
+    # code: Source Code Pro
     # code: Roboto Mono
-    # code: Jetbrains Mono
+    code: Jetbrains Mono
   features:
 #    - navigation.instant
 #    - navigation.instant.prefetch
@@ -137,6 +137,10 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra:
   generator: true
   social:
@@ -168,3 +172,4 @@ extra:
 
 extra_css:
   - stylesheets/idfk.css
+

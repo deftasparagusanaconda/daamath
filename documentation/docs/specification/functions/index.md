@@ -18,6 +18,14 @@ daamath maintains a .context object that determines idfk
 
 # function sets
 
+if at all possible, each function should always have all inverses present. examples are:
+
+`sin(semiarea) = ratio` & `asin(ratio) = semiarea`  
+`pow(base, degree) = result` & `log(result, base) = degree` & `root(result, degree) = base`  
+`quot(dividend, divisor) = quotient` & `rem(dividend, divisor) = remainder` & `fma(divisor, quotient, remainder) = dividend` & `fsd(dividend, remainder, quotient) = divisor`
+
+in short, a function with n inputs and 1 output is involved in an equation of (n + 1) variables. if possible, it should have n other related functions that each solve for individual variables in the equation.
+
 daamath maintains mathematically defined functions, as well as some numerically inclined functions such as from [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754#Recommended_operations)
 # rant
 

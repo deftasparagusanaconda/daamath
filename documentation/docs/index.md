@@ -1,7 +1,7 @@
 ---
 title: home
-hide:
-  - navigation
+#hide:
+#  - navigation
 ---
 
 <!-- {% include "../../readme.md" %} -->
