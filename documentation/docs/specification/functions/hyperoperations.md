@@ -1,4 +1,4 @@
-# arithmetic
+# hyperoperations
 
 to give a pleasant structure to the arithmetic operators, daamath uses the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower extensively:
 
@@ -41,20 +41,6 @@ a few notes:
 - any binary operator that is commutative has its left and right inverses same. `add` and `mul` are commutative in many domains, which is why they seem to have only one inverse. but when multiplication is non-commutative like for matrices, it starts having two inverses. daamath anticipates this and thus maintains `vid` and `div` which solve for the left and right respectively. likewise for `bus` and `sub`.
 
 - [tetration](https://en.wikipedia.org/wiki/Tetration), [super-root](https://en.wikipedia.org/wiki/Tetration#Super-root), [super-logarithm](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n > 3
-
-# rounded division
-
-rounded division with quotient and remainder is special. we have the following family of operators:
-
-quot(dividend, divisor) = quantize(div(dividend, divisor)) = quotient  
-rem(dividend, divisor) = dividend - quot(dividend, divisor) = remainder  
-
-these two functions are involved in two equations, with a total of 4 variables. the 2 functions already solve for quotient and remainder. we can solve for dividend and divisor using fma and fsd:
-
-fma(divisor, quotient, remainder) = (divisor * quotient) + remainder = dividend  
-fsd(dividend, remainder, quotient) = (dividend - remainder) / quotient = divisor  
-
-thus the four functions `quot` `rem` `fma` `fsd` are all part of the same family. this result was quite surprising to me, because quot and rem came from number theory, and fma is found in the depths of numerical computation. somehow, fma now naturally finds its way into daamath's roster, and fsd emerges as a new operation to complete the family.
 
 # argument order
 

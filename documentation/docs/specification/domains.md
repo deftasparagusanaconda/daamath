@@ -1,10 +1,32 @@
 # domains
 
-arguably one of the most important concepts in daamath.
+arguably one of the most important concepts in daamath. a domain is a set of things. in daamath, a domain is more important than its datatype. the subsetness of domains is captured correctly in daamath, unlike in computers where, for example, an `uint` (supposed to represent natural numbers) is not an `int` (supposed to represent integers). daamath separates a datatype from its implied domain by allowing you to specify the implied domain for many functions in the context object
 
-a domain is a set of things. it is implemented as an [indicator function].
+# what kinds of domains are out there?
 
-daamath recognizes the following domains:
+there are many kinds of domains. lets see how we can classify domains:
+
+## finiteness
+
+domains such as booleans and truths are naturally finite. variable can only take on one of a few values.
+
+domains such as naturals are infinite. the cardinality of the set is non-finite.
+
+## inception
+
+domains that contain other domains are a nested domain. it is not that "A is a subset of B". it is more like "A is an element of B".
+
+## parameterizability
+
+certain domains are related so closely that a function with parameters can generate a family of them. a great example is the family of integers modulo n. another small example is the family of integers starting from n.
+
+in fact, the names of some domains will indicate this using the [underscore binding] convention. daamath should also come with functions that return domains, though this has not been formalized yet.
+
+# how is a domain represented?
+
+a domain, in daamath, is represented by an [indicator function](#indicator-function), a [is_finite](#is-finite) flag, and a set of [decomposers](#decomposers).
+
+## indicator function
 
 | domain | indicator function |
 | - | - |
@@ -21,8 +43,8 @@ daamath recognizes the following domains:
 | RATIONAL        | x is REAL and x can be represented as p / q where q ≠ 0
 | IRRATIONAL      | x is REAL and x is not RATIONAL
 | INTEGER         | x is RATIONAL and x is divisible by 1
-| NATURAL_0       | x is INTEGER and x ≥ 0
-| NATURAL_1       | x is NATURAL_0 and x ≥ 1
+| NATURAL_START_0 | x is INTEGER and x ≥ 0
+| NATURAL_START_1 | x is NATURAL_0 and x ≥ 1
 | PRIME           | x is NATURAL_1 and x ≠ 1 and x has two prime divisors
 | COMPOSITE       | x is NATURAL_1 and x has more than two prime divisors
 
@@ -31,6 +53,19 @@ daamath recognizes the following domains:
 so to check if something is an INTEGER for example, you would do `INTEGER(fish)` and the result would be a 2-element domain
 
 this way, daamath is very flexible about domains. a function checks for the domain of something using its indicator function. the logic for checking if the codomain remains in the expected domain is not hard-coded into the function. it is defined in the domain's indicator function.
+
+## is_finite
+
+an n-element domain is finite. otherwise it is infinite. daamath has no way of knowing if a domain is finite or infinite. it cant test all the fish in the sea to check if an infinite amount if fishies belong to it. so the domain explicitly encodes a is_finite flag.
+
+## decomposers
+
+| domain | decomposer | explanation/rant |
+| - | - | - |
+| NATURAL_START_0 | succ | by peano construction. this is hard to represent in a programming language so is deprecated |
+| INTEGER | pair of NATURAL_START_0 | by grothendieck construction, a pair of naturals under the inverse of addition (subtraction) with the equivalence class (a - b) = (c - d) |
+| RATIONAL | pair of INTEGER | by grothendieck construction, a pair of naturals under the inverse of addition (subtraction) with the equivalence class (a / b) = (c / d) |
+| COMPLEX | pair of REAL | by vector composition (i think) |
 
 # implementation
 

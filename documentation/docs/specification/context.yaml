@@ -20,6 +20,9 @@
 #   domains:
 #     _some domain_:
 #       assumed_ordering: ordering less-than-or-equal-to indicator function pointer
+#       decomposers:
+#         _some decomposer_: function
+#         …: …
 #   datatypes:
 #     _some datatype_:
 #       assumed_domain: domain indicator function pointer
