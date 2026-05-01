@@ -7,7 +7,7 @@ site_description = "documentation for daamath"
 site_author = "deftasparagusanaconda"
 
 extra_css = ["stylesheets/extra.css"]
-extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
+#extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
 
 nav = [
   {"home" = "index.md"},
@@ -52,7 +52,7 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
-custom_dir = "overrides"
+custom_dir = "docs_overrides"
 #variant = "classic"
 
 
