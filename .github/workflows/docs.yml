@@ -1,4 +1,4 @@
-name: Documentation
+name: docs
 on:
   push:
     branches:
@@ -22,8 +22,10 @@ jobs:
           python-version: 3.x
       - run: pip install zensical
       - run: zensical build --clean
+#        working-directory: documentation
       - uses: actions/upload-pages-artifact@v5
         with:
+#          path: documentation/site
           path: site
       - uses: actions/deploy-pages@v5
         id: deployment
