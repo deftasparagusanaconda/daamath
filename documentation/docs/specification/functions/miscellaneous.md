@@ -33,15 +33,17 @@ we should also have inverses for each one. inverse factorial, inverse sumtorial,
 
 | name | explanation | example |
 | - | - | - |
-| scalar  | scalar part |  scalar(2+3𝑖) = 2 |
-| vector  | vector part |  vector(2+3ε) = 3ε |
-| reify | coefficient of imaginary component | reify(2+3j) = 3 |
-| angle   | angle       |   angle(2+3𝑖) ≈ 0.98279372 |
-| conj  | conjugate      |  conj(2+3𝑖) = 2−3𝑖 |
+| re    | scalar part | re(2+3i) = 2 |
+| im    | vector part | im(2+3ε) = 3ε |
+| conj  | conjugate   | conj(2+3j) = 2−3j |
+| rei   | imaginary part as real number | reify(2+3i) = 3 |
+<!--| angle | angle       | angle(2+3i) ≈ 0.98279372 |-->
 
-the `reify` function works for any of the 3 canonical 2D HYPERCOMPLEX domains (complex/hyperbolic/dual). it extracts the coefficient of the imaginary part, and casts it onto the REAL domain. this is possible only with the 2D domains because their imaginary part has the same shape as the real number axis: a 1D line.
+daamath's goal is to not promote the complex numbers as the only extension of the real numbers, and to not have functions specialized specifically to complex numbers only. the functions provided should generalize to more algebrae to introduce the user to more maths.
 
-similarly, the `angle` function 
+the `rei` function only works for the three 2D HYPERCOMPLEX domains (complex, split-complex, dual). it extracts the coefficient of the imaginary part, and casts it onto the REAL domain. this is possible only with the 2D domains because their imaginary part has the same shape as the real number axis: a 1D line.
+
+getting the angle of a complex number is not supported yet because daamath has not formalized yet what angles are. the domains page will elaborate on this in the future. specifically, about how angles have equivalence classes but those equivalence classes are based on the lie group. you cant assume everything obeys 360° = 0° because, for example, quaternions dont °
 
 # vectorial
 

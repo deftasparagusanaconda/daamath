@@ -1,4 +1,4 @@
-# daamath
+# [daa]math
 
 a mathematician's spellbook: cross-language math library specification, with implementations in various programming languages
 
@@ -117,9 +117,6 @@ i originally made daamath because when i designed [gapprox], i wanted a math lib
 dont even get me started on how left out the unicode math characters are :( everyone slobbers over latex but they dont know about the fact that you can write things like `eⁱᶿ = cos(θ) + i⋅sin(θ)` or `cosh²(θ) - sinh²(θ) = 1` or `ln(x) = logₑ(x)` or `∥z∥₂ = ²√(ℜ² + ℑ²)` entirely with unicode
 
 ok rant done
-
-made by  
-🌸 [daa]
 
 [specification]: https://deftasparagusanaconda.github.io/daamath/specification
 [implementations]: https://deftasparagusanaconda.github.io/daamath/implementations

@@ -6,7 +6,8 @@ repo_name = "github"
 site_description = "documentation for daamath"
 site_author = "deftasparagusanaconda"
 
-extra_css = ["stylesheets/idfk.css"]
+extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
 
 nav = [
   {"home" = "index.md"},

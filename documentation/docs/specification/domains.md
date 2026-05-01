@@ -54,6 +54,10 @@ so to check if something is an INTEGER for example, you would do `INTEGER(fish)`
 
 this way, daamath is very flexible about domains. a function checks for the domain of something using its indicator function. the logic for checking if the codomain remains in the expected domain is not hard-coded into the function. it is defined in the domain's indicator function.
 
+## equivalence indicator
+
+a domain is the quotient set of an equivalence class imposed on it. this indeed implies that some domains are composed of lesser domains. think of the integers as a pair of natural numbers (2 - 3). this is equal to (4 - 5). when represented purely as pairs, (2, 3) ≠ (4, 5) but we define the equivalence class as (a - b) = (c - d). domains like angles have this idea of sameness built in. certain datatypes can represent the same element in a domain in different ways, 
+
 ## is_finite
 
 an n-element domain is finite. otherwise it is infinite. daamath has no way of knowing if a domain is finite or infinite. it cant test all the fish in the sea to check if an infinite amount if fishies belong to it. so the domain explicitly encodes a is_finite flag.

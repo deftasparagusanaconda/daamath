@@ -1,8 +1,8 @@
 # variadic
 
-daamath formalizes the extension of a function into variadic inputs. the variadic extension F(X) of a function f(x) is a function that takes multiple inputs in a structure and collapses them into a smaller output. for this to be possible, f(x) must produce lesser outputs than there are inputs, and the output must be operable with the remaining inputs (that entails, usually, f(x) being the same kind as x. if \[1,2,3\] was suddenly collapsed to [True, 3], then we cannot collapse it further. that is invalid).
+daamath formalizes the extension of a function into variadic inputs. the variadic extension F(X) of a function f(x) is a function (closed on a certain domain) that takes multiple inputs in a structure and collapses them into a smaller output. for this to be possible, f(x) must produce lesser outputs than there are inputs, and the output must be operable with the remaining inputs (that entails, usually, f(x) being the same kind as x. if \[1,2,3\] was suddenly collapsed to [True, 3], then we cannot collapse it further. that is invalid).
 
-usually, this is a binary function, whose variadic extension takes in a sequence of inputs and collapses from the left (left-fold, similar to python's `functools.reduce`)
+usually, this is a closed associative binary (and often commutative) function, whose variadic extension takes in a sequence of inputs and collapses from the left (left-fold, similar to python's `functools.reduce`)
 
 <!--daamath defines a variadically extensible function as a function that is fully commutative (the output is the same regardless of which permutation of inputs is passed to it) and associative. these are a superset of the more specialized meet/join functions from order theory. daamath does not overload 
 

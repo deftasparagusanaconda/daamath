@@ -1,7 +1,13 @@
+.md-header {
+  background-color: var(--md-default-bg-color);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 *, *::before, *::after {
   animation-duration: 0ms !important;
   transition-duration: 0ms !important;
 }
+
 /*
 .md-header {
   background-color: var(--md-primary-fg-color) !important;
