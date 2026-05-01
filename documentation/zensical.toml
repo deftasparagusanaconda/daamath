@@ -52,7 +52,9 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
+custom_dir = "overrides"
 #variant = "classic"
+
 
 features = [
   "navigation.indexes",
@@ -63,6 +65,7 @@ features = [
   "content.code.select",
   "content.code.copy",
   "content.code.annotate",
+  #"header.autohide",
 ]
 
 [project.theme.icon]

@@ -4,11 +4,15 @@ a domain is simply a set of things. we do not have any idea of how these things 
 
 just like a domain can be represented by an indicator function that takes a thing and returns a boolean, an order can be represented by a less-than-or-equal-to indicator function that takes a pair of things (that belong in the domain) and returns a boolean
 
-daamath uses this extensively in the [order] function set
+daamath uses the order indicator function extensively in the [order] function set, with which we can define equalness,. 
 
-the following orderings are recognized for the domains:
+since the partial order is able to describe equality between elements, it is able to describe equivalence classes. for domains with equivalence classes but no order, the partial order becomes symmetric, thereby becoming an equivalence relation
 
-a total ordering over the REAL domain, arranging them in a 1D sequence (the real number line) (and similarly, the same total ordering but for subsets of the REAL domain)
+<!--
+the following common orderings are recognized for the domains:
+
+a total ordering over the REAL domain, arranging them in a 1D sequence (the real number line) (and similarly, the same total ordering but for subsets of the REAL domain)  
 a partial ordering over the INTEGER domain, based on their divisibility
+-->
 
 [order]: functions/order.md

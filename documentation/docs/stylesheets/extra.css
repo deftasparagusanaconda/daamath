@@ -1,3 +1,5 @@
+/* i excluded this because the transparent header bar actually makes the site feel a little more spacious */
+/* 
 .md-header {
   background-color: var(--md-default-bg-color);
   backdrop-filter: none;
@@ -7,6 +9,8 @@
   animation-duration: 0ms !important;
   transition-duration: 0ms !important;
 }
+*/
+
 
 /*
 .md-header {
