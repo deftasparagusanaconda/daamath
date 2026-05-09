@@ -13,12 +13,14 @@ with n = 0, we have 2 nullary gates:
 | ❌ | false |
 | ✅ | true |
 
+a function with zero inputs is not a function anymore. these two are stored as constants.
+
 with n = 1, we have 4 unary gates:
 
 | F | T | name | 
 | - | - | - |
 | ❌ | ❌ | <del>false</del> |
-| ❌ | ✅ | <del>truth</del> |
+| ❌ | ✅ | same as just taking the input as-is (identity function) |
 | ✅ | ❌ | [not](#not) |
 | ✅ | ✅ | <del>true</del> |
 
@@ -28,17 +30,17 @@ with n = 2, we have 16 binary gates:
 | - | - | - | - | - |
 | ❌ | ❌ | ❌ | ❌ | <del>false</del> |
 | ❌ | ❌ | ❌ | ✅ | [and](#and) |
-| ❌ | ❌ | ✅ | ❌ | [nimp](#nimp) |
-| ❌ | ❌ | ✅ | ✅ | <del>snd</del> |
-| ❌ | ✅ | ❌ | ❌ | [ncon](#ncon) |
-| ❌ | ✅ | ❌ | ✅ | <del>fst</del> |
+| ❌ | ❌ | ✅ | ❌ | [fst](#fst) |
+| ❌ | ❌ | ✅ | ✅ | (same as just taking second argument) |
+| ❌ | ✅ | ❌ | ❌ | [snd](#snd) |
+| ❌ | ✅ | ❌ | ✅ | (same as just taking first argument) |
 | ❌ | ✅ | ✅ | ❌ | [xor](#xor) |
 | ❌ | ✅ | ✅ | ✅ | [or](#or) |
 | ✅ | ❌ | ❌ | ❌ | [nor](#nor) |
-| ✅ | ❌ | ❌ | ✅ | [nxor](#nxor) |
-| ✅ | ❌ | ✅ | ❌ | <del>nfst</del> |
+| ✅ | ❌ | ❌ | ✅ | [xnor](#xnor) |
+| ✅ | ❌ | ✅ | ❌ | same as just taking complement of first argument |
 | ✅ | ❌ | ✅ | ✅ | [con](#con) |
-| ✅ | ✅ | ❌ | ❌ | <del>nsnd</del> |
+| ✅ | ✅ | ❌ | ❌ | same as just taking complement of second argument |
 | ✅ | ✅ | ❌ | ✅ | [imp](#imp) |
 | ✅ | ✅ | ✅ | ❌ | [nand](#nand) |
 | ✅ | ✅ | ✅ | ✅ | <del>true</del> |

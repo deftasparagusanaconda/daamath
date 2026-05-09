@@ -67,6 +67,10 @@ an n-element domain is finite. otherwise it is infinite. daamath has no way of k
 | RATIONAL | pair of INTEGER | by grothendieck construction, a pair of naturals under the inverse of addition (subtraction) with the equivalence class (a / b) = (c / d) |
 | COMPLEX | pair of REAL | by vector composition (i think) |
 
+# anything else?
+
+yes. domains also have a binary relation assumed on them. this binary relation is a boolean-valued indicator function that also comes with property variables like is_transitive, is_reflexive, is_symmetric, etc etc describing what kind of binary relation it is, like a preorder, a partial order, an equivalence relation, etc etc.
+
 # implementation
 
 a domain is implemented as an indicator function. yes. a function. the input domain of the indicator function can be anything (an integer, a float, a real number, a quaternion, a boolean, a fish, a shoe, anything). the output domain (the codomain) is any 2-element domain such as BOOLEAN, TRUTH, INTEGER_MOD_2, but for practical purposes, it should be a BOOLEAN. 

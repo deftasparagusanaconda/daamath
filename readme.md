@@ -11,19 +11,19 @@ a mathematician's spellbook: cross-language math library specification, with imp
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+      <td><code>…<!--curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh--></code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
+      <td><code>…<!--curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh--></code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
-      <td><code>npm install daamath</code></td>
+      <td><code>…<!--npm install daamath--></code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
-      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
+      <td><code>…<!--julia -e 'using Pkg; Pkg.add("daamath")'--></code></td>
     </tr>
 	<tr>
 	  <td>…</td>

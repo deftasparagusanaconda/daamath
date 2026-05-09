@@ -14,7 +14,7 @@ a vote is a tuple of (familiarity, endorsement). a voter can submit or retract a
 
 # the process
 
-the dictator opens a voting period, during which anyone can visit the [vote] page (hosted on the documentation website). here, they prove their identity on github. if they are a valid voter, the page then presents them with the roster. then they score each candidate on how well they know them and how strongly they like/dislike them.
+the dictator opens a voting period, during which anyone can visit the [voting] page (hosted on the documentation website). here, they prove their identity on github. if they are a valid voter, the page then presents them with the roster. then they score each candidate on how well they know them and how strongly they like/dislike them.
 
 familiarity is measured as an integer in \[0, 3\]:
 

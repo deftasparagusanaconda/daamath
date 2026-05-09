@@ -60,6 +60,21 @@ similarly, daamath does not promote dozenal or radix 6 or 60 or such.
 
 inputting and outputting numbers is handled by the implementation and is not the concern of daamath. 
 
+# implementation file structure
+
+heres the files i expect to see in an implementation:
+
+domains.lang: defines the domain indicator sets
+exceptions.lang: defines the exception that shall be raised when an error occurs
+flags.lang: defines the flags that shall be raised when an error occurs
+enums.lang: defines the values that (as enums)
+context_generator.lang: takes in context.yaml and generates context.lang
+context.lang: defines the context struct
+strings_generator.lang: takes in strings.yaml and generates strings.lang
+strings.lang: defines the strings
+
+
+
 # contributing
 
 when writing the specification, .yaml files are very welcome and encouraged

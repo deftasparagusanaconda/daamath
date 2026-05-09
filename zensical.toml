@@ -14,7 +14,6 @@ nav = [
   {"specification" = [
     "specification/index.md",
     {"domains"   = "specification/domains.md"},
-    {"orders"    = "specification/orders.md"},
     {"datatypes" = "specification/datatypes.md"},
     {"context"   = "specification/context.md"},
     {"functions" = [
@@ -23,7 +22,7 @@ nav = [
       {"trigonometry" = "specification/functions/trigonometry.md"},
       {"logic"        = "specification/functions/logic.md"},
       {"order"        = "specification/functions/order.md"},
-      {"quantize"     = "specification/functions/quantize.md"},
+      {"quantization" = "specification/functions/quantization.md"},
       {"variadic"     = "specification/functions/variadic.md"},
       {"miscellaneous"     = "specification/functions/miscellaneous.md"},
     ]},
@@ -55,13 +54,19 @@ logo    = "assets/logo.svg"
 custom_dir = "docs_overrides"
 #variant = "classic"
 
-
 features = [
   "navigation.indexes",
   "navigation.tracking",
   "navigation.top",
   "navigation.tabs",
+  "navigation.path",
+  #"navigation.tabs.sticky",
+  #"navigation.prune",
   "navigation.footer",
+  "navigation.instant",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "",
   "content.code.select",
   "content.code.copy",
   "content.code.annotate",
@@ -112,10 +117,12 @@ link = "https://discord.com/users/608255432859058177"
 
 [project.plugins]
 search    = {}
-include-markdown = {}
-awesome-nav = {}
+#include-markdown = {}
+#awesome-nav = {}
 social    = {}
 optimize  = {}
+
+#[project.markdown_extensions.pymdownx.snippets]
 
 # why would you enable this?
 #[project.plugins.offline]
