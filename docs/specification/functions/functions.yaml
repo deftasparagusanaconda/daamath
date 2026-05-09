@@ -1,0 +1,56 @@
+# this file is an official collection of all the functions daamath handles
+
+functions:
+  hyperoperations:
+    succ:
+    pred:
+    add:
+    sub:
+    bus:
+    mul:
+    div:
+    vid:
+    pow:
+    log:
+    root:
+  boolean:
+    not:
+    and:
+    nand:
+    or:
+    nor:
+    xor:
+    xnor:
+    imp:
+    fst:
+    con:
+    snd:
+  trigonometric:
+    sin:
+    cos:
+    tan:
+    cot:
+    sec:
+    csc:
+    asin:
+    acos:
+    atan:
+    acot:
+    asec:
+    acsc:
+    sinh:
+    cosh:
+    tanh:
+    coth:
+    sech:
+    csch:
+    asinh:
+    acosh:
+    atanh:
+    acoth:
+    asech:
+    acsch:
+  quantize:
+    floor:
+    ceil:
+
