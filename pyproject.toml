@@ -24,7 +24,7 @@ Issues = "https://github.com/deftasparagusanaconda/daamath/issues"
 #Changelog = "https://github.com/me/spam/blob/master/changelog.md"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"" = "implementations/python/src"}
 
 [tool.setuptools.packages.find]
 where = ["implementations/python/src"]

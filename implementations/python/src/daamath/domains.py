@@ -47,6 +47,9 @@ def RATIONAL(fish: Any) -> bool:
     'fish is REAL and fish can be represented as p / q where q ≠ 0'
     return REAL(fish) and isinstance(fish, numbers.Rational)
 
+def POSITIVE_RATIONALS(fish: Any) -> bool:
+    return RATIONAL(fish) and fish >= 0
+
 def INTEGER(fish: Any) -> bool:         
     'fish is RATIONAL and fish is divisible by 1'
     return RATIONAL(fish) and fish % 1 == 0
@@ -91,3 +94,7 @@ def INTEGERMODULO(mod: int) -> Callable[[Any], bool]:
     return INTEGERMODULO
 
 INTEGERMODULO_2: Callable[[Any], bool] = INTEGERMODULO(2)
+
+# i need something that gives an orderding to the domains
+# first, daa, know that an ordering on a domain is a subset of the cartesian product of tthat domain and itself. so fundamentally it has the domain as a dependency. in the namespace, it should occupy a resolution in that domain's namespace. if mydomain.is_countable is true, it should have at least 1 mydomain.ordering() under it. mydomain.ordering is an indicator function of the order, represented as tuples.
+#

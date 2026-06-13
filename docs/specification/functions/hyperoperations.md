@@ -1,38 +1,48 @@
 # hyperoperations
 
-to give a pleasant structure to the arithmetic operators, daamath uses the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower extensively:
+to give a pleasant organization to the most common arithmetic operators, daamath uses the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower as a semantic guide:
 
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)
 
-1 + 1 + 1 + … D times is     D  
-B + B + B + … D times is B × D  
-B × B × B × … D times is B ^ D  
-B ^ B ^ B ^ … D times is B ⇈ D  
+1 + 1 + 1 + … b times is     b
+b + b + b + … d times is b × d  
+b × b × b × … d times is b ^ d  
+b ^ b ^ b ^ … d times is b ⇈ d  
 and so on…
 
-this is the basic idea of hyperoperations. repeating the previous operation D times gives you the next operator. this gives us the tower: succ → add → mul → pow → spow → …
+this is the basic idea of hyperoperations. repeating the previous operation d times gives you the next operator. this gives us the tower: succ → add → mul → pow → spow → …
 
-each operator also has two inverses which solve for the left or the right operand. for example, in the equation `B ^ D = R`, the left inverse (root) solves for the left operand `ᴰ√R = B` while the right inverse solves for the right operand `logB(R) = D`. thus, at any hyperoperation level n > 0, there are three operators:  
-`Hₙ(base, degree) = result`  
-`Hₙ⁻ᴸ(result, degree) = base`  
-`Hₙ⁻ᴿ(result, base) = degree`  
-
+for each binary operation ⊙ involved in l ⊙ r = c, we have three possible functions: solve for c, solve for l, solve for r
 
 | n | hyperoperation | inverse |
 | - | - | - |
 | 0 | [succ](#succ)(degree) = result ≈ 1 + degree | [pred](#pred)(result) = degree ≈ result - 1 |
 
-| n | left inverse | hyperoperation | right inverse |
+| n | left solver | hyperoperation | right solver |
 | - | - | - | - |
-| 1 | [bus](#bus)(result, degree) = base ≈ lainv(degree) + result | [add](#add)(base, degree) = result ≈ base + degree | [sub](#sub)(result, base) = degree ≈ result + rainv(base) |
-| 2 | [vid](#vid)(result, degree) = base ≈ lminv(degree) * result | [mul](#mul)(base, degree) = result ≈ base * degree | [div](#div)(result, base) = degree ≈ result * rminv(base) |
-| 3 | [root](#root)(result, degree) = base ≈ result ^ minv(degree) | [pow](#pow)(base, degree) = result ≈ base ^ degree | [log](#log)(result, base) = degree ≈ log(result) / log(base) |
-| 4 | sroot(result, degree) = base | spow(base, degree) = result | slog(result, base) = degree |
+| 1 | [sub](#sub)(c, r) | [add](#add)(l, r) | [bus](#bus)(c, l) |
+| 2 | [div](#div)(c, r) | [mul](#mul)(l, r) | [vid](#vid)(c, l) |
+| 3 | [log](#log)(c, r) | [pow](#pow(l, r) | [root](#root)(re) |
+| 4 | slog(c, r) | spow(l, r) | sroot(c, l) |
 | … | … | … | … |
 
-where lainv rainv lminv rminv are left/right additive/multiplicative inverse operators. a domain declares its identity elements and these four operators simply calculate the inverse based on that identity element. when add is commutative, lainv = rainv. likewise for mul.
+l + r = c  add
+l = c - r  sub 
+r = -l + c bus
+l * r = c  mul (times)
+l = c / r  div (over)
+r = r \ c  vid (under)
+l ^ r = c  pow
+l = c ^ r⁻¹ root
+r = log_l(c) log
+
+
+
+thus with the inclusion of 
 
 a few notes:
+
+- since we define the functions as equation solvers, there is no need for inverse elements or identity elements
 
 - it is by construction that an operator in this tower is a repetition of the previous operator, but in domains other than the real numbers, mul is not a repetition of add because they are defined axiomatically with abstract algebra. the tower is simply a nice organizational mnemonic for operators.
 
@@ -44,7 +54,7 @@ a few notes:
 
 # argument order
 
-this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. [julia](https://en.wikipedia.org/wiki/Julia_(programming_language)) follows the order of math notation and writes log(n, x). [python](https://en.wikipedia.org/wiki/Python_(programming_language)) and [C](https://en.wikipedia.org/wiki/C_(programming_language)) follow the reverse order log(x, n). daamath follows the reverse order log(x, n) and root(x, n) because it is consistent with the order of arguments in sub and div, i.e. log(result, base) and root(result, degree)
+this works well for sub and div but there is confusion for log and root. in usual math notation, we write logₙ(x) and ⁿ√x. [julia](https://en.wikipedia.org/wiki/Julia_(programming_language)) follows the order of math notation and writes log(n, x). [python](https://en.wikipedia.org/wiki/Python_(programming_language)) and [C](https://en.wikipedia.org/wiki/C_(programming_language)) follow the reverse order log(x, n). daamath follows the orders log(x, n) & root(x, n) because they are consistent with the order of arguments in sub(x, n) & bus(x, n) and div(x, n) & vid(x, n)
 
 # notes
 

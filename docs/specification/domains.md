@@ -67,9 +67,28 @@ an n-element domain is finite. otherwise it is infinite. daamath has no way of k
 | RATIONAL | pair of INTEGER | by grothendieck construction, a pair of naturals under the inverse of addition (subtraction) with the equivalence class (a / b) = (c / d) |
 | COMPLEX | pair of REAL | by vector composition (i think) |
 
-# anything else?
+# predicates
 
-yes. domains also have a binary relation assumed on them. this binary relation is a boolean-valued indicator function that also comes with property variables like is_transitive, is_reflexive, is_symmetric, etc etc describing what kind of binary relation it is, like a preorder, a partial order, an equivalence relation, etc etc.
+## countability
+
+when a domain satisfies the is_countable predicate — i.e. it is bijective with the natural numbers — it should also bundle with it two functions that encode the forward and inverse directions of that bijection. a prominent example of this is an enumeration of the prime numbers:
+
+n | p
+- | -
+0 | 2
+1 | 3
+2 | 5
+3 | 7
+4 | 11
+… | …
+
+then the PRIMES domain should have p = PRIMES.at_index(n) and n = PRIMES.index_of(p)
+
+a similar thing can be done with any countable domain like the composites, naturals (trivial), integers, rationals, etc.
+
+# relations on domains
+
+relations like partial orders, equivalence relations, etc are useful in math. but instead of encoding them directly into a domain, relations become their own domain. this pulls from ZFC theory in that relations are a set of tuples. for example, 
 
 # implementation
 

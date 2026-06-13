@@ -1,13 +1,19 @@
 from collections.abc import Iterable, Sequence
-from typing import Any
+from numbers import Real, Integral
+import builtins
+from typing import Any, Callable
+import math
+
+def digitize(number: Integral, radices: Iterable[Integral]) -> Iterable[Integral]:
+    for radix in radices:
+        number, residue = divmod(number, radix)
+        yield residue    
+        if number == 0:
+            break
 
 def parallel(a, b):
 	'1 / {(1 / a) + (1 / b)}, (a * b) / (a + b), parallel operation, parallel addition'
 	return (a * b) / (a + b)
-
-def rsqrt(x):
-	'1 / √x. hardware sometimes has fast implementations for this'
-	return 1 / _math.sqrt(x)
 
 def lerp(parameter, low, high, *, power = 1) -> float:
 	'linear interpolation. maps parameter in [0, 1] to [low, high]. formula is low * (1 - parameter) + high * parameter instead of low + parameter * (high - low) because the former is symmetric and stable at parameter = 0 and parameter = 1, and the latter is asymmetric'
@@ -194,3 +200,32 @@ def torsor(a, b, c):
 	'a + (c - b). think of c - b as vector. we displace a by the vector c - b'
 	return a - b + c
 
+# rounded division family ------------------------------------------------------
+
+def quot(a, b, round: Callable[[Real], Integral] = builtins.round):
+    'quotient'
+    return round(a / b)
+
+def rem(a, b, round: Callable[[Real], Integral] = builtins.round):
+    'remainder'
+    ...
+
+from math import fma
+
+def fsd(a, b):
+    'fused subtract-divide'
+    ...
+
+# log ratio family -------------------------------------------------------------
+
+def ln_div(a: float, b: float) -> float:
+    'ln(a / b), aka log ratio'
+    return math.log1p((a - b) / b)
+
+def mul_exp(a: float, b: float) -> float:
+    'a * (e ** b)'
+    return a * math.exp(b)
+
+def div_exp(a: float, b: float) -> float:
+    'a / (e ** b), implemented as a * (e ** -b)'
+    return a * math.exp(-b)

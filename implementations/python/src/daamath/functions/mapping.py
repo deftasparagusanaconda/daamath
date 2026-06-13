@@ -221,7 +221,7 @@ def lerp(parameter, low, high, *, power = 1) -> float:
 def unlerp(parameter, low, high, *, power = 1) -> float:
 	'inverse of linear interpolation. maps parameter in [low, high] to [0, 1]. returns (parameter - low) / (high - low)'
 	if power == 0:
-		return _math.log(parameter / low, high / low)
+		return math.log(parameter / low, high / low)
 	elif power == 1:
 		return (parameter - low) / (high - low)
 	else:
@@ -230,7 +230,7 @@ def unlerp(parameter, low, high, *, power = 1) -> float:
 def map(value, a, b, c, d, *, power = 1) -> float:
 	'value from [a, b] to [c, d]. same as lerp(unlerp(value, a, b), c, d)'
 	if power == 0:
-		return c * (d / c) ** (_math.log(value / a, b / a))
+		return c * (d / c) ** (math.log(value / a, b / a))
 	elif power == 1:
 		temp = (value - a) / (b - a)
 		return (1 - temp) * c + (temp) * d

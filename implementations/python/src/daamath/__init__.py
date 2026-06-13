@@ -1,23 +1,22 @@
-from .context import Context
-
-from . import functions, numbers, strings, domains
+from . import functions, numbers, domains, types, enums, exceptions, context
 from .functions import *
 from .numbers import *
-from .strings import *
+from .generate_strings import *
 from .domains import *
-from . import enums
+from .types import *
+from .enums import *
+from .exceptions import *
+from .context import Context
+'''
+context = context.Context(
+    functions = context.Functions(
 
-from . import aliases
-from .aliases import *
+    ),
+    domains = context.Domains(
 
-from . import exceptions
+    ),
+    datatypes = context.Datatypes(
 
-context = Context(
-        functions = '',
-        datatypes = ''
-#        check_input_domain  = True,
-#        check_output_domain = True,
-#        domain              = REAL,
-#        error_policy     = enums.ErrorPolicy.FLAG_RAISE_HALT,
-#        rounding            = roundeven,
-    )
+    ),
+)
+'''

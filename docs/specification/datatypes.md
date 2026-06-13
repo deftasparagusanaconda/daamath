@@ -1,10 +1,6 @@
-# datatypes
+# representation
 
-first, a few definitions:
-
-## datatype
-
-a datatype is a specification for a domain about how its values should be represented. it may not be able to represent all the possible values of the domain (especially with [infinite-domain datatypes](#infinite-domain-datatypes)) but is acceptable enough for approximate computation.
+a representation is a specification for a domain about how its values should be represented. it may not be able to represent all the possible values of the domain (especially with [infinite-domain datatypes](#infinite-domain-datatypes)) but it should at least be acceptable enough for approximate computation.
 
 datatypes are parameterized as much as possible, which is how daamath generalizes a lot of existing datatypes.
 
@@ -62,16 +58,45 @@ a datatype that tries to model a domain with an infinite number of elements
 
 # what datatypes does daamath actually recognize?
 
-daamath recognizes datatypes that work with sequences of binary bits, because these are the most common with modern computers. 1s and 0s.
+daamath recognizes datatypes that work with sequences of binary bits, because these are the most common with modern computers. 
+
+daamath recognizes the following primitive non-composed datatypes:
+
+b - boolean
+i - 2's complement signed integer (i16, i32, i64, …)
+u - unsigned integer (u16, u32, u64, …)
+q - quotient integer (q7.8, q10.21, q13.50, …)
+f - binary float (f16, f32, f64, …)
+d - decimal float (d16, d32, d64, …)
+prospectives:
+p - posit (p16, p32, p64, …)
+
+daamath reecognizes the following data structures:
+
+map - a surjection. distinct from a function only in that its mappings are explicit. can be represented as a set of 2-tups. it is the most primitive data structure and can represent all the other ones, by characteristic function, association tuples, graph edges, etc.
+bag - an unordered collection of elements. can be represented by a map of element → count
+set - an unordered collection of unique elements. can be represented by a map of element → nothing
+seq - a totally ordered (sequential) variable-length collection of homogeneous type, which can be nested to represent a tensor. can be represented by a map of index → element
+tup - a totally ordered (sequential) fixed-length collection of homogeneous/heterogeneous type, which can be nested to represent a tensor. in a programming language, it is usually a struct if heterogeneous. a tuple if homogeneous. can be represented by a map of index → element
+prospectives:
+tree -  can be represented as a map where some images reappear as preimages
+
+daamath reecognizes the following composed datatypes:
+
+cr - complex rectangular: a 2-tup of (float, float)
+cp - complex polar: a 2-tup of (quot, float)
+
+
 
 | name  | format                                 | alias | composition | domain                     | example           |
 | ----- | -------------------------------------- | ----- | ----------- | -------------------------- | ----------------- |
 | truth | truth_states                           | tS    | primitive   | truth (finite)             | t2 is bool        |
-| unint | uint_bits                              | uB    | primitive   | NATURALSTART_0 (infinite)  | u8 is [0, 256)    |
+| uint  | uint_bits                              | uB    | primitive   | NATURALSTART_0 (infinite)  | u8 is [0, 256)    |
 | int   | int_sign_bits                          | iX    | primitive   | INTEGERS (infinite)        | i8 is [-128, 128) |
 | float | float_radix_sign_exponent_mantissa     | (see below)    | composed    | extended reals (probably)  | f
 | cmplx | complex_geometry_component1_component2 | cr8   | composed    | complex (infinite)         | cr128 or something idk lol | 
 | posit | idk…                                   | idk…  | idk…        | wheel (infinite) (i think) | i dont really know |
+|       |
 
 daamath recognizes IEEE 754's impact and provides aliases for the binary formats
 
@@ -101,6 +126,25 @@ datatypes bow down to mathematical domains. the domains do not yield to datatype
 i love that realization i made with complex numbers. ive always felt it but it just wasnt convenient enough to work with in programming languages. i dont always want rectangular complex numbers. i want the radial complex plane. 
 
 when daamath might work with vector spaces larger than 2 dimensions, perhaps i shall specify that rectangular is a sequence of scalars, polar is a decomposition of that to scalar and vector, and a recursive polar definition that recursively decomposes a vector until its a sequence of scalars. 
+
+# rant 2
+
+daamath should maintain a table of preferred data structures for certain representations:
+
+non-negative integers: uint
+real numbers: sint/float/
+fraction: pair[int]
+continued fraction: int (integer part), sequence[int] (numerators), sequence[int] (denominators)
+simple continued fraction: sequence[int] (first element is integer part
+prime factors: mapping[uint: uint] (order not enforced but preferred)
+sparse array: mapping[int, any]
+sparse tensor: mapping[tuple[int], any]
+rectangular complex: pair[float, float] as (re, im)
+polar complex: pair[sint, ufloat] as (angle, magnitude) sint allows uniform precision of angle, ufloat is theoretical but can be float for now. 
+
+where sint is "scaled integer", with uniform precision in the finite interval [a, b].
+
+daamath only maintains representations that have distinct precision and performance properties. prime factors representation may be faster for multiplication. F, CF and SCF represent rational numbers accurately unlike floats.
 
 
 [FidelityError]: https://deftasparagusanaconda.github.io/daamath/specification/errors/#fidelityerror

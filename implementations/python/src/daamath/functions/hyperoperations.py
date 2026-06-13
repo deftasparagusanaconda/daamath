@@ -40,9 +40,8 @@ from numbers import Number, Real, Integral
 from typing import Literal
 from ..exceptions import DomainError
 
-
 #h0c = functools.partial(h1c, a = 1)
-def h0c(b: Integral) -> Integral:
+def succ(b: Integral) -> Integral:
     'c = ++b, successor. the 0th hyperoperation'
     if not isinstance(b, Integral):
         raise DomainError('')
@@ -54,7 +53,7 @@ def h0c(b: Integral) -> Integral:
     return c
     
 #h0b = functools.partial(h1b, x = 1)
-def h0b(c):
+def pred(c):
     'b = --c, predecessor. the inverse of the 0th hyperoperation'
     b = c - 1
 
@@ -63,7 +62,7 @@ def h0b(c):
 
     return b
     
-def h1c(a, b):
+def add(a, b):
     'c = a + b, addition. the 1st hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -75,7 +74,7 @@ def h1c(a, b):
     
     return c
 
-def h1b(c, a):
+def sub(c, a):
     'b = c - a, left subtraction. the inverse of the 1st hyperoperation'
     if type(c) != type(a):
         raise TypeError(f'{c} and {a} must be same type')
@@ -87,7 +86,10 @@ def h1b(c, a):
     
     return b
 
-def h2c(a, b):
+def bus(c, b):
+    return c - b
+
+def mul(a, b):
     'c = a * b, multiplication. the 2nd hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -99,7 +101,7 @@ def h2c(a, b):
     
     return c
 
-def h2b(c, a):
+def div(c, a):
     'b = c / a, left division. the inverse of the 2nd hyperoperation'
     if type(c) != type(a):
         raise TypeError(f'{c} and {a} must be same type')
@@ -113,7 +115,10 @@ def h2b(c, a):
 
     return b
 
-def h3c(a, b):
+def vid(c, b):
+    return c / b
+
+def pow(a, b):
     'c = a ^ b, power, exponentiation. the 3rd hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -125,35 +130,41 @@ def h3c(a, b):
 
     return c
 
-def h3b(a, c):
+def log(a, c):
     'b = log_a(c), logarithm. the inverse of the 3rd hyperoperation that solves for b'
     # c = a ^ b
     if type(a) != type(c):
         raise TypeError(f'{a} and {c} must be same type')
 
     try:
-        b = math.log(c, a)
+        b = math.log(a, c)
     except:
-        b = cmath.log(c, a)
+        b = cmath.log(a, c)
 
     if type(b) != type(a):
         raise DomainError(log, (a, c), b)
 
     return b
     
-def h3a(b, c):
+def root(c, b):
     'a = b √ c, n-th root. the inverse of the 3rd hyperoperation that solves for a'
     if type(b) != type(c):
         raise TypeError(f'{b} and {c} must be same type')
     # c = a ^ b
-    a = c ** (1 / b)
+    try:
+        a = math.exp(math.log(c) / b)
+    except:
+        try:
+            a = cmath.exp(cmath.log(c) / b)
+        except:
+            a = c ** (1 / b)
     
     if type(a) != type(b):
         raise DomainError(root, (b, c), a)
 
     return a
 
-def h4c(a, b):
+def spow(a, b):
     'c = a ↑ b, tetration, superexponentiation, the 4th hyperoperation'
     if type(a) != type(b):
         raise TypeError(f'{a} and {b} must be same type')
@@ -165,7 +176,7 @@ def h4c(a, b):
     
     return c
 
-def h4b(a, c):
+def slog(a, c):
     'b = slog_a(c), superlogarithm, the inverse of the 4th hyperoperation'
     if type(a) != type(c):
         raise TypeError(f'{a} and {c} must be same type')
@@ -177,7 +188,7 @@ def h4b(a, c):
     
     return b
 
-def h4a(b, c):
+def sroot(b, c):
     'superroot. idfk what this is supposed to be in terms of code'
     if type(b) != type(c):
         raise TypeError(f'{b} and {c} must be same type')

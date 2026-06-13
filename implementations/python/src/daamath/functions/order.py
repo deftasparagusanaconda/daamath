@@ -57,44 +57,87 @@
 
 from numbers import Real
 
-def iee(a: Real, b: Real) -> bool:
+def lt(a: Real, b: Real) -> bool:
 	'a < b'
 	return a < b
 
-def iie(a: Real, b: Real) -> bool:
+def le(a: Real, b: Real) -> bool:
 	'a ≤ b'
 	return a <= b
 
-def iei(a: Real, b: Real) -> bool:
+def eq(a: Real, b: Real) -> bool:
 	'a = b'
 	return a == b
 
-def eie(a: Real, b: Real) -> bool:
-	'a ≠ b'
-	return a != b
+def so(a: Real, b: Real) -> bool:
+    'strictly ordered. a < b or a > b'
+    return a != b
 
-def eii(a: Real, b: Real) -> bool:
+def ge(a: Real, b: Real) -> bool:
 	'a ≥ b'
 	return a >= b
 
-def eei(a: Real, b: Real) -> bool:
+def gt(a: Real, b: Real) -> bool:
 	'a > b'
 	return a > b
 
-def eeiee(x: Real, a: Real, b: Real) -> bool:
-	'a < x < b, x ∈ (a, b)'
+def oo(x: Real, a: Real, b: Real) -> bool:
+	'in open-open interval, a < x < b, x ∈ (a, b)'
 	return a < x < b
 
-def eeiie(x: Real, a: Real, b: Real) -> bool:
-	'a < x ≤ b, x ∈ (a, b]'
+def oc(x: Real, a: Real, b: Real) -> bool:
+	'in open-closed interval, a < x ≤ b, x ∈ (a, b]'
 	return a < x <= b
 
-def eiiee(x: Real, a: Real, b: Real) -> bool:
-	'a ≤ x < b, x ∈ [a, b)'
+def co(x: Real, a: Real, b: Real) -> bool:
+	'in closed-open interval, a ≤ x < b, x ∈ [a, b)'
 	return a <= x < b
 
-def eiiie(x: Real, a: Real, b: Real) -> bool:
-	'a ≤ x ≤ b, x ∈ [a, b]'
+def cc(x: Real, a: Real, b: Real) -> bool:
+	'in closed-closed interval, a ≤ x ≤ b, x ∈ [a, b]'
 	return a <= x <= b
 
-# yeah.. i might work on extending this one day
+def noo(x, a, b) -> bool:
+    'not(oo)'
+    ...
+def noc(x, a, b) -> bool:
+    'not(oc)'
+    ...
+def nco(x, a, b) -> bool:
+    'not(co)'
+    ...
+def ncc(x, a, b) -> bool:
+    'not(cc)'
+    ...
+
+def cp(a, b) -> bool:
+    'comparable'
+    ...
+
+def nc(a, b) -> bool:
+    'not(cp)'
+    ...
+
+def ne(a, b) -> bool:
+    'not equal'
+    ...
+
+def ns(a, b) -> bool:
+    'not(so)'
+    ...
+
+def na(a, b) -> bool:
+    'not above'
+    ...
+
+def nb(a, b) -> bool:
+    'not below'
+    ...
+
+def nl(a, b) -> bool:
+    'not(lt)'
+    ...
+
+def ng(a, b) -> bool:
+    'not(gt)'
+    ...

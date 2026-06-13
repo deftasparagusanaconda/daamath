@@ -50,23 +50,23 @@ def round(x: Real, *, directed: bool = False, mode: Literal['floor', 'ceil', 'tr
 		#case 'random_stochastic'
 		case _: raise ValueError("invalid mode. must be one of {'floor', 'ceil', 'trunc', 'away', 'even', 'odd'}")
 
-round__true_floor  = functools.partial(round, directed = True , mode = 'floor')
-round__true_ceil   = functools.partial(round, directed = True , mode = 'ceil' )
-round__true_trunc = functools.partial(round, directed = True , mode = 'trunc')
-round__true_away   = functools.partial(round, directed = True , mode = 'away' )
-#even        = functools.partial(round, directed = True , mode = 'even' )
-#odd         = functools.partial(round, directed = True , mode = 'odd'  )
+floor  = functools.partial(round, directed = True , mode = 'floor')
+ceil   = functools.partial(round, directed = True , mode = 'ceil' )
+trunc = functools.partial(round, directed = True , mode = 'trunc')
+away   = functools.partial(round, directed = True , mode = 'away' )
+even        = functools.partial(round, directed = True , mode = 'even' )
+odd         = functools.partial(round, directed = True , mode = 'odd'  )
 
 # NOTE: 
 # you: daa.. why not add even() and odd()?
 # me: because we need tie-breaking for them. even(3) has to choose between 2 and 4. thats a tie break. cases like these are handled by pyquantize, if you need more advanced rounding
 
-round__false_floor = functools.partial(round, directed = False, mode = 'floor')
-round__false_ceil  = functools.partial(round, directed = False, mode = 'ceil' )
-round__false_trunc = functools.partial(round, directed = False, mode = 'trunc')
-round__false_away  = functools.partial(round, directed = False, mode = 'away' )
-round__false_even  = functools.partial(round, directed = False, mode = 'even' )
-round__false_odd   = functools.partial(round, directed = False, mode = 'odd'  )
+nearest_floor = functools.partial(round, directed = False, mode = 'floor')
+nearest_ceil  = functools.partial(round, directed = False, mode = 'ceil' )
+nearest_trunc = functools.partial(round, directed = False, mode = 'trunc')
+nearest_away  = functools.partial(round, directed = False, mode = 'away' )
+nearest_even  = functools.partial(round, directed = False, mode = 'even' )
+nearest_odd   = functools.partial(round, directed = False, mode = 'odd'  )
 
 # ------------------------------------------------------------------------------
 

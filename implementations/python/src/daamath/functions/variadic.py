@@ -15,19 +15,19 @@ from functools import reduce
 
 # variadic and. unicode : ⋀
 #functools.partial(functools.reduce, ffft)
-from builtins import all as vffft
+from builtins import all as vand
 
 # variadic or. unicode: ⋁
 #functools.partial(functools.reduce, fttt)
-from builtins import any as vfttt
+from builtins import any as vor
 
 # variadic add. unicode: ∑
 #functools.partial(functools.reduce, h1c)
-from builtins import sum as vh1c
+from builtins import sum as vadd
 
 # variadic mul. unicode: ∏
 # functools.partial(functools.reduce, h2c)
-from math import prod as vh2c
+from math import prod as vmul
 
 def vparallel(iterable: Iterable[int | float | complex]) -> int | float | complex: 
 	'variadic parallel'
@@ -73,7 +73,7 @@ def fmean(data: Iterable[Number], *, forward: Callable[[Number], Number], invers
     ...
 
 # variadic xor. oddness check. 1 if odd number of stuff. 0 otherwise 
-vfttf = functools.partial(functools.reduce, logic.fttf)
+vfttf = functools.partial(functools.reduce, logic.xor)
 
 # variadic nxor. evenness check. 1 if even number of stuff. 0 otherwise
-vtfft = functools.partial(functools.reduce, logic.tfft)
+vtfft = functools.partial(functools.reduce, logic.nxor)
