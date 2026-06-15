@@ -4,26 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-version = "0.1.0"
-description = "daamath python implementation"
-readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-    "pyyaml"
-]
+version = "0.2.0"
+description = "a mathematician's spellbook"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/daamath"]
-
-# project root is daamath/implementations/python
-# so we go up two levels to reach daamath/docs/specification/strings
-[tool.hatch.build.targets.wheel.force-include]
-"../../docs/specification/strings" = "daamath/strings"
+packages = ["built"]
 
 [tool.hatch.build.targets.sdist]
-include = [
-    "src/**",
-    "../../docs/specification/strings/**",
-    "pyproject.toml",
-    "README.md"
-]
+include = ["built/**"]

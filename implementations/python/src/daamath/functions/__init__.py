@@ -14,7 +14,9 @@ from .complex_extra import cis
 
 from .trigonometry import sin, cos, tan, cot, sec, csc, asin, acos, atan, acot, asec ,acsc, sinh, cosh, tanh, coth, sech, csch, asinh, acosh, atanh, acoth, asech, acsch
 #from .trigonometry import croh, crah, croa, crao, crha, crho, csoh, csah, csoa, csao, csha, csho, hroh, hrah, hroa, hrao, hrha, hrho, hsoh, hsah, hsoa, hsao, hsha, hsho
-from .trigonometry_extra import csoh2, csah2, csoa2, csao2, csha2, csho2, h2b_croh_S_S
+#from .trigonometry_extra import csoh2, csah2, csoa2, csao2, csha2, csho2, h2b_croh_S_S
+from .trigonometry_extra import asin2, acos2, atan2, acot2, asec2, acsc2, sinc
+
 
 from .logic import not_, and_, or_, xor, imp, con, nand, nor, nxor, nimp, ncon
 #from .logic import tf, ffft, fttt, fttf, ttft, tftt, tttf, tfff, tfft, fftf, ftff

@@ -56,9 +56,9 @@ def atan(semiarea: Number) -> Number:
     except: return cmath.atan(semiarea)
 
 def acot(semiarea: Number) -> Number:
-    'inverse circular cotangent'
-    try:    return math.atan(1 / semiarea)
-    except: return cmath.atan(1 / semiarea)
+    'inverse circular cotangent. range is (0, π)'
+    try:    return math.pi / 2 - math.atan(semiarea)
+    except: return cmath.pi / 2 - cmath.atan(semiarea)
 
 def asec(semiarea: Number) -> Number:
     'inverse circular secant'

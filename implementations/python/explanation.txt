@@ -1,0 +1,7 @@
+source/: handwritten code
+built/: generated code
+tests/: used by pytest
+build.py: create generated/ using generator/
+pyproject.toml: makes the implementation installable
+
+the implementation has to generate .py code from .yaml files. we upload whatever is in generated/, and gitignore generator/
