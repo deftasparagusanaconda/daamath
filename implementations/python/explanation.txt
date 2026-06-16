@@ -1,7 +1,6 @@
-source/: handwritten code
-built/: generated code
-tests/: used by pytest
-build.py: create generated/ using generator/
-pyproject.toml: makes the implementation installable
+we have certain .py files that can be generated from the .yaml files in the specification.
 
-the implementation has to generate .py code from .yaml files. we upload whatever is in generated/, and gitignore generator/
+run `python generate.py` to create src/, which copies handwritten/, and generates whatever other .py files are needed from specification
+
+as of now the following are generated:
+- src/daamath/strings/*.py

@@ -1,0 +1,95 @@
+# this file generates built/ 
+#
+# a few steps:
+# 1. copy source/ into built/
+# 2. generate string/*.py
+
+from pathlib import Path
+from collections.abc import Mapping
+from shutil import rmtree, copytree
+import yaml
+
+# do you know why i keep putting lots of comments everywhere?
+# its probably because ive stopped understanding what im doing
+
+HANDWRITTEN = Path('handwritten/daamath')
+SPECIFICATION = Path('../../docs/specification/')
+SRC = Path('src/daamath')
+SRC_STRINGS = SRC / 'strings/'
+
+# what indentation scheme youre using. by PEP rules, four spaces should be best
+INDENT = '    '
+
+# copy all files in source into built
+# because you want to copy all handwritten files into built
+# okay daa okay i get it im not dumb
+rmtree(SRC)
+copytree(HANDWRITTEN, SRC, dirs_exist_ok=True)
+
+# now from this point on, daa, you start generating your own code
+# this is where youre dreading the most. come on, you can do it!
+# first we have to take the strings/*.yaml and turn each file into its corresponding .py file. you better let a function do that. you should have a function that takes in a dict, and gives you back a string fit for a .py file. okie?
+# okay... i-i guess i could do that
+# good. go on.. go make it. lets see what happens
+# ill make a function called.. dict_to_str.. i guess??
+from collections.abc import Mapping
+
+INDENT = "    "
+
+
+def to_python(obj, depth=0):
+    indent = INDENT * depth
+    next_indent = INDENT * (depth + 1)
+
+    if isinstance(obj, Mapping):
+        if not obj:
+            return "Namespace()"
+
+        body = ",\n".join(
+            f'{next_indent}{key!r}: {to_python(value, depth + 1)}'
+            for key, value in obj.items()
+        )
+
+        return (
+            "Namespace(**{\n"
+            f"{body}\n"
+            f"{indent}}})"
+        )
+
+    if isinstance(obj, list):
+        if not obj:
+            return "[]"
+
+        body = ",\n".join(
+            f"{next_indent}{to_python(item, depth + 1)}"
+            for item in obj
+        )
+
+        return (
+            "[\n"
+            f"{body}\n"
+            f"{indent}]"
+        )
+
+    return repr(obj)
+
+# mkdir src/strings/
+SRC_STRINGS.mkdir(parents = True, exist_ok = True)
+
+# create src/strings/*.py
+for path in (SPECIFICATION / "strings").iterdir():
+    if path.suffix != ".yaml":
+        continue
+
+    data = yaml.safe_load(path.read_text())
+
+    code = ["from ..python_utils import Namespace\n\n"]
+
+    for variable, dictionary in data.items():
+        code.append(f'{variable} = {to_python(dictionary)}\n')
+
+    (SRC_STRINGS / f"{path.stem}.py").write_text(''.join(code))
+
+# create src/strings/__init__.py
+
+(SRC_STRINGS / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in SRC_STRINGS.iterdir()))

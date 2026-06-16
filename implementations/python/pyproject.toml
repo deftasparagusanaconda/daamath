@@ -8,7 +8,4 @@ version = "0.2.0"
 description = "a mathematician's spellbook"
 
 [tool.hatch.build.targets.wheel]
-packages = ["built"]
-
-[tool.hatch.build.targets.sdist]
-include = ["built/**"]
+packages = ["src/daamath/"]
