@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm -r src/
+cp -r handwritten/ src/
+
+cd generators/
+python 'generate strings.py'
+python 'generate functions.py'
+cd ..

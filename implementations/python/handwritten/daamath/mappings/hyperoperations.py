@@ -237,3 +237,34 @@ def hyper(
         case _:
             raise ValueError("invalid solve parameter. must be one of {'a', 'b', 'c'}")
 '''
+
+def add__one(a):
+    'a + 1'
+    return a + 1
+
+def sub__one(b):
+    'b - 1'
+    return b - 1
+
+from operator import add, sub
+
+def add_ainv(c, a):
+    '-a + c'
+    return -a + c
+
+from operator import mul, truediv
+
+def div_minv(c, a):
+    '(1 / a) * c'
+    return (1 / a) * c
+
+from operator import pow
+from math import log
+
+def 
+
+def root(c, a):
+    return a ^ b = c ^ (1/b)
+
+    a ^ b = c
+    b = log_a(c)

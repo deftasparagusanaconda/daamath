@@ -1,0 +1,49 @@
+sin:
+  desc: 
+cos:
+  desc: 
+tan:
+  desc: 
+cot:
+  desc: 
+sec:
+  desc: 
+csc:
+  desc: 
+asin:
+  desc: 
+acos:
+  desc: 
+atan:
+  desc: 
+acot:
+  desc: 
+asec:
+  desc: 
+acsc:
+  desc: 
+sinh:
+  desc: 
+cosh:
+  desc: 
+tanh:
+  desc: 
+coth:
+  desc: 
+sech:
+  desc: 
+csch:
+  desc: 
+asinh:
+  desc: 
+acosh:
+  desc: 
+atanh:
+  desc: 
+acoth:
+  desc: 
+asech:
+  desc: 
+acsch:
+  desc: 
+

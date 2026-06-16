@@ -1,6 +1,7 @@
 we have certain .py files that can be generated from the .yaml files in the specification.
 
-run `python generate.py` to create src/, which copies handwritten/, and generates whatever other .py files are needed from specification
+do `./generate` to create src/ from handwritten/ and generators/
 
 as of now the following are generated:
 - src/daamath/strings/*.py
+- src/daamath/functions/*.py

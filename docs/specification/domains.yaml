@@ -1,0 +1,7 @@
+domains:
+  NATURAL: natural numbers
+  INTEGER: integral numbers
+  RATIONAL: rational numbers
+  REAL: real numbers
+  COMPLEX: complex numbers
+  BOOLEAN: 2-element algebra 
