@@ -13,18 +13,21 @@ functions:
     pow:
     log:
     root:
+    #spow:
+    #slog:
+    #sroo:
   boolean:
     not:
     and:
-    nand:
     or:
-    nor:
     xor:
-    xnor:
     imp:
-    fst:
     con:
-    snd:
+    nand:
+    nor:
+    nxor:
+    nimp:
+    ncon:
   trigonometric:
     sin:
     cos:
@@ -53,4 +56,4 @@ functions:
   quantize:
     floor:
     ceil:
-
+    

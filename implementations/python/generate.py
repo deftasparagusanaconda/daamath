@@ -1,13 +1,11 @@
-# this file generates built/ 
-#
 # a few steps:
 # 1. copy source/ into built/
 # 2. generate string/*.py
 
+import yaml
 from pathlib import Path
 from collections.abc import Mapping
 from shutil import rmtree, copytree
-import yaml
 
 # do you know why i keep putting lots of comments everywhere?
 # its probably because ive stopped understanding what im doing
@@ -32,10 +30,8 @@ copytree(HANDWRITTEN, SRC, dirs_exist_ok=True)
 # okay... i-i guess i could do that
 # good. go on.. go make it. lets see what happens
 # ill make a function called.. dict_to_str.. i guess??
-from collections.abc import Mapping
 
 INDENT = "    "
-
 
 def to_python(obj, depth=0):
     indent = INDENT * depth

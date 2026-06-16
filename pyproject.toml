@@ -1,30 +1,63 @@
+# old --------------------------------------------------------------------------
+#
+# [build-system]
+# requires = ["hatchling"]
+# build-backend = "hatchling.build"
+#
+# [project]
+# name = "daamath"
+# version = "0.2.0"
+# description = "a mathematician's spellbook"
+#
+# [tool.hatch.build.targets.wheel]
+# packages = ["src/daamath/"]
+# 
+# ------------------------------------------------------------------------------
+
+# man... most of this is AI generated, with lots of hand-correction
+# i just cant be bothered about this
+# its not something i want to waste my time on
+
 [build-system]
-requires = ["setuptools>=75.8"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-version = "0.2.0"
-#dynamic = ["version"]
-description = "a mathematician's spellbook: language-agnostic math library specification with implementations in various languages "
+version = "0.3.0"
+description = "a mathematician's spellbook"
 readme = "readme.md"
-requires-python = ">=3.11.0"
 license = "GPL-3.0-or-later"
-#package-dir = {"" = "."}
-#dependencies = ["numpy", "matplotlib"]
+requires-python = ">=3.10"
+
 authors = [
-	{ name="deftasparagusanaconda", email="deftasparagusanaconda@gmail.com" }
+    { name = "deftasparagusanaconda" }
 ]
 
+keywords = [
+    "math",
+    "numerical",
+    "algebra",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Mathematics",   
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"   
+]
+
+# daamath must have zero dependencies. thats one beauty of it.
+dependencies = []
+
 [project.urls]
-Homepage = "https://deftasparagusanaconda.github.io/daamath"
-Documentation = "https://deftasparagusanaconda.github.io/daamath"
+Homepage = "https://github.com/deftasparagusanaconda/daamath"
+Documentation = "https://deftasparagusanaconda.github.io/daamath/"
 Repository = "https://github.com/deftasparagusanaconda/daamath"
 Issues = "https://github.com/deftasparagusanaconda/daamath/issues"
-#Changelog = "https://github.com/me/spam/blob/master/changelog.md"
 
-[tool.setuptools]
-package-dir = {"" = "implementations/python/src"}
-
-[tool.setuptools.packages.find]
-where = ["implementations/python/src"]
+[tool.hatch.build.targets.wheel]
+packages = ["implementations/python/src/daamath"]
