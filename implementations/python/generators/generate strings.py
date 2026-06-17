@@ -73,7 +73,10 @@ for path in (SPECIFICATION / "strings").iterdir():
     for variable, dictionary in data.items():
         code.append(f'{variable} = {to_python(dictionary)}\n')
 
-    (SRC_STRINGS / f"{path.stem}.py").write_text(''.join(code))
+    target = (SRC_STRINGS / f"{path.stem}.py")
+
+    print(f'hello! i am now generating {target}')
+    target.write_text(''.join(code))
 
 # create src/strings/__init__.py
 

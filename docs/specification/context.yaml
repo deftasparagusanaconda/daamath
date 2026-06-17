@@ -32,8 +32,3 @@
 #       sentinel_value_policy: value from SentinelPolicy enum
 #       rounding: function pointer
 #     …: …
-
-context:
-  functions:
-  domains:
-  datatypes:

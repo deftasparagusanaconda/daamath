@@ -1,9 +1,28 @@
 #!/bin/sh
 
-rm -r src/
-cp -r handwritten/ src/
+# ------------------------------------------------------------------------------
+echo step 1: copy handwritten
 
+echo removing src/
+rm -r src/
+
+echo copying src/ to handwritten/
+cp -r handwritten/ src/
+# ------------------------------------------------------------------------------
+echo step 2: generate code
+
+echo cd to generators/
 cd generators/
+
+echo generating strings
 python 'generate strings.py'
+
+echo generating functions
 python 'generate functions.py'
+
+echo fixing implementation quirks
+./quirk_fixer
+
+echo cd back to ../
 cd ..
+# ------------------------------------------------------------------------------

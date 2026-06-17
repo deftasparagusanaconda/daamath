@@ -1,6 +1,5 @@
 from . import functions, numbers, domains, types, enums, exceptions, context
 from .functions import *
-from .mappings import *
 from .numbers import *
 from .strings import *
 from .domains import *

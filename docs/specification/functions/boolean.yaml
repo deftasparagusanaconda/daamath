@@ -1,64 +1,64 @@
 not:
-  desc: negation
+  description: negation
   domains:
     - a: BOOLEAN
   codomain: BOOLEAN
 and:
-  desc: conjunction
+  description: conjunction
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 or:
-  desc: disjunction
+  description: disjunction
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 xor:
-  desc: exclusive disjunction
+  description: exclusive disjunction
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 imp:
-  desc: material implication
+  description: material implication
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 con:
-  desc: converse material implication
+  description: converse material implication
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 nand:
-  desc: not(and)
+  description: not(and)
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 nor:
-  desc: not(or)
+  description: not(or)
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 nxor:
-  desc: not(xor)
+  description: not(xor)
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 nimp:
-  desc: not(imp)
+  description: not(imp)
   domains:
     - a: BOOLEAN
     - b: BOOLEAN
   codomain: BOOLEAN
 ncon:
-  desc: not(ncon)
+  description: not(ncon)
   domains:
     - a: BOOLEAN
     - b: BOOLEAN

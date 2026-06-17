@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# fix quirks caused by the implementation's programming language (python)
+
+# src/daamath/functions/boolean.py has `def (not|and|or)` which we shall rename to `def (not_|and_|or_)` respectively
+
+echo renaming not → _not, and → _and, or → _or
+sed -i \
+	-e 's/def not(/def _not(/g' \
+	-e 's/context\.not/context._not/g' \
+	-e 's/def and(/def _and(/g' \
+	-e 's/context\.and/context._and/g' \
+	-e 's/def or(/def _or(/g' \
+	-e 's/context\.or/context._or/g' \
+	../src/daamath/functions/boolean.py

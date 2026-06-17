@@ -1,72 +1,72 @@
 # this file is an official collection of all the functions daamath handles
 
 succ:
-  desc: successor. solves for b in ++a = b
+  description: successor. solves for b in ++a = b
   domains:
     - a: COMPLEX
   codomain: COMPLEX
 pred:
-  desc: predecessor. solves for a in ++a = b
+  description: predecessor. solves for a in ++a = b
   domains:
     - b: COMPLEX
   codomain: COMPLEX
 add:
-  desc: addition. solves for c in a + b = c
+  description: addition. solves for c in a + b = c
   domains:
     - a: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 sub:
-  desc: subtraction. solves for a in a + b = c
+  description: subtraction. solves for a in a + b = c
   domains:
     - c: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 bus:
-  desc: bustraction. solves for b in a + b = c
+  description: bustraction. solves for b in a + b = c
   domains:
     - c: COMPLEX
     - a: COMPLEX
   codomain: COMPLEX
 mul:
-  desc: multiplication. solves for c in a × b = c
+  description: multiplication. solves for c in a × b = c
   domains:
     - a: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 div:
-  desc: division. solves for a in a × b = c
+  description: division. solves for a in a × b = c
   domains:
     - c: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 vid:
-  desc: vidision. solves for b in a × b = c
+  description: vidision. solves for b in a × b = c
   domains:
     - c: COMPLEX
     - a: COMPLEX
   codomain: COMPLEX
 pow:
-  desc: exponentiation. solves for c in a ^ b = c
+  description: exponentiation. solves for c in a ^ b = c
   domains:
     - a: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 log:
-  desc: logarithm. solves for a in a ^ b = c
+  description: logarithm. solves for a in a ^ b = c
   domains:
     - c: COMPLEX
     - b: COMPLEX
   codomain: COMPLEX
 root:
-  desc: root. solves for b in a ^ b = c
+  description: root. solves for b in a ^ b = c
   domains:
     - c: COMPLEX
     - a: COMPLEX
   codomain: COMPLEX
   #spow:
-  #  desc: 
+  #  description: 
   #slog:
-  #  desc: 
+  #  description: 
   #sroot:
-  #  desc: 
+  #  description: 

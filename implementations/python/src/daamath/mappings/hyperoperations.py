@@ -261,10 +261,8 @@ def div_minv(c, a):
 from operator import pow
 from math import log
 
-def 
+def pow__div_1(c, b): 
+    'c ** (1 / b)'
+    return c ** (1 / b)
 
-def root(c, a):
-    return a ^ b = c ^ (1/b)
 
-    a ^ b = c
-    b = log_a(c)
