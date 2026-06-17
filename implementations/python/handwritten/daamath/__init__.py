@@ -6,7 +6,8 @@ from .domains import *
 from .types import *
 from .enums import *
 from .exceptions import *
-from .context import Context
+from . import signatures
+
 '''
 context = context.Context(
     functions = context.Functions(

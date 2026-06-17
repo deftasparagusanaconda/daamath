@@ -18,13 +18,13 @@ def generate_definition(name: str, args: list[str], description: str) -> str:
         f'    {description!r}']
 
     for arg in args:
-        lines.append(f'    if not dm.context.{name}.domains.{arg}(arg):')
-        lines.append(f"        raise DomainViolation('{name}', {args}, {{}}, arg, dm.context.{name}.domains.{arg})")
-
-    lines.append(f'    image = dm.context.{name}.mapping({', '.join(args)})')
-
-    lines.append(f'    if not dm.context.{name}.codomain(image):')
-    lines.append(f"        raise CodomainViolation('{name}', {args}, {{}}, image, dm.context.{name}.codomain)")
+        lines.append(f'    if not dm.signatures.{name}.domains.{arg}({arg}):')
+        lines.append(f"        raise DomainViolation('{name}', {args}, {{}}, {arg}, dm.signatures.{name}.domains.{arg})")
+    lines.append('')
+    lines.append(f'    image = dm.signatures.{name}.mapping({', '.join(args)})')
+    lines.append('')
+    lines.append(f'    if not dm.signatures.{name}.codomain(image):')
+    lines.append(f"        raise CodomainViolation('{name}', {args}, {{}}, image, dm.signatures.{name}.codomain)")
 
     lines.append('    return image')
 

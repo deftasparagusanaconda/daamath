@@ -1,6 +1,13 @@
-from types import SimpleNamespace
+class Namespace:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
-class Namespace(SimpleNamespace):
-    'turn a dict into a namespace with tab autocomplete. just a types.SimpleNamespace with __dir__ = __dict__.keys'
-    def __dir__(self):
-        return self.__dict__.keys()
+from dataclasses import dataclass
+from collections.abc import Sequence
+from typing import Callable, Any
+
+@dataclass
+class Signature:
+    domains: Namespace[Callable[[Any], bool]]
+    codomain: Callable[[Any], bool]
+    mapping: Callable[[Any], Any]

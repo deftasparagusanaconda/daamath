@@ -20,6 +20,9 @@ python 'generate strings.py'
 echo generating functions
 python 'generate functions.py'
 
+echo generating signatures
+python 'generate signatures.py'
+
 echo fixing implementation quirks
 ./quirk_fixer
 

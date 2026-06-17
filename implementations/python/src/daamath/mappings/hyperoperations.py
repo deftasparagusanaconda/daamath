@@ -34,11 +34,10 @@ where we X is the variable we solve for in the equation a ? b = c
 # hXa(b, c)
 #
 # but this would imply that the three variables are involved in a cyclic relation a → b → c → a when, really, they are involved in a 2 → 1 relation a, b → c. thats why when solving for b and a, we make it intentionally asymmetric
-
+'''
 import math, cmath, functools
 from numbers import Number, Real, Integral
 from typing import Literal
-from ..exceptions import DomainError
 
 #h0c = functools.partial(h1c, a = 1)
 def succ(b: Integral) -> Integral:
@@ -199,7 +198,7 @@ def sroot(b, c):
         raise DomainError(slog, (b, c), a)
     
     return a
-
+'''
 
 '''
 # this thing is just a novelty
@@ -238,30 +237,30 @@ def hyper(
             raise ValueError("invalid solve parameter. must be one of {'a', 'b', 'c'}")
 '''
 
-def add__one(a):
+def succ(a):
     'a + 1'
     return a + 1
 
-def sub__one(b):
+def pred(b):
     'b - 1'
     return b - 1
 
 from operator import add, sub
 
-def add_ainv(c, a):
+def bus(c, a):
     '-a + c'
     return -a + c
 
-from operator import mul, truediv
+from operator import mul, truediv as div
 
-def div_minv(c, a):
+def vid(c, a):
     '(1 / a) * c'
     return (1 / a) * c
 
 from operator import pow
 from math import log
 
-def pow__div_1(c, b): 
+def root(c, b): 
     'c ** (1 / b)'
     return c ** (1 / b)
 

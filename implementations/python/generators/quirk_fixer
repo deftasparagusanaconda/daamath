@@ -2,14 +2,24 @@
 
 # fix quirks caused by the implementation's programming language (python)
 
-# src/daamath/functions/boolean.py has `def (not|and|or)` which we shall rename to `def (not_|and_|or_)` respectively
+# python does not allow (not|and|or) as names so we shall rename them to (not_|and_|or_) respectively
 
-echo renaming not → _not, and → _and, or → _or
+echo renaming in functions/boolean.py: not → _not, and → _and, or → _or
 sed -i \
-	-e 's/def not(/def _not(/g' \
-	-e 's/context\.not/context._not/g' \
-	-e 's/def and(/def _and(/g' \
-	-e 's/context\.and/context._and/g' \
-	-e 's/def or(/def _or(/g' \
-	-e 's/context\.or/context._or/g' \
+	-e 's/def not(/def not_(/g' \
+	-e 's/signatures\.not/signatures.not_/g' \
+	-e 's/def and(/def and_(/g' \
+	-e 's/signatures\.and/signatures.and_/g' \
+	-e 's/def or(/def or_(/g' \
+	-e 's/signatures\.or/signatures.or_/g' \
 	../src/daamath/functions/boolean.py
+
+echo renaming in signatures.py: not → not_, and → and_, or → or_
+sed -i \
+	-e 's/^not = /not_ = /' \
+	-e 's/^and = /and_ = /' \
+	-e 's/^or = /or_ = /' \
+	-e 's/mappings\.not/mappings.not_/g' \
+	-e 's/mappings\.and/mappings.and_/g' \
+	-e 's/mappings\.or/mappings.or_/g' \
+	../src/daamath/signatures.py
