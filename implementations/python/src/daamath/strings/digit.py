@@ -1,4 +1,4 @@
-from ..python_utils import Namespace
+from ..utils import Namespace
 
 digit = Namespace(**{
     'zero': '0',

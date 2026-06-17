@@ -35,6 +35,11 @@ def to_python(obj, depth=0):
             for key, value in obj.items()
         )
 
+        # im going insane
+        # do you know why i make a dict and then unpack it?
+        # ill tell you why
+        # because strings/greek.yaml has "lambda" which python thinks is a lambda. so im sidestepping all of that
+
         return (
             "Namespace(**{\n"
             f"{body}\n"
@@ -68,7 +73,7 @@ for path in (SPECIFICATION / "strings").iterdir():
 
     data = yaml.safe_load(path.read_text())
 
-    code = ["from ..python_utils import Namespace\n\n"]
+    code = ["from ..utils import Namespace\n\n"]
 
     for variable, dictionary in data.items():
         code.append(f'{variable} = {to_python(dictionary)}\n')

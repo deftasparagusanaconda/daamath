@@ -1,5 +1,5 @@
-from . import domains, mappings
-from .python_utils import Namespace, Signature
+from .. import domains, mappings
+from ..utils import Namespace, Signature
 
 succ = Signature(
     domains=Namespace(

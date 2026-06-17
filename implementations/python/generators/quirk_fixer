@@ -7,14 +7,14 @@
 echo renaming in functions/boolean.py: not → _not, and → _and, or → _or
 sed -i \
 	-e 's/def not(/def not_(/g' \
-	-e 's/signatures\.not/signatures.not_/g' \
+	-e 's/context\.not/context.not_/g' \
 	-e 's/def and(/def and_(/g' \
-	-e 's/signatures\.and/signatures.and_/g' \
+	-e 's/context\.and/context.and_/g' \
 	-e 's/def or(/def or_(/g' \
-	-e 's/signatures\.or/signatures.or_/g' \
+	-e 's/context\.or/context.or_/g' \
 	../src/daamath/functions/boolean.py
 
-echo renaming in signatures.py: not → not_, and → and_, or → or_
+echo renaming in context/signatures.py: not → not_, and → and_, or → or_
 sed -i \
 	-e 's/^not = /not_ = /' \
 	-e 's/^and = /and_ = /' \
@@ -22,4 +22,4 @@ sed -i \
 	-e 's/mappings\.not/mappings.not_/g' \
 	-e 's/mappings\.and/mappings.and_/g' \
 	-e 's/mappings\.or/mappings.or_/g' \
-	../src/daamath/signatures.py
+	../src/daamath/context/signatures.py

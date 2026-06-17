@@ -1,16 +1,16 @@
-# this file generates signatures.py
+# this file generates src/daamath/context/signatures.py
 
 from pathlib import Path
 import yaml
 
 FUNCTIONS = Path('../../../docs/specification/functions')
-SIGNATURES = Path('../src/daamath/signatures.py')
+SIGNATURES = Path('../src/daamath/context/signatures.py')
 
 INDENT: str = '    '
 
 lines: list[str] = [
-    'from . import domains, mappings',
-    'from .python_utils import Namespace, Signature\n']
+    'from .. import domains, mappings',
+    'from ..utils import Namespace, Signature\n']
 
 for path in FUNCTIONS.iterdir():
     if path.suffix != '.yaml':
@@ -28,6 +28,4 @@ for path in FUNCTIONS.iterdir():
 {INDENT}codomain=domains.{signature['codomain']},
 {INDENT}mapping=mappings.{func_name})\n""")
     
-for line in lines:
-    print(line)
 SIGNATURES.write_text('\n'.join(lines))

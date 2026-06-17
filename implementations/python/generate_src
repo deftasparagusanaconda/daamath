@@ -1,9 +1,20 @@
 #!/bin/sh
 
+# exit if anything goes wrong
+set -e
+
 # ------------------------------------------------------------------------------
 echo step 1: copy handwritten
 
 echo removing src/
+# 🙀🙀🙀 an rm command!!!! with a -r!!!    omgomgomgomgomgomgomgomgomg
+# lol ok so we have to be careful wit dis
+# make sure youre IN    THE    RIGHT    DIRECTORY when youre doing this
+# here, ill make sure for you
+[ -d handwritten/ ] || {
+	echo "you must be in same directory as generate_src to do \`rm -r src/\`"
+	exit 1
+}
 rm -r src/
 
 echo copying src/ to handwritten/

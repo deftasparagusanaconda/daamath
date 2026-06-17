@@ -1,4 +1,4 @@
-from ..python_utils import Namespace
+from ..utils import Namespace
 
 fraction = Namespace(**{
     'zero': Namespace(**{
