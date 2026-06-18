@@ -34,6 +34,9 @@ python 'generate functions.py'
 echo generating context.py
 python 'generate context.py'
 
+echo generating constants/*.py
+python 'generate constants.py'
+
 echo fixing implementation quirks
 ./quirk_fixer
 
