@@ -24,8 +24,8 @@ sed -i \
 	-e 's/mappings\.or/mappings.or_/g' \
 	../src/daamath/context.py
 
+# in the strings, we also have the goddamed greek "lambda" that conflicts with python's lambda
+echo renaming in strings/greek.py: lambda → lambda_
 sed -i \
 	-e 's/lambda/lambda_/g' \
 	../src/daamath/strings/greek.py
-
-# in the strings, we also have the goddamed greek "lambda" that conflicts with python's lambda

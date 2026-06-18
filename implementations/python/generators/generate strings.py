@@ -1,6 +1,10 @@
 # generate strings/*.py
 
 # jsyk i made ai generate the to_python function so if theres nonsense there, you know why
+#
+# yknow daa.. you should probably prune most of it. 
+#
+# TODO: prune to_python
 
 import yaml
 from pathlib import Path

@@ -28,9 +28,21 @@ so functions are defined for domains, not the other way around
 
 functions never mutate memory, because they are meant to be mathematical functions, and not procedures (in computer science). for example: `succ` should not be pre-incrementation. `pred` should not be pre-decrementation. variadic functions should not mutate the vector they take in as input.
 
-# context and function behaviour
+# context, and passing semantic intent
 
-daamath maintains a .context object that determines idfk
+functions have surrounding contextual information that they need so they are mathematically unambiguous. this context can be passed in two ways:
+
+## implicit context 
+
+context is stored in dm.context, where the domain, codomain, mapping are stored for each function, besides other contextual information for the function (like the binary relation, in the case of relation functions)
+
+`dm.add(2, 3)` knows what domain 2 & 3 should belong to from dm.context.add.domains.(a|b)
+
+## explicit context
+
+functions can also be called from domains directly, and it is assumed that the arguments for the function will be homogeneous — i.e. all arguments are from the same set.
+
+`dm.REAL.add(2, 3)` assumes that the domain for 2 & 3 should be REAL.
 
 # function sets
 
