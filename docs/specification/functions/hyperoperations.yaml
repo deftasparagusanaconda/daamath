@@ -1,5 +1,3 @@
-# this file is an official collection of all the functions daamath handles
-
 succ:
   description: successor. solves for b in ++a = b
   domains:

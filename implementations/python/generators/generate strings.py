@@ -1,5 +1,7 @@
 # generate strings/*.py
 
+# jsyk i made ai generate the to_python function so if theres nonsense there, you know why
+
 import yaml
 from pathlib import Path
 from collections.abc import Mapping
@@ -28,10 +30,10 @@ def to_python(obj, depth=0):
 
     if isinstance(obj, Mapping):
         if not obj:
-            return "Namespace()"
+            return "_SimpleNamespace()"
 
         body = ",\n".join(
-            f'{next_indent}{key!r}: {to_python(value, depth + 1)}'
+            f'{next_indent}{key} = {to_python(value, depth + 1)}'
             for key, value in obj.items()
         )
 
@@ -41,9 +43,9 @@ def to_python(obj, depth=0):
         # because strings/greek.yaml has "lambda" which python thinks is a lambda. so im sidestepping all of that
 
         return (
-            "Namespace(**{\n"
+            "_SimpleNamespace(\n"
             f"{body}\n"
-            f"{indent}}})"
+            f"{indent})"
         )
 
     if isinstance(obj, list):
@@ -73,7 +75,7 @@ for path in (SPECIFICATION / "strings").iterdir():
 
     data = yaml.safe_load(path.read_text())
 
-    code = ["from ..utils import Namespace\n\n"]
+    code = ["from types import SimpleNamespace as _SimpleNamespace\n\n"]
 
     for variable, dictionary in data.items():
         code.append(f'{variable} = {to_python(dictionary)}\n')

@@ -1,187 +1,187 @@
-from ..utils import Namespace
+from types import SimpleNamespace as _SimpleNamespace
 
-circle = Namespace(**{
-    'black': '●',
-    'white': '○',
-    'heavy': '⭘',
-    'large': Namespace(**{
-        'black': '⬤',
-        'white': '◯',
-        'heavy': '⭕'
-    })
-})
-ellipse = Namespace(**{
-    'horizontal': Namespace(**{
-        'black': '⬬',
-        'white': '⬭'
-    }),
-    'vertical': Namespace(**{
-        'black': '⬮',
-        'white': '⬯'
-    })
-})
-triangle = Namespace(**{
-    'black': Namespace(**{
-        'west': '◀',
-        'east': '▶',
-        'north': '▲',
-        'south': '▼',
-        'north_west': '◤',
-        'north_east': '◥',
-        'south_west': '◣',
-        'south_east': '◢'
-    }),
-    'white': Namespace(**{
-        'west': '◁',
-        'east': '▷',
-        'north': '△',
-        'south': '▽',
-        'north_west': '◸',
-        'north_east': '◹',
-        'south_west': '◺',
-        'south_east': '◿'
-    }),
-    'underbar': Namespace(**{
-        'north': '⧋'
-    }),
-    'small': Namespace(**{
-        'black': Namespace(**{
-            'west': '◂',
-            'east': '▸',
-            'north': '▴',
-            'south': '▾'
-        }),
-        'white': Namespace(**{
-            'west': '◃',
-            'east': '▹',
-            'north': '▵',
-            'south': '▿'
-        })
-    }),
-    'centred': Namespace(**{
-        'medium': Namespace(**{
-            'black': Namespace(**{
-                'west': '⯇',
-                'east': '⯈',
-                'north': '⯅',
-                'south': '⯆'
-            })
-        })
-    })
-})
-pointer = Namespace(**{
-    'black': Namespace(**{
-        'east': '◄',
-        'west': '►'
-    }),
-    'white': Namespace(**{
-        'east': '◅',
-        'west': '▻'
-    })
-})
-square = Namespace(**{
-    'black': '■',
-    'white': '□',
-    'medium': Namespace(**{
-        'black': '◼',
-        'white': '◻'
-    }),
-    'small': Namespace(**{
-        'black': '▪',
-        'white': '▫'
-    }),
-    'very_small': Namespace(**{
-        'black': '⬝',
-        'white': '⬞'
-    }),
-    'centred': Namespace(**{
-        'black': '⯀'
-    })
-})
-rectangle = Namespace(**{
-    'horizontal': Namespace(**{
-        'black': '▬',
-        'white': '▭'
-    }),
-    'vertical': Namespace(**{
-        'black': '▮',
-        'white': '▯'
-    })
-})
-parallelogram = Namespace(**{
-    'black': '▰',
-    'white': '▱'
-})
-diamond = Namespace(**{
-    'black': '◆',
-    'white': '◇',
-    'medium': Namespace(**{
-        'black': '⬥',
-        'white': '⬦'
-    }),
-    'small': Namespace(**{
-        'black': '⬩'
-    }),
-    'centred': Namespace(**{
-        'black': '⯁'
-    }),
-    'dotted': Namespace(**{
-        'white': '⟐'
-    })
-})
-lozenge = Namespace(**{
-    'black': '⧫',
-    'white': '◊',
-    'medium': Namespace(**{
-        'black': '⬧',
-        'white': '⬨'
-    }),
-    'small': Namespace(**{
-        'black': '⬪',
-        'white': '⬫'
-    })
-})
-cusp = Namespace(**{
-    'black': '⯌',
-    'white': '⯎',
-    'rotated': Namespace(**{
-        'black': '⯍',
-        'white': '⯏'
-    })
-})
-pentagon = Namespace(**{
-    'north': Namespace(**{
-        'black': '⬟',
-        'white': '⬠'
-    }),
-    'east': Namespace(**{
-        'black': '⭓',
-        'white': '⭔'
-    }),
-    'south': Namespace(**{
-        'black': '⯂'
-    })
-})
-star = Namespace(**{
-    'small': Namespace(**{
-        'black': '⭑',
-        'white': '⭒'
-    })
-})
-hexagon = Namespace(**{
-    'vertical': Namespace(**{
-        'black': '⬢',
-        'white': '⬡'
-    }),
-    'horizontal': Namespace(**{
-        'black': '⬣'
-    })
-})
-octagon = Namespace(**{
-    'vertical': Namespace(**{
-        'black': '⯄'
-    }),
-    'horizontal': Namespace(**{
-        'black': '⯃'
-    })
-})
+circle = _SimpleNamespace(
+    black = '●',
+    white = '○',
+    heavy = '⭘',
+    large = _SimpleNamespace(
+        black = '⬤',
+        white = '◯',
+        heavy = '⭕'
+    )
+)
+ellipse = _SimpleNamespace(
+    horizontal = _SimpleNamespace(
+        black = '⬬',
+        white = '⬭'
+    ),
+    vertical = _SimpleNamespace(
+        black = '⬮',
+        white = '⬯'
+    )
+)
+triangle = _SimpleNamespace(
+    black = _SimpleNamespace(
+        west = '◀',
+        east = '▶',
+        north = '▲',
+        south = '▼',
+        north_west = '◤',
+        north_east = '◥',
+        south_west = '◣',
+        south_east = '◢'
+    ),
+    white = _SimpleNamespace(
+        west = '◁',
+        east = '▷',
+        north = '△',
+        south = '▽',
+        north_west = '◸',
+        north_east = '◹',
+        south_west = '◺',
+        south_east = '◿'
+    ),
+    underbar = _SimpleNamespace(
+        north = '⧋'
+    ),
+    small = _SimpleNamespace(
+        black = _SimpleNamespace(
+            west = '◂',
+            east = '▸',
+            north = '▴',
+            south = '▾'
+        ),
+        white = _SimpleNamespace(
+            west = '◃',
+            east = '▹',
+            north = '▵',
+            south = '▿'
+        )
+    ),
+    centred = _SimpleNamespace(
+        medium = _SimpleNamespace(
+            black = _SimpleNamespace(
+                west = '⯇',
+                east = '⯈',
+                north = '⯅',
+                south = '⯆'
+            )
+        )
+    )
+)
+pointer = _SimpleNamespace(
+    black = _SimpleNamespace(
+        east = '◄',
+        west = '►'
+    ),
+    white = _SimpleNamespace(
+        east = '◅',
+        west = '▻'
+    )
+)
+square = _SimpleNamespace(
+    black = '■',
+    white = '□',
+    medium = _SimpleNamespace(
+        black = '◼',
+        white = '◻'
+    ),
+    small = _SimpleNamespace(
+        black = '▪',
+        white = '▫'
+    ),
+    very_small = _SimpleNamespace(
+        black = '⬝',
+        white = '⬞'
+    ),
+    centred = _SimpleNamespace(
+        black = '⯀'
+    )
+)
+rectangle = _SimpleNamespace(
+    horizontal = _SimpleNamespace(
+        black = '▬',
+        white = '▭'
+    ),
+    vertical = _SimpleNamespace(
+        black = '▮',
+        white = '▯'
+    )
+)
+parallelogram = _SimpleNamespace(
+    black = '▰',
+    white = '▱'
+)
+diamond = _SimpleNamespace(
+    black = '◆',
+    white = '◇',
+    medium = _SimpleNamespace(
+        black = '⬥',
+        white = '⬦'
+    ),
+    small = _SimpleNamespace(
+        black = '⬩'
+    ),
+    centred = _SimpleNamespace(
+        black = '⯁'
+    ),
+    dotted = _SimpleNamespace(
+        white = '⟐'
+    )
+)
+lozenge = _SimpleNamespace(
+    black = '⧫',
+    white = '◊',
+    medium = _SimpleNamespace(
+        black = '⬧',
+        white = '⬨'
+    ),
+    small = _SimpleNamespace(
+        black = '⬪',
+        white = '⬫'
+    )
+)
+cusp = _SimpleNamespace(
+    black = '⯌',
+    white = '⯎',
+    rotated = _SimpleNamespace(
+        black = '⯍',
+        white = '⯏'
+    )
+)
+pentagon = _SimpleNamespace(
+    north = _SimpleNamespace(
+        black = '⬟',
+        white = '⬠'
+    ),
+    east = _SimpleNamespace(
+        black = '⭓',
+        white = '⭔'
+    ),
+    south = _SimpleNamespace(
+        black = '⯂'
+    )
+)
+star = _SimpleNamespace(
+    small = _SimpleNamespace(
+        black = '⭑',
+        white = '⭒'
+    )
+)
+hexagon = _SimpleNamespace(
+    vertical = _SimpleNamespace(
+        black = '⬢',
+        white = '⬡'
+    ),
+    horizontal = _SimpleNamespace(
+        black = '⬣'
+    )
+)
+octagon = _SimpleNamespace(
+    vertical = _SimpleNamespace(
+        black = '⯄'
+    ),
+    horizontal = _SimpleNamespace(
+        black = '⯃'
+    )
+)

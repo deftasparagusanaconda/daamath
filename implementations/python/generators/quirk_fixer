@@ -14,12 +14,18 @@ sed -i \
 	-e 's/context\.or/context.or_/g' \
 	../src/daamath/functions/boolean.py
 
-echo renaming in context/signatures.py: not → not_, and → and_, or → or_
+echo renaming in context.py: not → not_, and → and_, or → or_
 sed -i \
-	-e 's/^not = /not_ = /' \
-	-e 's/^and = /and_ = /' \
-	-e 's/^or = /or_ = /' \
+	-e 's/    not = /    not_ = /' \
+	-e 's/    and = /    and_ = /' \
+	-e 's/    or = /    or_ = /' \
 	-e 's/mappings\.not/mappings.not_/g' \
 	-e 's/mappings\.and/mappings.and_/g' \
 	-e 's/mappings\.or/mappings.or_/g' \
-	../src/daamath/context/signatures.py
+	../src/daamath/context.py
+
+sed -i \
+	-e 's/lambda/lambda_/g' \
+	../src/daamath/strings/greek.py
+
+# in the strings, we also have the goddamed greek "lambda" that conflicts with python's lambda

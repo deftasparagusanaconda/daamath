@@ -19,12 +19,12 @@ def generate_definition(name: str, args: list[str], description: str) -> str:
 
     for arg in args:
         lines.append(f'    if not dm.context.{name}.domains.{arg}({arg}):')
-        lines.append(f"        raise DomainViolation('{name}', ({', '.join(args)}), {{}}, {arg}, dm.context.{name}.domains.{arg})")
+        lines.append(f"        raise _DomainViolation('{name}', ({', '.join(args)}), {{}}, {arg}, dm.context.{name}.domains.{arg})")
     lines.append('')
     lines.append(f'    image = dm.context.{name}.mapping({', '.join(args)})')
     lines.append('')
     lines.append(f'    if not dm.context.{name}.codomain(image):')
-    lines.append(f"        raise CodomainViolation('{name}', {args}, {{}}, image, dm.context.{name}.codomain)")
+    lines.append(f"        raise _CodomainViolation('{name}', {args}, {{}}, image, dm.context.{name}.codomain)")
 
     lines.append('    return image')
 
@@ -41,7 +41,7 @@ def generate_file(yaml_dict) -> str:
         definition = generate_definition(name, args, description)
         definitions.append(definition)
         
-    return 'import daamath as dm\nfrom ..exceptions import DomainViolation, CodomainViolation\n\n' + '\n\n'.join(definitions) + '\n'
+    return 'import daamath as dm\nfrom ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as CodomainViolation\n\n' + '\n\n'.join(definitions) + '\n'
 
 for path in (SPECIFICATION/'functions').iterdir(): 
     if path.suffix != '.yaml':

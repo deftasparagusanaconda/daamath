@@ -1,37 +1,37 @@
-from ..utils import Namespace
+from types import SimpleNamespace as _SimpleNamespace
 
-fraction = Namespace(**{
-    'zero': Namespace(**{
-        'three': '↉'
-    }),
-    'one': Namespace(**{
-        'two': '½',
-        'three': '⅓',
-        'four': '¼',
-        'five': '⅕',
-        'six': '⅙',
-        'seven': '⅐',
-        'eight': '⅛',
-        'nine': '⅑',
-        'ten': '⅒'
-    }),
-    'two': Namespace(**{
-        'three': '⅔',
-        'five': '⅖'
-    }),
-    'three': Namespace(**{
-        'four': '¾',
-        'five': '⅗',
-        'eight': '⅜'
-    }),
-    'four': Namespace(**{
-        'five': '⅘'
-    }),
-    'five': Namespace(**{
-        'six': '⅚',
-        'eight': '⅝'
-    }),
-    'seven': Namespace(**{
-        'eight': '⅞'
-    })
-})
+fraction = _SimpleNamespace(
+    zero = _SimpleNamespace(
+        three = '↉'
+    ),
+    one = _SimpleNamespace(
+        two = '½',
+        three = '⅓',
+        four = '¼',
+        five = '⅕',
+        six = '⅙',
+        seven = '⅐',
+        eight = '⅛',
+        nine = '⅑',
+        ten = '⅒'
+    ),
+    two = _SimpleNamespace(
+        three = '⅔',
+        five = '⅖'
+    ),
+    three = _SimpleNamespace(
+        four = '¾',
+        five = '⅗',
+        eight = '⅜'
+    ),
+    four = _SimpleNamespace(
+        five = '⅘'
+    ),
+    five = _SimpleNamespace(
+        six = '⅚',
+        eight = '⅝'
+    ),
+    seven = _SimpleNamespace(
+        eight = '⅞'
+    )
+)
