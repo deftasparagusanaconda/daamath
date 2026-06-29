@@ -1,0 +1,36 @@
+fold:
+# fold(function, iterable)
+  description: fold an interable (from left to right) into a single scalar value using a binary function
+  domains: 
+    - function: function # a binary function
+    - iterable: iterable
+  codomain: anything
+fma:
+  description: fused multiply-add. solves for d in (a × b) + c = d
+  domains:
+    - a: float
+    - b: float
+    - c: float
+  codomain: float
+fsd:
+  description: fused subtract-divide. solves for a = (d - c) / b in (a × b) + c = d
+  domains:
+    - d: float
+    - c: float
+    - b: float
+  codomain: float
+
+# fma(a, b, c) = d
+# (a * b) + c = d
+# a * b = d - c
+# c = -(a * b) + d # 
+# b = a \ (d - c) # 
+# a = (d - c) / b # fsd (fused subtract divide)
+
+lerp:
+  description: linear interpolation. solves for result = start + parameter × (end - start). parameter is from an ordered field. start and end are from vector space.
+  domains:
+    - parameter: real
+    - start: complex
+    - end: complex
+  codomain: complex

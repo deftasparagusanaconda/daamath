@@ -28,7 +28,7 @@ you may also notice these are the same degenerates as the [boolean functions][bo
 when `rel(a, b)` is a total order, cp is always true; so the 16 functions are reduced down to 8. we may present these visually using the one-dimensional nature of a totally ordered set. we have three partitions of the carrier set:
 
 | x < A | x = A | x > A | general function | toset equivalent |
-| - | - | - | - | - | - |
+| - | - | - | - | - | 
 | ❌ | ❌ | ❌ | [nc](#nc) | [false] |
 | ❌ | ❌ | ✅ | [nb](#nb) | [gt](#gt) | 
 | ❌ | ✅ | ❌ | [ns](#ns) | [eq](#eq) | 
@@ -43,7 +43,7 @@ when `rel(a, b)` is a total order, cp is always true; so the 16 functions are re
 with respect to two elements A and B, we have five partitions of the carrier set:
 
 | x < A | x = A | A < x < B | x = B | x > B | name | description |
-| - | - | - | - | - | - | 
+| - | - | - | - | - | - | - |
 | ❌ | ❌ | ❌ | ❌ | ❌ | <del>false</del> |
 | ❌ | ❌ | ❌ | ❌ | ✅ | <del>gt_B</del> |
 | ❌ | ❌ | ❌ | ✅ | ❌ | <del>eq_B</del> |

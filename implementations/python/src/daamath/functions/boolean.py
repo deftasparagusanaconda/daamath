@@ -1,5 +1,5 @@
 import daamath as dm
-from ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as CodomainViolation
+from ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as _CodomainViolation
 
 def not_(a):
     'negation'
@@ -9,7 +9,7 @@ def not_(a):
     image = dm.context.not_.mapping(a)
 
     if not dm.context.not_.codomain(image):
-        raise _CodomainViolation('not', ['a'], {}, image, dm.context.not_.codomain)
+        raise _CodomainViolation('not', (a), {}, image, dm.context.not_.codomain)
     return image
 
 def and_(a, b):
@@ -22,7 +22,7 @@ def and_(a, b):
     image = dm.context.and_.mapping(a, b)
 
     if not dm.context.and_.codomain(image):
-        raise _CodomainViolation('and', ['a', 'b'], {}, image, dm.context.and_.codomain)
+        raise _CodomainViolation('and', (a, b), {}, image, dm.context.and_.codomain)
     return image
 
 def or_(a, b):
@@ -35,7 +35,7 @@ def or_(a, b):
     image = dm.context.or_.mapping(a, b)
 
     if not dm.context.or_.codomain(image):
-        raise _CodomainViolation('or', ['a', 'b'], {}, image, dm.context.or_.codomain)
+        raise _CodomainViolation('or', (a, b), {}, image, dm.context.or_.codomain)
     return image
 
 def xor(a, b):
@@ -48,7 +48,7 @@ def xor(a, b):
     image = dm.context.xor.mapping(a, b)
 
     if not dm.context.xor.codomain(image):
-        raise _CodomainViolation('xor', ['a', 'b'], {}, image, dm.context.xor.codomain)
+        raise _CodomainViolation('xor', (a, b), {}, image, dm.context.xor.codomain)
     return image
 
 def imp(a, b):
@@ -61,7 +61,7 @@ def imp(a, b):
     image = dm.context.imp.mapping(a, b)
 
     if not dm.context.imp.codomain(image):
-        raise _CodomainViolation('imp', ['a', 'b'], {}, image, dm.context.imp.codomain)
+        raise _CodomainViolation('imp', (a, b), {}, image, dm.context.imp.codomain)
     return image
 
 def con(a, b):
@@ -74,7 +74,7 @@ def con(a, b):
     image = dm.context.con.mapping(a, b)
 
     if not dm.context.con.codomain(image):
-        raise _CodomainViolation('con', ['a', 'b'], {}, image, dm.context.con.codomain)
+        raise _CodomainViolation('con', (a, b), {}, image, dm.context.con.codomain)
     return image
 
 def nand(a, b):
@@ -87,7 +87,7 @@ def nand(a, b):
     image = dm.context.nand.mapping(a, b)
 
     if not dm.context.nand.codomain(image):
-        raise _CodomainViolation('nand', ['a', 'b'], {}, image, dm.context.nand.codomain)
+        raise _CodomainViolation('nand', (a, b), {}, image, dm.context.nand.codomain)
     return image
 
 def nor(a, b):
@@ -100,7 +100,7 @@ def nor(a, b):
     image = dm.context.nor.mapping(a, b)
 
     if not dm.context.nor.codomain(image):
-        raise _CodomainViolation('nor', ['a', 'b'], {}, image, dm.context.nor.codomain)
+        raise _CodomainViolation('nor', (a, b), {}, image, dm.context.nor.codomain)
     return image
 
 def nxor(a, b):
@@ -113,7 +113,7 @@ def nxor(a, b):
     image = dm.context.nxor.mapping(a, b)
 
     if not dm.context.nxor.codomain(image):
-        raise _CodomainViolation('nxor', ['a', 'b'], {}, image, dm.context.nxor.codomain)
+        raise _CodomainViolation('nxor', (a, b), {}, image, dm.context.nxor.codomain)
     return image
 
 def nimp(a, b):
@@ -126,7 +126,7 @@ def nimp(a, b):
     image = dm.context.nimp.mapping(a, b)
 
     if not dm.context.nimp.codomain(image):
-        raise _CodomainViolation('nimp', ['a', 'b'], {}, image, dm.context.nimp.codomain)
+        raise _CodomainViolation('nimp', (a, b), {}, image, dm.context.nimp.codomain)
     return image
 
 def ncon(a, b):
@@ -139,5 +139,5 @@ def ncon(a, b):
     image = dm.context.ncon.mapping(a, b)
 
     if not dm.context.ncon.codomain(image):
-        raise _CodomainViolation('ncon', ['a', 'b'], {}, image, dm.context.ncon.codomain)
+        raise _CodomainViolation('ncon', (a, b), {}, image, dm.context.ncon.codomain)
     return image

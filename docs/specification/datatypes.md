@@ -58,20 +58,18 @@ a datatype that tries to model a domain with an infinite number of elements
 
 # what datatypes does daamath actually recognize?
 
-daamath recognizes datatypes that work with sequences of binary bits, because these are the most common with modern computers. 
+daamath recognizes primitive non-composed datatypes that work with sequences of binary bits (because these are the most common with modern computers):
 
-daamath recognizes the following primitive non-composed datatypes:
-
-b - boolean
-i - 2's complement signed integer (i16, i32, i64, …)
-u - unsigned integer (u16, u32, u64, …)
-q - quotient integer (q7.8, q10.21, q13.50, …)
-f - binary float (f16, f32, f64, …)
-d - decimal float (d16, d32, d64, …)
+b - boolean (as a byte, instead of a single bit)
+u - unsigned integer (uX: …, u16, u32, u24, …) (does not specify arithmetic, like modular or saturating)
+i - 2's complement signed integer (iX: i16, i32, i64, …) (does not specify arithmetic, like modular or saturating)
+q - quotient integer (qX_Y: …, q7_8, q10_21, q13_50, …)
+f - IEEE 754 interchange binary float (f16, f32, f64, f128, f160, f192, f224, f256, …)
+d - IEEE 754 interchange decimal float (d32, d64, d128, d192, d224, d256, …)
 prospectives:
-p - posit (p16, p32, p64, …)
+p - posit
 
-daamath reecognizes the following data structures:
+daamath recognizes the following data structures:
 
 map - a surjection. distinct from a function only in that its mappings are explicit. can be represented as a set of 2-tups. it is the most primitive data structure and can represent all the other ones, by characteristic function, association tuples, graph edges, etc.
 bag - an unordered collection of elements. can be represented by a map of element → count
@@ -86,33 +84,21 @@ daamath reecognizes the following composed datatypes:
 cr - complex rectangular: a 2-tup of (float, float)
 cp - complex polar: a 2-tup of (quot, float)
 
-
-
-| name  | format                                 | alias | composition | domain                     | example           |
+| name  | format                                 | alias | composition | closest representative     | example           |
 | ----- | -------------------------------------- | ----- | ----------- | -------------------------- | ----------------- |
 | truth | truth_states                           | tS    | primitive   | truth (finite)             | t2 is bool        |
 | uint  | uint_bits                              | uB    | primitive   | NATURALSTART_0 (infinite)  | u8 is [0, 256)    |
 | int   | int_sign_bits                          | iX    | primitive   | INTEGERS (infinite)        | i8 is [-128, 128) |
-| float | float_radix_sign_exponent_mantissa     | (see below)    | composed    | extended reals (probably)  | f
+| float | float_radix_sign_exponent_mantissa     | f     | composed    | extended reals +bottom element  | f
 | cmplx | complex_geometry_component1_component2 | cr8   | composed    | complex (infinite)         | cr128 or something idk lol | 
 | posit | idk…                                   | idk…  | idk…        | wheel (infinite) (i think) | i dont really know |
 |       |
-
-daamath recognizes IEEE 754's impact and provides aliases for the binary formats
-
-| alias | actual |
-| - | - |
-| b16 | float_2_1_5_10 |
-| b32 | float_2_1_8_23 |
-| b64 | float_2_1_11_52 |
-| b128 | float_2_1_15_112 |
-| b256 | float_2_1_19_236 |
 
 (you may notice that datatypes are parameterized. in fact, the naming convention follows daamath's [underscore binding convention])
 
 daamath also creates a new specification for complex numbers: since complex numbers form a vector space with >1 dimensions, we can start representing them in either cartesian or polar coordinates. the lattice formed by the datatype from quantizing these vector spaces are significantly different for cartesian and polar forms. the cost of operations are different in the two as well. hyperoperations of n=1 (addition and subtraction) are cheap with cartesian form but hyperoperatioins of n=2 (multiplication and division) are cheap with polar form. sometimes we may perform n2 hyperops more often than n1 hyperops.
 
-most languages define complex as rectangular (float, float) but daamath also defines polar (int, float). this allows uniform *radial* angular precision, and exponential magnitudinal precision. this is much more suited for certain applications and daamath formalizes that.
+most languages define complex as rectangular (float, float) but daamath also defines polar (int, float). this allows uniform *radial* angular precision with exponential magnitudinal precision. this is much more suited for certain applications and daamath formalizes that.
 
 # notes
 

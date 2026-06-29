@@ -29,7 +29,7 @@ for path in FUNCTIONS.iterdir():
         lines.append(f"""{INDENT}{func_name} = _Signature(
 {INDENT*2}domains = _SimpleNamespace({domains}),
 {INDENT*2}codomain = _domains.{signature['codomain']},
-{INDENT*2}mapping = _mappings.{func_name}),\n""")
+{INDENT*2}graphs = _graphs.{func_name}),\n""")
 
 lines.append(')')
     

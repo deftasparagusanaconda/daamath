@@ -2,17 +2,6 @@
 
 in math, even when we write `2 / 3`, we assume many things. we assume we are working with the real numbers. we assume `/` is defined on real numbers. in CS, we assume we want `0 / 0` to raise an error. if the datatype is `int`, programmers assume `2 / 3` to be rounded division. daamath makes all of this explicit by storing variables in a [tree][context.yaml] called the context.
 
-functions look at the context to determine what to do. you can change the context in 3 levels of ascending precedence:
-
-1. global default context
-	the function refers daamath's default context (`dm.context`). if no other context is passed to a function, this is what is used.
-
-2. scoped/local/temporary redirection/mutation
-	daamath's default context is temporarily changed or replaced for a section of code, and then changed back after the section
-
-3. explicit optional function argument
-	a new context instance is passed as the last argument to a function
-
 an example in python:
 
 ```python

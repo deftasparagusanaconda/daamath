@@ -1,0 +1,61 @@
+meet:
+  description: generalized by infimum (greatest lower bound)
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: or(boolean, function)
+      codomain: or(boolean, function)
+
+join:
+  description: generalized by supremum (lessest upper bound)
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: or(boolean, function)
+      codomain: or(boolean, function)
+
+eq:
+  description: equal to; and(rel(a, b), rel(b, a))
+gt:
+  description: strictly greater than; ncon(rel(a, b), rel(b, a))
+lt:
+  description: strictly lesser than; nimp(rel(a, b), rel(b, a))
+ic:
+  description: incomparable; nor(rel(a, b), rel(b, a))
+ge:
+  description: strictly greater than or equal to; snd(rel(a, b), rel(b, a)); or(gt, eq)
+le:
+  description: strictly lesser than or equal to; fst(rel(a, b), rel(b, a)); or(lt, eq)
+so:
+  description: strictly ordered; xor(rel(a, b), rel(b, a)); or(lt, gt)
+neq:
+  description: not(eq); nand(rel(a, b), rel(b, a))
+ngt:
+  description: not(gt); con(rel(a, b), rel(b, a))
+nlt:
+  description: not(lt); imp(rel(a, b), rel(b, a))
+nic:
+  description: not(ic); or(rel(a, b), rel(b, a))
+nge:
+  description: not(ge); ge(rel(a, b), rel(b, a))
+nle:
+  description: not(le); nfst(rel(a, b), rel(b, a))
+nso:
+  description: not(so); nsnd(rel(a, b), rel(b, a))

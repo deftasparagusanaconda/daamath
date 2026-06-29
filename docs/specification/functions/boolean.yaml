@@ -1,65 +1,205 @@
 not:
   description: negation
-  domains:
-    - a: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 and:
   description: conjunction
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 or:
   description: disjunction
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 xor:
   description: exclusive disjunction
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 imp:
   description: material implication
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 con:
   description: converse material implication
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 nand:
   description: not(and)
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 nor:
   description: not(or)
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 nxor:
   description: not(xor)
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 nimp:
   description: not(imp)
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])
+
 ncon:
   description: not(ncon)
-  domains:
-    - a: BOOLEAN
-    - b: BOOLEAN
-  codomain: BOOLEAN
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+    function:
+      domains:
+        - a: function
+        - b: function
+      codomain: function
+    dynamic:
+      domains:
+        - a: vor([boolean function])
+        - a: vor([boolean function])
+      codomain: vor([boolean function])

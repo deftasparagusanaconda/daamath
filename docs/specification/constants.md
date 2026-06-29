@@ -1,6 +1,6 @@
 # what is a constant?
 
-a constant is something whose value doesnt depend on anything and doesnt change 
+a constant is something whose value doesnt depend on anything and doesnt change. daamath stores common constants but is honest about their precision. thus if a machines tries to use PI_f128 in a language with only f64, daamath correctly prevents dishonesty.
 
 daamath maintains the following constants:
 

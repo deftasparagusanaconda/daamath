@@ -3,11 +3,11 @@
 from pathlib import Path
 import yaml
 
-SPECIFICATION = Path('../../../docs/specification/constants')
+SPECIFICATION = Path('../../../docs/specification/constants/')
 CONSTANTS = Path('../src/daamath/constants/')
 
 def yaml_dict_to_file(yaml_dict):
-    return '\n'.join(f'{k} = {v!r}' for k, v in yaml_dict.items())
+    return '\n'.join(f'{k} = 0x{v:x}'if isinstance(v, int) else f'{k} = {v!r}' for k, v in yaml_dict.items())
 
 for path in SPECIFICATION.iterdir():
     if path.suffix != '.yaml':

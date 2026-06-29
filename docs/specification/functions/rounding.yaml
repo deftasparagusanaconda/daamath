@@ -1,0 +1,84 @@
+floor: 
+  description: directed rounding towards −∞
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+ceil: 
+  description: directed rounding towards +∞
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+trunc: 
+  description: directed rounding towards 0
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+away: 
+  description: directed rounding towards the nearest ∞ (away from 0)
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+even: 
+  description: directed rounding towards the nearest even integer
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+odd: 
+  description: directed rounding towards the nearest odd integer
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_floor: 
+  description: undirected rounding, breaking ties towards -∞
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_ceil: 
+  description: undirected rounding, breaking ties towards +∞
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_trunc: 
+  description: undirected rounding, breaking ties towards 0
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_away: 
+  description: undirected rounding, breaking ties towards the nearest ∞ (away from 0)
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_even: 
+  description: undirected rounding, breaking ties towards nearest even integer
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer
+round_odd: 
+  description: undirected rounding, breaking ties towards odd integer
+  signatures:
+    real_to_integer:
+      domains:
+        - real: real
+      codomain: integer

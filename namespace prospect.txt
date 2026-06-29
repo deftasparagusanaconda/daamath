@@ -1,0 +1,15 @@
+for the orders, most of them want to share the 14 names that were generated.
+
+the problem is how daamath will present them.
+
+| type | meet | join | 
+| - | - | - |
+| set | intersection | union |
+| boolean | and | or |
+| logic | conjunction | disjunction |
+| standard order | minimum | maximum |
+| divisibility | gcd | lcm |
+
+variadic versions of meet and join behave nicely on lattices, but not so much on general posets
+
+sup/inf (a.k.a glb/lub) shall *not* be defined. these are more general concepts.

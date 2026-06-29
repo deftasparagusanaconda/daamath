@@ -19,13 +19,20 @@ sed -i \
 	-e 's/    not = /    not_ = /' \
 	-e 's/    and = /    and_ = /' \
 	-e 's/    or = /    or_ = /' \
-	-e 's/mappings\.not/mappings.not_/g' \
-	-e 's/mappings\.and/mappings.and_/g' \
-	-e 's/mappings\.or/mappings.or_/g' \
+	-e 's/graphs\.not/graphs.not_/g' \
+	-e 's/graphs\.and/graphs.and_/g' \
+	-e 's/graphs\.or/graphs.or_/g' \
 	../src/daamath/context.py
 
-# in the strings, we also have the goddamed greek "lambda" that conflicts with python's lambda
-echo renaming in strings/greek.py: lambda → lambda_
+# in the symbols, we also have the goddamed greek "lambda" that conflicts with python's lambda
+echo renaming in symbols/greek.py: lambda → lambda_
 sed -i \
 	-e 's/lambda/lambda_/g' \
-	../src/daamath/strings/greek.py
+	../src/daamath/symbols/greek.py
+
+# theres symbols: in, not,
+echo renaming in symbols/miscellaneous.py: in → in_, not → not_
+sed -i \
+	-e 's/in = /in_ = /' \
+	-e 's/not = /not_ = /' \
+	../src/daamath/symbols/miscellaneous.py

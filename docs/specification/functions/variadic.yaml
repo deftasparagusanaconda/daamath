@@ -1,0 +1,80 @@
+vadd:
+  description: variadic addision a.k.a. summation
+  signatures:
+    complex:
+      domains:
+        - a: complex
+        - b: complex
+      codomain: complex
+vmul:
+  description: variadic multiplication a.k.a. product
+  signatures:
+    complex:
+      domains:
+        - a: complex
+        - b: complex
+      codomain: complex
+vand:
+  description: variadic conjunction a.k.a. all gate
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+vor:
+  description: variadic disjunction a.k.a. any gate
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+vxor:
+  description: variadic xor. checks if parity is even
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+vnxor:
+  description: variadic nxor. checks if parity is odd
+  signatures:
+    boolean:
+      domains:
+        - a: boolean
+        - b: boolean
+      codomain: boolean
+vmin:
+  description: variadic min (meet under natural order). well-behaved on lattices.
+  signatures:
+    real:
+      domains:
+        - a: real
+        - b: real
+      codomain: real
+vmax:
+  description: variadic max (join under natural order). well-behaved on lattices.
+  signatures:
+    real:
+      domains:
+        - a: real
+        - b: real
+      codomain: real
+vgcd:
+  description: variadic gcd (meet under divisibility). well-behaved on lattices.
+  signatures:
+    integer:
+      domains:
+        - a: integer
+        - b: integer
+      codomain: natural
+vlcm:
+  description: variadic lcm (join under divisibility). well-behaved on lattices.
+  signatures:
+    integer:
+      domains:
+        - a: integer
+        - b: integer
+      codomain: natural

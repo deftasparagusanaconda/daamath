@@ -12,35 +12,33 @@ and so on…
 
 this is the basic idea of hyperoperations. repeating the previous operation d times gives you the next operator. this gives us the tower: succ → add → mul → pow → spow → …
 
-for each binary operation ⊙ involved in l ⊙ r = c, we have three possible functions: solve for c, solve for l, solve for r
+the hyperoperation tower starts from the successor function:
 
-| n | hyperoperation | inverse |
+| n | b | a |
 | - | - | - |
-| 0 | [succ](#succ)(degree) = result ≈ 1 + degree | [pred](#pred)(result) = degree ≈ result - 1 |
+| 0 | [succ](#succ)(a) | [pred](#pred)(b) |
 
-| n | left solver | hyperoperation | right solver |
+for each binary operation ⊙ involved in a ⊙ b = c, we have three possible functions: solve for c, solve for b, solve for a
+
+| n | a | c | b |
 | - | - | - | - |
-| 1 | [sub](#sub)(c, r) | [add](#add)(l, r) | [bus](#bus)(c, l) |
-| 2 | [div](#div)(c, r) | [mul](#mul)(l, r) | [vid](#vid)(c, l) |
-| 3 | [log](#log)(c, r) | [pow](#pow(l, r) | [root](#root)(re) |
-| 4 | slog(c, r) | spow(l, r) | sroot(c, l) |
+| 1 | [sub](#sub)(c, b) | [add](#add)(a, b) | [bus](#bus)(c, a) |
+| 2 | [div](#div)(c, b) | [mul](#mul)(a, b) | [vid](#vid)(c, a) |
+| 3 | [log](#log)(c, b) | [pow](#pow)(a, b) | [root](#root)(c, a) |
+| 4 | slog(c, b) | spow(a, b) | sroot(c, a) |
 | … | … | … | … |
 
-l + r = c  add
-l = c - r  sub 
-r = -l + c bus
-l * r = c  mul (times)
+<!--
+c = a + b  add 
+b =-a + c bus 
+a = c - r  sub 
+c = a * b  mul (times)
 l = c / r  div (over)
 r = r \ c  vid (under)
-l ^ r = c  pow
+c = a ^ b  pow
 l = c ^ r⁻¹ root
 r = log_l(c) log
-
-
-
-thus with the inclusion of 
-
-a few notes:
+-->
 
 - since we define the functions as equation solvers, there is no need for inverse elements or identity elements
 
@@ -50,7 +48,7 @@ a few notes:
 
 - any binary operator that is commutative has its left and right inverses same. `add` and `mul` are commutative in many domains, which is why they seem to have only one inverse. but when multiplication is non-commutative like for matrices, it starts having two inverses. daamath anticipates this and thus maintains `vid` and `div` which solve for the left and right respectively. likewise for `bus` and `sub`.
 
-- [tetration](https://en.wikipedia.org/wiki/Tetration), [super-root](https://en.wikipedia.org/wiki/Tetration#Super-root), [super-logarithm](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n > 3
+- [tetration](https://en.wikipedia.org/wiki/Tetration), [super-root](https://en.wikipedia.org/wiki/Tetration#Super-root), [super-logarithm](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) are highly debated topics, especially for non-integer numbers. there is no canonical agreed-upon definition for them yet so until this is resolved, daamath shall not maintain hyperoperations of n ≥ 4
 
 # argument order
 
@@ -71,14 +69,27 @@ the biggest consequence to this is that integer arithmetic stays as integer arit
 
 daamath maintains four number types: [ℕ₀](https://en.wikipedia.org/wiki/Natural_number), [ℤ](https://en.wikipedia.org/wiki/Integer), [ℝ](https://en.wikipedia.org/wiki/Real_number), [ℂ](https://en.wikipedia.org/wiki/Complex_number)
 
-# rant
-
-the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
-
-i should really try to clarify the meaning of B D R as soon as possible
-
 # API implementation
-daamath is implemented as a programming math library. this section covers the language-agnostic specification
+
+## mul
+
+multiplication. it is overloaded to support the following:
+
+scalar × scalar = scalar
+scalar × vector = vector
+scalar × matrix = matrix
+vector × scalar = vector
+vector × vector = (ambiguous. use [inner]/[outer]/[cross]/[hadamard]/…)
+vector × matrix = vector (assumes vector is a column vector)
+matrix × scalar = matrix
+matrix × vector = vector (assumes vector is a row vector)
+matrix × matrix = matrix
+
+
+
+### inner
+
+### outer
 
 ##### [succ](https://en.wikipedia.org/wiki/Successor_function)(degree):
 signature: 𝕎 → 𝕎 | ℤ → ℤ  
@@ -112,3 +123,8 @@ returns: result − 1
 ##### [log](https://en.wikipedia.org/wiki/Logarithm)(result, base):
     signature: 𝕎, 𝕎 → 𝕎 | ℤ, ℤ → ℤ | ℝ, ℝ → ℝ | ℂ, ℂ → ℂ 
     returns: log_base(result)
+
+# rant
+
+the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
+

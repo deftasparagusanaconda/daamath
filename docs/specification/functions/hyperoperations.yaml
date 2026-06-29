@@ -1,67 +1,89 @@
 succ:
   description: successor. solves for b in ++a = b
-  domains:
-    - a: COMPLEX
-  codomain: COMPLEX
+  default signature: dynamic
+  signatures:
+    complex:
+      domains:
+        - a: complex
+      codomain: complex
+    matrix:
+      domains:
+        - a: matrix
+      codomain: matrix
+    dynamic:
+      domains:
+        - a: vor([complex, matrix])
+      codomain: vor([complex, matrix])
 pred:
   description: predecessor. solves for a in ++a = b
-  domains:
-    - b: COMPLEX
-  codomain: COMPLEX
+  default signature: dynamic
+  signatures:
+    complex:
+      domains:
+        - a: complex
+      codomain: complex
+    matrix:
+      domains:
+        - a: matrix
+      codomain: matrix
+    dynamic:
+      domains:
+        - a: vor([complex, matrix])
+      codomain: vor([complex, matrix])
 add:
   description: addition. solves for c in a + b = c
   domains:
-    - a: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - a: complex
+    - b: complex
+  codomain: complex
 sub:
   description: subtraction. solves for a in a + b = c
   domains:
-    - c: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - b: complex
+  codomain: complex
 bus:
   description: bustraction. solves for b in a + b = c
   domains:
-    - c: COMPLEX
-    - a: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - a: complex
+  codomain: complex
 mul:
   description: multiplication. solves for c in a × b = c
   domains:
-    - a: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - a: complex
+    - b: complex
+  codomain: complex
 div:
   description: division. solves for a in a × b = c
   domains:
-    - c: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - b: complex
+  codomain: complex
 vid:
   description: vidision. solves for b in a × b = c
   domains:
-    - c: COMPLEX
-    - a: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - a: complex
+  codomain: complex
 pow:
   description: exponentiation. solves for c in a ^ b = c
   domains:
-    - a: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - a: complex
+    - b: complex
+  codomain: complex
 log:
   description: logarithm. solves for a in a ^ b = c
   domains:
-    - c: COMPLEX
-    - b: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - b: complex
+  codomain: complex
 root:
   description: root. solves for b in a ^ b = c
   domains:
-    - c: COMPLEX
-    - a: COMPLEX
-  codomain: COMPLEX
+    - c: complex
+    - a: complex
+  codomain: complex
   #spow:
   #  description: 
   #slog:

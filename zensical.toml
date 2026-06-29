@@ -20,8 +20,8 @@ nav = [
       "specification/functions/index.md",
       {"hyperoperations"   = "specification/functions/hyperoperations.md"},
       {"trigonometry" = "specification/functions/trigonometry.md"},
-      {"logic"        = "specification/functions/logic.md"},
-      {"order"        = "specification/functions/order.md"},
+      {"boolean"      = "specification/functions/boolean.md"},
+      {"relations"    = "specification/functions/relations.md"},
       {"quantization" = "specification/functions/quantization.md"},
       {"variadic"     = "specification/functions/variadic.md"},
       {"miscellaneous"     = "specification/functions/miscellaneous.md"},
@@ -51,7 +51,7 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
-custom_dir = "docs_overrides"
+#custom_dir = "docs_overrides"
 #variant = "classic"
 
 features = [

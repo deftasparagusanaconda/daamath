@@ -1,5 +1,5 @@
 import daamath as dm
-from ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as CodomainViolation
+from ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as _CodomainViolation
 
 def succ(a):
     'successor. solves for b in ++a = b'
@@ -9,7 +9,7 @@ def succ(a):
     image = dm.context.succ.mapping(a)
 
     if not dm.context.succ.codomain(image):
-        raise _CodomainViolation('succ', ['a'], {}, image, dm.context.succ.codomain)
+        raise _CodomainViolation('succ', (a), {}, image, dm.context.succ.codomain)
     return image
 
 def pred(b):
@@ -20,11 +20,11 @@ def pred(b):
     image = dm.context.pred.mapping(b)
 
     if not dm.context.pred.codomain(image):
-        raise _CodomainViolation('pred', ['b'], {}, image, dm.context.pred.codomain)
+        raise _CodomainViolation('pred', (b), {}, image, dm.context.pred.codomain)
     return image
 
 def add(a, b):
-    'addition. solves for c in a + b = c'
+    'addision. solves for c in a + b = c'
     if not dm.context.add.domains.a(a):
         raise _DomainViolation('add', (a, b), {}, a, dm.context.add.domains.a)
     if not dm.context.add.domains.b(b):
@@ -33,7 +33,7 @@ def add(a, b):
     image = dm.context.add.mapping(a, b)
 
     if not dm.context.add.codomain(image):
-        raise _CodomainViolation('add', ['a', 'b'], {}, image, dm.context.add.codomain)
+        raise _CodomainViolation('add', (a, b), {}, image, dm.context.add.codomain)
     return image
 
 def sub(c, b):
@@ -46,7 +46,7 @@ def sub(c, b):
     image = dm.context.sub.mapping(c, b)
 
     if not dm.context.sub.codomain(image):
-        raise _CodomainViolation('sub', ['c', 'b'], {}, image, dm.context.sub.codomain)
+        raise _CodomainViolation('sub', (c, b), {}, image, dm.context.sub.codomain)
     return image
 
 def bus(c, a):
@@ -59,7 +59,7 @@ def bus(c, a):
     image = dm.context.bus.mapping(c, a)
 
     if not dm.context.bus.codomain(image):
-        raise _CodomainViolation('bus', ['c', 'a'], {}, image, dm.context.bus.codomain)
+        raise _CodomainViolation('bus', (c, a), {}, image, dm.context.bus.codomain)
     return image
 
 def mul(a, b):
@@ -72,7 +72,7 @@ def mul(a, b):
     image = dm.context.mul.mapping(a, b)
 
     if not dm.context.mul.codomain(image):
-        raise _CodomainViolation('mul', ['a', 'b'], {}, image, dm.context.mul.codomain)
+        raise _CodomainViolation('mul', (a, b), {}, image, dm.context.mul.codomain)
     return image
 
 def div(c, b):
@@ -85,7 +85,7 @@ def div(c, b):
     image = dm.context.div.mapping(c, b)
 
     if not dm.context.div.codomain(image):
-        raise _CodomainViolation('div', ['c', 'b'], {}, image, dm.context.div.codomain)
+        raise _CodomainViolation('div', (c, b), {}, image, dm.context.div.codomain)
     return image
 
 def vid(c, a):
@@ -98,7 +98,7 @@ def vid(c, a):
     image = dm.context.vid.mapping(c, a)
 
     if not dm.context.vid.codomain(image):
-        raise _CodomainViolation('vid', ['c', 'a'], {}, image, dm.context.vid.codomain)
+        raise _CodomainViolation('vid', (c, a), {}, image, dm.context.vid.codomain)
     return image
 
 def pow(a, b):
@@ -111,7 +111,7 @@ def pow(a, b):
     image = dm.context.pow.mapping(a, b)
 
     if not dm.context.pow.codomain(image):
-        raise _CodomainViolation('pow', ['a', 'b'], {}, image, dm.context.pow.codomain)
+        raise _CodomainViolation('pow', (a, b), {}, image, dm.context.pow.codomain)
     return image
 
 def log(c, b):
@@ -124,7 +124,7 @@ def log(c, b):
     image = dm.context.log.mapping(c, b)
 
     if not dm.context.log.codomain(image):
-        raise _CodomainViolation('log', ['c', 'b'], {}, image, dm.context.log.codomain)
+        raise _CodomainViolation('log', (c, b), {}, image, dm.context.log.codomain)
     return image
 
 def root(c, a):
@@ -137,5 +137,5 @@ def root(c, a):
     image = dm.context.root.mapping(c, a)
 
     if not dm.context.root.codomain(image):
-        raise _CodomainViolation('root', ['c', 'a'], {}, image, dm.context.root.codomain)
+        raise _CodomainViolation('root', (c, a), {}, image, dm.context.root.codomain)
     return image

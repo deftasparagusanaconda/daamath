@@ -1,0 +1,120 @@
+sin:
+  description: circular sin; real(exp(semiarea * i)) where i² = −1
+  domains:
+    - semiarea: complex
+  codomain: complex
+cos:
+  description: circular sin; real(exp(semiarea * i)) where i² = −1
+  domains:
+    - semiarea: complex
+  codomain: complex
+tan:
+  description: sin(semiarea) / cos(semiarea)
+  domains:
+    - semiarea: complex
+  codomain: complex
+cot:
+  description: multiplicative inverse of tan
+  domains:
+    - semiarea: complex
+  codomain: complex
+sec:
+  description: multiplicative inverse of cos
+  domains:
+    - semiarea: complex
+  codomain: complex
+csc:
+  description: multiplicative inverse of sin
+  domains:
+    - semiarea: complex
+  codomain: complex
+asin:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+acos:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+atan:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+acot:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+asec:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+acsc:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+sinh:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+cosh:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+tanh:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+coth:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+sech:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+csch:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+asinh:
+  description: haha
+  domains:
+    - semiarea: complex
+  codomain: complex
+acosh:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+atanh:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+acoth:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+asech:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex
+acsch:
+  description: haha
+  domains:
+    - ratio: complex
+  codomain: complex

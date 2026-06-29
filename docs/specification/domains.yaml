@@ -1,7 +1,45 @@
+#𝔸𝔻𝔼𝔽𝔾ℍ𝕁𝕂𝕃𝕄𝕆ℙ𝕊𝕋𝕌𝕍𝕎𝕏𝕐
+#
 domains:
-  NATURAL: natural numbers
-  INTEGER: integral numbers
-  RATIONAL: rational numbers
-  REAL: real numbers
-  COMPLEX: complex numbers
-  BOOLEAN: 2-element algebra 
+  # abstract concepts
+  anything:
+    description: set of everything. its indicator function always returns true
+    symbol: ξ
+  nothing:
+    description: set of nothing. its indicator function always returns false
+    symbol: ∅
+
+  # numbers
+  zero:
+    description: '0'
+  positive:
+    description: anything strictly greater than 0
+  negative: 
+    description: anything strictly lesser than 0
+  natural: 
+    description: natural numbers
+    symbol: ℕ
+  integer: 
+    description: integral numbers
+    symbol: ℤ
+  rational: 
+    description: rational numbers
+    symbol: ℚ
+  real: 
+    description: real numbers
+    symbol: ℝ
+  imaginary: 
+    description: imaginary numbers
+    symbol: 𝕀
+  complex: 
+    description: complex numbers
+    symbol: ℂ
+
+  boolean: 
+    description: 2-element algebra 
+    symbol: 𝔹
+  
+  # datatypes
+  float:
+    description: IEEE 754 binary/decimal float
+  

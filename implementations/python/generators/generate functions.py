@@ -7,7 +7,7 @@
 from pathlib import Path
 import yaml
 
-SPECIFICATION = Path('../../../docs/specification/')
+FUNCTIONS = Path('../../../docs/specification/functions')
 HANDWRITTEN = Path('../handwritten/daamath/')
 SRC = Path('../src/daamath/')
 
@@ -21,10 +21,10 @@ def generate_definition(name: str, args: list[str], description: str) -> str:
         lines.append(f'    if not dm.context.{name}.domains.{arg}({arg}):')
         lines.append(f"        raise _DomainViolation('{name}', ({', '.join(args)}), {{}}, {arg}, dm.context.{name}.domains.{arg})")
     lines.append('')
-    lines.append(f'    image = dm.context.{name}.mapping({', '.join(args)})')
+    lines.append(f'    image = dm.context.{name}.graph({', '.join(args)})')
     lines.append('')
     lines.append(f'    if not dm.context.{name}.codomain(image):')
-    lines.append(f"        raise _CodomainViolation('{name}', {args}, {{}}, image, dm.context.{name}.codomain)")
+    lines.append(f"        raise _CodomainViolation('{name}', ({', '.join(args)}), {{}}, image, dm.context.{name}.codomain)")
 
     lines.append('    return image')
 
@@ -41,9 +41,9 @@ def generate_file(yaml_dict) -> str:
         definition = generate_definition(name, args, description)
         definitions.append(definition)
         
-    return 'import daamath as dm\nfrom ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as CodomainViolation\n\n' + '\n\n'.join(definitions) + '\n'
+    return 'import daamath as dm\nfrom ..exceptions import DomainViolation as _DomainViolation, CodomainViolation as _CodomainViolation\n\n' + '\n\n'.join(definitions) + '\n'
 
-for path in (SPECIFICATION/'functions').iterdir(): 
+for path in FUNCTIONS.iterdir(): 
     if path.suffix != '.yaml':
         continue
 
@@ -52,3 +52,6 @@ for path in (SPECIFICATION/'functions').iterdir():
     print(f'hello! i am now generating {target}')
     
     target.write_text(generate_file(yaml.safe_load(path.read_text())))
+
+print('generating functions/__init__.py')
+(SRC/ 'functions' / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in FUNCTIONS.iterdir() if path.suffix == '.yaml'))

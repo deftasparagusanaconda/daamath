@@ -1,11 +1,10 @@
-from . import functions, numbers, domains, types, enums, exceptions, mappings
+from . import functions, constants, symbols, domains, enums, exceptions, mappings
 from .functions import *
 from .constants import *
-from .strings import *
 from .domains import *
-from .types import *
 from .enums import *
 from .exceptions import *
+from .symbols import *
 
 from .context import context
 

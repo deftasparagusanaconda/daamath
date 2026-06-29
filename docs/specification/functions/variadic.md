@@ -12,36 +12,26 @@ in general, for the primitive operation `op`, its variadic version `OP` can take
 
 as a specialization of these, certain 
 -->
-#### sum
-variadic extension of add
-#### prod
-variadic extension of mul
-#### all
-variadic extension of and
-#### any
-variadic extension of or
-#### parityeven
-variadic extension of xor
-#### parityodd
-variadic extension of nxor
+#### vadd
+variadic extension of add. also known as summation
+#### vmul
+variadic extension of mul. also known as product
+#### vand
+variadic extension of and. also known as an 'all' gate
+#### vor
+variadic extension of or. also known as an 'any' gate
+#### vxor
+variadic extension of xor. checks if parity is even
+#### vnxor
+variadic extension of xnor. checks if parity is odd
 #### vmin
-variadic extension of min
-
-min is usually presented as its variadic version but it is primitively a binary function
+variadic extension of min — the infimum under natural ordering (it is usually presented as its variadic version but it is primitively a binary function)
 #### vmax
-variadic extension of max
-
-max is usually presented as its variadic version but it is primitively a binary function
+variadic extension of max — the supremum under natural ordering (it is usually presented as its variadic version but it is primitively a binary function)
 #### vgcd
-variadic extension of gcd
-
-gcd is usually presented as its variadic version but it is primitively a binary function
+variadic extension of gcd — the infimum under divisibility ordering (it is usually presented as its variadic version but it is primitively a binary function)
 #### vlcm
-variadic extension of lcm
-
-lcm is usually presented as its variadic version but it is primitively a binary function
-
-
+variadic extension of lcm — the supremum under divisibility ordering (it is usually presented as its variadic version but it is primitively a binary function)
 
 # notes
 

@@ -22,7 +22,7 @@ class DomainViolation(SignatureViolation):
         
         inputs: str = ', '.join(args + kwargs)
 
-        super().__init__(f'{function_name}({inputs}): {type(offender).__name__} {offender!r} ∉ {offender_domain.__name__}')
+        super().__init__(f'{function_name}({inputs}) received {type(offender).__name__} {offender!r} ∉ {offender_domain.__name__}')
     __module__ = 'builtins'
 
 class CodomainViolation(SignatureViolation):
@@ -33,5 +33,5 @@ class CodomainViolation(SignatureViolation):
         
         inputs: str = ', '.join(args + kwargs)
         
-        super().__init__(f'{function_name}({inputs}) tried to return {type(offender).__name__} {offender!r} which is not in {offender_domain.__name__}')
+        super().__init__(f'{function_name}({inputs}) returned {type(offender).__name__} {offender!r} ∉ {offender_domain.__name__}')
     __module__ = 'builtins'
