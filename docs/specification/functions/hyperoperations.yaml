@@ -1,5 +1,6 @@
 succ:
   description: successor. solves for b in ++a = b
+  symbol: ++a
   default signature: dynamic
   signatures:
     complex:
@@ -16,28 +17,31 @@ succ:
       codomain: vor([complex, matrix])
 pred:
   description: predecessor. solves for a in ++a = b
+  syntax: −−b
   default signature: dynamic
   signatures:
     complex:
       domains:
-        - a: complex
+        - b: complex
       codomain: complex
     matrix:
       domains:
-        - a: matrix
+        - b: matrix
       codomain: matrix
     dynamic:
       domains:
-        - a: vor([complex, matrix])
+        - b: vor([complex, matrix])
       codomain: vor([complex, matrix])
 add:
   description: addition. solves for c in a + b = c
+  syntax: a + b
   domains:
     - a: complex
     - b: complex
   codomain: complex
 sub:
   description: subtraction. solves for a in a + b = c
+  syntax: c − b
   domains:
     - c: complex
     - b: complex
@@ -50,6 +54,7 @@ bus:
   codomain: complex
 mul:
   description: multiplication. solves for c in a × b = c
+  syntax: a × b
   domains:
     - a: complex
     - b: complex

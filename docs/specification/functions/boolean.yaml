@@ -1,5 +1,6 @@
 not:
   description: negation
+  syntax: ¬a
   signatures:
     boolean:
       domains:
@@ -16,6 +17,7 @@ not:
 
 and:
   description: conjunction
+  syntax: a ∧ b
   signatures:
     boolean:
       domains:
@@ -34,7 +36,8 @@ and:
       codomain: vor([boolean function])
 
 or:
-  description: disjunction
+  description: disjunction 
+  syntax: a ∨ b
   signatures:
     boolean:
       domains:
@@ -73,6 +76,7 @@ xor:
 
 imp:
   description: material implication
+  syntax: a → b
   signatures:
     boolean:
       domains:
@@ -92,6 +96,7 @@ imp:
 
 con:
   description: converse material implication
+  syntax: a ← b
   signatures:
     boolean:
       domains:
