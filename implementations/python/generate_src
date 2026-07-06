@@ -25,17 +25,17 @@ echo step 2: generate code
 echo cd to generators/
 cd generators/
 
-echo generating symbols/*.py
-python 'generate symbols.py'
+echo generating unicode/*.py
+python 'generate unicode.py'
 
-echo generating functions/*.py
-python 'generate functions.py'
+#echo generating functions/*.py
+#python 'generate functions.py'
 
-echo generating context.py
-python 'generate context.py'
+#echo generating context.py
+#python 'generate context.py'
 
-echo generating numbers/*.py
-python 'generate numbers.py'
+echo generating constants/*.py
+python 'generate constants.py'
 
 echo fixing implementation quirks
 ./quirk_fixer

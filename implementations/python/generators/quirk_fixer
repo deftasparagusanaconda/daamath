@@ -4,35 +4,38 @@
 
 # python does not allow (not|and|or) as names so we shall rename them to (not_|and_|or_) respectively
 
-echo renaming in functions/boolean.py: not → _not, and → _and, or → _or
-sed -i \
-	-e 's/def not(/def not_(/g' \
-	-e 's/context\.not/context.not_/g' \
-	-e 's/def and(/def and_(/g' \
-	-e 's/context\.and/context.and_/g' \
-	-e 's/def or(/def or_(/g' \
-	-e 's/context\.or/context.or_/g' \
-	../src/daamath/functions/boolean.py
+# echo renaming in functions/boolean.py: not → _not, and → _and, or → _or
+# sed -i \
+# 	-e 's/def not(/def not_(/g' \
+# 	-e 's/context\.not/context.not_/g' \
+# 	-e 's/def and(/def and_(/g' \
+# 	-e 's/context\.and/context.and_/g' \
+# 	-e 's/def or(/def or_(/g' \
+# 	-e 's/context\.or/context.or_/g' \
+# 	../src/daamath/functions/boolean.py
+#
+# echo renaming in context.py: not → not_, and → and_, or → or_
+# sed -i \
+# 	-e 's/    not = /    not_ = /' \
+# 	-e 's/    and = /    and_ = /' \
+# 	-e 's/    or = /    or_ = /' \
+# 	-e 's/graphs\.not/graphs.not_/g' \
+# 	-e 's/graphs\.and/graphs.and_/g' \
+# 	-e 's/graphs\.or/graphs.or_/g' \
+# 	../src/daamath/context.py
 
-echo renaming in context.py: not → not_, and → and_, or → or_
-sed -i \
-	-e 's/    not = /    not_ = /' \
-	-e 's/    and = /    and_ = /' \
-	-e 's/    or = /    or_ = /' \
-	-e 's/graphs\.not/graphs.not_/g' \
-	-e 's/graphs\.and/graphs.and_/g' \
-	-e 's/graphs\.or/graphs.or_/g' \
-	../src/daamath/context.py
-
-# in the symbols, we also have the goddamed greek "lambda" that conflicts with python's lambda
-echo renaming in symbols/greek.py: lambda → lambda_
+# in the unicode, we also have the goddamed greek "lambda" that conflicts with python's lambda
+echo renaming in unicode/greek.py: lambda → lambda_
 sed -i \
 	-e 's/lambda/lambda_/g' \
-	../src/daamath/symbols/greek.py
+	../src/daamath/unicode/greek.py
 
-# theres symbols: in, not,
-echo renaming in symbols/miscellaneous.py: in → in_, not → not_
+# theres unicode: in, not,
+echo renaming in unicode/miscellaneous.py: in → in_, not → not_
 sed -i \
 	-e 's/in = /in_ = /' \
 	-e 's/not = /not_ = /' \
-	../src/daamath/symbols/miscellaneous.py
+	../src/daamath/unicode/miscellaneous.py
+sed -i \
+	-e 's/in = /in_ = /' \
+	../src/daamath/unicode/square.py

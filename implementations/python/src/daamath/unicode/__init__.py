@@ -1,4 +1,3 @@
-from .square import *
 from .digit import *
 from .fraction import *
 from .latin import *
@@ -7,3 +6,4 @@ from .arrow import *
 from .bracket import *
 from .greek import *
 from .miscellaneous import *
+from .square import *

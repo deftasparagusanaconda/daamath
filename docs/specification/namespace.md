@@ -2,13 +2,10 @@
 
 daamath maintains a cross-language-friendly namespace. daamath's casing conventions do not change according to the implementation. here are the rules:
 
-# everything is lowercase
-
-"why not make constants uppercase?" because then the namespace would be doing something that its not supposed to do: enforcing constantness by convention, not by mechanism. if something is meant to be constant, the language should enforce that, not the namespace. 
-
-# aliases
-
-daamath will not have an alias for anything. when something has a name, that name becomes the only way to access it. we never maintain any shortcuts in the namespace. 
+- **ASCII only**: unicode support is patchy across programming languages. ASCII is still common ground. e.g.: `π` is used in place of `pi`
+- **identifiers do not start with a digit**: programming languages have a common lexing rule of parsing anything starting with a digit as a number (for peformance reasons). thus names like 2_by_pi are invalid.
+- **everything is lowercase**:  "why not make constants uppercase?" because then the namespace would be doing something that its not supposed to do: enforcing constantness by convention, not by mechanism. if something is meant to be constant, the language should enforce that, not the namespace. 
+- **no aliases**: daamath will not have an alias for anything. everything appears once. when something has a name, that name becomes the only way to access it. we never maintain any shortcuts in the namespace. 
 
 # underscore binding
 

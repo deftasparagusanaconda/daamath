@@ -1,4 +1,4 @@
-# generate symbols/*.py
+# generate unicode/*.py
 
 # jsyk i made ai generate the to_python function so if theres nonsense there, you know why
 #
@@ -16,14 +16,14 @@ from collections.abc import Mapping
 HANDWRITTEN = Path('../handwritten/daamath')
 SPECIFICATION = Path('../../../docs/specification/')
 SRC = Path('../src/daamath')
-SRC_SYMBOLS = SRC / 'symbols/'
+SRC_UNICODE = SRC / 'unicode/'
 
 # what indentation scheme youre using. by PEP rules, four spaces should be best
 INDENT = '    '
 
 # now from this point on, daa, you start generating your own code
 # this is where youre dreading the most. come on, you can do it!
-# first we have to take the symbols/*.yaml and turn each file into its corresponding .py file. you better let a function do that. you should have a function that takes in a dict, and gives you back a string fit for a .py file. okie?
+# first we have to take the unicode/*.yaml and turn each file into its corresponding .py file. you better let a function do that. you should have a function that takes in a dict, and gives you back a string fit for a .py file. okie?
 # okay... i-i guess i could do that
 # good. go on.. go make it. lets see what happens
 # ill make a function called.. dict_to_str.. i guess??
@@ -44,7 +44,7 @@ def to_python(obj, depth=0):
         # im going insane
         # do you know why i make a dict and then unpack it?
         # ill tell you why
-        # because symbols/greek.yaml has "lambda" which python thinks is a lambda. so im sidestepping all of that
+        # because unicode/greek.yaml has "lambda" which python thinks is a lambda. so im sidestepping all of that
 
         return (
             "_SimpleNamespace(\n"
@@ -69,11 +69,11 @@ def to_python(obj, depth=0):
 
     return repr(obj)
 
-# mkdir src/symbols/
-SRC_SYMBOLS.mkdir(parents = True, exist_ok = True)
+# mkdir src/unicode/
+SRC_UNICODE.mkdir(parents = True, exist_ok = True)
 
-# create src/symbols/*.py
-for path in (SPECIFICATION / "symbols").iterdir():
+# create src/unicode/*.py
+for path in (SPECIFICATION / "unicode").iterdir():
     if path.suffix != ".yaml":
         continue
 
@@ -84,11 +84,11 @@ for path in (SPECIFICATION / "symbols").iterdir():
     for variable, dictionary in data.items():
         code.append(f'{variable} = {to_python(dictionary)}\n')
 
-    target = (SRC_SYMBOLS / f"{path.stem}.py")
+    target = (SRC_UNICODE / f"{path.stem}.py")
 
     print(f'hello! i am now generating {target}')
     target.write_text(''.join(code))
 
-# create src/symbols/__init__.py
+# create src/unicode/__init__.py
 
-(SRC_SYMBOLS / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in SRC_SYMBOLS.iterdir()))
+(SRC_UNICODE / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in SRC_UNICODE.iterdir()))

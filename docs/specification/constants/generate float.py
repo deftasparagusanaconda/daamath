@@ -109,14 +109,14 @@ def decimal(name: str, digits: int, emin: int, emax: int):
     normal_max = (ten - ten ** (1 - digits)) * (ten ** emax)
     subnormal_max = (Decimal(1) - ten ** (1 - digits)) * normal_min
 
-    print(f'{name}:')
-    print(f'  epsilon: {epsilon:e} # 5 × 10 ^ -{digits}')
-    print( '  min:')
-    print(f'    normal: {normal_min:e} # 10 ^ {emin}')
-    print(f'    subnormal: {subnormal_min:e} # 10 ^ {emin - (digits - 1)}')
-    print( '  max:')
-    print(f'    normal: {normal_max:e} # (10 − 10 ^ -{digits - 1}) × 10 ^ {emax}')
-    print(f'    subnormal: {subnormal_max:e} # (1 − 10 ^ -{digits - 1}) × 10 ^ {emin}')
+    print(f"{name}:")
+    print(f"  epsilon: '{epsilon:.{digits - 1}e}' # 5 × 10 ^ -{digits}")
+    print( "  min:")
+    print(f"    normal: '{normal_min:.{digits - 1}e}' # 10 ^ {emin}")
+    print(f"    subnormal: '{subnormal_min:.{digits - 1}e}' # 10 ^ {emin - (digits - 1)}")
+    print( "  max:")
+    print(f"    normal: '{normal_max:.{digits - 1}e}' # (10 − 10 ^ -{digits - 1}) × 10 ^ {emax}")
+    print(f"    subnormal: '{subnormal_max:.{digits - 1}e}' # (1 − 10 ^ -{digits - 1}) × 10 ^ {emin}")
 
 # these values are IEEE 754 spec. i also verified them with my daatypes project
 

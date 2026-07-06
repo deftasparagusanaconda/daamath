@@ -1,15 +1,6 @@
----
-title: home
-#hide:
-#  - navigation
----
+# daamath
 
-<!-- {% include "../../readme.md" %} -->
-<!-- --8<-- "readme.md" -->
-
-# [daa]math
-
-a mathematician's spellbook: cross-language math library specification, with implementations in various programming languages
+a mathematician's spellbook: cross-language math library specification, with implementations across various programming languages
 
 # install
 <table>
@@ -41,94 +32,104 @@ a mathematician's spellbook: cross-language math library specification, with imp
   </tbody>
 </table>
 
-click on your language for full instructions
-
-# why does daamath exist?
+# why?
 
 "does integer division do floor rounding or trunc rounding?"
 
-"why is there no `log(num, base)` in C?"
-
-"why does `pow(2, 3)` return a float?"
+"why does `pow(2, 3)` return a float? i expected an int"
 
 "why do i have to know `powf`, `pow` and `powl` in C? cant they just make one `pow`?"
 
-"i wish i could translate my math code from C to Python but they gives me different results"
+"i know my int is even so i divide it by 2. why did you promote it to a float? its still supposed to be an int!"
+
+"i wish i could translate my math code from C to Python but it gives me different results"
+
+"why is there no `log(num, base)` in C?"
 
 "but `log(-1)` is defined in the complex numbers. you mean i have to use `clog` for that? `log` should be able to do that if i pass a complex number"
 
+"why is it `log(num, base)` in python but `log(base, num)` in julia?"
+
+"why were my calculations wrong? is `log` base 10 or base e?"
+
 "where is `acot(x)`??? how do i make `acot` from `atan`??" 
 
-"where is `nand(x, y)`? `not(and(x, y))` looks so unnecessary"
-
-"i know my int is even so i divide it by 2. why did you promote it to a float? its still supposed to be an int!"
-
-"why does `log(2)` give me `0.69314718056`? is it base 10 or base e?"
-
-"why is it `log(num, base)` in python but `log(base, num)` in julia?"
+"where is `nand(x, y)`? `not (x and y)` is so unnecessary"
 
 "i wish this math library had the golden ratio constant"
 
 this is very ugly to me. so i made daamath.
 
-# what does daamath do?
+# features
 
-- **cross-language consistency:** daamath is a language-agnostic specification. it has consistent behaviour and interface across languages
-- **domain-aware mathematics:** operators respect the domain of discussion. for example, an integer divided by an integer can be set to return either an integer or rational number
-- **complete function sets:** hyperoperations
-to n=4, trigonometry in all 2 non-degenerate geometries, all non-trivial boolean gates, ordering operators, quantization/rounding, …
-- **type preservation:** daamath will never cast an `int` to a `float`. it will _always_ preserve your contract of precision aka your datatype.
-- **clean namespace:** everything in daamath has one name only, and no aliases
-- **unicode characters:** find math characters from unicode easily
-- **mathematical constants:** e, τ, φ, …
-- **documentation website:** everything in daamath has a dedicated documentation webpage 
+- **cross-language consistency:** daamath is designed to behave the same across languages. 
+- **true functions:** faithful to the mathematics, you can define the domain, codomain, and mapping of functions. for example, an integer divided by an integer can be set to return either an integer or rational number
+- **complete function sets:** hyperoperations to n=4, trigonometry in all 2 non-degenerate geometries, all non-degenerate boolean gates to arity 2, all 16 derived functions per relation, 12 rounding functions, …
+- **clean namespace:** no aliases, datatype naming conventions, underscore-binding, …
+- **unicode characters:** math-related unicode characters, presented in an elegant tree
+- **mathematical constants:** e, π, τ, 
+- **[documentation website][documentation]**
 
 # examples
 
-by default, integer division raises an error if the result isnt an integer
+for our python examples, first `import daamath as dm`
 
 ```python
-dm.div(5, 2)
-# OutOfDomainError: result 2.5 is not in INTEGERS
+# by default, daamath does complex arithmetic in f64:
+
+dm.log(-5, 2)
+# 4.532360141827194j
 ```
 
-but if you enable rounding, no error is raised
-
 ```python
-dm.context.datatypes.rounding = dm.roundfloor
+# you can do integer arithmetic with floats
+dm.context.div.codomain = dm.domains.INTEGER
 dm.div(5, 2)
-# 2
+# CodomainViolation: div(float 5, float 2) returned float 2.5 ∉ INTEGER
 ```
 
-by default, daamath enables nearest-even rounding for float operations. you can disable that to make sure all your operations are 100% accurate
+```python
+# create your own domains
+NONZERO_REAL = lambda x: dm.REAL(x) and x != 0
+NONZERO_REAL(1.0)
+# True
+NONZERO_REAL(0)
+# False
+```
 
 ```python
-dm.context.datatypes.rounding = None
-dm.add(1.0, 2.0)
-# 3.0
-dm.add(0.1, 0.2)
-# FidelityError: result 0.3000000000000000166533453693773481063544750213623046875 cannot be accurately represented by the float datatype
+# you can do matrix arithmetic naturally:
+dm.context = dm.contexts.matrix
+dm.mul([1,2,3], [2,3,4])
+# 20
 ```
 
 you also have cool tidbits like this:
 
 ```python
-print(dm.greek.lowercase.tau)
+dm.PI_F64 - dm.PI_F32
+# 
+```
+
+```python
+dm.symbols.lowercase.tau
 # τ
-print(dm.infinity, dm.not.in.right, dm.latin.doublestruck.uppercase.r)
+dm.symbols.infinity + dm.symbols.not.in.right + dm.symbols.latin.doublestruck.uppercase.r
 # ∞ ∉ ℝ
 ```
 
-# rant
+<!--# rant
 
 i originally made daamath because when i designed [gapprox], i wanted a math library that was both very functionally complete and had the same behaviour across languages. but i found that programmers made a lot of bad decisions about how to implement mathematics into code. i discovered a lot of maths along the way too. i hope daamath rewires how programmers think of maths, because its not like the real numbers are the only "real" numbers. ugh. or simply going along with IEEE's rounding without even acknowledging it. and they dont even know complex numbers exist. oh my gosh dont you know `log(-1)` exists??? youre just completely ignoring the complex domain. and `0/0` is not an error! your domain simply didnt define it. go look up what wheel algebra is. see the connection? `NaN` is just the IEEE 754 way to represent `⊥`. they just didnt realize it. most of your "errors" can be represented as either a ClosureError (the result wasnt defined in the codomain) or a RepresentationError (you disabled rounding, and the datatype couldnt represent it accurately)
 
 dont even get me started on how left out the unicode math characters are :( everyone slobbers over latex but they dont know about the fact that you can write things like `eⁱᶿ = cos(θ) + i⋅sin(θ)` or `cosh²(θ) - sinh²(θ) = 1` or `ln(x) = logₑ(x)` or `∥z∥₂ = ²√(ℜ² + ℑ²)` entirely with unicode
 
 ok rant done
-
+-->
+[documentation]: https://deftasparagusanaconda.github.io/daamath
 [specification]: https://deftasparagusanaconda.github.io/daamath/specification
 [implementations]: https://deftasparagusanaconda.github.io/daamath/implementations
 [gapprox]: https://github.com/deftasparagusanaconda/gapprox
 [install]: https://deftasparagusanaconda.github.io/daamath/install/
 [daa]: https://github.com/deftasparagusanaconda
+
