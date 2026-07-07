@@ -117,7 +117,7 @@ def NATURALFROM(start: int) -> Callable[[_Any], bool]:
 #NATURALFROM_1: Callable[[_Any], bool] = NATURALFROM(1)
 #NATURALFROM_2: Callable[[_Any], bool] = NATURALFROM(2)
 
-def INTEGERMODULO(mod: int) -> Callable[[_Any], bool]:
+def INTEGERMODULO(mod: int) -> _Callable[[_Any], bool]:
     'integers modulo N, like in modular arithmetic'
     if mod == 0:
         return INTEGER

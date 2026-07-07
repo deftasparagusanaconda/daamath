@@ -4,7 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "daamath"
-dynamic = ["version"]
+version = "0.5.2"
+#dynamic = ["version"]
 description = "a mathematician's spellbook"
 readme = "readme.md"
 license = "GPL-3.0-or-later"
@@ -42,5 +43,5 @@ Issues = "https://github.com/deftasparagusanaconda/daamath/issues"
 [tool.hatch.build.targets.wheel]
 packages = ["implementations/python/src/daamath"]
 
-[tool.hatch.version]
-path = "implementations/python/src/daamath/__init__.py"
+#[tool.hatch.version]
+#path = "implementations/python/src/daamath/__init__.py"

@@ -1,24 +1,25 @@
-# approximates
+# constants
 
-daamath stores important constants approximately in some common IEEE754 floating point formats. the [nearest_even]-rounded value and the error of this rounded value are both stored, so that a bounded interval or a ball interval may be created (see [examples](#examples) below), or simply to store the constant in doubled precision.
+a constant is something whose value doesnt depend on anything and doesnt change unless the universe changes. under this definition, daamath has a few kinds of constants:
 
-constants are maintained in the following formats:
+# rational approximations
 
-| name | radix | binary precision | decimal precision | 
-| - | - | - | - |
-| [f16](https://en.wikipedia.org/wiki/Half-precision_floating-point_format)  | 2 (binary) | 11 | ≈3.3113299523… | 
-| [f32](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)  | 2 (binary) | 24 | ≈7.22471989594… | 
-| [f64](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)  | 2 (binary) | 53 | ≈15.9545897702… | 
-| [f128](https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format) | 2 (binary) | 113 | ≈34.01638951… | 
-| [f256](https://en.wikipedia.org/wiki/Octuple-precision_floating-point_format) | 2 (binary) | 237 | ≈71.3441089724… | 
-| [d32](https://en.wikipedia.org/wiki/Decimal32_floating-point_format)  | 10 (decimal) | ≈23.2534966642… | 7 | 
-| [d64](https://en.wikipedia.org/wiki/Decimal64_floating-point_format)  | 10 (decimal) | ≈53.1508495182… | 16 | 
-| [d128](https://en.wikipedia.org/wiki/Decimal128_floating-point_format) | 10 (decimal) | ≈112.945555226… | 34 | 
+an irrational constant may be stored as a rational approximation:
 
-the following constants are maintained:
+- each constant has 5 [IEEE 754] basic formats: [f32], [f64], [f128], [d64], [d128]
+- each format has 2 residuals: the [nearest_even]-rounded value and the error of that rounded value
+- each residual has 3 integers: significand, radix, exponent
+
+the advantages of this are:
+
+- the approximation is explicit, and not implicit in machine/language datatype
+- a box (lower, upper) or a ball (centre, radius) interval can be constructed
+- the constant can be easily hydrated into a float/fraction/string/int/interval/…
+
+the following irrational constants are approximated:
 
 <!--| SUPERGOLDEN | 1.465571231876768… |-->
-| name | common names | common symbols | decimal expansion |
+| name | common names | common symbols | decimal |
 | - | - | - | - |
 | metallic_1 | [golden ratio](https://en.wikipedia.org/wiki/Golden_ratio) | φ | 1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113… |
 | metallic_2 | [silver ratio](https://en.wikipedia.org/wiki/Silver_ratio) | σ | 2.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157… |
@@ -50,6 +51,16 @@ daamath defines angle units w.r.t. radians since they are the most natural unit 
 | minute  |  | τ / (360 * 60) | 0.00029088820866572159615394846141476878557381198142362090934953190669516818576724157394704026160575… |
 | second  |  | τ / (360 * 60 * 60) | 0.00004848136811095359935899141023579479759563533023727015155825531778252803096120692899117337693429… |
 
+# specials
+
+| name | common names | common symbols |
+| - | - | - |
+| i | complex imaginary unit | 
+| j | split-complex imaginary unit |
+| e | dual imaginary unit |
+| true | boolean top element |
+| false | boolean bottom element |
+
 # examples
 
 ```
@@ -59,7 +70,7 @@ TAU = dm.TAU.f16.nearest
 ```
 
 ```
-# create e as a bound interval of f64
+# create e as a box interval of f64
 
 E = dm.E.f32.nearest          
 E = (dm.pred(E), E) if dm.E.f32.error < 0 else (E, dm.succ(E))           
@@ -72,36 +83,20 @@ E = dm.ball(centre=dm.E.f32.nearest, radius=abs(dm.E.f32.error))
 ```
 
 
-# what is a constant?
+# notes
 
-a constant is something whose value doesnt depend on anything and doesnt change. daamath stores common constants but is honest about their precision. thus if a machines tries to use PI_f128 in a language with only f64, daamath correctly prevents dishonesty.
-
-daamath maintains the following constants:
-
-| name | value |
-| - | - |
-| [I](https://en.wikipedia.org/wiki/Imaginary_unit) | i |
-| TRUE    | boolean top element |
-| FALSE   | boolean bottom element |
-| PLASTIC     | 1.324717957244746… |
-| SUPERGOLDEN | 1.465571231876768… |
-| GOLDEN      | 1.618033988749… |
-| SILVER      | 2.41421356237309504880… |
-
-# what can become a constant?
-
-if a set of constants has no clear bound to it, that set should not exist. `DIV_X_TAU` can create an infinite amount of constants, but its not clear where to end it. so its not done. same with `DIV_TAU_X` for example.
-
-# unicode support
-
-daamath will NOT deal with unicode in the namespace. it is very very non-portable. i also would love to type `from daamath import τ` but unicode support is inconsistent, and that harms our cross-language consistency a lot. 
-
-# where is π??
-
-daamath has a strong stance on π & τ. π is inelegant. τ is elegant. daamath is elegant. daamath uses ONLY τ. 
+the rational approximations are stored as three integers. this is actually slightly redundant because rationals only need two integers (or three natural numbers!). but storing two ginormous integers is less efficient than the three handle-able integers because they match the structure of the float datatypes better.
 
 # rant
 
 `DIV_X_Y` seemed like a good idea until i realized the space blows up and i have to start making arbitrary decisions on where to stop. this is bad. daamath shouldnt make assumptions unless they are mathematically sound and clear. if you want `DIV_1_PI`, make it yourself: `div(1, pi)` or `minv(pi)`
 
-
+[f16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
+[f32]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
+[f64]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+[f128]: https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format
+[f256]: https://en.wikipedia.org/wiki/Octuple-precision_floating-point_format
+[d32]: https://en.wikipedia.org/wiki/Decimal32_floating-point_format
+[d64]: https://en.wikipedia.org/wiki/Decimal64_floating-point_format
+[d128]: https://en.wikipedia.org/wiki/Decimal128_floating-point_format
+[IEEE 754]: https://en.wikipedia.org/wiki/IEEE_754

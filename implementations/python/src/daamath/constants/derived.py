@@ -1,3 +1,5 @@
+from types import SimpleNamespace as _SimpleNamespace
+
 DIV_1_E = 0.36787944117144233
 DIV_1_TAU = 0.15915494309189535
 DIV_1_PI = 0.3183098861837907

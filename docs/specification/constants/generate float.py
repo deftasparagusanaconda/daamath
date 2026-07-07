@@ -1,7 +1,8 @@
-from decimal import Decimal, getcontext
-from fractions import Fraction
-from numbers import Rational
-
+# from decimal import Decimal, getcontext
+# from fractions import Fraction
+# from numbers import Rational
+# from daatypes import Float
+'''
 # enough precision for binary128
 getcontext().prec = 20000
 
@@ -62,70 +63,47 @@ def rational_to_binary(x: Rational, precision: int) -> str:
     e = ('-' if e < 0 else '+') + bin(abs(e))[2:]
     
     return f'{significand[:2]}.{significand[2:]}p{e}'
-    
-def binary(name: str, bits: int, precision: int, emin: int, emax: int):
-    """
-    bits      total storage bits (16, 32, 64, 128, ...)
-    precision significand bits including the hidden bit
-    emin      minimum normal exponent
-    emax      maximum normal exponent
-    """
-
-    two = Decimal(2)
-
-    epsilon = two ** (-(precision - 1))
-    normal_min = two ** emin
-    subnormal_min = two ** (emin - (precision - 1))
-    normal_max = (two - epsilon) * (two ** emax)
-    subnormal_max = (Decimal(1) - epsilon) * normal_min
-    
-    epsilon = rational_to_binary(Fraction(epsilon), precision)
-    normal_min = rational_to_binary(Fraction(normal_min), precision)
-    subnormal_min = rational_to_binary(Fraction(subnormal_min), precision)
-    normal_max = rational_to_binary(Fraction(normal_max), precision)
-    subnormal_max = rational_to_binary(Fraction(subnormal_max), precision)
-    
+''' 
+for name, radix, prec, emin, emax in [
+        # IEEE 754 basic formats only. no interchange formats.
+        #('f16', 2, 11, -14, 15),
+        ('f32', 2, 24, -126, 127),
+        ('f64', 2, 53, -1022, 1023),
+        ('f128', 2, 113, -16382, 16383),
+        #('f256', 2, 237, -262142, 262143),
+        #('d32', 10, 7, -95, 96),
+        ('d64', 10, 16, -383, 384),
+        ('d128', 10, 34, -6143, 6144)]:
     print(f'\n{name}:')
-    print(f'  epsilon: {epsilon} # 2 ^ -{precision - 1}')
-    print( '  min:')
-    print(f'    normal: {normal_min} # 2 ^ {emin}')
-    print(f'    subnormal: {subnormal_min} # 2 ^ {emin - (precision - 1)}')
-    print( '  max:')
-    print(f'    normal: {normal_max} # (2 − 2 ^ -{precision - 1}) × 2 ^ {emax}')
-    print(f'    subnormal: {subnormal_max} # (1 − 2 ^ -{precision - 1}) × 2 ^ {emin}')
-
-def decimal(name: str, digits: int, emin: int, emax: int):
-    """
-    digits  significant decimal digits
-    emin    minimum normal exponent
-    emax    maximum normal exponent
-    """
-
-    ten = Decimal(10)
-
-    epsilon = Decimal(5) * (ten ** (-digits))
-    normal_min = ten ** emin
-    subnormal_min = ten ** (emin - (digits - 1))
-    normal_max = (ten - ten ** (1 - digits)) * (ten ** emax)
-    subnormal_max = (Decimal(1) - ten ** (1 - digits)) * normal_min
-
-    print(f"{name}:")
-    print(f"  epsilon: '{epsilon:.{digits - 1}e}' # 5 × 10 ^ -{digits}")
-    print( "  min:")
-    print(f"    normal: '{normal_min:.{digits - 1}e}' # 10 ^ {emin}")
-    print(f"    subnormal: '{subnormal_min:.{digits - 1}e}' # 10 ^ {emin - (digits - 1)}")
-    print( "  max:")
-    print(f"    normal: '{normal_max:.{digits - 1}e}' # (10 − 10 ^ -{digits - 1}) × 10 ^ {emax}")
-    print(f"    subnormal: '{subnormal_max:.{digits - 1}e}' # (1 − 10 ^ -{digits - 1}) × 10 ^ {emin}")
-
-# these values are IEEE 754 spec. i also verified them with my daatypes project
-
-binary('f16', 16, 11, -14, 15)
-binary('f32', 32, 24, -126, 127)
-binary('f64', 64, 53, -1022, 1023)
-binary('f128', 128, 113, -16382, 16383)
-binary('f256', 256, 237, -262142, 262143)
-
-decimal('d32', 7, -95, 96)
-decimal('d64', 16, -383, 384)
-decimal('d128', 34, -6143, 6144)
+    print('  pos:')
+    print('    zero:')
+    print('    inf:')
+    print('    qnan:')
+    print('    snan:')
+    print('  neg:')
+    print('    zero:')
+    print('    inf:')
+    print('    qnan:')
+    print('    snan:')
+    print('  epsilon:')
+    print('    significand:', 1)
+    print('    radix:', radix)
+    print('    exponent:', 1 - prec)
+    print('  min:')
+    print('    normal:')
+    print('      significand:', 1)
+    print('      radix:', radix)
+    print('      exponent:', emin)
+    print('    subnormal:')
+    print('      significand:', 1)
+    print('      radix:', radix)
+    print('      exponent:', emin - prec + 1)
+    print('  max:')
+    print('    normal:')
+    print('      significand:', radix ** prec - 1)
+    print('      radix:', radix)
+    print('      exponent:', emax - prec + 1)
+    print('    subnormal:')
+    print('      significand:', radix ** (prec - 1) - 1)
+    print('      radix:', radix)
+    print('      exponent:', emin - prec + 1)

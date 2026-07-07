@@ -157,13 +157,13 @@ for constant_name, constant in constants.items():
 
         # nearest
         nearest: str = rational_to_bin(constant_fraction, precision)
-        print(f'    nearest: "{nearest}"')
+        print(f'    - "{nearest}"')
 
         # residual
         nearest: Rational = bin_to_rational(nearest)
         residual: Rational = constant_fraction - nearest
         residual: str = rational_to_bin(residual, precision)
-        print(f'    residual: "{residual}"')
+        print(f'    - "{residual}"')
 
     for format_name, precision in decimal_formats.items():
         print(f'  {format_name}:')
@@ -171,10 +171,10 @@ for constant_name, constant in constants.items():
 
         # nearest
         nearest = f'{constant_decimal * 1:e}'
-        print(f'    nearest: "{nearest}"')
+        print(f'    - "{nearest}"')
 
         # residual
         nearest: Decimal = Decimal(nearest) 
         residual: Rational = constant_decimal - nearest
         residual: str = f'{Decimal(residual) * 1:e}'
-        print(f'    residual: "{residual}"')
+        print(f'    - "{residual}"')

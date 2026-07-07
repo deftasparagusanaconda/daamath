@@ -1,8 +1,157 @@
-f16 = {'epsilon': '+1.0000000000p-1010', 'min': {'normal': '+1.0000000000p-1110', 'subnormal': '+1.0000000000p-11000'}, 'max': {'normal': '+1.1111111111p+1111', 'subnormal': '+1.1111111110p-1111'}}
-f32 = {'epsilon': '+1.00000000000000000000000p-10111', 'min': {'normal': '+1.00000000000000000000000p-1111110', 'subnormal': '+1.00000000000000000000000p-10010101'}, 'max': {'normal': '+1.11111111111111111111111p+1111111', 'subnormal': '+1.11111111111111111111110p-1111111'}}
-f64 = {'epsilon': '+1.0000000000000000000000000000000000000000000000000000p-110100', 'min': {'normal': '+1.0000000000000000000000000000000000000000000000000000p-1111111110', 'subnormal': '+1.0000000000000000000000000000000000000000000000000000p-10000110010'}, 'max': {'normal': '+1.1111111111111111111111111111111111111111111111111111p+1111111111', 'subnormal': '+1.1111111111111111111111111111111111111111111111111110p-1111111111'}}
-f128 = {'epsilon': '+1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-1110000', 'min': {'normal': '+1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-11111111111110', 'subnormal': '+1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-100000001101110'}, 'max': {'normal': '+1.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111p+11111111111111', 'subnormal': '+1.1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110p-11111111111111'}}
-f256 = {'epsilon': '+1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-11101100', 'min': {'normal': '+1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-111111111111111110', 'subnormal': '+1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000p-1000000000011101010'}, 'max': {'normal': '+1.11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111p+111111111111111111', 'subnormal': '+1.11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110p-111111111111111111'}}
-d32 = {'epsilon': '5.000000e-7', 'min': {'normal': '1.000000e-95', 'subnormal': '1.000000e-101'}, 'max': {'normal': '9.999999e+96', 'subnormal': '9.999990e-96'}}
-d64 = {'epsilon': '5.000000000000000e-16', 'min': {'normal': '1.000000000000000e-383', 'subnormal': '1.000000000000000e-398'}, 'max': {'normal': '9.999999999999999e+384', 'subnormal': '9.999999999999990e-384'}}
-d128 = {'epsilon': '5.000000000000000000000000000000000e-34', 'min': {'normal': '1.000000000000000000000000000000000e-6143', 'subnormal': '1.000000000000000000000000000000000e-6176'}, 'max': {'normal': '9.999999999999999999999999999999999e+6144', 'subnormal': '9.999999999999999999999999999999990e-6144'}}
+from types import SimpleNamespace as _SimpleNamespace
+
+f32 = _SimpleNamespace(
+  epsilon = _SimpleNamespace(
+    significand = 1,
+    radix = 2,
+    exponent = -23,
+  ),
+  min = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -126,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -149,
+    ),
+  ),
+  max = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 16777215,
+      radix = 2,
+      exponent = 104,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 8388607,
+      radix = 2,
+      exponent = -149,
+    ),
+  ),
+)
+f64 = _SimpleNamespace(
+  epsilon = _SimpleNamespace(
+    significand = 1,
+    radix = 2,
+    exponent = -52,
+  ),
+  min = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -1022,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -1074,
+    ),
+  ),
+  max = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 9007199254740991,
+      radix = 2,
+      exponent = 971,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 4503599627370495,
+      radix = 2,
+      exponent = -1074,
+    ),
+  ),
+)
+f128 = _SimpleNamespace(
+  epsilon = _SimpleNamespace(
+    significand = 1,
+    radix = 2,
+    exponent = -112,
+  ),
+  min = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -16382,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 1,
+      radix = 2,
+      exponent = -16494,
+    ),
+  ),
+  max = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 10384593717069655257060992658440191,
+      radix = 2,
+      exponent = 16271,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 5192296858534827628530496329220095,
+      radix = 2,
+      exponent = -16494,
+    ),
+  ),
+)
+d64 = _SimpleNamespace(
+  epsilon = _SimpleNamespace(
+    significand = 1,
+    radix = 10,
+    exponent = -15,
+  ),
+  min = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 1,
+      radix = 10,
+      exponent = -383,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 1,
+      radix = 10,
+      exponent = -398,
+    ),
+  ),
+  max = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 9999999999999999,
+      radix = 10,
+      exponent = 369,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 999999999999999,
+      radix = 10,
+      exponent = -398,
+    ),
+  ),
+)
+d128 = _SimpleNamespace(
+  epsilon = _SimpleNamespace(
+    significand = 1,
+    radix = 10,
+    exponent = -33,
+  ),
+  min = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 1,
+      radix = 10,
+      exponent = -6143,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 1,
+      radix = 10,
+      exponent = -6176,
+    ),
+  ),
+  max = _SimpleNamespace(
+    normal = _SimpleNamespace(
+      significand = 9999999999999999999999999999999999,
+      radix = 10,
+      exponent = 6111,
+    ),
+    subnormal = _SimpleNamespace(
+      significand = 999999999999999999999999999999999,
+      radix = 10,
+      exponent = -6176,
+    ),
+  ),
+)
