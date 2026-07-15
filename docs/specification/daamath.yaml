@@ -2,9 +2,9 @@ dm:
   functions:
     yourfunctionhere: Callable[[...], Any]
   constants:
-    yourconstantname:
-      exact: yourexactconstanthere
-      approximations:
+    yourconstantname: yourconstanthere
+    approximations:
+      yourapproximationname:
         f32:
           nearest:
             significand: int
@@ -46,50 +46,17 @@ dm:
     yoursetname:
       indicator: Callable[[T], bool] # "does x belong in this set?"
       cardinality: Cardinal # size/count of the set
-      well_orderings: # assuming axiom of choice. daamath is ZFC.
-        yourwellorderingname:
+      wellorders: # assuming axiom of choice. daamath is ZFC.
+        yourwellordername:
           # none of these are required. they are all optional
           relation: Callable[[T, T], bool] # the well-order as a binary relation
           ordinality: Ordinal # the order type of the set
           ordinal_of: Callable[[T], Ordinal] # the ordinal bijecting to an element
           element_at: Callable[[Ordinal], T] # the element bijecting to an ordinal
           covers: Callable[[T, T], bool] # is "a covers b" true?
-          minimal: T # the minimal element of the well-order
-          maximal: T # the maximal element of the well-order
+          least: T # the minimal element of the well-order
+          greatest: T # the maximal element of the well-order
           successor: Callable[[T], T] # return the covering element
           predecessor: Callable[[T], T] # return the element it covers
 
-# also expose all functions on the top level
 
-  # context:
-  #   functions:
-  #     _some function_:
-  #       definition: 
-  #         _some datatype_: function pointer
-  #         …: …
-  #       inputs:
-  #         _some input_:
-  #           domain: domain indication function pointer
-  #           check_domain: boolean YES/NO value
-  #           OutOfDomainError_policy: value from ErrorPolicy enum
-  #         …: …
-  #       output:
-  #         domain: domain indicator function pointer
-  #         check_domain: boolean YES/NO value
-  #         OutOfDomainError_policy: value from ErrorPolicy enum
-  #     …: …
-  #   domains:
-  #     _some domain_:
-  #       assumed_ordering: ordering less-than-or-equal-to indicator function pointer
-  #       decomposers:
-  #         _some decomposer_: function
-  #         …: …
-  #   datatypes:
-  #     _some datatype_:
-  #       assumed_domain: domain indicator function pointer
-  #       assumed_order: ordering less-than-or-equal-to indicator function pointer
-  #       sentinel_value: a value from the corresponding datatype
-  #       FidelityError_policy: value from ErrorPolicy enum
-  #       sentinel_value_policy: value from SentinelPolicy enum
-  #       rounding: function pointer
-  #     …: …

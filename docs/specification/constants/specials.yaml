@@ -1,0 +1,3 @@
+# yaml is smart enough to have a boolean datatype
+'true': true
+'false': false

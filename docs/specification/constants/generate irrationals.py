@@ -91,24 +91,24 @@ def bin_to_rational(string: str) -> Rational:
     
 # https://mpmath.org/doc/current/functions/constants.html
 mpmath.mp.dps = 300
-# NOTE: "why do we need 300, your grace?"
-# ...
-# "this is madness!"
+# NOTE: "why do we need 300? this is madness!"
 # madness? THIS    IS    SPARTAAAA!!!
 # yes we genuinely need 300 because, assuming our constants have an exponent close to 0, f256 has 237 binary precision, which is roughly 237 * log10(2) ≈ 71.34 decimal digits. we will also want to store the residual. that means we need 71.34*2=142 or so. and remember that this is assuming our constants are close to 0 exponent. so yes, 300 is needed.
 
-def metallic(n):
-    'metallic means'
-    return (n + mpmath.sqrt(n * n + 4)) / 2
+def metallic(n, plus_else_minus_root: bool):
+    return (n + mpmath.sqrt(n * n + 4)) / 2 if plus_else_minus_root else (n - mpmath.sqrt(n * n + 4)) / 2 
 
 def liouville_10(n):
     factorials = {math.factorial(i) for i in range(n)}
     return '0.' + ''.join(str(int(i in factorials)) for i in range(1, math.factorial(n - 1) + 1))
 
-constants: dict[str, str | Any] = dict(
-        metallic_1 = metallic(1), # golden ratio
-        metallic_2 = metallic(2), # silver ratio
-        metallic_3 = metallic(3), # bronze ratio
+constants: dict[str, str | Any] = dict(sorted(dict(
+        metallic_1_plus_root = metallic(1, True), # golden ratio
+        metallic_2_plus_root = metallic(2, True), # silver ratio
+        metallic_3_plus_root = metallic(3, True), # bronze ratio
+        metallic_1_minus_root = metallic(1, False), 
+        metallic_2_minus_root = metallic(2, False), 
+        metallic_3_minus_root = metallic(3, False), 
         zeta_3 = mpmath.zeta(3), # apery's constant
         zeta_5 = mpmath.zeta(5),
         champernowne_10 = ''.join(str(i) for i in range(1, 200)),
@@ -134,7 +134,8 @@ constants: dict[str, str | Any] = dict(
         degree     = mpmath.pi * 2 / 360,
         gradian    = mpmath.pi * 2 / 400,
         minute     = mpmath.pi * 2 / 21600,
-        second     = mpmath.pi * 2 / 129600)
+        second     = mpmath.pi * 2 / 129600,
+    ).items()))
 
 constants: dict[str, str] = {k: str(v) for k, v in constants.items()}
 

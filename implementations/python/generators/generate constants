@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo cd to generators/constants
+cd constants/
+
+echo generating constants/__init__.py
+python 'generate __init__.py'
+
+echo generating constants/float.py
+python 'generate float.py'
+
+echo cd back to ../
+cd ../

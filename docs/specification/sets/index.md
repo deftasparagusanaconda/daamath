@@ -1,4 +1,4 @@
-# domains
+# domain
 
 arguably one of the most important concepts in daamath. a domain is a set of things. in daamath, a domain is more important than its datatype. the subsetness of domains is captured correctly in daamath, unlike in computers where, for example, an `uint` (supposed to represent natural numbers) is not an `int` (supposed to represent integers). daamath separates a datatype from its implied domain by allowing you to specify the implied domain for many functions in the context object
 

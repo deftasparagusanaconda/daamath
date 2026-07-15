@@ -91,4 +91,4 @@ for path in (SPECIFICATION / "unicode").iterdir():
 
 # create src/unicode/__init__.py
 
-(SRC_UNICODE / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in SRC_UNICODE.iterdir()))
+(SRC_UNICODE / '__init__.py').write_text('from . import *\n\n' + '\n'.join(f'from .{path.stem} import *' for path in SRC_UNICODE.iterdir()))

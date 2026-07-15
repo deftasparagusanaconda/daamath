@@ -16,22 +16,29 @@ nav = [
     {"functions" = [
       "specification/functions/index.md",
       {"hyperoperations" = "specification/functions/hyperoperations.md"},
-      {"trigonometry"    = "specification/functions/trigonometry.md"},
+      {"trigonometric"    = "specification/functions/trigonometric.md"},
       {"boolean"         = "specification/functions/boolean.md"},
       {"relations"       = "specification/functions/relations.md"},
       {"quantization"    = "specification/functions/quantization.md"},
       {"variadic"        = "specification/functions/variadic.md"},
       {"miscellaneous"   = "specification/functions/miscellaneous.md"},
     ]},
-    {"constants"  = "specification/constants.md"},
-    {"unicode"    = "specification/unicode.md"},
-    {"indicators" = "specification/indicators.md"},
-    {"datatypes"  = "specification/datatypes.md"},
-    {"context"    = "specification/context.md"},
-    {"namespace"  = "specification/namespace.md"},
-    {"errors"     = "specification/errors.md"},
-    {"enums"      = "specification/enums.md"},
-    {"flags"      = "specification/flags.md"},
+    {"constants" = [
+      "specification/constants/index.md"
+	]},
+    {"unicode" = [
+      "specification/unicode/index.md"
+	]},
+    {"sets" = [
+      "specification/sets/index.md"
+	]},
+	
+	#{"datatypes"  = "specification/datatypes.md"},
+	#{"context"    = "specification/context.md"},
+	#{"namespace"  = "specification/namespace.md"},
+	#{"errors"     = "specification/errors.md"},
+	#{"enums"      = "specification/enums.md"},
+	#{"flags"      = "specification/flags.md"},
   ]},
   {"implementations" = [
     "implementations/index.md",

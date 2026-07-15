@@ -26,7 +26,7 @@ for path in SPECIFICATION.iterdir():
         continue
 
     target = (CONSTANTS / (path.stem + '.py'))
-    print(f'now generating {target}')
+    print(f'generating {target}')
     target.write_text('from types import SimpleNamespace as _SimpleNamespace\n\n' + yaml_dict_to_file(yaml.safe_load(path.read_text())))
 
 (CONSTANTS / '__init__.py').write_text('\n'.join(f'from .{path.stem} import *' for path in SPECIFICATION.iterdir() if path.suffix == '.yaml'))

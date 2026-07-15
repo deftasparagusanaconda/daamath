@@ -1,0 +1,103 @@
+# finite sets like 𝔹 can explicitly write out their elements (without an order)
+
+sets:
+  nothing:
+    description: the empty null set of nothing
+    symbol: ∅
+    indicator: λx | ⊥
+    cardinality: 0
+
+  everything:
+    description: the universal set of everything
+    symbol: ξ
+    indicator: λx | ⊤
+    cardinality: (idk)
+
+  boolean: 
+    description: primitives of 2-element boolean algebra
+    symbol: 𝔹
+    indicator: λx | x == ⊥ ∨ x == ⊤
+    cardinality: 2
+    elements:
+      ⊥
+      ⊤
+    wellorders:
+      false_true:
+        example:
+          - ⊥
+          - ⊤
+        ordinality: 2
+        element_at: λx | bool(x)
+        ordinal_of: λx | int(x)
+      true_false:
+        example:
+          - ⊤
+          - ⊥
+        ordinality: 2
+        element_at: λx | ¬bool(x)
+        ordinal_of: λx | int(¬x)
+
+  naturals:
+    description: natural numbers starting from zero
+    symbol: ℕ
+    indicator: λx | x ∈ ℤ ∧ x ≥ 0
+    cardinality: ℵ₀
+    wellorders: 
+      natural: 
+        description: increasing magnitude
+        relation: λ(a,b) | a ≤ b
+        ordinality: ω
+        ordinal_of: λx | x
+        element_at: λx | x
+        covers: λ(a,b) | a + 1 == b
+        least: 0
+        greatest:
+        successor: λx | x + 1
+        predecessor: λx | x − 1
+
+  integers:
+    description: a grothendieck-pairwise-construction-style pair of natural numbers, quotiented over the equivalence relation a + b = c + d
+    symbol: ℤ
+    indicator: λx | x ∈ ℚ ∧ 1 ∣ x
+    cardinality: ℵ₀
+    wellorders:
+      magnitudinal_positive_first:
+        description: increasing magnitude, with +1 after 0
+        example:
+          - 0 
+          - +1
+          - -1
+          - +2
+          - -2
+          - …
+        ordinality: ω
+        element_at: λx | {x == 0 | 0, 2 ∣ x | − ⌊(x + 1) / 2⌋, 2 ∤ x | ⌊(x + 1) / 2⌋}
+        ordinal_of: λx | {x == 0 | 0, x < 0 | −2 * x, x > 0 | 2 * x − 1}
+  
+  rationals:
+    description: a grothendieck-pairwise-construction-style pair of integers, quotiented over the equivalence relation a × b = c × d
+    symbol: ℚ
+
+  reals:
+    description: a dense totally-ordered set
+    symbol: ℝ
+
+  complexes:
+    description: a normed division vector algebra made from cayley-dickson construction of a pair of reals
+    symbol: ℂ
+
+  quaternions:
+    description: a normed division vector algebra made from cayley-dickson construction of a pair of complexes
+    symbol: ℍ # "Hamilton"
+
+  octonions:
+    description: a normed division vector algebra made from cayley-dickson construction of a pair of quaternions
+    symbol: 𝕆
+
+  # datatypes
+  # float:
+  #   description: IEEE 754 binary/decimal float
+
+  
+  #   symbol: 
+  #

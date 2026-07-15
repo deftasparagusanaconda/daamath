@@ -1,0 +1,40 @@
+# this file is also ai-generated. i am not familiar with russian yet
+
+# canonical = common english transliteration (ascii, practical)
+# ISO 9 scientific transliteration given in comments (precise, one-symbol-per-letter, reversible)
+# 33 letters, single flat alphabetic sequence (no CV-pair or initial/medial/final structure)
+
+cyrillic:
+  a: а
+  b: б
+  v: в
+  g: г
+  d: д
+  ye: е # iotated/palatalising e; ISO9: e
+  yo: ё # ISO9: ë
+  zh: ж # ISO9: ž
+  z: з
+  i: и
+  y: й # ISO9: j
+  k: к
+  l: л
+  m: м
+  n: н
+  o: о
+  p: п
+  r: р
+  s: с
+  t: т
+  u: у
+  f: ф
+  kh: х # ISO9: h
+  ts: ц # ISO9: c
+  ch: ч # ISO9: č
+  sh: ш # ISO9: š
+  shch: щ # ISO9: ŝ
+  tvyordy: ъ # hard sign, no sound of own — signals preceding consonant stays unpalatalised
+  yery: ы # traditional letter name; ISO9: y
+  myagkiy: ь # soft sign, no sound of own — signals preceding consonant palatalised
+  e: э # hard e, no iotation (unlike ye); ISO9: è
+  yu: ю # ISO9: û
+  ya: я # ISO9: â

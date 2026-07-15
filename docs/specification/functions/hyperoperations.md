@@ -20,12 +20,12 @@ the hyperoperation tower starts from the successor function:
 
 for each binary operation ⊙ involved in a ⊙ b = c, we have three possible functions: solve for c, solve for b, solve for a
 
-| n | a | c | b |
-| - | - | - | - |
-| 1 | [sub](#sub)(c, b) | [add](#add)(a, b) | [bus](#bus)(c, a) |
-| 2 | [div](#div)(c, b) | [mul](#mul)(a, b) | [vid](#vid)(c, a) |
-| 3 | [log](#log)(c, b) | [pow](#pow)(a, b) | [root](#root)(c, a) |
-| 4 | slog(c, b) | spow(a, b) | sroot(c, a) |
+| n | c | b | a |
+| - | -:| -:| -:|
+| 1 |  [add](#add)(a, b) |   [bus](#bus)(c, a) |  [sub](#sub)(c, b) |
+| 2 |  [mul](#mul)(a, b) |   [vid](#vid)(c, a) |  [div](#div)(c, b) |
+| 3 |  [pow](#pow)(a, b) |  [root](#root)(c, a) |  [log](#log)(c, b) |
+| 4 | spow(a, b) | sroot(c, a) | slog(c, b) |
 | … | … | … | … |
 
 <!--
