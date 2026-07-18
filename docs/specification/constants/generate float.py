@@ -1,4 +1,4 @@
-from daatypes import Float
+#from daatypes import Float
 import sys
 
 sys.set_int_max_str_digits(10000)
@@ -20,14 +20,15 @@ for format_name, radix, prec, emin, emax in [
     print(f'  emax:', emax)
     
     for constant_name, constant in {
-        'epsilon': Float(1, radix, 1 - prec),
-        'normal_min': Float(1, radix, emin), 
-        'normal_max': Float(radix ** prec - 1, radix, emax - prec + 1), 
-        'subnormal_min': Float(1, radix, emin - prec + 1), 
-        'subnormal_max': Float(radix ** (prec - 1) - 1, radix, emin - prec + 1), 
+        'epsilon': (1, radix, 1 - prec),
+        'normal_min': (1, radix, emin), 
+        'normal_max': (radix ** prec - 1, radix, emax - prec + 1), 
+        'subnormal_min': (1, radix, emin - prec + 1), 
+        'subnormal_max': (radix ** (prec - 1) - 1, radix, emin - prec + 1), 
     }.items():
+        significand, radix, exponent = constant
         print(f'  {constant_name}:')
-        print(f'    significand: {constant.significand}')
-        print(f'    radix: {constant.radix}')
-        print(f'    exponent: {constant.exponent}')
+        print(f'    significand: {significand}')
+        print(f'    radix: {radix}')
+        print(f'    exponent: {exponent}')
     

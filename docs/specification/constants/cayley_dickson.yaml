@@ -1,0 +1,23 @@
+# cayley_dickson:
+#   - name: real
+#     symbol: ℝ
+#     bases: [one]
+#
+#   - name: complex
+#     symbol: ℂ
+#     bases: [one, i]
+#
+#   - name: quaternion
+#     symbol: ℍ # named after Sir William Rowan *Hamilton*
+#     bases: [one, i, j, k]
+#
+#   - name: octonion
+#     symbol: 𝕆
+#     bases: [e0, e1, e2, e3, e4, e5, e6, e7]
+
+cayley_dickson:
+  - [one]
+  - [one, i]
+  - [one, i, j, k]
+  - [one, e1, e2, e3, e4, e5, e6, e7]
+

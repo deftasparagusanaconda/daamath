@@ -1,4 +1,9 @@
 f32:
+  nan: .nan
+  pos_inf: .inf
+  neg_inf: -.inf
+  pos_zero: +0.0
+  neg_zero: -0.0
   radix: 2
   precision: 24
   emin: -126
@@ -20,6 +25,11 @@ f32:
     exponent: -149
 
 f64:
+  nan: .nan
+  pos_inf: .inf
+  neg_inf: -.inf
+  pos_zero: +0.0
+  neg_zero: -0.0
   radix: 2
   precision: 53
   emin: -1022
@@ -41,6 +51,11 @@ f64:
     exponent: -1074
 
 f128:
+  nan: .nan
+  pos_inf: .inf
+  neg_inf: -.inf
+  pos_zero: +0.0
+  neg_zero: -0.0
   radix: 2
   precision: 113
   emin: -16382
@@ -62,6 +77,11 @@ f128:
     exponent: -16494
 
 d64:
+  nan: .nan
+  pos_inf: .inf
+  neg_inf: -.inf
+  pos_zero: +0.0
+  neg_zero: -0.0
   radix: 10
   precision: 16
   emin: -383
@@ -83,6 +103,11 @@ d64:
     exponent: -398
 
 d128:
+  nan: .nan
+  pos_inf: .inf
+  neg_inf: -.inf
+  pos_zero: +0.0
+  neg_zero: -0.0
   radix: 10
   precision: 34
   emin: -6143

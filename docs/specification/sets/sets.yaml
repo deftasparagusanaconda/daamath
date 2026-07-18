@@ -19,20 +19,20 @@ sets:
     indicator: λx | x == ⊥ ∨ x == ⊤
     cardinality: 2
     elements:
-      ⊥
-      ⊤
+      'false': false
+      'true': true
     wellorders:
       false_true:
         example:
-          - ⊥
-          - ⊤
+          - false
+          - true
         ordinality: 2
         element_at: λx | bool(x)
         ordinal_of: λx | int(x)
       true_false:
         example:
-          - ⊤
-          - ⊥
+          - true
+          - false
         ordinality: 2
         element_at: λx | ¬bool(x)
         ordinal_of: λx | int(¬x)
@@ -56,7 +56,7 @@ sets:
         predecessor: λx | x − 1
 
   integers:
-    description: a grothendieck-pairwise-construction-style pair of natural numbers, quotiented over the equivalence relation a + b = c + d
+    description: equivalence classes of a + b = c + d where a, b, c, d ∈ ℕ
     symbol: ℤ
     indicator: λx | x ∈ ℚ ∧ 1 ∣ x
     cardinality: ℵ₀
@@ -75,7 +75,7 @@ sets:
         ordinal_of: λx | {x == 0 | 0, x < 0 | −2 * x, x > 0 | 2 * x − 1}
   
   rationals:
-    description: a grothendieck-pairwise-construction-style pair of integers, quotiented over the equivalence relation a × b = c × d
+    description: equivalence classes of a × b = c × d where a, b, c, d ∈ ℤ
     symbol: ℚ
 
   reals:
