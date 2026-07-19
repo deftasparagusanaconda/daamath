@@ -4,6 +4,10 @@ import builtins
 from typing import Any, Callable
 import math
 
+def identity(fish: Any ) -> Any:
+    'return the input as-is'
+    return fish
+
 def digitize(number: Integral, radices: Iterable[Integral]) -> Iterable[Integral]:
     for radix in radices:
         number, residue = divmod(number, radix)

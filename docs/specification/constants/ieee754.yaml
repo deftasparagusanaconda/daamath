@@ -1,6 +1,6 @@
-f32:
+binary32:
   nan: .nan
-  pos_inf: .inf
+  pos_inf: +.inf
   neg_inf: -.inf
   pos_zero: +0.0
   neg_zero: -0.0
@@ -10,23 +10,28 @@ f32:
   emax: 127
   epsilon:
     significand: 1
+    radix: 2
     exponent: -23
   normal_min:
     significand: 1
+    radix: 2
     exponent: -126
   normal_max:
     significand: 16777215
+    radix: 2
     exponent: 104
   subnormal_min:
     significand: 1
+    radix: 2
     exponent: -149
   subnormal_max:
     significand: 8388607
+    radix: 2
     exponent: -149
 
-f64:
+binary64:
   nan: .nan
-  pos_inf: .inf
+  pos_inf: +.inf
   neg_inf: -.inf
   pos_zero: +0.0
   neg_zero: -0.0
@@ -36,23 +41,28 @@ f64:
   emax: 1023
   epsilon:
     significand: 1
+    radix: 2
     exponent: -52
   normal_min:
     significand: 1
+    radix: 2
     exponent: -1022
   normal_max:
     significand: 9007199254740991
+    radix: 2
     exponent: 971
   subnormal_min:
     significand: 1
+    radix: 2
     exponent: -1074
   subnormal_max:
     significand: 4503599627370495
+    radix: 2
     exponent: -1074
 
-f128:
+binary128:
   nan: .nan
-  pos_inf: .inf
+  pos_inf: +.inf
   neg_inf: -.inf
   pos_zero: +0.0
   neg_zero: -0.0
@@ -62,23 +72,28 @@ f128:
   emax: 16383
   epsilon:
     significand: 1
+    radix: 2
     exponent: -112
   normal_min:
     significand: 1
+    radix: 2
     exponent: -16382
   normal_max:
     significand: 10384593717069655257060992658440191
+    radix: 2
     exponent: 16271
   subnormal_min:
     significand: 1
+    radix: 2
     exponent: -16494
   subnormal_max:
     significand: 5192296858534827628530496329220095
+    radix: 2
     exponent: -16494
 
-d64:
+decimal64:
   nan: .nan
-  pos_inf: .inf
+  pos_inf: +.inf
   neg_inf: -.inf
   pos_zero: +0.0
   neg_zero: -0.0
@@ -88,23 +103,28 @@ d64:
   emax: 384
   epsilon:
     significand: 1
+    radix: 10
     exponent: -15
   normal_min:
     significand: 1
+    radix: 10
     exponent: -383
   normal_max:
     significand: 9999999999999999
+    radix: 10
     exponent: 369
   subnormal_min:
     significand: 1
+    radix: 10
     exponent: -398
   subnormal_max:
     significand: 999999999999999
+    radix: 10
     exponent: -398
 
-d128:
+decimal128:
   nan: .nan
-  pos_inf: .inf
+  pos_inf: +.inf
   neg_inf: -.inf
   pos_zero: +0.0
   neg_zero: -0.0
@@ -114,16 +134,21 @@ d128:
   emax: 6144
   epsilon:
     significand: 1
+    radix: 10
     exponent: -33
   normal_min:
     significand: 1
+    radix: 10
     exponent: -6143
   normal_max:
     significand: 9999999999999999999999999999999999
+    radix: 10
     exponent: 6111
   subnormal_min:
     significand: 1
+    radix: 10
     exponent: -6176
   subnormal_max:
     significand: 999999999999999999999999999999999
+    radix: 10
     exponent: -6176

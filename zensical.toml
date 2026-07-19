@@ -24,7 +24,12 @@ nav = [
       {"miscellaneous"   = "specification/functions/miscellaneous.md"},
     ]},
     {"constants" = [
-      "specification/constants/index.md"
+      "specification/constants/index.md",
+	  {"ieee754"           = "specification/constants/ieee754.md"},
+	  {"irrationals"     = "specification/constants/irrationals.md"},
+	  {"angles"          = "specification/constants/angles.md"},
+	  {"boolean"         = "specification/constants/boolean.md"},
+	  {"cayley_dickson"  = "specification/constants/cayley_dickson.md"},
 	]},
     {"unicode" = [
       "specification/unicode/index.md"
