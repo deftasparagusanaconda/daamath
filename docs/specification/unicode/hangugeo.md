@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 한국어
+<!-- # 한국어 -->
 
 ```yaml
 # this file is ai-generated okay?

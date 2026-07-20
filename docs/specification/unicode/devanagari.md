@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# देवनागरी
+<!-- # देवनागरी -->
 
 ```yaml
 # this file is also ai-generated
@@ -25,41 +25,16 @@ svar: # vowels in their independent form
   o: ओ
   au: औ
 
-vyanjan: # constants
-  k: क
-  kh: ख
-  g: ग
-  gh: घ
-  NN: ङ # IAST: ṅa
-  ch: च # IAST: ca
-  Ch: छ # IAST: cha
-  j: ज
-  jh: झ
-  JN: ञ # IAST: ña
-  T: ट # IAST: ṭa
-  Th: ठ # IAST: ṭha
-  D: ड # IAST: ḍa
-  Dh: ढ # IAST: ḍha
-  N: ण # IAST: ṇa
-  t: त
-  th: थ
-  d: द
-  dh: ध
-  n: न
-  p: प
-  ph: फ
-  b: ब
-  bh: भ
-  m: म
-  y: य
-  r: र
-  l: ल
-  v: व
-  sh: श # IAST: śa
-  Sh: ष # IAST: ṣa
-  s: स
-  h: ह
-  L: ळ # IAST: ḷa
+vyanjan: 
+  {k: क, kh: ख, g: ग, gh: घ, NN: ङ,
+  ch: च, Ch: छ, j: ज, jh: झ, JN: ञ,
+   T: ट, Th: ठ, D: ड, Dh: ढ,  N: ण,
+   t: त, th: थ, d: द, dh: ध,  n: न,
+   p: प, ph: फ, b: ब, bh: भ,  m: म,
+   y: य,  r: र, l: ल,  v: व, sh: श,
+  Sh: ष,  s: स, h: ह,
+   L: ळ,                          }
+
 matra: # dependent vowel signs, attach to consonant to override inherent a
   aa: ा # IAST: ā
   i: ि

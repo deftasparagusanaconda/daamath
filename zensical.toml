@@ -63,7 +63,7 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
-#custom_dir = "docs_overrides"
+custom_dir = "docs_overrides"
 #variant = "classic"
 
 features = [

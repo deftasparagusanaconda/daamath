@@ -3,45 +3,27 @@ hide:
   - toc
 ---
 
-# ▲ ■ ⬟ ⬢ 
+<!-- # ▲ ■ ⬟ ⬢  -->
 
 ```yaml
-circle: 
-  black: ●
-  white: ○
-  heavy: ⭘
-  large:
-    black: ⬤
-    white: ◯
-    heavy: ⭕
+circle:       {black: ● , white: ○ ,
+  heavy: ⭘,
+  large:      {black: ⬤ , white: ◯ ,
+    heavy: ⭕,              }}
 
 ellipse:
-  horizontal:
-    black: ⬬
-    white: ⬭
-  vertical:
-    black: ⬮
-    white: ⬯
+  horizontal: {black: ⬬ , white: ⬭ }
+  vertical:   {black: ⬮ , white: ⬯ }
 
 triangle:
-  black: 
-    west: ◀
-    east: ▶
-    north: ▲
-    south: ▼
-    north_west: ◤
-    north_east: ◥
-    south_west: ◣
-    south_east: ◢
-  white: 
-    west: ◁
-    east: ▷
-    north: △
-    south: ▽
-    north_west: ◸
-    north_east: ◹
-    south_west: ◺
-    south_east: ◿
+  west:       {black: ◀ , white: ◁ }
+  east:       {black: ▶ , white: ▷ }
+  north:      {black: ▲ , white: △ }
+  south:      {black: ▼ , white: ▽ }
+  north_west: {black: ◤ , white: ◸ }
+  north_east: {black: ◥ , white: ◹ }
+  south_west: {black: ◣ , white: ◺ }
+  south_east: {black: ◢ , white: ◿ }
   underbar: 
     north: ⧋
   small:

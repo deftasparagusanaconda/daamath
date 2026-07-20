@@ -1,6 +1,6 @@
 # daamath
 
-a mathematician's spellbook: cross-language math library specification, with implementations across various programming languages
+a mathematician's spellbook: cross-language math library [specification], with [implementations] across various programming languages
 
 # install
 <table>
@@ -115,9 +115,11 @@ dm.PI_F64 - dm.PI_F32
 dm.symbols.lowercase.tau
 # τ
 dm.symbols.infinity + dm.symbols.not.in.right + dm.symbols.latin.doublestruck.uppercase.r
+
 # ∞ ∉ ℝ
 ```
 
+- daa
 <!--# rant
 
 i originally made daamath because when i designed [gapprox], i wanted a math library that was both very functionally complete and had the same behaviour across languages. but i found that programmers made a lot of bad decisions about how to implement mathematics into code. i discovered a lot of maths along the way too. i hope daamath rewires how programmers think of maths, because its not like the real numbers are the only "real" numbers. ugh. or simply going along with IEEE's rounding without even acknowledging it. and they dont even know complex numbers exist. oh my gosh dont you know `log(-1)` exists??? youre just completely ignoring the complex domain. and `0/0` is not an error! your domain simply didnt define it. go look up what wheel algebra is. see the connection? `NaN` is just the IEEE 754 way to represent `⊥`. they just didnt realize it. most of your "errors" can be represented as either a ClosureError (the result wasnt defined in the codomain) or a RepresentationError (you disabled rounding, and the datatype couldnt represent it accurately)
@@ -130,6 +132,5 @@ ok rant done
 [specification]: https://deftasparagusanaconda.github.io/daamath/specification
 [implementations]: https://deftasparagusanaconda.github.io/daamath/implementations
 [gapprox]: https://github.com/deftasparagusanaconda/gapprox
-[install]: https://deftasparagusanaconda.github.io/daamath/install/
 [daa]: https://github.com/deftasparagusanaconda
 

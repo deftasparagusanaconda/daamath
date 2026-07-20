@@ -3,7 +3,9 @@ hide:
   - toc
 ---
 
-# angles
+# angle
+
+daamath stores units of angles respective to radians, because radians are the most natural unit in mathematics
 
 <table>
 	<tr>

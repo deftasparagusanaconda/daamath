@@ -1,42 +1,7 @@
-# finite sets like 𝔹 can explicitly write out their elements (without an order)
+# number
 
-sets:
-  nothing:
-    description: the empty null set of nothing
-    symbol: ∅
-    indicator: λx | ⊥
-    cardinality: 0
-
-  everything:
-    description: the universal set of everything
-    symbol: ξ
-    indicator: λx | ⊤
-    cardinality: (idk)
-
-  boolean: 
-    description: primitives of 2-element boolean algebra
-    symbol: 𝔹
-    indicator: λx | x == ⊥ ∨ x == ⊤
-    cardinality: 2
-    elements:
-      'false': false
-      'true': true
-    wellorders:
-      false_true:
-        example:
-          - false
-          - true
-        ordinality: 2
-        element_at: λx | bool(x)
-        ordinal_of: λx | int(x)
-      true_false:
-        example:
-          - true
-          - false
-        ordinality: 2
-        element_at: λx | ¬bool(x)
-        ordinal_of: λx | int(¬x)
-
+```yaml
+number:
   naturals:
     description: natural numbers starting from zero
     symbol: ℕ
@@ -101,3 +66,4 @@ sets:
   
   #   symbol: 
   #
+```

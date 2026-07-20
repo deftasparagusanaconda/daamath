@@ -4,6 +4,8 @@ daamath maintains a namespace tree of unicode characters — each with has exact
 
 a tree is not the most natural way — parameterized functions are more natural — but using the namespace as the wayfinder is both terser and faster, so daamath does it this way.
 
+various scripts are provided so that we may escape the duopoly of [latina](latina) and [ελληνικά](ellinika) on variable names
+
 # miscellaneous
 
 characters that could not be categorized are listed here:

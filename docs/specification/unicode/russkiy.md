@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# русский
+<!-- # русский -->
 
 ```yaml
 # this file is also ai-generated. i am not familiar with russian yet
