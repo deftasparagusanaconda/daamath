@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# ▲ ■ ⬟ ⬢ 
+
+```yaml
 circle: 
   black: ●
   white: ○
@@ -147,3 +155,4 @@ octagon:
     black: ⯄
   horizontal:
     black: ⯃
+```

@@ -9,54 +9,54 @@ site_author = "deftasparagusanaconda"
 extra_css = ["stylesheets/extra.css"]
 #extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
 
-nav = [
-  {"home" = "index.md"},
-  {"specification" = [
-    "specification/index.md",
-    {"functions" = [
-      "specification/functions/index.md",
-      {"hyperoperations" = "specification/functions/hyperoperations.md"},
-      {"trigonometric"    = "specification/functions/trigonometric.md"},
-      {"boolean"         = "specification/functions/boolean.md"},
-      {"relations"       = "specification/functions/relations.md"},
-      {"quantization"    = "specification/functions/quantization.md"},
-      {"variadic"        = "specification/functions/variadic.md"},
-      {"miscellaneous"   = "specification/functions/miscellaneous.md"},
-    ]},
-    {"constants" = [
-      "specification/constants/index.md",
-	  {"ieee754"           = "specification/constants/ieee754.md"},
-	  {"irrationals"     = "specification/constants/irrationals.md"},
-	  {"angles"          = "specification/constants/angles.md"},
-	  {"boolean"         = "specification/constants/boolean.md"},
-	  {"cayley_dickson"  = "specification/constants/cayley_dickson.md"},
-	]},
-    {"unicode" = [
-      "specification/unicode/index.md"
-	]},
-    {"sets" = [
-      "specification/sets/index.md"
-	]},
-	
-	#{"datatypes"  = "specification/datatypes.md"},
-	#{"context"    = "specification/context.md"},
-	#{"namespace"  = "specification/namespace.md"},
-	#{"errors"     = "specification/errors.md"},
-	#{"enums"      = "specification/enums.md"},
-	#{"flags"      = "specification/flags.md"},
-  ]},
-  {"implementations" = [
-    "implementations/index.md",
-    {"python" = [
-      "implementations/python/index.md",
-      "implementations/python/install.md",
-    ]},
-    {"c" = [
-      "implementations/c/index.md",
-      "implementations/c/install.md",
-    ]},
-  ]},
-]
+# nav = [
+#   {"home" = "index.md"},
+#   {"specification" = [
+#     "specification/index.md",
+#     {"functions" = [
+#       "specification/functions/index.md",
+#       {"hyperoperations" = "specification/functions/hyperoperations.md"},
+#       {"trigonometric"    = "specification/functions/trigonometric.md"},
+#       {"boolean"         = "specification/functions/boolean.md"},
+#       {"relations"       = "specification/functions/relations.md"},
+#       {"quantization"    = "specification/functions/quantization.md"},
+#       {"variadic"        = "specification/functions/variadic.md"},
+#       {"miscellaneous"   = "specification/functions/miscellaneous.md"},
+#     ]},
+#     {"constants" = [
+#       "specification/constants/index.md",
+#       {"approximations"  = "specification/constants/approximations.md"},
+#       {"ieee754"         = "specification/constants/ieee754.md"},
+#       {"angles"          = "specification/constants/angles.md"},
+#       {"boolean"         = "specification/constants/boolean.md"},
+#       {"cayley_dickson"  = "specification/constants/cayley_dickson.md"},
+#     ]},
+#     {"unicode" = [
+#       "specification/unicode/index.md",
+#     ]},
+#     {"sets" = [
+#       "specification/sets/index.md"
+#     ]},
+#
+#     #{"datatypes"  = "specification/datatypes.md"},
+#     #{"context"    = "specification/context.md"},
+#     #{"namespace"  = "specification/namespace.md"},
+#     #{"errors"     = "specification/errors.md"},
+#     #{"enums"      = "specification/enums.md"},
+#     #{"flags"      = "specification/flags.md"},
+#   ]},
+#   {"implementations" = [
+#     "implementations/index.md",
+#     {"python" = [
+#       "implementations/python/index.md",
+#       "implementations/python/install.md",
+#     ]},
+#     {"c" = [
+#       "implementations/c/index.md",
+#       "implementations/c/install.md",
+#     ]},
+#   ]},
+# ]
 
 [project.theme]
 font.text = "Inter"
@@ -71,7 +71,8 @@ features = [
   "navigation.tracking",
   "navigation.top",
   "navigation.tabs",
-  "navigation.path",
+  #"navigation.path",
+  "navigation.expand",
   #"navigation.tabs.sticky",
   #"navigation.prune",
   "navigation.footer",
@@ -134,6 +135,7 @@ search    = {}
 social    = {}
 optimize  = {}
 
+# enabling this completely messes up code blocks. i cant enable this
 #[project.markdown_extensions.pymdownx.snippets]
 
 # why would you enable this?

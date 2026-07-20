@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# русский
+
+```yaml
 # this file is also ai-generated. i am not familiar with russian yet
 
 # canonical = common english transliteration (ascii, practical)
@@ -38,3 +46,4 @@ cyrillic:
   e: э # hard e, no iotation (unlike ye); ISO9: è
   yu: ю # ISO9: û
   ya: я # ISO9: â
+```

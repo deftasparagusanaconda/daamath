@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# ελληνικά
+
+```yaml
 # family, weight, slant, case, position, variant
 
 # i have no experience with the archaic greek letters
@@ -452,3 +460,4 @@ greek:
             rho: 𝟈
             sigma: 𝞻
             phi: 𝟇
+```

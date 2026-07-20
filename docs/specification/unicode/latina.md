@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# latina
+
+```yaml
 # family, weight, slant, case, position
 
 # outlined
@@ -1026,3 +1034,4 @@ latin:
         e: ⅇ
         i: ⅈ
         j: ⅉ
+```

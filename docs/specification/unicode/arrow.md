@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# ↑↑↓↓←→←→
+
+```yaml
 arrow:
   west: ←
   east: →
@@ -153,3 +161,4 @@ arrow:
       west: ⇺
       east: ⇻
       horizontal: ⇼
+```

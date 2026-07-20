@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# देवनागरी
+
+```yaml
 # this file is also ai-generated
 
 # canonical = ITRANS (ascii, capitalisation marks retroflex vs dental — systematic)
@@ -68,3 +76,4 @@ special:
   virama: ् # kills inherent a, gives bare consonant
   anusvara: ं # nasalisation, IAST: ṃ
   visarga: ः # voiceless breath, IAST: ḥ
+```

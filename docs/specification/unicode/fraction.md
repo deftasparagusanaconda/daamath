@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# ½ ¾ ⅚ ⅞ 
+
+```yaml
 fraction:
   zero:
     three: ↉
@@ -25,3 +33,4 @@ fraction:
     eight: ⅝
   seven:
     eight: ⅞
+```

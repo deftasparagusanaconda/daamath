@@ -1,8 +1,0 @@
-#ignore:
-#  - index.md
-
-nav:
-  - home: index.md
-  - install: https://deftasparagusanaconda.github.io/daamath/#install
-  - specification: 'specification/'
-  - implementations: 'implementations/' 

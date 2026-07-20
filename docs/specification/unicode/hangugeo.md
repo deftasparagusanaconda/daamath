@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# 한국어
+
+```yaml
 # this file is ai-generated okay?
 
 # we use revised romanization (RR) for uniformity, mccune-reischauer (MR) given in comments
@@ -65,3 +73,4 @@ jongseong: # batchim. single-jamo forms; pronunciation collapses to 7 sounds
   t: ㅌ # sounds t
   p: ㅍ # sounds p
   h: ㅎ # sounds t, often assimilates/silent
+```

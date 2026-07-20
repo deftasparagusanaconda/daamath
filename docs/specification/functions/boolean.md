@@ -1,8 +1,6 @@
-# logic
+# boolean
 
-we deal with binary truths like: false or true, ✅ or ❌, F or T, 0 or 1, ⊤ or ⊥, OFF or ON, etc. we can create functions on these truth values. 
-
-## introduction
+since boolean algebra has finite elements {false, true}, we can easily enumerate a few functions. 
 
 we can construct all the possible gates in a very neat way: with n inputs, we have 2^n possible permutations. for 2^n permutations, we have 2^2^n gates. 
 
@@ -20,27 +18,27 @@ with n = 1, we have 4 unary gates:
 | F | T | name | 
 | - | - | - |
 | ❌ | ❌ | <del>false</del> |
-| ❌ | ✅ | same as just taking the input as-is (identity function) |
+| ❌ | ✅ | [identity] |
 | ✅ | ❌ | [not](#not) |
 | ✅ | ✅ | <del>true</del> |
 
-with n = 2, we have 16 binary gates:
+with n = 2, we have 16 binary gates (ordered by hamming weight):
 
 | FF | FT | TF | TT | name |
 | - | - | - | - | - |
 | ❌ | ❌ | ❌ | ❌ | <del>false</del> |
 | ❌ | ❌ | ❌ | ✅ | [and](#and) |
-| ❌ | ❌ | ✅ | ❌ | [fst](#fst) |
-| ❌ | ❌ | ✅ | ✅ | (same as just taking second argument) |
-| ❌ | ✅ | ❌ | ❌ | [snd](#snd) |
-| ❌ | ✅ | ❌ | ✅ | (same as just taking first argument) |
+| ❌ | ❌ | ✅ | ❌ | [nimp](#nimp) |
+| ❌ | ❌ | ✅ | ✅ | fst = [identity]\(fst) |
+| ❌ | ✅ | ❌ | ❌ | [ncon](#ncon) |
+| ❌ | ✅ | ❌ | ✅ | snd = [identity]\(snd) |
 | ❌ | ✅ | ✅ | ❌ | [xor](#xor) |
-| ❌ | ✅ | ✅ | ✅ | [or](#or) |
+| ❌ | ✅ | ✅ | ✅ | [or](#or)  |
 | ✅ | ❌ | ❌ | ❌ | [nor](#nor) |
 | ✅ | ❌ | ❌ | ✅ | [xnor](#xnor) |
-| ✅ | ❌ | ✅ | ❌ | same as just taking complement of first argument |
+| ✅ | ❌ | ✅ | ❌ | nsnd = [not](#not)(snd) |
 | ✅ | ❌ | ✅ | ✅ | [con](#con) |
-| ✅ | ✅ | ❌ | ❌ | same as just taking complement of second argument |
+| ✅ | ✅ | ❌ | ❌ | nfst = [not](#not)(fst) |
 | ✅ | ✅ | ❌ | ✅ | [imp](#imp) |
 | ✅ | ✅ | ✅ | ❌ | [nand](#nand) |
 | ✅ | ✅ | ✅ | ✅ | <del>true</del> |
@@ -130,3 +128,5 @@ in fact, these logical gates can be applied to more than just logical values. we
 ## notes
 `nxor` is used instead of `xnor` to preserve consistency.
 
+
+[identity]: /daamath/specification/functions/special/identity

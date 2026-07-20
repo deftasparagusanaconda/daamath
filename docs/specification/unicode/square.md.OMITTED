@@ -1,3 +1,9 @@
+---
+hide:
+  - toc
+---
+
+```yaml
 square:
   hpa: ㍱
   da: ㍲
@@ -106,3 +112,4 @@ square:
   v_over_m: ㏞
   a_over_m: ㏟
   gal: ㏿
+```

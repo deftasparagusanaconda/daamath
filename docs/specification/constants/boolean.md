@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # boolean
 
 | name | desription |

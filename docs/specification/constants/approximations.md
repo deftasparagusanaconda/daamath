@@ -2,7 +2,8 @@
 hide:
   - toc
 ---
-# miscellaneous
+
+# approximations
 
 <table>
 	<tr>
@@ -68,7 +69,7 @@ hide:
 	<tr>
 		<td><code><a href="https://en.wikipedia.org/wiki/Euler%27s_constant">euler_mascheroni</a></code></td>
 		<td></td>
-		<td></td>
+		<td>γ</td>
 		<td><a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a>, <a href="https://en.wikipedia.org/wiki/Lorenzo_Mascheroni">Lorenzo Mascheroni</a></td>
 		<td></td>
 		<td>
@@ -274,3 +275,4 @@ hide:
 		</td>
 	</tr>
 </table>
+

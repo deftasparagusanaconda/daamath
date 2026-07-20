@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# 日本語
+
+```yaml
 # we use kunrei-shiki for uniformity, but the hepburn romanization is given in comments
 
 kana:
@@ -100,3 +108,4 @@ kana:
     wo: ヲ
     n: ン
 
+```

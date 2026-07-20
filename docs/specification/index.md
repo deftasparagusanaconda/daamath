@@ -94,3 +94,4 @@ when writing the specification, .yaml files are very welcome and encouraged
 [constants]: constants.md
 [strings]: strings.md
 [context]: context.md
+[gapprox]: https://github.com/deftasparagusanaconda/gapprox

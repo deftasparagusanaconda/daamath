@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+---
+
+# () {} [] ⌊⌋ ⌈⌉ ⟨⟩ ⦗⦘
+
+```yaml
 bracket:
   round:
     left: (
@@ -202,7 +210,7 @@ bracket:
         left: ❰
         right: ❱
   #quotation_mark_ornament_heavy: "❮❯"
-                                            
+               
   lenticular:
     fullwidth:
       black: 
@@ -346,3 +354,4 @@ bracket:
   #   right:
   #     top: ⌍
   #     bottom: ⌏
+```
