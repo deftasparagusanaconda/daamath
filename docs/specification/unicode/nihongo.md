@@ -18,7 +18,15 @@ hiragana: {a: あ,  i: い,  u: う,  e: え,  o: お,
           ya: や,         yu: ゆ,         yo: よ, 
           ra: ら, ri: り, ru: る, re: れ, ro: ろ, 
           wa: わ, wi: ゐ        , we: ゑ, wo: を,
-           n: ん}
+
+          ga: が, gi: ぎ, gu: ぐ, ge: げ, ge: ご,
+          za: ざ, zi: じ, zu: ず, ze: ぜ, zo: ぞ,
+          da: だ, di: ぢ, du: づ, de: で, do: ど,
+          ba: ば, bi: び, bu: ぶ, be: べ, bo: ぼ,
+		  pa: ぱ, pi: ぴ, pu: ぷ, pe: ぺ, po: ぽ
+
+           n: ん,
+		  }
 
 katakana: {a: ア,  i: イ,  u: ウ,  e: エ,  o: オ,
           ka: カ, ki: キ, ku: ク, ke: ケ, ko: コ,
@@ -30,5 +38,14 @@ katakana: {a: ア,  i: イ,  u: ウ,  e: エ,  o: オ,
           ya: ヤ,         yu: ユ,         yo: ヨ, 
           ra: ラ, ri: リ, ru: ル, re: レ, ro: ロ,
           wa: ワ, wi: ヰ,         we: ヱ, wo: ヲ, 
-           n: ン}
+
+          ga: ガ, gi: ギ, gu: グ, ge: ゲ,  o: ゴ,
+          za: ザ, zi: ジ, zu: ズ, ze: ゼ, no: ゾ,
+          da: ダ, di: ヂ, du: ヅ, de: デ, do: ド,
+          ba: バ, bi: ビ, bu: ブ, be: ベ, bo: ボ,
+          pa: パ, pi: ピ, pu: プ, pe: ペ, po: ポ,
+
+
+           n: ン
+		   }
 ```
