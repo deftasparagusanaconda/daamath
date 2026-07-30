@@ -1,0 +1,90 @@
+uint8:
+  cardinality: 256 # 2⁸
+  relations:
+    natural_order:
+      axioms:
+        # well-founded order
+        transitive: true
+        symmetric: false
+        antisymmetric: true
+        connected: true
+        well_founded: true
+        has_joins: false
+        has_meets: false
+        reflexive: true
+        irreflexive: false
+        asymmetric: true
+      minimal: 0
+      maximal: 255 # 2⁸ − 1      
+int16:
+  cardinality: 65536 # 2¹⁶
+  relations:
+    natural_order:
+      axioms:
+        # well-founded order
+        transitive: true
+        symmetric: false
+        antisymmetric: true
+        connected: true
+        well_founded: true
+        has_joins: false
+        has_meets: false
+        reflexive: true
+        irreflexive: false
+        asymmetric: true
+      minimal: 0
+      maximal: 65535 # 2¹⁶ − 1
+int32:
+  cardinality: 4294967296 # 2³²
+  relations:
+    natural_order:
+      axioms:
+        # well-founded order
+        transitive: true
+        symmetric: false
+        antisymmetric: true
+        connected: true
+        well_founded: true
+        has_joins: false
+        has_meets: false
+        reflexive: true
+        irreflexive: false
+        asymmetric: true
+      minimal: 0
+      maximal: 4294967295 # 2³² − 1
+int64:
+  cardinality: 18446744073709551616 # 2⁶⁴
+  relations:
+    natural_order:
+      axioms:
+        # well-founded order
+        transitive: true
+        symmetric: false
+        antisymmetric: true
+        connected: true
+        well_founded: true
+        has_joins: false
+        has_meets: false
+        reflexive: true
+        irreflexive: false
+        asymmetric: true
+      minimal: 0
+      maximal: 18446744073709551615 # 2³² − 1
+int128:
+  relations:
+    natural_order:
+      axioms:
+        # well-founded order
+        transitive: true
+        symmetric: false
+        antisymmetric: true
+        connected: true
+        well_founded: true
+        has_joins: false
+        has_meets: false
+        reflexive: true
+        irreflexive: false
+        asymmetric: true
+      minimal: 0
+      maximal: 18446744073709551615 # 2³² − 1
+  cardinality: 340282366920938463463374607431768211456 # 2¹²⁸

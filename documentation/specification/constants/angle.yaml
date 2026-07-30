@@ -1,0 +1,235 @@
+turn:
+  f32:
+    nearest:
+      significand: 13176795
+      radix: 2
+      exponent: -21
+    residual:
+      significand: -6151831
+      radix: 2
+      exponent: -45
+  f64:
+    nearest:
+      significand: 884279719003555
+      radix: 2
+      exponent: -47
+    residual:
+      significand: 4967757600021511
+      radix: 2
+      exponent: -104
+  f128:
+    nearest:
+      significand: 1019505104126898525104217885171767
+      radix: 2
+      exponent: -107
+    residual:
+      significand: 2337915386157937862343080991980185
+      radix: 2
+      exponent: -223
+  d64:
+    nearest:
+      significand: 6283185307179586
+      radix: 10
+      exponent: -15
+    residual:
+      significand: 476925286766559
+      radix: 10
+      exponent: -30
+  d128:
+    nearest:
+      significand: 6283185307179586476925286766559006
+      radix: 10
+      exponent: -33
+    residual:
+      significand: -2316056612012497883580501108153844
+      radix: 10
+      exponent: -67
+
+gradian:
+  f32:
+    nearest:
+      significand: 8433149
+      radix: 2
+      exponent: -29
+    residual:
+      significand: -7292615
+      radix: 2
+      exponent: -53
+  f64:
+    nearest:
+      significand: 2263756080649101
+      radix: 2
+      exponent: -57
+    residual:
+      significand: -8052789079558053
+      radix: 2
+      exponent: -113
+  f128:
+    nearest:
+      significand: 5219866133129720448533595572079447
+      radix: 2
+      exponent: -118
+    residual:
+      significand: 955824797911933221091005770602463
+      radix: 2
+      exponent: -230
+  d64:
+    nearest:
+      significand: 1570796326794897
+      radix: 10
+      exponent: -17
+    residual:
+      significand: -3807686783083602
+      radix: 10
+      exponent: -33
+  d128:
+    nearest:
+      significand: 1570796326794896619231321691639751
+      radix: 10
+      exponent: -35
+    residual:
+      significand: 4420985846996875529104874722961539
+      radix: 10
+      exponent: -69
+
+degree:
+  f32:
+    nearest:
+      significand: 9370165
+      radix: 2
+      exponent: -29
+    residual:
+      significand: 4871079
+      radix: 2
+      exponent: -55
+  f64:
+    nearest:
+      significand: 5030569068109113
+      radix: 2
+      exponent: -58
+    residual:
+      significand: 6124111169180305
+      radix: 2
+      exponent: -114
+  f128:
+    nearest:
+      significand: 1449962814758255680148220992244291
+      radix: 2
+      exponent: -116
+    residual:
+      significand: -4799007371575474124505093393176877
+      radix: 2
+      exponent: -231
+  d64:
+    nearest:
+      significand: 174532925199433
+      radix: 10
+      exponent: -16
+    residual:
+      significand: -4230763092315114
+      radix: 10
+      exponent: -33
+  d128:
+    nearest:
+      significand: 1745329251994329576923690768488613
+      radix: 10
+      exponent: -35
+    residual:
+      significand: -286557128111458274543902808559829
+      radix: 10
+      exponent: -68
+
+arcminute:
+  f32:
+    nearest:
+      significand: 9994843
+      radix: 2
+      exponent: -35
+    residual:
+      significand: -4293451
+      radix: 2
+      exponent: -59
+  f64:
+    nearest:
+      significand: 5365940339316387
+      radix: 2
+      exponent: -64
+    residual:
+      significand: 5235976013677811
+      radix: 2
+      exponent: -118
+  f128:
+    nearest:
+      significand: 6186508009635224235299076233575641
+      radix: 2
+      exponent: -124
+    residual:
+      significand: 2223630067789241509528991951350893
+      radix: 2
+      exponent: -238
+  d64:
+    nearest:
+      significand: 2908882086657216
+      radix: 10
+      exponent: -19
+    residual:
+      significand: -3846051538585231
+      radix: 10
+      exponent: -36
+  d128:
+    nearest:
+      significand: 2908882086657215961539484614147688
+      radix: 10
+      exponent: -37
+    residual:
+      significand: -1442618801857637909065046809330483
+      radix: 10
+      exponent: -71
+
+arcsecond:
+  f32:
+    nearest:
+      significand: 13326457
+      radix: 2
+      exponent: -38
+    residual:
+      significand: -8460535
+      radix: 2
+      exponent: -68
+  f64:
+    nearest:
+      significand: 1788646779772129
+      radix: 2
+      exponent: -65
+    residual:
+      significand: 6981301351570415
+      radix: 2
+      exponent: -121
+  f128:
+    nearest:
+      significand: 2062169336545074745099692077858547
+      radix: 2
+      exponent: -125
+    residual:
+      significand: 741210022596413836509663983783631
+      radix: 2
+      exponent: -239
+  d64:
+    nearest:
+      significand: 484813681109536
+      radix: 10
+      exponent: -19
+    residual:
+      significand: -6410085897642052
+      radix: 10
+      exponent: -37
+  d128:
+    nearest:
+      significand: 484813681109535993589914102357948
+      radix: 10
+      exponent: -37
+    residual:
+      significand: -2404364669762729848441744682217472
+      radix: 10
+      exponent: -72
+

@@ -11,7 +11,7 @@ from . import logic
 from typing import Callable
 
 # this turns any binary operator into a variadic thing
-from functools import reduce
+from functools import reduce as lfold
 
 # variadic and. unicode : ⋀
 #functools.partial(functools.reduce, ffft)
@@ -28,6 +28,11 @@ from builtins import sum as vadd
 # variadic mul. unicode: ∏
 # functools.partial(functools.reduce, h2c)
 from math import prod as vmul
+
+def vgcd(values): return math.gcd(*values)
+def vlcm(values): return math.lcm(*values)
+def vmin(values): return min(values)
+def vmax(values): return max(values)
 
 def vparallel(iterable: Iterable[int | float | complex]) -> int | float | complex: 
 	'variadic parallel'
@@ -73,7 +78,7 @@ def fmean(data: Iterable[Number], *, forward: Callable[[Number], Number], invers
     ...
 
 # variadic xor. oddness check. 1 if odd number of stuff. 0 otherwise 
-vfttf = functools.partial(functools.reduce, logic.xor)
+vxor = functools.partial(functools.reduce, logic.xor)
 
 # variadic nxor. evenness check. 1 if even number of stuff. 0 otherwise
-vtfft = functools.partial(functools.reduce, logic.nxor)
+vnxor = functools.partial(functools.reduce, logic.nxor)

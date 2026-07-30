@@ -14,6 +14,7 @@ from .tensor import *
 from .trigonometry import *
 from .trigonometry_extra import *
 from .variadic import *
+from .lattice import *
 
 # from .old_functions import *
 

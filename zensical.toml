@@ -1,4 +1,5 @@
 [project]
+docs_dir = "documentation"
 site_name = "daamath"
 site_url = "https://deftasparagusanaconda.github.io/daamath"
 repo_url = "https://github.com/deftasparagusanaconda/daamath"
@@ -6,7 +7,7 @@ repo_name = "github"
 site_description = "documentation for daamath"
 site_author = "deftasparagusanaconda"
 
-extra_css = ["stylesheets/extra.css"]
+#extra_css = ["stylesheets/extra.css"]
 #extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
 
 # nav = [
@@ -63,7 +64,7 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
-custom_dir = "docs_overrides"
+custom_dir = "documentation overrides"
 #variant = "classic"
 
 features = [
@@ -135,17 +136,24 @@ search    = {}
 social    = {}
 optimize  = {}
 
-# enabling this completely messes up code blocks. i cant enable this
-#[project.markdown_extensions.pymdownx.snippets]
+# YOU NEED TO ENABLE SUPERFENCES FOR THIS TO WORK
+# found that out the hard way D:<
+[project.markdown_extensions.pymdownx.snippets]
+base_path = ["."]
 
 # why would you enable this?
 #[project.plugins.offline]
 #enabled = true
 
-#[project.markdown_extensions."pymdownx.superfences"]
+[project.markdown_extensions."pymdownx.superfences"]
 #custom_fences = [
 #  {name = "mermaid", class = "mermaid", format = "!!python/name:pymdownx.superfences.fence_code_format"}
 #]
+
+[project.markdown_extensions.pymdownx.caret] # allows ^^underline^^ and ^superscript^
+[project.markdown_extensions.pymdownx.mark] # allows ==highlight==
+[project.markdown_extensions.pymdownx.tilde] # allows ~~strikethrough~~ and ~subscript~
+#[project.markdown_extensions.pymdownx.keys] # allows ++key+combinations++
 
 #[project.markdown_extensions."pymdownx.tabbed"]
 #alternate_style = true

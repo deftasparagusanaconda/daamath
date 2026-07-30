@@ -1,6 +1,6 @@
 # daamath
 
-a mathematician's spellbook: cross-language math library specification, with implementations across various programming languages
+a mathematician's spellbook: cross-language math library [specification], with [implementations] across various programming languages
 
 # install
 <table>
@@ -9,26 +9,24 @@ a mathematician's spellbook: cross-language math library specification, with imp
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/python/install">python</a></td>
       <td><code>python -m pip install daamath</code></td>
     </tr>
+<!--
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
-      <td><code>…<!--curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh--></code></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
-      <td><code>…<!--curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh--></code></td>
+      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
-      <td><code>…<!--npm install daamath--></code></td>
+      <td><code>npm install daamath</code></td>
     </tr>
     <tr>
       <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
-      <td><code>…<!--julia -e 'using Pkg; Pkg.add("daamath")'--></code></td>
+      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
     </tr>
-	<tr>
-	  <td>…</td>
-	  <td><code>…</code></td>
-    </tr>
+-->
   </tbody>
 </table>
 
@@ -38,13 +36,17 @@ a mathematician's spellbook: cross-language math library specification, with imp
 
 "why does `pow(2, 3)` return a float? i expected an int"
 
-"why do i have to know `powf`, `pow` and `powl` in C? cant they just make one `pow`?"
+"why do i have to know `powf`, `pow` and `powl` in C? cant they just make one `pow`? what? `<tgmath.h>`? thats kinda obscure..."
 
-"i know my int is even so i divide it by 2. why did you promote it to a float? its still supposed to be an int!"
+"what?? when did this become a float??"
 
 "i wish i could translate my math code from C to Python but it gives me different results"
 
-"why is there no `log(num, base)` in C?"
+"i wish i could change from 64-bit precision to 128-bit precision without having to rewrite everything"
+
+"i wish i could do error-raising exact arithmetic with my fast datatypes"
+
+"why is there no `log(num, base)`? its very annoying to have to write out `log(num) / log(base)` manually everytime"
 
 "but `log(-1)` is defined in the complex numbers. you mean i have to use `clog` for that? `log` should be able to do that if i pass a complex number"
 
@@ -62,13 +64,14 @@ this is very ugly to me. so i made daamath.
 
 # features
 
+- four sections: 
+
 - **cross-language consistency:** daamath is designed to behave the same across languages. 
 - **true functions:** faithful to the mathematics, you can define the domain, codomain, and mapping of functions. for example, an integer divided by an integer can be set to return either an integer or rational number
 - **complete function sets:** hyperoperations to n=4, trigonometry in all 2 non-degenerate geometries, all non-degenerate boolean gates to arity 2, all 16 derived functions per relation, 12 rounding functions, …
 - **clean namespace:** no aliases, datatype naming conventions, underscore-binding, …
 - **unicode characters:** math-related unicode characters, presented in an elegant tree
-- **mathematical constants:** e, π, τ, 
-- **[documentation website][documentation]**
+- **mathematical constants:** 
 
 # examples
 

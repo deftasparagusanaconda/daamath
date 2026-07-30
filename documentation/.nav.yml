@@ -1,0 +1,6 @@
+title: thing
+
+nav:
+  - home: index.md
+  - specification: specification/
+  - implementatins: implementations/
