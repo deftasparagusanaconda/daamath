@@ -1,4 +1,4 @@
-# implementations
+# implementation
 
 an implementation is a realization of the [specification] onto a programming language. the [reference implementation is in python](python)
 

@@ -1,5 +1,5 @@
 [project]
-docs_dir = "documentation"
+docs_dir = "docs"
 site_name = "daamath"
 site_url = "https://deftasparagusanaconda.github.io/daamath"
 repo_url = "https://github.com/deftasparagusanaconda/daamath"
@@ -64,7 +64,7 @@ font.text = "Inter"
 font.code = "JetBrains Mono"
 favicon = "assets/logo.svg"
 logo    = "assets/logo.svg"
-custom_dir = "documentation overrides"
+custom_dir = "docs_overrides"
 #variant = "classic"
 
 features = [
@@ -153,7 +153,7 @@ base_path = ["."]
 [project.markdown_extensions.pymdownx.caret] # allows ^^underline^^ and ^superscript^
 [project.markdown_extensions.pymdownx.mark] # allows ==highlight==
 [project.markdown_extensions.pymdownx.tilde] # allows ~~strikethrough~~ and ~subscript~
-#[project.markdown_extensions.pymdownx.keys] # allows ++key+combinations++
+#[project.markdown_extensions.pymdownx.keys] # allows ++key+combinations++ # daamath isnt the kind of library to have key combinations. disable this
 
 #[project.markdown_extensions."pymdownx.tabbed"]
 #alternate_style = true

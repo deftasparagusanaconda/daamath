@@ -6,7 +6,7 @@ a mathematician's spellbook: cross-language math library [specification], with [
 <table>
   <tbody>
     <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/python/install">python</a></td>
+      <td><a href="https://github.com/deftasparagusanaconda/daamath-python">python</a></td>
       <td><code>python -m pip install daamath</code></td>
     </tr>
 <!--
@@ -44,7 +44,7 @@ a mathematician's spellbook: cross-language math library [specification], with [
 
 "i wish i could change from 64-bit precision to 128-bit precision without having to rewrite everything"
 
-"i wish i could do error-raising exact arithmetic with my fast datatypes"
+"i wish i could do exact error-raising exact arithmetic with my fast datatypes"
 
 "why is there no `log(num, base)`? its very annoying to have to write out `log(num) / log(base)` manually everytime"
 

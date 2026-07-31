@@ -55,6 +55,11 @@ if at all possible, each function should always have all inverses present. examp
 in short, a function with n inputs and 1 output is involved in an equation of (n + 1) variables. if possible, it should have n other related functions that each solve for individual variables in the equation.
 
 daamath maintains mathematically defined functions, as well as some numerically inclined functions such as from [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754#Recommended_operations)
+
+# naming
+
+functions follow common namespace convention. each section of functions should be named as if it would be followed by the word "functions". like: "trigonometric ^^functions^^" instead of "trigonometry ^^functions^^" or "relational ^^functions^^" instead of "relation ^^functions^^"
+
 # rant
 
 note to self: the arithmetic, trigonometry, logic, and interval function sets are done. quantize and variadic are not done. i hate that they are hard to define or grasp. this is tough

@@ -1,4 +1,0 @@
-bool           ∈ 𝔹
-int            ∈ ℤ
-double         ∈ ℝ
-double complex ∈ ℂ
