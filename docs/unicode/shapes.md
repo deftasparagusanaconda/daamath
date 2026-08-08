@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# shapes
 
-```yaml
---8<-- "documentation/specification/unicode/shapes.yaml"
-```
+{{ yaml_source(page) }}

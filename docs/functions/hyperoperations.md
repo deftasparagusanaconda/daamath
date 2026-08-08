@@ -133,11 +133,4 @@ now, pulling from abstract algebra a bit, if a carrier set has an inverse for ea
 
 the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/hyperoperations.yaml"
-```
-</details>
+{{ yaml_source(page) }}

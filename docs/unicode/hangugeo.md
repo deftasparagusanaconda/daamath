@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# hangugeo
 
-```yaml
---8<-- "documentation/specification/unicode/hangugeo.yaml"
-```
+{{ yaml_source(page) }}

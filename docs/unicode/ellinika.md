@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# ellinika
 
-```yaml
---8<-- "documentation/specification/unicode/ellinika.yaml"
-```
+{{ yaml_source(page) }}

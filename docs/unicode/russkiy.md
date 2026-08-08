@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# russkiy
 
-```yaml
---8<-- "documentation/specification/unicode/russkiy.yaml"
-```
+{{ yaml_source(page) }}

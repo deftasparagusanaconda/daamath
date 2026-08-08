@@ -80,11 +80,4 @@ denominator = numerator / exp(log_ratio)
 ainv, minv, lainv, rainv, lminv, rminv all exist because their corresponding identity element exist. 
 in general, these functions should always be callable but should raise an error if in the context, the domain is found to not have a corresponding identity element for that function
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/miscellaneous.yaml"
-```
-</details>
+{{ yaml_source(page) }}

@@ -7,6 +7,11 @@ under divisibility, they are [gcd](#gcd) & [lcm](#lcm)
 
 as such daamath has a slightly uncommon take on min & max: they are binary functions, not variadic functions. the same goes with gcd & lcm. their variadic versions are available in [variadic].
 
+# min
+# max
+# lcm
+# gcd
+
 # rant
 
 for the orders, most of them want to share the 14 names that were generated.
@@ -24,3 +29,6 @@ the problem is how daamath will present them.
 variadic versions of meet and join behave nicely on lattices, but not so much on general posets
 
 sup/inf (a.k.a glb/lub) shall *not* be defined. these are more general concepts.
+
+
+{{ yaml_source(page) }}

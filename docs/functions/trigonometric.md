@@ -119,11 +119,4 @@ HYPERBOLIC GEOMETRY:
 x² - y² = r²
 -->
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/trigonometric.yaml"
-```
-</details>
+{{ yaml_source(page) }}

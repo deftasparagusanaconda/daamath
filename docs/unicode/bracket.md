@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# bracket
 
-```yaml
---8<-- "documentation/specification/unicode/bracket.yaml"
-```
+{{ yaml_source(page) }}

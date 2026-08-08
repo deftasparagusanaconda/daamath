@@ -46,11 +46,5 @@ because some of them can get specialized routines
 but couldnt you implement those special routines in the function? if it detects that dm.max was taken in, it would use a special routine for that.  
 ah.. interesting. then i *do* want to let users write variadic(max, \[1,2,3\]) instead of vmax(\[1,2,3\]). because then they can turn any binary primitive into a variadic version. ahh! thank you by the way. i also now realized that only functions that preserve type are valid for this. 
 
-# yaml
+{{ yaml_source(page) }}
 
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/variadic.yaml"
-```
-</details>

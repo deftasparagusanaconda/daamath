@@ -77,11 +77,6 @@ daamath stores units of 2D angles respective to radians, because radians are the
 	</tr>
 </table>
 
-# [yaml](https://github.com/deftasparagusanaconda/daamath/blob/main/documentation/specification/constants/angle.yaml)
-
-```yaml
---8<-- "documentation/specification/constants/angle.yaml"
-```
-
+{{ yaml_source(page) }}
 
 [daa]: hi!

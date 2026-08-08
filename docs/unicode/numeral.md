@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# numeral
 
-```yaml
---8<-- "documentation/specification/unicode/numeral.yaml"
-```
+{{ yaml_source(page) }}

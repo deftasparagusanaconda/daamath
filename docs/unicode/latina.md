@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# latina
 
-```yaml
---8<-- "documentation/specification/unicode/latina.yaml"
-```
+{{ yaml_source(page) }}

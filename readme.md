@@ -65,7 +65,6 @@ this is very ugly to me. so i made daamath.
 # features
 
 - four sections: 
-
 - **cross-language consistency:** daamath is designed to behave the same across languages. 
 - **true functions:** faithful to the mathematics, you can define the domain, codomain, and mapping of functions. for example, an integer divided by an integer can be set to return either an integer or rational number
 - **complete function sets:** hyperoperations to n=4, trigonometry in all 2 non-degenerate geometries, all non-degenerate boolean gates to arity 2, all 16 derived functions per relation, 12 rounding functions, …
@@ -74,6 +73,43 @@ this is very ugly to me. so i made daamath.
 - **mathematical constants:** 
 
 # examples
+
+lets try integer arithmetic with floats!
+
+
+
+
+
+
+```python
+import daamath as dm
+
+dm.add
+dm.
+dm.datatypes.f128
+
+print(dm.unicode.in)
+```
+
+
+
+
+
+
+
+
+```python
+import daamath as dm
+
+print(dm.greek.lower.pi, dm.tilde_tilde, dm.constants.archimedes.binary64.nearest)
+
+```
+
+
+
+
+
+
 
 for our python examples, first `import daamath as dm`
 

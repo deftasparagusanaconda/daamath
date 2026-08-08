@@ -23,6 +23,21 @@ when a binary relation `rel(a, b)` is defined on a carrier set, we can compose `
 
 the [eq] function is distinct from the [is] function. two objects can be equivalent via eq(a, b) but different via [is](a, b)
 
+# ev
+# gt
+# lt
+# ncp
+# ge
+# le
+# so
+# nso
+# nle
+# nge
+# cp
+# nlt
+# ngt
+# nev
+
 # FAQ
 
 "where is the binary relation for these functions stored?"
@@ -74,15 +89,9 @@ a < b
 	x ∈ [a, b]
 -->
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/relational.yaml"
-```
 </details>
 
+<!--
 # deprecated
 
 why did i exclude this? it adds bloat to the vocabulary the user has to learn, for not much benefit
@@ -140,6 +149,9 @@ with respect to two elements A and B, we have five partitions of the carrier set
 | <del>so_B</del> | ✅✅✅❌✅ | ≶ B |
 | <del>le_B</del> | ✅✅✅✅❌ | ≤ B|
 | <del>true</del> | ✅✅✅✅✅ | degenerate always-true |
+-->
+
+{{ yaml_source(page) }}
 
 [boolean functions]: boolean.md
 [<code>false</code>]: ../constants/boolean#false

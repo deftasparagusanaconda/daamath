@@ -39,6 +39,10 @@ operator:
   diamond: ⋄
   star: ⋆
   triple_colon: ⫶
+  root: 
+    '2': √
+    '3': ∛
+    '4': ∜
                                            
 for_all                                    : ∀
 complement                                 : ∁
@@ -46,7 +50,6 @@ exists                                     : ∃
 exists_stroke                              : ∄
 proportional                               : ∝
 infinity                                   : ∞
-root                                       : √∛∜
 prime                                      : ′″‴⁗
 prime_reversed                             : ‵‶‷
                                           

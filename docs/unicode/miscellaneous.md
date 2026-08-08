@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# miscellaneous
 
-```yaml
---8<-- "documentation/specification/unicode/miscellaneous.yaml"
-```
+{{ yaml_source(page) }}

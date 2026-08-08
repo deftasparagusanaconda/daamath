@@ -1,0 +1,30 @@
+analysis:
+  differentiate: 
+    description: indefinite continuous differentiation. takes in an expression, returns an expression
+    domains:
+      - function: EXPRESSION
+      - variable: VARIABLE
+    codomain: EXPRESSION
+  integrate:
+    description: indefinite continuous integration. takes in an expression, returns an expression
+    domains:
+      - function: EXPRESSION
+      - variable: VARIABLE
+    codomain: EXPRESSION
+  difference:
+    description: indefinite discrete differentiation. takes in a function, returns a function
+    domains:
+      - function: FUNCTION
+      - backward_step: # 
+      - forward_step: # 
+    codomain: FUNCTION
+    # difference(f, a, b)(x) will return (f(x - a) - f(x + b)) / (b - a)
+    # raises error when a ≮ b
+  accumulate: 
+    description: indefinite discrete integration. takes in a function, returns a function
+    domains:
+      - function: FUNCTION
+      - domain: DOMAIN # a set of values that we will accumulate over. this is better than stating start and stop, and assuming step, or having all three (which still would enforce uniform sampling, which the user may not want)
+      
+    codomain: FUNCTION
+    # accumulate(f, domain)(x) will return f⍘

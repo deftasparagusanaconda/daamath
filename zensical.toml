@@ -170,3 +170,8 @@ base_path = ["."]
 #[project.markdown_extensions."pymdownx.emoji"]
 #emoji_index     = "!!python/name:material.extensions.emoji.twemoji"
 #emoji_generator = "!!python/name:material.extensions.emoji.to_svg"
+
+[project.markdown_extensions.zensical.extensions.macros]
+module_name = "macros"
+on_error_fail = true
+

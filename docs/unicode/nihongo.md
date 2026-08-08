@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# nihongo
 
-```yaml
---8<-- "documentation/specification/unicode/nihongo.yaml"
-```
+{{ yaml_source(page) }}

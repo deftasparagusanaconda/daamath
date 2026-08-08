@@ -21,14 +21,7 @@ the `is` function tells you whether a is b. a and b can compare equivalent via [
 
 this is important for languages where 
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/special.yaml"
-```
-</details>
+{{ yaml_source(page) }}
 
 [ξ]: 
 [𝔹]: 

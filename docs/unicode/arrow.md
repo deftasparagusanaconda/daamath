@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# arrow
 
-```yaml
---8<-- "documentation/specification/unicode/arrow.yaml"
-```
+{{ yaml_source(page) }}

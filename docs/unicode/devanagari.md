@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# devanagari
 
-```yaml
---8<-- "documentation/specification/unicode/devanagari.yaml"
-```
+{{ yaml_source(page) }}

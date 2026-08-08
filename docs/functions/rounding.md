@@ -95,13 +95,6 @@ if you need more advanced quantization, my [pyquantize](https://www.github.com/d
 
 python has a `round` function that i despise. it has an optional ndigits parameter that, instead of quantizing to any arbitrary scaled lattice, it scales to quantum sizes of 1, 0.1 ,0.01, ... and on top of that, it will return a float if you provide this ndigits parameter, knowing full well that floats do not round decimal digits cleanly.
 
-# yaml
-
-here is a yaml file, usable for generating code for an implementation
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/rounding.yaml"
-```
-</details>
+{{ yaml_source(page) }}
 
 [retraction]: https://en.wikipedia.org/wiki/Retraction_(topology)

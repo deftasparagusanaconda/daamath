@@ -109,11 +109,7 @@ for row in derived_table:
     print('| ' + ' | '.join(map(str, row)) + ' |')
 ```
 
-# [yaml](https://github.com/deftasparagusanaconda/daamath/blob/main/documentation/specification/constants/ieee_754.yaml)
-
-```yaml
---8<-- "documentation/specification/constants/ieee_754.yaml"
-```
+{{ yaml_source(page) }}
 
 [approximations]: approximations.md
 [binary16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format

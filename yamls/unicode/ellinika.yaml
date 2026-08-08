@@ -4,7 +4,7 @@
 
 # i have no experience with the archaic greek letters
 
-greek:
+ellinika:
   upper:           {alpha: Α, beta: Β, gamma: Γ, delta: Δ, epsilon: Ε, zeta: Ζ, eta: Η, theta: Θ, iota: Ι, kappa: Κ, lambda: Λ, mu: Μ, nu: Ν, xi: Ξ, omicron: Ο, pi: Π, rho: Ρ, sigma: Σ, tau: Τ, upsilon: Υ, phi: Φ, chi: Χ, psi: Ψ, omega: Ω, digamma: Ϝ, san: Ϻ, tsan: Ͷ, sho: Ϸ, heta: Ͱ, koppa: Ϙ, sampi: Ͳ, yot: Ϳ, stigma: Ϛ, 
     variant:       {                                                                    theta: ϴ,                                                                                                                                                                                             koppa: Ϟ, sampi: Ϡ,                  }}
   double_struck:

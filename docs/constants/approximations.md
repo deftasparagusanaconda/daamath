@@ -276,8 +276,4 @@ hide:
 	</tr>
 </table>
 
-# [yaml](https://github.com/deftasparagusanaconda/daamath/blob/main/documentation/specification/constants/approximations.yaml)
-
-```yaml
---8<-- "documentation/specification/constants/approximations.yaml"
-```
+{{ yaml_source(page) }}

@@ -59,7 +59,7 @@ constants should not be written in uppercase. if constants should be immutable d
 the approximations are generated from:
 
 ```python
---8<-- "documentation/specification/constants/generate_constants.py"
+--8<-- "docs/constants/generate_constants.py"
 ```
 
 [f16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format

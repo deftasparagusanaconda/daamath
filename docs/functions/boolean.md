@@ -119,6 +119,8 @@ negation is [involutive](https://en.wikipedia.org/wiki/Involution_%28mathematics
     not(imp(first, second))
 #### ncon
     not(con(first, second))
+#### fst
+#### snd
 #### nfst
 	not(fst(first, second))
 #### nsnd
@@ -131,15 +133,7 @@ in fact, these logical functions can be applied to more than just logical values
 ## notes
 [`nxor`](#nxor) is used instead of `xnor` to preserve consistency.
 
-# yaml
-
-here is this spec as a yaml file, usable for generating the code for an implementation
-
-<details><summary>yaml</summary>
-```yaml
---8<-- "./docs/specification/functions/boolean.yaml"
-```
-</details>
+{{ yaml_source(page) }}
 
 [<code>false</code>]: /daamath/specification/constants/boolean#false 
 [<code>true</code>]: /daamath/specification/constants/boolean#true

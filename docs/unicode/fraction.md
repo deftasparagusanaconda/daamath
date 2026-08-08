@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# fraction
 
-```yaml
---8<-- "documentation/specification/unicode/fraction.yaml"
-```
+{{ yaml_source(page) }}

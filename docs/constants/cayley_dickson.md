@@ -15,10 +15,6 @@ the [cayley dickson construction][cdc] gives us some important basis units
 | ε | | [dual](https://en.wikipedia.org/wiki/Dual_number) imaginary unit |
 -->
 
-# [yaml](https://github.com/deftasparagusanaconda/daamath/blob/main/documentation/specification/constants/cayley_dickson.yaml)
-
-```yaml
---8<-- "documentation/specification/constants/cayley_dickson.yaml"
-```
+{{ yaml_source(page) }}
 
 [cdc]: https://en.wikipedia.org/wiki/Cayley%E2%80%93Dickson_construction

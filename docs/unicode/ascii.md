@@ -2,7 +2,6 @@
 hide:
   - toc
 ---
+# ascii
 
-```yaml
---8<-- "documentation/specification/unicode/ascii.yaml"
-```
+{{ yaml_source(page) }}
