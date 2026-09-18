@@ -2,7 +2,7 @@
 
 daamath is a cross-language math library specification, with implementations in various programming languages
 
-table>
+<table>
 	<tr>
       	<td><a href="https://github.com/deftasparagusanaconda/daamath-python">python</a></td>
 		<td><code>python -m pip install daamath</code></td>
