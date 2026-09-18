@@ -6,7 +6,7 @@ a realization is a datatype with a concrete carrier set. it is analogous to a cl
 
 a value is an element of the carrier set. it is analogous to an instance of a class.
 
-daamath defines integers up to 128 bits, because we we require them to store bin128 approximations of constants.
+daamath defines integers up to 128 bits, because we we require them to store binary128 approximations of constants.
 
 # uint
 
@@ -14,9 +14,25 @@ a finite subset of the unsigned integers {0, 1, 2, …}.
 
 # int
 
-# binary
+a finite subset of the unsigned integers {0, 1, 2, …}. 
 
-# decimal
+# [IEEE 754]
+
+## binary32
+
+it is the second-most common floating point format
+
+## binary64
+
+it is the most common floating point format
+
+## binary128
+
+
+
+## decimal64
+
+## decimal128
 
 # yaml
 
@@ -28,3 +44,6 @@ here is a yaml file, usable for generating code for an implementation
 </details>
 
 [abstract structure]: https://en.wikipedia.org/wiki/Abstract_structure
+[IEEE 754]: https://en.wikipedia.org/wiki/IEEE_754
+
+if we have bigints, we should also have bigfloats. bigints have dynamic precision. bigfloat should also have dynamic precision. heres what i envision: bigints can represent any integer. bigfloat should be able to represent any rational number. *do not include infinities or NaNs into it*

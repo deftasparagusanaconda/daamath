@@ -44,4 +44,4 @@ arrow:        {west: ←, east: →, north: ↑, south: ↓, horizontal: ↔, ve
     double:    {west: ⇺, east: ⇻,                     horizontal: ⇼                                                                         }},
   clockwise: ↻,
   anticlockwise: ↺,
-
+}

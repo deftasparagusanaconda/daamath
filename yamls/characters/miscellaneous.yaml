@@ -40,9 +40,9 @@ operator:
   star: ⋆
   triple_colon: ⫶
   root: 
-    '2': √
-    '3': ∛
-    '4': ∜
+    two: √
+    three: ∛
+    four: ∜
                                            
 for_all                                    : ∀
 complement                                 : ∁

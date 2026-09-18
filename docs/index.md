@@ -1,12 +1,8 @@
-# test
+# daamath
 
-this website is ^^the^^ ^^official^^ specification for daamath. you do not need to look anywhere else.
+daamath is a cross-language math library specification. it consists of four parts: [characters](characters), [constants](constants), [datatypes](datatypes), [functions](functions)
 
-there are four modules: constants, datatypes, functions, unicode
-
-each module has a few dozen or so files. each file has a dozen or so things. finally, each *thing* is exported directly to the top level namespace under `dm.` or `dm_`. no further. 
-
-<!-- constants can be stored in all the various datatypes. an implementation need not hydrate it manually. its easily doable now -->
+# implementations
 
 <table>
 	<tr>
@@ -14,3 +10,8 @@ each module has a few dozen or so files. each file has a dozen or so things. fin
 		<td><code>python -m pip install daamath</code></td>
 	</tr>
 </table>
+
+an implementation is a realization of the [specification] in a programming language. 
+
+an implementation shall NOT have interfaces that other implementations dont. this causes portability issues. for example, the python implementation should not have methods for the Context class, because non-OOP languages will lack those features. thus those methods should live as separate functions.
+

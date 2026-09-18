@@ -1,5 +1,5 @@
 turn:
-  f32:
+  binary32:
     nearest:
       significand: 13176795
       radix: 2
@@ -8,7 +8,7 @@ turn:
       significand: -6151831
       radix: 2
       exponent: -45
-  f64:
+  binary64:
     nearest:
       significand: 884279719003555
       radix: 2
@@ -17,7 +17,7 @@ turn:
       significand: 4967757600021511
       radix: 2
       exponent: -104
-  f128:
+  binary128:
     nearest:
       significand: 1019505104126898525104217885171767
       radix: 2
@@ -26,7 +26,7 @@ turn:
       significand: 2337915386157937862343080991980185
       radix: 2
       exponent: -223
-  d64:
+  decimal64:
     nearest:
       significand: 6283185307179586
       radix: 10
@@ -35,7 +35,7 @@ turn:
       significand: 476925286766559
       radix: 10
       exponent: -30
-  d128:
+  decimal128:
     nearest:
       significand: 6283185307179586476925286766559006
       radix: 10
@@ -46,7 +46,7 @@ turn:
       exponent: -67
 
 gradian:
-  f32:
+  binary32:
     nearest:
       significand: 8433149
       radix: 2
@@ -55,7 +55,7 @@ gradian:
       significand: -7292615
       radix: 2
       exponent: -53
-  f64:
+  binary64:
     nearest:
       significand: 2263756080649101
       radix: 2
@@ -64,7 +64,7 @@ gradian:
       significand: -8052789079558053
       radix: 2
       exponent: -113
-  f128:
+  binary128:
     nearest:
       significand: 5219866133129720448533595572079447
       radix: 2
@@ -73,7 +73,7 @@ gradian:
       significand: 955824797911933221091005770602463
       radix: 2
       exponent: -230
-  d64:
+  decimal64:
     nearest:
       significand: 1570796326794897
       radix: 10
@@ -82,7 +82,7 @@ gradian:
       significand: -3807686783083602
       radix: 10
       exponent: -33
-  d128:
+  decimal128:
     nearest:
       significand: 1570796326794896619231321691639751
       radix: 10
@@ -93,7 +93,7 @@ gradian:
       exponent: -69
 
 degree:
-  f32:
+  binary32:
     nearest:
       significand: 9370165
       radix: 2
@@ -102,7 +102,7 @@ degree:
       significand: 4871079
       radix: 2
       exponent: -55
-  f64:
+  binary64:
     nearest:
       significand: 5030569068109113
       radix: 2
@@ -111,7 +111,7 @@ degree:
       significand: 6124111169180305
       radix: 2
       exponent: -114
-  f128:
+  binary128:
     nearest:
       significand: 1449962814758255680148220992244291
       radix: 2
@@ -120,7 +120,7 @@ degree:
       significand: -4799007371575474124505093393176877
       radix: 2
       exponent: -231
-  d64:
+  decimal64:
     nearest:
       significand: 174532925199433
       radix: 10
@@ -129,7 +129,7 @@ degree:
       significand: -4230763092315114
       radix: 10
       exponent: -33
-  d128:
+  decimal128:
     nearest:
       significand: 1745329251994329576923690768488613
       radix: 10
@@ -140,7 +140,7 @@ degree:
       exponent: -68
 
 arcminute:
-  f32:
+  binary32:
     nearest:
       significand: 9994843
       radix: 2
@@ -149,7 +149,7 @@ arcminute:
       significand: -4293451
       radix: 2
       exponent: -59
-  f64:
+  binary64:
     nearest:
       significand: 5365940339316387
       radix: 2
@@ -158,7 +158,7 @@ arcminute:
       significand: 5235976013677811
       radix: 2
       exponent: -118
-  f128:
+  binary128:
     nearest:
       significand: 6186508009635224235299076233575641
       radix: 2
@@ -167,7 +167,7 @@ arcminute:
       significand: 2223630067789241509528991951350893
       radix: 2
       exponent: -238
-  d64:
+  decimal64:
     nearest:
       significand: 2908882086657216
       radix: 10
@@ -176,7 +176,7 @@ arcminute:
       significand: -3846051538585231
       radix: 10
       exponent: -36
-  d128:
+  decimal128:
     nearest:
       significand: 2908882086657215961539484614147688
       radix: 10
@@ -187,7 +187,7 @@ arcminute:
       exponent: -71
 
 arcsecond:
-  f32:
+  binary32:
     nearest:
       significand: 13326457
       radix: 2
@@ -196,7 +196,7 @@ arcsecond:
       significand: -8460535
       radix: 2
       exponent: -68
-  f64:
+  binary64:
     nearest:
       significand: 1788646779772129
       radix: 2
@@ -205,7 +205,7 @@ arcsecond:
       significand: 6981301351570415
       radix: 2
       exponent: -121
-  f128:
+  binary128:
     nearest:
       significand: 2062169336545074745099692077858547
       radix: 2
@@ -214,7 +214,7 @@ arcsecond:
       significand: 741210022596413836509663983783631
       radix: 2
       exponent: -239
-  d64:
+  decimal64:
     nearest:
       significand: 484813681109536
       radix: 10
@@ -223,7 +223,7 @@ arcsecond:
       significand: -6410085897642052
       radix: 10
       exponent: -37
-  d128:
+  decimal128:
     nearest:
       significand: 484813681109535993589914102357948
       radix: 10

@@ -1,5 +1,5 @@
 archimedes:
-  f32:
+  binary32:
     nearest:
       significand: 13176795
       radix: 2
@@ -8,7 +8,7 @@ archimedes:
       significand: -6151831
       radix: 2
       exponent: -46
-  f64:
+  binary64:
     nearest:
       significand: 884279719003555
       radix: 2
@@ -17,7 +17,7 @@ archimedes:
       significand: 4967757600021511
       radix: 2
       exponent: -105
-  f128:
+  binary128:
     nearest:
       significand: 1019505104126898525104217885171767
       radix: 2
@@ -26,7 +26,7 @@ archimedes:
       significand: 2337915386157937862343080991980185
       radix: 2
       exponent: -224
-  d64:
+  decimal64:
     nearest:
       significand: 3141592653589793
       radix: 10
@@ -35,7 +35,7 @@ archimedes:
       significand: 2384626433832795
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 3141592653589793238462643383279503
       radix: 10
@@ -46,7 +46,7 @@ archimedes:
       exponent: -67
 
 catalan:
-  f32:
+  binary32:
     nearest:
       significand: 15367353
       radix: 2
@@ -55,7 +55,7 @@ catalan:
       significand: -6340453
       radix: 2
       exponent: -48
-  f64:
+  binary64:
     nearest:
       significand: 8250284617241437
       radix: 2
@@ -64,7 +64,7 @@ catalan:
       significand: 4864608954801997
       radix: 2
       exponent: -110
-  f128:
+  binary128:
     nearest:
       significand: 4755965277172361093595201571880243
       radix: 2
@@ -73,7 +73,7 @@ catalan:
       significand: -7662792475873917706018756854866131
       radix: 2
       exponent: -227
-  d64:
+  decimal64:
     nearest:
       significand: 915965594177219
       radix: 10
@@ -82,7 +82,7 @@ catalan:
       significand: 1505460351493238
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: 9159655941772190150546035149323841
       radix: 10
@@ -93,7 +93,7 @@ catalan:
       exponent: -68
 
 champernowne_10:
-  f32:
+  binary32:
     nearest:
       significand: 8285045
       radix: 2
@@ -102,7 +102,7 @@ champernowne_10:
       significand: -8746753
       radix: 2
       exponent: -52
-  f64:
+  binary64:
     nearest:
       significand: 1111999898784253
       radix: 2
@@ -111,7 +111,7 @@ champernowne_10:
       significand: 1977635926259521
       radix: 2
       exponent: -110
-  f128:
+  binary128:
     nearest:
       significand: 160256074553625316498391177443137
       radix: 2
@@ -120,7 +120,7 @@ champernowne_10:
       significand: -7361936966102959840346946025796057
       radix: 2
       exponent: -235
-  d64:
+  decimal64:
     nearest:
       significand: 1234567891011121
       radix: 10
@@ -129,7 +129,7 @@ champernowne_10:
       significand: 3141516171819202
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: 1234567891011121314151617181920212
       radix: 10
@@ -140,7 +140,7 @@ champernowne_10:
       exponent: -68
 
 euler_mascheroni:
-  f32:
+  binary32:
     nearest:
       significand: 1210509
       radix: 2
@@ -149,7 +149,7 @@ euler_mascheroni:
       significand: -7473469
       radix: 2
       exponent: -50
-  f64:
+  binary64:
     nearest:
       significand: 5199096506725913
       radix: 2
@@ -158,7 +158,7 @@ euler_mascheroni:
       significand: -6416270704492459
       radix: 2
       exponent: -110
-  f128:
+  binary128:
     nearest:
       significand: 2997075083565320836720885164474707
       radix: 2
@@ -167,7 +167,7 @@ euler_mascheroni:
       significand: -2136208019855122592659514171343255
       radix: 2
       exponent: -225
-  d64:
+  decimal64:
     nearest:
       significand: 5772156649015329
       radix: 10
@@ -176,7 +176,7 @@ euler_mascheroni:
       significand: -393934879099176
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 5772156649015328606065120900824024
       radix: 10
@@ -187,7 +187,7 @@ euler_mascheroni:
       exponent: -68
 
 eulers_number:
-  f32:
+  binary32:
     nearest:
       significand: 2850325
       radix: 2
@@ -196,7 +196,7 @@ eulers_number:
       significand: 11617655
       radix: 2
       exponent: -47
-  f64:
+  binary64:
     nearest:
       significand: 6121026514868073
       radix: 2
@@ -205,7 +205,7 @@ eulers_number:
       significand: 2932120240029853
       radix: 2
       exponent: -104
-  f128:
+  binary128:
     nearest:
       significand: 3528531549630051945308345931409213
       radix: 2
@@ -214,7 +214,7 @@ eulers_number:
       significand: 9888845093849388377822874353381897
       radix: 2
       exponent: -225
-  d64:
+  decimal64:
     nearest:
       significand: 2718281828459045
       radix: 10
@@ -223,7 +223,7 @@ eulers_number:
       significand: 2353602874713527
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 2718281828459045235360287471352662
       radix: 10
@@ -234,7 +234,7 @@ eulers_number:
       exponent: -67
 
 feigenbaum_alpha:
-  f32:
+  binary32:
     nearest:
       significand: -10497957
       radix: 2
@@ -243,7 +243,7 @@ feigenbaum_alpha:
       significand: 16369657
       radix: 2
       exponent: -47
-  f64:
+  binary64:
     nearest:
       significand: -5636047486812271
       radix: 2
@@ -252,7 +252,7 @@ feigenbaum_alpha:
       significand: -3872020626059773
       radix: 2
       exponent: -104
-  f128:
+  binary128:
     nearest:
       significand: -6497920348531242516558650671693441
       radix: 2
@@ -261,7 +261,7 @@ feigenbaum_alpha:
       significand: 8628192103143772030457279648238723
       radix: 2
       exponent: -225
-  d64:
+  decimal64:
     nearest:
       significand: -2502907875095893
       radix: 10
@@ -270,7 +270,7 @@ feigenbaum_alpha:
       significand: 1777160971267818
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: -2502907875095892822283902873218216
       radix: 10
@@ -281,7 +281,7 @@ feigenbaum_alpha:
       exponent: -67
 
 feigenbaum_delta:
-  f32:
+  binary32:
     nearest:
       significand: 9792025
       radix: 2
@@ -290,7 +290,7 @@ feigenbaum_delta:
       significand: 16540105
       radix: 2
       exponent: -46
-  f64:
+  binary64:
     nearest:
       significand: 5257053656718487
       radix: 2
@@ -299,7 +299,7 @@ feigenbaum_delta:
       significand: 2507849245273457
       radix: 2
       exponent: -103
-  f128:
+  binary128:
     nearest:
       significand: 6060970211702805171898507314247833
       radix: 2
@@ -308,7 +308,7 @@ feigenbaum_delta:
       significand: 1286034171825487501298884004879849
       radix: 2
       exponent: -224
-  d64:
+  decimal64:
     nearest:
       significand: 4669201609102991
       radix: 10
@@ -317,7 +317,7 @@ feigenbaum_delta:
       significand: -3281467961795338
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 4669201609102990671853203820466202
       radix: 10
@@ -328,7 +328,7 @@ feigenbaum_delta:
       exponent: -67
 
 glaisher:
-  f32:
+  binary32:
     nearest:
       significand: 5378889
       radix: 2
@@ -337,7 +337,7 @@ glaisher:
       significand: 15924615
       radix: 2
       exponent: -48
-  f64:
+  binary64:
     nearest:
       significand: 5775538340747379
       radix: 2
@@ -346,7 +346,7 @@ glaisher:
       significand: 2684967321706989
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: 6658742353729000743511574820699559
       radix: 2
@@ -355,7 +355,7 @@ glaisher:
       significand: 1191325315758501970318994220184635
       radix: 2
       exponent: -223
-  d64:
+  decimal64:
     nearest:
       significand: 1282427129100623
       radix: 10
@@ -364,7 +364,7 @@ glaisher:
       significand: -3631246574311302
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 1282427129100622636875342568869792
       radix: 10
@@ -375,7 +375,7 @@ glaisher:
       exponent: -67
 
 gompertz:
-  f32:
+  binary32:
     nearest:
       significand: 10005049
       radix: 2
@@ -384,7 +384,7 @@ gompertz:
       significand: -4121101
       radix: 2
       exponent: -47
-  f64:
+  binary64:
     nearest:
       significand: 2685709758742115
       radix: 2
@@ -393,7 +393,7 @@ gompertz:
       significand: -287542799042935
       radix: 2
       exponent: -110
-  f128:
+  binary128:
     nearest:
       significand: 774103133996562804574282713855625
       radix: 2
@@ -402,7 +402,7 @@ gompertz:
       significand: -9526847352368897073461908168297457
       radix: 2
       exponent: -239
-  d64:
+  decimal64:
     nearest:
       significand: 5963473623231941
       radix: 10
@@ -411,7 +411,7 @@ gompertz:
       significand: -2565892150063072
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: 5963473623231940743410784993692794
       radix: 10
@@ -422,7 +422,7 @@ gompertz:
       exponent: -68
 
 khinchin:
-  f32:
+  binary32:
     nearest:
       significand: 5631801
       radix: 2
@@ -431,7 +431,7 @@ khinchin:
       significand: 9378627
       radix: 2
       exponent: -49
-  f64:
+  binary64:
     nearest:
       significand: 6047100315659533
       radix: 2
@@ -440,7 +440,7 @@ khinchin:
       significand: 8415644412750029
       radix: 2
       exponent: -105
-  f128:
+  binary128:
     nearest:
       significand: 108934874913105134641023554103501
       radix: 2
@@ -449,7 +449,7 @@ khinchin:
       significand: -8096619473224157859528143513315091
       radix: 2
       exponent: -226
-  d64:
+  decimal64:
     nearest:
       significand: 2685452001065306
       radix: 10
@@ -458,7 +458,7 @@ khinchin:
       significand: 4453097148354818
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 2685452001065306445309714835481796
       radix: 10
@@ -469,7 +469,7 @@ khinchin:
       exponent: -67
 
 liouville_10:
-  f32:
+  binary32:
     nearest:
       significand: 3691021
       radix: 2
@@ -478,7 +478,7 @@ liouville_10:
       significand: 4995047
       radix: 2
       exponent: -51
-  f64:
+  binary64:
     nearest:
       significand: 7926407401766111
       radix: 2
@@ -487,7 +487,7 @@ liouville_10:
       significand: -4037528512984749
       radix: 2
       exponent: -111
-  f128:
+  binary128:
     nearest:
       significand: 9138525547771033183455813104118373
       radix: 2
@@ -496,7 +496,7 @@ liouville_10:
       significand: 6443109788237553095394434414940381
       radix: 2
       exponent: -233
-  d64:
+  decimal64:
     nearest:
       significand: 110001
       radix: 10
@@ -505,7 +505,7 @@ liouville_10:
       significand: 1
       radix: 10
       exponent: -24
-  d128:
+  decimal128:
     nearest:
       significand: 110001000000000000000001
       radix: 10
@@ -516,7 +516,7 @@ liouville_10:
       exponent: -120
 
 mertens:
-  f32:
+  binary32:
     nearest:
       significand: 4387195
       radix: 2
@@ -525,7 +525,7 @@ mertens:
       significand: 14988287
       radix: 2
       exponent: -50
-  f64:
+  binary64:
     nearest:
       significand: 4710715001356269
       radix: 2
@@ -534,7 +534,7 @@ mertens:
       significand: 1263194523534029
       radix: 2
       exponent: -106
-  f128:
+  binary128:
     nearest:
       significand: 1357771156784428793014315441500997
       radix: 2
@@ -543,7 +543,7 @@ mertens:
       significand: 7667668105668137267939432504546499
       radix: 2
       exponent: -228
-  d64:
+  decimal64:
     nearest:
       significand: 2614972128476428
       radix: 10
@@ -552,7 +552,7 @@ mertens:
       significand: -162445731613913
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 2614972128476427837554268386086959
       radix: 10
@@ -563,7 +563,7 @@ mertens:
       exponent: -68
 
 metallic_1_minus_root:
-  f32:
+  binary32:
     nearest:
       significand: -5184445
       radix: 2
@@ -572,7 +572,7 @@ metallic_1_minus_root:
       significand: 9240939
       radix: 2
       exponent: -49
-  f64:
+  binary64:
     nearest:
       significand: -347922205179541
       radix: 2
@@ -581,7 +581,7 @@ metallic_1_minus_root:
       significand: 8814110846024985
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: -1604507969126914010358706435272311
       radix: 2
@@ -590,7 +590,7 @@ metallic_1_minus_root:
       significand: 9053519713976595652763940508446577
       radix: 2
       exponent: -227
-  d64:
+  decimal64:
     nearest:
       significand: -6180339887498948
       radix: 10
@@ -599,7 +599,7 @@ metallic_1_minus_root:
       significand: -4820458683436564
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: -6180339887498948482045868343656381
       radix: 10
@@ -610,7 +610,7 @@ metallic_1_minus_root:
       exponent: -68
 
 metallic_1_plus_root:
-  f32:
+  binary32:
     nearest:
       significand: 13573053
       radix: 2
@@ -619,7 +619,7 @@ metallic_1_plus_root:
       significand: -9240939
       radix: 2
       exponent: -49
-  f64:
+  binary64:
     nearest:
       significand: 910872158600853
       radix: 2
@@ -628,7 +628,7 @@ metallic_1_plus_root:
       significand: -8814110846024985
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: 4200656398394327824623954599882359
       radix: 2
@@ -637,7 +637,7 @@ metallic_1_plus_root:
       significand: -9053519713976595652763940508446577
       radix: 2
       exponent: -227
-  d64:
+  decimal64:
     nearest:
       significand: 1618033988749895
       radix: 10
@@ -646,7 +646,7 @@ metallic_1_plus_root:
       significand: -1517954131656344
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 1618033988749894848204586834365638
       radix: 10
@@ -657,7 +657,7 @@ metallic_1_plus_root:
       exponent: -67
 
 metallic_2_minus_root:
-  f32:
+  binary32:
     nearest:
       significand: -13898701
       radix: 2
@@ -666,7 +666,7 @@ metallic_2_minus_root:
       significand: 6304013
       radix: 2
       exponent: -50
-  f64:
+  binary64:
     nearest:
       significand: -3730904090310553
       radix: 2
@@ -675,7 +675,7 @@ metallic_2_minus_root:
       significand: -4656636580228777
       radix: 2
       exponent: -108
-  f128:
+  binary128:
     nearest:
       significand: -4301439557344682605795072556258603
       radix: 2
@@ -684,7 +684,7 @@ metallic_2_minus_root:
       significand: 7157358503602265473033859975314045
       radix: 2
       exponent: -231
-  d64:
+  decimal64:
     nearest:
       significand: -414213562373095
       radix: 10
@@ -693,7 +693,7 @@ metallic_2_minus_root:
       significand: -488016887242097
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: -4142135623730950488016887242096981
       radix: 10
@@ -704,7 +704,7 @@ metallic_2_minus_root:
       exponent: -68
 
 metallic_2_plus_root:
-  f32:
+  binary32:
     nearest:
       significand: 5062973
       radix: 2
@@ -713,7 +713,7 @@ metallic_2_plus_root:
       significand: -6685457
       radix: 2
       exponent: -46
-  f64:
+  binary64:
     nearest:
       significand: 2718162824974067
       radix: 2
@@ -722,7 +722,7 @@ metallic_2_plus_root:
       significand: 5085679199899093
       radix: 2
       exponent: -105
-  f128:
+  binary128:
     nearest:
       significand: 6267656747870998279979264468284747
       radix: 2
@@ -731,7 +731,7 @@ metallic_2_plus_root:
       significand: -2652065292576806513273325195667189
       radix: 2
       exponent: -224
-  d64:
+  decimal64:
     nearest:
       significand: 2414213562373095
       radix: 10
@@ -740,7 +740,7 @@ metallic_2_plus_root:
       significand: 488016887242097
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 2414213562373095048801688724209698
       radix: 10
@@ -751,7 +751,7 @@ metallic_2_plus_root:
       exponent: -68
 
 metallic_3_minus_root:
-  f32:
+  binary32:
     nearest:
       significand: -10159465
       radix: 2
@@ -760,7 +760,7 @@ metallic_3_minus_root:
       significand: 15182211
       radix: 2
       exponent: -50
-  f64:
+  binary64:
     nearest:
       significand: -2727160498533351
       radix: 2
@@ -769,7 +769,7 @@ metallic_3_minus_root:
       significand: 4363483190018097
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: -3144201985273429651418596328338377
       radix: 2
@@ -778,7 +778,7 @@ metallic_3_minus_root:
       significand: -3848972151863056682401671730592829
       radix: 2
       exponent: -229
-  d64:
+  decimal64:
     nearest:
       significand: -3027756377319946
       radix: 10
@@ -787,7 +787,7 @@ metallic_3_minus_root:
       significand: -4655961063373525
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: -302775637731994646559610633735248
       radix: 10
@@ -798,7 +798,7 @@ metallic_3_minus_root:
       exponent: -68
 
 metallic_3_plus_root:
-  f32:
+  binary32:
     nearest:
       significand: 13852845
       radix: 2
@@ -807,7 +807,7 @@ metallic_3_plus_root:
       significand: 4593055
       radix: 2
       exponent: -48
-  f64:
+  binary64:
     nearest:
       significand: 3718594782844541
       radix: 2
@@ -816,7 +816,7 @@ metallic_3_plus_root:
       significand: -1398617606218755
       radix: 2
       exponent: -103
-  f128:
+  binary128:
     nearest:
       significand: 4287247892060299427825196787957369
       radix: 2
@@ -825,7 +825,7 @@ metallic_3_plus_root:
       significand: 1358214404506567167795150203095537
       radix: 2
       exponent: -223
-  d64:
+  decimal64:
     nearest:
       significand: 3302775637731995
       radix: 10
@@ -834,7 +834,7 @@ metallic_3_plus_root:
       significand: -3534403893662648
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 3302775637731994646559610633735248
       radix: 10
@@ -845,7 +845,7 @@ metallic_3_plus_root:
       exponent: -68
 
 plastic:
-  f32:
+  binary32:
     nearest:
       significand: 2778135
       radix: 2
@@ -854,7 +854,7 @@ plastic:
       significand: -11613627
       radix: 2
       exponent: -48
-  f64:
+  binary64:
     nearest:
       significand: 5965999298618443
       radix: 2
@@ -863,7 +863,7 @@ plastic:
       significand: -5241662834073437
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: 6878328887846568891149784422028385
       radix: 2
@@ -872,7 +872,7 @@ plastic:
       significand: 4160181643693499649268295928876649
       radix: 2
       exponent: -226
-  d64:
+  decimal64:
     nearest:
       significand: 1324717957244746
       radix: 10
@@ -881,7 +881,7 @@ plastic:
       significand: 259609088544781
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 1324717957244746025960908854478097
       radix: 10
@@ -892,7 +892,7 @@ plastic:
       exponent: -67
 
 twin_prime:
-  f32:
+  binary32:
     nearest:
       significand: 11075677
       radix: 2
@@ -901,7 +901,7 @@ twin_prime:
       significand: 3182765
       radix: 2
       exponent: -47
-  f64:
+  binary64:
     nearest:
       significand: 92909515870381
       radix: 2
@@ -910,7 +910,7 @@ twin_prime:
       significand: -6687559185846289
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: 856939030636587069064236255772537
       radix: 2
@@ -919,7 +919,7 @@ twin_prime:
       significand: 9013954143953083040326627724290185
       radix: 2
       exponent: -232
-  d64:
+  decimal64:
     nearest:
       significand: 6601618158468696
       radix: 10
@@ -928,7 +928,7 @@ twin_prime:
       significand: -2607218788998544
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: 6601618158468695739278121100145558
       radix: 10
@@ -939,7 +939,7 @@ twin_prime:
       exponent: -68
 
 zeta_3:
-  f32:
+  binary32:
     nearest:
       significand: 39389
       radix: 2
@@ -948,7 +948,7 @@ zeta_3:
       significand: 2588721
       radix: 2
       exponent: -47
-  f64:
+  binary64:
     nearest:
       significand: 5413583021147681
       radix: 2
@@ -957,7 +957,7 @@ zeta_3:
       significand: 7911585492422453
       radix: 2
       exponent: -107
-  f128:
+  binary128:
     nearest:
       significand: 390089767628479057719460876361321
       radix: 2
@@ -966,7 +966,7 @@ zeta_3:
       significand: 2578012621583636293187150822361003
       radix: 2
       exponent: -224
-  d64:
+  decimal64:
     nearest:
       significand: 1202056903159594
       radix: 10
@@ -975,7 +975,7 @@ zeta_3:
       significand: 2853997381615114
       radix: 10
       exponent: -31
-  d128:
+  decimal128:
     nearest:
       significand: 120205690315959428539973816151145
       radix: 10
@@ -986,7 +986,7 @@ zeta_3:
       exponent: -69
 
 zeta_5:
-  f32:
+  binary32:
     nearest:
       significand: 2174595
       radix: 2
@@ -995,7 +995,7 @@ zeta_5:
       significand: 15509453
       radix: 2
       exponent: -48
-  f64:
+  binary64:
     nearest:
       significand: 2334953725836903
       radix: 2
@@ -1004,7 +1004,7 @@ zeta_5:
       significand: -636542029535027
       radix: 2
       exponent: -103
-  f128:
+  binary128:
     nearest:
       significand: 5384036725558490620262820187576831
       radix: 2
@@ -1013,7 +1013,7 @@ zeta_5:
       significand: 5685110877561392125613397369218125
       radix: 2
       exponent: -226
-  d64:
+  decimal64:
     nearest:
       significand: 103692775514337
       radix: 10
@@ -1022,7 +1022,7 @@ zeta_5:
       significand: -7366863451354297
       radix: 10
       exponent: -32
-  d128:
+  decimal128:
     nearest:
       significand: 1036927755143369926331365486457034
       radix: 10
