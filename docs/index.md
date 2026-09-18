@@ -1,17 +1,27 @@
 # daamath
 
-daamath is a cross-language math library specification. it consists of four parts: [characters](characters), [constants](constants), [datatypes](datatypes), [functions](functions)
+daamath is a cross-language math library specification, with implementations in various programming languages
 
-# implementations
-
-<table>
+table>
 	<tr>
       	<td><a href="https://github.com/deftasparagusanaconda/daamath-python">python</a></td>
 		<td><code>python -m pip install daamath</code></td>
 	</tr>
 </table>
 
-an implementation is a realization of the [specification] in a programming language. 
+it provides four useful things in math:
 
-an implementation shall NOT have interfaces that other implementations dont. this causes portability issues. for example, the python implementation should not have methods for the Context class, because non-OOP languages will lack those features. thus those methods should live as separate functions.
+* [characters](characters): +, −, ×, ÷, =, %, …
+* [constants](constants): π, e, φ, √2, i, γ, …
+* [datatypes](datatypes): binry64, int32, uint8, bool, complex128, decimal64, …
+* [functions](functions): sin, log, abs, pow, sqrt, round, …
 
+since it must behave the same in different programming languages, it has some rules:
+
+* no assumptions
+* no [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming?wprov=sfla1)
+* no [impure functions](https://en.wikipedia.org/wiki/Pure_function?wprov=sfla1)/mutation/side effects
+* no keyword arguments 
+* no optional arguments
+* functions are defined mathematically, not algorithmically
+* names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
