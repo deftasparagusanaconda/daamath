@@ -1,142 +1,93 @@
 # boolean
 
-since boolean algebra has only two elements {[<code>false</code>], [<code>true</code>]}, we can easily enumerate all the possible functions in a very neat way: with n inputs, we have 2<sup>n</sup> possible permutations, for which we have 2<sup>2<sup>n</sup></sup> functions. 
+we have 1 + 10 useful boolean functions: [`not`](#not), [`and`](#and) [`or`](#or) [`xor`](#xor) [`imp`](#imp) [`con`](#con) [`nand`](#nand) [`nor`](#nor) [`nxor`](#nxor) [`nimp`](#nimp) [`ncon`](#ncon)
 
-with n = 0, we have 2 nullary "functions":
+we can neatly enumerate all the possible boolean functions: with n inputs, we have 2<sup>n</sup> possible permutations, for which we have 2<sup>2<sup>n</sup></sup> functions. 
 
-| name | value | 
-| - | - |
-| [<code>false</code>] | ❌ | 
-| [<code>true</code>] | ✅ |
+# nullary functions
 
-[<code>false</code>] and [<code>true</code>] are constant functions, so they are stored as constants instead
+we have 2<sup>2<sup>0</sup></sup> = 2 nullary "functions":
 
-with n = 1, we have 4 unary functions:
+| name | value | symbol | description |
+| - | - | - | - |
+| [<code>false</code>] | ❌ | ⊥ | boolean bottom element | 
+| [<code>true</code>] | ✅ | ⊤ | boolean top element |
 
-| name | F | T | 
-| - | - | - |
-| [<code>false</code>] | ❌ | ❌ |
-| [<code>id</code>] | ❌ | ✅ |
-| [<code>not</code>](#not) | ✅ | ❌ |
-| [<code>true</code>] | ✅ | ✅ |
+these are stored as constants instead
 
-with n = 2, we have 16 binary functions (ordered partially by hamming weight, then totally by corresponding binary):
+# unary functions
 
-| name | FF | FT | TF | TT | equivalent |
-| - | - | - | - | - | - |
-| <code>[false]</code> | ❌ | ❌ | ❌ | ❌ | |
-| [<code>and</code>](#and) | ❌ | ❌ | ❌ | ✅ | | 
-| [<code>nimp</code>](#nimp) | ❌ | ❌ | ✅ | ❌ | | 
-| [<code>ncon</code>](#ncon) | ❌ | ✅ | ❌ | ❌ | |
-| [<code>nor</code>](#nor) | ✅ | ❌ | ❌ | ❌ | |
-| [<code>fst</code>](#fst) | ❌ | ❌ | ✅ | ✅ | id_A |
-| [<code>snd</code>](#snd) | ❌ | ✅ | ❌ | ✅ | id_B |
-| [<code>xor</code>](#xor) | ❌ | ✅ | ✅ | ❌ | |
-| [<code>nxor</code>](#nxor) | ✅ | ❌ | ❌ | ✅ | |
-| [<code>nsnd</code>](#nsnd) | ✅ | ❌ | ✅ | ❌ | not_B |
-| [<code>nfst</code>](#nfst) | ✅ | ✅ | ❌ | ❌ | not_A |
-| [<code>or</code>](#or)  | ❌ | ✅ | ✅ | ✅ | |
-| [<code>con</code>](#con) | ✅ | ❌ | ✅ | ✅ | |
-| [<code>imp</code>](#imp) | ✅ | ✅ | ❌ | ✅ | |
-| [<code>nand</code>](#nand) | ✅ | ✅ | ✅ | ❌ | |
-| [<code>true</code>] | ✅ | ✅ | ✅ | ✅ | |
+with n = 1 inputs, we have 2<sup>2<sup>1</sup></sup> = 4 unary functions:
 
-with n = 3, we suddenly have 256 ternary functions. since there are so many, and because they can be composed from binary functions anyway, daamath does not maintain functions of [arity](https://en.wikipedia.org/wiki/Arity?wprov=sfla1) ≥ 3.  
+| name | F T | symbol | description |
+| - | - | - | - |
+| [<code>false</code>] | ❌❌ | ⊥ | constant always-false function |
+| [<code>id</code>] | ❌✅ | id | identity |
+| <span id="not"></span>[<code>not</code>](#not) | ✅❌ | ¬ | [negation](https://en.wikipedia.org/wiki/Negation) | 
+| [<code>true</code>] | ✅✅ | ⊤ | constants always-true function |
 
+[`not`](#not) is the only useful non-degenerate function here
+
+# binary functions 
+
+with n = 2 inputs, we have 2<sup>2<sup>2</sup></sup> = 16 binary functions:
+
+| name | FF FT TF TT | symbol | description |
+| - | - | - | - |
+| [<code>false</code>] | ❌❌❌❌ | ⊥ | constant always-false function | 
+| <span id="and"></span>[<code>and</code>](#and) | ❌❌❌✅ | ∧ | [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) |
+| <span id="nimp"></span>[<code>nimp</code>](#nimp) | ❌❌✅❌ | ↛ | [abjunction](https://en.wikipedia.org/wiki/Material_nonimplication) |
+| <span id="ncon"></span>[<code>ncon</code>](#ncon) | ❌✅❌❌ | ↚ | [converse abjunction](https://en.wikipedia.org/wiki/Converse_nonimplication) |
+| <span id="nor"></span>[<code>nor</code>](#nor) | ✅❌❌❌ | ↓ | [joint denial](https://en.wikipedia.org/wiki/Logical_NOR) |
+| [<code>fst</code>] | ❌❌✅✅ | π~1~ | first argument |
+| [<code>snd</code>] | ❌✅❌✅ | π~2~ | second argument |
+| <span id="xor"></span>[<code>xor</code>](#xor) | ❌✅✅❌ | ↮ | [exclusive disjunction](https://en.wikipedia.org/wiki/Exclusive_or) |
+| <span id="nxor"></span>[<code>nxor</code>](#nxor) | ✅❌❌✅ | ↔  | [material biconditional](https://en.wikipedia.org/wiki/Material_biconditional) |
+| <code>nsnd</code> | ✅❌✅❌ | ¬π~2~ | ¬first argument |
+| <code>nfst</code> | ✅✅❌❌ | ¬π~1~ | ¬second argument |
+| <span id="or"></span>[<code>or</code>](#or)  | ❌✅✅✅ | ∨ | [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) |
+| <span id="con"></span>[<code>con</code>](#con) | ✅❌✅✅ | ← | [converse material implication](https://en.wikipedia.org/wiki/Converse_%28logic%29) |
+| <span id="imp"></span>[<code>imp</code>](#imp) | ✅✅❌✅ | → | [material implication](https://en.wikipedia.org/wiki/Material_conditional?wprov=sfla1) |
+| <span id="nand"></span>[<code>nand</code>](#nand) | ✅✅✅❌ | ↑ | [alternative denial](https://en.wikipedia.org/wiki/Sheffer_stroke) |
+| [<code>true</code>] | ✅✅✅✅ | ⊤ | constant always-true function |
+
+[<code>fst</code>], [<code>snd</code>], <code>nsnd</code>, <code>nfst</code> are degenerate functions
+
+# ternary functions and beyond
+
+with n = 3 inputs, we have 2<sup>2<sup>3</sup></sup> = 256 ternary functions. since there are so many, and because they can be composed from binary functions anyway, daamath does not maintain functions of n ≥ 3.
 <!--
-### nullary functions
-| output | name |
-| - | - |
-| ❌ | false |
-| ✅ | true |
+---
 
-there are technically boolean functions with zero inputs but they are better modelled as constants, in daamath.constants.
+# functions
 
-### unary functions
-| 0 | 1 | name | 
-| - | - | - |
-| ❌ | ❌ | false (nullary) |
-| ❌ | ✅ | id |
-| ✅ | ❌ | not |
-| ✅ | ✅ | true (nullary) |
-
-the `id` function is useless because writing `id(value)` is the same as writing `value` directly
-
-thus we have one useful unary function
-
-### binary functions
-| A | B | name |
-| - | - | - |
-| ❌ | ❌ | Neither |
-| ❌ | ✅ | Second |
-| ✅ | ❌ | First |
-| ✅ | ✅ | Both |
-
-| N | S | F | B | name |
-| - | - | - | - | - |
-| ❌ | ❌ | ❌ | ❌ | false (nullary) |
-| ❌ | ❌ | ❌ | ✅ | all |
-| ❌ | ❌ | ✅ | ❌ | ncon |
-| ❌ | ❌ | ✅ | ✅ | fst (unary) |
-| ❌ | ✅ | ❌ | ❌ | nimp |
-| ❌ | ✅ | ❌ | ✅ | snd (unary) | 
-| ❌ | ✅ | ✅ | ❌ | xor |
-| ❌ | ✅ | ✅ | ✅ | or |
-| ✅ | ❌ | ❌ | ❌ | nor |
-| ✅ | ❌ | ❌ | ✅ | nxor |
-| ✅ | ❌ | ✅ | ❌ | nsnd (unary) |
-| ✅ | ❌ | ✅ | ✅ | con |
-| ✅ | ✅ | ❌ | ❌ | nfst (unary) |
-| ✅ | ✅ | ❌ | ✅ | imp |
-| ✅ | ✅ | ✅ | ❌ | nand |
-| ✅ | ✅ | ✅ | ✅ | true (nullary) |
-
-fst, snd, nfst, nsnd are useless because writing `fst(first, second)` `snd(first, second)` `nfst(first, second)` `nsnd(first, second)` are the same as writing `first` `second` `not(first)` `not(second)` directly
-
-thus we have 10 useful binary functions
+## not
+negation is involutive. 
+## and
+and is the meet of the boolean lattice. its variadic extension is vand.
+## or
+or is the join of the boolean lattice. its variadic extension is vor.
+## xor
+its variadic extension is vxor
+## imp
+it is useful for its asymmetry, unlike the other ones
+## con
+it is useful for its asymmetry, unlike the other ones
+## nand
+nand(a, b) = not(and(a, b))
+## nor
+nor(a, b) = not(or(a, b))
+## nxor
+nxor(a, b) = not(xor(a, b)). its variadic extension is vnxor.
+## nimp
+nimp(a, b) = not(imp(a, b))
+## ncon
+ncon(a, b) = not(con(a, b))
 -->
-## API implementation
 
-#### [not](https://en.wikipedia.org/wiki/Negation?wprov=sfla1)
-negation is [involutive](https://en.wikipedia.org/wiki/Involution_%28mathematics%29?wprov=sfla1). if you apply it twice, it gives you the original value. 
-#### [and](https://en.wikipedia.org/wiki/Logical_conjunction?wprov=sfla1)
-    being associative, conjunction has a variadic version `all`. can also be thought of as intersection of sets
-#### [or](https://en.wikipedia.org/wiki/Logical_disjunction?wprov=sfla1)
-    being associative, disjunction has a variadic version `any`. can also be thought of as union of sets.
-#### [xor](https://en.wikipedia.org/wiki/Exclusive_or?wprov=sfla1)
-    being associative, exclusive disjunction has a variadic version `parity_odd`. can also be thought of as symmonric difference of sets
-#### [imp](https://en.wikipedia.org/wiki/Material_conditional?wprov=sfla1)
-    material implication is distinctly directional. can also be thought of as difference of sets
-#### [con](https://en.wikipedia.org/wiki/Converse_%28logic%29?wprov=sfla1)
-    same as `imp(second, first)`. can also be thought of as difference of sets
-#### [nand](https://en.wikipedia.org/wiki/Sheffer_stroke?wprov=sfla1)
-    not(and(first, second))
-#### [nor](https://en.wikipedia.org/wiki/Logical_NOR?wprov=sfla1)
-    not(or(first, second))
-#### [nxor](https://en.wikipedia.org/wiki/Logical_biconditional?wprov=sfla1)
-    not(xor(first, second)). being associative, it has a variadic version `parity_even`
-#### nimp
-    not(imp(first, second))
-#### ncon
-    not(con(first, second))
-#### fst
-#### snd
-#### nfst
-	not(fst(first, second))
-#### nsnd
-	not(snd(first, second))
 
-## type support
-
-in fact, these logical functions can be applied to more than just logical values. we can apply them to integers in 2's complement bitwise, and also to sets. for example, in python, `daamath.and` supports bool, int, and set as input. in C, `dm_and` supports bool and int, applying them logically or bitwise respectively.
-
-## notes
-[`nxor`](#nxor) is used instead of `xnor` to preserve consistency.
-
-{{ yaml_source(page) }}
-
-[<code>false</code>]: /daamath/specification/constants/boolean#false 
-[<code>true</code>]: /daamath/specification/constants/boolean#true
-[<code>id</code>]: /daamath/specification/functions/special#identity
-[fst]: /daamath/specification/functions/computational#fst
-[snd]: /daamath/specification/functions/computational#snd
+[<code>false</code>]: /daamath/constants/boolean#false 
+[<code>true</code>]: /daamath/constants/boolean#true
+[<code>id</code>]: /daamath/functions/special#identity
+[<code>fst</code>]: /daamath/functions/special#fst
+[<code>snd</code>]: /daamath/functions/special#snd

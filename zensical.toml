@@ -155,8 +155,9 @@ base_path = ["."]
 [project.markdown_extensions.pymdownx.tilde] # allows ~~strikethrough~~ and ~subscript~
 #[project.markdown_extensions.pymdownx.keys] # allows ++key+combinations++ # daamath isnt the kind of library to have key combinations. disable this
 
-#[project.markdown_extensions."pymdownx.tabbed"]
-#alternate_style = true
+[project.markdown_extensions."pymdownx.tabbed"]
+alternate_style = true
+
 
 #[project.markdown_extensions.attr_list]
 

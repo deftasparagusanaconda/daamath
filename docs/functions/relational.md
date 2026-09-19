@@ -1,100 +1,46 @@
 # relational
 
-when a binary relation `rel(a, b)` is defined on a carrier set, we can compose `rel(a, b)` and `rel(b, a)` using the [boolean functions][boolean] to get many useful functions. we shall use the common partial ordering relation ≤ (less than or equal to) to name these composed functions, although the binary relation can be anything: an equivalence relation, a partial ordering, a pre-order, et cetera.
+when a binary relation `rel(a, b)` is defined on a carrier set, we can combine `rel(a, b)` and `rel(b, a)` using the binary [boolean functions][boolean] to get many useful functions. to name these combined functions, we'll use the common partial ordering relation ≤ (less than or equal to), but note that the binary relation can be anything: an equivalence relation, a partial ordering, a pre-order, et cetera.
 
-| name | boolean | ∥ < > ∼ | notation | description |
+| name | combiner | ∦ < > ∼ | symbol | description |
 | - | - | - | - | - |
-| [<code>false</code>] | [<code>false</code>] | ❌❌❌❌ | `⊥` | degenerate always-false |
-| [`ev`](#ev) | [<code>and</code>] | ❌❌❌✅ | `a ∼ b` | equivalent |
-| [`gt`](#gt) | [<code>ncon</code>] | ❌❌✅❌ | `a > b` | greater than |
-| [`lt`](#lt) | [<code>nimp</code>] | ❌✅❌❌ | `a < b` | lesser than |
-| [`ncp`](#ncp) | [<code>nor</code>] | ✅❌❌❌ | `a ∥ b` | incomparable |
-| [`ge`](#ge) | [<code>snd</code>] | ❌❌✅✅ | `a ≥ b` | greater than or equivalent |
-| [`le`](#le) | [<code>fst</code>] | ❌✅❌✅ | `a ≤ b` | lesser than or equivalent |
-| [`so`](#so) | [<code>xor</code>] | ❌✅✅❌ | `a ≶ b` | strictly ordered |
-| [`nso`](#nso) | [<code>nxor</code>] | ✅❌❌✅ | `a ≸ b` | not strictly ordered |
-| [`nle`](#nle) | [<code>nfst</code>] | ✅❌✅❌ | `a ≰ b` | not lesser than nor equivalent |
-| [`nge`](#nge) | [<code>nsnd</code>] | ✅✅❌❌ | `a ≱ b` | not greater than nor equivalent |
-| [`cp`](#cp) | [<code>or</code>] | ❌✅✅✅ | `a ∦ b` | comparable |
-| [`nlt`](#nlt) | [<code>imp</code>] | ✅❌✅✅ | `a ≮ b` | not lesser than |
-| [`ngt`](#ngt) | [<code>con</code>] | ✅✅❌✅ | `a ≯ b` | not greater than |
-| [`nev`](#nev) | [<code>nand</code>] | ✅✅✅❌ | `a ≁ b` | not equivalent |
-| [<code>true</code>] | [<code>true</code>] | ✅✅✅✅ | `⊤` | degenerate always-true |
-
-the [eq] function is distinct from the [is] function. two objects can be equivalent via eq(a, b) but different via [is](a, b)
+| [<code>false</code>] | [<code>false</code>] | ❌❌❌❌ | ⊥ | degenerate always-false function |
+| [`ev`](#ev) | [<code>and</code>] | ❌❌❌✅ | ∼ | **e**qui**v**alent |
+| [`gt`](#gt) | [<code>ncon</code>] | ❌❌✅❌ | > | **g**reater **t**han |
+| [`lt`](#lt) | [<code>nimp</code>] | ❌✅❌❌ | < | **l**esser **t**han |
+| [`ic`](#ic) | [<code>nor</code>] | ✅❌❌❌ | ∦ |  **i**ncomparable |
+| [`ge`](#ge) | [<code>snd</code>] | ❌❌✅✅ | ≥ | **g**reater than or **e**quivalent |
+| [`le`](#le) | [<code>fst</code>] | ❌✅❌✅ | ≤ | **l**esser than or **e**quivalent |
+| [`so`](#so) | [<code>xor</code>] | ❌✅✅❌ | ≶ | **s**trictly **o**rdered |
+| [`nso`](#nso) | [<code>nxor</code>] | ✅❌❌✅ | ≸ | **n**ot **s**trictly **o**rdered |
+| [`nle`](#nle) | [<code>nfst</code>] | ✅❌✅❌ | ≰ | **n**ot **l**esser than nor **e**quivalent |
+| [`nge`](#nge) | [<code>nsnd</code>] | ✅✅❌❌ | ≱ | **n**ot **g**reater than nor **e**quivalent |
+| [`nic`](#nic) | [<code>or</code>] | ❌✅✅✅ | ∥ | **n**ot **i**n**c**omparable |
+| [`nlt`](#nlt) | [<code>imp</code>] | ✅❌✅✅ | ≮ | **n**ot **l**esser **t**han |
+| [`ngt`](#ngt) | [<code>con</code>] | ✅✅❌✅ | ≯ | **n**ot **g**reater **t**han |
+| [`nev`](#nev) | [<code>nand</code>] | ✅✅✅❌ | ≁ | **n**ot **e**qui**v**alent |
+| [<code>true</code>] | [<code>true</code>] | ✅✅✅✅ | ⊤ | degenerate always-true function |
 
 # ev
 # gt
 # lt
-# ncp
+# ic
 # ge
 # le
 # so
 # nso
 # nle
 # nge
-# cp
+# nic
 # nlt
 # ngt
 # nev
 
 # FAQ
 
-"where is the binary relation for these functions stored?"
-	in dm.context — both the carrier set and the binary relation for these functions are stored in dm.context
 
 <!--
-## API implementation
-
-#### lt(a, b):
-less than
-a < b
-
-=== "python"
-	```python
-	dm.lt(1, 2)
-	# true
-	```
-=== "c"
-	```c
-	dm_lt(1, 2)
-	# true
-	```
-#### le(a, b):
-	less than or equal to
-	a ≤ b
-#### eq(a, b):
-	equal
-	a = b
-#### ne(a, b):
-	not equal
-	a ≠ b
-#### ge(a, b):
-	greater than or equal to
-	a ≥ b
-#### gt(a, b):
-	greater than
-	a > b
-#### oo(x, a, b):
-	in open interval
-	x ∈ (a, b)
-#### oc(x, a, b):
-	in left-open interval
-	x ∈ (a, b]
-#### co(x, a, b):
-	in right-open interval
-	x ∈ [a, b)
-#### cc(x, a, b):
-	in closed interval
-	x ∈ [a, b]
--->
-
-</details>
-
-<!--
-# deprecated
-
-why did i exclude this? it adds bloat to the vocabulary the user has to learn, for not much benefit
+# deprecated. why did i exclude this? because it adds bloat to the vocabulary the user has to learn, for not much benefit
 
 ## w.r.t. one element
 

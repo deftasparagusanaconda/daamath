@@ -1,7 +1,8 @@
-# hyperoperations
+# arithmetic
 
-to give a pleasant organization to the most common arithmetic operators, daamath uses the [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) tower as a semantic guide:
+we have 9 useful arithmetic operators: [`add`](#add) [`bus`](#bus) [`sub`](#sub), [`mul`](#mul) [`vid`](#vid) [`div`](#div), [`pow`](#pow) [`root`](#root) [`log`](#log)
 
+<!--
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)
 
 1 + 1 + 1 + … b times is     b
@@ -17,16 +18,18 @@ the hyperoperation tower starts from the successor function:
 | n | b | a |
 | - | - | - |
 | 0 | [succ](#succ)(a) | [pred](#pred)(b) |
+-->
+to organize the most common arithmetic operators, we use the [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation) as a semantic guide. for each binary hyperoperation <code>H~n~</code> involved in an equation <code>a H~n~ b = c</code>, we can have three functions that solve for c, b, a:
 
-for each binary operation ⊙ involved in a ⊙ b = c, we have three possible functions: solve for c, solve for b, solve for a
-
-| n | c | b | a |
-| - | -:| -:| -:|
-| 1 |  [add](#add)(a, b) |   [bus](#bus)(c, a) |  [sub](#sub)(c, b) |
-| 2 |  [mul](#mul)(a, b) |   [vid](#vid)(c, a) |  [div](#div)(c, b) |
-| 3 |  [pow](#pow)(a, b) |  [root](#root)(c, a) |  [log](#log)(c, b) |
-| 4 | spow(a, b) | sroot(c, a) | slog(c, b) |
+| n | equation | solve for c | solve for b | solve for a |
+| - | - | -:| -:| -:|
+| 1 | <code>a [+](https://en.wikipedia.org/wiki/Addition) b = c</code> | <span id="add"></span><code>[add](https://en.wikipedia.org/wiki/Addition)(a, b) = c</code> | <span id="bus"></span><code>`bus`(c, a) = b</code> |  <span id="sub"></span><code>[sub](https://en.wikipedia.org/wiki/Subtraction)(c, b) = a</code> |
+| 2 | <code>a [×](https://en.wikipedia.org/wiki/Multiplication) b = c</code> | <span id="mul"></span><code>[mul](https://en.wikipedia.org/wiki/Multiplication)(a, b) = c</code> | <span id="vid"></span><code>[vid](https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division)(c, a) = b</code> | <span id="div"></span><code>[div](https://en.wikipedia.org/wiki/Division_(mathematics))(c, b) = a</code> |
+| 3 | <code>a [↑](https://en.wikipedia.org/wiki/Exponentiation) b = c</code> | <span id="pow"></span><code>[pow](https://en.wikipedia.org/wiki/Exponentiation)(a, b) = c</code> | <span id="root"></span><code>[root](https://en.wikipedia.org/wiki/Nth_root)(c, a) = b</code> | <span id="log"></span><code>[log](https://en.wikipedia.org/wiki/Logarithm)(c, b) = a</code> |
+| 4 | <code>a [⇈](https://en.wikipedia.org/wiki/Tetration) b = c</code> | <span id="spow"></span><code>[spow](https://en.wikipedia.org/wiki/Tetration)(a, b) = c</code> | <span id="sroot"></span><code>[sroot](https://en.wikipedia.org/wiki/Tetration#Super-root)(c, a) = b</code> | <span id="slog"></span><code>[slog](https://en.wikipedia.org/wiki/Tetration#Super-logarithm)(c, b) = a</code> |
 | … | … | … | … |
+
+note: we do not include [`spow`](#spow) [`sroot`](#sroot) [`slog`](#slog) and other n ≥ 4 because there is no canonical definition yet (especially for non-integers)
 
 <!--
 c = a + b  add 
@@ -39,7 +42,7 @@ c = a ^ b  pow
 l = c ^ r⁻¹ root
 r = log_l(c) log
 -->
-
+<!--
 - since we define the functions as equation solvers, there is no need for inverse elements or identity elements
 
 - it is by construction that an operator in this tower is a repetition of the previous operator, but in domains other than the real numbers, mul is not a repetition of add because they are defined axiomatically with abstract algebra. the tower is simply a nice organizational mnemonic for operators.
@@ -132,5 +135,4 @@ now, pulling from abstract algebra a bit, if a carrier set has an inverse for ea
 # rant
 
 the motivation for this hyperoperation table was that i wanted to find a way to unify all the arithmetic operators i knew under one structure. i found the hyperoperation tower a year before i made daamath, and when i applied it, it was surprisingly reliable. it helped me order them, figure out the relationship between pow-log-root, and it also helped me figure out the argument order for log and root. turns out that i should just follow the order that sub and div follow, which is to always put result as first argument. 
-
-{{ yaml_source(page) }}
+-->

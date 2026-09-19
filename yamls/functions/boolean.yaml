@@ -6,14 +6,6 @@ not:
       domains:
         - a: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 and:
   description: conjunction
@@ -24,16 +16,6 @@ and:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 or:
   description: disjunction 
@@ -44,16 +26,6 @@ or:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 xor:
   description: exclusive disjunction
@@ -63,16 +35,6 @@ xor:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 imp:
   description: material implication
@@ -83,16 +45,6 @@ imp:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 con:
   description: converse material implication
@@ -103,16 +55,6 @@ con:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 nand:
   description: not(and)
@@ -122,16 +64,6 @@ nand:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 nor:
   description: not(or)
@@ -141,16 +73,6 @@ nor:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 nxor:
   description: not(xor)
@@ -160,16 +82,6 @@ nxor:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 nimp:
   description: not(imp)
@@ -179,16 +91,6 @@ nimp:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
 
 ncon:
   description: not(ncon)
@@ -198,13 +100,3 @@ ncon:
         - a: boolean
         - b: boolean
       codomain: boolean
-    function:
-      domains:
-        - a: function
-        - b: function
-      codomain: function
-    dynamic:
-      domains:
-        - a: vor([boolean function])
-        - a: vor([boolean function])
-      codomain: vor([boolean function])
