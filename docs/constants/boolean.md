@@ -1,9 +1,6 @@
----
-hide:
-  - toc
----
-
 # boolean
+
+we have two useful boolean constants: [`true`](#true) [`false`](#false)
 
 | name | desription |
 | - | - |

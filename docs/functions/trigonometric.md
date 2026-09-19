@@ -1,72 +1,52 @@
 # trigonometric
 
-we have 24 useful trigonometric functions: [`sin`](#sin) [`cos`](#cos) [`tan`](#tan) [`cot`](#cot) [`sec`](#sec) [`csc`](#csc) [`asin`](#asin) [`acos`](#acos) [`atan`](#atan) [`acot`](#acot) [`asec`](#asec) [`acsc`](#acsc) [`sinh`](#sinh) [`cosh`](#cosh) [`tanh`](#tanh) [`coth`](#coth) [`sech`](#sech) [`csch`](#csch) [`asinh`](#asinh) [`acosh`](#acosh) [`atanh`](#atanh) [`acoth`](#acoth) [`asech`](#asech) [`acsch`](#acsch)  
+we have 24 useful trigonometric functions: [`sin`](#sin) [`cos`](#cos) [`tan`](#tan) [`cot`](#cot) [`sec`](#sec) [`csc`](#csc) [`asin`](#asin) [`acos`](#acos) [`atan`](#atan) [`acot`](#acot) [`asec`](#asec) [`acsc`](#acsc) [`sinh`](#sinh) [`cosh`](#cosh) [`tanh`](#tanh) [`coth`](#coth) [`sech`](#sech) [`csch`](#csch) [`asinh`](#asinh) [`acosh`](#acosh) [`atanh`](#atanh) [`acoth`](#acoth) [`asech`](#asech) [`acsch`](#acsch)
 
+
+<span id="sin"></span>[sin](https://en.wikipedia.org/wiki/Sine)(x) = Im(e^ix^), i^2^ = −1  
+<span id="cos"></span>[cos](https://en.wikipedia.org/wiki/Cosine)(x) = Re(e^ix^), i^2^ = −1  
+<span id="tan"></span>[tan](https://en.wikipedia.org/wiki/Tangent_(trigonometry))(x) = sin(x) / cos(x)  
+<span id="cot"></span>[cot](https://en.wikipedia.org/wiki/Cotangent)(x) = 1 / tan(x)  
+<span id="sec"></span>[sec](https://en.wikipedia.org/wiki/Secant_(trigonometry))(x) = 1 / cos(x)  
+<span id="csc"></span>[csc](https://en.wikipedia.org/wiki/Cosecant)(x) = 1 / sin(x)  
+<span id="asin"></span>[asin](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(sin(x)) = x ∀x: −π/2 ≤ x ≤ +π/2  
+<span id="acos"></span>[acos](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(cos(x)) = x ∀x: 0 ≤ x ≤ +π  
+<span id="atan"></span>[atan](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(tan(x)) = x ∀x: -π/2 < x < +π/2  
+<span id="acot"></span>[acot](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(cot(x)) = x ∀x: 0 < x < +π  
+<span id="asec"></span>[asec](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(sec(x)) = x ∀x: 0 ≤ x ≤ +π, x ≠ +π/2  
+<span id="acsc"></span>[acsc](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions)(csc(x)) = x ∀x: -π/2 ≤ x ≤ +π/2, x ≠ 0  
+<span id="sinp"></span>sinp(x) = Im(e^εx^), ε^2^ = 0, ε ≠ 0  
+<span id="cosp"></span>cosp(x) = Re(e^εx^), ε^2^ = 0, ε ≠ 0  
+<span id="tanp"></span>tanp(x) = sinp(x) / cosp(x)  
+<span id="cotp"></span>cotp(x) = 1 / tanp(x)  
+<span id="secp"></span>secp(x) = 1 / cosp(x)  
+<span id="cscp"></span>cscp(x) = 1 / sinp(x)  
+<span id="asinp"></span>asinp(sinp(x)) = x  
+<span id="acosp"></span>acosp(cosp(x)) = x  
+<span id="atanp"></span>atanp(tanp(x)) = x  
+<span id="acotp"></span>acotp(cotp(x)) = x  
+<span id="asecp"></span>asecp(secp(x)) = x  
+<span id="acscp"></span>acscp(cscp(x)) = x  
+<span id="sinh"></span>[sinh](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = Im(e^jx^), j^2^ = +1, j ≠ ±1  
+<span id="cosh"></span>[cosh](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = Re(e^jx^), j^2^ = +1, j ≠ ±1  
+<span id="tanh"></span>[tanh](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = sinh(x) / cosh(x)  
+<span id="coth"></span>[coth](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = 1 / tanh(x)  
+<span id="sech"></span>[sech](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = 1 / cosh(x)  
+<span id="csch"></span>[csch](https://en.wikipedia.org/wiki/Hyperbolic_functions)(x) = 1 / sinh(x)  
+<span id="asinh"></span>[asinh](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(sinh(x)) = x ∀x: -∞ < x < +∞  
+<span id="acosh"></span>[acosh](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(cosh(x)) = x ∀x: +1 ≤ x < +∞  
+<span id="atanh"></span>[atanh](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(tanh(x)) = x ∀x: -1 < x < +1  
+<span id="acoth"></span>[acoth](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(coth(x)) = x ∀x: -∞ < x < +∞, x ≠ 0  
+<span id="asech"></span>[asech](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(sech(x)) = x ∀x: 0 < x ≤ +1  
+<span id="acsch"></span>[acsch](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions)(csch(x)) = x ∀x: -∞ < x < -1 or +1 < x < +∞  
+
+since sinp(x) = x and cosp(x) = 1, the parabolic trig functions are trivial and are not included
 <!--
 totally we have 2 ⋅ 3 ⋅ 3P2 = 36 functions  
 2 from the forward and inverse functions  
 3 from the three geometries  
 3P2 from a triangle of three sides, from which we take two sides  
 -->
-
-=== "elliptic"
-	=== "forward"
-		| numerator | denominator | name | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="sin"></span>[`sin`](https://en.wikipedia.org/wiki/Sine) | sin(x) = Im(e^ix^), i^2^ = −1 |
-		| adjacent   | hypotenuse  | <span id="cos"></span>[`cos`](https://en.wikipedia.org/wiki/Cosine) | cos(x) = Re(e^ix^), i^2^ = −1 |
-		| opposite   | adjacent    | <span id="tan"></span>[`tan`](https://en.wikipedia.org/wiki/Tangent_(trigonometry)) | tan(x) = sin(x) / cos(x) |
-		| adjacent   | opposite    | <span id="cot"></span>[`cot`](https://en.wikipedia.org/wiki/Cotangent) | cot(x) = 1 / tan(x) |
-		| hypotenuse | adjacent    | <span id="sec"></span>[`sec`](https://en.wikipedia.org/wiki/Secant_(trigonometry)) | sec(x) = 1 / cos(x) |
-		| hypotenuse | opposite    | <span id="csc"></span>[`csc`](https://en.wikipedia.org/wiki/Cosecant) | csc(x) = 1 / sin(x) |
-	=== "inverse"
-		| numerator | denominator | name | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="asin"></span>[`asin`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | asin(sin(x)) = x ∀x: −π/2 ≤ x ≤ +π/2 |
-		| adjacent   | hypotenuse  | <span id="acos"></span>[`acos`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | acos(cos(x)) = x ∀x: 0 ≤ x ≤ +π |
-		| opposite   | adjacent    | <span id="atan"></span>[`atan`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | atan(tan(x)) = x ∀x: -π/2 < x < +π/2 |
-		| adjacent   | opposite    | <span id="acot"></span>[`acot`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | acot(cot(x)) = x ∀x: 0 < x < +π |
-		| hypotenuse | adjacent    | <span id="asec"></span>[`asec`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | asec(sec(x)) = x ∀x: 0 ≤ x ≤ +π, x ≠ +π/2 |
-		| hypotenuse | opposite    | <span id="acsc"></span>[`acsc`](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions) | acsc(csc(x)) = x ∀x: -π/2 ≤ x ≤ +π/2, x ≠ 0 |
-=== "parabolic"
-	=== "forward"
-		| numerator  | denominator | name    | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="sinp"></span>`sinp` | sinp(x) = Im(e^εx^), ε^2^ = 0, ε ≠ 0 |
-		| adjacent   | hypotenuse  | <span id="cosp"></span>`cosp` | cosp(x) = Re(e^εx^), ε^2^ = 0, ε ≠ 0 |
-		| opposite   | adjacent    | <span id="tanp"></span>`tanp` | tanp(x) = sinp(x) / cosp(x) |
-		| adjacent   | opposite    | <span id="cotp"></span>`cotp` | cotp(x) = 1 / tanp(x) |
-		| hypotenuse | adjacent    | <span id="secp"></span>`secp` | secp(x) = 1 / cosp(x) |
-		| hypotenuse | opposite    | <span id="cscp"></span>`cscp` | cscp(x) = 1 / sinp(x) |
-	=== "inverse"
-		| numerator  | denominator | name | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="asinp"></span>`asinp` | asinp(sinp(x)) = x |
-		| adjacent   | hypotenuse  | <span id="acosp"></span>`acosp` | acosp(cosp(x)) = x |
-		| opposite   | adjacent    | <span id="atanp"></span>`atanp` | atanp(tanp(x)) = x |
-		| adjacent   | opposite    | <span id="acotp"></span>`acotp` | acotp(cotp(x)) = x |
-		| hypotenuse | adjacent    | <span id="asecp"></span>`asecp` | asecp(secp(x)) = x |
-		| hypotenuse | opposite    | <span id="acscp"></span>`acscp` | acscp(cscp(x)) = x |
-	since sinp(x) = x and cosp(x) = 1, the parabolic trig functions are trivial and are not included
-=== "hyperbolic"
-	=== "forward"
-		| numerator  | denominator | name        | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="sinh"></span>[`sinh`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | sinh(x) = Im(e^jx^), j^2^ = +1, j ≠ ±1 |
-		| adjacent   | hypotenuse  | <span id="cosh"></span>[`cosh`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | cosh(x) = Re(e^jx^), j^2^ = +1, j ≠ ±1 |
-		| opposite   | adjacent    | <span id="tanh"></span>[`tanh`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | tanh(x) = sinh(x) / cosh(x) |
-		| adjacent   | opposite    | <span id="coth"></span>[`coth`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | coth(x) = 1 / tanh(x) |
-		| hypotenuse | adjacent    | <span id="sech"></span>[`sech`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | sech(x) = 1 / cosh(x) |
-		| hypotenuse | opposite    | <span id="csch"></span>[`csch`](https://en.wikipedia.org/wiki/Hyperbolic_functions) | csch(x) = 1 / sinh(x) |
-	=== "inverse"
-		| numerator  | denominator | name        | definition |
-		| - | - | - | - |
-		| opposite   | hypotenuse  | <span id="asinh"></span>[`asinh`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | asinh(sinh(x)) = x ∀x: -∞ < x < +∞ |
-		| adjacent   | hypotenuse  | <span id="acosh"></span>[`acosh`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | acosh(cosh(x)) = x ∀x: +1 ≤ x < +∞ |
-		| opposite   | adjacent    | <span id="atanh"></span>[`atanh`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | atanh(tanh(x)) = x ∀x: -1 < x < +1 |
-		| adjacent   | opposite    | <span id="acoth"></span>[`acoth`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | acoth(coth(x)) = x ∀x: -∞ < x < +∞, x ≠ 0 |
-		| hypotenuse | adjacent    | <span id="asech"></span>[`asech`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | asech(sech(x)) = x ∀x: 0 < x ≤ +1 |
-		| hypotenuse | opposite    | <span id="acsch"></span>[`acsch`](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) | acsch(csch(x)) = x ∀x: -∞ < x < -1 or +1 < x < +∞ |
 <!--
 sin and cos are the most primitive of the six ratios. in math, you are encouraged to use only these two ratios if possible. but since daamath will be used in numerics-adjacent code, you are encouraged to use whatever ratio simplifies the expression the most, as it reduces computation steps.
 

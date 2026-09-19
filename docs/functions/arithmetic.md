@@ -1,6 +1,6 @@
 # arithmetic
 
-we have 9 useful arithmetic operators: [`add`](#add) [`bus`](#bus) [`sub`](#sub), [`mul`](#mul) [`vid`](#vid) [`div`](#div), [`pow`](#pow) [`root`](#root) [`log`](#log)
+we have 9 useful arithmetic functions: [`add`](#add) [`bus`](#bus) [`sub`](#sub), [`mul`](#mul) [`vid`](#vid) [`div`](#div), [`pow`](#pow) [`root`](#root) [`log`](#log)
 
 <!--
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)

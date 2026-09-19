@@ -1,43 +1,27 @@
 # relational
 
-when a binary relation `rel(a, b)` is defined on a carrier set, we can combine `rel(a, b)` and `rel(b, a)` using the binary [boolean functions][boolean] to get many useful functions. to name these combined functions, we'll use the common partial ordering relation ≤ (less than or equal to), but note that the binary relation can be anything: an equivalence relation, a partial ordering, a pre-order, et cetera.
+we have 14 useful relational functions: [`ev`](#ev) [`gt`](#gt) [`lt`](#lt) [`ic`](#ic) [`ge`](#ge) [`le`](#le) [`so`](#so) [`nso`](#nso) [`nle`](#nle) [`nge`](#nge) [`nic`](#nic) [`nlt`](#nlt) [`ngt`](#ngt) [`nev`](#nev)
+
+when a binary relation `rel(a, b)` is defined on a carrier set, we can combine `rel(a, b)` and `rel(b, a)` using the binary [boolean functions] to get many useful functions. to name these combined functions, we'll use the common partial ordering relation ≤ (less than or equal to), but note that the binary relation can be anything: an equivalence relation, a partial ordering, a pre-order, et cetera.
 
 | name | combiner | ∦ < > ∼ | symbol | description |
 | - | - | - | - | - |
-| [<code>false</code>] | [<code>false</code>] | ❌❌❌❌ | ⊥ | degenerate always-false function |
-| [`ev`](#ev) | [<code>and</code>] | ❌❌❌✅ | ∼ | **e**qui**v**alent |
-| [`gt`](#gt) | [<code>ncon</code>] | ❌❌✅❌ | > | **g**reater **t**han |
-| [`lt`](#lt) | [<code>nimp</code>] | ❌✅❌❌ | < | **l**esser **t**han |
-| [`ic`](#ic) | [<code>nor</code>] | ✅❌❌❌ | ∦ |  **i**ncomparable |
-| [`ge`](#ge) | [<code>snd</code>] | ❌❌✅✅ | ≥ | **g**reater than or **e**quivalent |
-| [`le`](#le) | [<code>fst</code>] | ❌✅❌✅ | ≤ | **l**esser than or **e**quivalent |
-| [`so`](#so) | [<code>xor</code>] | ❌✅✅❌ | ≶ | **s**trictly **o**rdered |
-| [`nso`](#nso) | [<code>nxor</code>] | ✅❌❌✅ | ≸ | **n**ot **s**trictly **o**rdered |
-| [`nle`](#nle) | [<code>nfst</code>] | ✅❌✅❌ | ≰ | **n**ot **l**esser than nor **e**quivalent |
-| [`nge`](#nge) | [<code>nsnd</code>] | ✅✅❌❌ | ≱ | **n**ot **g**reater than nor **e**quivalent |
-| [`nic`](#nic) | [<code>or</code>] | ❌✅✅✅ | ∥ | **n**ot **i**n**c**omparable |
-| [`nlt`](#nlt) | [<code>imp</code>] | ✅❌✅✅ | ≮ | **n**ot **l**esser **t**han |
-| [`ngt`](#ngt) | [<code>con</code>] | ✅✅❌✅ | ≯ | **n**ot **g**reater **t**han |
-| [`nev`](#nev) | [<code>nand</code>] | ✅✅✅❌ | ≁ | **n**ot **e**qui**v**alent |
-| [<code>true</code>] | [<code>true</code>] | ✅✅✅✅ | ⊤ | degenerate always-true function |
-
-# ev
-# gt
-# lt
-# ic
-# ge
-# le
-# so
-# nso
-# nle
-# nge
-# nic
-# nlt
-# ngt
-# nev
-
-# FAQ
-
+| [<code>false</code>] | [<code>false</code>] | ❌❌❌❌ | ⊥ | constant always-false function |
+| <span id="ev"></span>[`ev`](#ev) | [<code>and</code>] | ❌❌❌✅ | ∼ | **e**qui**v**alent |
+| <span id="gt"></span>[`gt`](#gt) | [<code>ncon</code>] | ❌❌✅❌ | > | **g**reater **t**han |
+| <span id="lt"></span>[`lt`](#lt) | [<code>nimp</code>] | ❌✅❌❌ | < | **l**esser **t**han |
+| <span id="ic"></span>[`ic`](#ic) | [<code>nor</code>] | ✅❌❌❌ | ∦ |  **i**ncomparable |
+| <span id="ge"></span>[`ge`](#ge) | [<code>snd</code>] | ❌❌✅✅ | ≥ | **g**reater than or **e**quivalent |
+| <span id="le"></span>[`le`](#le) | [<code>fst</code>] | ❌✅❌✅ | ≤ | **l**esser than or **e**quivalent |
+| <span id="so"></span>[`so`](#so) | [<code>xor</code>] | ❌✅✅❌ | ≶ | **s**trictly **o**rdered |
+| <span id="nso"></span>[`nso`](#nso) | [<code>nxor</code>] | ✅❌❌✅ | ≸ | **n**ot **s**trictly **o**rdered |
+| <span id="nle"></span>[`nle`](#nle) | [<code>nfst</code>] | ✅❌✅❌ | ≰ | **n**ot **l**esser than nor **e**quivalent |
+| <span id="nge"></span>[`nge`](#nge) | [<code>nsnd</code>] | ✅✅❌❌ | ≱ | **n**ot **g**reater than nor **e**quivalent |
+| <span id="nic"></span>[`nic`](#nic) | [<code>or</code>] | ❌✅✅✅ | ∥ | **n**ot **i**n**c**omparable |
+| <span id="nlt"></span>[`nlt`](#nlt) | [<code>imp</code>] | ✅❌✅✅ | ≮ | **n**ot **l**esser **t**han |
+| <span id="ngt"></span>[`ngt`](#ngt) | [<code>con</code>] | ✅✅❌✅ | ≯ | **n**ot **g**reater **t**han |
+| <span id="nev"></span>[`nev`](#nev) | [<code>nand</code>] | ✅✅✅❌ | ≁ | **n**ot **e**qui**v**alent |
+| [<code>true</code>] | [<code>true</code>] | ✅✅✅✅ | ⊤ | constant always-true function |
 
 <!--
 # deprecated. why did i exclude this? because it adds bloat to the vocabulary the user has to learn, for not much benefit
