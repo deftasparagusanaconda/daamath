@@ -5,19 +5,19 @@ hide:
 
 # angle
 
-daamath stores units of 2D angles respective to radians, because radians are the most natural unit in mathematics. [daa] *is* aware of 3D angles like steradians and squared degrees but for these conversions, you should compose the conversion yourself.
+we have 5 useful angle constants: [`turn`](#turn) [`gradian`](#gradian) [`degree`](#)
+
+since [radians](https://en.wikipedia.org/wiki/Radian) are the most natural unit for 2D angles, [daa] *is* aware of 3D angles like steradians and squared degrees but for these conversions, you should compose the conversion yourself.
 
 <table>
 	<tr>
 		<th>name</th>
-		<th>common names</th>
 		<th>common symbols</th>
 		<th>radians</th>
 		<th>approximations</th>
 	</tr>
 	<tr>
-		<td><code>turn</code></td>
-		<td></td>
+		<td><a href="https://en.wikipedia.org/wiki/Turn_(angle)"><code>turn</code></a></td>
 		<td></td>
 		<td><a href="https://en.wikipedia.org/wiki/Tau">τ</a></td>
 		<td>
@@ -28,7 +28,7 @@ daamath stores units of 2D angles respective to radians, because radians are the
 		</td>
 	</tr>
 	<tr>
-		<td><code>gradian</code></td>
+		<td><a href="https://en.wikipedia.org/wiki/Gradian"><code>gradian</code></a></td>
 		<td></td>
 		<td></td>
 		<td> <a href="https://en.wikipedia.org/wiki/Tau">τ</a> / 400</td>
@@ -40,8 +40,8 @@ daamath stores units of 2D angles respective to radians, because radians are the
 		</td>
 	</tr>
 	<tr>
-		<td><code>degree</code></td>
-		<td><a href="https://en.wikipedia.org/wiki/Degree_(angle)">degree</a></td>
+		<td><code><a href="https://en.wikipedia.org/wiki/Degree_(angle)">degree</a></code></td>
+		<td></td>
 		<td><a href="https://en.wikipedia.org/wiki/Degree_symbol">°</a></td>
 		<td><a href="https://en.wikipedia.org/wiki/Tau">τ</a> / 360</td>
 		<td>
@@ -52,9 +52,8 @@ daamath stores units of 2D angles respective to radians, because radians are the
 		</td>
 	</tr>
 	<tr>
-		<td><code>arcminute</code></td>
-		<td><a href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc">minute</a>, <a href="https://en.wikipedia.org/wiki/Second#Etymology">pars minuta prima</a></td>
-		<td>′</td>
+		<td><a href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc"><code>arcminute</code></a></td>
+		<td><a href="https://en.wikipedia.org/wiki/Second#Etymology">′</a></td>
 		<td><a href="https://en.wikipedia.org/wiki/Tau">τ</a> / 360 / 60¹</td> 
 		<td>
 			<details>

@@ -54,13 +54,6 @@ the rational approximations are stored as three integers. this is actually sligh
 
 constants should not be written in uppercase. if constants should be immutable during runtime, that should be enforced by a guard, not by its name. 
 
-# sources
-
-the approximations are generated from:
-
-```python
---8<-- "docs/constants/generate_constants.py"
-```
 
 [f16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 [f32]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
