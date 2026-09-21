@@ -1,0 +1,1 @@
+sets should not be overloaded to carry boolean operators. `not` would be set complement and needs to be aware of a universe set. its actually a special case of set difference so i think i shouldnt overload sets with boolean operators. they feel very similar because they both can form lattices (i.e. have meet/join i.e. have boolean and/or and set intersection/union)

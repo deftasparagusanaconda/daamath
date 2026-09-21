@@ -127,11 +127,11 @@ $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\qua
 </span>
 
 <span id="tanp">
-	$\operatorname{tanp}(z) = \dfrac{\mathrm e^{+\mathrm εz} − \mathrm e^{−\mathrm εz}}{\mathrm e^{+\mathrm εz} + \mathrm e^{+\mathrm εz}}\dfrac{1}{\mathrm ε}$
+	$\operatorname{tanp}(z) = \dfrac{\mathrm e^{+\mathrm εz} − \mathrm e^{−\mathrm εz}}{\mathrm e^{+\mathrm εz} - \mathrm e^{-\mathrm εz}}\dfrac{1}{\mathrm ε}$
 </span>
 
 <span id="cotp">
-	$\operatorname{cotp}(z) = \dfrac{\mathrm e^{+\mathrm εz} + \mathrm e^{−\mathrm εz}}{\mathrm e^{+\mathrm εz} - \mathrm e^{+\mathrm εz}}\dfrac{\mathrm ε}{1}$
+	$\operatorname{cotp}(z) = \dfrac{\mathrm e^{+\mathrm εz} + \mathrm e^{−\mathrm εz}}{\mathrm e^{+\mathrm εz} - \mathrm e^{-\mathrm εz}}\dfrac{\mathrm ε}{1}$
 </span>
 
 <span id="secp">
@@ -208,11 +208,11 @@ $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\qua
 </span>
 
 <span id="asech" title="real principal interval: (0, +1]">
-	$\href{https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions}{\operatorname{asech}}(z) = \operatorname{atanh}\left(\dfrac{1}{z}\right)$
+	$\href{https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions}{\operatorname{asech}}(z) = \operatorname{acosh}\left(\dfrac{1}{z}\right)$
 </span>
 
 <span id="acsch" title="real principal interval: (−∞, −1) ∪ (+1, +∞)">
-	$\href{https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions}{\operatorname{acsch}}(z) = \operatorname{atanh}\left(\dfrac{1}{z}\right)$
+	$\href{https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions}{\operatorname{acsch}}(z) = \operatorname{asinh}\left(\dfrac{1}{z}\right)$
 </span>
 
 the 12 parabolic trig functions are not included because they are trivial: $\operatorname{sinp}(z) = z,\quad \operatorname{cosp}(z) = 1$
