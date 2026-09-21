@@ -25,14 +25,13 @@ mpmath.mp.dps = 300
 # yes we genuinely need 300 because, assuming our constants have an exponent close to 0, f256 has 237 binary precision, which is roughly 237 * log10(2) ≈ 71.34 decimal digits. we will also want to store the residual. that means we need 71.34*2=142 or so. and remember that this is assuming our constants are close to 0 exponent. so yes, 300 is needed.
 
 constants: dict[str, Any] = {
-    'golden_ratio'         : metallic(1, True),
-    'silver_ratio'         : metallic(2, True),
-    'bronze_ratio'         : metallic(3, True),
     'apery'                : mpmath.zeta(3),
     'champernowne'         : '0.' + ''.join(str(i) for i in range(1, 200)),
-    'liouville'            : liouville_10(7),
     'gelfond'              : mpmath.e ** mpmath.pi,
-    'ramanujan'            : mpmath.e ** (mpmath.pi * mpmath.sqrt(163)),
+    #'ramanujan'            : mpmath.e ** (mpmath.pi * mpmath.sqrt(163)), # probably not very useful
+    'ramanujan_soldner'    : mpmath.findroot(mpmath.li, 1.45),
+    'ln_2'                 : mpmath.ln(2),
+    'wallis'               : mpmath.findroot(lambda x: x ** 3 - 2 * x - 5, 2.09445),
     
     # https://mpmath.org/doc/current/functions/constants.html
     'archimedes'       : mpmath.pi,
@@ -46,6 +45,10 @@ constants: dict[str, Any] = {
     'plastic'          : mpmath.findroot(lambda x: x**3 - x - 1, 1.3),
     'gompertz'         : mpmath.e * mpmath.e1(1),
     
+    'liouville'        : liouville_10(7),
+    'golden_ratio'     : metallic(1, True),
+    'silver_ratio'     : metallic(2, True),
+    'bronze_ratio'     : metallic(3, True),
     'feigenbaum_alpha' : feigenbaum_alpha(mpmath.mp.dps),
     'feigenbaum_delta' : feigenbaum_delta(mpmath.mp.dps),
     
@@ -63,6 +66,11 @@ constants: dict[str, Any] = dict(sorted(constants.items()))
 # convert to Float
 for constant_name, v in constants.items():
     constants[constant_name] = Float.from_str(str(v), radix = 10)
+
+for constant_name, constant in constants.items():
+    if len(str(constant)) < mpmath.mp.dps:
+        raise Exception(f'{constant} has <{mpmath.mp.dps} digits. idk bro go fix it')
+    print(constant_name, str(constant))
 
 # (radix, precision) of the five basic IEEE 754 formats
 formats = {'f32' : ( 2,  24),
@@ -91,8 +99,9 @@ for constant_name, constant in constants.items():
         print(f'      significand: {residual.significand}')
         print(f'      radix: {residual.radix}')
         print(f'      exponent: {residual.exponent}')
-
+        
         #markdown_table.append(str(Fixed.from_rational(nearest, nearest.radix)))
+        #markdown_table.append(str(constant))
 
 for line in markdown_table:
     print(line)

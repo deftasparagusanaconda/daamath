@@ -1,35 +1,34 @@
 # daamath
 
-a mathematician's spellbook: cross-language math library [specification], with [implementations] across various programming languages
+daamath is a cross-language math library specification, with implementations in various programming languages:
 
-# install
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://github.com/deftasparagusanaconda/daamath-python">python</a></td>
-      <td><code>python -m pip install daamath</code></td>
-    </tr>
+* [python](https://github.com/deftasparagusanaconda/daamath-python): `python -m pip install daamath`
 <!--
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c/install">c</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/c++/install">c++</a></td>
-      <td><code>curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/javascript/install">javascript</a></td>
-      <td><code>npm install daamath</code></td>
-    </tr>
-    <tr>
-      <td><a href="https://deftasparagusanaconda.github.io/daamath/implementations/julia/install">julia</a></td>
-      <td><code>julia -e 'using Pkg; Pkg.add("daamath")'</code></td>
-    </tr>
+* [c](https://github.com/deftasparagusanaconda/daamath-c): `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh`
+* [c++](https://github.com/deftasparagusanaconda/daamath-c++): `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh`
+* [javascript](https://github.com/deftasparagusanaconda/daamath-js): `npm install daamath`
+* [julia](https://github.com/deftasparagusanaconda/daamath-julia): `julia -e 'using Pkg; Pkg.add("daamath")'`
 -->
-  </tbody>
-</table>
 
+it provides four useful things in math:
+
+* [characters](characters): +, −, ×, ÷, =, %, …
+* [constants](constants): π, e, φ, √2, i, γ, …
+* [datatypes](datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
+* [functions](functions): sin, log, abs, pow, sqrt, round, …
+
+since it must behave the same in different programming languages, it has some rules:
+
+* no hidden assumptions
+* no [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming?wprov=sfla1)
+* no [impure functions](https://en.wikipedia.org/wiki/Pure_function?wprov=sfla1)/mutation/side effects
+* no keyword arguments 
+* no optional arguments
+* no stateful behaviour 
+* functions are defined mathematically, not algorithmically
+* names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
+
+<!--
 # why?
 
 "does integer division do floor rounding or trunc rounding?"
@@ -156,7 +155,7 @@ dm.symbols.lowercase.tau
 dm.symbols.infinity + dm.symbols.not.in.right + dm.symbols.latin.doublestruck.uppercase.r
 # ∞ ∉ ℝ
 ```
-
+-->
 <!--# rant
 
 i originally made daamath because when i designed [gapprox], i wanted a math library that was both very functionally complete and had the same behaviour across languages. but i found that programmers made a lot of bad decisions about how to implement mathematics into code. i discovered a lot of maths along the way too. i hope daamath rewires how programmers think of maths, because its not like the real numbers are the only "real" numbers. ugh. or simply going along with IEEE's rounding without even acknowledging it. and they dont even know complex numbers exist. oh my gosh dont you know `log(-1)` exists??? youre just completely ignoring the complex domain. and `0/0` is not an error! your domain simply didnt define it. go look up what wheel algebra is. see the connection? `NaN` is just the IEEE 754 way to represent `⊥`. they just didnt realize it. most of your "errors" can be represented as either a ClosureError (the result wasnt defined in the codomain) or a RepresentationError (you disabled rounding, and the datatype couldnt represent it accurately)
@@ -166,9 +165,5 @@ dont even get me started on how left out the unicode math characters are :( ever
 ok rant done
 -->
 [documentation]: https://deftasparagusanaconda.github.io/daamath
-[specification]: https://deftasparagusanaconda.github.io/daamath/specification
-[implementations]: https://deftasparagusanaconda.github.io/daamath/implementations
 [gapprox]: https://github.com/deftasparagusanaconda/gapprox
-[install]: https://deftasparagusanaconda.github.io/daamath/install/
 [daa]: https://github.com/deftasparagusanaconda
-

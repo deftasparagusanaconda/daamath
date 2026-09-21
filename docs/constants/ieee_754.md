@@ -1,15 +1,6 @@
----
-hide:
-  - toc
----
-
 # ieee_754
 
-daamath maintains [approximations] in the 5 basic [IEEE 754] formats. those 5 formats are described here:
-
-# definitions
-
-IEEE formats can be mathematically characterized by four integers:
+[IEEE 754] formats can be mathematically characterized by four integers:
 
 | name | `radix` | `precision` | `emin`   | `emax`   |
 | ------ | ----- | --------- | ------ | ------ |
@@ -111,7 +102,6 @@ for row in derived_table:
 
 {{ yaml_source(page) }}
 
-[approximations]: approximations.md
 [binary16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 [binary32]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 [binary64]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format

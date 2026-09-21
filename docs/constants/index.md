@@ -23,25 +23,26 @@ the following irrational constants are approximated:
 # examples
 
 ```
-# get τ as an f16 approximation
+# get τ as an f32 approximation in the float datatype
 
-TAU = dm.TAU.f16.nearest
+TAU = dm.hartl.binary16.nearest.float
 ```
 
 ```
 # create e as a box interval of f64
 
-E = dm.E.f32.nearest          
-E = (dm.pred(E), E) if dm.E.f32.error < 0 else (E, dm.succ(E))           
+E = dm.euler_bernoulli.binary64.nearest
+residual = dm.euler_bernoulli.binary64.residual
+E = (dm.pred(E), E) if residual < 0 else (E, dm.succ(E))
 ```
 
 ```
 # create e as a ball interval of f32
 
-E = dm.ball(centre=dm.E.f32.nearest, radius=abs(dm.E.f32.error))
+E = (dm.euler_bernoulli.binary32.nearest.float, abs(dm.euler_bernoulli.binary32.residual.float))
 ```
 
-
+<!--
 # notes
 
 the rational approximations are stored as three integers. this is actually slightly redundant because rationals only need two integers (or three natural numbers!). but storing two ginormous integers is less efficient than the three handle-able integers because they match the structure of the float datatypes better.
@@ -53,8 +54,7 @@ the rational approximations are stored as three integers. this is actually sligh
 # naming
 
 constants should not be written in uppercase. if constants should be immutable during runtime, that should be enforced by a guard, not by its name. 
-
-
+-->
 [f16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 [f32]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 [f64]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format

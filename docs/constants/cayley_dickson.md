@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # cayley_dickson
 
 the [cayley dickson construction][cdc] gives us some important basis units

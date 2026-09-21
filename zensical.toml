@@ -6,6 +6,10 @@ repo_url = "https://github.com/deftasparagusanaconda/daamath"
 repo_name = "github"
 site_description = "documentation for daamath"
 site_author = "deftasparagusanaconda"
+extra_javascript = [
+  "javascripts/mathjax.js",
+  "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+]
 
 #extra_css = ["stylesheets/extra.css"]
 #extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
@@ -85,6 +89,7 @@ features = [
   "content.code.copy",
   "content.code.annotate",
   #"header.autohide",
+  "content.tooltips",
 ]
 
 [project.theme.icon]
@@ -172,7 +177,13 @@ alternate_style = true
 #emoji_index     = "!!python/name:material.extensions.emoji.twemoji"
 #emoji_generator = "!!python/name:material.extensions.emoji.to_svg"
 
+[project.markdown_extensions]
+abbr = {}
+attr_list = {}
+pymdownx.arithmatex.generic = true
+
 [project.markdown_extensions.zensical.extensions.macros]
 module_name = "macros"
 on_error_fail = true
+
 

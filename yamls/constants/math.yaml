@@ -891,52 +891,52 @@ plastic:
       radix: 10
       exponent: -67
 
-ramanujan:
+ramanujan_soldner:
   f32:
     nearest:
-      significand: 15281689
+      significand: 1521871
       radix: 2
-      exponent: 34
+      exponent: -20
     residual:
-      significand: -10331647
+      significand: -7135407
       radix: 2
-      exponent: 9
+      exponent: -47
   f64:
     nearest:
-      significand: 8204294145024023
+      significand: 6536385945397797
       radix: 2
-      exponent: 5
+      exponent: -52
     residual:
-      significand: 2251799813685037
+      significand: -7832476657945361
       radix: 2
-      exponent: -48
+      exponent: -107
   f128:
     nearest:
-      significand: 9458907149918242093643301956589173
+      significand: 941992489857384473727623646532541
       radix: 2
-      exponent: -55
+      exponent: -109
     residual:
-      significand: 2961768307908888081828659149387881
+      significand: -8541555036579433454475400800558819
       radix: 2
-      exponent: -172
+      exponent: -234
   d64:
     nearest:
-      significand: 2625374126407687
+      significand: 1451369234883381
       radix: 10
-      exponent: 2
+      exponent: -15
     residual:
-      significand: 4399999999999925
+      significand: 5028396848589203
       radix: 10
-      exponent: -14
+      exponent: -32
   d128:
     nearest:
-      significand: 2625374126407687439999999999992501
+      significand: 1451369234883381050283968485892027
       radix: 10
-      exponent: -16
+      exponent: -33
     residual:
-      significand: -2740280181431112064614366266300914
+      significand: 4494930322836480158630930045576624
       radix: 10
-      exponent: -50
+      exponent: -67
 
 silver_ratio:
   f32:
@@ -984,4 +984,3 @@ silver_ratio:
       significand: 7856967187537694807317667973799073
       radix: 10
       exponent: -68
-
