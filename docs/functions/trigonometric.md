@@ -1,42 +1,55 @@
 # trigonometric
 
 we have 24 useful trigonometric functions: [`sin`](#sin) [`cos`](#cos) [`tan`](#tan) [`cot`](#cot) [`sec`](#sec) [`csc`](#csc) [`asin`](#asin) [`acos`](#acos) [`atan`](#atan) [`acot`](#acot) [`asec`](#asec) [`acsc`](#acsc) [`sinh`](#sinh) [`cosh`](#cosh) [`tanh`](#tanh) [`coth`](#coth) [`sech`](#sech) [`csch`](#csch) [`asinh`](#asinh) [`acosh`](#acosh) [`atanh`](#atanh) [`acoth`](#acoth) [`asech`](#asech) [`acsch`](#acsch)
-
+<!--
 we derive 36 trigonometric functions from the [three 2-dimensional unital ℝ algebras](https://en.wikipedia.org/wiki/Hypercomplex_number#Two-dimensional_real_algebras):
 
 $\href{https://en.wikipedia.org/wiki/Complex_number}{\mathrm i^2 = -1}$  
 $\href{https://en.wikipedia.org/wiki/Dual_number}{\mathrm ε^2 = \phantom{+}0,\quad \mathrm ε \ne \phantom{\pm}0}$  
 $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\quad \mathrm j \ne \pm1}$  
+-->
+we use the familiar variable $z = x + \href{https://en.wikipedia.org/wiki/Complex_number}{\mathrm i}y\quad x, y\in\href{https://en.wikipedia.org/wiki/Real_number}{\mathbb R}$ 
 
-<!--we use the familiar variable $z = x + \mathrm iy\quad x, y\in\href{https://en.wikipedia.org/wiki/Real_number}{\mathbb R}$  -->
-
-<span id="sin">
-	$\href{https://en.wikipedia.org/wiki/Sine}{\sin}(z) = \dfrac{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}{2\mathrm i}$
+<span id="sin" title="pretty accurate.">
+	<!--$\href{https://en.wikipedia.org/wiki/Sine}{\sin}(z) = 
+	\dfrac{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}{2\mathrm i}$-->
+	$\href{https://en.wikipedia.org/wiki/Sine}{\sin}(z) = 
+	\sin(x)\cosh(y) + \mathrm i\cos(x)\sinh(y)$
 </span>
 
-<span id="cos">
-	$\href{https://en.wikipedia.org/wiki/Cosine}{\cos}(z) = \dfrac{\mathrm e^{+\mathrm iz} + \mathrm e^{−\mathrm iz}}{2}$
+<span id="cos" title="pretty accurate.">
+	<!--$\href{https://en.wikipedia.org/wiki/Cosine}{\cos}(z) = 
+	\dfrac{\mathrm e^{+\mathrm iz} + \mathrm e^{−\mathrm iz}}{2}$-->
+	$\href{https://en.wikipedia.org/wiki/Cosine}{\cos}(z) = 
+	\cos(x)\cosh(y) - \mathrm i\sin(x)\sinh(y)$
 </span>
 
 <span id="tan">
-	$\href{https://en.wikipedia.org/wiki/Tangent_(trigonometry)}{\tan}(z) = \dfrac{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}{\mathrm e^{+\mathrm iz} + \mathrm e^{-\mathrm iz}}\dfrac{1}{\mathrm i}$
+	$\href{https://en.wikipedia.org/wiki/Tangent_(trigonometry)}{\tan}(z) = 
+	\dfrac{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}{\mathrm e^{+\mathrm iz} + \mathrm e^{-\mathrm iz}}\dfrac{1}{\mathrm i}$
 </span>
 
 <span id="cot">
-	$\href{https://en.wikipedia.org/wiki/Cotangent}{\cot}(z) = \dfrac{\mathrm e^{+\mathrm iz} + \mathrm e^{-\mathrm iz}}{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}\dfrac{\mathrm i}{1}$
+	$\href{https://en.wikipedia.org/wiki/Cotangent}{\cot}(z) = 
+	\dfrac{\mathrm e^{+\mathrm iz} + \mathrm e^{-\mathrm iz}}{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}\dfrac{\mathrm i}{1}$
 </span>
 
-<span id="sec">
-	$\href{https://en.wikipedia.org/wiki/Secant_(trigonometry)}{\sec}(z) = \dfrac{2}{\mathrm e^{+\mathrm iz} + \mathrm e^{−\mathrm iz}}$
+<span id="sec" title="pretty accurate.">
+	$\href{https://en.wikipedia.org/wiki/Secant_(trigonometry)}{\sec}(z) = 
+	\dfrac{1}{\cos(z)}$
 </span>
 
-<span id="csc">
-	$\href{https://en.wikipedia.org/wiki/Cosecant}{\csc}(z) = \dfrac{2\mathrm i}{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}$
+<span id="csc" title="pretty accurate.">
+	<!--$\href{https://en.wikipedia.org/wiki/Cosecant}{\csc}(z) = 
+	\dfrac{2\mathrm i}{\mathrm e^{+\mathrm iz} - \mathrm e^{-\mathrm iz}}$-->
+	$\href{https://en.wikipedia.org/wiki/Cosecant}{\csc}(z) = 
+	\dfrac{1}{\sin(z)}$
 </span>
 
 <span id="asin" title="real principal interval: [−π/2, +π/2]">
 	<!--$\href{https://en.wikipedia.org/wiki/Inverse_trigonometric_functions}{\operatorname{asin}}(z) = \displaystyle\int_0^z\dfrac{\mathrm d t}{\sqrt{1 - t^2}}$-->
-	$\href{https://en.wikipedia.org/wiki/Inverse_trigonometric_functions}{\operatorname{asin}}(z) = -\mathrm i \ln\left(\sqrt{1 - z^2} + \mathrm iz\right)$<!--, z \notin (-\infty, -1) \cup (+1, +\infty)-->
+	$\href{https://en.wikipedia.org/wiki/Inverse_trigonometric_functions}{\operatorname{asin}}(z) = 
+	-\mathrm i \ln\left(\sqrt{1 - z^2} + \mathrm iz\right)$<!--, z \notin (-\infty, -1) \cup (+1, +\infty)-->
 	<!--	
 	$\href{https://en.wikipedia.org/wiki/Inverse_trigonometric_functions}{\operatorname{asin}}(z) =
 	\begin{cases}
@@ -117,7 +130,7 @@ $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\qua
 <span id="acsc" title="real principal inverval: [−π/2, +π/2] ∖ {0}">
 	$\href{https://en.wikipedia.org/wiki/Inverse_trigonometric_functions}{\operatorname{acsc}}(z) = \operatorname{asin}\left(\dfrac{1}{z}\right)$  
 </span>
-
+<!--
 <span id="sinp">
 	$\operatorname{sinp}(z) = \dfrac{\mathrm e^{+\mathrm εz} − \mathrm e^{−\mathrm εz}}{2\mathrm ε}$
 </span>
@@ -165,13 +178,19 @@ $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\qua
 <span id="acscp">
 	$\operatorname{acscp}(z) = \operatorname{asin}\left(\dfrac{1}{z}\right)$
 </span>
-
-<span id="sinh">
-	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{sinh}}(z) = \dfrac{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}{2\mathrm j}$
+-->
+<span id="sinh" title="pretty accurate.">
+	<!--$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{sinh}}(z) = 
+	\dfrac{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}{2\mathrm j}$-->
+	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{sinh}}(z) = 
+	\sinh(x)\cos(y) + \mathrm i\cosh(x)\sin(y)$
 </span>
 
-<span id="cosh">
-	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{cosh}}(z) = \dfrac{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}{2}$
+<span id="cosh" title="pretty accurate.">
+	<!--$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{cosh}}(z) = 
+	\dfrac{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}{2}$-->
+	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{cosh}}(z) = 
+	\cosh(x)\cos(y) + \mathrm i\sinh(x)\sin(y)$
 </span>
 
 <span id="tanh">
@@ -182,12 +201,14 @@ $\href{https://en.wikipedia.org/wiki/Split-complex_number}{\mathrm j^2 = +1,\qua
 	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\coth}(z) = \dfrac{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}\dfrac{\mathrm j}{1}$
 </span>
 
-<span id="sech">
-	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{sech}}(z) = \dfrac{2}{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}$
+<span id="sech" title="pretty accurate.">
+	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{sech}}(z) = 
+	\dfrac{1}{\cosh(z)}$
 </span>
 
-<span id="csch">
-	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{csch}}(z) = \dfrac{2\mathrm j}{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}$
+<span id="csch" title="pretty accurate.">
+	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\operatorname{csch}}(z) = 
+	\dfrac{1}{\sinh(z)}$
 </span>
 
 <span id="asinh" title="real principal interval: (−∞, +∞)">

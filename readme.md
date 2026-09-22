@@ -28,6 +28,14 @@ since it must behave the same in different programming languages, it has some ru
 * functions are defined mathematically, not algorithmically
 * names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
 
+theory:
+
+* conventions were taken from c and python
+* datatype/function architecture is taken from universal algebra
+* lattices
+* trig functions are based on DLMF and William Kahan
+* 
+
 <!--
 # why?
 
