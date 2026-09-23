@@ -30,7 +30,7 @@ functions follow common namespace convention. each section is named as if it wou
 daamath gives slight importance to the numeric behaviour of IEEE 754 floats, and gives formulae that are numerically usable. this is most apparent in the [trigonometric](trigonometric) functions
 
 ```python
---8<-- "numerics_test.py"
+--8<-- "py files/numerics_test.py"
 ```
 
 # rant

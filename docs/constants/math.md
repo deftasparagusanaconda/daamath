@@ -33,7 +33,7 @@ we have quite a few constants in mathematics:
 # source
 
 ```python
---8<-- "docs/constants/generate_math_constants.py"
+--8<-- "py files/generate_math_constants.py"
 ```
 
 {{ yaml_source(page) }}
