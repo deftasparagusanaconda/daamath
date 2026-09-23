@@ -25,6 +25,14 @@ in short, a function with n inputs and 1 output is involved in an equation of (n
 
 functions follow common namespace convention. each section is named as if it would be followed by the word "functions". like: "trigonometric ^^functions^^" instead of "trigonometry ^^functions^^" or "relational ^^functions^^" instead of "relation ^^functions^^"
 
+# numerics
+
+daamath gives slight importance to the numeric behaviour of IEEE 754 floats, and gives formulae that are numerically usable. this is most apparent in the [trigonometric](trigonometric) functions
+
+```python
+--8<-- "numerics_test.py"
+```
+
 # rant
 
 note to self: the arithmetic, trigonometry, logic, and interval function sets are done. quantize and variadic are not done. i hate that they are hard to define or grasp. this is tough

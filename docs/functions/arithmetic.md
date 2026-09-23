@@ -1,6 +1,6 @@
 # arithmetic
 
-we have 9 useful arithmetic functions: [`add`](#add) [`bus`](#bus) [`sub`](#sub), [`mul`](#mul) [`vid`](#vid) [`div`](#div), [`pow`](#pow) [`root`](#root) [`log`](#log)
+we have 9 + 2 useful arithmetic functions: [`add`](#add) [`lsub`](#lsub) [`rsub`](#rsub) [`mul`](#mul) [`ldiv`](#ldiv) [`rdiv`](#rdiv) [`pow`](#pow) [`root`](#root) [`log`](#log), [`sub`](#sub) [`div`](#div)
 
 <!--
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)
@@ -19,17 +19,19 @@ the hyperoperation tower starts from the successor function:
 | - | - | - |
 | 0 | [succ](#succ)(a) | [pred](#pred)(b) |
 -->
-to organize the most common arithmetic operators, we use the [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation) as a semantic guide. for each binary hyperoperation <code>H~n~</code> involved in an equation <code>a H~n~ b = c</code>, we can have three functions that solve for c, b, a:
+to organize the most common arithmetic operators, we use the [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation) as a semantic guide:
 
-| n | equation | solve for c | solve for b | solve for a |
-| - | - | -:| -:| -:|
-| 1 | <code>a [+](https://en.wikipedia.org/wiki/Addition) b = c</code> | <span id="add"></span><code>[add](https://en.wikipedia.org/wiki/Addition)(a, b) = c</code> | <span id="bus"></span><code>[bus](https://en.wikipedia.org/wiki/Inverse_element)(c, a) = b</code> |  <span id="sub"></span><code>[sub](https://en.wikipedia.org/wiki/Subtraction)(c, b) = a</code> |
-| 2 | <code>a [×](https://en.wikipedia.org/wiki/Multiplication) b = c</code> | <span id="mul"></span><code>[mul](https://en.wikipedia.org/wiki/Multiplication)(a, b) = c</code> | <span id="vid"></span><code>[vid](https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division)(c, a) = b</code> | <span id="div"></span><code>[div](https://en.wikipedia.org/wiki/Division_(mathematics))(c, b) = a</code> |
-| 3 | <code>a [↑](https://en.wikipedia.org/wiki/Exponentiation) b = c</code> | <span id="pow"></span><code>[pow](https://en.wikipedia.org/wiki/Exponentiation)(a, b) = c</code> | <span id="root"></span><code>[root](https://en.wikipedia.org/wiki/Nth_root)(c, a) = b</code> | <span id="log"></span><code>[log](https://en.wikipedia.org/wiki/Logarithm)(c, b) = a</code> |
-| 4 | <code>a [⇈](https://en.wikipedia.org/wiki/Tetration) b = c</code> | <span id="spow"></span><code>[spow](https://en.wikipedia.org/wiki/Tetration)(a, b) = c</code> | <span id="sroot"></span><code>[sroot](https://en.wikipedia.org/wiki/Tetration#Super-root)(c, a) = b</code> | <span id="slog"></span><code>[slog](https://en.wikipedia.org/wiki/Tetration#Super-logarithm)(c, b) = a</code> |
-| … | … | … | … |
+| n | hyperoperation | left inverse | right inverse | two-sided inverse |
+| - | -:| -:| -:| -: |
+| 1 | <span id="add">$\href{https://en.wikipedia.org/wiki/Addition}{\operatorname{add}}(a,b) = c$</span> | <span id="lsub">$\operatorname{lsub}(c,a) = b$</span> | <span id="rsub">$\operatorname{rsub}(c,b) = a$</span> | <span id="sub">$\href{https://en.wikipedia.org/wiki/Subtraction}{\operatorname{sub}}(c, a) = b\ ∧\ \href{https://en.wikipedia.org/wiki/Subtraction}{\operatorname{sub}}(c,b) = a$</span> |
+| 2 | <span id="mul">$\href{https://en.wikipedia.org/wiki/Multiplication}{\operatorname{mul}}(a,b) = c$</span> | <span id="ldiv">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division}{\operatorname{ldiv}}(c, a) = b$</span> | <span id="rdiv">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division}{\operatorname{rdiv}}(c, b) = a$</span> | <span id="div">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)}{\operatorname{div}}(c, b) = a\ ∧\ \href{https://en.wikipedia.org/wiki/Division_(mathematics)}{\operatorname{div}}(c, a) = b$</span> |
+| 3 | <span id="pow">$\href{https://en.wikipedia.org/wiki/Exponentiation}{\operatorname{pow}}(a, b) = c$</span> | <span id="root">$\href{https://en.wikipedia.org/wiki/Nth_root}{\operatorname{root}}(c, a) = b$</span> | <span id="log">$\href{https://en.wikipedia.org/wiki/Logarithm}{\log}(c, b) = a$</span> | (not named yet) |
+| 4 | <span id="spow">$\href{https://en.wikipedia.org/wiki/Tetration}{\operatorname{spow}}(a, b) = c$</span> | <span id="sroot">$\href{https://en.wikipedia.org/wiki/Tetration#Super-root}{\operatorname{sroot}}(c, a) = b$</span> | <span id="slog">$\href{https://en.wikipedia.org/wiki/Tetration#Super-logarithm}{\operatorname{slog}}(c, b) = a$</span> | (not named yet) |
+| … | … | … | … | … |
 
-note: we do not include [`spow`](#spow) [`sroot`](#sroot) [`slog`](#slog) and other n ≥ 4 because there is no canonical definition yet (especially for non-integers)
+
+
+note: we do not include [$\operatorname{spow}$](#spow) [$\operatorname{sroot}$](#sroot) [$\operatorname{slog}$](#slog) and other n ≥ 4 because there is no canonical definition yet (especially for non-integers)
 
 <!--
 c = a + b  add 
