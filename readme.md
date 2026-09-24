@@ -2,7 +2,16 @@
 
 daamath is a cross-language math library specification, with implementations in various programming languages:
 
-* [python](https://github.com/deftasparagusanaconda/daamath-python): `python -m pip install daamath`
+<table>
+  <tr>
+    <td>
+      <a href=https://github.com/deftasparagusanaconda/daamath-python>python</a>
+    </td>
+    <td>
+      <code>python -m pip install daamath</code>
+    </td>
+  </tr>
+</table>
 <!--
 * [c](https://github.com/deftasparagusanaconda/daamath-c): `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh`
 * [c++](https://github.com/deftasparagusanaconda/daamath-c++): `curl -sSL https://deftasparagusanaconda.github.io/daamath/install.sh | sh`
@@ -10,12 +19,31 @@ daamath is a cross-language math library specification, with implementations in 
 * [julia](https://github.com/deftasparagusanaconda/daamath-julia): `julia -e 'using Pkg; Pkg.add("daamath")'`
 -->
 
+# examples
+
+```python
+import daamath as dm
+
+sin = dm.sin.binary64.nearesteven
+pi = dm.archimedes.binary64.nearesteven
+approx = dm.tilde_tilde
+
+print(dm.ellinika.lower.pi, approx, pi)
+# π ≈ 3.141592653589793
+
+print(sin(pi), approx, 0)
+# 1.2246467991473532e-16 ≈ 0
+```
+
+# features
+
 it provides four useful things in math:
 
-* [characters](characters): +, −, ×, ÷, =, %, …
-* [constants](constants): π, e, φ, √2, i, γ, …
-* [datatypes](datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
-* [functions](functions): sin, log, abs, pow, sqrt, round, …
+* [characters](https://deftasparagusanaconda.github.io/daamath/characters): +, −, ×, ÷, =, %, …
+* [constants](https://deftasparagusanaconda.github.io/daamath/constants): π, e, φ, √2, i, γ, …
+* [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
+* [functions](https://deftasparagusanaconda.github.io/daamath/functions): sin, log, abs, pow, sqrt, round, …
+
 
 since it must behave the same in different programming languages, it has some rules:
 
@@ -28,6 +56,7 @@ since it must behave the same in different programming languages, it has some ru
 * functions are defined mathematically, not algorithmically
 * names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
 
+<!--
 theory:
 
 * conventions were taken from c and python
@@ -35,7 +64,7 @@ theory:
 * lattices
 * trig functions are based on DLMF and William Kahan
 * 
-
+-->
 <!--
 # why?
 
@@ -172,6 +201,3 @@ dont even get me started on how left out the unicode math characters are :( ever
 
 ok rant done
 -->
-[documentation]: https://deftasparagusanaconda.github.io/daamath
-[gapprox]: https://github.com/deftasparagusanaconda/gapprox
-[daa]: https://github.com/deftasparagusanaconda
