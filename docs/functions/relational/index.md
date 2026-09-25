@@ -83,7 +83,7 @@ with respect to two elements A and B, we have five partitions of the carrier set
 
 {{ yaml_source(page) }}
 
-[boolean functions]: boolean.md
+[boolean functions]: boolean/
 [<code>false</code>]: ../constants/boolean#false
 [<code>true</code>]: ../constants/boolean#true
 [<code>and</code>]: ./boolean#and

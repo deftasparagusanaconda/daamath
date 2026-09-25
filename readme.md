@@ -56,6 +56,15 @@ since it must behave the same in different programming languages, it has some ru
 * functions are defined mathematically, not algorithmically
 * names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
 
+# to do
+
+* ≈ 25 / 100 math constants implemented
+* rename each constant's nearest and residual to nearesteven and residual
+* document datatypes
+* analyze numerically favourable formulae for complex trig functions
+* explore unicode for more interesting characters
+* 
+
 <!--
 theory:
 

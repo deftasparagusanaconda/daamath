@@ -1,6 +1,6 @@
 # arithmetic
 
-we have 9 + 2 useful arithmetic functions: [`add`](#add) [`lsub`](#lsub) [`rsub`](#rsub) [`mul`](#mul) [`ldiv`](#ldiv) [`rdiv`](#rdiv) [`pow`](#pow) [`root`](#root) [`log`](#log), [`sub`](#sub) [`div`](#div)
+<!--we have 9 + 2 useful arithmetic functions: [`add`](#add) [`lsub`](#lsub) [`rsub`](#rsub) [`mul`](#mul) [`ldiv`](#ldiv) [`rdiv`](#rdiv) [`pow`](#pow) [`root`](#root) [`log`](#log), [`sub`](#sub) [`div`](#div)-->
 
 <!--
 ![diagram for little kids i guess lol](diagrams/hyperoperations.svg)

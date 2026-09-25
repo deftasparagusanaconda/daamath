@@ -1,6 +1,6 @@
 # trigonometric
 
-we have 24 useful trigonometric functions: [`sin`](#sin) [`cos`](#cos) [`tan`](#tan) [`cot`](#cot) [`sec`](#sec) [`csc`](#csc) [`asin`](#asin) [`acos`](#acos) [`atan`](#atan) [`acot`](#acot) [`asec`](#asec) [`acsc`](#acsc) [`sinh`](#sinh) [`cosh`](#cosh) [`tanh`](#tanh) [`coth`](#coth) [`sech`](#sech) [`csch`](#csch) [`asinh`](#asinh) [`acosh`](#acosh) [`atanh`](#atanh) [`acoth`](#acoth) [`asech`](#asech) [`acsch`](#acsch)
+<!--we have 24 useful trigonometric functions: [`sin`](#sin) [`cos`](#cos) [`tan`](#tan) [`cot`](#cot) [`sec`](#sec) [`csc`](#csc) [`asin`](#asin) [`acos`](#acos) [`atan`](#atan) [`acot`](#acot) [`asec`](#asec) [`acsc`](#acsc) [`sinh`](#sinh) [`cosh`](#cosh) [`tanh`](#tanh) [`coth`](#coth) [`sech`](#sech) [`csch`](#csch) [`asinh`](#asinh) [`acosh`](#acosh) [`atanh`](#atanh) [`acoth`](#acoth) [`asech`](#asech) [`acsch`](#acsch)-->
 <!--
 we derive 36 trigonometric functions from the [three 2-dimensional unital ℝ algebras](https://en.wikipedia.org/wiki/Hypercomplex_number#Two-dimensional_real_algebras):
 
@@ -194,7 +194,10 @@ we use the familiar variable $z = x + \href{https://en.wikipedia.org/wiki/Comple
 </span>
 
 <span id="tanh">
-	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\tanh}(z) = \dfrac{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}\dfrac{1}{\mathrm j}$
+	<!--$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\tanh}(z) = 
+	\dfrac{\mathrm e^{+\mathrm jz} - \mathrm e^{−\mathrm jz}}{\mathrm e^{+\mathrm jz} + \mathrm e^{−\mathrm jz}}\dfrac{1}{\mathrm j}$-->
+	$\href{https://en.wikipedia.org/wiki/Hyperbolic_functions}{\tanh}(z) = 
+	-\mathrm i\tanh(\mathrm i z)$
 </span>
 
 <span id="coth">
