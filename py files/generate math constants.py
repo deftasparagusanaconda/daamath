@@ -24,41 +24,53 @@ mpmath.mp.dps = 300
 # madness? THIS    IS    SPARTAAAA!!!
 # yes we genuinely need 300 because, assuming our constants have an exponent close to 0, f256 has 237 binary precision, which is roughly 237 * log10(2) ≈ 71.34 decimal digits. we will also want to store the residual. that means we need 71.34*2=142 or so. and remember that this is assuming our constants are close to 0 exponent. so yes, 300 is needed.
 
-constants: dict[str, Any] = {
-    'apery'                : mpmath.zeta(3),
-    'champernowne'         : '0.' + ''.join(str(i) for i in range(1, 200)),
-    'gelfond'              : mpmath.e ** mpmath.pi,
-    #'ramanujan'            : mpmath.e ** (mpmath.pi * mpmath.sqrt(163)), # probably not very useful
-    'ramanujan_soldner'    : mpmath.findroot(mpmath.li, 1.45),
-    'ln_2'                 : mpmath.ln(2),
-    'wallis'               : mpmath.findroot(lambda x: x ** 3 - 2 * x - 5, 2.09445),
+constants: dict[str, Any] = dict(
+    zero                 = 0,
+    liouville            = liouville_10(7),
+    champernowne         = '0.' + ''.join(str(i) for i in range(1, 200)),
+    meissel_mertens      = mpmath.mertens,
+    half                 = 0.5,
+    euler_mascheroni     = mpmath.euler,
+    gompertz             = mpmath.e * mpmath.e1(1),    
+    hardy_littlewood     = mpmath.twinprime,
+    catalan              = mpmath.catalan,
+    one                  = 1,
+    apery                = mpmath.zeta(3),
+    delian               = mpmath.cbrt(2),
+    glaisher_kinkelin    = mpmath.glaisher,
+    plastic              = mpmath.findroot(lambda x: x**3 - x - 1, 1.3),
+    pythagoras           = mpmath.sqrt(2),
+    ramanujan_soldner    = mpmath.findroot(mpmath.li, 1.45),
+    golden_ratio         = metallic(1, True),
+    theodorus            = mpmath.sqrt(3),
+    two                  = 2, 
+    wallis               = mpmath.findroot(lambda x: x ** 3 - 2 * x - 5, 2.09445),
+    silver_ratio         = metallic(2, True),
+    feigenbaum_alpha     = feigenbaum_alpha(mpmath.mp.dps),
+    khinchin             = mpmath.khinchin,
+    euler_bernoulli      = mpmath.e,
+    archimedes           = mpmath.pi,
+    bronze_ratio         = metallic(3, True),
+    feigenbaum_delta     = feigenbaum_delta(mpmath.mp.dps),
+    hartl                = mpmath.pi * 2,
+    gelfond              = mpmath.e ** mpmath.pi,
+
+
+
+    #ramanujan            = mpmath.e ** (mpmath.pi * mpmath.sqrt(163)), # probably not very useful
+    ln_2                 = mpmath.ln(2),
+    #'degree' = mpmath.pi * 2 / 360,
+    #'gradian'= mpmath.pi * 2 / 400,
+    #'minute' = mpmath.pi * 2 / 21600,
+    #'second' = mpmath.pi * 2 / 129600,
+    sqrt_5 = mpmath.sqrt(5),
+    cbrt_3 = mpmath.cbrt(3),
+    root_2_12 = mpmath.root(2, 12),
+    supergolden = mpmath.findroot(lambda x: x ** 3 - x ** 2 - 1, 1.46),
     
-    # https://mpmath.org/doc/current/functions/constants.html
-    'archimedes'       : mpmath.pi,
-    'euler_bernoulli'  : mpmath.e,
-    'euler_mascheroni' : mpmath.euler,
-    'catalan'          : mpmath.catalan,
-    'khinchin'         : mpmath.khinchin,
-    'glaisher_kinkelin': mpmath.glaisher,
-    'meissel_mertens'  : mpmath.mertens ,
-    'hardy_littlewood' : mpmath.twinprime,
-    'plastic'          : mpmath.findroot(lambda x: x**3 - x - 1, 1.3),
-    'gompertz'         : mpmath.e * mpmath.e1(1),
     
-    'liouville'        : liouville_10(7),
-    'golden_ratio'     : metallic(1, True),
-    'silver_ratio'     : metallic(2, True),
-    'bronze_ratio'     : metallic(3, True),
-    'feigenbaum_alpha' : feigenbaum_alpha(mpmath.mp.dps),
-    'feigenbaum_delta' : feigenbaum_delta(mpmath.mp.dps),
-    
-    # angles w.r.t. radians — the most natural unit of angle ever :)
-    'hartl'            : mpmath.pi * 2,   # instead of tau, which is just a greek letter
-    #'degree' : mpmath.pi * 2 / 360,
-    #'gradian': mpmath.pi * 2 / 400,
-    #'minute' : mpmath.pi * 2 / 21600,
-    #'second' : mpmath.pi * 2 / 129600,
-}
+    connective = mpmath.sqrt(2 + mpmath.sqrt(2)),
+)
 
 # sort alphabetically
 constants: dict[str, Any] = dict(sorted(constants.items()))

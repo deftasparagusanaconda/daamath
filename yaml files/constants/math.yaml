@@ -1,986 +1,293 @@
-apery:
-  f32:
-    nearest:
-      significand: 39389
-      radix: 2
-      exponent: -15
-    residual:
-      significand: 2588721
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: 5413583021147681
-      radix: 2
-      exponent: -52
-    residual:
-      significand: 7911585492422453
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 390089767628479057719460876361321
-      radix: 2
-      exponent: -108
-    residual:
-      significand: 2578012621583636293187150822361003
-      radix: 2
-      exponent: -224
-  d64:
-    nearest:
-      significand: 1202056903159594
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 2853997381615114
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 120205690315959428539973816151145
-      radix: 10
-      exponent: -32
-    residual:
-      significand: -9235013707659501118207728444658162
-      radix: 10
-      exponent: -69
+- name: zero
+  link: https://en.wikipedia.org/wiki/Zero
+  oeis: 
+  eponyms: []
+  formula: $0 = ∃!x ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀a ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, x \href{https://en.wikipedia.org/wiki/Addition}{+} a = a$
+  decimal: 0
 
-archimedes:
-  f32:
-    nearest:
-      significand: 13176795
-      radix: 2
-      exponent: -22
-    residual:
-      significand: -6151831
-      radix: 2
-      exponent: -46
-  f64:
-    nearest:
-      significand: 884279719003555
-      radix: 2
-      exponent: -48
-    residual:
-      significand: 4967757600021511
-      radix: 2
-      exponent: -105
-  f128:
-    nearest:
-      significand: 1019505104126898525104217885171767
-      radix: 2
-      exponent: -108
-    residual:
-      significand: 2337915386157937862343080991980185
-      radix: 2
-      exponent: -224
-  d64:
-    nearest:
-      significand: 3141592653589793
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 2384626433832795
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 3141592653589793238462643383279503
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -1158028306006248941790250554076922
-      radix: 10
-      exponent: -67
+- name: liouville
+  link: https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville
+  oeis: 
+  eponyms: 
+    - name: Joseph Liouville
+      link: https://fr.wikipedia.org/wiki/Joseph_Liouville
+  formula: '$L = \displaystyle\sum_{k=1}^∞ \dfrac{1}{10^{k!}}$'
+  decimal: 0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000…
 
-bronze_ratio:
-  f32:
-    nearest:
-      significand: 13852845
-      radix: 2
-      exponent: -22
-    residual:
-      significand: 4593055
-      radix: 2
-      exponent: -48
-  f64:
-    nearest:
-      significand: 3718594782844541
-      radix: 2
-      exponent: -50
-    residual:
-      significand: -1398617606218755
-      radix: 2
-      exponent: -103
-  f128:
-    nearest:
-      significand: 4287247892060299427825196787957369
-      radix: 2
-      exponent: -110
-    residual:
-      significand: 1358214404506567167795150203095537
-      radix: 2
-      exponent: -223
-  d64:
-    nearest:
-      significand: 3302775637731995
-      radix: 10
-      exponent: -15
-    residual:
-      significand: -3534403893662648
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 3302775637731994646559610633735248
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -2687435171307737689364477347188642
-      radix: 10
-      exponent: -68
+- name: champernowne
+  link: https://en.wikipedia.org/wiki/Champernowne_constant
+  oeis: 
+  eponyms: 
+    - name: David Gawen Champernowne
+      link: https://en.wikipedia.org/wiki/D._G._Champernowne
+  formula: $C_10 = $
+  decimal: 0.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545…
 
-catalan:
-  f32:
-    nearest:
-      significand: 15367353
-      radix: 2
-      exponent: -24
-    residual:
-      significand: -6340453
-      radix: 2
-      exponent: -48
-  f64:
-    nearest:
-      significand: 8250284617241437
-      radix: 2
-      exponent: -53
-    residual:
-      significand: 4864608954801997
-      radix: 2
-      exponent: -110
-  f128:
-    nearest:
-      significand: 4755965277172361093595201571880243
-      radix: 2
-      exponent: -112
-    residual:
-      significand: -7662792475873917706018756854866131
-      radix: 2
-      exponent: -227
-  d64:
-    nearest:
-      significand: 915965594177219
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 1505460351493238
-      radix: 10
-      exponent: -32
-  d128:
-    nearest:
-      significand: 9159655941772190150546035149323841
-      radix: 10
-      exponent: -34
-    residual:
-      significand: 1077414937428167213426649811962176
-      radix: 10
-      exponent: -68
+- name: meissel_mertens
+  link: https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante
+  oeis: 
+  eponyms: 
+    - name: Daniel Friedrich Ernst Meissel
+      link: https://de.wikipedia.org/wiki/Ernst_Meissel
+    - name: Franciszek Carl Josef Mertens
+      link: https://de.wikipedia.org/wiki/Franz_Mertens_(Mathematiker)
+  formula: $M$
+  decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
 
-champernowne:
-  f32:
-    nearest:
-      significand: 8285045
-      radix: 2
-      exponent: -26
-    residual:
-      significand: -8746753
-      radix: 2
-      exponent: -52
-  f64:
-    nearest:
-      significand: 1111999898784253
-      radix: 2
-      exponent: -53
-    residual:
-      significand: 1977635926259521
-      radix: 2
-      exponent: -110
-  f128:
-    nearest:
-      significand: 160256074553625316498391177443137
-      radix: 2
-      exponent: -110
-    residual:
-      significand: -7361936966102959840346946025796057
-      radix: 2
-      exponent: -235
-  d64:
-    nearest:
-      significand: 1234567891011121
-      radix: 10
-      exponent: -16
-    residual:
-      significand: 3141516171819202
-      radix: 10
-      exponent: -32
-  d128:
-    nearest:
-      significand: 1234567891011121314151617181920212
-      radix: 10
-      exponent: -34
-    residual:
-      significand: 2232425262728293031323334353637384
-      radix: 10
-      exponent: -68
+- name: one_half
+  link: https://en.wikipedia.org/wiki/One_half
+  oeis: 
+  eponyms: []
+  formula: $0.5 = \dfrac{1}{2}$
+  decimal: 0.5
+- name: euler_mascheroni
+  link: https://en.wikipedia.org/wiki/Euler%27s_constant
+  oeis: 
+  eponyms: 
+    - name: Leonhard Euler
+      link: https://als.wikipedia.org/wiki/Leonhard_Euler
+    - name: Lorenzo Mascheroni
+      link: https://it.wikipedia.org/wiki/Lorenzo_Mascheroni
+  formula: γ
+  decimal: 0.57721566490153286060651209008240243104215933593992359880576723488486772677766467093694706329174674…
 
-euler_bernoulli:
-  f32:
-    nearest:
-      significand: 2850325
-      radix: 2
-      exponent: -20
-    residual:
-      significand: 11617655
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: 6121026514868073
-      radix: 2
-      exponent: -51
-    residual:
-      significand: 2932120240029853
-      radix: 2
-      exponent: -104
-  f128:
-    nearest:
-      significand: 3528531549630051945308345931409213
-      radix: 2
-      exponent: -110
-    residual:
-      significand: 9888845093849388377822874353381897
-      radix: 2
-      exponent: -225
-  d64:
-    nearest:
-      significand: 2718281828459045
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 2353602874713527
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 2718281828459045235360287471352662
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 4977572470936999595749669676277241
-      radix: 10
-      exponent: -67
+- name: gompertz
+  link: https://en.wikipedia.org/wiki/Gompertz_constant
+  oeis: 
+  eponyms: 
+    - name: Benjamin Gompertz
+      link: https://en.wikipedia.org/wiki/Benjamin_Gompertz
+  formula: δ
+  decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
 
-euler_mascheroni:
-  f32:
-    nearest:
-      significand: 1210509
-      radix: 2
-      exponent: -21
-    residual:
-      significand: -7473469
-      radix: 2
-      exponent: -50
-  f64:
-    nearest:
-      significand: 5199096506725913
-      radix: 2
-      exponent: -53
-    residual:
-      significand: -6416270704492459
-      radix: 2
-      exponent: -110
-  f128:
-    nearest:
-      significand: 2997075083565320836720885164474707
-      radix: 2
-      exponent: -112
-    residual:
-      significand: -2136208019855122592659514171343255
-      radix: 2
-      exponent: -225
-  d64:
-    nearest:
-      significand: 5772156649015329
-      radix: 10
-      exponent: -16
-    residual:
-      significand: -393934879099176
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 5772156649015328606065120900824024
-      radix: 10
-      exponent: -34
-    residual:
-      significand: 3104215933593992359880576723488487
-      radix: 10
-      exponent: -68
+- name: hardy_littlewood
+  link: https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture
+  oeis: 
+  eponyms: 
+    - name: Godfrey Harold Hardy
+      link: https://en.wikipedia.org/wiki/G._H._Hardy
+    - name: John Edensor Littlewood
+      link: https://en.wikipedia.org/wiki/John_Edensor_Littlewood
+  formula: C~2~
+  decimal: 0.66016181584686957392781211001455577843262336028473341331944842333540564230449527714376003141383986…
 
-feigenbaum_alpha:
-  f32:
-    nearest:
-      significand: -10497957
-      radix: 2
-      exponent: -22
-    residual:
-      significand: 16369657
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: -5636047486812271
-      radix: 2
-      exponent: -51
-    residual:
-      significand: -3872020626059773
-      radix: 2
-      exponent: -104
-  f128:
-    nearest:
-      significand: -6497920348531242516558650671693441
-      radix: 2
-      exponent: -111
-    residual:
-      significand: 8628192103143772030457279648238723
-      radix: 2
-      exponent: -225
-  d64:
-    nearest:
-      significand: -2502907875095893
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 1777160971267818
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: -2502907875095892822283902873218216
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 2136187286232728500226638079432208
-      radix: 10
-      exponent: -67
+- name: catalan
+  link: https://fr.wikipedia.org/wiki/Constante_de_Catalan
+  oeis: 
+  eponyms: 
+    - name: Eugène Charles Catalan
+      link: https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan
+  formula: G
+  decimal: 0.91596559417721901505460351493238411077414937428167213426649811962176301977625476947935651292611510…
 
-feigenbaum_delta:
-  f32:
-    nearest:
-      significand: 9792025
-      radix: 2
-      exponent: -21
-    residual:
-      significand: 16540105
-      radix: 2
-      exponent: -46
-  f64:
-    nearest:
-      significand: 5257053656718487
-      radix: 2
-      exponent: -50
-    residual:
-      significand: 2507849245273457
-      radix: 2
-      exponent: -103
-  f128:
-    nearest:
-      significand: 6060970211702805171898507314247833
-      radix: 2
-      exponent: -110
-    residual:
-      significand: 1286034171825487501298884004879849
-      radix: 2
-      exponent: -224
-  d64:
-    nearest:
-      significand: 4669201609102991
-      radix: 10
-      exponent: -15
-    residual:
-      significand: -3281467961795338
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 4669201609102990671853203820466202
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -3827418144225242313672543486569959
-      radix: 10
-      exponent: -67
+- name: one
+  link: https://en.wikipedia.org/wiki/1
+  oeis: 
+  eponyms: []
+  formula: $1 = ∃!x ∈ ℂ \mid ∀a ∈ ℂ, x × a = a$
+  decimal: 1
 
-gelfond:
-  f32:
-    nearest:
-      significand: 12132387
-      radix: 2
-      exponent: -19
-    residual:
-      significand: 3850829
-      radix: 2
-      exponent: -42
-  f64:
-    nearest:
-      significand: 3256762959939997
-      radix: 2
-      exponent: -47
-    residual:
-      significand: -3419803669499049
-      radix: 2
-      exponent: -101
-  f128:
-    nearest:
-      significand: 7509584103843739251832898945919863
-      radix: 2
-      exponent: -108
-    residual:
-      significand: -8695093222075414526040740248909099
-      radix: 2
-      exponent: -222
-  d64:
-    nearest:
-      significand: 2314069263277927
-      radix: 10
-      exponent: -14
-    residual:
-      significand: -9942709136320515
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 2314069263277926900572908636794855
-      radix: 10
-      exponent: -32
-    residual:
-      significand: -2619733893757399788006554953590476
-      radix: 10
-      exponent: -66
+- name: apery
+  link: https://en.wikipedia.org/wiki/Ap%C3%A9ry%27s_constant
+  oeis: 
+  eponyms: 
+    - name: Roger Apéry
+      link: https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry
+  formula: $\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{ζ}(3)$
+  decimal: 1.20205690315959428539973816151144999076498629234049888179227155534183820578631309018645587360933525…
 
-glaisher_kinkelin:
-  f32:
-    nearest:
-      significand: 5378889
-      radix: 2
-      exponent: -22
-    residual:
-      significand: 15924615
-      radix: 2
-      exponent: -48
-  f64:
-    nearest:
-      significand: 5775538340747379
-      radix: 2
-      exponent: -52
-    residual:
-      significand: 2684967321706989
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 6658742353729000743511574820699559
-      radix: 2
-      exponent: -112
-    residual:
-      significand: 1191325315758501970318994220184635
-      radix: 2
-      exponent: -223
-  d64:
-    nearest:
-      significand: 1282427129100623
-      radix: 10
-      exponent: -15
-    residual:
-      significand: -3631246574311302
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 1282427129100622636875342568869792
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -2722323110726749988079362599782596
-      radix: 10
-      exponent: -67
+- name: delian
+  link: https://el.wikipedia.org/wiki/%CE%94%CE%B9%CF%80%CE%BB%CE%B1%CF%83%CE%B9%CE%B1%CF%83%CE%BC%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%BA%CF%8D%CE%B2%CE%BF%CF%85
+  oeis: 
+  eponyms: 
+    - name: Δῆλος
+      link: https://el.wikipedia.org/wiki/%CE%94%CE%AE%CE%BB%CE%BF%CF%82
+  formula: $\sqrt[3]{2}$
+  decimal: 1.25992104989487316476…
 
-golden_ratio:
-  f32:
-    nearest:
-      significand: 13573053
-      radix: 2
-      exponent: -23
-    residual:
-      significand: -9240939
-      radix: 2
-      exponent: -49
-  f64:
-    nearest:
-      significand: 910872158600853
-      radix: 2
-      exponent: -49
-    residual:
-      significand: -8814110846024985
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 4200656398394327824623954599882359
-      radix: 2
-      exponent: -111
-    residual:
-      significand: -9053519713976595652763940508446577
-      radix: 2
-      exponent: -227
-  d64:
-    nearest:
-      significand: 1618033988749895
-      radix: 10
-      exponent: -15
-    residual:
-      significand: -1517954131656344
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 1618033988749894848204586834365638
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 1177203091798057628621354486227053
-      radix: 10
-      exponent: -67
+- name: glaisher_kinkelin
+  link: https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant
+  oeis: 
+  eponyms:
+    - name: James Whitbread Lee Glaisher
+      link: https://en.wikipedia.org/wiki/James_Whitbread_Lee_Glaisher
+    - name: Hermann Kinkelin
+      link: https://en.wikipedia.org/wiki/Hermann_Kinkelin
+  formula: A
+  decimal: 1.28242712910062263687534256886979172776768892732500119206374002174040630885882646112973649195820237…
 
-gompertz:
-  f32:
-    nearest:
-      significand: 10005049
-      radix: 2
-      exponent: -24
-    residual:
-      significand: -4121101
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: 2685709758742115
-      radix: 2
-      exponent: -52
-    residual:
-      significand: -287542799042935
-      radix: 2
-      exponent: -110
-  f128:
-    nearest:
-      significand: 774103133996562804574282713855625
-      radix: 2
-      exponent: -110
-    residual:
-      significand: -9526847352368897073461908168297457
-      radix: 2
-      exponent: -239
-  d64:
-    nearest:
-      significand: 5963473623231941
-      radix: 10
-      exponent: -16
-    residual:
-      significand: -2565892150063072
-      radix: 10
-      exponent: -32
-  d128:
-    nearest:
-      significand: 5963473623231940743410784993692794
-      radix: 10
-      exponent: -34
-    residual:
-      significand: -2392582213984745121842651508951767
-      radix: 10
-      exponent: -68
+- name: plastic
+  link: https://en.wikipedia.org/wiki/Plastic_ratio
+  oeis: 
+  eponyms: []
+  formula: ρ
+  decimal: 1.32471795724474602596090885447809734073440405690173336453401505030282785124554759405469934798178728… 
 
-hardy_littlewood:
-  f32:
-    nearest:
-      significand: 11075677
-      radix: 2
-      exponent: -24
-    residual:
-      significand: 3182765
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: 92909515870381
-      radix: 2
-      exponent: -47
-    residual:
-      significand: -6687559185846289
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 856939030636587069064236255772537
-      radix: 2
-      exponent: -110
-    residual:
-      significand: 9013954143953083040326627724290185
-      radix: 2
-      exponent: -232
-  d64:
-    nearest:
-      significand: 6601618158468696
-      radix: 10
-      exponent: -16
-    residual:
-      significand: -2607218788998544
-      radix: 10
-      exponent: -32
-  d128:
-    nearest:
-      significand: 6601618158468695739278121100145558
-      radix: 10
-      exponent: -34
-    residual:
-      significand: -2156737663971526658668055157666459
-      radix: 10
-      exponent: -68
+- name: pythagoras
+  link: https://en.wikipedia.org/wiki/Square_root_of_2
+  oeis: 
+  eponyms:
+    - name: Πυθαγόρας
+      link: https://en.wikipedia.org/wiki/Pythagoras
+  formula: '[√](https://en.wikipedia.org/wiki/Square_root)2'
+  decimal: 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
 
-hartl:
-  f32:
-    nearest:
-      significand: 13176795
-      radix: 2
-      exponent: -21
-    residual:
-      significand: -6151831
-      radix: 2
-      exponent: -45
-  f64:
-    nearest:
-      significand: 884279719003555
-      radix: 2
-      exponent: -47
-    residual:
-      significand: 4967757600021511
-      radix: 2
-      exponent: -104
-  f128:
-    nearest:
-      significand: 1019505104126898525104217885171767
-      radix: 2
-      exponent: -107
-    residual:
-      significand: 2337915386157937862343080991980185
-      radix: 2
-      exponent: -223
-  d64:
-    nearest:
-      significand: 6283185307179586
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 476925286766559
-      radix: 10
-      exponent: -30
-  d128:
-    nearest:
-      significand: 6283185307179586476925286766559006
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -2316056612012497883580501108153844
-      radix: 10
-      exponent: -67
+- name: ramanujan_soldner
+  link: https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Soldner_constant
+  oeis: 
+  eponyms:
+    - name: ஶ்ரீநிவாஸ ராமாநுஜையங்கார்
+      link: https://en.wikipedia.org/wiki/Srinivasa_Ramanujan
+    - name: Johann Georg von Soldner
+      link: https://en.wikipedia.org/wiki/Johann_Georg_von_Soldner
+  formula: μ
+  decimal: 1.45136923488338105028396848589202744949303228364801586309300455766242559575451783565953135771108682884704075157097064920307143357020423478488319003911084098422088650348382593759733331313969041108938752002714096930942987193069514832776410872163829967084223691265784528427072307722410618111313183181245…
 
-khinchin:
-  f32:
-    nearest:
-      significand: 5631801
-      radix: 2
-      exponent: -21
-    residual:
-      significand: 9378627
-      radix: 2
-      exponent: -49
-  f64:
-    nearest:
-      significand: 6047100315659533
-      radix: 2
-      exponent: -51
-    residual:
-      significand: 8415644412750029
-      radix: 2
-      exponent: -105
-  f128:
-    nearest:
-      significand: 108934874913105134641023554103501
-      radix: 2
-      exponent: -105
-    residual:
-      significand: -8096619473224157859528143513315091
-      radix: 2
-      exponent: -226
-  d64:
-    nearest:
-      significand: 2685452001065306
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 4453097148354818
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 2685452001065306445309714835481796
-      radix: 10
-      exponent: -33
-    residual:
-      significand: -3061796177060055370469488476544428
-      radix: 10
-      exponent: -67
+- name: golden_ratio
+  link: https://en.wikipedia.org/wiki/Golden_ratio
+  oeis: 
+  eponyms: []
+  formula: $φ = n + \sqrt{n^2+4} / 2, n = 1$
+  decimal: 1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113…
 
-liouville:
-  f32:
-    nearest:
-      significand: 3691021
-      radix: 2
-      exponent: -25
-    residual:
-      significand: 4995047
-      radix: 2
-      exponent: -51
-  f64:
-    nearest:
-      significand: 7926407401766111
-      radix: 2
-      exponent: -56
-    residual:
-      significand: -4037528512984749
-      radix: 2
-      exponent: -111
-  f128:
-    nearest:
-      significand: 9138525547771033183455813104118373
-      radix: 2
-      exponent: -116
-    residual:
-      significand: 6443109788237553095394434414940381
-      radix: 2
-      exponent: -233
-  d64:
-    nearest:
-      significand: 110001
-      radix: 10
-      exponent: -6
-    residual:
-      significand: 1
-      radix: 10
-      exponent: -24
-  d128:
-    nearest:
-      significand: 110001000000000000000001
-      radix: 10
-      exponent: -24
-    residual:
-      significand: 1
-      radix: 10
-      exponent: -120
+- name: theodorus
+  link: https://en.wikipedia.org/wiki/Square_root_of_3
+  oeis: 
+  eponyms: 
+    - name: Θεόδωρος
+      link: https://en.wikipedia.org/wiki/Theodorus_of_Cyrene
+  formula: '\href{https://en.wikipedia.org/wiki/Square_root}{√}3'
+  decimal: 1.73205080756887729352744634150587236694280525381038062805580697945193301690880003708114618675724857…
 
-meissel_mertens:
-  f32:
-    nearest:
-      significand: 4387195
-      radix: 2
-      exponent: -24
-    residual:
-      significand: 14988287
-      radix: 2
-      exponent: -50
-  f64:
-    nearest:
-      significand: 4710715001356269
-      radix: 2
-      exponent: -54
-    residual:
-      significand: 1263194523534029
-      radix: 2
-      exponent: -106
-  f128:
-    nearest:
-      significand: 1357771156784428793014315441500997
-      radix: 2
-      exponent: -112
-    residual:
-      significand: 7667668105668137267939432504546499
-      radix: 2
-      exponent: -228
-  d64:
-    nearest:
-      significand: 2614972128476428
-      radix: 10
-      exponent: -16
-    residual:
-      significand: -162445731613913
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 2614972128476427837554268386086959
-      radix: 10
-      exponent: -34
-    residual:
-      significand: -4094843335173880079380793578607508
-      radix: 10
-      exponent: -68
+- name: connective
+  link: https://en.wikipedia.org/wiki/Connective_constant
+  oeis: 
+  eponyms: []
+  formula: μ
+  decimal: 
 
-plastic:
-  f32:
-    nearest:
-      significand: 2778135
-      radix: 2
-      exponent: -21
-    residual:
-      significand: -11613627
-      radix: 2
-      exponent: -48
-  f64:
-    nearest:
-      significand: 5965999298618443
-      radix: 2
-      exponent: -52
-    residual:
-      significand: -5241662834073437
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 6878328887846568891149784422028385
-      radix: 2
-      exponent: -112
-    residual:
-      significand: 4160181643693499649268295928876649
-      radix: 2
-      exponent: -226
-  d64:
-    nearest:
-      significand: 1324717957244746
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 259609088544781
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 1324717957244746025960908854478097
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 3407344040569017333645340150503028
-      radix: 10
-      exponent: -67
+- name: brun
+  link: https://en.wikipedia.org/wiki/Brun%27s_theorem
+  oeis: https://oeis.org/A065421
+  eponyms: 
+    - name: Viggo Brun
+      link: https://no.wikipedia.org/wiki/Viggo_Brun
+  formula: $\begin{aligned} B_2 &= \sum_{p \in \mathbb P_2}\left(\frac 1p + \frac 1 {p + 2}\right) \\ \href{https://en.wikipedia.org/wiki/Twin_prime}{\mathbb P_2} &= \{p \in \mathbb P \mid p + 2 \in \mathbb P\}\end{aligned}$
+  #formula: $B_2 = \displaystyle\sum_{p \in \href{https://en.wikipedia.org/wiki/Twin_prime}{\mathbb P_2}} \left(\frac 1p + \frac 1 {p + 2}\right)$
+  decimal: 
 
-ramanujan_soldner:
-  f32:
-    nearest:
-      significand: 1521871
-      radix: 2
-      exponent: -20
-    residual:
-      significand: -7135407
-      radix: 2
-      exponent: -47
-  f64:
-    nearest:
-      significand: 6536385945397797
-      radix: 2
-      exponent: -52
-    residual:
-      significand: -7832476657945361
-      radix: 2
-      exponent: -107
-  f128:
-    nearest:
-      significand: 941992489857384473727623646532541
-      radix: 2
-      exponent: -109
-    residual:
-      significand: -8541555036579433454475400800558819
-      radix: 2
-      exponent: -234
-  d64:
-    nearest:
-      significand: 1451369234883381
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 5028396848589203
-      radix: 10
-      exponent: -32
-  d128:
-    nearest:
-      significand: 1451369234883381050283968485892027
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 4494930322836480158630930045576624
-      radix: 10
-      exponent: -67
+- name: two
+  link: https://en.wikipedia.org/wiki/2
+  oeis: 
+  eponyms: []
+  formula: $2 = 1 \href{https://en.wikipedia.org/wiki/Addition}{+} 1$
+  decimal: 2
 
-silver_ratio:
-  f32:
-    nearest:
-      significand: 5062973
-      radix: 2
-      exponent: -21
-    residual:
-      significand: -6685457
-      radix: 2
-      exponent: -46
-  f64:
-    nearest:
-      significand: 2718162824974067
-      radix: 2
-      exponent: -50
-    residual:
-      significand: 5085679199899093
-      radix: 2
-      exponent: -105
-  f128:
-    nearest:
-      significand: 6267656747870998279979264468284747
-      radix: 2
-      exponent: -111
-    residual:
-      significand: -2652065292576806513273325195667189
-      radix: 2
-      exponent: -224
-  d64:
-    nearest:
-      significand: 2414213562373095
-      radix: 10
-      exponent: -15
-    residual:
-      significand: 488016887242097
-      radix: 10
-      exponent: -31
-  d128:
-    nearest:
-      significand: 2414213562373095048801688724209698
-      radix: 10
-      exponent: -33
-    residual:
-      significand: 7856967187537694807317667973799073
-      radix: 10
-      exponent: -68
+- name: wallis
+  link: https://mathworld.wolfram.com/WallissConstant.html
+  oeis: 
+  eponyms: 
+    - name: John Wallis
+      link: https://en.wikipedia.org/wiki/John_Wallis
+  formula: 
+  decimal: 2.09455148154232659148238654057930296385730610562823918030412852904531218998348366714626728177715775786083952118906296345984514039842081282370173965531394055476160225828188949144397222665915595450399332426472256800938699177395882894016181834927454149608941225576642742318917626635375670383400596997798…
+
+- name: silver_ratio
+  link: https://en.wikipedia.org/wiki/Silver_ratio
+  oeis: 
+  eponyms: []
+  formula: $σ = \href{}{}, n = 2$
+  decimal: 2.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
+
+- name: feigenbaum_alpha
+  link: https://en.wikipedia.org/wiki/Feigenbaum_constants#The_second_constant
+  oeis: 
+  eponyms: 
+    - name: Mitchell Jay Feigenbaum
+      link: https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum
+  formula: α 
+  decimal: 2.5029078750958928222839028732182157863812713767271499773361920567792354631795902067032996497464338…
+
+- name: khinchin
+  link: https://en.wikipedia.org/wiki/Khinchin's_constant
+  oeis: 
+  eponyms: 
+    - name: Алекса́ндр Я́ковлевич Хи́нчи
+      link: https://en.wikipedia.org/wiki/Aleksandr_Khinchin
+  formula: K~0~ 
+  decimal: 2.68545200106530644530971483548179569382038229399446295305115234555721885953715200280114117493184769…
+
+- name: euler_bernoulli
+  link: https://en.wikipedia.org/wiki/E_(mathematical_constant)
+  oeis: 
+  eponyms:
+    - name: Leonhard Euler
+      link: https://als.wikipedia.org/wiki/Leonhard_Euler
+    - name: Jakob Bernoulli
+      link: https://als.wikipedia.org/wiki/Jakob_Bernoulli
+  formula: e
+  decimal: 2.71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642…
+
+- name: archimedes
+  link: https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)
+  oeis: https://oeis.org/A000796
+  eponyms:
+    - name: Ἀρχιμήδης
+      link: https://el.wikipedia.org/wiki/%CE%91%CF%81%CF%87%CE%B9%CE%BC%CE%AE%CE%B4%CE%B7%CF%82
+  formula: π
+  decimal: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706… 
+
+- name: bronze_ratio
+  link: https://en.wikipedia.org/wiki/Metallic_mean
+  oeis: 
+  eponyms: []
+  formula: S~3~ 
+  decimal: 3.30277563773199464655961063373524797312564828692262310635522652811358347414650522260230954100924535…
+
+- name: feigenbaum_delta
+  link: https://en.wikipedia.org/wiki/Feigenbaum_constants#The_first_constant
+  oeis: 
+  eponyms: 
+    - name: Mitchell Jay Feigenbaum
+      link: https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum
+  formula: δ 
+  decimal: 4.66920160910299067185320382046620161725818557747576863274565134300413433021131473713868974402394801…
+
+- name: hartl
+  link: https://en.wikipedia.org/wiki/Tau_(mathematics) 
+  oeis: https://oeis.org/A019692
+  eponyms: 
+    - name: Michael Hartl
+      link: https://en.wikipedia.org/wiki/Michael_Hartl
+  formula: τ 
+  decimal: 6.28318530717958647692528676655900576839433879875021164194988918461563281257241799725606965068423413…
+
+- name: gelfond
+  link: https://en.wikipedia.org/wiki/Gelfond%27s_constant
+  oeis: 
+  eponyms: 
+    - name: Алекса́ндр О́сипович Ге́льфонд
+      link: https://en.wikipedia.org/wiki/Alexander_Gelfond
+  formula: e^π^
+  decimal: 23.1406926327792690057290863679485473802661062426002119934450464095243423506904527835169719970675492196759527048010877731444280444146938358447174458796098493653279658636692422302689910137417646844014103951838684772430680595881624498444914309667784136716319634147840382165112876377314703473538331628213…
+
+# [`landau_ramanujan`](https://en.wikipedia.org/wiki/Landau%E2%80%93Ramanujan_constant) | [Edmund Georg Hermann Landau](https://en.wikipedia.org/wiki/Edmund_Landau), [ஶ்ரீநிவாஸ ராமாநுஜையங்கார்](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan) | b =  |
+
+- name: supergolden
+  link: https://en.wikipedia.org/wiki/Supergolden_ratio
+  oeis: 
+  eponyms: []
+  formula: ψ 
+  decimal: 
+
+- name: kepler_bouwkamp
+  link: https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant
+  oeis: 
+  eponyms: 
+    - name: Johannes Kepler
+      link: https://de.wikipedia.org/wiki/Johannes_Kepler
+    - name: Christoffel Jacob Bouwkamp
+      link: https://de.wikipedia.org/wiki/Christoffel_Jacob_Bouwkamp
+  formula: K'
+  decimal: 
+
