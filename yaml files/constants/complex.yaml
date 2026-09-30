@@ -1,3 +1,5 @@
+imaginary_unit: complex(0, 1)
+
 # cayley_dickson:
 #   - name: real
 #     symbol: ℝ
@@ -15,8 +17,9 @@
 #     symbol: 𝕆
 #     bases: [e0, e1, e2, e3, e4, e5, e6, e7]
 
-cayley_dickson:
-  - [one]
-  - [one, i]
-  - [one, i, j, k]
-  - [one, e1, e2, e3, e4, e5, e6, e7]
+# cayley_dickson:
+#   - [one]
+#   - [one, i]
+#   - [one, i, j, k]
+#   - [one, e1, e2, e3, e4, e5, e6, e7]
+

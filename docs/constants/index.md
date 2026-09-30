@@ -1,5 +1,13 @@
 # constants
 
+in $\text{mathematics}$, we usually manipulate things symbolically, and constants are exact. for example, $\mathrm π = \dfrac{\mathit{circumference}}{\mathit{diameter}} = \textcolor{green}{3.141592653589793}\textcolor{red}{238462643383279502884197169399375…}$
+
+in `programming`, we usually manipulate things numerically, and constants are approximate. for example `math.pi` in python is <code><span style="color:green">3.141592653589793</span><span style="color:red">115997963468544185161590576171875</span></code>
+
+we cannot pretend that an approximation is the exact value. this is clear from how $\sin(\mathrm π) = \textcolor{green}{0}$ but `math.sin(math.pi)` in python is <code><span style="color:green">0.000000000000000</span><span style="color:red">122464679914735320717376402945839660462569212467758006379625612680683843791484832763671875</span></code> so we store constants as approximations (based on the finite-precision datatypes in daamath).
+
+# constants
+
 a constant is something whose value doesnt depend on anything and doesnt change unless the universe changes. under this definition, daamath has a few kinds of constants:
 
 # rational approximations

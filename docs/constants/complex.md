@@ -1,3 +1,10 @@
+# complex
+
+| name | description |
+| - | - |
+| `imaginary_unit` | [$\mathrm i: \mathrm i^2 = -1$](https://en.wikipedia.org/wiki/Imaginary_unit) |
+
+<!--
 # cayley_dickson
 
 the [cayley dickson construction][cdc] gives us some important basis units
@@ -9,7 +16,10 @@ the [cayley dickson construction][cdc] gives us some important basis units
 | `cayley_dickson_1_1`j | | [split-complex](https://en.wikipedia.org/wiki/Split-complex_number) imaginary unit |
 | ε | | [dual](https://en.wikipedia.org/wiki/Dual_number) imaginary unit |
 -->
+<!--
+[cdc]: https://en.wikipedia.org/wiki/Cayley%E2%80%93Dickson_construction
+-->
+
 
 {{ yaml_source(page) }}
 
-[cdc]: https://en.wikipedia.org/wiki/Cayley%E2%80%93Dickson_construction

@@ -1,6 +1,10 @@
 # functions
 
-a [function in mathematics](https://en.wikipedia.org/wiki/Function_(mathematics)) is a mapping from a domain to a codomain. it is very well-modelled by a [function in programming](https://en.wikipedia.org/wiki/Function_(computer_programming)), which is a procedure that can take parameters, perform instructions, and return a value. but there are a few differences:
+a [function $f$ in $\text{mathematics}$](https://en.wikipedia.org/wiki/Function_(mathematics)) is a set of mappings from a domain $A$ to a codomain $B$, written as $f: X \mapsto Y; f(x) = y\quad (\text{where}\  x \in X, y \in Y)$. for example, $\sqrt{\phantom x}: \mathbb C \mapsto \mathbb C; \sqrt{x} = y$
+
+a [function `f` in `programming`](https://en.wikipedia.org/wiki/Function_(computer_programming)) is a procedure that can take parameters `a, b, c, …`, perform instructions, and return a value `y`, written as: `f(a, b, c, …) = y`
+
+but there are a few differences:
 
 | function in programming | function in mathematics | solution |
 | - | - | - |

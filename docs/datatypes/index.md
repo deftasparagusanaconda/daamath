@@ -1,13 +1,28 @@
 # datatypes
 
-in math, we work with various things, and we represent these things via symbols, definitions, and such. but, to represent them in a computer, we store them compactly using datatypes. for example, we represent the number 2 as a character $2$ but in a computer, we would store it as `0b00000010 : int8` which means "the binary digits `00000010` with datatype `int8`"
+in math, we work with various sets, and elements of those sets. for example, when we do complex analysis, we work with the set of complex numbers, and operations on that set such as addition, multiplication, absolute value, …
 
+in CS, we work with various datatypes, and instances of those datatypes. for example, when we write `0.1 + 0.2` in python, we are using the `float` datatype, and methods on that datatype such as `add`, `mul`, `abs`, …
+
+there are a few differences that we must resolve before we can do math with datatypes:
+
+| sets/elements in math | datatypes/instances in CS | solution |
+| - | - | - |
+| sets can have infinite unique elements | datatypes can only have finite unique instances | datatypes are finite subsets of sets |
+| numbers of same semantic value in different sets are same | instances of same semantic value in different datatypes are different | let datatypes participate in the number tower hierarchy by *explicit* and *exact* conversion |
+
+daamath maintains the following datatypes:
+
+|
+
+<!--
 | value | representation
 | - | - |
 | $2$ | `0x02 : int8` |
 | $2$ | `0x02 : uint8` |
 | $2$ | `0x40000000 : binary32` |
 | $-2$ | 
+-->
 
 a datatype is a way to represent unique things that have some semantic daamath does not care about the bit layout. 
 

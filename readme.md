@@ -1,6 +1,6 @@
 # daamath
 
-daamath is a cross-language math library specification, with implementations in various programming languages:
+daamath is a cross-language math library specification. it is geared for portable scalar numerical computation, and provides various [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes), [functions](https://deftasparagusanaconda.github.io/daamath/functions), [constants](https://deftasparagusanaconda.github.io/daamath/constants). it has implementations in various programming languages: 
 
 <table>
   <tr>
@@ -19,48 +19,45 @@ daamath is a cross-language math library specification, with implementations in 
 * [julia](https://github.com/deftasparagusanaconda/daamath-julia): `julia -e 'using Pkg; Pkg.add("daamath")'`
 -->
 
-# examples
+# example
 
 ```python
 import daamath as dm
 
 sin = dm.sin.binary64.nearesteven
 pi = dm.archimedes.binary64.nearesteven
-approx = dm.tilde_tilde
 
-print(dm.ellinika.lower.pi, approx, pi)
-# π ≈ 3.141592653589793
-
-print(sin(pi), approx, 0)
-# 1.2246467991473532e-16 ≈ 0
+print(sin(pi))
+# 1.2246467991473532e-16
 ```
 
-# features
+# rules
 
-it provides four useful things in math:
-
-* [characters](https://deftasparagusanaconda.github.io/daamath/characters): +, −, ×, ÷, =, %, …
-* [constants](https://deftasparagusanaconda.github.io/daamath/constants): π, e, φ, √2, i, γ, …
-* [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
-* [functions](https://deftasparagusanaconda.github.io/daamath/functions): sin, log, abs, pow, sqrt, round, …
-
-since it must behave the same in different programming languages, it has some rules:
-
-* no hidden assumptions
+* no implicit type conversion
+* no implicit return type
+* no mathematical assumptions
 * no [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming?wprov=sfla1)
 * no [impure functions](https://en.wikipedia.org/wiki/Pure_function?wprov=sfla1)/mutation/side effects
 * no keyword arguments 
 * no optional arguments
-* no stateful behaviour 
+* no stateful/contextual/environmental/variable behaviour 
 * functions are defined mathematically, not algorithmically
 * names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
 
-the design had various influences:
+# influences
 
 * architecture is based on set theory, universal algebra, type theory
 * IEEE 754 arithmetic
 * conventions were taken from C and Python
 * trig functions are based on DLMF and William Kahan
+
+# exclusions
+
+* no linear algebra (vectors, matrices, …): there are other better specifications like BLAS, LAPACK
+* no hypercomplex algebra besides $ℂ$: [the field of complex numbers is algebraically closed](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra)
+* no geometric algebra: too specialized for general-purpose computation
+* no container datatypes (aarrays, sets, dictionaries, …): they are better specified algorithmically, not numerically
+* no symbolic computation: there are other better tools like sympy
 
 # to do
 
@@ -207,4 +204,13 @@ i originally made daamath because when i designed [gapprox], i wanted a math lib
 dont even get me started on how left out the unicode math characters are :( everyone slobbers over latex but they dont know about the fact that you can write things like `eⁱᶿ = cos(θ) + i⋅sin(θ)` or `cosh²(θ) - sinh²(θ) = 1` or `ln(x) = logₑ(x)` or `∥z∥₂ = ²√(ℜ² + ℑ²)` entirely with unicode
 
 ok rant done
+-->
+
+<!--
+# modules
+
+* [characters](https://deftasparagusanaconda.github.io/daamath/characters): +, −, ×, ÷, =, %, …
+* [constants](https://deftasparagusanaconda.github.io/daamath/constants): π, e, φ, √2, i, γ, …
+* [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
+* [functions](https://deftasparagusanaconda.github.io/daamath/functions): sin, log, abs, pow, sqrt, round, …
 -->
