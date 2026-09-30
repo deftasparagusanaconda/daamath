@@ -11,10 +11,26 @@ there are a few differences that we must resolve before we can do math with data
 | sets can have infinite unique elements | datatypes can only have finite unique instances | datatypes are finite subsets of sets |
 | numbers of same semantic value in different sets are same | instances of same semantic value in different datatypes are different | let datatypes participate in the number tower hierarchy by *explicit* and *exact* conversion |
 
-daamath maintains the following datatypes:
+daamath maintains the following numeric datatypes:
 
-|
+| name | number set | size | precision |
+| - | - | - | - |
+| [`uint8`<br>`uint16`<br>`uint32`<br>`uint64`](uint) | [$\mathbb N$](https://en.wikipedia.org/wiki/Natural_number) (naturals) | fixed | finite |
+| [`int8`<br>`int16`<br>`int32`<br>`int64`](int) | [$\mathbb Z$](https://en.wikipedia.org/wiki/Integer) (integers) | fixed | finite |
+| [`bigint`](bigint) | [$\mathbb Z$](https://en.wikipedia.org/wiki/Integer) (integers) | dynamic | exact |
+| [`binary32`<br>`binary64`<br>`binary128`](binary) | [$\mathbb Z\left[\dfrac{1}{2}\right]$](https://en.wikipedia.org/wiki/Dyadic_rational) (dyadic rationals) | fixed | finite |
+| [`decimal64`<br>`decimal128`](decimal) | $\mathbb Z\left[\dfrac{1}{10}\right]$ (decadic rationals) | fixed | finite |
+| [`fraction`](fraction) | [$\mathbb Q$](https://en.wikipedia.org/wiki/Rational_number) (rationals) | dynamic | exact |
+| [`complex64`<br>`complex128`<br>`complex256`](complex) | $\mathbb Z\left[\dfrac{1}{2}\right](\mathrm i)$ (dyadic gaussian rationals) | fixed | finite |
 
+daamath also maintains one non-numeric datatype:
+
+| name | model | 
+| - | - |
+| [`bool`](bool) | [$\mathbb B$](https://en.wikipedia.org/wiki/Boolean_algebra_(structure)) (booleans) 
+
+
+<!--| `biguint` | [$\mathbb N$](https://en.wikipedia.org/wiki/Natural_number) (naturals) | dynamic | exact |-->
 <!--
 | value | representation
 | - | - |
