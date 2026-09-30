@@ -44,7 +44,6 @@ it provides four useful things in math:
 * [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
 * [functions](https://deftasparagusanaconda.github.io/daamath/functions): sin, log, abs, pow, sqrt, round, …
 
-
 since it must behave the same in different programming languages, it has some rules:
 
 * no hidden assumptions
@@ -56,6 +55,13 @@ since it must behave the same in different programming languages, it has some ru
 * functions are defined mathematically, not algorithmically
 * names are [snake_case](https://en.wikipedia.org/wiki/Snake_case?wprov=sfla1) and start with a letter
 
+the design had various influences:
+
+* architecture is based on set theory, universal algebra, type theory
+* IEEE 754 arithmetic
+* conventions were taken from C and Python
+* trig functions are based on DLMF and William Kahan
+
 # to do
 
 * ≈ 25 / 100 math constants implemented
@@ -63,17 +69,9 @@ since it must behave the same in different programming languages, it has some ru
 * document datatypes
 * analyze numerically favourable formulae for complex trig functions
 * explore unicode for more interesting characters
-* 
+* document each function
 
-<!--
-theory:
 
-* conventions were taken from c and python
-* datatype/function architecture is taken from universal algebra
-* lattices
-* trig functions are based on DLMF and William Kahan
-* 
--->
 <!--
 # why?
 

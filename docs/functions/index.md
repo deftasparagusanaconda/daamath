@@ -11,6 +11,10 @@ a [function in mathematics](https://en.wikipedia.org/wiki/Function_(mathematics)
 
 <!--functions never mutate memory, because they are meant to be mathematical functions, and not procedures (in computer science). for example: `succ` should not be pre-incrementation. `pred` should not be pre-decrementation. variadic functions should not mutate the vector they take in as input.-->
 
+# algebraic structure
+
+functions are how we give [algebraic structure](https://en.wikipedia.org/wiki/Algebraic_structure) to datatypes. they do not assume structure, they *are* the structure. an example is `gcd`. it returns the [meet](https://en.wikipedia.org/wiki/Join_and_meet) of two elements in the [division lattice](https://en.wikipedia.org/wiki/Division_lattice). `gcd` does not *assume* that uint8 has a division lattice. it *defines* it.
+
 # function families
 
 in an equation, you can always solve for each variable

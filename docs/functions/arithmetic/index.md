@@ -19,19 +19,16 @@ the hyperoperation tower starts from the successor function:
 | - | - | - |
 | 0 | [succ](#succ)(a) | [pred](#pred)(b) |
 -->
-to organize the most common arithmetic operators, we use the [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation) as a semantic guide:
+we organize the most common arithmetic operators in order of increasing [hyperoperation](https://en.wikipedia.org/wiki/Hyperoperation) order:
 
-| n | hyperoperation | left inverse | right inverse | two-sided inverse |
-| - | -:| -:| -:| -: |
-| 1 | <span id="add">$\href{https://en.wikipedia.org/wiki/Addition}{\operatorname{add}}(a,b) = c$</span> | <span id="lsub">$\operatorname{lsub}(c,a) = b$</span> | <span id="rsub">$\operatorname{rsub}(c,b) = a$</span> | <span id="sub">$\href{https://en.wikipedia.org/wiki/Subtraction}{\operatorname{sub}}(c, a) = b\ ∧\ \href{https://en.wikipedia.org/wiki/Subtraction}{\operatorname{sub}}(c,b) = a$</span> |
-| 2 | <span id="mul">$\href{https://en.wikipedia.org/wiki/Multiplication}{\operatorname{mul}}(a,b) = c$</span> | <span id="ldiv">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division}{\operatorname{ldiv}}(c, a) = b$</span> | <span id="rdiv">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division}{\operatorname{rdiv}}(c, b) = a$</span> | <span id="div">$\href{https://en.wikipedia.org/wiki/Division_(mathematics)}{\operatorname{div}}(c, b) = a\ ∧\ \href{https://en.wikipedia.org/wiki/Division_(mathematics)}{\operatorname{div}}(c, a) = b$</span> |
-| 3 | <span id="pow">$\href{https://en.wikipedia.org/wiki/Exponentiation}{\operatorname{pow}}(a, b) = c$</span> | <span id="root">$\href{https://en.wikipedia.org/wiki/Nth_root}{\operatorname{root}}(c, a) = b$</span> | <span id="log">$\href{https://en.wikipedia.org/wiki/Logarithm}{\log}(c, b) = a$</span> | (not named yet) |
-| 4 | <span id="spow">$\href{https://en.wikipedia.org/wiki/Tetration}{\operatorname{spow}}(a, b) = c$</span> | <span id="sroot">$\href{https://en.wikipedia.org/wiki/Tetration#Super-root}{\operatorname{sroot}}(c, a) = b$</span> | <span id="slog">$\href{https://en.wikipedia.org/wiki/Tetration#Super-logarithm}{\operatorname{slog}}(c, b) = a$</span> | (not named yet) |
-| … | … | … | … | … |
+| solve for c | solve for b | solve for a | solve for b or a |
+| - | - | - | - |
+| <code>[ add](add)(a, b)</code> = [$a+b$](https://en.wikipedia.org/wiki/Addition) | <code>[lsub](lsub)(c, a)</code> | <code>[rsub](rsub)(c, b)</code> | b: <code>[sub](sub)(c, a)</code> = [$c-a$](https://en.wikipedia.org/wiki/Subtraction) <br> a: <code>[sub](sub)(c, b)</code> = [$c-b$](https://en.wikipedia.org/wiki/Subtraction) |
+| <code>[ mul](mul)(a, b)</code> = [$a b$](https://en.wikipedia.org/wiki/Multiplication) | <code>[ldiv](ldiv)(c, a)</code> = [$a \backslash c$](https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division) | <code>[rdiv](rdiv)(c, b)</code> = [$c/b$](https://en.wikipedia.org/wiki/Division_(mathematics)#Left_and_right_division) | b: <code>[div](div)(c, a)</code> = [$\tfrac ca$](\href{https://en.wikipedia.org/wiki/Division_(mathematics)) <br> a: <code>[div](div)(c, b)</code> = [$\tfrac cb$](https://en.wikipedia.org/wiki/Division_(mathematics)) |
+| <code>[ pow](pow)(a, b)</code> = [$a^b$](https://en.wikipedia.org/wiki/Exponentiation) | <code>[ log](log)(c, a)</code> = [$\log_a c$](https://en.wikipedia.org/wiki/Logarithm) | <code>[root](root)(c, b)</code> = [$\sqrt[b]{c}$](https://en.wikipedia.org/wiki/Nth_root) |  |
+| <code>[spow](spow)(a, b)</code> = [$^ba$](https://en.wikipedia.org/wiki/Tetration) | <code>[slog](slog)(c, a)</code> = [$\operatorname{slog}_a c$](https://en.wikipedia.org/wiki/Tetration#Super-logarithm) | <code>[sroot](sroot)(c, b)</code> = [$\sqrt[b]{c}_s$](https://en.wikipedia.org/wiki/Tetration#Super-root) |  |
 
-
-
-note: we do not include [$\operatorname{spow}$](#spow) [$\operatorname{sroot}$](#sroot) [$\operatorname{slog}$](#slog) and other n ≥ 4 because there is no canonical definition yet (especially for non-integers)
+note: we do not include [`spow`](spow) [`sroot`](sroot) [`slog`](slog) and other n ≥ 4 because there is no canonical definition yet (especially for non-integers)
 
 <!--
 c = a + b  add 
