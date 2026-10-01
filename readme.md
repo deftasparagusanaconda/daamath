@@ -1,5 +1,3 @@
-# daamath
-
 daamath is a cross-language math library specification. it is geared for portable scalar numerical computation, and provides various [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes), [functions](https://deftasparagusanaconda.github.io/daamath/functions), [constants](https://deftasparagusanaconda.github.io/daamath/constants). it has implementations in various programming languages: 
 
 <table>

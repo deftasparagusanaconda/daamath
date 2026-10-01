@@ -1,5 +1,3 @@
-# constants
-
 in $\text{mathematics}$, we usually manipulate things symbolically, and constants are exact. for example, $\mathrm π = \dfrac{\mathit{circumference}}{\mathit{diameter}} = \textcolor{green}{3.141592653589793}\textcolor{red}{238462643383279502884197169399375…}$
 
 in `programming`, we usually manipulate things numerically, and constants are approximate. for example `math.pi` in python is <code><span style="color:green">3.141592653589793</span><span style="color:red">115997963468544185161590576171875</span></code>

@@ -1,8 +1,6 @@
-# functions
+in $\text{mathematics}$, a [function](https://en.wikipedia.org/wiki/Function_(mathematics)) maps elements from a domain, to elements in a codomain. for example, $\operatorname{lerp} \colon \mathbb R^3 \to \mathbb R,\quad (x, a, b) \mapsto ax + b(1-x)$
 
-a [function $f$ in $\text{mathematics}$](https://en.wikipedia.org/wiki/Function_(mathematics)) is a set of mappings from a domain $A$ to a codomain $B$, written as $f: X \mapsto Y; f(x) = y\quad (\text{where}\  x \in X, y \in Y)$. for example, $\sqrt{\phantom x}: \mathbb C \mapsto \mathbb C; \sqrt{x} = y$
-
-a [function `f` in `programming`](https://en.wikipedia.org/wiki/Function_(computer_programming)) is a procedure that can take parameters `a, b, c, …`, perform instructions, and return a value `y`, written as: `f(a, b, c, …) = y`
+in `programming`, a [function](https://en.wikipedia.org/wiki/Function_(computer_programming)) is a procedure that can take parameters, perform instructions, and return a value. for example, `lerp(x: float, a: float, b: float) -> float: return a * x + b * (1 - x)` 
 
 but there are a few differences:
 
