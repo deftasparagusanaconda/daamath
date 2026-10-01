@@ -26,9 +26,9 @@ there are a few differences that we must resolve before we can do math with data
 | [`binary128`](binary) | [$\mathbb R$](https://en.wikipedia.org/wiki/Real_numbers) | 
 | [`decimal64`](decimal) | [$\mathbb R$](https://en.wikipedia.org/wiki/Real_numbers) | 
 | [`decimal128`](decimal) | [$\mathbb R$](https://en.wikipedia.org/wiki/Real_numbers) | 
-| [`complex64`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | [`binary32`](binary) $+$ [`binary32`](binary)$\mathrm i$ |
-| [`complex128`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | [`binary64`](binary) $+$ [`binary64`](binary)$\mathrm i$ |
-| [`complex256`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | [`binary128`](binary) $+$ [`binary128`](binary)$\mathrm i$ |
+| [`complex64`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | $\{a + b\mathrm i \mid a, b \in$ [`binary32`](binary)$\}$ |
+| [`complex128`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | $\{a + b\mathrm i \mid a, b \in$ [`binary64`](binary)$\}$ |
+| [`complex256`](complex) | [$ℂ$](https://en.wikipedia.org/wiki/Complex_numbers) | $\{a + b\mathrm i \mid a, b \in$ [`binary128`](binary)$\}$ |
 
 # infinite numeric datatypes
 
