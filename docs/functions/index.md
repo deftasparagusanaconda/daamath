@@ -1,3 +1,5 @@
+# functions
+
 in $\text{mathematics}$, a [function](https://en.wikipedia.org/wiki/Function_(mathematics)) maps elements from a domain, to elements in a codomain. for example, $\operatorname{lerp} \colon \mathbb R^3 \to \mathbb R,\quad (x, a, b) \mapsto ax + b(1-x)$
 
 in `programming`, a [function](https://en.wikipedia.org/wiki/Function_(computer_programming)) is a procedure that can take parameters, perform instructions, and return a value. for example, `lerp(x: float, a: float, b: float) -> float: return a * x + b * (1 - x)` 

@@ -23,7 +23,7 @@ def define_env(env):
                 if idk['link'] is not None 
                 else f"`{idk['name']}`")
 
-            eponyms = ', '.join(
+            eponyms = '<br>'.join(
                 f"[{idfk['name']}]({idfk['link']})" 
                 if idfk['link'] is not None
                 else idfk['name']
