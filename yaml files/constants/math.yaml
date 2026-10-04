@@ -78,6 +78,7 @@
   formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{x} \dfrac{\mathrm e^t}{t} \mathrm dt}\right\vert x = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
 
+
 - name: cahen
   oeis: https://oeis.org/A118227
   eponyms: 
@@ -140,6 +141,11 @@
   formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Catalan}{\mathrm G} := \left.\href{https://de.wikipedia.org/wiki/Dirichletsche_Betafunktion}{\displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(2n+1)^s}}\;\right\vert\;s=2$
   decimal: 0.91596559417721901505460351493238411077414937428167213426649811962176301977625476947935651292611510…
 
+- name: magic_angle
+  oeis: https://oeis.org/A195696
+  eponyms: []
+  formula: $\begin{aligned}\href{https://fr.wikipedia.org/wiki/Angle_magique}{\mathrm {\theta_m}} &:= \theta \in [0, \tfrac{\mathrm \tau}{4}) \mid \href{https://fr.wikipedia.org/wiki/Polyn%C3%B4me_de_Legendre}{P}_2(\cos \theta) = 0 \\ &\ = \operatorname{atan} \sqrt 2\end{aligned}$
+  decimal: 0.955316618124509278163…
 - name: one
   oeis: 
   eponyms: []
@@ -273,7 +279,7 @@
 - name: parabolic
   oeis: https://oeis.org/A103710
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Universal_parabolic_constant}{\mathrm P} = \ln (1 + \sqrt 2) + \sqrt 2 = \operatorname{asinh}(1) + \sqrt 2$
+  formula: $\href{https://en.wikipedia.org/wiki/Universal_parabolic_constant}{\mathrm P} \begin{aligned}&= \ln (1 + \sqrt 2) + \sqrt 2 \\ &= \operatorname{asinh}(1) + \sqrt 2\end{aligned}$
   decimal: 2.29558714939263807403…
 
 - name: silver_ratio
@@ -337,6 +343,14 @@
   eponyms: []
   formula: $\href{https://en.wikipedia.org/wiki/Metallic_mean}{\mathrm S_3} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 3$
   decimal: 3.30277563773199464655961063373524797312564828692262310635522652811358347414650522260230954100924535…
+
+- name: van_der_pauw
+  oeis: https://oeis.org/A163973
+  eponyms:
+    - name: 🇳🇱 Leo Johan van der Pauw
+      link: 
+  formula: $\href{https://nl.wikipedia.org/wiki/Van_der_Pauwmethode}{\dfrac{\mathrm \pi}{\ln 2}}$
+  decimal: 4.53236014182719380962…
 
 - name: feigenbaum_delta
   oeis: https://oeis.org/A006890

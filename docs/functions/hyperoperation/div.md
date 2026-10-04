@@ -15,7 +15,7 @@ div(6, 2) # 3
 
 # div.bigint
 
-division is rarely closed in the integers. the result of division is an integer iff their [`gcd`]()
+division is rarely closed in the integers. the result of division is an integer iff their `gcd`
 
 # div.binaryX.
 
@@ -28,7 +28,3 @@ division is rarely closed on finite subsets of the reals.
 # div.complexX.
 
 division is rarely closed on finite subsets of the reals
-
-[`mul`]: ../mul.md
-[`ldiv`]: ../ldiv.md
-[`rdiv`]: ../rdiv.md
