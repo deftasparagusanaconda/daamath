@@ -1,6 +1,6 @@
 # `div`
 
-given an equation $a ⋅ b = c$, [divison](https://en.wikipedia.org/wiki/Division_(mathematics)) solves for a or b: $a = \dfrac cb$ and $b = \dfrac ca$. if a or b have a multiplicative inverse ÷a or ÷b, division can be defined as: $a = c ⋅ ÷b$ or $b = a = c ⋅ ÷b$
+given an equation $a ⋅ b = c$, [divison](https://en.wikipedia.org/wiki/Division_(mathematics)) solves for $a$ or $b$: $a = \dfrac cb$ and $b = \dfrac ca$. if $a$ or $b$ have a multiplicative inverse $÷a$ or $÷b$, division can be defined as: $a = c ⋅ ÷b$ or $b = c ⋅ ÷a$
 
 ```python
 import daamath.mul.bigint as mul

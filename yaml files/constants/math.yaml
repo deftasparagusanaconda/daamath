@@ -1,244 +1,320 @@
+- name: negative_one
+  oeis:
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/−1}{-1} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Additive_inverse}{z + 1 = 0 = 1 + z}\end{aligned}$
+  decimal: -1
+
 - name: zero
-  link: https://en.wikipedia.org/wiki/Zero
   oeis: 
   eponyms: []
-  formula: $0 := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Additive_identity}{e + z = z = z + e}\end{aligned}$
+  formula: $\href{https://en.wikipedia.org/wiki/Zero}{0} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Additive_identity}{e + z = z = z + e}\end{aligned}$
   decimal: 0
 
 - name: liouville
-  link: https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville
   oeis: https://oeis.org/A012245
   eponyms: 
     - name: 🇫🇷 Joseph Liouville
       link: https://fr.wikipedia.org/wiki/Joseph_Liouville
-  formula: $\mathrm L := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\; \begin{aligned}a_k&=1 \\ \ b&=10 \end{aligned}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\; \begin{aligned}a_k&=1 \\ \ b&=10 \end{aligned}$
   decimal: 0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000…
 
+- name: kepler_bouwkamp
+  oeis: https://oeis.org/A085365
+  eponyms: 
+    - name: 🇩🇪 Johannes Kepler
+      link: https://de.wikipedia.org/wiki/Johannes_Kepler
+    - name: 🇳🇱 Christoffel Jacob Bouwkamp
+      link: https://de.wikipedia.org/wiki/Christoffel_Jacob_Bouwkamp
+  formula: $\href{https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant}{\mathrm K'} := \displaystyle\prod_{n=3}^{\infty} \cos \dfrac{\mathrm{π}}{n}$
+  decimal: 0.11494204485329620070…
+
 - name: champernowne
-  link: https://en.wikipedia.org/wiki/Champernowne_constant
   oeis: https://oeis.org/A033307
   eponyms: 
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 David Gawen Champernowne
       link: https://en.wikipedia.org/wiki/D._G._Champernowne
-  formula: "`C⏨ := '0.' + ''.join(map(str, range(1, ∞)))`"
+  formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(i) for i ∈ [1..∞))</code>
   decimal: 0.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545…
 
 - name: meissel_mertens
-  link: https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante
   oeis: https://oeis.org/A077761
   eponyms: 
     - name: 🇩🇪 Daniel Friedrich Ernst Meissel
       link: https://de.wikipedia.org/wiki/Ernst_Meissel
     - name: 🇵🇱 Franciszek Karol Józef Mertens
       link: https://pl.wikipedia.org/wiki/Franciszek_Mertens
-  formula: $\mathrm M := \displaystyle\lim_{n \to \infty} \left(\displaystyle\sum_{n \ge p \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac 1 p - \ln\ln n \right)$
+  formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{n \to \infty} \left(\displaystyle\sum_{n \ge p \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac 1 p - \ln\ln n \right)$
   decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
 
 - name: one_half
-  link: https://en.wikipedia.org/wiki/One_half
   oeis: 
   eponyms: []
-  formula: $½ := \dfrac{1}{2}$
+  formula: $\href{https://en.wikipedia.org/wiki/One_half}{\dfrac{1}{2}} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Multiplicative_inverse}{z \cdot 2 = 1 = 2 \cdot z}\end{aligned}$
   decimal: 0.5
 
+- name: lambert_1
+  oeis: https://oeis.org/A030178
+  eponyms:
+    - name: 🇨🇭 Johann Heinrich Lambert
+      link: https://de.wikipedia.org/wiki/Johann_Heinrich_Lambert
+  formula: $\href{https://de.wikipedia.org/wiki/Omega-Konstante}{\mathrm \Omega} \in \href{https://de.wikipedia.org/wiki/Reelle_Zahl}{\mathbb R} \mid \href{https://de.wikipedia.org/wiki/Lambertsche_W-Funktion}{\mathrm \Omega \mathrm e^{\mathrm \Omega}} = 1$
+  decimal: 0.56714329040978387299…
+
 - name: euler_mascheroni
-  link: https://en.wikipedia.org/wiki/Euler%27s_constant
   oeis: https://oeis.org/A001620
   eponyms: 
     - name: 🇨🇭 Leonhard Euler
       link: https://als.wikipedia.org/wiki/Leonhard_Euler
     - name: 🇮🇹 Lorenzo Mascheroni
       link: https://it.wikipedia.org/wiki/Lorenzo_Mascheroni
-  formula: $\mathrm γ := \displaystyle\lim_{n \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{k=1}^{\infty} \dfrac 1k} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} n\right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Euler%27s_constant}{\mathrm γ} := \displaystyle\lim_{n \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{k=1}^{\infty} \dfrac 1k} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} n\right)$
   decimal: 0.57721566490153286060651209008240243104215933593992359880576723488486772677766467093694706329174674…
 
 - name: gompertz
-  link: https://en.wikipedia.org/wiki/Gompertz_constant
   oeis: https://oeis.org/A073003
   eponyms: 
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Benjamin Gompertz
       link: https://en.wikipedia.org/wiki/Benjamin_Gompertz
-  formula: $\mathrm δ := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{x} \dfrac{\mathrm e^t}{t} \mathrm dt}\right\vert x = -1$
+  formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{x} \dfrac{\mathrm e^t}{t} \mathrm dt}\right\vert x = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
 
+- name: cahen
+  oeis: https://oeis.org/A118227
+  eponyms: 
+    - name: 🇫🇷 Eugène Cahen
+      link: https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Cahen
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Cahen}{\mathrm C} := \displaystyle\sum_{i=0}^{\infty} \dfrac{(-1)^i}{s_i - 1}$
+  decimal: 0.64341054628833802618…
+
 - name: hardy_littlewood
-  link: https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture
   oeis: https://oeis.org/A005597
   eponyms: 
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Godfrey Harold Hardy
       link: https://en.wikipedia.org/wiki/G._H._Hardy
     - name: 🇬🇧 John Edensor Littlewood
       link: https://en.wikipedia.org/wiki/John_Edensor_Littlewood
-  formula: $\mathrm C_2 := \displaystyle\prod_{3 \le p \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac 1 {(p - 1)^2} \right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture}{\mathrm C_2} := \displaystyle\prod_{3 \le p \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac 1 {(p - 1)^2} \right)$
   decimal: 0.66016181584686957392781211001455577843262336028473341331944842333540564230449527714376003141383986…
 
+- name: laplace
+  oeis: https://oeis.org/A033259
+  eponyms:
+    - name: 🇫🇷 Pierre-Simon de Laplace
+      link: https://fr.wikipedia.org/wiki/Pierre-Simon_de_Laplace
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}(x \operatorname{sech} x)}$
+  decimal: 0.66274341934918158097…
+
+- name: ln_2
+  oeis: https://oeis.org/A002162
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} 2 = x ∈ ℝ \mid \mathrm e^x = 2$
+  decimal: 0.69314718055994530941…
+
+- name: continued_1
+  oeis: https://oeis.org/A052119
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/Continued_fraction}{[0;1,2,3,4,…]}$
+  decimal: 0.69777465796400798201…
+
+- name: dottie
+  oeis: https://oeis.org/A003957
+  eponyms: 
+    - name: 🇫🇷 Dottie
+      link: https://fr.wikipedia.org/wiki/Nombre_de_Dottie#Historique
+  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Dottie}{\mathrm D} := x \in \mathbb R \mid x = \cos x$
+  decimal: 0.73908513321516064165…
+
+- name: gauss
+  oeis: https://oeis.org/A014549
+  eponyms: 
+    - name: 🇩🇪 Johann Carl Friedrich Gauß
+      link: https://de.wikipedia.org/wiki/Carl_Friedrich_Gau%C3%9F
+  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm G} = \dfrac{\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm \varpi}}{\href{https://de.wikipedia.org/wiki/Kreiszahl}{\mathrm \pi}} = \dfrac{1}{\operatorname{\href{https://de.wikipedia.org/wiki/Arithmetisch-geometrisches_Mittel}{agm}}(1, \sqrt 2)}$
+  decimal: 0.8346268416740731862…
+
 - name: catalan
-  link: https://fr.wikipedia.org/wiki/Constante_de_Catalan
   oeis: https://oeis.org/A006752
   eponyms: 
     - name: 🇫🇷 🇧🇪 Eugène Charles Catalan
       link: https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan
-  formula: $\mathrm G := \left.\href{https://de.wikipedia.org/wiki/Dirichletsche_Betafunktion}{\displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(2n+1)^s}}\;\right\vert\;s=2$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Catalan}{\mathrm G} := \left.\href{https://de.wikipedia.org/wiki/Dirichletsche_Betafunktion}{\displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(2n+1)^s}}\;\right\vert\;s=2$
   decimal: 0.91596559417721901505460351493238411077414937428167213426649811962176301977625476947935651292611510…
 
 - name: one
-  link: https://en.wikipedia.org/wiki/1
   oeis: 
   eponyms: []
-  formula: $1 := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Identity_element}{e ⋅ z = z = z ⋅ e}\end{aligned}$
+  formula: $\href{https://en.wikipedia.org/wiki/1}{1} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Identity_element}{e ⋅ z = z = z ⋅ e}\end{aligned}$
   decimal: 1
 
 - name: hermite_2
-  link: https://fr.wikipedia.org/wiki/Constante_d%27Hermite
   oeis: https://oeis.org/A246724
   eponyms: 
     - name: 🇫🇷 Charles Hermite
       link: https://fr.wikipedia.org/wiki/Charles_Hermite
-  formula: $\mathrm γ := \dfrac 2{\sqrt 3}$
+  formula: $\mathrm{\gamma}_2 = \href{https://fr.wikipedia.org/wiki/Constante_d%27Hermite}{\mathrm{\gamma}_n}\vert_{n=2} = \dfrac {2}{\sqrt{3}}$
   decimal: 1.15470053837925152901…
 
 - name: apery
-  link: https://en.wikipedia.org/wiki/Ap%C3%A9ry%27s_constant
   oeis: https://oeis.org/A002117
   eponyms: 
     - name: 🇫🇷 Roger Apéry
       link: https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry
-  formula: $\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{ζ}}(3) = \left.\displaystyle\sum_{n=1}^\infty \dfrac1{n^s} \;\right\vert\; s = 3$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_d%27Ap%C3%A9ry}{\operatorname{ζ}(3)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{n=1}^\infty \dfrac1{n^s}} \;\right\vert\; s = 3$
   decimal: 1.20205690315959428539973816151144999076498629234049888179227155534183820578631309018645587360933525…
 
 - name: delian
-  link: https://el.wikipedia.org/wiki/%CE%94%CE%B9%CF%80%CE%BB%CE%B1%CF%83%CE%B9%CE%B1%CF%83%CE%BC%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%BA%CF%8D%CE%B2%CE%BF%CF%85
   oeis: https://oeis.org/A002580
   eponyms: 
-    - name: Δῆλος
+    - name: 🇬🇷 Δῆλος
       link: https://el.wikipedia.org/wiki/%CE%94%CE%AE%CE%BB%CE%BF%CF%82
-  formula: $\sqrt[3]{2}$
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CF%80%CE%BB%CE%B1%CF%83%CE%B9%CE%B1%CF%83%CE%BC%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%BA%CF%8D%CE%B2%CE%BF%CF%85}{\sqrt[3]{2}} = x \in \mathbb R \mid x \cdot x \cdot x = 2$
   decimal: 1.25992104989487316476…
 
 - name: glaisher_kinkelin
-  link: https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant
   oeis: https://oeis.org/A074962
   eponyms:
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 James Whitbread Lee Glaisher
       link: https://en.wikipedia.org/wiki/James_Whitbread_Lee_Glaisher
     - name: 🇨🇭 Hermann Kinkelin
       link: https://en.wikipedia.org/wiki/Hermann_Kinkelin
-  formula: $A$
+  formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{6n^2 + 6n + 1}{12}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
   decimal: 1.28242712910062263687534256886979172776768892732500119206374002174040630885882646112973649195820237…
 
 - name: plastic
-  link: https://en.wikipedia.org/wiki/Plastic_ratio
   oeis: https://oeis.org/A060006
   eponyms: []
-  formula: $ρ$
+  formula: $\href{https://en.wikipedia.org/wiki/Plastic_ratio}{\mathrm ρ} := x \in \mathbb R \mid x^3 = x + 1$
   decimal: 1.32471795724474602596090885447809734073440405690173336453401505030282785124554759405469934798178728… 
 
 - name: pythagoras
-  link: https://en.wikipedia.org/wiki/Square_root_of_2
   oeis: https://oeis.org/A002193
   eponyms:
     - name: 🇬🇷 Πυθαγόρας
       link: https://en.wikipedia.org/wiki/Pythagoras
-  formula: $\sqrt{2}$
+  formula: $\href{https://en.wikipedia.org/wiki/Square_root_of_2}{\sqrt{2}} = x \in \mathbb R^+ \mid x \cdot x = 2$
   decimal: 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
 
 - name: ramanujan_soldner
-  link: https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Soldner_constant
   oeis: https://oeis.org/A060295
   eponyms:
     - name: 🇮🇳 ஶ்ரீநிவாஸ ராமாநுஜையங்கார்
       link: https://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AF%80%E0%AE%A9%E0%AE%BF%E0%AE%B5%E0%AE%BE%E0%AE%9A_%E0%AE%87%E0%AE%B0%E0%AE%BE%E0%AE%AE%E0%AE%BE%E0%AE%A9%E0%AF%81%E0%AE%9A%E0%AE%A9%E0%AF%8D
     - name: 🇩🇪 Johann Georg von Soldner
       link: https://de.wikipedia.org/wiki/Johann_Georg_von_Soldner
-  formula: $μ$
+  formula: $\href{https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Soldner_constant}{\mathrm μ} := x \in \mathbb R^+ \;\left\vert\; \href{https://en.wikipedia.org/wiki/Logarithmic_integral_function}{\displaystyle\int_0^x \dfrac{\mathrm dt}{\ln t}} = 0\right.$
   decimal: 1.45136923488338105028396848589202744949303228364801586309300455766242559575451783565953135771108682884704075157097064920307143357020423478488319003911084098422088650348382593759733331313969041108938752002714096930942987193069514832776410872163829967084223691265784528427072307722410618111313183181245…
 
+- name: supergolden
+  oeis: https://oeis.org/A092526
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/Supergolden_ratio}{\mathrm ψ} := x ∈ ℝ \mid x^3 = x^2 + 1$
+  decimal: 1.46557123187676802665…
+
+- name: erdos_borwein
+  oeis: https://oeis.org/A065442
+  eponyms: 
+    - name: 🇭🇺 Erdős Pál
+      link: https://hu.wikipedia.org/wiki/Erd%C5%91s_P%C3%A1l
+    - name: 🇨🇦 Peter Benjamin Borwein
+      link: https://en.wikipedia.org/wiki/Peter_Borwein
+  formula: $\href{https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Borwein_constant}{\mathrm E} := \displaystyle\sum_{n=1}^{\infty} \dfrac {1}{\href{https://mathworld.wolfram.com/MersenneNumber.html}{2^n - 1}}$
+  decimal: 1.60669515241529176378…
+
 - name: golden_ratio
-  link: https://en.wikipedia.org/wiki/Golden_ratio
   oeis: https://oeis.org/A001622
   eponyms: []
-  formula: $\mathrm φ := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 1$
+  formula: $\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm φ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 1$
   decimal: 1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113…
 
+- name: basel
+  oeis: https://oeis.org/A013661
+  eponyms:
+    - name: 🇨🇭 Basel
+      link: https://als.wikipedia.org/wiki/Basel
+  formula: $\href{https://als.wikipedia.org/wiki/Basler_Problem}{\operatorname{ζ}(2)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{n=1}^{\infty} \dfrac{1}{n^s}} \;\right\vert\; s = 2$
+  decimal: 1.64493406684822643647…
+
 - name: theodorus
-  link: https://en.wikipedia.org/wiki/Square_root_of_3
   oeis: https://oeis.org/A002194
   eponyms: 
     - name: 🇬🇷 Θεόδωρος
       link: https://en.wikipedia.org/wiki/Theodorus_of_Cyrene
-  formula: $\sqrt{3}$
+  formula: $\href{https://en.wikipedia.org/wiki/Square_root_of_3}{\sqrt{3}} = x \in \mathbb R^+ \mid x \cdot x = 2$
   decimal: 1.73205080756887729352744634150587236694280525381038062805580697945193301690880003708114618675724857…
 
 - name: connective
-  link: https://en.wikipedia.org/wiki/Connective_constant
   oeis: https://oeis.org/A179260
   eponyms: []
-  formula: $\mathrm μ := \sqrt{2 + \sqrt{2}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Connective_constant}{\mathrm μ} := \sqrt{2 + \sqrt{2}}$
   decimal: 1.84775906502257351225…
 
 - name: brun
-  link: https://en.wikipedia.org/wiki/Brun%27s_theorem
   oeis: https://oeis.org/A065421
   eponyms: 
     - name: 🇳🇴 Viggo Brun
       link: https://no.wikipedia.org/wiki/Viggo_Brun
-  formula: $\mathrm B_2 := \left.\displaystyle\sum \left(\dfrac 1p + \dfrac 1q\right)\;\right\vert\;\href{https://en.wikipedia.org/wiki/Twin_prime}{\begin{aligned} &p, q \in \mathbb P \\ &p + 2 = q \end{aligned}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Brun%27s_theorem}{\mathrm B_2} := \left.\displaystyle\sum \left(\dfrac 1p + \dfrac 1q\right)\;\right\vert\;\href{https://no.wikipedia.org/wiki/Tvillingprimtall}{\begin{aligned} &p, q \in \mathbb P \\ &p + 2 = q \end{aligned}}$
   decimal: 1.902160583104…
 
 - name: two
-  link: https://en.wikipedia.org/wiki/2
   oeis: 
   eponyms: []
-  formula: $2 := 1 \href{https://en.wikipedia.org/wiki/Addition}{+} 1$
+  formula: $\href{https://en.wikipedia.org/wiki/2}{2} := 1 \href{https://en.wikipedia.org/wiki/Addition}{+} 1$
   decimal: 2
 
 - name: wallis
-  link: https://mathworld.wolfram.com/WallissConstant.html
   oeis: https://oeis.org/A007493
   eponyms: 
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 John Wallis
       link: https://en.wikipedia.org/wiki/John_Wallis
-  formula: $x ∈ ℝ \mid x^3 = 2x + 5$
+  formula: $\href{https://mathworld.wolfram.com/WallissConstant.html}{\mathrm W} = x ∈ ℝ \mid x^3 = 2x + 5$
   decimal: 2.09455148154232659148238654057930296385730610562823918030412852904531218998348366714626728177715775786083952118906296345984514039842081282370173965531394055476160225828188949144397222665915595450399332426472256800938699177395882894016181834927454149608941225576642742318917626635375670383400596997798…
 
+- name: parabolic
+  oeis: https://oeis.org/A103710
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/Universal_parabolic_constant}{\mathrm P} = \ln (1 + \sqrt 2) + \sqrt 2 = \operatorname{asinh}(1) + \sqrt 2$
+  decimal: 2.29558714939263807403…
+
 - name: silver_ratio
-  link: https://en.wikipedia.org/wiki/Silver_ratio
   oeis: https://oeis.org/A014176
   eponyms: []
-  formula: $\mathrm σ := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}}\;\right\vert\; n = 2$
+  formula: $\href{https://en.wikipedia.org/wiki/Silver_ratio}{\mathrm σ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}}\;\right\vert\; n = 2$
   decimal: 2.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
 
 - name: feigenbaum_alpha
-  link: https://en.wikipedia.org/wiki/Feigenbaum_constants#The_second_constant
   oeis: https://oeis.org/A006891
   eponyms: 
     - name: 🇺🇸 Mitchell Jay Feigenbaum
       link: https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum
-  formula: $\mathrm α$ 
+  formula: $\href{https://en.wikipedia.org/wiki/Feigenbaum_constants#The_second_constant}{\mathrm α}$ 
   decimal: 2.5029078750958928222839028732182157863812713767271499773361920567792354631795902067032996497464338…
 
+- name: lemniscate
+  oeis: https://oeis.org/A062539
+  eponyms: []
+  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm ϖ} := \dfrac{\href{https://de.wikipedia.org/wiki/Umfang_(Geometrie)}{\mathit{umfang}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}{\href{https://en.wikipedia.org/wiki/Diameter_of_a_set}{\mathit{durchmesser}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}$
+  decimal: 2.62205755429211981046…
+
 - name: gelfond_schneider
-  link: https://en.wikipedia.org/wiki/Gelfond%E2%80%93Schneider_constant
   oeis: https://oeis.org/A007507
   eponyms: 
     - name: 🇷🇺 Алекса́ндр О́сипович Ге́льфонд
       link: https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D1%8C%D1%84%D0%BE%D0%BD%D0%B4,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9E%D1%81%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D1%87
     - name: 🇩🇪 Theodor Schneider
       link: https://de.wikipedia.org/wiki/Theodor_Schneider_(Mathematiker)
-  formula: $2^{\sqrt 2}$
-  decimal: 
+  formula: $\href{https://en.wikipedia.org/wiki/Gelfond%E2%80%93Schneider_constant}{2^{\sqrt 2}}$
+  decimal: 2.6651441426902251886502972498731…
 
 - name: khinchin
-  link: https://en.wikipedia.org/wiki/Khinchin's_constant
   oeis: https://oeis.org/A002210
   eponyms: 
     - name: 🇷🇺 Алекса́ндр Я́ковлевич Хи́нчи
       link: https://en.wikipedia.org/wiki/Aleksandr_Khinchin
-  formula: $\mathrm K_0 := \displaystyle\prod_{r=1}^{\infty} \left(1 + \dfrac 1 {r(r + 2)}\right) ^{log_2 r}$
+  formula: $\href{https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%A5%D0%B8%D0%BD%D1%87%D0%B8%D0%BD%D0%B0}{\mathrm K_0} := \displaystyle\prod_{r=1}^{\infty} \left(1 + \dfrac 1 {r(r + 2)}\right) ^{log_2 r}$
   decimal: 2.68545200106530644530971483548179569382038229399446295305115234555721885953715200280114117493184769…
 
 - name: euler_bernoulli
-  link: 
   oeis: https://oeis.org/A001113
   eponyms:
     - name: 🇨🇭 Leonhard Euler
@@ -249,65 +325,50 @@
   decimal: 2.71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642…
 
 - name: archimedes
-  link: 
   oeis: https://oeis.org/A000796
   eponyms:
     - name: 🇬🇷 Ἀρχιμήδης
       link: https://el.wikipedia.org/wiki/%CE%91%CF%81%CF%87%CE%B9%CE%BC%CE%AE%CE%B4%CE%B7%CF%82
-  formula: $\href{https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)}{\mathrm π} := \dfrac{\href{https://el.wikipedia.org/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CF%86%CE%AD%CF%81%CE%B5%CE%B9%CE%B1_(%CE%B3%CE%B5%CF%89%CE%BC%CE%B5%CF%84%CF%81%CE%AF%CE%B1)}{\mathit{circumference}}}{\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%AC%CE%BC%CE%B5%CF%84%CF%81%CE%BF%CF%82}{\mathit{diameter}}}$
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)}{\mathrm π} := \dfrac{\href{https://el.wikipedia.org/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CF%86%CE%AD%CF%81%CE%B5%CE%B9%CE%B1_(%CE%B3%CE%B5%CF%89%CE%BC%CE%B5%CF%84%CF%81%CE%AF%CE%B1)}{\mathit{περίμετρος}(\mathit{κύκλος})}}{\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%AC%CE%BC%CE%B5%CF%84%CF%81%CE%BF%CF%82}{\mathit{διάμετρος}}(\href{https://el.wikipedia.org/wiki/%CE%9A%CF%8D%CE%BA%CE%BB%CE%BF%CF%82}{\mathit{κύκλος}})}$
   decimal: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706… 
 
 - name: bronze_ratio
-  link: https://en.wikipedia.org/wiki/Metallic_mean
   oeis: https://oeis.org/A098316
   eponyms: []
-  formula: $\mathrm S_3 := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 3$
+  formula: $\href{https://en.wikipedia.org/wiki/Metallic_mean}{\mathrm S_3} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 3$
   decimal: 3.30277563773199464655961063373524797312564828692262310635522652811358347414650522260230954100924535…
 
 - name: feigenbaum_delta
-  link: https://en.wikipedia.org/wiki/Feigenbaum_constants#The_first_constant
   oeis: https://oeis.org/A006890
   eponyms: 
     - name: 🇺🇸 Mitchell Jay Feigenbaum
       link: https://en.wikipedia.org/wiki/Mitchell_J._Feigenbaum
-  formula: $\mathrm δ$
+  formula: $\href{https://en.wikipedia.org/wiki/Feigenbaum_constants#The_first_constant}{\mathrm δ}$
   decimal: 4.66920160910299067185320382046620161725818557747576863274565134300413433021131473713868974402394801…
 
 - name: hartl
-  link: 
   oeis: https://oeis.org/A019692
   eponyms: 
     - name: 🇺🇸 Michael Hartl
       link: https://en.wikipedia.org/wiki/Michael_Hartl
-  formula: $\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{τ} := \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{\mathit{circumference}}}{\href{https://en.wikipedia.org/wiki/Radius}{\mathit{radius}}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm τ} := \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{\mathit{perimeter}(\mathit{circle})}}{\href{https://en.wikipedia.org/wiki/Radius}{\mathit{radius}}(\href{https://en.wikipedia.org/wiki/Circle}{\mathit{circle}})}$
   decimal: 6.28318530717958647692528676655900576839433879875021164194988918461563281257241799725606965068423413…
 
 - name: gelfond
-  link: https://en.wikipedia.org/wiki/Gelfond%27s_constant
   oeis: https://oeis.org/A039661
   eponyms: 
     - name: 🇷🇺 Алекса́ндр О́сипович Ге́льфонд
       link: https://en.wikipedia.org/wiki/Alexander_Gelfond
-  formula: $\mathrm e^{\mathrm π}$
+  formula: $\href{https://en.wikipedia.org/wiki/Gelfond%27s_constant}{\mathrm e^{\mathrm π}}$
   decimal: 23.1406926327792690057290863679485473802661062426002119934450464095243423506904527835169719970675492196759527048010877731444280444146938358447174458796098493653279658636692422302689910137417646844014103951838684772430680595881624498444914309667784136716319634147840382165112876377314703473538331628213…
+
+- name: imaginary_unit
+  oeis: 
+  eponyms: []
+  formula: $\href{https://en.wikipedia.org/wiki/Imaginary_unit}{\mathrm i \mid \mathrm i^2 = -1}$
+  decimal: i
 
 # [`landau_ramanujan`](https://en.wikipedia.org/wiki/Landau%E2%80%93Ramanujan_constant) | [Edmund Georg Hermann Landau](https://en.wikipedia.org/wiki/Edmund_Landau), [ஶ்ரீநிவாஸ ராமாநுஜையங்கார்](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan) | b =  |
 
-- name: supergolden
-  link: https://en.wikipedia.org/wiki/Supergolden_ratio
-  oeis: https://oeis.org/A092526
-  eponyms: []
-  formula: $\mathrm ψ := x ∈ ℝ \mid x^3 = x^2 + 1$
-  decimal: 1.46557 12318 76768 02665 
 
-- name: kepler_bouwkamp
-  link: https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant
-  oeis: https://oeis.org/A085365
-  eponyms: 
-    - name: 🇩🇪 Johannes Kepler
-      link: https://de.wikipedia.org/wiki/Johannes_Kepler
-    - name: 🇳🇱 Christoffel Jacob Bouwkamp
-      link: https://de.wikipedia.org/wiki/Christoffel_Jacob_Bouwkamp
-  formula: $\mathrm K' = \displaystyle\prod_{n=3}^{\infty} \cos \dfrac{\mathrm{π}}{n}$
-  decimal: 0.11494204485329620070…
 

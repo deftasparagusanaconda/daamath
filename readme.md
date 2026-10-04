@@ -1,4 +1,6 @@
-daamath is a cross-language math library specification. it is geared for portable scalar numerical computation, and provides various [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes), [functions](https://deftasparagusanaconda.github.io/daamath/functions), [constants](https://deftasparagusanaconda.github.io/daamath/constants). it has implementations in various programming languages: 
+# daamath
+
+daamath is a cross-language math library specification. it is geared for scalar numerical computation, and provides various [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes), [functions](https://deftasparagusanaconda.github.io/daamath/functions), [constants](https://deftasparagusanaconda.github.io/daamath/constants). it has implementations in various programming languages: 
 
 <table>
   <tr>
@@ -59,7 +61,7 @@ print(sin(pi))
 
 # to do
 
-* ≈ 25 / 100 math constants implemented
+* ≈ 50 / 100 math constants implemented
 * rename each constant's nearest and residual to nearesteven and residual
 * document datatypes
 * analyze numerically favourable formulae for complex trig functions
@@ -212,3 +214,7 @@ ok rant done
 * [datatypes](https://deftasparagusanaconda.github.io/daamath/datatypes): binary64, int32, uint8, bool, complex128, decimal64, …
 * [functions](https://deftasparagusanaconda.github.io/daamath/functions): sin, log, abs, pow, sqrt, round, …
 -->
+
+# rant
+
+my favourite thing about a computer is that its deterministic. it does exactly what you tell it to do. but when the computer starts making assumptions (like the ones that programmers make), it starts behaving unpredictably. thats why everything is so explicit. assumptions break the thing that make computers computer-y. thats also why theres no random module in daamath. its an algorithmic thing, and is also (ideally) non-deterministic. anyway, ye

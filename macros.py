@@ -18,10 +18,7 @@ def define_env(env):
         lines = []
 
         for idk in yaml.safe_load(open('yaml files/constants/math.yaml')):
-            name = (
-                f"[`{idk['name']}`]({idk['link']})" 
-                if idk['link'] is not None 
-                else f"`{idk['name']}`")
+            name = f"[`{idk['name']}`]({idk['name']})" 
 
             eponyms = '<br>'.join(
                 f"[{idfk['name']}]({idfk['link']})" 
