@@ -1,0 +1,55 @@
+# int8
+
+<pre>
+<span style="color: blue">□</span><span style="color: red">■■■■■■■</span> = <span style="color: blue">+</span><span style="color: red">127</span>
+<span style="color: blue">□</span><span style="color: red">■■■■■■□</span> = <span style="color: blue">+</span><span style="color: red">126</span>
+<span style="color: blue">□</span><span style="color: red">■■■■■□■</span> = <span style="color: blue">+</span><span style="color: red">125</span>
+<span style="color: blue">□</span><span style="color: red">·······</span> = <span style="color: blue">+</span><span style="color: red">···</span>
+<span style="color: blue">□</span><span style="color: red">□□□□□■■</span> = <span style="color: blue">+</span><span style="color: red">  3</span>
+<span style="color: blue">□</span><span style="color: red">□□□□□■□</span> = <span style="color: blue">+</span><span style="color: red">  2</span>
+<span style="color: blue">□</span><span style="color: red">□□□□□□■</span> = <span style="color: blue">+</span><span style="color: red">  1</span>
+<span style="color: blue">□</span><span style="color: red">□□□□□□□</span> = <span style="color: blue"> </span><span style="color: red">  0</span>
+<span style="color: blue">■</span><span style="color: red">■■■■■■■</span> = <span style="color: blue">-</span><span style="color: red">  1</span>
+<span style="color: blue">■</span><span style="color: red">■■■■■■□</span> = <span style="color: blue">-</span><span style="color: red">  2</span>
+<span style="color: blue">■</span><span style="color: red">■■■■■□■</span> = <span style="color: blue">-</span><span style="color: red">  3</span>
+<span style="color: blue">■</span><span style="color: red">·······</span> = <span style="color: blue">-</span><span style="color: red">···</span>
+<span style="color: blue">■</span><span style="color: red">□□□□□■□</span> = <span style="color: blue">-</span><span style="color: red">126</span>
+<span style="color: blue">■</span><span style="color: red">□□□□□□■</span> = <span style="color: blue">-</span><span style="color: red">127</span>
+<span style="color: blue">■</span><span style="color: red">□□□□□□□</span> = <span style="color: blue">-</span><span style="color: red">128</span>
+</pre>
+
+# binary32
+
+<pre>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">8388607</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■□</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">8388606</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■□■</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">8388605</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">······· ········ ········</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">·······</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□■■</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">3</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□■□</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">2</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□■</span>                              = <span style="color: blue">+</span></span><span style="color: green">nan</span><span style="color: red">1</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span>                              = <span style="color: blue">+</span></span><span style="color: red"></span><span style="color: yellow">inf</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ □</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">+127</sup> × (1+<span style="color: red">8388607</span>/2<sup>23</sup>) = <span style="color: blue">+</span><span style="color: yellow">340282346638528859811704183484516925440</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ □</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">+127</sup> × (1+<span style="color: red">8388606</span>/2<sup>23</sup>) = <span style="color: blue">+</span><span style="color: yellow">340282326356119256160033759537265639424</span>
+<span style="color: blue">□</span><span style="color: green">■■■■■■■ □</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">+127</sup> × (1+<span style="color: red">      0</span>/2<sup>23</sup>) = <span style="color: blue">+</span><span style="color: yellow">170141183460469231731687303715884105728</span>
+<span style="color: blue">□</span><span style="color: green">■□□□□□□ □</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">+  1</sup> × (1+<span style="color: red">      0</span>/2<sup>23</sup>)
+<span style="color: blue">□</span><span style="color: green">□■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">   0</sup> × (1+<span style="color: red">      0</span>/2<sup>23</sup>) 
+<span style="color: blue">□</span><span style="color: green">□□□□□□□ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">-126</sup> × (1+<span style="color: red">      0</span>/2<sup>23</sup>)
+<span style="color: blue">□</span><span style="color: green">□□□□□□□ □</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">-126</sup> × (  <span style="color: red">8388607</span>/2<sup>23</sup>) = <span style="color: blue">+</span>
+<span style="color: blue">□</span><span style="color: green">□□□□□□□ □</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□■</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">-126</sup> × (  <span style="color: red">      1</span>/2<sup>23</sup>) = <span style="color: blue">+</span><span style="color: yellow"></span>
+<span style="color: blue">□</span><span style="color: green">□□□□□□□ □</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">+</span></span>1 × 2<sup style="color: green">-126</sup> × (  <span style="color: red">      0</span>/2<sup>23</sup>) = <span style="color: blue">+</span><span style="color: yellow">0.0</span>
+<span style="color: blue">■</span><span style="color: green">□□□□□□□ □</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span> = <span style="color: blue">-</span></span>1 × 2<sup style="color: green">-126</sup> × (  <span style="color: red">      0</span>/2<sup>23</sup>) = <span style="color: blue">-</span><span style="color: yellow">0.0</span>
+
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ □</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■□</span> = <span style="color: blue">-</span></span>1 × 2<sup style="color: green">+127</sup> × (1+<span style="color: red">8388606</span>/2<sup>23</sup>) = <span style="color: blue">-</span><span style="color: yellow">340282326356119256160033759537265639424</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ □</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span> = <span style="color: blue">-</span></span>1 × 2<sup style="color: green">+127</sup> × (1+<span style="color: red">8388607</span>/2<sup>23</sup>) = <span style="color: blue">-</span><span style="color: yellow">340282346638528859811704183484516925440</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□□</span>                              = <span style="color: blue">-</span></span><span style="color: red"></span><span style="color: yellow">inf</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□□■</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">1</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□■□</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">2</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">□□□□□□□ □□□□□□□□ □□□□□□■■</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">3</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">······· ········ ········</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">·······</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■□■</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">8388605</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■□</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">8388606</span>
+<span style="color: blue">■</span><span style="color: green">■■■■■■■ ■</span><span style="color: red">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span>                              = <span style="color: blue">-</span></span><span style="color: green">nan</span><span style="color: red">8388607</span>
+</pre>
+
+in how many ways can i represent it? SEF, 
