@@ -7,17 +7,18 @@ def define_env(env):
         yaml_path = 'yaml files/' + str(markdown_path.with_suffix(".yaml"))
         
         return (
-            "# yaml\n\n"
+            '<details><summary><h1 id="yaml">yaml</h1></summary>\n\n'
             "```yaml\n"
             f'--8<-- "{yaml_path}"\n'
-            "```"
+            "```\n\n"
+            "</details>"
         )
     
     @env.macro
     def math_constants():
         lines = []
 
-        for idk in yaml.safe_load(open('yaml files/constants/math.yaml')):
+        for idk in yaml.safe_load(open('yaml files/constants/approximate.yaml')):
             name = f"[`{idk['name']}`]({idk['name']})" 
 
             eponyms = '<br>'.join(

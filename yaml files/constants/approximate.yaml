@@ -1,15 +1,3 @@
-- name: negative_one
-  oeis:
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/−1}{-1} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Additive_inverse}{z + 1 = 0 = 1 + z}\end{aligned}$
-  decimal: -1
-
-- name: zero
-  oeis: 
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Zero}{0} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Additive_identity}{e + z = z = z + e}\end{aligned}$
-  decimal: 0
-
 - name: liouville
   oeis: https://oeis.org/A012245
   eponyms: 
@@ -46,12 +34,6 @@
   formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{n \to \infty} \left(\displaystyle\sum_{n \ge p \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac 1 p - \ln\ln n \right)$
   decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
 
-- name: one_half
-  oeis: 
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/One_half}{\dfrac{1}{2}} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Multiplicative_inverse}{z \cdot 2 = 1 = 2 \cdot z}\end{aligned}$
-  decimal: 0.5
-
 - name: lambert_1
   oeis: https://oeis.org/A030178
   eponyms:
@@ -78,7 +60,6 @@
   formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{x} \dfrac{\mathrm e^t}{t} \mathrm dt}\right\vert x = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
 
-
 - name: cahen
   oeis: https://oeis.org/A118227
   eponyms: 
@@ -102,7 +83,7 @@
   eponyms:
     - name: 🇫🇷 Pierre-Simon de Laplace
       link: https://fr.wikipedia.org/wiki/Pierre-Simon_de_Laplace
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}(x \operatorname{sech} x)}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}\limits_{x \in \mathbb R^+} \dfrac{x}{\cosh x)}}$
   decimal: 0.66274341934918158097…
 
 - name: ln_2
@@ -146,11 +127,6 @@
   eponyms: []
   formula: $\begin{aligned}\href{https://fr.wikipedia.org/wiki/Angle_magique}{\mathrm {\theta_m}} &:= \theta \in [0, \tfrac{\mathrm \tau}{4}) \mid \href{https://fr.wikipedia.org/wiki/Polyn%C3%B4me_de_Legendre}{P}_2(\cos \theta) = 0 \\ &\ = \operatorname{atan} \sqrt 2\end{aligned}$
   decimal: 0.955316618124509278163…
-- name: one
-  oeis: 
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/1}{1} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Identity_element}{e ⋅ z = z = z ⋅ e}\end{aligned}$
-  decimal: 1
 
 - name: hermite_2
   oeis: https://oeis.org/A246724
@@ -244,8 +220,8 @@
   oeis: https://oeis.org/A002194
   eponyms: 
     - name: 🇬🇷 Θεόδωρος
-      link: https://en.wikipedia.org/wiki/Theodorus_of_Cyrene
-  formula: $\href{https://en.wikipedia.org/wiki/Square_root_of_3}{\sqrt{3}} = x \in \mathbb R^+ \mid x \cdot x = 2$
+      link: https://el.wikipedia.org/wiki/%CE%98%CE%B5%CF%8C%CE%B4%CF%89%CF%81%CE%BF%CF%82_%CE%BF_%CE%9A%CF%85%CF%81%CE%B7%CE%BD%CE%B1%CE%AF%CE%BF%CF%82
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%A4%CE%B5%CF%84%CF%81%CE%B1%CE%B3%CF%89%CE%BD%CE%B9%CE%BA%CE%AE_%CF%81%CE%AF%CE%B6%CE%B1_%CF%84%CE%BF%CF%85_3}{\sqrt{3}} = x \in \mathbb R^+ \mid x \cdot x = 3$
   decimal: 1.73205080756887729352744634150587236694280525381038062805580697945193301690880003708114618675724857…
 
 - name: connective
@@ -254,26 +230,13 @@
   formula: $\href{https://en.wikipedia.org/wiki/Connective_constant}{\mathrm μ} := \sqrt{2 + \sqrt{2}}$
   decimal: 1.84775906502257351225…
 
-- name: brun
-  oeis: https://oeis.org/A065421
-  eponyms: 
-    - name: 🇳🇴 Viggo Brun
-      link: https://no.wikipedia.org/wiki/Viggo_Brun
-  formula: $\href{https://en.wikipedia.org/wiki/Brun%27s_theorem}{\mathrm B_2} := \left.\displaystyle\sum \left(\dfrac 1p + \dfrac 1q\right)\;\right\vert\;\href{https://no.wikipedia.org/wiki/Tvillingprimtall}{\begin{aligned} &p, q \in \mathbb P \\ &p + 2 = q \end{aligned}}$
-  decimal: 1.902160583104…
-
-- name: two
-  oeis: 
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/2}{2} := 1 \href{https://en.wikipedia.org/wiki/Addition}{+} 1$
-  decimal: 2
 
 - name: wallis
   oeis: https://oeis.org/A007493
   eponyms: 
     - name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿 John Wallis
       link: https://en.wikipedia.org/wiki/John_Wallis
-  formula: $\href{https://mathworld.wolfram.com/WallissConstant.html}{\mathrm W} = x ∈ ℝ \mid x^3 = 2x + 5$
+  formula: $\href{https://mathworld.wolfram.com/WallissConstant.html}{\mathrm W} := x ∈ ℝ \mid x^3 = 2x + 5$
   decimal: 2.09455148154232659148238654057930296385730610562823918030412852904531218998348366714626728177715775786083952118906296345984514039842081282370173965531394055476160225828188949144397222665915595450399332426472256800938699177395882894016181834927454149608941225576642742318917626635375670383400596997798…
 
 - name: parabolic
@@ -299,7 +262,8 @@
 - name: lemniscate
   oeis: https://oeis.org/A062539
   eponyms: []
-  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm ϖ} := \dfrac{\href{https://de.wikipedia.org/wiki/Umfang_(Geometrie)}{\mathit{umfang}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}{\href{https://en.wikipedia.org/wiki/Diameter_of_a_set}{\mathit{durchmesser}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}$
+  #formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm ϖ} := \dfrac{\href{https://de.wikipedia.org/wiki/Umfang_(Geometrie)}{\mathit{umfang}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}{\href{https://en.wikipedia.org/wiki/Diameter_of_a_set}{\mathit{durchmesser}}(\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}})}$
+  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm ϖ} := \dfrac{\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}}\ \href{https://de.wikipedia.org/wiki/Umfang_(Geometrie)}{\mathit{umfang}}}{\href{https://de.wikipedia.org/wiki/Lemniskate_von_Bernoulli}{\mathit{lemniskate}}\ \href{https://en.wikipedia.org/wiki/Diameter_of_a_set}{\mathit{durchmesser}}}$
   decimal: 2.62205755429211981046…
 
 - name: gelfond_schneider
@@ -335,7 +299,7 @@
   eponyms:
     - name: 🇬🇷 Ἀρχιμήδης
       link: https://el.wikipedia.org/wiki/%CE%91%CF%81%CF%87%CE%B9%CE%BC%CE%AE%CE%B4%CE%B7%CF%82
-  formula: $\href{https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)}{\mathrm π} := \dfrac{\href{https://el.wikipedia.org/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CF%86%CE%AD%CF%81%CE%B5%CE%B9%CE%B1_(%CE%B3%CE%B5%CF%89%CE%BC%CE%B5%CF%84%CF%81%CE%AF%CE%B1)}{\mathit{περίμετρος}(\mathit{κύκλος})}}{\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%AC%CE%BC%CE%B5%CF%84%CF%81%CE%BF%CF%82}{\mathit{διάμετρος}}(\href{https://el.wikipedia.org/wiki/%CE%9A%CF%8D%CE%BA%CE%BB%CE%BF%CF%82}{\mathit{κύκλος}})}$
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)}{\mathrm π} := \dfrac{\href{https://el.wikipedia.org/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CF%86%CE%AD%CF%81%CE%B5%CE%B9%CE%B1_(%CE%B3%CE%B5%CF%89%CE%BC%CE%B5%CF%84%CF%81%CE%AF%CE%B1)}{\mathit{κύκλος}\ \mathit{περίμετρος}}}{\href{https://el.wikipedia.org/wiki/%CE%9A%CF%8D%CE%BA%CE%BB%CE%BF%CF%82}{\mathit{κύκλος}}\ \href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%AC%CE%BC%CE%B5%CF%84%CF%81%CE%BF%CF%82}{\mathit{διάμετρος}}}$
   decimal: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706… 
 
 - name: bronze_ratio
@@ -365,7 +329,7 @@
   eponyms: 
     - name: 🇺🇸 Michael Hartl
       link: https://en.wikipedia.org/wiki/Michael_Hartl
-  formula: $\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm τ} := \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{\mathit{perimeter}(\mathit{circle})}}{\href{https://en.wikipedia.org/wiki/Radius}{\mathit{radius}}(\href{https://en.wikipedia.org/wiki/Circle}{\mathit{circle}})}$
+  formula: $\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm \tau} := \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{\mathit{circle}\ \mathit{perimeter}}}{\href{https://en.wikipedia.org/wiki/Circle}{\mathit{circle}}\ \href{https://en.wikipedia.org/wiki/Radius}{\mathit{radius}}}$
   decimal: 6.28318530717958647692528676655900576839433879875021164194988918461563281257241799725606965068423413…
 
 - name: gelfond
@@ -376,13 +340,49 @@
   formula: $\href{https://en.wikipedia.org/wiki/Gelfond%27s_constant}{\mathrm e^{\mathrm π}}$
   decimal: 23.1406926327792690057290863679485473802661062426002119934450464095243423506904527835169719970675492196759527048010877731444280444146938358447174458796098493653279658636692422302689910137417646844014103951838684772430680595881624498444914309667784136716319634147840382165112876377314703473538331628213…
 
-- name: imaginary_unit
-  oeis: 
-  eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Imaginary_unit}{\mathrm i \mid \mathrm i^2 = -1}$
-  decimal: i
+# - name: brun
+#   oeis: https://oeis.org/A065421
+#   eponyms: 
+#     - name: 🇳🇴 Viggo Brun
+#       link: https://no.wikipedia.org/wiki/Viggo_Brun
+#   formula: $\href{https://en.wikipedia.org/wiki/Brun%27s_theorem}{\mathrm B_2} := \left.\displaystyle\sum \left(\dfrac 1p + \dfrac 1q\right)\;\right\vert\;\href{https://no.wikipedia.org/wiki/Tvillingprimtall}{\begin{aligned} &p, q \in \mathbb P \\ &p + 2 = q \end{aligned}}$
+#   decimal: 1.902160583104…
 
 # [`landau_ramanujan`](https://en.wikipedia.org/wiki/Landau%E2%80%93Ramanujan_constant) | [Edmund Georg Hermann Landau](https://en.wikipedia.org/wiki/Edmund_Landau), [ஶ்ரீநிவாஸ ராமாநுஜையங்கார்](https://en.wikipedia.org/wiki/Srinivasa_Ramanujan) | b =  |
 
-
-
+# - name: negative_one
+#   oeis:
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/−1}{-1} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Additive_inverse}{z + 1 = 0 = 1 + z}\end{aligned}$
+#   decimal: -1
+#
+# - name: zero
+#   oeis: 
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/Zero}{0} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Additive_identity}{e + z = z = z + e}\end{aligned}$
+#   decimal: 0
+#
+# - name: imaginary_unit
+#   oeis: 
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/Imaginary_unit}{\mathrm i \mid \mathrm i^2 = -1}$
+#   decimal: i
+#
+# - name: one_half
+#   oeis: 
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/One_half}{\dfrac{1}{2}} = \begin{aligned}&z \in \href{https://en.wikipedia.org/wiki/Complex_numbers}{\mathbb C} \mid \\ &\href{https://en.wikipedia.org/wiki/Multiplicative_inverse}{z \cdot 2 = 1 = 2 \cdot z}\end{aligned}$
+#   decimal: 0.5
+#
+# - name: one
+#   oeis: 
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/1}{1} := \begin{aligned}&ιe ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ} \mid ∀z ∈ \href{https://en.wikipedia.org/wiki/Complex_numbers}{ℂ}, \\ &\href{https://en.wikipedia.org/wiki/Identity_element}{e ⋅ z = z = z ⋅ e}\end{aligned}$
+#   decimal: 1
+#
+# - name: two
+#   oeis: 
+#   eponyms: []
+#   formula: $\href{https://en.wikipedia.org/wiki/2}{2} := 1 \href{https://en.wikipedia.org/wiki/Addition}{+} 1$
+#   decimal: 2
+#

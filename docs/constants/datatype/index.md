@@ -1,8 +1,32 @@
+# datatype
+
+there are some constants about datatypes that are hard to remember:
+
+# uint
+
+| `uint`$n$ | `max` = $2^n$ |
+| - | -:|
+| [`uint8`](/datatypes/uint)  |                  255 |
+| [`uint16`](/datatypes/uint) |                65535 |
+| [`uint32`](/datatypes/uint) |           4294967295 |
+| [`uint64`](/datatypes/uint) | 18446744073709551615 |
+
+# int
+
+the `intn` datatypes represent a range of integers. 
+
+| `int`$n$ | `min` = $-2^{n-1}$ | `max` = $+2^{n-1} - 1$ |
+| - | -:| -:|
+| [`int8`](/datatypes/int)  |                -128 |                 +127 |
+| [`int16`](/datatypes/int) |              -32768 |               +32767 |
+| [`int32`](/datatypes/int) |         -2147483648 |          +2147483647 |
+| [`int64`](/datatypes/int) |-9223372036854775808 | +9223372036854775807 |
+
 # ieee_754
 
 [IEEE 754] formats can be mathematically characterized by four integers:
 
-| name | `radix` | `precision` | `emin`   | `emax`   |
+| `binary`$n$ | `radix` | `precision` | `emin`   | `emax`   |
 | ------ | ----- | --------- | ------ | ------ |
 | <code>[binary32]</code> | 2 | 24 | -126 | 127 |
 | <code>[binary64]</code> | 2 | 53 | -1022 | 1023 |

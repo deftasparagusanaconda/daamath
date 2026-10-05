@@ -2,7 +2,9 @@
 
 | name | description |
 | - | - |
-| `imaginary_unit` | [$\mathrm i: \mathrm i^2 = -1$](https://en.wikipedia.org/wiki/Imaginary_unit) |
+| `imaginary_unit` | [$\mathrm i \mid \mathrm i^2 = -1$](https://en.wikipedia.org/wiki/Imaginary_unit) |
+
+this constant lives on its own because
 
 <!--
 # cayley_dickson
