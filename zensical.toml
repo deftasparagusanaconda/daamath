@@ -11,7 +11,7 @@ extra_javascript = [
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
 ]
 
-#extra_css = ["stylesheets/extra.css"]
+extra_css = ["mystyles.css"]
 #extra_javascript = ["https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"]
 
 # nav = [

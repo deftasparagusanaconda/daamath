@@ -1,0 +1,11 @@
+:root {
+    --dm-red: oklch(0.6 0.2 22);
+    --dm-green: oklch(0.6 0.2 142);
+    --dm-blue: oklch(0.6 0.2 262);
+}
+
+[data-md-color-scheme="slate"] {
+    --dm-red: oklch(0.6 0.2 22);
+    --dm-green: oklch(0.6 0.2 142);
+    --dm-blue: oklch(0.6 0.2 262);
+}
