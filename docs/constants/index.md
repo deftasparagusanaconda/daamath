@@ -4,9 +4,24 @@ in $\text{mathematics}$, we usually manipulate things symbolically, and constant
 
 in `programming`, we usually manipulate things numerically, and constants are approximate. for example `math.pi` in python is <code><span style="color:green">3.141592653589793</span><span style="color:red">115997963468544185161590576171875</span></code>
 
-we cannot pretend that an approximation is the exact value. this is clear from how $\sin(\mathrm π) = \textcolor{green}{0}$ but `math.sin(math.pi)` in python is <code><span style="color:green">0.000000000000000</span><span style="color:red">122464679914735320717376402945839660462569212467758006379625612680683843791484832763671875</span></code> so we store constants as approximations (based on the finite-precision datatypes in daamath).
+we cannot pretend that an approximation is the exact value. this is clear from how $\sin(\mathrm π) = \textcolor{green}{0}$ but `math.sin(math.pi)` in python is <code><span style="color:green">0.000000000000000</span><span style="color:red">122464679914735320717376402945839660462569212467758006379625612680683843791484832763671875</span></code> so we store constants as approximations.
 
-# constants
+we maintain the following constants:
+
+| name | eponyms | formula | decimal | notes |
+| ---- | ------- | ------- | ------- | ----- |
+{{ math_constants() }}
+
+# exceptions
+
+* the [🇳🇴 Viggo Brun](https://no.wikipedia.org/wiki/Viggo_Brun) constant $\href{https://en.wikipedia.org/wiki/Brun%27s_theorem}{\mathrm B_2} := \left.\displaystyle\sum \left(\dfrac 1p + \dfrac 1q\right)\;\right\vert\;\href{https://no.wikipedia.org/wiki/Tvillingprimtall}{\begin{aligned} &p, q \in \mathbb P \\ &p + 2 = q \end{aligned}}$ ≈ [1.902160583104…](https://oeis.org/A065421) is excluded because we do not know enough digits to saturate the precision of the datatypes
+<!--* constants like 0, 1, -1, 2, ½ are not stored since their construction is trivial--><!-- i excluded this because its stating the obvious -->
+
+# sources
+
+* [wikipedia](https://en.wikipedia.org/wiki/List_of_mathematical_constants)
+
+<!--# constants
 
 a constant is something whose value doesnt depend on anything and doesnt change unless the universe changes. under this definition, daamath has a few kinds of constants:
 
@@ -62,7 +77,6 @@ the rational approximations are stored as three integers. this is actually sligh
 # naming
 
 constants should not be written in uppercase. if constants should be immutable during runtime, that should be enforced by a guard, not by its name. 
--->
 [f16]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
 [f32]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 [f64]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
@@ -73,3 +87,6 @@ constants should not be written in uppercase. if constants should be immutable d
 [d128]: https://en.wikipedia.org/wiki/Decimal128_floating-point_format
 [IEEE 754]: https://en.wikipedia.org/wiki/IEEE_754
 [τ]: https://en.wikipedia.org/wiki/Tau
+-->
+
+{{ yaml_source(page) }}

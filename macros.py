@@ -18,7 +18,7 @@ def define_env(env):
     def math_constants():
         lines = []
 
-        for idk in yaml.safe_load(open('yaml files/constants/approximate.yaml')):
+        for idk in yaml.safe_load(open('yaml files/constants/index.yaml')):
             name = f"[`{idk['name']}`]({idk['name']})" 
 
             eponyms = '<br>'.join(
@@ -37,6 +37,12 @@ def define_env(env):
                 if idk['oeis'] is not None 
                 else idk['decimal'])
             
-            lines.append(f"| {name} | {eponyms} | {formula} | {decimal} |")
+            notes = (
+                idk['notes']
+                if idk['notes'] is not None
+                else '')
+                
+            
+            lines.append(f"| {name} | {eponyms} | {formula} | {decimal} | {notes} |")
 
         return '\n'.join(lines)
