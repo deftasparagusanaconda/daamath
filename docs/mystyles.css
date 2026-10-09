@@ -1,11 +1,19 @@
 :root {
-    --dm-red: oklch(0.6 0.2 22);
-    --dm-green: oklch(0.6 0.2 142);
-    --dm-blue: oklch(0.6 0.2 262);
+    --dm-red:     oklch(0.75 0.1275 15 );
+	--dm-yellow:  oklch(0.75 0.1275 75 );
+    --dm-green:   oklch(0.75 0.1275 135);
+	--dm-cyan:    oklch(0.75 0.1275 195);
+    --dm-blue:    oklch(0.75 0.1275 255);
+    --dm-magenta: oklch(0.75 0.1275 315);
+    --dm-gray:    oklch(0.75 0      0  );
 }
 
 [data-md-color-scheme="slate"] {
-    --dm-red: oklch(0.6 0.2 22);
-    --dm-green: oklch(0.6 0.2 142);
-    --dm-blue: oklch(0.6 0.2 262);
+    --dm-red:     oklch(0.75 0.1275 15 );
+	--dm-yellow:  oklch(0.75 0.1275 75 );
+    --dm-green:   oklch(0.75 0.1275 135);
+	--dm-cyan:    oklch(0.75 0.1275 195);
+    --dm-blue:    oklch(0.75 0.1275 255);
+    --dm-magenta: oklch(0.75 0.1275 315);
+    --dm-gray:    oklch(0.75 0      0  );
 }

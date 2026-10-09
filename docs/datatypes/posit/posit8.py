@@ -1,41 +1,12 @@
-from itertools import islice
+from itertools import islice, chain
 from fractions import Fraction
 
-
-print('# posit16')
+print('# posit8')
 print()
 print('<pre>')
 
-for bits in [
-        '0111111111111111', # +maxPos
-        '0111111111111110', 
-        '0111111111111101',
-        
-        '0100000000000010', 
-        '0100000000000001',
-        '0100000000000000', # +1.0
-        '0011111111111111', 
-        '0011111111111110', 
-        '0011111111111101', 
-
-        '0000000000000010', 
-        '0000000000000001', 
-        '0000000000000000', #  0.0
-        '1111111111111111', 
-        '1111111111111110', 
-        '1111111111111101', 
-
-        '1100000000000010', 
-        '1100000000000001', 
-        '1100000000000000', # -1.0
-        '1011111111111111', 
-        '1011111111111110', 
-        '1011111111111101', 
-
-        '1000000000000010', 
-        '1000000000000001', # -maxPos
-        '1000000000000000']:#  NaR
-    
+for i in chain(range(2**7-1,-1,-1), range(2**8-1,2 ** 7-1, -1)):
+    bits = bin(i)[2:].zfill(8)
     # -------------------------------------------
     # split into sign, regime, exponent, fraction
     # -------------------------------------------
@@ -74,6 +45,8 @@ for bits in [
         f'<span style="color: var(--dm-green)">{exponent_bits.replace('0', '□').replace('1', '■')}</span>'
         f'<span style="color: var(--dm-blue)">{fraction_bits.replace('0', '□').replace('1', '■')}</span>')
     
+    from decimal import Decimal, getcontext
+    getcontext().prec = 99
     print(fancy_bits, '=', value)
 
 print('</pre>')
