@@ -19,9 +19,9 @@ for bitstring in [
         '00111111111111111111111111111101', 
         
         '00000000000000000000000000000010', 
-        '00000000000000000000000000000001', 
+        '00000000000000000000000000000001', # +minPos
         '00000000000000000000000000000000', #  0.0
-        '11111111111111111111111111111111', 
+        '11111111111111111111111111111111', # -minPos
         '11111111111111111111111111111110', 
         '11111111111111111111111111111101', 
         
@@ -77,6 +77,8 @@ for bitstring in [
         f'<span style="color: var(--dm-gray)">{(R[0]*(len(R)<31)).replace('0', '■').replace('1', '□')}</span>'
         f'<span style="color: var(--dm-green)">{E.replace('0', '□').replace('1', '■')}</span>'
         f'<span style="color: var(--dm-blue)">{F.replace('0', '□').replace('1', '■')}</span>')
+
+#   also print the value p with a formula that is different for s = 0 and s = 1
     
     print(fancy_bits, '=', float(p))
 

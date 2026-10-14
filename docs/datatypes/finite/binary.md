@@ -1,4 +1,4 @@
-# binary32
+# binary
 
 <code><pre>
 <span style="color: var(--dm-blue)">□</span><span style="color: var(--dm-green)">■■■■■■■ ■</span><span style="color: var(--dm-red)">■■■■■■■ ■■■■■■■■ ■■■■■■■■</span> = <span style="color: var(--dm-blue)">+</span><span style="color: var(--dm-green)">nan</span><span style="color: var(--dm-red)">8388607</span>
