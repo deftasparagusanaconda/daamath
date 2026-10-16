@@ -22,9 +22,9 @@ def define_env(env):
             name = f"[`{idk['name']}`]({idk['name']})" 
 
             eponyms = '<br>'.join(
-                f"[{idfk['name']}]({idfk['link']})" 
+                f"[{''.join(flag + ' ' for flag in idfk['flags']) + idfk['name']}]({idfk['link']})" 
                 if idfk['link'] is not None
-                else idfk['name']
+                else ''.join(flag + ' ' for flag in idfk['flags']) + idfk['name']
                 for idfk in idk['eponyms'])
 
             formula = (
