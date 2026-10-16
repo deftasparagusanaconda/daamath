@@ -137,7 +137,8 @@
 - name: sophomore_plus
   oeis: https://oeis.org/A083648
   eponyms: []
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2}&= \int\nolimits_0^1 &&x^x\mathrm dx \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{(-1)^{n+1}}{n^n} \end{alignedat}}$
+  #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2}&= \int\nolimits_0^1 &&x^x\mathrm dx \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{(-1)^{n+1}}{n^n} \end{alignedat}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\int\nolimits_0^1 x^x\mathrm dx = \sum\limits_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n^n}}$
   decimal: 0.7834305107…
   notes: names never settled so im winging some
 
@@ -215,7 +216,8 @@
 - name: sophomore_minus
   oeis: https://oeis.org/A073009
   eponyms: []
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2} &= \int\nolimits_0^1 &&\dfrac{\mathrm dx}{x^x} \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{1}{n^n}\end{alignedat}}$
+  #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2} &= \int\nolimits_0^1 &&\dfrac{\mathrm dx}{x^x} \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{1}{n^n}\end{alignedat}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\int\nolimits_0^1 \dfrac{\mathrm dx}{x^x} = \sum\limits_{n=1}^{\infty} \dfrac{1}{n^n}}$
   decimal: 1.291285997…
   notes: names never settled so im winging some
 
@@ -323,7 +325,7 @@
 - name: golden_angle
   oeis: https://oeis.org/A131988
   eponyms: []
-  formula: $\left.\href{https://en.wikipedia.org/wiki/Golden_angle}{\dfrac{b}{a+b} \mathrm \tau} \;\middle\vert\; \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{a + b}}{a} = \dfrac ab \right. \\ = \dfrac{\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm{\tau}}}{\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm{\varphi}}^2}$
+  formula: $\begin{aligned}&\left.\href{https://en.wikipedia.org/wiki/Golden_angle}{\dfrac{b}{a+b} \mathrm \tau} \;\middle\vert\; \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{a + b}}{a} = \dfrac ab \right. \\ &= \dfrac{\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm{\tau}}}{\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm{\varphi}}^2}\end{aligned}$
   decimal: 2.39996322972865332…
   notes: 
 
