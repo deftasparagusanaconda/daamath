@@ -44,6 +44,16 @@
   decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
   notes: ✅
 
+- name: artin
+  oeis: https://oeis.org/A005596
+  eponyms:
+    - name: Emil Artin
+      flags: [🇩🇪]
+      link: https://de.wikipedia.org/wiki/Emil_Artin
+  formula: $\href{https://en.wikipedia.org/wiki/Artin's_conjecture_on_primitive_roots}{\mathrm {C_{Artin}}} := \displaystyle\prod_{p \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac{1}{p(p - 1)} \right)$
+  decimal: 0.373955813619202288054728054346416415111629248606150042094742802417350182040028082344304317087250568981603…
+  notes: 
+
 - name: lambert_1
   oeis: https://oeis.org/A030178
   eponyms:
@@ -106,7 +116,7 @@
     - name: Pierre-Simon de Laplace
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Pierre-Simon_de_Laplace
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}\limits_{x \in \mathbb R^+} \dfrac{x}{\cosh x)}}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}\limits_{x \in \mathbb R^+} \dfrac{x}{\cosh x}}$
   decimal: 0.66274341934918158097…
   notes: hmm...
 
@@ -137,8 +147,8 @@
 - name: sophomore_plus
   oeis: https://oeis.org/A083648
   eponyms: []
-  #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2}&= \int\nolimits_0^1 &&x^x\mathrm dx \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{(-1)^{n+1}}{n^n} \end{alignedat}}$
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\int\nolimits_0^1 x^x\mathrm dx = \sum\limits_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n^n}}$
+  #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2}&= \displaystyle\int\nolimits_0^1 &&x^x\mathrm dx \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{(-1)^{n+1}}{n^n} \end{alignedat}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 x^x\mathrm dx = \sum\limits_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n^n}}$
   decimal: 0.7834305107…
   notes: names never settled so im winging some
 
@@ -209,7 +219,8 @@
       flags: [🇨🇭]
       link: https://en.wikipedia.org/wiki/Hermann_Kinkelin
   #formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{6n^2 + 6n + 1}{12}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
-  formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2 + n + \substack{\scriptscriptstyle 1\ \\[-9.75ex] \diagup \\[-9ex]\ {\scriptscriptstyle 6}}}{2}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
+  #formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2 + n + \substack{\scriptscriptstyle 1\ \\[-9.75ex] \diagup \\[-9ex]\ {\scriptscriptstyle 6}}}{2}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2}{2} + \tfrac{n}{2} + \tfrac{1}{12}} \mathrm e ^ {-\tfrac{n^2}{4}}}$
   decimal: 1.28242712910062263687534256886979172776768892732500119206374002174040630885882646112973649195820237…
   notes: ✅
 
@@ -217,7 +228,7 @@
   oeis: https://oeis.org/A073009
   eponyms: []
   #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2} &= \int\nolimits_0^1 &&\dfrac{\mathrm dx}{x^x} \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{1}{n^n}\end{alignedat}}$
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\int\nolimits_0^1 \dfrac{\mathrm dx}{x^x} = \sum\limits_{n=1}^{\infty} \dfrac{1}{n^n}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 \dfrac{\mathrm dx}{x^x} = \sum\limits_{n=1}^{\infty} \dfrac{1}{n^n}}$
   decimal: 1.291285997…
   notes: names never settled so im winging some
 
@@ -258,6 +269,19 @@
   decimal: 1.46557123187676802665…
   notes: ✅
 
+- name: lochs_porter
+  oeis: https://oeis.org/A086237
+  eponyms:
+    - name: Gustav Emil Maria Johannes Lochs
+      flags: [🇦🇹]
+      link: https://de.wikipedia.org/wiki/Gustav_Lochs
+    - name: J W Porter
+      flags: []
+      link: 
+  formula: $\begin{alignedat}{2} \href{https://mathworld.wolfram.com/PortersConstant.html}{\mathrm C} &:= \dfrac{6 \ln 2}{\mathrm \pi ^ 2} \left( 3 \ln 2 + 4 \href{https://mathworld.wolfram.com/Euler-MascheroniConstant.html}{\mathrm \gamma} - \dfrac{24}{\mathrm \pi ^ 2} \href{https://mathworld.wolfram.com/RiemannZetaFunction.html}{\operatorname{\zeta}}'(2) - 2 \right) &&- \dfrac 12 \\ &\ = \dfrac{6 \ln 2((48 \ln \href{https://mathworld.wolfram.com/Glaisher-KinkelinConstant.html}{\mathrm A}) - \ln 2 - 4 \ln \mathrm \pi - 2}{\mathrm \pi ^ 2} &&- \dfrac 12\end{alignedat}$
+  decimal: 1.46707807943397547289779848470722995344990332241488777739968581761660674432904480843036932751117401521266…
+  notes: cant find J W Porter's full name, or any flag associations. this person is a ghost... also mathworld links because mathworld is better than wikipedia for this obscure-ish constant
+
 - name: erdos_borwein
   oeis: https://oeis.org/A065442
   eponyms: 
@@ -287,6 +311,16 @@
   formula: $\href{https://als.wikipedia.org/wiki/Basler_Problem}{\operatorname{ζ}(2)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{n=1}^{\infty} \dfrac{1}{n^s}} \;\right\vert\; s = 2$
   decimal: 1.64493406684822643647…
   notes: ✅
+
+- name: niven
+  oeis: http://oeis.org/A033150
+  eponyms:
+    - name: Ivan Morton Niven
+      flags: [🇨🇦, 🇺🇸]
+      link: https://en.wikipedia.org/wiki/Ivan_M._Niven
+  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/Niven's_constant}{\mathrm C} &:= \lim_{n \to \infty} \dfrac 1n \displaystyle\sum_{m=1}^n \operatorname{H}(m) \\ &\ = 1 + \displaystyle\sum_{j=2}^{\infty} \left( 1 - \dfrac{1}{\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{\zeta}}(j)} \right) \end{aligned}$
+  decimal: 1.70521114010536776428855145343450816076202765165346909999428490654731319216812249193424413210087100179…
+  notes: 
 
 - name: theodorus
   oeis: https://oeis.org/A002194
@@ -413,7 +447,7 @@
     - name: Leo Johan van der Pauw
       flags: [🇳🇱]
       link: 
-  formula: $\href{https://nl.wikipedia.org/wiki/Van_der_Pauwmethode}{\dfrac{\mathrm \pi}{\ln 2}}$
+  formula: $\href{https://nl.wikipedia.org/wiki/Van_der_Pauwmethode}{\dfrac{\mathrm{\pi}}{\ln 2}}$
   decimal: 4.53236014182719380962…
   notes: i guess? also no links for leo :/
 
