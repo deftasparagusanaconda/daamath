@@ -196,7 +196,7 @@
     - name: Ραφαέλ Σαλέμ
       flags: [🇬🇷]
       link: https://el.wikipedia.org/wiki/%CE%A1%CE%B1%CF%86%CE%B1%CE%AD%CE%BB_%CE%A3%CE%B1%CE%BB%CE%AD%CE%BC
-  formula: $\begin{aligned}&\href{https://en.wikipedia.org/wiki/Salem_number}{\mathrm \sigma_{10}} := \max \class{dm-yellow}{x} \in \mathbb R \mid \\ & \href{https://en.wikipedia.org/wiki/Lehmer%27s_conjecture}{\begin{gathered}\class{dm-yellow}{x}^{10} + \class{dm-yellow}{x}^9 - \class{dm-yellow}{x}^7 - \class{dm-yellow}{x}^6 - \class{dm-yellow}{x}^5 \\ - \class{dm-yellow}{x}^4 - \class{dm-yellow}{x}^3 + \class{dm-yellow}{x} + 1 = 0\end{gatheyellow}}\end{aligned}$
+  formula: $\begin{aligned}&\href{https://en.wikipedia.org/wiki/Salem_number}{\mathrm \sigma_{10}} := \max \class{dm-yellow}{x} \in \mathbb R \mid \\ & \href{https://en.wikipedia.org/wiki/Lehmer%27s_conjecture}{\begin{gathered}\class{dm-yellow}{x}^{10} + \class{dm-yellow}{x}^9 - \class{dm-yellow}{x}^7 - \class{dm-yellow}{x}^6 - \class{dm-yellow}{x}^5 \\ - \class{dm-yellow}{x}^4 - \class{dm-yellow}{x}^3 + \class{dm-yellow}{x} + 1 = 0\end{gathered}}\end{aligned}$
   decimal: 1.17628081825991750654407033847403505069341580656469525983010634702968837654854996209683011558181539465920…
   notes: 
 
