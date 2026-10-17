@@ -330,7 +330,7 @@
     - name: Ivan Morton Niven
       flags: [🇨🇦, 🇺🇸]
       link: https://en.wikipedia.org/wiki/Ivan_M._Niven
-  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/Niven's_constant}{\mathrm C} &:= \lim_{\class{dm-yellow}{n} \to \infty} \dfrac{1}{\class{dm-yellow}{n}} \displaystyle\sum_{\class{dm-magenta}{m}=1}^n \operatorname{H}(\class{dm-magenta}{m}) \\ &\ = 1 + \displaystyle\sum_{\class{dm-cyan}{j}=2}^{\infty} \left( 1 - \dfrac{1}{\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{\zeta}}(\class{dm-cyan}{j})} \right) \end{aligned}$
+  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/Niven's_constant}{\mathrm C} &:= \lim_{\class{dm-yellow}{n} \to \infty} \dfrac{1}{\class{dm-yellow}{n}} \displaystyle\sum_{\class{dm-magenta}{m}=1}^{\class{dm-yellow}{n}} \operatorname{H}(\class{dm-magenta}{m}) \\ &\ = 1 + \displaystyle\sum_{\class{dm-cyan}{j}=2}^{\infty} \left( 1 - \dfrac{1}{\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{\zeta}}(\class{dm-cyan}{j})} \right) \end{aligned}$
   decimal: 1.70521114010536776428855145343450816076202765165346909999428490654731319216812249193424413210087100179…
   notes: 
 
