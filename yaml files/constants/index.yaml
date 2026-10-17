@@ -4,7 +4,8 @@
     - name: Joseph Liouville
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Joseph_Liouville
-  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\,\begin{alignedat}{2} &a_k &&= 1 \\ &b &&= 10 \end{alignedat}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{\textcolor{magenta}{k}=1}^{\infty} \dfrac{\textcolor{yellow}{a}_{\textcolor{magenta}{k}}}{\textcolor{cyan}{b}^{\textcolor{magenta}{k}!}}}\;\right\vert\,\begin{alignedat}{2} &\textcolor{yellow}{a}_{\textcolor{magenta}{k}} &&= 1 \\ &\textcolor{cyan}{b} &&= 10 \end{alignedat}$
+  #formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\,\begin{alignedat}{2} &a_k &&= 1 \\ &b &&= 10 \end{alignedat}$
   decimal: 0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000…
   notes: ✅
 
@@ -17,7 +18,7 @@
     - name: Christoffel Jacob Bouwkamp
       flags: [🇳🇱]
       link: https://de.wikipedia.org/wiki/Christoffel_Jacob_Bouwkamp
-  formula: $\href{https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant}{\mathrm K'} := \displaystyle\prod_{n=3}^{\infty} \cos \dfrac{\mathrm{π}}{n}$
+  formula: $\href{https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant}{\mathrm K'} := \displaystyle\prod_{\textcolor{magenta}{n}=3}^{\infty} \cos \dfrac{\mathrm{π}}{\textcolor{magenta}{n}}$
   decimal: 0.11494204485329620070…
   notes: ✅
 
@@ -27,7 +28,7 @@
     - name: David Gawen Champernowne
       flags: [🏴󠁧󠁢󠁥󠁮󠁧󠁿]
       link: https://en.wikipedia.org/wiki/D._G._Champernowne
-  formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(i) for i ∈ [1..∞))</code>
+  formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(<span style="color:magenta">i</span>) for <span style="color:magenta">i</span> ∈ [1..∞))</code>
   decimal: 0.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545…
   notes: ✅
 
@@ -40,7 +41,7 @@
     - name: Franciszek Karol Józef Mertens
       flags: [🇵🇱]
       link: https://pl.wikipedia.org/wiki/Franciszek_Mertens
-  formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{n \to \infty} \left(\displaystyle\sum_{n \ge p \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac 1 p - \ln\ln n \right)$
+  formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{\textcolor{magenta}{n} \to \infty} \left(\displaystyle\sum_{\textcolor{magenta}{n} \ge \textcolor{yellow}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac{1}{\textcolor{yellow}{p}} - \ln\ln \textcolor{magenta}{n} \right)$
   decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
   notes: ✅
 
@@ -50,7 +51,7 @@
     - name: Emil Artin
       flags: [🇩🇪]
       link: https://de.wikipedia.org/wiki/Emil_Artin
-  formula: $\href{https://en.wikipedia.org/wiki/Artin's_conjecture_on_primitive_roots}{\mathrm {C_{Artin}}} := \displaystyle\prod_{p \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac{1}{p(p - 1)} \right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Artin's_conjecture_on_primitive_roots}{\mathrm {C_{Artin}}} := \displaystyle\prod_{\textcolor{magenta}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac{1}{\textcolor{magenta}{p}(\textcolor{magenta}{p} - 1)} \right)$
   decimal: 0.373955813619202288054728054346416415111629248606150042094742802417350182040028082344304317087250568981603…
   notes: 
 
@@ -73,7 +74,7 @@
     - name: Lorenzo Mascheroni
       flags: [🇮🇹]
       link: https://it.wikipedia.org/wiki/Lorenzo_Mascheroni
-  formula: $\href{https://en.wikipedia.org/wiki/Euler%27s_constant}{\mathrm γ} := \displaystyle\lim_{n \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{k=1}^{\infty} \dfrac 1k} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} n\right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Euler%27s_constant}{\mathrm γ} := \displaystyle\lim_{\textcolor{magenta}{n} \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{\textcolor{yellow}{k}=1}^{\infty} \dfrac{1}{\textcolor{yellow}{k}}} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} \textcolor{magenta}{n}\right)$
   decimal: 0.57721566490153286060651209008240243104215933593992359880576723488486772677766467093694706329174674…
   notes: controversial name
 
@@ -83,7 +84,7 @@
     - name: Benjamin Gompertz
       flags: [🏴󠁧󠁢󠁥󠁮󠁧󠁿]
       link: https://en.wikipedia.org/wiki/Benjamin_Gompertz
-  formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{x} \dfrac{\mathrm e^t}{t} \mathrm dt}\right\vert x = -1$
+  formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{\textcolor{magenta}{x}} \dfrac{\mathrm e^{\textcolor{yellow}{t}}}{\textcolor{yellow}{t}} \mathrm d\textcolor{yellow}{t}} \;\right\vert\; \textcolor{magenta}{x} = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
   notes: ✅
 
@@ -188,6 +189,16 @@
   formula: $\mathrm{\gamma}_2 = \href{https://fr.wikipedia.org/wiki/Constante_d%27Hermite}{\mathrm{\gamma}_n}\vert_{n=2} = \dfrac {2}{\sqrt{3}}$
   decimal: 1.15470053837925152901…
   notes: parameterized name?
+
+- name: salem
+  oeis: https://oeis.org/A073011
+  eponyms:
+    - name: Ραφαέλ Σαλέμ
+      flags: [🇬🇷]
+      link: https://el.wikipedia.org/wiki/%CE%A1%CE%B1%CF%86%CE%B1%CE%AD%CE%BB_%CE%A3%CE%B1%CE%BB%CE%AD%CE%BC
+  formula: $\begin{aligned}&\href{https://en.wikipedia.org/wiki/Salem_number}{\mathrm \sigma_{10}} := \max x \in \mathbb R \mid \\ & \href{https://en.wikipedia.org/wiki/Lehmer%27s_conjecture}{x^{10} + x^9 - x^7 - x^6 - x^5 \\ &- x^4 - x^3 + x +1} = 0 \end{aligned}$
+  decimal: 1.17628081825991750654407033847403505069341580656469525983010634702968837654854996209683011558181539465920…
+  notes: 
 
 - name: apery
   oeis: https://oeis.org/A002117
@@ -433,6 +444,19 @@
   formula: $\href{https://el.wikipedia.org/wiki/%CE%A0_(%CE%BC%CE%B1%CE%B8%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CE%BA%CE%AE_%CF%83%CF%84%CE%B1%CE%B8%CE%B5%CF%81%CE%AC)}{\mathrm π} := \dfrac{\href{https://el.wikipedia.org/wiki/%CE%A0%CE%B5%CF%81%CE%B9%CF%86%CE%AD%CF%81%CE%B5%CE%B9%CE%B1_(%CE%B3%CE%B5%CF%89%CE%BC%CE%B5%CF%84%CF%81%CE%AF%CE%B1)}{\mathit{κύκλος}\ \mathit{περίμετρος}}}{\href{https://el.wikipedia.org/wiki/%CE%9A%CF%8D%CE%BA%CE%BB%CE%BF%CF%82}{\mathit{κύκλος}}\ \href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%AC%CE%BC%CE%B5%CF%84%CF%81%CE%BF%CF%82}{\mathit{διάμετρος}}}$
   decimal: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706… 
   notes: controversial name
+
+- name: khinchin_levy
+  oeis: https://oeis.org/A086702
+  eponyms:
+    - name: Алекса́ндр Я́ковлевич Хи́нчи
+      flags: [🇷🇺]
+      link: https://en.wikipedia.org/wiki/Aleksandr_Khinchin
+    - name: Paul Pierre Lévy
+      flags: [🇫🇷]
+      link: https://fr.wikipedia.org/wiki/Paul_L%C3%A9vy_(math%C3%A9maticien)
+  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/L%C3%A9vy's_constant}{\mathrm{e^\beta}} &:= \lim_{n \to \infty} q_n^{1/n} \\ &\ = e ^ {\mathrm \pi^2 / (12 \ln 2)}\end{aligned}$
+  decimal: 3.27582291872181115978…
+  notes: people take the non-exp version but that drops the meaning
 
 - name: bronze_ratio
   oeis: https://oeis.org/A098316
