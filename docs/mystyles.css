@@ -1,19 +1,29 @@
 :root {
-    --dm-red:     oklch(0.75 0.1275 15 );
-	--dm-yellow:  oklch(0.75 0.1275 75 );
-    --dm-green:   oklch(0.75 0.1275 135);
-	--dm-cyan:    oklch(0.75 0.1275 195);
-    --dm-blue:    oklch(0.75 0.1275 255);
-    --dm-magenta: oklch(0.75 0.1275 315);
-    --dm-gray:    oklch(0.75 0      0  );
+    --dm-red:     oklch(0.25 0.042  30);
+    --dm-yellow:  oklch(0.25 0.042  90);
+    --dm-green:   oklch(0.25 0.042 150);
+    --dm-cyan:    oklch(0.25 0.042 210);
+    --dm-blue:    oklch(0.25 0.042 270);
+    --dm-magenta: oklch(0.25 0.042 330);
+    --dm-gray:    oklch(0.25 0       0);
 }
 
 [data-md-color-scheme="slate"] {
-    --dm-red:     oklch(0.75 0.1275 15 );
-	--dm-yellow:  oklch(0.75 0.1275 75 );
-    --dm-green:   oklch(0.75 0.1275 135);
-	--dm-cyan:    oklch(0.75 0.1275 195);
-    --dm-blue:    oklch(0.75 0.1275 255);
-    --dm-magenta: oklch(0.75 0.1275 315);
-    --dm-gray:    oklch(0.75 0      0  );
+    --dm-red:     oklch(0.75 0.1275  30);
+    --dm-yellow:  oklch(0.75 0.1275  90);
+    --dm-green:   oklch(0.75 0.1275 150);
+    --dm-cyan:    oklch(0.75 0.1275 210);
+    --dm-blue:    oklch(0.75 0.1275 270);
+    --dm-magenta: oklch(0.75 0.1275 330);
+    --dm-gray:    oklch(0.75 0       0);
 }
+
+/* classes for mathjax to access via $\class{dm-red}{i am red}$ */
+
+.dm-red     { color: var(--dm-red); }
+.dm-yellow  { color: var(--dm-yellow); }
+.dm-green   { color: var(--dm-green); }
+.dm-cyan    { color: var(--dm-cyan); }
+.dm-blue    { color: var(--dm-blue); }
+.dm-magenta { color: var(--dm-magenta); }
+.dm-gray    { color: var(--dm-gray); }

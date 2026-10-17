@@ -4,7 +4,7 @@
     - name: Joseph Liouville
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Joseph_Liouville
-  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{\textcolor{magenta}{k}=1}^{\infty} \dfrac{\textcolor{yellow}{a}_{\textcolor{magenta}{k}}}{\textcolor{cyan}{b}^{\textcolor{magenta}{k}!}}}\;\right\vert\,\begin{alignedat}{2} &\textcolor{yellow}{a}_{\textcolor{magenta}{k}} &&= 1 \\ &\textcolor{cyan}{b} &&= 10 \end{alignedat}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{\class{dm-yellow}{k}=1}^{\infty} \dfrac{\class{dm-magenta}{a}_{\class{dm-yellow}{k}}}{\class{dm-cyan}{b}^{\class{dm-yellow}{k}!}}}\;\right\vert\,\begin{alignedat}{2} &\class{dm-magenta}{a}_{\class{dm-yellow}{k}} &&= 1 \\ &\class{dm-cyan}{b} &&= 10 \end{alignedat}$
   #formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\,\begin{alignedat}{2} &a_k &&= 1 \\ &b &&= 10 \end{alignedat}$
   decimal: 0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000…
   notes: ✅
@@ -18,7 +18,7 @@
     - name: Christoffel Jacob Bouwkamp
       flags: [🇳🇱]
       link: https://de.wikipedia.org/wiki/Christoffel_Jacob_Bouwkamp
-  formula: $\href{https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant}{\mathrm K'} := \displaystyle\prod_{\textcolor{magenta}{n}=3}^{\infty} \cos \dfrac{\mathrm{π}}{\textcolor{magenta}{n}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Kepler%E2%80%93Bouwkamp_constant}{\mathrm K'} := \displaystyle\prod_{\class{dm-yellow}{n}=3}^{\infty} \cos \dfrac{\mathrm{π}}{\class{dm-yellow}{n}}$
   decimal: 0.11494204485329620070…
   notes: ✅
 
@@ -28,7 +28,7 @@
     - name: David Gawen Champernowne
       flags: [🏴󠁧󠁢󠁥󠁮󠁧󠁿]
       link: https://en.wikipedia.org/wiki/D._G._Champernowne
-  formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(<span style="color:magenta">i</span>) for <span style="color:magenta">i</span> ∈ [1..∞))</code>
+  formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(<span style="color:var(--dm-yellow)">i</span>) for <span style="color:var(--dm-yellow)">i</span> ∈ [1..∞))</code>
   decimal: 0.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545…
   notes: ✅
 
@@ -41,7 +41,7 @@
     - name: Franciszek Karol Józef Mertens
       flags: [🇵🇱]
       link: https://pl.wikipedia.org/wiki/Franciszek_Mertens
-  formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{\textcolor{magenta}{n} \to \infty} \left(\displaystyle\sum_{\textcolor{magenta}{n} \ge \textcolor{yellow}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac{1}{\textcolor{yellow}{p}} - \ln\ln \textcolor{magenta}{n} \right)$
+  formula: $\href{https://de.wikipedia.org/wiki/Meissel-Mertens-Konstante}{\mathrm M} := \displaystyle\lim_{\class{dm-yellow}{n} \to \infty} \left(\displaystyle\sum_{\class{dm-yellow}{n} \ge \class{dm-magenta}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{ℙ}} \dfrac{1}{\class{dm-magenta}{p}} - \ln\ln \class{dm-yellow}{n} \right)$
   decimal: 0.26149721284764278375542683860869585905156664826119920619206421392492451089736820971414263143424665…
   notes: ✅
 
@@ -51,7 +51,7 @@
     - name: Emil Artin
       flags: [🇩🇪]
       link: https://de.wikipedia.org/wiki/Emil_Artin
-  formula: $\href{https://en.wikipedia.org/wiki/Artin's_conjecture_on_primitive_roots}{\mathrm {C_{Artin}}} := \displaystyle\prod_{\textcolor{magenta}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac{1}{\textcolor{magenta}{p}(\textcolor{magenta}{p} - 1)} \right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Artin's_conjecture_on_primitive_roots}{\mathrm {C_{Artin}}} := \displaystyle\prod_{\class{dm-yellow}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac{1}{\class{dm-yellow}{p}(\class{dm-yellow}{p} - 1)} \right)$
   decimal: 0.373955813619202288054728054346416415111629248606150042094742802417350182040028082344304317087250568981603…
   notes: 
 
@@ -74,7 +74,7 @@
     - name: Lorenzo Mascheroni
       flags: [🇮🇹]
       link: https://it.wikipedia.org/wiki/Lorenzo_Mascheroni
-  formula: $\href{https://en.wikipedia.org/wiki/Euler%27s_constant}{\mathrm γ} := \displaystyle\lim_{\textcolor{magenta}{n} \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{\textcolor{yellow}{k}=1}^{\infty} \dfrac{1}{\textcolor{yellow}{k}}} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} \textcolor{magenta}{n}\right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Euler%27s_constant}{\mathrm γ} := \displaystyle\lim_{\class{dm-yellow}{n} \to \infty} \left(\href{https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)}{\displaystyle\sum_{\class{dm-magenta}{k}=1}^{\infty} \dfrac{1}{\class{dm-magenta}{k}}} - \href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} \class{dm-yellow}{n}\right)$
   decimal: 0.57721566490153286060651209008240243104215933593992359880576723488486772677766467093694706329174674…
   notes: controversial name
 
@@ -84,7 +84,7 @@
     - name: Benjamin Gompertz
       flags: [🏴󠁧󠁢󠁥󠁮󠁧󠁿]
       link: https://en.wikipedia.org/wiki/Benjamin_Gompertz
-  formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{\textcolor{magenta}{x}} \dfrac{\mathrm e^{\textcolor{yellow}{t}}}{\textcolor{yellow}{t}} \mathrm d\textcolor{yellow}{t}} \;\right\vert\; \textcolor{magenta}{x} = -1$
+  formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{\class{dm-yellow}{x}} \dfrac{\mathrm e^{\class{dm-magenta}{t}}}{\class{dm-magenta}{t}} \mathrm d\class{dm-magenta}{t}} \;\right\vert\; \class{dm-yellow}{x} = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
   notes: ✅
 
@@ -94,7 +94,7 @@
     - name: Eugène Cahen
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Cahen
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Cahen}{\mathrm C} := \displaystyle\sum_{i=0}^{\infty} \dfrac{(-1)^i}{s_i - 1}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Cahen}{\mathrm C} := \displaystyle\sum_{\class{dm-yellow}{i}=0}^{\infty} \dfrac{(-1)^\class{dm-yellow}{i}}{s_{\class{dm-yellow}{i}} - 1}$
   decimal: 0.64341054628833802618…
   notes: ✅
 
@@ -107,7 +107,7 @@
     - name: John Edensor Littlewood
       flags: [🇬🇧]
       link: https://en.wikipedia.org/wiki/John_Edensor_Littlewood
-  formula: $\href{https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture}{\mathrm C_2} := \displaystyle\prod_{3 \le p \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac 1 {(p - 1)^2} \right)$
+  formula: $\href{https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture}{\mathrm C_2} := \displaystyle\prod_{3 \le \class{dm-yellow}{p} \in \href{https://en.wikipedia.org/wiki/Prime_number}{\mathbb P}} \left( 1 - \dfrac 1 {(\class{dm-yellow}{p} - 1)^2} \right)$
   decimal: 0.66016181584686957392781211001455577843262336028473341331944842333540564230449527714376003141383986…
   notes: maybe call this twin prime constant?
 
@@ -117,14 +117,14 @@
     - name: Pierre-Simon de Laplace
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Pierre-Simon_de_Laplace
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\operatorname{max}\limits_{x \in \mathbb R^+} \dfrac{x}{\cosh x}}$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_limite_de_Laplace}{\max\limits_{\class{dm-yellow}{x} \in \mathbb R^+} \dfrac{\class{dm-yellow}{x}}{\cosh \class{dm-yellow}{x}}}$
   decimal: 0.66274341934918158097…
   notes: hmm...
 
 - name: ln_2
   oeis: https://oeis.org/A002162
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} 2 = x ∈ ℝ \mid \mathrm e^x = 2$
+  formula: $\href{https://en.wikipedia.org/wiki/Natural_logarithm}{\ln} 2 = \class{dm-yellow}{x} ∈ ℝ \mid \mathrm e^{\class{dm-yellow}{x}} = 2$
   decimal: 0.69314718055994530941…
   notes: no special name?
 
@@ -141,7 +141,7 @@
     - name: Dottie
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Nombre_de_Dottie#Historique
-  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Dottie}{\mathrm D} := x \in \mathbb R \mid x = \cos x$
+  formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Dottie}{\mathrm D} := ι\class{dm-yellow}{x} \in \mathbb R \mid \class{dm-yellow}{x} = \cos \class{dm-yellow}{x}$
   decimal: 0.73908513321516064165…
   notes: ✅
 
@@ -149,7 +149,7 @@
   oeis: https://oeis.org/A083648
   eponyms: []
   #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2}&= \displaystyle\int\nolimits_0^1 &&x^x\mathrm dx \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{(-1)^{n+1}}{n^n} \end{alignedat}}$
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 x^x\mathrm dx = \sum\limits_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n^n}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 {\class{dm-yellow}{x}}^{\class{dm-yellow}{x}}\mathrm d{\class{dm-yellow}{x}} = \sum\limits_{\class{dm-magenta}{n}=1}^{\infty} \dfrac{(-1)^{\class{dm-magenta}{n}+1}}{\class{dm-magenta}{n}^{\class{dm-magenta}{n}}}}$
   decimal: 0.7834305107…
   notes: names never settled so im winging some
 
@@ -159,7 +159,7 @@
     - name: Johann Carl Friedrich Gauß
       flags: [🇩🇪]
       link: https://de.wikipedia.org/wiki/Carl_Friedrich_Gau%C3%9F
-  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm G} = \dfrac{\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm \varpi}}{\href{https://de.wikipedia.org/wiki/Kreiszahl}{\mathrm \pi}} = \dfrac{1}{\operatorname{\href{https://de.wikipedia.org/wiki/Arithmetisch-geometrisches_Mittel}{agm}}(1, \sqrt 2)}$
+  formula: $\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm G} = \dfrac{\href{https://de.wikipedia.org/wiki/Lemniskatische_Konstante}{\mathrm \varpi}}{\href{https://de.wikipedia.org/wiki/Kreiszahl}{\mathrm \pi}} = \dfrac{1}{\operatorname{\href{https://de.wikipedia.org/wiki/Arithmetisch-geometrisches_Mittel}{\mathtt{agm}}}(1, \sqrt 2)}$
   decimal: 0.8346268416740731862…
   notes: name is so overloaded...
 
@@ -169,14 +169,14 @@
     - name: Eugène Charles Catalan
       flags: [🇫🇷, 🇧🇪]
       link: https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Catalan}{\mathrm G} := \left.\href{https://de.wikipedia.org/wiki/Dirichletsche_Betafunktion}{\displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(2n+1)^s}}\;\right\vert\;s=2$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_de_Catalan}{\mathrm G} := \left.\href{https://de.wikipedia.org/wiki/Dirichletsche_Betafunktion}{\displaystyle\sum_{\class{dm-yellow}{n}=0}^{\infty} \dfrac{(-1)^{\class{dm-yellow}{n}}}{(2\class{dm-yellow}{n}+1)^{\class{dm-magenta}{s}}}}\;\right\vert\;\class{dm-magenta}{s}=2$
   decimal: 0.91596559417721901505460351493238411077414937428167213426649811962176301977625476947935651292611510…
   notes: ✅
 
 - name: magic_angle
   oeis: https://oeis.org/A195696
   eponyms: []
-  formula: $\begin{aligned}\href{https://fr.wikipedia.org/wiki/Angle_magique}{\mathrm {\theta_m}} &:= \theta \in [0, \tfrac{\mathrm \tau}{4}) \mid \href{https://fr.wikipedia.org/wiki/Polyn%C3%B4me_de_Legendre}{P}_2(\cos \theta) = 0 \\ &\ = \operatorname{atan} \sqrt 2\end{aligned}$
+  formula: $\begin{aligned}\href{https://fr.wikipedia.org/wiki/Angle_magique}{\mathrm {\theta_m}} &:= ι\class{dm-yellow}{\theta} \in [0, \tfrac{\mathrm \tau}{4}) \mid \href{https://fr.wikipedia.org/wiki/Polyn%C3%B4me_de_Legendre}{P}_2(\cos \class{dm-yellow}{\theta}) = 0 \\ &\ = \operatorname{atan} \sqrt 2\end{aligned}$
   decimal: 0.955316618124509278163…
   notes: ambiguous name?
 
@@ -186,7 +186,7 @@
     - name: Charles Hermite
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Charles_Hermite
-  formula: $\mathrm{\gamma}_2 = \href{https://fr.wikipedia.org/wiki/Constante_d%27Hermite}{\mathrm{\gamma}_n}\vert_{n=2} = \dfrac {2}{\sqrt{3}}$
+  formula: $\mathrm{\gamma}_2 = \href{https://fr.wikipedia.org/wiki/Constante_d%27Hermite}{\mathrm{\gamma}_{\class{dm-yellow}{n}}}\vert_{\class{dm-yellow}{n}=2} = \dfrac {2}{\sqrt{3}}$
   decimal: 1.15470053837925152901…
   notes: parameterized name?
 
@@ -196,7 +196,7 @@
     - name: Ραφαέλ Σαλέμ
       flags: [🇬🇷]
       link: https://el.wikipedia.org/wiki/%CE%A1%CE%B1%CF%86%CE%B1%CE%AD%CE%BB_%CE%A3%CE%B1%CE%BB%CE%AD%CE%BC
-  formula: $\begin{aligned}&\href{https://en.wikipedia.org/wiki/Salem_number}{\mathrm \sigma_{10}} := \max x \in \mathbb R \mid \\ & \href{https://en.wikipedia.org/wiki/Lehmer%27s_conjecture}{x^{10} + x^9 - x^7 - x^6 - x^5 \\ &- x^4 - x^3 + x +1} = 0 \end{aligned}$
+  formula: $\begin{aligned}&\href{https://en.wikipedia.org/wiki/Salem_number}{\mathrm \sigma_{10}} := \max \class{dm-yellow}{x} \in \mathbb R \mid \\ & \href{https://en.wikipedia.org/wiki/Lehmer%27s_conjecture}{\begin{gatheyellow}\class{dm-yellow}{x}^{10} + \class{dm-yellow}{x}^9 - \class{dm-yellow}{x}^7 - \class{dm-yellow}{x}^6 - \class{dm-yellow}{x}^5 \\ - \class{dm-yellow}{x}^4 - \class{dm-yellow}{x}^3 + \class{dm-yellow}{x} + 1 = 0\end{gatheyellow}}\end{aligned}$
   decimal: 1.17628081825991750654407033847403505069341580656469525983010634702968837654854996209683011558181539465920…
   notes: 
 
@@ -206,7 +206,7 @@
     - name: Roger Apéry
       flags: [🇫🇷]
       link: https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry
-  formula: $\href{https://fr.wikipedia.org/wiki/Constante_d%27Ap%C3%A9ry}{\operatorname{ζ}(3)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{n=1}^\infty \dfrac1{n^s}} \;\right\vert\; s = 3$
+  formula: $\href{https://fr.wikipedia.org/wiki/Constante_d%27Ap%C3%A9ry}{\operatorname{ζ}(3)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{\class{dm-magenta}{n}=1}^\infty \dfrac1{\class{dm-magenta}{n}^{\class{dm-yellow}{s}}}} \;\right\vert\; \class{dm-yellow}{s} = 3$
   decimal: 1.20205690315959428539973816151144999076498629234049888179227155534183820578631309018645587360933525…
   notes: why not zeta_2?
 
@@ -216,7 +216,7 @@
     - name: Δῆλος
       flags: [🇬🇷]
       link: https://el.wikipedia.org/wiki/%CE%94%CE%AE%CE%BB%CE%BF%CF%82
-  formula: $\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CF%80%CE%BB%CE%B1%CF%83%CE%B9%CE%B1%CF%83%CE%BC%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%BA%CF%8D%CE%B2%CE%BF%CF%85}{\sqrt[3]{2}} = x \in \mathbb R \mid x \cdot x \cdot x = 2$
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%94%CE%B9%CF%80%CE%BB%CE%B1%CF%83%CE%B9%CE%B1%CF%83%CE%BC%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%BA%CF%8D%CE%B2%CE%BF%CF%85}{\sqrt[3]{2}} = ι\class{dm-yellow}{x} \in \mathbb R \mid \class{dm-yellow}{x} \cdot \class{dm-yellow}{x} \cdot \class{dm-yellow}{x} = 2$
   decimal: 1.25992104989487316476…
   notes: why not cbrt_2?
 
@@ -231,7 +231,8 @@
       link: https://en.wikipedia.org/wiki/Hermann_Kinkelin
   #formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{6n^2 + 6n + 1}{12}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
   #formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2 + n + \substack{\scriptscriptstyle 1\ \\[-9.75ex] \diagup \\[-9ex]\ {\scriptscriptstyle 6}}}{2}} \mathrm e ^ {\tfrac{-n^2}{4}}}$
-  formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2}{2} + \tfrac{n}{2} + \tfrac{1}{12}} \mathrm e ^ {-\tfrac{n^2}{4}}}$
+  #formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{n \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{i=1}^n i^i}}{n ^ {\tfrac{n^2}{2} + \tfrac{n}{2} + \tfrac{1}{12}} \mathrm e ^ {-\tfrac{n^2}{4}}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Glaisher%E2%80%93Kinkelin_constant}{\mathrm A} := \displaystyle\lim_{\class{dm-yellow}{n} \to \infty} \dfrac{\href{https://en.wikipedia.org/wiki/Hyperfactorial}{ \prod_{\class{dm-magenta}{i}=1}^{\class{dm-yellow}{n}} \class{dm-magenta}{i}^{\class{dm-magenta}{i}}}}{\class{dm-yellow}{n} ^ {\tfrac{\class{dm-yellow}{n}^2}{2} + \tfrac{\class{dm-yellow}{n}}{2} + \tfrac{1}{12}} \mathrm e ^ {-\tfrac{\class{dm-yellow}{n}^2}{4}}}$
   decimal: 1.28242712910062263687534256886979172776768892732500119206374002174040630885882646112973649195820237…
   notes: ✅
 
@@ -239,14 +240,14 @@
   oeis: https://oeis.org/A073009
   eponyms: []
   #formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\begin{alignedat}{2} &= \int\nolimits_0^1 &&\dfrac{\mathrm dx}{x^x} \\ &= \sum\limits_{n=1}^{\infty} &&\dfrac{1}{n^n}\end{alignedat}}$
-  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 \dfrac{\mathrm dx}{x^x} = \sum\limits_{n=1}^{\infty} \dfrac{1}{n^n}}$
+  formula: $\href{https://de.wikipedia.org/wiki/Traum_der_Sophomores}{\displaystyle\int\nolimits_0^1 \dfrac{\mathrm d\class{dm-yellow}{x}}{\class{dm-yellow}{x}^{\class{dm-yellow}{x}}} = \sum\limits_{\class{dm-magenta}{n}=1}^{\infty} \dfrac{1}{\class{dm-magenta}{n}^{\class{dm-magenta}{n}}}}$
   decimal: 1.291285997…
   notes: names never settled so im winging some
 
 - name: plastic
   oeis: https://oeis.org/A060006
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Plastic_ratio}{\mathrm ρ} := x \in \mathbb R \mid x^3 = x + 1$
+  formula: $\href{https://en.wikipedia.org/wiki/Plastic_ratio}{\mathrm ρ} := ι\class{dm-yellow}{x} \in \mathbb R \mid \class{dm-yellow}{x}^3 = \class{dm-yellow}{x} + 1$
   decimal: 1.32471795724474602596090885447809734073440405690173336453401505030282785124554759405469934798178728… 
   notes: ✅
 
@@ -256,7 +257,7 @@
     - name: Πυθαγόρας
       flags: [🇬🇷]
       link: https://en.wikipedia.org/wiki/Pythagoras
-  formula: $\href{https://en.wikipedia.org/wiki/Square_root_of_2}{\sqrt{2}} = x \in \mathbb R^+ \mid x \cdot x = 2$
+  formula: $\href{https://en.wikipedia.org/wiki/Square_root_of_2}{\sqrt{2}} = ι\class{dm-yellow}{x} \in \mathbb R^+ \mid \class{dm-yellow}{x} \cdot \class{dm-yellow}{x} = 2$
   decimal: 1.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
   notes: controversial name
 
@@ -269,14 +270,14 @@
     - name: Johann Georg von Soldner
       flags: [🇩🇪]
       link: https://de.wikipedia.org/wiki/Johann_Georg_von_Soldner
-  formula: $\href{https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Soldner_constant}{\mathrm μ} := x \in \mathbb R^+ \;\left\vert\; \href{https://en.wikipedia.org/wiki/Logarithmic_integral_function}{\displaystyle\int_0^x \dfrac{\mathrm dt}{\ln t}} = 0\right.$
+  formula: $\href{https://en.wikipedia.org/wiki/Ramanujan%E2%80%93Soldner_constant}{\mathrm μ} := ι\class{dm-yellow}{x} \in \mathbb R^+ \;\left\vert\; \href{https://en.wikipedia.org/wiki/Logarithmic_integral_function}{\displaystyle\int_0^{\class{dm-yellow}{x}} \dfrac{\mathrm d\class{dm-magenta}{t}}{\ln \class{dm-magenta}{t}}} = 0\right.$
   decimal: 1.45136923488338105028396848589202744949303228364801586309300455766242559575451783565953135771108682884704075157097064920307143357020423478488319003911084098422088650348382593759733331313969041108938752002714096930942987193069514832776410872163829967084223691265784528427072307722410618111313183181245…
   notes: controversial name
 
 - name: supergolden
   oeis: https://oeis.org/A092526
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Supergolden_ratio}{\mathrm ψ} := x ∈ ℝ \mid x^3 = x^2 + 1$
+  formula: $\href{https://en.wikipedia.org/wiki/Supergolden_ratio}{\mathrm ψ} := ι\class{dm-yellow}{x} ∈ ℝ \mid \class{dm-yellow}{x}^3 = \class{dm-yellow}{x}^2 + 1$
   decimal: 1.46557123187676802665…
   notes: ✅
 
@@ -289,7 +290,7 @@
     - name: J W Porter
       flags: []
       link: 
-  formula: $\begin{alignedat}{2} \href{https://mathworld.wolfram.com/PortersConstant.html}{\mathrm C} &:= \dfrac{6 \ln 2}{\mathrm \pi ^ 2} \left( 3 \ln 2 + 4 \href{https://mathworld.wolfram.com/Euler-MascheroniConstant.html}{\mathrm \gamma} - \dfrac{24}{\mathrm \pi ^ 2} \href{https://mathworld.wolfram.com/RiemannZetaFunction.html}{\operatorname{\zeta}}'(2) - 2 \right) &&- \dfrac 12 \\ &\ = \dfrac{6 \ln 2((48 \ln \href{https://mathworld.wolfram.com/Glaisher-KinkelinConstant.html}{\mathrm A}) - \ln 2 - 4 \ln \mathrm \pi - 2}{\mathrm \pi ^ 2} &&- \dfrac 12\end{alignedat}$
+  formula: $\begin{alignedat}{2} \href{https://mathworld.wolfram.com/PortersConstant.html}{\mathrm C} &:= \dfrac{6 \ln 2}{\mathrm \pi ^ 2} \bigg( \begin{array}{l}4 \href{https://mathworld.wolfram.coum/Euler-MascheroniConstant.html}{\mathrm \gamma} - 24 \href{https://mathworld.wolfram.com/RiemannZetaFunction.html}{\operatorname{\zeta}}'(2) / \mathrm \pi^2 \\ \hookrightarrow + 3 \ln 2 - 2 \end{array} &&\bigg)-\dfrac 12 \\ &\ = \dfrac{6 \ln 2}{\mathrm \pi ^ 2} \bigg(  \begin{array}{l} -4 \ln \mathrm \pi + 48 \ln \href{https://mathworld.wolfram.com/Glaisher-KinkelinConstant.html}{\mathrm A} \\ \hookrightarrow - \ln 2 -2 \end{array} &&\bigg)-\dfrac 12\end{alignedat}$
   decimal: 1.46707807943397547289779848470722995344990332241488777739968581761660674432904480843036932751117401521266…
   notes: cant find J W Porter's full name, or any flag associations. this person is a ghost... also mathworld links because mathworld is better than wikipedia for this obscure-ish constant
 
@@ -302,14 +303,14 @@
     - name: Peter Benjamin Borwein
       flags: [🇨🇦]
       link: https://en.wikipedia.org/wiki/Peter_Borwein
-  formula: $\href{https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Borwein_constant}{\mathrm E} := \displaystyle\sum_{n=1}^{\infty} \dfrac {1}{\href{https://mathworld.wolfram.com/MersenneNumber.html}{2^n - 1}}$
+  formula: $\href{https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Borwein_constant}{\mathrm E} := \displaystyle\sum_{\class{dm-yellow}{n}=1}^{\infty} \dfrac {1}{\href{https://mathworld.wolfram.com/MersenneNumber.html}{2^{\class{dm-yellow}{n}} - 1}}$
   decimal: 1.60669515241529176378…
   notes: ✅
 
 - name: golden_ratio
   oeis: https://oeis.org/A001622
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm φ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 1$
+  formula: $\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm φ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{\class{dm-yellow}{n} + \sqrt{\class{dm-yellow}{n}^2+4}}{2}} \;\right\vert\; \class{dm-yellow}{n} = 1$
   decimal: 1.61803398874989484820458683436563811772030917980576286213544862270526046281890244970720720418939113…
   notes: hmm.. why not metallic_1?
 
@@ -319,7 +320,7 @@
     - name: Basel
       flags: [🇨🇭]
       link: https://als.wikipedia.org/wiki/Basel
-  formula: $\href{https://als.wikipedia.org/wiki/Basler_Problem}{\operatorname{ζ}(2)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{n=1}^{\infty} \dfrac{1}{n^s}} \;\right\vert\; s = 2$
+  formula: $\href{https://als.wikipedia.org/wiki/Basler_Problem}{\operatorname{ζ}(2)} = \left.\href{https://de.wikipedia.org/wiki/Riemannsche_Zeta-Funktion}{\displaystyle\sum_{\class{dm-magenta}{n}=1}^{\infty} \dfrac{1}{\class{dm-magenta}{n}^{\class{dm-yellow}{s}}}} \;\right\vert\; \class{dm-yellow}{s} = 2$
   decimal: 1.64493406684822643647…
   notes: ✅
 
@@ -329,7 +330,7 @@
     - name: Ivan Morton Niven
       flags: [🇨🇦, 🇺🇸]
       link: https://en.wikipedia.org/wiki/Ivan_M._Niven
-  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/Niven's_constant}{\mathrm C} &:= \lim_{n \to \infty} \dfrac 1n \displaystyle\sum_{m=1}^n \operatorname{H}(m) \\ &\ = 1 + \displaystyle\sum_{j=2}^{\infty} \left( 1 - \dfrac{1}{\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{\zeta}}(j)} \right) \end{aligned}$
+  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/Niven's_constant}{\mathrm C} &:= \lim_{\class{dm-yellow}{n} \to \infty} \dfrac{1}{\class{dm-yellow}{n}} \displaystyle\sum_{\class{dm-magenta}{m}=1}^n \operatorname{H}(\class{dm-magenta}{m}) \\ &\ = 1 + \displaystyle\sum_{\class{dm-cyan}{j}=2}^{\infty} \left( 1 - \dfrac{1}{\href{https://en.wikipedia.org/wiki/Riemann_zeta_function}{\operatorname{\zeta}}(\class{dm-cyan}{j})} \right) \end{aligned}$
   decimal: 1.70521114010536776428855145343450816076202765165346909999428490654731319216812249193424413210087100179…
   notes: 
 
@@ -339,7 +340,7 @@
     - name: Θεόδωρος
       flags: [🇬🇷]
       link: https://el.wikipedia.org/wiki/%CE%98%CE%B5%CF%8C%CE%B4%CF%89%CF%81%CE%BF%CF%82_%CE%BF_%CE%9A%CF%85%CF%81%CE%B7%CE%BD%CE%B1%CE%AF%CE%BF%CF%82
-  formula: $\href{https://el.wikipedia.org/wiki/%CE%A4%CE%B5%CF%84%CF%81%CE%B1%CE%B3%CF%89%CE%BD%CE%B9%CE%BA%CE%AE_%CF%81%CE%AF%CE%B6%CE%B1_%CF%84%CE%BF%CF%85_3}{\sqrt{3}} = x \in \mathbb R^+ \mid x \cdot x = 3$
+  formula: $\href{https://el.wikipedia.org/wiki/%CE%A4%CE%B5%CF%84%CF%81%CE%B1%CE%B3%CF%89%CE%BD%CE%B9%CE%BA%CE%AE_%CF%81%CE%AF%CE%B6%CE%B1_%CF%84%CE%BF%CF%85_3}{\sqrt{3}} = ι\class{dm-yellow}{x} \in \mathbb R^+ \mid \class{dm-yellow}{x} \cdot \class{dm-yellow}{x} = 3$
   decimal: 1.73205080756887729352744634150587236694280525381038062805580697945193301690880003708114618675724857…
   notes: why not sqrt_3?
 
@@ -356,7 +357,7 @@
     - name: John Wallis
       flags: [🏴󠁧󠁢󠁥󠁮󠁧󠁿]
       link: https://en.wikipedia.org/wiki/John_Wallis
-  formula: $\href{https://mathworld.wolfram.com/WallissConstant.html}{\mathrm W} := x ∈ ℝ \mid x^3 = 2x + 5$
+  formula: $\href{https://mathworld.wolfram.com/WallissConstant.html}{\mathrm W} := ι\class{dm-yellow}{x} ∈ ℝ \mid \class{dm-yellow}{x}^3 = 2\class{dm-yellow}{x} + 5$
   decimal: 2.09455148154232659148238654057930296385730610562823918030412852904531218998348366714626728177715775786083952118906296345984514039842081282370173965531394055476160225828188949144397222665915595450399332426472256800938699177395882894016181834927454149608941225576642742318917626635375670383400596997798…
   notes: ✅
 
@@ -370,14 +371,14 @@
 - name: golden_angle
   oeis: https://oeis.org/A131988
   eponyms: []
-  formula: $\begin{aligned}&\left.\href{https://en.wikipedia.org/wiki/Golden_angle}{\dfrac{b}{a+b} \mathrm \tau} \;\middle\vert\; \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{a + b}}{a} = \dfrac ab \right. \\ &= \dfrac{\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm{\tau}}}{\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm{\varphi}}^2}\end{aligned}$
+  formula: $\begin{aligned}&\left.\href{https://en.wikipedia.org/wiki/Golden_angle}{\dfrac{\class{dm-cyan}{b}}{\class{dm-yellow}{a+b}} \mathrm \tau} \;\middle\vert\; \dfrac{\href{https://en.wikipedia.org/wiki/Circumference}{\class{dm-yellow}{a + b}}}{\class{dm-magenta}{a}} = \dfrac{\class{dm-magenta}{a}}{\class{dm-cyan}{b}} \right. \\ &= \dfrac{1}{\href{https://en.wikipedia.org/wiki/Golden_ratio}{\mathrm{\varphi}}^2}\href{https://en.wikipedia.org/wiki/Tau_(mathematics)}{\mathrm{\tau}}\end{aligned}$
   decimal: 2.39996322972865332…
   notes: 
 
 - name: silver_ratio
   oeis: https://oeis.org/A014176
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Silver_ratio}{\mathrm σ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}}\;\right\vert\; n = 2$
+  formula: $\href{https://en.wikipedia.org/wiki/Silver_ratio}{\mathrm σ} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{\class{dm-yellow}{n} + \sqrt{\class{dm-yellow}{n}^2+4}}{2}}\;\right\vert\; \class{dm-yellow}{n} = 2$
   decimal: 2.41421356237309504880168872420969807856967187537694807317667973799073247846210703885038753432764157…
   notes: why not metallic_2?
 
@@ -418,7 +419,7 @@
     - name: Алекса́ндр Я́ковлевич Хи́нчи
       flags: [🇷🇺]
       link: https://en.wikipedia.org/wiki/Aleksandr_Khinchin
-  formula: $\href{https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%A5%D0%B8%D0%BD%D1%87%D0%B8%D0%BD%D0%B0}{\mathrm K_0} := \displaystyle\prod_{r=1}^{\infty} \left(1 + \dfrac 1 {r(r + 2)}\right) ^{log_2 r}$
+  formula: $\href{https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D0%A5%D0%B8%D0%BD%D1%87%D0%B8%D0%BD%D0%B0}{\mathrm K_0} := \displaystyle\prod_{\class{dm-yellow}{r}=1}^{\infty} \left(1 + \dfrac 1 {\class{dm-yellow}{r}(\class{dm-yellow}{r} + 2)}\right) ^{log_2 \class{dm-yellow}{r}}$
   decimal: 2.68545200106530644530971483548179569382038229399446295305115234555721885953715200280114117493184769…
   notes: ✅ (i guess?)
 
@@ -431,7 +432,7 @@
     - name: Jakob Bernoulli
       flags: [🇨🇭]
       link: https://als.wikipedia.org/wiki/Jakob_Bernoulli
-  formula: $\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\mathrm e} := \displaystyle\lim_{n \to \infty}\href{https://de.wikipedia.org/wiki/Zinseszins}{\left(1 + \dfrac 1n\right)^n}$
+  formula: $\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\mathrm e} := \displaystyle\lim_{\class{dm-yellow}{n} \to \infty}\href{https://de.wikipedia.org/wiki/Zinseszins}{\left(1 + \dfrac{1}{\class{dm-yellow}{n}}\right)^{\class{dm-yellow}{n}}}$
   decimal: 2.71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642…
   notes: controversial name
 
@@ -454,14 +455,14 @@
     - name: Paul Pierre Lévy
       flags: [🇫🇷]
       link: https://fr.wikipedia.org/wiki/Paul_L%C3%A9vy_(math%C3%A9maticien)
-  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/L%C3%A9vy's_constant}{\mathrm{e^\beta}} &:= \lim_{n \to \infty} q_n^{1/n} \\ &\ = e ^ {\mathrm \pi^2 / (12 \ln 2)}\end{aligned}$
+  formula: $\begin{aligned} \href{https://en.wikipedia.org/wiki/L%C3%A9vy's_constant}{\mathrm{e^\beta}} &:= \lim_{\class{dm-yellow}{n} \to \infty} q_{\class{dm-yellow}{n}}^{/\class{dm-yellow}{n}} \\ &\ = e ^ {\mathrm \pi^2 / (12 \ln 2)}\end{aligned}$
   decimal: 3.27582291872181115978…
   notes: people take the non-exp version but that drops the meaning
 
 - name: bronze_ratio
   oeis: https://oeis.org/A098316
   eponyms: []
-  formula: $\href{https://en.wikipedia.org/wiki/Metallic_mean}{\mathrm S_3} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{n + \sqrt{n^2+4}}{2}} \;\right\vert\; n = 3$
+  formula: $\href{https://en.wikipedia.org/wiki/Metallic_mean}{\mathrm S_3} := \left.\href{https://en.wikipedia.org/wiki/Metallic_mean}{\dfrac{\class{dm-yellow}{n} + \sqrt{\class{dm-yellow}{n}^2+4}}{2}} \;\right\vert\; \class{dm-yellow}{n} = 3$
   decimal: 3.30277563773199464655961063373524797312564828692262310635522652811358347414650522260230954100924535…
   notes: why not metallic_3?
 
