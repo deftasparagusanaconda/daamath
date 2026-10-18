@@ -1,4 +1,5 @@
 import pathlib, yaml
+from itertools import batched
 
 def define_env(env):
     @env.macro
@@ -31,7 +32,8 @@ def define_env(env):
                 f"{idk['formula']}" 
                 if idk['formula'] is not None 
                 else '')
-            
+
+            idk['decimal'] = '<br>'.join(''.join(tup) for tup in batched(idk['decimal'], 120))
             decimal = (
                 f"[{idk['decimal']}]({idk['oeis']})" 
                 if idk['oeis'] is not None 
