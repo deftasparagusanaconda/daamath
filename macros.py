@@ -1,5 +1,5 @@
 import pathlib, yaml
-from itertools import batched
+#from itertools import batched
 
 def define_env(env):
     @env.macro
@@ -17,6 +17,10 @@ def define_env(env):
     
     @env.macro
     def math_constants():
+        from decimal import Decimal, Context, ROUND_DOWN
+
+        ctx = Context(prec=12, rounding=ROUND_DOWN)
+
         lines = []
 
         for idk in yaml.safe_load(open('yaml files/constants/index.yaml')):
@@ -33,17 +37,21 @@ def define_env(env):
                 if idk['formula'] is not None 
                 else '')
 
-            idk['decimal'] = '<br>'.join(''.join(tup) for tup in batched(idk['decimal'], 120))
+            try:
+                digs = str(ctx.create_decimal((pathlib.Path("constant decimals") / f"{idk['name']}.txt").read_text().strip()))
+            except Exception as e:
+                digs = str(e)
+            #digs = '<br>'.join(''.join(tup) for tup in batched(idk['decimal'], 120))
             decimal = (
-                f"[{idk['decimal']}]({idk['oeis']})" 
+                f"[{digs}]({idk['oeis']})" 
                 if idk['oeis'] is not None 
-                else idk['decimal'])
+                else digs)
             
             notes = (
                 idk['notes']
                 if idk['notes'] is not None
                 else '')
-                
+            
             
             lines.append(f"| {name} | {eponyms} | {formula} | {decimal} | {notes} |")
 

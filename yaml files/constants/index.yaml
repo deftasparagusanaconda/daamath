@@ -7,6 +7,7 @@
   formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{\class{dm-yellow}{k}=1}^{\infty} \dfrac{\class{dm-magenta}{a}_{\class{dm-yellow}{k}}}{\class{dm-cyan}{b}^{\class{dm-yellow}{k}!}}}\;\right\vert\,\begin{alignedat}{2} &\class{dm-magenta}{a}_{\class{dm-yellow}{k}} &&= 1 \\ &\class{dm-cyan}{b} &&= 10 \end{alignedat}$
   #formula: $\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville#Constante_de_Liouville}{\mathrm L} := \left.\href{https://fr.wikipedia.org/wiki/Nombre_de_Liouville}{\displaystyle\sum_{k=1}^{\infty} \dfrac{a_k}{b^{k!}}}\;\right\vert\,\begin{alignedat}{2} &a_k &&= 1 \\ &b &&= 10 \end{alignedat}$
   decimal: 0.11000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000…
+  decimal source: "`'0.' + ''.join(str(int(i in {math.factorial(j) for j in range(n)})) for i in range(1, math.factorial(n - 1) + 1))`"
   notes: ✅
 
 - name: kepler_bouwkamp
@@ -30,6 +31,7 @@
       link: https://en.wikipedia.org/wiki/D._G._Champernowne
   formula: <code><a href="https://en.wikipedia.org/wiki/Champernowne_constant">C⏨</a> := '0.' + cat(str(<span style="color:var(--dm-yellow)">i</span>) for <span style="color:var(--dm-yellow)">i</span> ∈ [1..∞))</code>
   decimal: 0.1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545…
+  decimal source: "`'0.' + ''.join(str(i) for i in range(1, n))`"
   notes: ✅
 
 - name: meissel_mertens
@@ -86,6 +88,7 @@
       link: https://en.wikipedia.org/wiki/Benjamin_Gompertz
   formula: $\href{https://en.wikipedia.org/wiki/Gompertz_constant}{\mathrm δ} := \left.-\mathrm e\href{https://en.wikipedia.org/wiki/Exponential_integral}{\displaystyle\int_{-\infty}^{\class{dm-yellow}{x}} \dfrac{\mathrm e^{\class{dm-magenta}{t}}}{\class{dm-magenta}{t}} \mathrm d\class{dm-magenta}{t}} \;\right\vert\; \class{dm-yellow}{x} = -1$
   decimal: 0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276…
+  decimal source: "`mpmath.e * mpmath.e1(1)`"
   notes: ✅
 
 - name: cahen
@@ -384,6 +387,7 @@
 
 - name: feigenbaum_alpha
   oeis: https://oeis.org/A006891
+  decimal source: http://converge.to/feigenbaum/100k.html
   eponyms: 
     - name: Mitchell Jay Feigenbaum
       flags: [🇺🇸]
@@ -415,6 +419,7 @@
 
 - name: khinchin
   oeis: https://oeis.org/A002210
+  decimal source: https://github.com/reza-ghazi/khinchin-fast
   eponyms: 
     - name: Алекса́ндр Я́ковлевич Хи́нчи
       flags: [🇷🇺]
@@ -478,6 +483,7 @@
 
 - name: feigenbaum_delta
   oeis: https://oeis.org/A006890
+  decimal source: http://converge.to/feigenbaum/100k.html
   eponyms: 
     - name: Mitchell Jay Feigenbaum
       flags: [🇺🇸]

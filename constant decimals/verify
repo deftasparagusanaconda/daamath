@@ -1,0 +1,16 @@
+#!/bin/python
+
+import decimal, pathlib, re
+
+DIGITS = 5050
+
+for file in pathlib.Path().iterdir():
+    if file.name == 'verify':
+        continue
+
+    digits = len(decimal.Decimal(file.read_text()).as_tuple().digits)
+    
+    if digits != DIGITS:
+        raise Exception (file, 'has', digits, f'(≠ {DIGITS})', 'digits')
+
+print(f'all constants have {DIGITS} digits')

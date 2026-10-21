@@ -54,7 +54,7 @@ print(sin(pi))
 # exclusions
 
 * no linear algebra (vectors, matrices, …): there are other better specifications like BLAS, LAPACK
-* no hypercomplex algebra besides $ℂ$: [the field of complex numbers is algebraically closed](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra)
+* no hypercomplex algebra besides ℂ since the field of complex numbers is algebraically closed
 * no geometric algebra: too specialized for general-purpose computation
 * no container datatypes (aarrays, sets, dictionaries, …): they are better specified algorithmically, not numerically
 * no symbolic computation: there are other better tools like sympy
@@ -67,7 +67,6 @@ print(sin(pi))
 * analyze numerically favourable formulae for complex trig functions
 * explore unicode for more interesting characters
 * document each function
-
 
 <!--
 # why?
@@ -217,4 +216,4 @@ ok rant done
 
 # rant
 
-my favourite thing about a computer is that its deterministic. it does exactly what you tell it to do. but when the computer starts making assumptions (like the ones that programmers make), it starts behaving unpredictably. thats why everything is so explicit. assumptions break the thing that make computers computer-y. thats also why theres no random module in daamath. its an algorithmic thing, and is also (ideally) non-deterministic. anyway, ye
+my favourite thing about a computer is that its deterministic. it does exactly what you tell it to do. but when the computer starts making assumptions (like the ones that programmers make), it starts behaving unpredictably. thats why everything is so explicit. assumptions break the thing that make computers computer-y. thats also why theres no random module in daamath. its an algorithmic thing, and is also (ideally) deterministic. anyway, ye

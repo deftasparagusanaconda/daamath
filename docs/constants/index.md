@@ -1,10 +1,16 @@
 # constants
 
+hi me :)
+
+```
+--8<-- "py files/generate math constants.py"
+```
+
 in $\text{mathematics}$, we usually manipulate things symbolically, and constants are exact. for example, $\mathrm π = 3.141592653589793238462643383279502884197169399375…$
 
 in `programming`, we usually manipulate things numerically, and constants are approximate. for example `math.pi` in python is <code><span style="color: var(--dm-green)">3.141592653589793</span><span style="color: var(--dm-red)">115997963468544185161590576171875</span></code>
 
-<!--we cannot pretend that an approximation is the exact value. this is clear from how $\sin(\mathrm π) = 0$ but `math.sin(math.pi)` in python is <code><span style="color: var(--dm-green)">0.000000000000000</span><span style="color: var(--dm-red)">122464679914735320717376402945839660462569212467758006379625612680683843791484832763671875</span></code> so we store constants as approximations.
+<!--we cannot pretend that an approximation is the exact value. this is clear from how $\sin(\mathrm π) = 0$ but `math.sin(math.pi)` in python is <code><span style="color: var(--dm-green)">0.000000000000000</span><span style="color: var(--dm-red)">122464679914735320717376402945839660462569212467758006379625612680683843791484832763671875</span></code> so we store constants as approximations.-->
 
 we have **51** constants from [Wikipedia](https://en.wikipedia.org/wiki/List_of_mathematical_constants) and [MathWorld](https://mathworld.wolfram.com/) up to **5050** decimal digits:
 
@@ -25,7 +31,7 @@ a datatype correctly approximates a constant $\class{dm-yellow}{c} = \class{dm-c
 
 an implementation should store only pre-compiled constants in a datatype. it should not ship the constants as strings, since a user should interact with constants only as datatype approximations.
 
-you ^^cannot^^ use an approximation get another approximation, like casting an binary64 constant to binary32 because [double rounding error](https://www.exploringbinary.com/double-rounding-errors-in-floating-point-conversions/) can occur
+you ^^cannot^^ use an approximation get another approximation, like casting a binary64 constant to binary32 because [double rounding error](https://www.exploringbinary.com/double-rounding-errors-in-floating-point-conversions/) can occur
 
 finally, the page for each constant is generated using:
 ```python
